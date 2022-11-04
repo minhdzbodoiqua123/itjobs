@@ -5,6 +5,6 @@ class Postjobs extends Controller
         $this->data["sub_content"][""]="";
         $this->data["content"]="employer/Postjobs";
 
-        $this->render('layouts/employer_layouts',$this->data);
+        $this->render('layouts/employer_layout',$this->data);
     }
 }

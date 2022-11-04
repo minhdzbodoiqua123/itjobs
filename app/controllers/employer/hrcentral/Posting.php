@@ -5,6 +5,6 @@ class Posting extends Controller
         $this->data["sub_content"][""]="";
         $this->data["content"]="employer/hrcentral/posting";
 
-        $this->render('layouts/employer_layouts',$this->data);
+        $this->render('layouts/employer_layout',$this->data);
     }
 }
