@@ -350,7 +350,7 @@
                 <div class="hot-jobs-list">
                     <div class="tabs">
                         <ul class="tabs-toggle">
-                            <li><a class="pointer" alt="#tab-1">Việc Làm Nổi Bật</a></li>
+                            <li class="active"><a class="pointer " alt="#tab-1">Việc Làm Nổi Bật</a></li>
                             <li><a class="pointer" alt="#tab-2">Việc Làm VIP ($1000+)</a></li>
                             <li><a class="pointer" alt="#tab-3">Việc Làm Từ Top Headhunter</a></li>
                         </ul>
@@ -561,7 +561,7 @@
                                             </div>
                                             <div class="swiper-next"><span class="mdi mdi-chevron-right"></span></div>
                                         </div>
-                                        <div class="view-more"><a href="https://careerbuilder.vn/viec-lam/tat-ca-viec-lam-vi.html">Xem việc làm mới cập nhật<span
+                                        <div class="view-more"><a href="<?= _WEB_ROOT.'/alljob' ?>">Xem việc làm mới cập nhật<span
                                             class="mdi mdi-arrow-right"></span></a></div>
                                     </div>
                                 </div>

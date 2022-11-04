@@ -4,7 +4,7 @@
             <div class="left-wrap">
                 <div class="button-hambuger"><span class="mdi mdi-menu"></span></div>
                 <div class="logo">
-                    <a href="https://careerbuilder.vn/vi/" title="Tuyển dụng &amp; Tìm kiếm việc làm nhanh">
+                    <a href="<?= _WEB_ROOT ?>" title="Tuyển dụng &amp; Tìm kiếm việc làm nhanh">
                         <img src="./img/logo.png" alt="Tuyển dụng &amp; Tìm kiếm việc làm nhanh">
                     </a>
                 </div>
@@ -166,7 +166,7 @@
                             <li class="dropdown-mobile"><a href="javascript:void(0);" title="Tìm Việc Làm"> <i class="mdi mdi-magnify"></i>Tìm Việc Làm</a>
                                 <div class="dropdown-menu">
                                     <ul>
-                                        <li><a href="https://careerbuilder.vn/viec-lam/tat-ca-viec-lam-vi.html" title="Việc làm mới nhất"> <i class="fa fa-thumb-tack"></i>Việc làm mới nhất</a>
+                                        <li><a href="<?= _WEB_ROOT.'/ALLjob' ?>" title="Việc làm mới nhất"> <i class="fa fa-thumb-tack"></i>Việc làm mới nhất</a>
                                         </li>
                                         <li><a href="https://careerbuilder.vn/tim-viec-lam.html" title="Ngành nghề / Địa điểm"> <i class="fa fa-location-arrow"></i>Ngành nghề / Địa điểm</a>
                                         </li>
