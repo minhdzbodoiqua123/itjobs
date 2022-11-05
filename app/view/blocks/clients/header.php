@@ -1,3 +1,4 @@
+
 <header>
     <div class="container-fluid">
         <div class="main-wrap">
@@ -80,44 +81,71 @@
                         </div>
                     </div>
                 </div>
-                                    <div class="main-login dropdown">
+                         <?php if(!isset($_SESSION["user"])) {?>
+                            <div class="main-login dropdown">
                         <div class="title-login">
-                            <a href="javascript:void(0);" title="Đăng nhập">
+                            <a href="<?= _WEB_ROOT.'/account/login' ?>" title="Đăng nhập">
                                 <span class="mdi mdi-account-circle"></span>
                                 Đăng nhập
                             </a>
                         </div>
+                       
+                    </div>
+                    <div class="main-register"><a href="<?= _WEB_ROOT.'/account/register' ?>" title="Đăng ký">Đăng ký</a>
+                    </div>
+                            <?php } else {?>
+                                <div class="main-login logged dropdown">
+                        <a href="https://careerbuilder.vn/vi/jobseekers/dashboard" rel="nofollow">
+                            <span class="mdi mdi-account-circle"></span>
+                            Chào
+                            <span class="name"><?= $_SESSION["user"]["fullname"]?></span>
+                        </a>
                         <div class="dropdown-menu">
-                            <div class="login-wrapper">
-                                <form name="header_login" id="header_login" method="post" action="https://careerbuilder.vn/vi/jobseekers/login" autocomplete="off">
-                                    <div class="row">
-                                        <div class="form-group col-12">
-                                            <input type="text" name="username" placeholder="Email hoặc Tên đăng nhập" autocomplete="off">
-                                        </div>
-                                        <div class="form-group col-8">
-                                            <input type="password" name="password" placeholder="Mật khẩu" autocomplete="off">
-                                        </div>
-                                        <div class="form-group col-4">
-                                            <input type="hidden" name="csrf_token_login" value="a75e1e1c307fe2c123eacb373a0ddef8cef1f2404af148ae6a6dae17fffb8159">
-                                            <button type="submit">Đăng nhập</button>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="sign-in-by"><span>Đăng nhập bằng</span>
-                                        <ul class="list-follow">
-                                            <li><a class="fb" href="javascript:void(0);" onclick="popupapi('facebook','aHR0cHM6Ly9jYXJlZXJidWlsZGVyLnZuL3ZpL2pvYnNlZWtlcnMvbG9naW5mYWNlYm9vaw==');"><em class="fa fa-facebook"></em>Facebook</a></li>
-                                            <li><a class="gg" href="javascript:void(0);" onclick="popupapi('google','aHR0cHM6Ly9jYXJlZXJidWlsZGVyLnZuL3ZpL2pvYnNlZWtlcnMvbG9naW5nb29nbGU=');"><em class="fa fa-google"></em>Google</a></li>
-                                        </ul>
-                                    </div>
-                                    <a class="link-register" href="https://careerbuilder.vn/vi/jobseekers/register" title="Đăng ký">Đăng ký</a>
-                                    <a class="forget-password" href="https://careerbuilder.vn/vi/jobseekers/forgotpassword" title="Quên mật khẩu?">Quên mật khẩu?</a>
-                                </form>
-                                
-                            </div>
+                            <ul>
+                                <li>
+                                    <a href="https://careerbuilder.vn/vi/jobseekers/dashboard" rel="nofollow">
+                                    Quản Lý Hồ Sơ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile" rel="nofollow">
+                                        Hồ sơ CareerBuilder
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/jobsaved" rel="nofollow">
+                                        Việc làm đã lưu
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://careerbuilder.vn/vi/jobseekers/jobalert" rel="nofollow">
+                                        Thông Báo Việc Làm
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://careerbuilder.vn/vi/jobseekers/myresume/viewbyemp" rel="nofollow">
+                                        Nhà tuyển dụng của tôi
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/notify" rel="nofollow">
+                                        Xem tất cả thông báo
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://careerbuilder.vn/vi/jobseekers/member/emailmanagement" rel="nofollow">
+                                        Cài đặt
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?= _WEB_ROOT.'/account/logout' ?>"  rel="nofollow">
+                                        Thoát
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="main-register"><a href="https://careerbuilder.vn/vi/jobseekers/register" title="Đăng ký">Đăng ký</a>
-                    </div>
+                                <?php }?>
                                 <div class="main-language dropdown">
                     <div class="dropdown-toggle">
                         <p>VI<em class="mdi mdi-chevron-down"></em></p>

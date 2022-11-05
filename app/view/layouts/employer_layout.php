@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/tailwind.css" ?>">
     <link rel="stylesheet" href="<?= _WEB_ROOT."/app/public/assets/employer/css/main.css" ?>">
     <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+    <script src="dist/pristine.js"  type="text/javascript"></script>
 </head>
 
 <body class="font-Helvetica">

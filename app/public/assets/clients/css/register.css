@@ -1241,3 +1241,6 @@
         border: 1px solid #eeeeee;
     }
 }
+.form-group .text-help {
+    color: #dc1d34;
+  }

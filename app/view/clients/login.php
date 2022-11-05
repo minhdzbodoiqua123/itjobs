@@ -1,4 +1,10 @@
 <link rel="stylesheet" href="<?= _WEB_ROOT."/app/public/assets/clients/css/login.css" ?>">
+<script defer src="<?= _WEB_ROOT."/app/public/assets/clients/js/login.js"?>"></script>
+<style>
+    .form-group .text-help {
+    color: #dc1d34;
+  }
+</style>
 
 <main>
         <section class="signin-form cb-section">
@@ -62,16 +68,17 @@
                              
                              
                                 <div class="form-login">
-                                    <form name="frmLogin" id="frmLogin" method="POST" action="https://careerbuilder.vn/vi/jobseekers/login" autocomplete="off">
+                                    <form name="frmLogin" id="frmLogin" method="POST" >
                                         <div class="form-group form-text">
-                                            <input type="text" id="username" name="username" value="" onkeyup="this.setAttribute('value', this.value);" autocomplete="off">
+                                            <input required data-pristine-required-message="Vui lòng nhập email của bạn"  type="text" name="email" id="email" autocomplete="off">
                                             <label for="">Vui lòng nhập email</label>
-                                            <span class="error_username"></span>
+                                        
                                         </div>
+                                       
                                         <div class="form-group form-text">
-                                            <input type="password" name="password" id="password" onkeyup="this.setAttribute('value', this.value);" value="" autocomplete="off">
+                                            <input required data-pristine-required-message="Vui lòng nhập password của bạn"  type="password" name="password" autocomplete="off">
                                             <label for="">Vui lòng nhập mật khẩu</label>
-                                            <span class="error_password"></span>
+                                           
                                         </div>
                                         <div class="form-group form-checkbox">
                                             <input type="checkbox" name="chkSave" value="1" id="chkSave">
