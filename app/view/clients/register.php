@@ -64,28 +64,32 @@
 
                             <div class="form-register">
                                 <form action="" name="frmRegister" id="frmRegister" method="post"  >
-                                   
+                                <div class="form-group form-text">
+                                        <input required data-pristine-required-message="Nhập Tên của bạn" name="firstname"  maxlength="50" type="text"  >
+                                        <label for="">* Tên </label>
+                                     
+                                    </div>
                                     <div class="form-group form-text">
-                                        <input required data-pristine-required-message="Nhập họ và tên của bạn" name="fullname"  maxlength="50" type="text"  >
-                                        <label for="">* Họ và tên </label>
-                                        <span class="error_lastname" style="display:none"></span>
+                                        <input required data-pristine-required-message="Nhập Họ và Tên Lót của bạn" name="lastname"  maxlength="50" type="text"  >
+                                        <label for="">* Họ và tên lót </label>
+                                     
                                     </div>
                                     <div class="form-group form-text">
                                         <input  required data-pristine-required-message="Vui lòng nhập email của bạn" type="email" name="email" id="email" maxlength="50" type="text" >
                                         <label for="">* Email</label>
-                                        <span class="error_email" style="display:none"></span>
+                                        
                                     </div>
                                     <div class="form-group form-text">
-                                    <input type="password" id="pwd" name="password" required data-pristine-required-message="Please choose a password" data-pristine-pattern= "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/" data-pristine-pattern-message="Tối thiểu 8 ký tự, ít nhất một chữ hoa, một chữ thường và một số" class="form-control" />
+                                    <input type="password" id="pwd" name="password" required data-pristine-required-message="Vui lòng nhập mật khẩu" data-pristine-pattern= "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/" data-pristine-pattern-message="Tối thiểu 8 ký tự, ít nhất một chữ hoa, một chữ thường và một số" class="form-control" />
                                
                                         <label for="">* Mật khẩu</label>
                                     
                                     </div>
                                     <div class="form-group form-text">
                                    
-                                    <input type="password" data-pristine-equals="#pwd" data-pristine-equals-message="Passwords don't match" class="form-control" />
+                                    <input type="password" data-pristine-equals="#pwd" data-pristine-equals-message="Mật khẩu nhập không khớp. Vui lòng thử lại." class="form-control" />
                                         <label for="">* Xác nhận mật khẩu</label>
-                                        <span class="error_confirm_password" style="display:none"></span>
+                                      </span>
                                     </div>
                                    
                                     <div class="form-group form-submit">

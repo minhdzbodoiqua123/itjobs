@@ -1,6 +1,6 @@
 
 <link rel="stylesheet" href="<?= _WEB_ROOT."/app/public/assets/employer/css/postjobs.css" ?>">
-
+<script src="//cdn.ckeditor.com/4.20.0/basic/ckeditor.js"></script>
 <main>
 <section class="manage-job-posting-post-jobs cb-section bg-manage">
 
@@ -75,8 +75,13 @@
                                 </div>
                                 <div class="form-group form-editor" id="div_jobdesc">
                                     <label>Mô Tả Công Việc <font style="color: red">*</font></label>
-                                    <textarea cols="80" rows="5" id="job_desc" name="job_desc" class="editor"></textarea>
-
+                                  
+                                    <textarea name="job_desc" id="editor1" rows="10" cols="80">
+                This is my textarea to be replaced with CKEditor 4.
+            </textarea>
+  <script>
+           CKEDITOR.replace( 'job_desc' );
+    </script>
                                     <span class="form-error"></span>
                                     <div class="note">
                                         <p>Nhỏ hơn 10 000 kí tự</p>
@@ -792,215 +797,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <script type="text/javascript">
-                                    $(document).ready(function() {
-                                        checkYoutubeValid();
-                                        eventAfterAjax();
-                                        deletePhotoCompany();
-                                    });
-
-
-                                    var is_execute_profile = false;
-
-                                    function ajaxPhotoUpload() {
-                                        $('#filephoto').prop('disabled', true);
-                                        var strPhoto = $("#strPhoto").val();
-                                        if (is_execute_profile)
-                                            return false;
-                                        is_execute_profile = true;
-
-                                        var file = $('#filephoto')[0].files;
-
-                                        var formdata = false;
-                                        if (window.FormData) {
-                                            formdata = new FormData();
-                                        }
-                                        formdata.append("filephoto", file[0]);
-                                        $('#filephoto').val('');
-                                        $.ajax({
-                                            url: 'https://careerbuilder.vn/vi/employers/postjobs/uploadphoto',
-                                            type: "POST",
-                                            data: formdata,
-                                            processData: false,
-                                            contentType: false,
-                                            dataType: 'json',
-                                            success: function(data) {
-                                                is_execute_profile = false;
-                                                if (typeof(data.error) != 'undefined') {
-                                                    if (data.error != '') {
-                                                        show_noti(2, data.error);
-                                                    } else {
-                                                        $("#list-image").append('<div class="image-item"><img src="' + data.path + '"><a class="btn-del-img company-btn-del-img" href="javascript:void(0);" data-src="' + data.msg + '" title="Xóa ảnh\"><em class="material-icons">clear</em></a></div>');
-                                                        $('#isdisplay').prop('disabled', false);
-                                                        if (strPhoto != '')
-                                                            strPhoto += ',';
-                                                        strPhoto += data.msg;
-                                                        $("#strPhoto").val(strPhoto);
-                                                    }
-                                                }
-                                                eventAfterAjax();
-                                            }
-                                        });
-
-                                        return false;
-                                    }
-
-                                    function eventAfterAjax() {
-                                        $("#loading").hide();
-                                        var num = $("#strPhoto").val().split(",").length;
-                                        if (num >= 5) {
-                                            $('#filephoto').prop('disabled', true);
-                                        } else {
-                                            $('#filephoto').prop('disabled', false);
-                                        }
-                                    }
-
-
-                                    function deletePhotoCompany() {
-                                        $(document).on('click', ".company-btn-del-img", function() {
-                                            var name = $(this).data('src');
-                                            $(this).closest('.image-item').remove();
-                                            var strPhoto = $("#strPhoto").val();
-                                            var strPhotoDelete = $("#strPhotoDelete").val();
-                                            // Add in hidden delete
-                                            if (strPhotoDelete != '')
-                                                strPhotoDelete += ',';
-                                            strPhotoDelete += name;
-                                            $("#strPhotoDelete").val(strPhotoDelete);
-                                            // Remove in hidden upload
-                                            var posName = strPhoto.indexOf(name);
-                                            var posTemp = strPhoto.indexOf(',');
-                                            if (posName == 0) {
-                                                if (posTemp > 0)
-                                                    name += ',';
-                                            } else {
-                                                name = ',' + name;
-                                            }
-                                            $("#strPhoto").val(strPhoto.replace(name, ''));
-                                            // Check exist image and video
-                                            checkYoutubeValid(2);
-                                            if ($("#strPhoto").val() == '' && $("#checkYouTube").val() == 'false') {
-                                                $('#isdisplay').prop('checked', false);
-                                                $('#isdisplay').prop('disabled', true);
-                                            }
-                                            $('#filephoto').prop('disabled', false);
-                                        });
-                                    }
-
-                                    /* XÓA KHI UPDATE SAU */
-                                    function ajaxPhotoDelete(name) {
-                                        var strPhoto = $("#strPhoto").val();
-                                        var strPhotoDelete = $("#strPhotoDelete").val();
-                                        // Add in hidden delete
-                                        if (strPhotoDelete != '')
-                                            strPhotoDelete += ',';
-                                        strPhotoDelete += name;
-                                        $("#strPhotoDelete").val(strPhotoDelete);
-                                        // Remove in hidden upload
-                                        var posName = strPhoto.indexOf(name);
-                                        var posTemp = strPhoto.indexOf(',');
-                                        if (posName == 0) {
-                                            if (posTemp > 0)
-                                                name += ',';
-                                        } else {
-                                            name = ',' + name;
-                                        }
-                                        $("#strPhoto").val(strPhoto.replace(name, ''));
-                                        // Check exist image and video
-                                        checkYoutubeValid(2);
-                                        if ($("#strPhoto").val() == '' && $("#checkYouTube").val() == 'false') {
-                                            $('#isdisplay').prop('checked', false);
-                                            $('#isdisplay').prop('disabled', true);
-                                        }
-                                        $('#filephoto').prop('disabled', false);
-                                    }
-                                    /* XÓA KHI UPDATE SAU */
-
-
-                                    /* type 0: check message error, 1: check message error and show video, 2: check */
-                                    function checkYoutubeValid(type) {
-                                        var url = $('#strVideo').val();
-                                        url = url.replace(/^\s+|\s+$/g, "");
-
-                                        if (url != '') {
-                                            var pos = url.indexOf('youtube.com/watch?v=');
-                                            // Check youtube link valid before check video valid on server
-                                            if (pos < 0) {
-
-                                                if (type != 2) {
-                                                    $('#eVideo').remove();
-                                                    $('#strVideo').after('<span class="form-error" id="eVideo" generated="true" style="width:480px">Link video không dúng định dạng. Bạn vui lòng nhập lại.</span>');
-                                                }
-                                                // Check exist image and video
-                                                if ($("#strPhoto").val() == '') {
-                                                    $('#isdisplay').prop('checked', false);
-                                                    $('#isdisplay').prop('disabled', true);
-                                                }
-
-                                                $('#checkYouTube').val('false');
-                                                return false;
-                                            }
-
-                                            $.ajax({
-                                                type: "POST",
-                                                url: domain + 'employers/postjobs/checklinkyoutube',
-                                                dataType: 'JSON',
-                                                data: 'link=' + url,
-                                                success: function(rs) {
-                                                    if (rs == '0') {
-                                                        // Message error when input link youtube
-                                                        if (type != 2) {
-                                                            $('#eVideo').remove();
-                                                            $('#strVideo').after('<span class="form-error" id="eVideo" generated="true" style="width:480px">Link video không dúng định dạng. Bạn vui lòng nhập lại.</span>');
-
-                                                        }
-                                                        // Check exist image and video
-                                                        if ($("#strPhoto").val() == '') {
-                                                            $('#isdisplay').prop('checked', false);
-                                                            $('#isdisplay').prop('disabled', true);
-                                                        }
-                                                        $('#checkYouTube').val('false');
-
-
-
-                                                        return false;
-                                                    } else {
-
-                                                        if (type != 2) {
-                                                            $('#eVideo').remove();
-                                                            $('#isdisplay').prop('disabled', false);
-                                                            // Check button view youtube
-                                                            if (type == 1) {
-                                                                $.fancybox.open({
-                                                                    'closeExisting': true,
-                                                                    'src': url.replace(new RegExp("watch\\?v=", "i"), 'embed/') + '?autoplay=1&rel=0',
-                                                                    'type': 'iframe'
-                                                                });
-                                                            }
-                                                        }
-                                                        $('#checkYouTube').val('true');
-                                                        return true;
-                                                    }
-                                                }
-                                            });
-                                        } else {
-                                            /* Don't input link youtube */
-                                            $('#eVideo').remove();
-                                            // check button view
-                                            if (type == 1) {
-                                                $('#strVideo').after('<span class="form-error" id="eVideo" generated="true" style="width:480px">Link video không dúng định dạng. Bạn vui lòng nhập lại.</span>');
-                                            }
-                                            // Check exist image and video
-                                            if ($("#strPhoto").val() == '') {
-                                                $('#isdisplay').prop('checked', false);
-                                                $('#isdisplay').prop('disabled', true);
-                                            }
-                                            $('#checkYouTube').val('false');
-                                            return false;
-                                        }
-                                    }
-                                </script>
 
                                 <h2 class="title-application">Thông tin khác <span><span class="txt_required mar_left10">(Không bắt buộc)</span></span>
                                 </h2>

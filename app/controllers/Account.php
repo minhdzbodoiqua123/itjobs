@@ -6,19 +6,21 @@ class Account extends Controller
     }
     public function register(){
         if(count($_POST) > 0){
-                $fullname = $_POST['fullname'];
+                $firstname = $_POST['firstname'];
+                $lastname = $_POST['lastname'];
                 $email = $_POST['email'];
                 $password = $_POST['password'];
                 //1 là ứng viên
                 $user_type_id=1;
                 $data = [
-                    "fullname"=>"'$fullname'",
+                    "firstname"=>"'$firstname'",
+                    "lastname"=>"'$lastname'",
                     "email"=>"'$email'",
                     "password"=>"'$password'",
                     "user_type_id"=>"'$user_type_id'",
 
                 ];
-               
+
                 $this->model("AccountUserModel")->insertUser($data);
         }
 
@@ -29,6 +31,9 @@ class Account extends Controller
     }
   
     public function login(){
+        if(Auth_user::logged_in()){
+            $this->redirect("home");
+        }
         if(count($_POST) > 0){
             $email=$_POST["email"];
             $password=$_POST["password"];

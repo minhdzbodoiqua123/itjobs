@@ -9,6 +9,7 @@
     "css": "npx tailwindcss -i ./css/tailwind.css -o ./app/global/tailwind.css --watch"
   },
   "dependencies": {
+    "flatpickr": "^4.6.13",
     "pristinejs": "^0.1.9"
   }
 }

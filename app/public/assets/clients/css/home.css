@@ -5,7 +5,9 @@ body.compensate-for-scrollbar {
 .fancybox-active {
   height: auto;
 }
-
+.fade {
+  transition: opacity .15s linear;
+}
 .fancybox-is-hidden {
   left: -9999px;
   margin: 0;

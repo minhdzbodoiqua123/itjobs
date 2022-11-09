@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="<?= _WEB_ROOT."/app/public/assets/clients/css/home.css" ?>">
     <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
      <script defer src="<?= _WEB_ROOT."/app/library/pristinejs/dist/pristine.js"?>"></script>
+     <script defer src="<?= _WEB_ROOT."/app/library/flatpickr/dist/flatpickr.js"?>"></script>
+     <link rel="stylesheet" href="<?= _WEB_ROOT."/app/library/flatpickr/dist/flatpickr.min.css" ?>">
+
+
 </head>
 <body class="font-Helvetica">
     <?php

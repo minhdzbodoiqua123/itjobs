@@ -98,7 +98,7 @@
                         <a href="https://careerbuilder.vn/vi/jobseekers/dashboard" rel="nofollow">
                             <span class="mdi mdi-account-circle"></span>
                             Chào
-                            <span class="name"><?= $_SESSION["user"]["fullname"]?></span>
+                            <span class="name"><?= $_SESSION["user"]["firstname"]?></span>
                         </a>
                         <div class="dropdown-menu">
                             <ul>

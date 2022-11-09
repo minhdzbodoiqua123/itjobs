@@ -1,4 +1,7 @@
-
+.ck-editor__editable[role="textbox"] {
+    /* editing area */
+    min-height: 200px;
+}
 .autocomplete-suggestions {
     text-align: left;
     cursor: default;
