@@ -91,12 +91,15 @@
                                         <label for="">* Xác nhận mật khẩu</label>
                                       </span>
                                     </div>
-                                   
+                                    <?php if(isset($error)) {?>
+                                        <p style="color:red"><?= $error;?></p>
+                                    <?php }?>
                                     <div class="form-group form-submit">
                                         <input type="hidden" name="csrf_token_register" value="" />
                                         <button class="btn-gradient">Đăng ký</button>
                                     </div>
                                 </form>
+                              
                             </div>
                         </div>
                     </div>

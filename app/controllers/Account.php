@@ -12,16 +12,29 @@ class Account extends Controller
                 $password = $_POST['password'];
                 //1 là ứng viên
                 $user_type_id=1;
-                $data = [
-                    "firstname"=>"'$firstname'",
-                    "lastname"=>"'$lastname'",
-                    "email"=>"'$email'",
-                    "password"=>"'$password'",
-                    "user_type_id"=>"'$user_type_id'",
+                //kiểm tra email đã tồn tại chưa
+                $sql="select * from user_account where user_type_id=1 and email='$email' ";
+                echo   $sql;
+                $result=$this->model("AccountUserModel")->query($sql);
 
-                ];
+               
+                if($result->rowCount()==0){
+                    $data = [
+                        "firstname"=>"'$firstname'",
+                        "lastname"=>"'$lastname'",
+                        "email"=>"'$email'",
+                        "password"=>"'$password'",
+                        "user_type_id"=>"'$user_type_id'",
+    
+                    ];
+                    $this->model("AccountUserModel")->insertUser($data);
+                    // $this->redirect("account/login");
+                }
+                else{
+                  $this->data["sub_content"]["error"]="Email của bạn đã tồn tại";
+                }
 
-                $this->model("AccountUserModel")->insertUser($data);
+              
         }
 
         $this->data["sub_content"][]="";

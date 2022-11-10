@@ -2,7 +2,7 @@
 class AccountUserModel extends Database
 {
     protected $table = "user_account";
-    
+
     public function insertUser($data)
     {
         $this->insert($this->table, $data);
