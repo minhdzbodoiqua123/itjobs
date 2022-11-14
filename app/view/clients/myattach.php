@@ -96,7 +96,7 @@
                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body">
-                                 <form name="personalInfoForm" id="personalInfoForm" autocomplete="off">
+                                 <form  action="" id="personalInfoForm" autocomplete="off">
                                     <div class="row">
                                        <div class="col-md-6">
                                            <label>* Họ và tên lót</label>
@@ -286,7 +286,7 @@
                                     </div>
                                     <div class="modal-footer">
                                        <div class="button-save button-center">
-                                          <button class="btn-primary" data-bs-dismiss="modal" type="button">Lưu lại</button>
+                                          <button type="submit" name="personalInfoForm" class="btn-primary" data-bs-dismiss="modal">Lưu lại</button>
                                        </div>
                                     </div>
                                  </form>

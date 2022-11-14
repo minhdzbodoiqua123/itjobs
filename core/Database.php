@@ -88,6 +88,13 @@ class Database
             return true;
         }
     }
+    function getAll($table){
+        $sql="SELECT * from $table";
+        $status = $this->query($sql);
+        if ($status) {
+            return true;
+        }
+    }
     
     function query($sql)
     {

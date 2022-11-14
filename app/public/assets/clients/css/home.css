@@ -1,7 +1,9 @@
 body.compensate-for-scrollbar {
   overflow: hidden;
 }
-
+#dropdownSelected{
+  display:none;
+}
 
 /*global.css*/
 

@@ -6,6 +6,7 @@ class AccountUserModel extends Database
     public function insertUser($data)
     {
         $this->insert($this->table, $data);
+        return $this->lastInsertID();
     }
     public function checkLoginUser($email, $password)
     {

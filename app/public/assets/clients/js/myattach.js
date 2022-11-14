@@ -1,0 +1,1 @@
+flatpickr(".date_month",  { dateFormat: 'd/m/Y',maxDate:"31.12.2017"});

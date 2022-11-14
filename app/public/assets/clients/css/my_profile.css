@@ -15343,15 +15343,9 @@ header.header-dashboard .mobile-menu .menu .menu-logged ul li.dropdown-mobile .d
     margin: 0 -10px;
 }
 
- .form-group.form-radio p {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 calc(100%/3);
-    flex: 0 0 calc(100%/3);
-    max-width: calc(100%/3);
-    padding: 0 10px;
-}
 
  .form-group.form-radio .gender {
+    margin-top:5px;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 calc(100%/3);
     flex: 0 0 calc(100%/3);
@@ -15372,7 +15366,7 @@ header.header-dashboard .mobile-menu .menu .menu-logged ul li.dropdown-mobile .d
 
  .form-group.form-radio label:after {
     position: absolute;
-    top: 2px;
+    top: 4px;
     left: 0;
     color: #5d677a;
     font: normal normal normal 24px/1 Material Design Icons;

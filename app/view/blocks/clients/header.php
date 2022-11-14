@@ -115,12 +115,12 @@
                     <div class="dropdown-menu">
                         <ul>
                             <li>
-                                <a href="https://careerbuilder.vn/vi/jobseekers/dashboard" rel="nofollow">
+                                <a href="<?= _WEB_ROOT . '/jobseekers/dashboard' ?> " rel="nofollow">
                                     Quản Lý Hồ Sơ
                                 </a>
                             </li>
                             <li>
-                                <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile" rel="nofollow">
+                                <a href="<?= _WEB_ROOT . '/jobseekers/my_profile' ?>" rel="nofollow">
                                     Hồ sơ CareerBuilder
                                 </a>
                             </li>

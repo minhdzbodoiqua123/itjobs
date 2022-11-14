@@ -116,7 +116,7 @@ const MultiSelectDropdown = (params) => {
         let tempSelectedList = document.getElementById('dropdownSelected');
 
         div.querySelectorAll('span.optext, span.placeholder').forEach((placeholder) => div.removeChild(placeholder));
-        console.log(multiSelect);
+    
         let selected = Array.from(multiSelect.selectedOptions);
         if (selected.length > (multiSelect.attributes['max-items']?.value ?? 2)) {
           div.appendChild(

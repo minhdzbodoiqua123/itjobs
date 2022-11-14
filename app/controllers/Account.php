@@ -14,7 +14,6 @@ class Account extends Controller
                 $user_type_id=1;
                 //kiểm tra email đã tồn tại chưa
                 $sql="select * from user_account where user_type_id=1 and email='$email' ";
-                echo   $sql;
                 $result=$this->model("AccountUserModel")->query($sql);
 
                
@@ -25,9 +24,10 @@ class Account extends Controller
                         "email"=>"'$email'",
                         "password"=>"'$password'",
                         "user_type_id"=>"'$user_type_id'",
-    
                     ];
-                    $this->model("AccountUserModel")->insertUser($data);
+                 $this->model("AccountUserModel")->insertUser($data);
+          
+
                     // $this->redirect("account/login");
                 }
                 else{
