@@ -11,7 +11,7 @@
                 <div class="main-menu">
                     <ul class="menu">
                         <li class="dropdown">
-                            <a href="javascript:void(0);" title="Tìm Việc Làm">
+                            <a title="Tìm Việc Làm">
                                 Tìm Việc Làm
                             </a>
                             <div class="dropdown-menu">
@@ -110,7 +110,7 @@
                     <a href="https://careerbuilder.vn/vi/jobseekers/dashboard" rel="nofollow">
                         <span class="mdi mdi-account-circle"></span>
                         Chào
-                        <span class="name"><?= $_SESSION["user"]["firstname"] ?></span>
+                        <span class="nameUser"></span>
                     </a>
                     <div class="dropdown-menu">
                         <ul>

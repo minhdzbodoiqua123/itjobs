@@ -39,7 +39,7 @@ class Database
             $valueStr = rtrim($valueStr, ',');
             
             $sql = "INSERT INTO $table ($fieldStr) VALUES ($valueStr)";
-            echo $sql;
+            
             $status = $this->query($sql);
             if ($status) {
                 return true;
@@ -64,8 +64,9 @@ class Database
                 $sql = "UPDATE $table SET $updateStr ";
             }
          
+            
             $status = $this->query($sql);
-           
+         
             if ($status) {
                 return true;
             }
@@ -88,12 +89,18 @@ class Database
             return true;
         }
     }
-    function getAll($table){
-        $sql="SELECT * from $table";
-        $status = $this->query($sql);
-        if ($status) {
-            return true;
+    function get($table,$condition=''){
+          
+        if(!empty($condition)){
+            $sql="SELECT * from `$table` WHERE $condition";
+        }   
+        else{
+            $sql="SELECT * from `$table` ";
         }
+      
+        $statement = $this->conn->prepare($sql);
+        $statement->execute();
+        return $statement;
     }
     
     function query($sql)
