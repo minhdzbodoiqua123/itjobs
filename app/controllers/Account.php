@@ -25,8 +25,13 @@ class Account extends Controller
                         "password"=>"'$password'",
                         "user_type_id"=>"'$user_type_id'",
                     ];
-                 $this->model("AccountUserModel")->insertUser($data);
-          
+                    $lastId= $this->model("AccountUserModel")->insertUser($data);
+                 $this->model("SeekerProfile")->insertData(
+                    [
+                        "user_account_id "=>"'$lastId'"
+                    ]
+                 );
+
 
                     // $this->redirect("account/login");
                 }
