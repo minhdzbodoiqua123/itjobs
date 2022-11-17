@@ -10,6 +10,18 @@
 .pristine-error {
   color:red;
 }
+.grid{
+   display: grid;
+}
+.grid-cols-2{
+   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.flex{
+   display: flex;
+}
+.p-3{
+   padding: 12px;
+}
 </style>
 <body class="my-profile-page">
 
@@ -1269,75 +1281,75 @@
          <div class="editCVtemplate-wrapper editCVtemplate">
             <div id="ZoneShowCVTemplate" class="cv-template-wrapper cv-template-15 fontCVRoboto clrYellow fontCVsize14">
                <div class="col-xs-12 subCVpage">
-                  <div class="top">
+                  <div class="top" style="text-align: center;">
                      <div class="iavatar">
                         <img src="https://images.careerbuilder.vn/jobseekers/20221105/6327211_1667640553_162916.png">		
                      </div>
                   </div>
-                  <div class="col-xs-12 name">
-                     <h2>NGUYỄN MINH</h2>
-                     <h4>Frontend Developer</h4>
-                  </div>
-                  <div class="col-xs-12 main-contact">
-                     <ul class="contact">
-                        <li class="phone"><i class="fa fa-phone"></i><span>1231312313</span></li>
-                        <li class="mail"><i class="fa fa-envelope"></i><span class="txt">aolang69@gmail.com</span></li>
-                        <li class="address2"><i class="fa fa-home"></i><span class="txt">đường 7, Huyện Lộc Ninh, Bình Phước, Việt Nam</span></li>
-                     </ul>
-                  </div>
-                  <div class="col-xs-12">
-                     <div class="col-sm-5 col">
+                  <div class="col-sm-12 col name" style="text-align: center;">
+                        <h2>NGUYỄN MINH</h2>
+                        <h4>Frontend Developer</h4>
+                        <div class="col-xs-12 main-contact">
+                        <ul class="contact">
+                           <li class="phone"><i class="fa fa-phone"></i><span>1231312313</span></li>
+                           <li class="mail"><i class="fa fa-envelope"></i><span class="txt">aolang69@gmail.com</span></li>
+                           <li class="address2"><i class="fa fa-home"></i><span class="txt">đường 7, Huyện Lộc Ninh, Bình Phước, Việt Nam</span></li>
+                        </ul>
+                     </div>
+                     </div>
+                     <div class="col-sm-12 col" style="margin-top: 8px;">
                         <h3>Thông tin cá nhân</h3>
                         <ul class="contact">
-                           <li>
+                           <li class="flex">
                               <label>Giới tính</label>
                               <div class="annou">:  Nam </div>
                            </li>
-                           <li>
+                           <li class="flex">
                               <label>Ngày sinh</label>
                               <div class="annou">: 31/12/2007</div>
                            </li>
-                           <li>
+                           <li class="flex">
                               <label>Tình trạng hôn nhân</label>
                               <div class="annou">:  Độc thân</div>
                            </li>
-                           <li>
+                           <li class="flex">
                               <label>Quốc tịch</label>
                               <div class="annou">: Người Việt Nam</div>
-                           </li>
-                           <li>
+                           </li class="flex">
+                           <li class="flex">
                               <label>Quốc gia</label>
                               <div class="annou">: Việt Nam</div>
                            </li>
                         </ul>
                      </div>
-                     <div class="col-sm-4 col">
+                  
+               
+                  <div class="col-sm-12 col" style="margin-top: 8px;">
                         <h3>Kỹ năng</h3>
-                        <ul class="skill">
-                           <li>
+                        <ul class="skill flex">
+                           <li class="p-3">
                               <label>c#</label>
                               <div class="point"><span></span><span></span><span></span></div>
                            </li>
-                           <li>
+                           <li class="p-3">
                               <label>php</label>
                               <div class="point"><span></span><span></span><span></span></div>
                            </li>
-                           <li>
+                           <li class="p-3">
                               <label>tốt</label>
                               <div class="point"><span></span><span></span><span></span></div>
                            </li>
-                           <li>
+                           <li class="p-3">
                               <label>js</label>
                               <div class="point"><span></span><span></span><span></span></div>
                            </li>
-                           <li>
+                           <li class="p-3">
                               <label>html</label>
                               <div class="point"><span></span><span></span><span></span></div>
                            </li>
                         </ul>
                      </div>
-                  </div>
-                  <div class="col-xs-12 content">
+                     <div class="col-md-12 col">
                      <h3><span>Công Việc Mong Muốn</span></h3>
                      <div class="expected-job">
                         <ul class="contact">
@@ -1354,6 +1366,8 @@
                            </li>
                         </ul>
                      </div>
+                  </div>
+                  <div class="col-sm-12 col" style="margin-top: 8px;">
                      <h3>Kinh Nghiệm Làm Việc</h3>
                      <div class="content_fck yearofexp">
                         <p>Số năm kinh nghiệm: 1  </p>
@@ -1369,15 +1383,21 @@
                            <p>tuyetv oi</p>
                         </div>
                      </div>
+                  </div>
+                        
+                 <div class="grid grid-cols-2" style="margin-top: 8px;">
+                  <div class="col-sm-12 col">
                      <h3>Học Vấn</h3>
-                     <div class="text-edt degree-name">Bằng cấp cao nhất: Trung học</div>
-                     <div class="exp text-edt">
-                        <div class="title">Không yêu cầu bằng cấp - fpt </div>
-                        <div class="content_fck">
-                           <p>chưa tốt nghiệp</p>
+                        <div class="text-edt degree-name">Bằng cấp cao nhất: Trung học</div>
+                        <div class="exp text-edt">
+                           <div class="title">Không yêu cầu bằng cấp - fpt </div>
+                           <div class="content_fck">
+                              <p>chưa tốt nghiệp</p>
+                           </div>
                         </div>
-                     </div>
-                     <h3>Thông Tin Tham Khảo</h3>
+                  </div>
+                  <div class="col-sm-12 col">
+                  <h3>Thông Tin Tham Khảo</h3>
                      <div class="text-edt">
                         <div class="title">nguyen nhat minh</div>
                         <div class="content_fck">
@@ -1386,6 +1406,12 @@
                            <p>Email: aolang69@gmail.com</p>
                         </div>
                      </div>
+                  </div>
+                 </div>
+                
+            
+                  <div class="col-xs-12 ">
+                     
                   </div>
                </div>
             </div>
