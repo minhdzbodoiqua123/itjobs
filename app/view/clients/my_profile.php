@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/clients/css/my_profile.css" ?>">
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css" ?>">
 
@@ -9,6 +10,8 @@
    }
 .pristine-error {
   color:red;
+  margin-left:15px;
+  font-size: 14px;
 }
 </style>
 <body class="my-profile-page">
@@ -160,6 +163,7 @@
                                  <div class="image"><img src="./img/dash-board/i14.png" alt=""></div>
                                  <div class="figcaption">
                                     <h3>Tiêu đề hồ sơ *</h3>
+
                                     <div class="status success">
                                        <p>Hoàn thành</p>
                                     </div>
@@ -202,7 +206,7 @@
                                        <div class="form-group form-button">
                                        </div>
                                        <div class="modal-footer">
-                                          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Lưu lại</button>
+                                          <button type="submit" class="btn btn-primary">Lưu lại</button>
                                        </div>
                                     </form>
                                  </div>
@@ -223,9 +227,19 @@
                                  <div class="image"><img src="./img/dash-board/i2.png" alt=""></div>
                                  <div class="figcaption">
                                     <h3>Thông tin cá nhân *</h3>
-                                    <div class="status success">
-                                       <p>Hoàn thành</p>
-                                    </div>
+                                    <?php 
+                       if(!empty($informationUser) && $informationUser["status"]==1 ){
+                                echo " <div class='status success'>
+                                     <p>Hoàn thành</p>
+                                  </div>";
+                       }
+                       else{
+                        echo " <div class='status error'>
+                        <p>Chưa hoàn thành</p>
+                     </div>";
+                       }
+                                    ?>
+                               
                                  </div>
                               </div>
                               <div class="right-action">
@@ -273,23 +287,32 @@
                                     <tr>
                                
                                        <td>Tình trạng hôn nhân</td>
-                                    
-                                       <td><?=  $informationUser["marital_status"]==0 ? "Độc thân"  :"Đã kết hôn"   ?></td>
+                                    <?php $informationUser["marital_status"]==0 ? "Độc thân"  :"Đã kết hôn" ?>
+                                       <td><?php 
+                                       if(!empty($informationUser["marital_status"])){
+                                           if($informationUser["marital_status"]==1){
+                                             echo "Độc thân";
+                                           }
+                                           else{
+                                             echo "Đã kết hôn";
+                                           }
+                                       }
+                                       ?></td>
                                       
                                        
                                     </tr>
                                 
                                     <tr>
                                        <td>Tỉnh/ Thành phố</td>
-                                       <td  class="provincesUser">Hà Nội</td>
+                                       <td  class="provincesUser"></td>
                                     </tr>
                                     <tr>
                                        <td>Quận/ Huyện</td>
-                                       <td class="districtsUser">Huyện Đan Phượng</td>
+                                       <td class="districtsUser"></td>
                                     </tr>
                                     <tr>
                                        <td>Địa chỉ</td>
-                                       <td class="addressUser">đường 7, Huyện Đan Phượng, Hà Nội, Việt Nam</td>
+                                       <td class="addressUser"></td>
                                     </tr>
                                  </tbody>
                               </table>
@@ -350,7 +373,7 @@
                                              <label for="">* Ngày sinh</label>
                                              <input 
                                              required 
-                                             data-pristine-required-message="Vui lòng nhập ngày tháng năm sinh của bạn"   
+                                             data-pristine-required-message="Nhập ngày tháng năm sinh của bạn"   
                                              type="text" value="<?=  formatDate($informationUser["date_of_birth"])?>" class="date_month" name="birthday" ">
                                  
                                           </div>
@@ -383,8 +406,8 @@
                                                 {echo 'selected';} 
                                                
                                                
-                                               ?> value="0" >Độc thân</option>
-                                                <option <?php if($informationUser["marital_status"]==1){echo 'selected';} ?>  value="1">Đã kết hôn</option>
+                                               ?> value="1" >Độc thân</option>
+                                                <option <?php if($informationUser["marital_status"]==1){echo 'selected';} ?>  value="2">Đã kết hôn</option>
                                              
                                              </select>
                                            
@@ -484,9 +507,19 @@
                                  <div class="image"><img src="./img/dash-board/i5.png" alt=""></div>
                                  <div class="figcaption">
                                     <h3>Thông tin nghề nghiệp *</h3>
-                                    <div class="status error">
-                                       <p>Chưa hoàn thành</p>
-                                    </div>
+                                    <?php 
+                       if(!empty($seeker_job_information) && $seeker_job_information["status"]==1 ){
+                                echo " <div class='status success'>
+                                     <p>Hoàn thành</p>
+                                  </div>";
+                       }
+                       else{
+                        echo " <div class='status error'>
+                        <p>Chưa hoàn thành</p>
+                     </div>";
+                       }
+                                    ?>
+                                 
                                  </div>
                               </div>
                               <div class="right-action">
@@ -554,9 +587,17 @@
                                                    <option value="" style="display:none;" selected>Chọn</option>
                                                  
                                       <?php
-                                       foreach ($data_position as $item):
-                                    echo "<option value='$item[id]'>$item[position]";
-                                      endforeach;?>
+                                       foreach ($data_position as $item):?>
+                                          <option 
+                                          <?php 
+                                             if(!empty($seeker_job_information)){
+                                 if($item["id"] ==$seeker_job_information["position_id"]){
+                                                   echo 'selected';
+                                                }
+                                              }
+                                          ?>
+                                          value="<?= $item["id"] ?>"><?= $item["position"] ?>
+                                    <?php  endforeach;?>
                                        </select>
                                              </div>
                                           </div>
@@ -569,10 +610,13 @@
                                              <div class="form-salary">
                                             
                                                 <div class="form-select form-text">
-                                                   <input placeholder="Từ *"off" type="text" size="12" name="salary_from" id="salary_from"  maxlength="14" value="1000000">
+                                                   <input placeholder="Từ *"off" type="text" size="12" name="salary_from" id="salary_from" required  data-pristine-required-message="Không được để trống"  maxlength="14" value="<?= !empty($seeker_job_information)? $seeker_job_information["salary_from"] : "" ?>" >
                                                 </div>
                                                 <div class="form-select form-text">
-                                                   <input  placeholder="Đến *"autocomplete="off" type="text"  size="12" name="salary_to" id="salary_to" maxlength="14" value="2000000">
+                                        
+                                                   <input  placeholder="Đến *"autocomplete="off" type="text"  size="12" name="salary_to" id="salary_to" maxlength="14" required  data-pristine-required-message="Không được để trống" 
+                                                   value="<?= !empty($seeker_job_information)?$seeker_job_information["salary_to"] : "" ?>"
+                                                   >
                                                 </div>
                                              </div>
                                              <div class="form-error"><span class="err_salary_unit" style="display:none"></span></div>
@@ -584,27 +628,67 @@
                                           </div>
                                           <div class="col-lg-8">
                                              <div class="row form-of-work">
+                                        
                                                 <div class="col-md-6">
                                                    <div class="form-group form-checkbox">
-                                                      <input type="checkbox" name="chkResumeType[]" checked="checked" id="chkResumeType_1" value="1">
+                                                      <input  
+
+                                                      <?php if(isset($seeker_type)){
+                                                            foreach ($seeker_type as $item):
+                                                           
+                                                               if($item["job_type_id"]==1){
+                                                                  echo "checked";
+                                                                  break;
+                                                               }
+                                                            endforeach;
+                                                      } ?>
+                                                      type="checkbox" name="chkResumeType[]" checked="checked" id="chkResumeType_1" value="1">
                                                       <label for="chkResumeType_1">Nhân viên chính thức</label>
                                                    </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                    <div class="form-group form-checkbox">
-                                                      <input type="checkbox" name="chkResumeType[]" id="chkResumeType_2" value="2">
+                                                      <input   
+                                                      <?php if(isset($seeker_type)){
+                                                            foreach ($seeker_type as $item):
+                                                               if($item["job_type_id"]==2){
+                                                                  echo "checked";
+                                                                  break;
+                                                               }
+                                                            endforeach;
+                                                      } ?>
+                                                      type="checkbox" name="chkResumeType[]" id="chkResumeType_2" value="2">
                                                       <label for="chkResumeType_2">Bán thời gian</label>
                                                    </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                    <div class="form-group form-checkbox">
-                                                      <input type="checkbox" name="chkResumeType[]" id="chkResumeType_3" value="3">
+                                                      <input  
+                                                      <?php if(isset($seeker_type)){
+                                                            foreach ($seeker_type as $item):
+                                                               if($item["job_type_id"]==3){
+                                                                  echo "checked";
+                                                                  break;
+                                                               }
+                                                            endforeach;
+                                                      } ?>
+                                                      
+                                                      type="checkbox" name="chkResumeType[]" id="chkResumeType_3" value="3">
                                                       <label for="chkResumeType_3">Thời vụ - Nghề tự do </label>
                                                    </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                    <div class="form-group form-checkbox">
-                                                      <input type="checkbox" name="chkResumeType[]" id="chkResumeType_4" value="4">
+                                                      <input   
+                                                      <?php if(isset($seeker_type)){
+                                                            foreach ($seeker_type as $item):
+                                                               if($item["job_type_id"]==4){
+                                                                  echo "checked";
+                                                                  break;
+                                                               }
+                                                            endforeach;
+                                                      } ?>
+                                                      type="checkbox" name="chkResumeType[]" id="chkResumeType_4" value="4">
                                                       <label for="chkResumeType_4">Thực tập</label>
                                                    </div>
                                                 </div>
@@ -619,7 +703,11 @@
                                           <div class="col-lg-8">
                                              <div class="switch-group">
                                                 <label for="chkWorkHome">Work from home
-                                                <input type="checkbox" name="chkWorkHome" id="chkWorkHome" value="1"><span class="slider"></span>
+                                                 
+                                                <input   
+                                       <?php if(isset($seeker_job_information["work_from_home"])&& $seeker_job_information["work_from_home"]==1) echo "checked";?>
+                                                type="checkbox" name="chkWorkHome" id="chkWorkHome" value="1">
+                                                <span class="slider"></span>
                                                 </label>
                                              </div>
                                           </div>
@@ -631,11 +719,21 @@
                                           <div class="col-lg-8">
                                              <div class="form-select-chosen">
                                                 <select multiple class="chosen-select-max-three" name="INDUSTRY_ID[]" id="INDUSTRY_ID" data-placeholder="Ngành nghề">
-                                                  
-                                       <?php foreach ($data_profession as $item):
-                                          echo " <option value='$item[id]'>$item[profession_name]</option>
-                                          uống</option>";
-                                       endforeach;?>
+                                  
+                                       <?php foreach ($data_profession as $key=>$item): ?>
+                                      
+                      <option 
+                      <?php
+                      if(isset($informationProfession[$key])){
+                        if($item["id"] == $informationProfession[$key]["seeker_profession_id"]){
+                           echo 'selected';
+                        }
+                      }
+                         ?>
+                       value="<?= $item["id"] ?>">
+                       <?= $item["profession_name"] ?>
+                        </option>        
+                      <?php    endforeach;?>
                                                 </select>
                                               
                                              </div>
@@ -654,19 +752,9 @@
                                                    <div class="row">
                                                       <div class="col-lg-8">
                                                          <div class="select-group">
-                                                            <select name="location_id" class="" id="select_location_id_3"  >
-                                                               <option value="" >Chọn</option>
-                                                               <option value="4" >Hà Nội</option>
-                                                               <option value="8">Hồ Chí Minh</option>
-                                                               <option value="76">An Giang</option>
-                                                               <option value="64">Bà Rịa - Vũng Tàu</option>
-                                                               <option value="781">Bạc Liêu</option>
-                                                               <option value="281">Bắc Cạn</option>
-                                                               <option value="240">Bắc Giang</option>
-                                                               <option value="241">Bắc Ninh</option>
-                                                               <option value="75">Bến Tre</option>
-                                                     
-                                                            </select>
+                                                         <select name="location_id" class="" id="select_location_id_3">
+  
+</select>
                                                          </div>
                                                         
                                                       </div>
@@ -677,7 +765,7 @@
                                                    <div class="row">
                                                       <div class="col-4">
                                                          <div class="select-group">
-                                                            <select name="LOCATION_ID[]" class="" id="select_location_id_1" data-id="#select_district_id_1" onchange="loadDistrict(this);">
+                                                            <select name="LOCATION_ID[]" class="" id="select_location_id_1">
                                                                <option value="" disabled="disabled">Chọn</option>
                                                                <option value="4" disabled="disabled">Hà Nội</option>
                                                                <option value="8">Hồ Chí Minh</option>
@@ -881,9 +969,21 @@
                                              <div class="form-select-chosen">
                                                 <select multiple search="true" name="BENEFIT_ID[]" id="BENEFIT_ID" class="chosen-select-max-three" data-placeholder="Chọn" title="Chọn" >
                                                    
-                                                <?php foreach ($data_welfare as $item):
-                                    echo "<option value='$item[id]'>$item[welfare_type]</option>"; 
-                                                endforeach;?>
+                                                   <?php foreach ($data_welfare as $key => $item):?>
+                                             
+                                             
+                                                  
+                   <option
+                   <?php   
+                 
+                      if(isset($informationWelfare[$key])){
+                        if($item["id"]==$informationWelfare[$key]["seeker_welfare_id"]){
+                           echo 'selected';
+                        }
+                      }
+                      ?>
+                   value="<?= $item["id"] ?>"><?= $item["welfare_type"] ?></option>
+                                             <?php   endforeach;?>
                                                 </select>
                                              </div>
                                           </div>
@@ -891,7 +991,7 @@
                                        <textarea name="objective_job" id="objective_job" style="display:none"></textarea>
                                        <div class="form-group form-button">
                                           <div class="button-save button-center">
-                                             <button class="btn-gradient" type="submit" data-bs-dismiss="modal">Lưu Lại</button>
+                                             <button class="btn-gradient" type="submit">Lưu Lại</button>
                                           </div>
                                        </div>
                                     </form>
@@ -912,6 +1012,7 @@
                                  <div class="image"><img src="./img/dash-board/i4.png" alt=""></div>
                                  <div class="figcaption">
                                     <h3>Kinh nghiệm làm việc *</h3>
+                                   
                                     <div class="status error">
                                        <p>Chưa hoàn thành</p>
                                     </div>

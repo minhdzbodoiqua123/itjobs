@@ -13,10 +13,12 @@ const districtsUser=$('.districtsUser')
 const btn_infoUser=$(".btn-infoUser")
 
 const select_provinces=$("select[name='slcity']")
+
+
 const select_district=$("select[name='sldistrict']")
 const input_lastname=$("input[name='lastname']")
 const input_firstname=$("input[name='firstname']")
-
+const location_id=$("select[name='location_id']")
 const apiInfoUser="http://localhost//itjobs/jobseekers/my_profile/infoUser";
 // select_provinces.addEventListener("change", function(e){
 //   const id=this.value;
@@ -37,7 +39,7 @@ async function loadInfoUser(){
 
 async function displayInfoUser(data){
     const {provinces,districts,address,firstname,lastname}=data
- 
+  
     const nameUser=$(".nameUser")
     if(provinces && districts){
       const dataProvinces=await getData(`https://provinces.open-api.vn/api/p/${provinces}`);
@@ -51,8 +53,9 @@ async function displayInfoUser(data){
       addressUser.textContent=`${address},${nameDistricts},${nameProvinces}`;
       nameUser.textContent=firstname;
 
+      console.log(firstname);
       input_lastname.value=lastname
-      input_lastname.value=firstname
+      input_firstname.value=firstname
 
     }
 }
@@ -65,7 +68,17 @@ async function getData(url) {
 function addCommas(str){
   return str.replace(/^0+/, '').replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-
+salary_from.addEventListener("keyup",function (event){
+     
+  const value=this.value;
+  this.value=addCommas(value)
+  this.setAttribute('value', this.value);
+  })
+  salary_to.addEventListener("keyup",function (event){
+    const value=this.value;
+    this.value=addCommas(value)
+    this.setAttribute('value', this.value);
+    })
 
 async function getProvinces() {
   const api="https://provinces.open-api.vn/api/";
@@ -138,6 +151,7 @@ select_district.innerHTML = htmls;
 async function start() {
   displayProvinces(await getProvinces())
   displayInfoUser(await loadInfoUser()) 
+  desiredForm(await getProvinces());
 }
 
 
@@ -150,7 +164,16 @@ async function getDistrict(code) {
   return data.districts;
   
 }
-
+async function desiredForm(data){
+  const api=`http://localhost//itjobs/jobseekers/my_profile/seeker_job_information`;
+  const seeker_job_information=await getData(api)
+ const {provinces} =seeker_job_information
+  let htmls=`<option value="" selected style="display:none;">Chọn </option>`;
+  data.forEach(item=>{
+    htmls+=`<option ${+provinces==item.code?'selected' : ''}  value="${item.code}">${item.name}</option>`;
+})  
+  location_id.innerHTML=htmls
+} 
 
 select_provinces.addEventListener('change',async function() { 
   const code=this.value;  
@@ -159,30 +182,21 @@ select_provinces.addEventListener('change',async function() {
 
 })
 
-salary_from.addEventListener("keyup",function (event){
-     
-  const value=this.value;
-  this.value=addCommas(value)
-  this.setAttribute('value', this.value);
-  })
-  salary_to.addEventListener("keyup",function (event){
-    const value=this.value;
-    this.value=addCommas(value)
-    this.setAttribute('value', this.value);
-    })
+
 
     btn_infoUser.onclick=async () => {
    
       displayInfoUser(await loadInfoUser())
+   
     }
     window.onload = function () {
-
-      var form = document.getElementById("personalInfoForm");
+      //personalInfoForm
+      var personalInfoForm = document.getElementById("personalInfoForm");
     
-      var pristine = new Pristine(form);
+      var pristine = new Pristine(personalInfoForm);
+      
       var mobile = document.getElementById("mobile");
       var slcity = document.getElementById("slcity");
-
       
 
       pristine.addValidator(mobile, function(value) {
@@ -203,7 +217,9 @@ salary_from.addEventListener("keyup",function (event){
         return false;
     }, "Không được để trống", 5, false);
 
-      form.addEventListener('submit', function (e) {
+
+
+     personalInfoForm.addEventListener('submit', function (e) {
          e.preventDefault();
          var valid = pristine.validate();
          if (valid) {
@@ -214,7 +230,45 @@ salary_from.addEventListener("keyup",function (event){
    
       });
     
+      let desiredForm=document.getElementById("desired-form");
+      let pristine2 = new Pristine(desiredForm);
+
     
+
+
+      let select_level_id=document.getElementById("level_id");
+      let select_location_id_3=document.getElementById("select_location_id_3");
+  
+    pristine2.addValidator(select_level_id, function(value) {
+      if (value.length > 0) {
+          return true;
+      }
+      return false;
+  }, "Không được để trống", 5, false);
+
+  
+  pristine2.addValidator(select_location_id_3, function(value) {
+      
+    if (value.length > 0) {
+        return true;
+    }
+    return false;
+
+}, "Không được để trống", 2, false);
+
+
+  desiredForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var valid = pristine2.validate();
+    if (valid) {
+     e.target.submit(); 
+   } else {
+     // alert("Form is invalid");
+   }
+
+ });
+
+
     };
 
 

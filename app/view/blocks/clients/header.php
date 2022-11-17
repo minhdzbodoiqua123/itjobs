@@ -1,3 +1,5 @@
+<script defer src="<?= _WEB_ROOT . "/app/public/assets/clients/js/header.js" ?>"></script>
+
 <header>
     <div class="container-fluid">
         <div class="main-wrap">
