@@ -22,6 +22,12 @@
 .p-3{
    padding: 12px;
 }
+.border_orange{
+   border-bottom: 1px solid orange;
+}
+.border_orange_top{
+   border-top: 1px solid orange;
+}
 </style>
 <body class="my-profile-page">
 
@@ -1281,12 +1287,12 @@
          <div class="editCVtemplate-wrapper editCVtemplate">
             <div id="ZoneShowCVTemplate" class="cv-template-wrapper cv-template-15 fontCVRoboto clrYellow fontCVsize14">
                <div class="col-xs-12 subCVpage">
-                  <div class="top" style="text-align: center;">
+                  <div class="" style="text-align: center;">
                      <div class="iavatar">
                         <img src="https://images.careerbuilder.vn/jobseekers/20221105/6327211_1667640553_162916.png">		
                      </div>
                   </div>
-                  <div class="col-sm-12 col name" style="text-align: center;">
+                  <div class="col-sm-12 col name top border_orange" style="text-align: center; padding-bottom: 8px;">
                         <h2>NGUYỄN MINH</h2>
                         <h4>Frontend Developer</h4>
                         <div class="col-xs-12 main-contact">
@@ -1297,7 +1303,7 @@
                         </ul>
                      </div>
                      </div>
-                     <div class="col-sm-12 col" style="margin-top: 8px;">
+                     <div class="col-sm-12 col border_orange" style="margin-top: 8px; padding-bottom: 8px;">
                         <h3>Thông tin cá nhân</h3>
                         <ul class="contact">
                            <li class="flex">
@@ -1321,10 +1327,8 @@
                               <div class="annou">: Việt Nam</div>
                            </li>
                         </ul>
-                     </div>
-                  
-               
-                  <div class="col-sm-12 col" style="margin-top: 8px;">
+                     </div>      
+                  <div class="col-sm-12 col border_orange" style="margin-top: 8px; ">
                         <h3>Kỹ năng</h3>
                         <ul class="skill flex">
                            <li class="p-3">
@@ -1349,7 +1353,7 @@
                            </li>
                         </ul>
                      </div>
-                     <div class="col-md-12 col">
+                  <div class="col-md-12 col border_orange" style="padding-bottom: 8px; ">
                      <h3><span>Công Việc Mong Muốn</span></h3>
                      <div class="expected-job">
                         <ul class="contact">
@@ -1385,8 +1389,8 @@
                      </div>
                   </div>
                         
-                 <div class="grid grid-cols-2" style="margin-top: 8px;">
-                  <div class="col-sm-12 col">
+                 <div class="grid grid-cols-2 border_orange_top" style="margin-top: 8px; padding-top: 8px;">
+                  <div class="col-sm-12 col ">
                      <h3>Học Vấn</h3>
                         <div class="text-edt degree-name">Bằng cấp cao nhất: Trung học</div>
                         <div class="exp text-edt">
@@ -1408,8 +1412,6 @@
                      </div>
                   </div>
                  </div>
-                
-            
                   <div class="col-xs-12 ">
                      
                   </div>
