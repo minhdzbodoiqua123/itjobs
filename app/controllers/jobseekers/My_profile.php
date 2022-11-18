@@ -8,16 +8,19 @@ class My_profile extends Controller
         $condition = "id='$id'";
         $informationUser = $this->model("AccountUserModel")->get("user_account", $condition)->fetch(PDO::FETCH_ASSOC);
 
-        $informationProfession = $this->model("JobPositionModel")->get("seeker_profession_detail","user_account_id='$id'")->fetchAll(PDO::FETCH_ASSOC);
-        
+        $informationProfession = $this->model("JobPositionModel")->query("SELECT * FROM `seeker_profession_detail` join profession on seeker_profession_id= profession.id WHERE user_account_id='$id'")->fetchAll(PDO::FETCH_ASSOC);
+       
         $informationWelfare= $this->model("JobPositionModel")->get("seeker_welfare_detail","user_account_id='$id'")->fetchAll(PDO::FETCH_ASSOC);    
         $seeker_job_information= $this->model("JobPositionModel")->get("seeker_job_information","user_account_id='$id'")->fetch(PDO::FETCH_ASSOC); 
-         
-        $seeker_type= $this->model("JobPositionModel")->get("seeker_type","user_account_id='$id'")->fetchAll(PDO::FETCH_ASSOC); 
-
+         $seeker_resume_title= $this->model("JobPositionModel")->get("seeker_resume_title","user_account_id='$id'")->fetch(PDO::FETCH_ASSOC); 
+       
+        $seeker_type= $this->model("JobPositionModel")->query("SELECT job_type_id,job_type.id,job_type,seeker_type.user_account_id FROM `seeker_type` join job_type on job_type_id=job_type.id where seeker_type.user_account_id='$id'")->fetchAll(PDO::FETCH_ASSOC); 
+   
         $data_position = $this->model("JobPositionModel")->get("job_position")->fetchAll(PDO::FETCH_ASSOC);
         $data_welfare= $this->model("JobPositionModel")->get("job_welfare")->fetchAll(PDO::FETCH_ASSOC);
         $data_profession= $this->model("JobPositionModel")->get("profession")->fetchAll(PDO::FETCH_ASSOC);
+
+       
 
         $this->data["sub_content"]["informationUser"] = $informationUser;
         $this->data["sub_content"]["data_position"] = $data_position;
@@ -27,7 +30,11 @@ class My_profile extends Controller
         $this->data["sub_content"]["informationWelfare"] = $informationWelfare;
         
         $this->data["sub_content"]["seeker_job_information"] = $seeker_job_information;
+        $this->data["sub_content"]["seeker_resume_title"] = $seeker_resume_title;
+
         $this->data["sub_content"]["seeker_type"] = $seeker_type;
+
+       
 
         $this->data["content"] = "clients/my_profile";
         $this->render('layouts/client_layout', $this->data);
@@ -38,11 +45,11 @@ class My_profile extends Controller
        $data= $this->model("AccountUserModel")->get("user_account", $condition)->fetch(PDO::FETCH_ASSOC);
        echo json_encode($data);
     }
+ 
     public function seeker_job_information(){
         $id = isset($_SESSION["user"]["id"])? $_SESSION["user"]["id"]:"";
         $data= $this->model("JobPositionModel")->get("seeker_job_information","user_account_id='$id'")->fetch(PDO::FETCH_ASSOC); 
        echo json_encode($data);
-
     }
     public function UpdateProfile()
     {
@@ -152,9 +159,12 @@ class My_profile extends Controller
 
             $data=[
                 "user_account_id"=>"'$user_account_id'",
-                "resume_title"=>"'$resume_title'"
+                "resume_title"=>"'$resume_title'",
+                "status"=>"'1'"
             ];
-            $this->model("SeekerProfile")->insert("seeker_resume_title",$data);
+$this->model("SeekerProfile")->update("seeker_resume_title",$data,"user_account_id =$user_account_id ");
+            $this->redirect('jobseekers/my_profile');
+
         }
     }
 }

@@ -9923,6 +9923,7 @@ only screen and (min-resolution:1.5dppx) {
 .widget-13 .widget-body table tr td {
     padding: 7px 15px;
     font-size: 16px;
+    font-weight:500;
 }
 
 .widget-13 .widget-body table tr td:first-child {
@@ -9935,7 +9936,7 @@ only screen and (min-resolution:1.5dppx) {
 
 .widget-13 .widget-body table tr td:last-child {
     color: #5d677a;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 @media (max-width:1440px) {
@@ -11389,7 +11390,7 @@ only screen and (min-resolution:1.5dppx) {
     padding: 7px 15px;
     color: #5d677a;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .widget-18 .widget-body table td ul {

@@ -38,8 +38,9 @@ async function loadInfoUser(){
 
 
 async function displayInfoUser(data){
+  console.log(data);
     const {provinces,districts,address,firstname,lastname}=data
-  
+
     const nameUser=$(".nameUser")
     if(provinces && districts){
       const dataProvinces=await getData(`https://provinces.open-api.vn/api/p/${provinces}`);
@@ -147,10 +148,20 @@ function displayDistrict(data){
 select_district.innerHTML = htmls; 
 }
      
+async function displayJobInfo(){
+  const api=`http://localhost//itjobs/jobseekers/my_profile/seeker_job_information`;
+  const seeker_job_information=await getData(api)
+  const workplace=$(".workplace")
+  const {provinces} =seeker_job_information
+  const dataProvinces=await getData(`https://provinces.open-api.vn/api/p/${provinces}`);
+  const {name}=dataProvinces
+  workplace.textContent=name
+}
 
 async function start() {
   displayProvinces(await getProvinces())
   displayInfoUser(await loadInfoUser()) 
+  displayJobInfo()
   desiredForm(await getProvinces());
 }
 

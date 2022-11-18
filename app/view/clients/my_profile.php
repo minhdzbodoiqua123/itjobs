@@ -101,7 +101,9 @@
                                           <h2>Một Ba</h2>
                                        </div>
                                        <div class="information">
-                                          <div class="assistant" id="titleresume_17611557">Nhân viên nhân sự</div>
+                                          <div class="assistant" id="titleresume_17611557">
+
+                                          </div>
                                        </div>
                                     </div>
                                  </div>
@@ -117,10 +119,10 @@
                               </div>
                               <div class="col-lg-8 col-xl-9">
                                  <div class="cb-name">
-                                    <h2 id="section_name">Một Ba</h2>
+                                    <h2 id="section_name"><?= $informationUser["firstname"]." ". $informationUser["lastname"] ?></h2>
                                  </div>
                                  <div class="information">
-                                    <div class="assistant">Nhân viên nhân sự</div>
+                                    <div class="assistant"><?= !empty($seeker_resume_title["resume_title"]) ? $seeker_resume_title["resume_title"]: "Chưa cập nhập"  ?></div>
                                  </div>
                                  <div id="complete_section">
                                     <div class="progress-bar-status incomplete">
@@ -180,11 +182,20 @@
                               <div class="figure">
                                  <div class="image"><img src="./img/dash-board/i14.png" alt=""></div>
                                  <div class="figcaption">
-                                    <h3>Tiêu đề hồ sơ *</h3>
-
-                                    <div class="status success">
-                                       <p>Hoàn thành</p>
-                                    </div>
+                                 <h3>Tiêu đề hồ sơ *</h3>
+                     
+                     <?php 
+                       if(!empty($seeker_resume_title) && $seeker_resume_title["status"]==1 ){
+                                echo " <div class='status success'>
+                                     <p>Hoàn thành</p>
+                                  </div>";
+                       }
+                       else{
+                        echo " <div class='status error'>
+                        <p>Chưa hoàn thành</p>
+                     </div>";
+                       }
+                      ?>
                                  </div>
                               </div>
                               <div class="right-action">
@@ -216,7 +227,7 @@
                                           </div>
                                           <div class="col-lg-8">
                                              <div class="input-group">
-                                                <input type="text" value="Nhân viên nhân sự" name="resume_title" id="resume_title" class="keyword" maxlength="400" autocomplete="off">
+                                                <input type="text" value="<?= !empty($seeker_resume_title["resume_title"]) ? $seeker_resume_title["resume_title"]:"" ?>" name="resume_title" id="resume_title" class="keyword" maxlength="400" autocomplete="off">
                                              </div>
                                              <div class="form-error"><span class="err_resume_title"></span></div>
                                           </div>
@@ -232,9 +243,20 @@
                            </div>
                         </div>
                         <div class="widget-body">
-                           <div class="content">
-                              <p>Nhân viên nhân sự</p>
+                           <?php if(!empty($seeker_resume_title["resume_title"])){?>
+                             
+                              <div style="padding-left:20px;" class="content">
+              <p><?= $seeker_resume_title["resume_title"]?></p>
                            </div>
+                           <?php } else {?>
+                              <div class="no-content">
+                <p>Tiêu đề hồ sơ</p
+                <a href="javascript:void(0)" data-bs-target="#tieudehoso"></a>
+                <a data-bs-toggle="modal" data-bs-target="#tieudehoso" href="javascript:void(0)"> <em class="mdi mdi-plus-circle"></em><span>Chỉnh sửa</span></a>
+        </div>
+                              <?php }?>
+                          
+                      
                            <input type="hidden" id="title_hidden_value" value="Nhân viên nhân sự">
                         </div>
                      </div>
@@ -557,30 +579,78 @@
                         <div class="widget-body">
                            <table>
                               <tbody>
+                                     <tr>
+                                    <td>Cấp bậc mong muốn</td>
+                                    <td>
+   <?php 
+      foreach ($data_position as $item) {
+         if(!empty($seeker_job_information["position_id"])) {
+         if($seeker_job_information["position_id"]==$item["id"]) {
+            echo $item["position"];
+            break;
+         }
+      }
+   }?>
+                                    </td>
+                                 </tr>
                                  <tr>
                                     <td>Mức lương</td>
                                     <td>
+      <?php  if(!empty($seeker_job_information["salary_from"] && !empty($seeker_job_information["salary_to"]))) {
+        echo $seeker_job_information["salary_from"]."-".$seeker_job_information["salary_to"] ." VND";
+                                 }
+                                  ?>
                                     </td>
                                  </tr>
                                  <tr>
                                     <td>Hình thức làm việc</td>
-                                    <td></td>
+                                    <td>
+                                       <?php if(!empty($seeker_type)){
+                                         $valueStr = '';
+                                          foreach ($seeker_type as $value) {
+                                       $valueStr .= " $value[job_type] " . ',';
+                                          }
+                                   $valueStr = rtrim($valueStr, ',');
+                                          echo $valueStr;
+                                       }  
+                                     
+                                  
+                                    ?></td>
                                  </tr>
+                                 <?php if($seeker_job_information["work_from_home"]==1) { ?>
+                                    <tr>
+                                    <td>Phương thức công việc</td>
+                                    <td>
+                                    Work from home
+                                    </td>
+                                 </tr> 
+                                    <?php }?>
+
+                                    
+                                    
                                  <tr>
                                     <td>Ngành nghề</td>
                                     <td>
                                        <ul>
-                                          <li></li>
+                                       <?php if(!empty($informationProfession)){
+                                   
+                                          foreach ($informationProfession as $value) {
+                                             
+                                             echo "<li> $value[profession_name]</li>";
+                                     
+                                          }
+                                  
+                                          
+                                       }  
+                                    ?>
                                        </ul>
+                                    
                                     </td>
                                  </tr>
                                  <tr>
                                     <td>Nơi làm việc</td>
-                                    <td>
-                                       <ul>
-                                          <li></li>
-                                          <li></li>
-                                       </ul>
+                                    <td class="workplace">
+                                     
                                     </td>
                                  </tr>
                               </tbody>
@@ -742,11 +812,15 @@
                                       
                       <option 
                       <?php
-                      if(isset($informationProfession[$key])){
-                        if($item["id"] == $informationProfession[$key]["seeker_profession_id"]){
-                           echo 'selected';
-                        }
-                      }
+                      
+                          foreach ($informationProfession as $itemProfession) {
+                             if($item["id"]==$itemProfession["seeker_profession_id"] ){
+                                echo 'selected';
+                             }
+                           
+                          }
+                             
+                    
                          ?>
                        value="<?= $item["id"] ?>">
                        <?= $item["profession_name"] ?>
@@ -881,7 +955,7 @@
                                                    <div class="row">
                                                       <div class="col-4">
                                                          <div class="select-group">
-                                                            <select name="LOCATION_ID[]" class="" id="select_location_id_2" data-id="#select_district_id_2" onchange="loadDistrict(this);">
+                                                            <select name="LOCATION_ID[]" class="" id="select_location_id_2" data-id="#select_district_id_2">
                                                                <option value="" disabled="disabled">Chọn</option>
                                                                <option value="4" disabled="disabled">Hà Nội</option>
                                                                <option value="8">Hồ Chí Minh</option>
@@ -987,19 +1061,18 @@
                                              <div class="form-select-chosen">
                                                 <select multiple search="true" name="BENEFIT_ID[]" id="BENEFIT_ID" class="chosen-select-max-three" data-placeholder="Chọn" title="Chọn" >
                                                    
-                                                   <?php foreach ($data_welfare as $key => $item):?>
-                                             
-                                             
-                                                  
+                     <?php foreach ($data_welfare as $key => $item):?>
+             
                    <option
                    <?php   
-                 
-                      if(isset($informationWelfare[$key])){
-                        if($item["id"]==$informationWelfare[$key]["seeker_welfare_id"]){
-                           echo 'selected';
-                        }
-                      }
+                  foreach ($informationWelfare as $itemWelfare) {
+                     if($item["id"]==$itemWelfare["seeker_welfare_id"] ){
+                        echo 'selected';
+                     }
+                   
+                  }
                       ?>
+                    
                    value="<?= $item["id"] ?>"><?= $item["welfare_type"] ?></option>
                                              <?php   endforeach;?>
                                                 </select>
