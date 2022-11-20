@@ -2855,13 +2855,13 @@ body.compensate-for-scrollbar {
     background: transparent;
     border: 0;
     border-radius: 0;
-    color: #ccc;
+    color: black;
     cursor: pointer;
     opacity: .8;
     padding: 8px;
     position: absolute;
-    right: -12px;
-    top: -44px;
+    right: -5px;
+    top: 0px;
     z-index: 401;
 }
 
@@ -3074,9 +3074,7 @@ body.compensate-for-scrollbar {
     .fancybox-slide--image {
         padding: 6px 0;
     }
-    .fancybox-close-small {
-        right: -6px;
-    }
+ 
     .fancybox-slide--image .fancybox-close-small {
         background: #4e4e4e;
         color: #f2f4f6;
@@ -6474,7 +6472,7 @@ only screen and (min-resolution:1.5dppx) {
 
 .widget-2 .widget-body .image img {
     -o-object-fit: cover;
-    width: 1005;
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -16530,7 +16528,7 @@ header.header-dashboard .mobile-menu .menu .menu-logged ul li.dropdown-mobile .d
 }
 
 .tips-modal {
-    max-width: 500px;
+   
     padding: 0;
 }
 
@@ -18772,8 +18770,9 @@ header.header-dashboard .mobile-menu .menu .menu-logged ul li.dropdown-mobile .d
     margin: .25rem
 }
 @media (min-width:576px) {
+
     .modal-dialog {
-        max-width: 550px;
+        max-width: 800px;
         margin: 1.75rem auto
     }
     .modal-dialog-scrollable {

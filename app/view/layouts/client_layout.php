@@ -10,7 +10,8 @@
     <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script defer src="<?= _WEB_ROOT . "/app/library/pristinejs/dist/pristine.js" ?>"></script>
     <script defer src="<?= _WEB_ROOT . "/app/library/flatpickr/dist/flatpickr.js" ?>"></script>
-   
+    <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 
     <script defer src="<?= _WEB_ROOT . "/app/global/js/multi-select-dropdown.js" ?>"></script>
     <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/library/flatpickr/dist/flatpickr.min.css" ?>">

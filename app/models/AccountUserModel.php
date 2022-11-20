@@ -6,7 +6,7 @@ class AccountUserModel extends Database
     public function insertUser($data)
     {
        $this->insert($this->table, $data);
-          return  $this->lastInsertId();
+       return  $this->lastInsertId();
 
     }
  

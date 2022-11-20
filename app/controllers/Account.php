@@ -21,19 +21,26 @@ class Account extends Controller
 
             if ($result->rowCount() == 0) {
                 $data = [
-                    "firstname" => "'$firstname'",
-                    "lastname" => "'$lastname'",
                     "email" => "'$email'",
                     "password" => "'$password'",
                     "user_type_id" => "'$user_type_id'",
                 ];
                 $lastId = $this->model("AccountUserModel")->insertUser($data);
-                $this->model("SeekerProfile")->insertData(
+                
+                $this->model("SeekerProfileModel")->insertData(
                     [
-                        "user_account_id " => "'$lastId'"
+                        "user_account_id " => "'$lastId'",
+                        "firstname" => "'$firstname'",
+                        "lastname" => "'$lastname'",
                     ]
                 );
-                $this->model("SeekerProfile")->insert(
+                $this->model("SeekerProfileModel")->insert(
+                    "seeker_address_detail",
+                    [
+                        "user_account_id " => "'$lastId'",
+                    ]
+                );
+                $this->model("SeekerProfileModel")->insert(
                     "seeker_resume_title",
                     [
                         "user_account_id " => "'$lastId'"
@@ -41,7 +48,7 @@ class Account extends Controller
                 );
 
 
-                // $this->redirect("account/login");
+                $this->redirect("account/login");
             } else {
                 $this->data["sub_content"]["error"] = "Email của bạn đã tồn tại";
             }

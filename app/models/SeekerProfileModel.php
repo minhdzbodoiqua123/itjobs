@@ -1,5 +1,5 @@
 <?php
-class SeekerProfile extends Database
+class SeekerProfileModel extends Database
 {
    protected $table="seeker_profile";
    public function insertData($data){

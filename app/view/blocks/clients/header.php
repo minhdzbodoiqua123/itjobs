@@ -152,7 +152,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="<?= _WEB_ROOT . '/account/logout' ?>" rel="nofollow">
+                                <a onclick="return localStorage.removeItem('scrollPosition');" href="<?= _WEB_ROOT . '/account/logout' ?>" rel="nofollow">
                                     Thoát
                                 </a>
                             </li>

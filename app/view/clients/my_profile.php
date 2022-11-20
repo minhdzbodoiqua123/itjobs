@@ -2,9 +2,15 @@
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/clients/css/my_profile.css" ?>">
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css" ?>">
 
-<script defer src="<?= _WEB_ROOT . "/app/public/assets/clients/js/my_profile.js" ?>"></script>
+<script defer   src="<?= _WEB_ROOT . "/app/public/assets/clients/js/my_profile.js" ?>"></script>
+<script defer src="<?= _WEB_ROOT . "/app/public/assets/clients/js/handleExperienceForm.js" ?>">
+</script>
+
 
 <style>
+   html{
+      scroll-behavior: smooth;
+   }
    a{
       cursor: pointer;
    }
@@ -31,8 +37,161 @@
 .border_orange_top{
    border-top: 1px solid orange;
 }
+.file-input__input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.file-input{
+   text-align: center;
+}
+.file-input__label {
+  min-width: 150px;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4245A8;
+  font-size: 14px;
+  padding: 6px 12px;
+  border: 2px dotted #4245A8;
+}
+
+.file-input__label:hover {
+  background-color: rgba(66, 69, 168, 0.25);
+}
+
+.file-input__label svg {
+  height: 16px;
+  margin-right: 4px;
+}
+.cv-template-15 .iavatar {
+    position: relative;
+    width: 154px;
+    height: 154px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 145px;
+    -webkit-box-radius: 145px;
+    -moz-box-radius: 145px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.cv-template-15 h2 {
+    padding-top: 15px;
+}
+.cv-template-15 h4 {
+   margin-bottom: 20px;
+  
+}
+.cv-template-15 .main-contact i.fa {
+    padding: 4px 10px 0 0;
+}
+.cv-template-15 .main-contact li{
+   padding-bottom:5px;
+}
+.cv-template-15 .top {
+   
+    width: 100%;
+    margin-top: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}  
+.cv-template-15 .top {
+    background-image: url(https://static.careerbuilder.vn/themes/cvhaynew/images/template-15-yellow-top.png);
+}
+.cv-template-15 .iavatar img {
+    position: absolute;
+    left: 9px;
+    top: 9px;
+    width: 135px;
+    height: 135px;
+    border-radius: 135px;
+    -webkit-box-radius: 135px;
+    -moz-box-radius: 135px;
+}
+ .head-modal .icon {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    min-width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+}
+ .head-modal {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    padding-right: 30px;
+    background: #f3f3f3;
+}
+.head-modal .title {
+    padding-left: 15px;
+}
+ .head-modal .icon em {
+    color: #2f4ba0;
+    font-size: 44px;
+}
+.swal2-actions{
+   gap:10px;
+}
+.swal2-cancel{
+
+}
+.btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    padding: 0.5rem 0.75rem;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-size: 1rem;
+    line-height: 1.25;
+    border-radius: 0.25rem;
+    transition: all 0.15s ease-in-out;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    padding: 0.5rem 0.75rem;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-size: 1rem;
+    line-height: 1.25;
+    border-radius: 0.25rem;
+    transition: all 0.15s ease-in-out;
+}
 </style>
-<body class="my-profile-page">
+
+<body class="my-profile-page"  >
+
 
    <main>
       <div class="page-content d-flex align-items-stretch">
@@ -94,7 +253,7 @@
                               <div class="col-lg-4 col-xl-3">
                                  <div class="img-info">
                                     <div class="figure">
-                                       <div class="image img-result hide"><img id="img_mem_avatar" class="cropped" src="https://images.careerbuilder.vn/jobseekers/20221105/6327211_1667640553_162916.png" alt=""></div>
+                                       <div class="image img-result hide"><img id="img_mem_avatar" class="cropped" src="<?= _WEB_ROOT.'/app/public/assets/clients/images/'.$informationUser["location_image"] ?>" ></div>
                                     </div>
                                     <div class="mobile-show">
                                        <div class="cb-name">
@@ -108,18 +267,42 @@
                                     </div>
                                  </div>
                                  <div class="action-profile">
-                                    <ul>
-                                       <li class="edit-pro">
-                                          <input class="hidden" onchange="return ajaxFileUpload();" type="file" class="file" id="fileAvatar" name="fileAvatar">
-                                          <a onclick="choose_file();" id="upload-image"><em class="material-icons">add_photo_alternate</em><span>Tải hình ảnh</span></a>
-                                       </li>
-                                       <li class="view-pro"><a onclick="removeAvarta();"> <em class="material-icons">highlight_off</em><span>Xóa hình ảnh</span></a></li>
-                                    </ul>
+                                 <div class="file-input">
+                                    <!-- upload avatar -->
+                                 <form action="my_profile/upload_Avatar_User" method="post"  enctype="multipart/form-data">
+                                 <input
+        type="file"
+        name="file-input"
+        id="file-input"
+        class="file-input__input"
+      />
+      <label class="file-input__label" for="file-input">
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fas"
+          data-icon="upload"
+          class="svg-inline--fa fa-upload fa-w-16"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+        >
+          <path
+            fill="currentColor"
+            d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+          ></path>
+        </svg>
+        <span>Upload file</span></label
+      >  
+      <button type="submit"style="margin-top:50px;padding:6px 14px;width: 152px; ">Lưu thay đổi</button>
+                                 </form>
+                                </div>
                                  </div>
+                                 
                               </div>
                               <div class="col-lg-8 col-xl-9">
                                  <div class="cb-name">
-                                    <h2 id="section_name"><?= $informationUser["firstname"]." ". $informationUser["lastname"] ?></h2>
+                                    <h2 id="section_name"><?= $informationUser["lastname"]." ". $informationUser["firstname"] ?></h2>
                                  </div>
                                  <div class="information">
                                     <div class="assistant"><?= !empty($seeker_resume_title["resume_title"]) ? $seeker_resume_title["resume_title"]: "Chưa cập nhập"  ?></div>
@@ -183,7 +366,6 @@
                                  <div class="image"><img src="./img/dash-board/i14.png" alt=""></div>
                                  <div class="figcaption">
                                  <h3>Tiêu đề hồ sơ *</h3>
-                     
                      <?php 
                        if(!empty($seeker_resume_title) && $seeker_resume_title["status"]==1 ){
                                 echo " <div class='status success'>
@@ -199,7 +381,7 @@
                                  </div>
                               </div>
                               <div class="right-action">
-                                 <div class="tips p1" onclick="openTipSlide('tip-t-resume')">
+                                 <div class="tips p1"data-bs-toggle="modal" data-bs-target="#tip-t-resume">
                                     <div class="icon">
                                        <em class="mdi mdi-lightbulb"></em>
                                     </div>
@@ -216,7 +398,7 @@
                            <div class="modal-dialog modal-dialog-centered">
                               <div class="modal-content">
                                  <div class="modal-header">
-                                    <h2 class="modal-title" id="exampleModalLabel">Tiêu đề hồ sơ</h2>
+                                    <h2 class="modal-title"    >Tiêu đề hồ sơ</h2>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                  </div>
                                  <div class="modal-body">
@@ -323,7 +505,7 @@
                                        <td>Email</td>
                                        <td><?= $informationUser["email"]  ?></td>
                                     </tr>
-                                 
+
                                     <tr>
                                
                                        <td>Tình trạng hôn nhân</td>
@@ -363,7 +545,7 @@
                         <div style="width:730px;" class="modal-dialog modal-dialog-centered">
                            <div class="modal-content">
                               <div class="modal-header">
-                                 <h2 class="modal-title" id="exampleModalLabel">Thông tin cá nhân</h2>
+                                 <h2 class="modal-title"    >Thông tin cá nhân</h2>
                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body">
@@ -394,15 +576,15 @@
                                           <div class="form-group form-radio">
                                              <p style="width:100%;">* Giới tính</p>
                                              <div class="gender">
-                                                <input <?php if($informationUser["gender"]=="0") {echo 'checked';}  ?>  type="radio" id="gender_m" value="0" checked="checked" name="gender">
+                                                <input <?php if($informationUser["gender"]=="1") {echo 'checked';}  ?>  type="radio" id="gender_m" value="1" checked="checked" name="gender">
                                                 <label for="gender_m">Nam</label>
                                              </div>
                                              <div class="gender">
-                                                <input <?php if($informationUser["gender"]=="1") {echo 'checked';}  ?> type="radio" id="gender_f" value="1" name="gender">
+                                                <input <?php if($informationUser["gender"]=="2") {echo 'checked';}  ?> type="radio" id="gender_f" value="2" name="gender">
                                                 <label for="gender_f">Nữ</label>
                                              </div>
                                              <div class="gender">
-                                                <input <?php if($informationUser["gender"]=="2") {echo 'checked';}  ?> type="radio" id="gender_other" value="2" name="gender">
+                                                <input <?php if($informationUser["gender"]=="3") {echo 'checked';}  ?> type="radio" id="gender_other" value="3" name="gender">
                                                 <label for="gender_other">Khác</label>
                                              </div>
                                              <span class="err_gender" style="display:none"></span>
@@ -442,12 +624,12 @@
                                              <label for="">* Tình trạng hôn nhân</label>
                                              <select name="slMarritial">
                                              <option <?php 
-                                                if($informationUser["marital_status"]==0)
+                                                if($informationUser["marital_status"]==1)
                                                 {echo 'selected';} 
                                                
                                                
                                                ?> value="1" >Độc thân</option>
-                                                <option <?php if($informationUser["marital_status"]==1){echo 'selected';} ?>  value="2">Đã kết hôn</option>
+                                                <option <?php if($informationUser["marital_status"]==2){echo 'selected';} ?>  value="2">Đã kết hôn</option>
                                              
                                              </select>
                                            
@@ -583,20 +765,17 @@
                                     <td>Cấp bậc mong muốn</td>
                                     <td>
    <?php 
-      foreach ($data_position as $item) {
-         if(!empty($seeker_job_information["position_id"])) {
-         if($seeker_job_information["position_id"]==$item["id"]) {
-            echo $item["position"];
-            break;
-         }
+    
+         if(!empty($seeker_job_information["position"])) { 
+            echo $seeker_job_information["position"];
       }
-   }?>
+   ?>
                                     </td>
                                  </tr>
                                  <tr>
                                     <td>Mức lương</td>
                                     <td>
-      <?php  if(!empty($seeker_job_information["salary_from"] && !empty($seeker_job_information["salary_to"]))) {
+      <?php  if(isset($seeker_job_information["salary_from"])) {
         echo $seeker_job_information["salary_from"]."-".$seeker_job_information["salary_to"] ." VND";
                                  }
                                   ?>
@@ -617,7 +796,7 @@
                                   
                                     ?></td>
                                  </tr>
-                                 <?php if($seeker_job_information["work_from_home"]==1) { ?>
+     <?php if(isset($seeker_job_information["work_from_home"])==1) { ?>
                                     <tr>
                                     <td>Phương thức công việc</td>
                                     <td>
@@ -660,7 +839,7 @@
                            <div class="modal-dialog">
                               <div class="modal-content">
                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Thông tin nghề nghiệp</h5>
+                                    <h2 class="modal-title"    >Thông tin nghề nghiệp</h2>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                  </div>
                                  <div class="modal-body">
@@ -730,7 +909,7 @@
                                                                }
                                                             endforeach;
                                                       } ?>
-                                                      type="checkbox" name="chkResumeType[]" checked="checked" id="chkResumeType_1" value="1">
+                                                      type="checkbox" name="chkResumeType[]"     id="chkResumeType_1" value="1">
                                                       <label for="chkResumeType_1">Nhân viên chính thức</label>
                                                    </div>
                                                 </div>
@@ -844,7 +1023,7 @@
                                                    <div class="row">
                                                       <div class="col-lg-8">
                                                          <div class="select-group">
-                                                         <select name="location_id" class="" id="select_location_id_3">
+                                                         <select    name="location_id" class="" id="select_location_id_3">
   
 </select>
                                                          </div>
@@ -1103,10 +1282,20 @@
                                  <div class="image"><img src="./img/dash-board/i4.png" alt=""></div>
                                  <div class="figcaption">
                                     <h3>Kinh nghiệm làm việc *</h3>
-                                   
-                                    <div class="status error">
-                                       <p>Chưa hoàn thành</p>
-                                    </div>
+                                       <?php 
+                              
+                       if(!empty($seeker_experience_detail) && $seeker_experience_detail[0]["status"]==1 ){
+                                echo " <div class='status success'>
+                                     <p>Hoàn thành</p>
+                                  </div>";
+                       }
+                       else{
+                        echo " <div class='status error'>
+                        <p>Chưa hoàn thành</p>
+                     </div>";
+                       }
+                       ?>
+                                  
                                  </div>
                               </div>
                               <div class="right-action">
@@ -1116,39 +1305,281 @@
                                     </div>
                                     <p>Tips</p>
                                  </div>
-                                 <div class="link-add"><a onclick="show_frmExperience(0);" title="Thêm mới"> <em class="material-icons">add</em><span>Thêm mới</span></a></div>
+                                 <div class="link-add"><a data-bs-toggle="modal" data-bs-target="#kinhnghiemlamviec" title="Thêm mới"> <em class="material-icons">add</em><span>Thêm mới</span></a></div>
                               </div>
                            </div>
                         </div>
                         <div class="widget-body">
-                           <div class="no-content">
-                              <p>Bạn hãy thêm kinh nghiệp làm việc của mình để nhà tuyển dụng tham khảo</p>
-                              <a onclick="show_frmExperience(0);"><em class="mdi mdi-plus-circle"></em><span>Thêm mới</span></a>
+                        <div class="modal fade " id="year_of_experience" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog" >
+                           <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                    <h2 class="modal-title">Tiêu đề hồ sơ</h2>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                 </div>
+                                 <div class="modal-body">
+                                 <form name="frm_Experience" id="frm_Experience">
+         <div class="form-group row">
+            <div class="col-lg-4">
+               <label for="">Số năm kinh nghiệm</label>
+            </div>
+            <div class="col-lg-8">
+               <div class="input-group">
+                  <input type="number" class="exp-yet valid" maxlength="2" name="yearOfExperience" id="yearOfExperience" min="1" max="55" value="0" disabled="">
+               </div>
+               <div class="form-error"><span class="err_yearOfExperience" style="display: none;"></span></div>
+               <div class="form-group form-checkbox mt-1">
+                  <input type="checkbox" id="not_experence" name="not_experence" checked="checked" value="1" style="margin-right: 5px;" class="valid">
+                  <label class="no-exp-yet" for="not_experence">Chưa có kinh nghiệm</label>
+               </div>
+            </div>
+         </div>
+         <div class="form-group row">
+            <div class="col-lg-4">
+               <label for="">Cấp bậc hiện tại</label>
+            </div>
+            <div class="col-lg-8">
+               <div class="select-group">
+                  <select name="levelcurrent_id" id="levelcurrent_id" style="float: left; width: 200px; margin-bottom:5px">
+                     <option value="">Chọn</option>
+                     <option value="1">Sinh viên/ Thực tập sinh</option>
+                     <option value="2">Mới tốt nghiệp</option>
+                     <option value="3">Nhân viên</option>
+                     <option value="4">Trưởng nhóm / Giám sát</option>
+                     <option value="5">Quản lý</option>
+                     <option value="6">Phó Giám đốc</option>
+                     <option value="7">Giám đốc </option>
+                     <option value="8">Tổng giám đốc</option>
+                     <option value="9">Chủ tịch / Phó Chủ tịch</option>
+                  </select>
+               </div>
+               <div class="form-error"><span class="err_levelcurrent_id" style="display:none"></span></div>
+            </div>
+         </div>
+         <div class="form-group form-button">
+            <div class="button-save button-center">
+        <button class="btn-gradient" type="button" onclick="return saveFrmExperience();">Lưu Lại</button>
+            </div>
+         </div>
+      </form>
+                                 </div>
+                              </div>
                            </div>
                         </div>
-                        <div class="widget-body">
-                           <div class="experience">
+                             <div style="margin-top:10px"class="experience">
                               <table>
                                  <tbody>
                                     <tr>
                                        <td>Số năm kinh nghiệm</td>
                                        <td id="txt-experience">1 </td>
                                        <td>
-                                          <div class="link-edit"><a onclick="editFrmExperience();"> <em class="material-icons">create</em></a></div>
+                       <div class="link-edit" ><a data-bs-target="#year_of_experience" data-bs-toggle="modal"> <em class="material-icons">create</em></a></div>
                                        </td>
                                     </tr>
                                     <tr>
                                        <td>Cấp bậc hiện tại</td>
                                        <td id="cbprofile_levelpresent">Sinh viên/ Thực tập sinh</td>
                                        <td>
-                                          <div class="link-edit"><a onclick="editFrmExperience();"> <em class="material-icons">create</em></a></div>
+                                          <div class="link-edit" ><a  data-bs-target="#year_of_experience" data-bs-toggle="modal"> <em class="material-icons">create</em></a></div>
                                        </td>
                                     </tr>
                                  </tbody>
                               </table>
                            </div>
+                           <?php if($count_exp==0) {?>
+                              <div class="no-content">
+                              <p>Bạn hãy thêm kinh nghiệp làm việc của mình để nhà tuyển dụng tham khảo</p>
+                              <a data-bs-target="#kinhnghiemlamviec" data-bs-toggle="modal"><em class="mdi mdi-plus-circle"></em><span>Thêm mới</span></a>
+                           </div>
+                         
+                              <?php } else {?>
+                               
+                           <div class="sticker">
+                           <ul class="list-sticker">
+                            
+                                 <?php if(!empty($seeker_experience_detail)) { ?>
+                                    <?php foreach ($seeker_experience_detail as $item):  ?>
+                                       <li class="item" id="expList_<?= $item["id"]?>">
+                                 <div class="head-sticker active">
+                                    <div class="title">
+                                       <h4><?= $item["rexp_title"] ?></h4>
+                                       <div class="sub-title">
+                                          <p><?= $item["rexp_company"] ?></p>
+                                       </div>
+                                       <div class="date">
+                                          <p><?= $item["experCurrent"]==0 ? $item["start_job"].'-'.$item["end_job"] : $item["start_job"].'-'."Hiện tại" ?> </p>
+                                       </div>
+                                    </div>
+                                    <div class="right-head">
+      
+                                       <ul class="list-action">
+                                          <li class="edit-link"><a href="javascript:void(0);" title="Chỉnh sửa" onclick="show_frmExperience(<?= $item['id']?>);"> <em class="material-icons">create</em></a></li>
+                                          <li class="delete">
+                                             <form id="delete_resume_experience" action="my_profile/delete_resume_experience" method="post"> 
+                                                <input type="hidden" name="rexp_id" value="<?= $item['id'] ?>">
+                                             <button onclick="deleteExperience(<?= $item['id'] ?>)" style="background-color:transparent;" title="Xóa" type="button"> 
+                                                <em class="material-icons">highlight_off</em>
+                                             </form>
+                                         
+                                          </a>
+                                       </li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                                 <div class="body-sticker" style="display: block;">
+                                    <div class="content"> <?= $item["rexp_workdesc"] ?> </div>
+                                 </div>
+                              </li>
+                               <?php  endforeach;?> 
+                                    
+                                            
+                                    <?php }?>
+                              
+                              
+                           </ul>
+                        </div>
+
+                                 <?php }?>
+                        
+                        </div>
+                        <div class="widget-body">
+                        
                         </div>
                      </div>
+
+                        <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="kinhnghiemlamviec"        tabindex="-1" aria-modal="true" role="dialog">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h2 class="modal-title">Kinh Nghiệm Làm Việc</h2>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+         <form name="experience-form" id="experience-form" method="post"                  
+         action="my_profile/insert_resume_experience">
+      <input type="hidden" value="0" name="rexp_id" id="rexp_id">
+      <div class="form-group row">
+         <div class="col-lg-3 col-xl-3">
+            <label for="">Vị trí / Chức danh<span>*</span></label>
+         </div>
+         <div class="col-lg-9 col-xl-9">
+            <div class="input-group">
+               <input type="text" value="" class="form-control" name="rexp_title" maxlength="100">
+            </div>
+            <div class="form-error"><span class="err_rexp_title" style="display:none"></span></div>
+         </div>
+      </div>
+      <div class="form-group row">
+         <div class="col-lg-3 col-xl-3">
+            <label for="">Công ty<span>*</span></label>
+         </div>
+         <div class="col-lg-9 col-xl-9">
+            <div class="input-group">
+               <input type="text" value="" class="form-control" name="rexp_company" maxlength="200">
+            </div>
+            <div class="form-error"><span class="err_rexp_company" style="display:none"></span></div>
+         </div>
+      </div>
+      <div class="form-group row">
+         <div class="col-lg-3 col-xl-3">
+            <label for="">Phương thức công việc</label>
+         </div>
+         <div class="col-lg-9 col-xl-9">
+            <div class="select-group">
+               <select name="rexp_worktype">
+                  <option value="">Chọn</option>
+               
+                  <?php foreach ($job_type as $item): ?>
+                     <option value="<?= $item["id"] ?>"><?= $item["job_type"] ?></option>
+               <?php  endforeach;?>
+               </select>
+            </div>
+         </div>
+      </div>
+      <div class="form-group row">
+         <div class="col-lg-3 col-xl-3">
+            <label for="">Thời gian làm việc</label>
+         </div>
+         <div class="col-lg-9 col-xl-9">
+            <div class="form-work-time">
+               <div class="start-date">
+                  <div class="select-group">
+                  <select name="rexp_month_start">
+                  <option value="">Tháng</option>
+                  <?php foreach(range(1, 12 ) as $month) { ?>
+                     <option value="<?= $month ?>"><?= $month ?></option>
+                  <?php }?>
+
+               </select>
+                  </div>
+                  <div class="select-group">
+                  <select name="rexp_year_start">
+                  <option value="">Năm</option>
+                  <option value="2022">2022</option>
+                     <?php foreach(range((int)date("Y"), 1970 ) as $year) { ?>
+                     <option value="<?= $year ?>"><?= $year ?></option>
+                  <?php }?>
+               </select>
+                  </div>
+               </div>
+               <div class="to"><span>Đến </span></div>
+               <div class="end-date">
+                  <div class="select-group">
+                     <select name="rexp_month_end">
+                     <option value="">Tháng</option>
+                     <?php foreach(range(1, 12 ) as $month) { ?>
+                     <option value="<?= $month ?>"><?= $month ?></option>
+                  <?php }?>
+                     </select>
+                  </div>
+                  <div class="select-group">
+                  <select name="rexp_year_end">
+                  <option value="">Năm</option>
+                  <option value="2022">2022</option>
+                  <?php foreach(range((int)date("Y"), 1970 ) as $year) {
+    echo "\t<option value='".$year."'>".$year."</option>\n\r";
+   }
+   ?>
+               </select>
+                  </div>
+               </div>
+               <div class="no-date">
+                  <div class="form-group form-checkbox mt-1 work-time-now">
+                     <input type="checkbox" name="cboExperCurrent" id="cboExperCurrent" value="1">
+                     <label for="cboExperCurrent">Hiện nay</label>
+                  </div>
+               </div>
+            </div>
+            <div class="form-error">
+               <span class="err_rexp_month_start" style="display:none"></span>
+               <span class="err_rexp_year_start" style="display:none"></span>
+               <span class="err_cboExperCurrent" style="display:none"></span>
+            </div>
+         </div>
+      </div>
+      <div class="form-group row">
+         <div class="col-lg-3 col-xl-3">
+            <label for="">Mô tả công việc</label>
+         </div>
+         <div class="col-lg-9 col-xl-9">
+            <div class="textarea-group">
+               <textarea name="rexp_workdesc" rows="3" class="form-control" placeholder="Vui lòng nhập tối đa không quá 4.000 ký tự" maxlength="4000"></textarea>
+            </div>
+            <div class="form-error">
+               <span class="err_rexp_workdesc" style="display:none"></span>
+            </div>
+         </div>
+      </div>
+      <div class="form-group form-button">
+         <div class="button-save button-center">
+            <button class="btn-gradient" type="submit">Lưu Lại</button>
+         </div>
+      </div>
+   </form>         
+            </div>
+         </div>
+      </div>
+   </div>
                      <div class="widget widget-16" id="widget-16">
                         <div class="widget-head">
                            <div class="cb-title-h3">
@@ -1217,165 +1648,11 @@
                            </div>
                         </div>
                      </div>
-                     <div class="widget widget-16" id="certificate-section">
-                        <div class="widget-head">
-                           <div class="cb-title-h3">
-                              <div class="figure">
-                                 <div class="image"><img src="./img/dash-board/i10.png" alt=""></div>
-                                 <div class="figcaption">
-                                    <h3>Chứng chỉ khác</h3>
-                                    <div class="status">
-                                       <p>Không bắt buộc</p>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="right-action">
-                                 <div class="tips p1" >
-                                    <div class="icon">
-                                       <em class="mdi mdi-lightbulb"></em>
-                                    </div>
-                                    <p>Tips</p>
-                                 </div>
-                                 <div class="link-add"><a href="javascript:void(0)" > <em class="material-icons">add</em><span>Thêm mới</span></a></div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="widget-body">
-                           <div class="no-content">
-                              <p>Vui lòng nhập chứng chỉ</p>
-                              <a href="javascript:void(0)" ><em class="mdi mdi-plus-circle"></em><span>Thêm mới</span></a>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="widget widget-22 widget-17" id="language-section">
-                        <div class="widget-head">
-                           <div class="cb-title-h3">
-                              <div class="figure">
-                                 <div class="image icon-translate"><span class="material-icons">translate</span></div>
-                                 <div class="figcaption">
-                                    <h3>Ngôn ngữ </h3>
-                                    <div class="status">
-                                       <p>Không bắt buộc</p>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="right-action">
-                                 <div class="tips p1" >
-                                    <div class="icon">
-                                       <em class="mdi mdi-lightbulb"></em>
-                                    </div>
-                                    <p>Tips</p>
-                                 </div>
-                                 <div class="link-add-lang"><a href="javascript:void(0)" > <em class="material-icons">add</em><span>Thêm mới</span></a></div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="widget-body">
-                        </div>
-                     </div>
-                     <div class="widget widget-17" id="widget-17">
-                        <div class="widget-head">
-                           <div class="cb-title-h3">
-                              <div class="figure">
-                                 <div class="image"><img src="./img/dash-board/i9.png" alt=""></div>
-                                 <div class="figcaption">
-                                    <h3>Kỹ năng chuyên môn *</h3>
-                                    <div class="status error">
-                                       <p>Chưa hoàn thành</p>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="right-action">
-                                 <div class="tips p1">
-                                    <div class="icon">
-                                       <em class="mdi mdi-lightbulb"></em>
-                                    </div>
-                                    <p>Tips</p>
-                                 </div>
-                                 <div class="link-add"><a > <em class="material-icons">add</em><span>Thêm mới</span></a></div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="widget-body">
-                           <div class="list-progress" id="list-progress-skill">
-                              <table>
-                                 <thead>
-                                    <tr>
-                                       <th>Skill </th>
-                                       <th>Mức độ</th>
-                                       <th> </th>
-                                    </tr>
-                                 </thead>
-                                 <tbody>
-                                 </tbody>
-                              </table>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="widget widget-19" id="widget-19">
-                        <div class="widget-head">
-                           <div class="cb-title-h3">
-                              <div class="figure">
-                                 <div class="image"><img src="./img/dash-board/i6.png" alt=""></div>
-                                 <div class="figcaption">
-                                    <h3>Thành tích nổi bật</h3>
-                                    <div class="status default">
-                                       <p>Không bắt buộc</p>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="right-action">
-                                 <div class="tips p1" >
-                                    <div class="icon">
-                                       <em class="mdi mdi-lightbulb"></em>
-                                    </div>
-                                    <p>Tips</p>
-                                 </div>
-                                 <div class="link-edit"><a > <em class="material-icons">create</em><span>Thêm mới</span></a></div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="widget-body" id="no-content">
-                           <div class="no-content">
-                              <p>Vui lòng thêm Thành tích nổi bật của bạn</p>
-                              <a ><em class="mdi mdi-plus-circle"></em><span>Thêm mới</span></a>
-                           </div>
-                        </div>
-                        <div class="widget-body">
-                           <div class="content" id="content"> Chưa cập nhật
-                           </div>
-                        </div>
-                     </div>
-                     <div class="widget widget-23 widget-15" id="other-activity-section">
-                        <div class="widget-head">
-                           <div class="cb-title-h3">
-                              <div class="figure">
-                                 <div class="image"><img src="./img/dash-board/i13.png" alt=""></div>
-                                 <div class="figcaption">
-                                    <h3>Hoạt động khác</h3>
-                                    <div class="status">
-                                       <p>Không bắt buộc</p>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="right-action">
-                                 <div class="tips p1" >
-                                    <div class="icon">
-                                       <em class="mdi mdi-lightbulb"></em>
-                                    </div>
-                                    <p>Tips</p>
-                                 </div>
-                                 <div class="link-add"><a href="javascript:void(0)" > <em class="material-icons">add</em><span>Thêm mới</span></a></div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="widget-body">
-                           <div class="no-content">
-                              <p>Mô tả hoạt động</p>
-                              <a href="javascript:void(0)" ><em class="mdi mdi-plus-circle"></em><span>Thêm mới</span></a>
-                           </div>
-                        </div>
-                     </div>
+                 
+                    
+                
+                   
+                 
                      <div class="widget widget-20" id="widget-20">
                         <div class="widget-head">
                            <div class="cb-title-h3">
@@ -1429,28 +1706,29 @@
                            <div class="toggle-menu"><em class="material-icons">list</em></div>
                         </div>
                         <ul class="list-shortchut">
-                           <li><a class="active" data-href="#widget-11">Careerbuilder Profile</a></li>
-                           <li><a data-href="#t-resume-section">Tiêu đề hồ sơ</a></li>
-                           <li><a data-href="#personalinfo-section">Thông tin cá nhân</a></li>
-                           <li><a data-href="#widget-14">Mục tiêu nghề nghiệp</a></li>
-                           <li><a data-href="#widget-18">Thông tin nghề nghiệp</a></li>
-                           <li><a data-href="#widget-15">Kinh nghiệm làm việc</a></li>
-                           <li><a data-href="#widget-16">Học vấn</a></li>
-                           <li><a data-href="#certificate-section">Chứng chỉ khác</a></li>
-                           <li><a data-href="#language-section">Ngôn ngữ</a></li>
-                           <li><a data-href="#widget-17">Kỹ năng chuyên môn</a></li>
-                           <li><a data-href="#widget-19">Thành tích nổi bật</a></li>
-                           <li><a data-href="#other-activity-section">Hoạt động khác</a></li>
-                           <li><a data-href="#widget-20">Người tham khảo</a></li>
+                           <li><a class="active" href="#widget-11">Careerbuilder Profile</a></li>
+                           <li><a href="#t-resume-section">Tiêu đề hồ sơ</a></li>
+                           <li><a href="#personalinfo-section">Thông tin cá nhân</a></li>
+                           <li><a href="#widget-14">Mục tiêu nghề nghiệp</a></li>
+                           <li><a href="#widget-18">Thông tin nghề nghiệp</a></li>
+                           <li><a href="#widget-15">Kinh nghiệm làm việc</a></li>
+                           <li><a href="#widget-16">Học vấn</a></li>
+                           <li><a href="#certificate-section">Chứng chỉ khác</a></li>
+                           <li><a href="#language-section">Ngôn ngữ</a></li>
+                           <li><a href="#widget-17">Kỹ năng chuyên môn</a></li>
+                           <li><a href="#widget-19">Thành tích nổi bật</a></li>
+                           <li><a href="#other-activity-section">Hoạt động khác</a></li>
+                           <li><a href="#widget-20">Người tham khảo</a></li>
                         </ul>
                      </div>
+                   
                   </div>
 
                   <div class="modal fade " id="subCV" data-bs-toggle="modal" tabindex="-1" >
    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
          <div class="modal-header">
-            <h2 class="modal-title" id="exampleModalLabel">Tiêu đề hồ sơ</h2>
+            <h2 class="modal-title"    >Tiêu đề hồ sơ</h2>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
          </div>
          <div class="modal-body">
@@ -1461,36 +1739,41 @@
          <div class="editCVtemplate-wrapper editCVtemplate">
             <div id="ZoneShowCVTemplate" class="cv-template-wrapper cv-template-15 fontCVRoboto clrYellow fontCVsize14">
                <div class="col-xs-12 subCVpage">
-                  <div class="" style="text-align: center;">
+                  <div class="top" style="text-align: center;">
                      <div class="iavatar">
-                        <img src="https://images.careerbuilder.vn/jobseekers/20221105/6327211_1667640553_162916.png">		
+                        <img src="<?= _WEB_ROOT.'/app/public/assets/clients/images/'.$informationUser["location_image"] ?>">		
                      </div>
                   </div>
-                  <div class="col-sm-12 col name top border_orange" style="text-align: center; padding-bottom: 8px;">
-                        <h2>NGUYỄN MINH</h2>
-                        <h4>Frontend Developer</h4>
+                  <div class="col-sm-12 col name  border_orange" style="text-align: center; padding-bottom: 8px;">
+                        <h2><?= $informationUser["lastname"]." ". $informationUser["firstname"] ?></h2>
+                        <h4><?= !empty($seeker_resume_title["resume_title"]) ? $seeker_resume_title["resume_title"]: ""  ?></h4>
                         <div class="col-xs-12 main-contact">
                         <ul class="contact">
-                           <li class="phone"><i class="fa fa-phone"></i><span>1231312313</span></li>
-                           <li class="mail"><i class="fa fa-envelope"></i><span class="txt">aolang69@gmail.com</span></li>
+                           <li class="phone"><i class="fa fa-phone"></i><span><?= !empty($informationUser["contact_number"]) ? $informationUser["contact_number"]: ""  ?>  </span></li>
+                           <li class="mail"><i class="fa fa-envelope"></i><span class="txt"><?= $informationUser["email"] ?></span></li>
                            <li class="address2"><i class="fa fa-home"></i><span class="txt">đường 7, Huyện Lộc Ninh, Bình Phước, Việt Nam</span></li>
                         </ul>
                      </div>
                      </div>
-                     <div class="col-sm-12 col border_orange" style="margin-top: 8px; padding-bottom: 8px;">
+                     <div class="col-sm-12 col border_orange"style=" padding:8px 0; ">
                         <h3>Thông tin cá nhân</h3>
                         <ul class="contact">
                            <li class="flex">
                               <label>Giới tính</label>
-                              <div class="annou">:  Nam </div>
+                              <div class="annou">:  <?php 
+                            if  (isset($informationUser["gender"])){
+         echo $informationUser["gender"]==1 ? "Nam" : $informationUser["gender"]==2 ? "Nữ": "Khác";  
+                            }   
+                              
+                              ?> </div>
                            </li>
                            <li class="flex">
                               <label>Ngày sinh</label>
-                              <div class="annou">: 31/12/2007</div>
+                              <div class="annou">:<?= !empty($informationUser["date_of_birth"]) ?formatDate($informationUser["date_of_birth"]): ""?> </div>
                            </li>
                            <li class="flex">
                               <label>Tình trạng hôn nhân</label>
-                              <div class="annou">:  Độc thân</div>
+                              <div class="annou">:  <?= $informationUser["marital_status"]==1 ? "Độc thân"  :"Đã kết hôn" ?></div>
                            </li>
                            <li class="flex">
                               <label>Quốc tịch</label>
@@ -1502,50 +1785,75 @@
                            </li>
                         </ul>
                      </div>      
-                  <div class="col-sm-12 col border_orange" style="margin-top: 8px; ">
+                  <div class="col-sm-12 col border_orange"style=" padding:5px 0;">
                         <h3>Kỹ năng</h3>
                         <ul class="skill flex">
-                           <li class="p-3">
+                           <li class="">
                               <label>c#</label>
                               <div class="point"><span></span><span></span><span></span></div>
                            </li>
-                           <li class="p-3">
+                           <li class="">
                               <label>php</label>
                               <div class="point"><span></span><span></span><span></span></div>
                            </li>
-                           <li class="p-3">
+                           <li class="">
                               <label>tốt</label>
                               <div class="point"><span></span><span></span><span></span></div>
                            </li>
-                           <li class="p-3">
+                           <li class="">
                               <label>js</label>
                               <div class="point"><span></span><span></span><span></span></div>
                            </li>
-                           <li class="p-3">
+                           <li class="">
                               <label>html</label>
                               <div class="point"><span></span><span></span><span></span></div>
                            </li>
                         </ul>
                      </div>
-                  <div class="col-md-12 col border_orange" style="padding-bottom: 8px; ">
+                  <div class="col-md-12 col border_orange" style=" padding:8px 0; ">
                      <h3><span>Công Việc Mong Muốn</span></h3>
                      <div class="expected-job">
                         <ul class="contact">
-                           <li><label>Cấp bậc </label> : Nhân viên</li>
-                           <li class="dbl-line"><label>Mức lương</label><span>:&nbsp;</span><span class="txt">				  				  1,000,000 - 2,000,000
-                              VND
+                           <li><label>Cấp bậc </label> :<?= !empty($seeker_job_information["position"]) ? $seeker_job_information["position"] : "" ?></li>
+                           <li class="dbl-line"><label>Mức lương</label><span>:&nbsp;</span><span class="txt">				  				
+                            <?=  !empty($seeker_job_information["salary_from"])? $seeker_job_information["salary_from"].'-'.$seeker_job_information["salary_to"]." VND" : "" ?>
                               </span>
                            </li>
-                           <li class="dbl-line"><label>Hình thức công việc</label><span>:&nbsp;</span><span class="txt">Nhân viên chính thức</span></li>
+                           <li class="dbl-line"><label>Hình thức công việc</label><span>:&nbsp;</span><span class="txt">   
+                              <?php if(!empty($seeker_type)){
+                                         $valueStr = '';
+                                          foreach ($seeker_type as $value) {
+                                       $valueStr .= " $value[job_type] " . ',';
+                                          }
+                                   $valueStr = rtrim($valueStr, ',');
+                                          echo $valueStr;
+                                       }  
+                                     
+                                  
+                                    ?>
+                                    </span></li>
                            <li class="dbl-line">
-                              <label>Ngành nghề</label><span>:&nbsp;</span><span class="txt"> Công nghệ thực phẩm / Dinh dưỡng</span></li>
+                              <label>Ngành nghề</label><span>:&nbsp;</span><span class="txt">
+                         
+                                 <?php      
+                                
+                                if(!empty($informationProfession)){
+                                 $valueStr = '';
+                                 foreach ($informationProfession as $value) {
+                              $valueStr .= " $value[profession_name] " . ',';
+                                 }
+                          $valueStr = rtrim($valueStr, ',');
+                                 echo $valueStr;
+                              }  
+                              
+                             ?></span></li>
                            <li class="dbl-line"><label>Nơi làm việc</label><span>:&nbsp;</span><span class="txt"> Hà Nội - Huyện Thanh Trì/Huyện Ba Vì
                               </span>
                            </li>
                         </ul>
                      </div>
                   </div>
-                  <div class="col-sm-12 col" style="margin-top: 8px;">
+                  <div class="col-sm-12 col" style=" padding:8px 0; ">
                      <h3>Kinh Nghiệm Làm Việc</h3>
                      <div class="content_fck yearofexp">
                         <p>Số năm kinh nghiệm: 1  </p>
@@ -1563,8 +1871,8 @@
                      </div>
                   </div>
                         
-                 <div class="grid grid-cols-2 border_orange_top" style="margin-top: 8px; padding-top: 8px;">
-                  <div class="col-sm-12 col ">
+               
+                  <div class="col-sm-12 col border_orange_top"style=" padding:8px 0;">
                      <h3>Học Vấn</h3>
                         <div class="text-edt degree-name">Bằng cấp cao nhất: Trung học</div>
                         <div class="exp text-edt">
@@ -1574,7 +1882,9 @@
                            </div>
                         </div>
                   </div>
-                  <div class="col-sm-12 col">
+                 
+               
+                 <div style=" padding:8px 0;" class="col-sm-12 col border_orange_top ">
                   <h3>Thông Tin Tham Khảo</h3>
                      <div class="text-edt">
                         <div class="title">nguyen nhat minh</div>
@@ -1585,7 +1895,6 @@
                         </div>
                      </div>
                   </div>
-                 </div>
                   <div class="col-xs-12 ">
                      
                   </div>
@@ -1773,13 +2082,29 @@
                   </div>
                </div>
             </div>
-            <div class="tips-modal" id="tip-t-resume" style="display: none">
-               <div class="head-modal">
+            <div class="modal fade" id="tip-t-resume" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+               
+                           <div class="modal-dialog modal-dialog-centered">
+                              
+                              <div class="modal-content">
+                                 <div class="tips-modal">
+                                    
+                                 </div>
+                              <div style="padding:0;background: #f3f3f3;"class="modal-header">
+                              <div class="head-modal">
                   <div class="icon"><em class="mdi mdi-lightbulb-outline"></em></div>
                   <div class="title">
                      <h3>Để CV không chỉ Hay mà còn Đẹp trong mắt Nhà tuyển dụng</h3>
                   </div>
-               </div>
+               </div> 
+               <button type="button" data-bs-dismiss="modal" aria-label="Close" class="fancybox-button fancybox-close-small" title="Close"><svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg></button>
+ 
+                                    </button>
+                                 </div>
+
+                                 <div class="modal-body" style="padding:0">
+                                 <div class="tips-modal" >
+            
                <div class="body-modal">
                   <div class="widget widget-12">
                      <div class="widget-body">
@@ -1788,15 +2113,18 @@
                               Tiêu đề hồ sơ:<br> Bạn nên để tiêu đề là vị trí bạn đang ứng tuyển hoặc muốn làm việc. Giúp Nhà tuyển dụng hiểu ngay vị trí mong muốn khi nhận hồ sơ của bạn.<br> Ví dụ: "Nhân viên kinh doanh" hoặc "Marketing
                               Manager"<br> Lưu ý: hãy điều chỉnh tiêu đề theo từng công việc ứng tuyển nhé!
                            </div>
-                           <div class="main-button">
-                              <div class="button-prev"><em class="mdi mdi-chevron-left"></em></div>
-                              <div class="button-next"><em class="mdi mdi-chevron-right"></em></div>
-                           </div>
+                         
                         </div>
                      </div>
                   </div>
                </div>
-            </div>
+             
+            </div>   
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+      
             <div class="tips-modal" id="tip-personalinfo" style="display: none">
                <div class="head-modal">
                   <div class="icon"><em class="mdi mdi-lightbulb-outline"></em></div>
