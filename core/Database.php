@@ -63,7 +63,7 @@ class Database
             } else {
                 $sql = "UPDATE $table SET $updateStr ";
             }
-            echo $sql;
+           
             
             $status = $this->query($sql);
          

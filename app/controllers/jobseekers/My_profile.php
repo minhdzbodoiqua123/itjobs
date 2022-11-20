@@ -292,8 +292,8 @@ $this->model("SeekerProfileModel")->update("seeker_resume_title",$data,"user_acc
                 "rexp_workdesc"=>"'$rexp_workdesc'",
                 'experCurrent'=>"'$cboExperCurrent'",
                 'status'=>"'1'",
-
             ];
+            
 
         
           
@@ -313,7 +313,8 @@ $this->model("SeekerProfileModel")->update("seeker_resume_title",$data,"user_acc
 
 
        public function update_resume_experience(){
-        $id = $_POST["rexp_id"];
+        if(($_SERVER['REQUEST_METHOD'] === 'POST')){
+            $id = $_POST["rexp_id"];
        
         
         $rexp_title=$_POST["rexp_title"];
@@ -339,7 +340,6 @@ $this->model("SeekerProfileModel")->update("seeker_resume_title",$data,"user_acc
             $end_job=$rexp_month_end.'/'.$rexp_year_end;    
         }
         $data=[
-
             "rexp_title"=>"'$rexp_title'",
             "rexp_company"=>"'$rexp_company'",
             "job_type_id "=>"'$rexp_worktype'",
@@ -350,8 +350,23 @@ $this->model("SeekerProfileModel")->update("seeker_resume_title",$data,"user_acc
         ];
 
         $this->model("JobPositionModel")->update("seeker_experience_detail",$data,"id='$id'"); 
+        $this->redirect("jobseekers/my_profile");
+        }
+        $this->redirect("jobseekers/my_profile");
+
     }
        
+    public function update_yearofexperience(){
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            $rexp_title=$_POST["rexp_title"];
+            $not_experience=$_POST["not_experience"];
+            $levelcurrent_id=$_POST["levelcurrent_id"];
+
+            
+
+        }
+    
+    }
 
       
 

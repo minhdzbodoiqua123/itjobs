@@ -1314,7 +1314,7 @@
                            <div class="modal-dialog modal-dialog-centered">
                               <div class="modal-content">
                                  <div class="modal-header">
-                                    <h2 class="modal-title">Tiêu đề hồ sơ</h2>
+                                    <h2 class="modal-title">Kinh nghiệm làm việc</h2>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                  </div>
                                  <div class="modal-body">
@@ -1325,11 +1325,11 @@
             </div>
             <div class="col-lg-8">
                <div class="input-group">
-                  <input type="number" class="exp-yet valid" maxlength="2" name="yearOfExperience" id="yearOfExperience" min="1" max="55" value="0" disabled="">
+                  <input type="number" class="exp-yet valid" maxlength="2" name="yearOfExperience" id="yearOfExperience" min="1" max="55" value="0" >
                </div>
                <div class="form-error"><span class="err_yearOfExperience" style="display: none;"></span></div>
                <div class="form-group form-checkbox mt-1">
-                  <input type="checkbox" id="not_experence" name="not_experence" checked="checked" value="1" style="margin-right: 5px;" class="valid">
+                  <input type="checkbox" id="not_experence" name="not_experience" checked="checked" value="1" style="margin-right: 5px;" class="valid">
                   <label class="no-exp-yet" for="not_experence">Chưa có kinh nghiệm</label>
                </div>
             </div>
@@ -1358,7 +1358,7 @@
          </div>
          <div class="form-group form-button">
             <div class="button-save button-center">
-        <button class="btn-gradient" type="button" onclick="return saveFrmExperience();">Lưu Lại</button>
+        <button class="btn-gradient" type="submit">Lưu Lại</button>
             </div>
          </div>
       </form>
