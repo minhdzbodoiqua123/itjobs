@@ -12360,6 +12360,7 @@ header.header-dashboard .mobile-menu .menu .menu-logged ul li.dropdown-mobile .d
     z-index: 11;
     position: -webkit-sticky;
     position: sticky;
+    top:0;
 }
 
 @media (max-width:1023px) {

@@ -188,6 +188,10 @@
     border-radius: 0.25rem;
     transition: all 0.15s ease-in-out;
 }
+.text-edt .title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
 </style>
 
 <body class="my-profile-page"  >
@@ -1318,19 +1322,23 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                  </div>
                                  <div class="modal-body">
-                                 <form name="frm_Experience" id="frm_Experience">
+                                 <form name="frm_Experience" action="my_profile/update_yearofexperience" method="post"  id="frm_Experience">
          <div class="form-group row">
             <div class="col-lg-4">
                <label for="">Số năm kinh nghiệm</label>
             </div>
             <div class="col-lg-8">
                <div class="input-group">
-                  <input type="number" class="exp-yet valid" maxlength="2" name="yearOfExperience" id="yearOfExperience" min="1" max="55" value="0" >
+                  <input type="number" class="exp-yet valid" maxlength="2" name="yearOfExperience" id="yearOfExperience" min="1" max="55" value="<?= !empty($year_of_experience["yearOfExperience"]) ? $year_of_experience["yearOfExperience"]  : "1"?>" >
                </div>
-               <div class="form-error"><span class="err_yearOfExperience" style="display: none;"></span></div>
+               <div class="form-error"><span class="err_yearOfExperience" style="display: none;"></span></div> 
+               
                <div class="form-group form-checkbox mt-1">
-                  <input type="checkbox" id="not_experence" name="not_experience" checked="checked" value="1" style="margin-right: 5px;" class="valid">
-                  <label class="no-exp-yet" for="not_experence">Chưa có kinh nghiệm</label>
+                  <input type="checkbox" id="not_experience"
+                   <?= !empty($year_of_experience["not_experience"]) && $year_of_experience["not_experience"]==1 ? "checked" : "123"?>
+                  
+                  name="not_experience"  value="1" style="margin-right: 5px;" class="valid">
+                  <label class="no-exp-yet" for="not_experience">Chưa có kinh nghiệm</label>
                </div>
             </div>
          </div>
@@ -1340,17 +1348,13 @@
             </div>
             <div class="col-lg-8">
                <div class="select-group">
-                  <select name="levelcurrent_id" id="levelcurrent_id" style="float: left; width: 200px; margin-bottom:5px">
+                  <select   name="levelcurrent_id" id="levelcurrent_id" style="float: left; width: 200px; margin-bottom:5px">
                      <option value="">Chọn</option>
-                     <option value="1">Sinh viên/ Thực tập sinh</option>
-                     <option value="2">Mới tốt nghiệp</option>
-                     <option value="3">Nhân viên</option>
-                     <option value="4">Trưởng nhóm / Giám sát</option>
-                     <option value="5">Quản lý</option>
-                     <option value="6">Phó Giám đốc</option>
-                     <option value="7">Giám đốc </option>
-                     <option value="8">Tổng giám đốc</option>
-                     <option value="9">Chủ tịch / Phó Chủ tịch</option>
+                     <?php foreach ($data_position as $item): ?>
+<option
+ <?= !empty($year_of_experience["position_id"]) && $year_of_experience["position_id"] ==  $item["id"]? "selected": "" ?>  value="<?= $item["id"] ?>"><?= $item["position"] ?></option>
+                    <?php endforeach;?>
+                   
                   </select>
                </div>
                <div class="form-error"><span class="err_levelcurrent_id" style="display:none"></span></div>
@@ -1371,14 +1375,15 @@
                                  <tbody>
                                     <tr>
                                        <td>Số năm kinh nghiệm</td>
-                                       <td id="txt-experience">1 </td>
+                                       <td id="txt-experience">
+                                          <?= !empty($year_of_experience["yearOfExperience"]) ? $year_of_experience["yearOfExperience"]  : "Chưa có kinh nghiệm"?> </td>
                                        <td>
                        <div class="link-edit" ><a data-bs-target="#year_of_experience" data-bs-toggle="modal"> <em class="material-icons">create</em></a></div>
                                        </td>
                                     </tr>
                                     <tr>
                                        <td>Cấp bậc hiện tại</td>
-                                       <td id="cbprofile_levelpresent">Sinh viên/ Thực tập sinh</td>
+                          <td id="cbprofile_levelpresent"><?= !empty($year_of_experience["position"]) ? $year_of_experience["position"]  : "Chưa cập nhật" ?></td>
                                        <td>
                                           <div class="link-edit" ><a  data-bs-target="#year_of_experience" data-bs-toggle="modal"> <em class="material-icons">create</em></a></div>
                                        </td>
@@ -1685,7 +1690,7 @@
                      </div>
                   </div>
                   <div class="col-lg-4 col-xl-3 main-menu">
-                     <div class="menu-shortchut">
+                     <div style="top:100px" class="menu-shortchut active">
                         <div class="list-button">
                            <ul>
                               <li><a class="share-profile" ><em class="mdi mdi-share"></em><span>Chia sẻ hồ sơ</span> <span class="new-label"> New </span> </a></li>
@@ -1706,19 +1711,19 @@
                            <div class="toggle-menu"><em class="material-icons">list</em></div>
                         </div>
                         <ul class="list-shortchut">
-                           <li><a class="active" href="#widget-11">Careerbuilder Profile</a></li>
-                           <li><a href="#t-resume-section">Tiêu đề hồ sơ</a></li>
-                           <li><a href="#personalinfo-section">Thông tin cá nhân</a></li>
-                           <li><a href="#widget-14">Mục tiêu nghề nghiệp</a></li>
-                           <li><a href="#widget-18">Thông tin nghề nghiệp</a></li>
-                           <li><a href="#widget-15">Kinh nghiệm làm việc</a></li>
-                           <li><a href="#widget-16">Học vấn</a></li>
-                           <li><a href="#certificate-section">Chứng chỉ khác</a></li>
-                           <li><a href="#language-section">Ngôn ngữ</a></li>
-                           <li><a href="#widget-17">Kỹ năng chuyên môn</a></li>
-                           <li><a href="#widget-19">Thành tích nổi bật</a></li>
-                           <li><a href="#other-activity-section">Hoạt động khác</a></li>
-                           <li><a href="#widget-20">Người tham khảo</a></li>
+                           <li><a class="active" data-href="widget-11">Careerbuilder Profile</a></li>
+                           <li><a data-href="t-resume-section">Tiêu đề hồ sơ</a></li>
+                           <li><a data-href="personalinfo-section">Thông tin cá nhân</a></li>
+                           <li><a data-href="widget-14">Mục tiêu nghề nghiệp</a></li>
+                           <li><a data-href="widget-18">Thông tin nghề nghiệp</a></li>
+                           <li><a data-href="widget-15">Kinh nghiệm làm việc</a></li>
+                           <li><a data-href="widget-16">Học vấn</a></li>
+                           <li><a data-href="certificate-section">Chứng chỉ khác</a></li>
+                           <li><a data-href="language-section">Ngôn ngữ</a></li>
+                           <li><a data-href="widget-17">Kỹ năng chuyên môn</a></li>
+                           <li><a data-href="widget-19">Thành tích nổi bật</a></li>
+                           <li><a data-href="other-activity-section">Hoạt động khác</a></li>
+                           <li><a data-href="widget-20">Người tham khảo</a></li>
                         </ul>
                      </div>
                    
@@ -1853,22 +1858,32 @@
                         </ul>
                      </div>
                   </div>
+
                   <div class="col-sm-12 col" style=" padding:8px 0; ">
                      <h3>Kinh Nghiệm Làm Việc</h3>
                      <div class="content_fck yearofexp">
-                        <p>Số năm kinh nghiệm: 1  </p>
-                        <p>Cấp bậc hiện tại: Sinh viên/ Thực tập sinh</p>
+                   
+                        <p>Số năm kinh nghiệm:
+                         <?= !empty($year_of_experience["yearOfExperience"]) ? $year_of_experience["yearOfExperience"]  : "Chưa có kinh nghiệm"?> </p>
+                        <p>Cấp bậc hiện tại:<?= !empty($year_of_experience["position"]) ? $year_of_experience["position"]  : "Chưa cập nhật" ?></p>
                      </div>
-                     <div class="exp text-edt">
-                        <div class="title">1/2006 - Hiện tại 
-                           :
-                           front end - fpt
-                           - Nhân viên chính thức
+               
+                              
+                     <?php foreach ($seeker_experience_detail as $item): ?>
+                   
+                    
+                        <div class="exp text-edt">
+                        <div class="title">
+                        <?= $item["experCurrent"]==0 ? $item["start_job"].'-'.$item["end_job"] : $item["start_job"].'-'."Hiện tại" ?>:
+         <?= $item["rexp_title"]. " - ".$item["rexp_company"]." - ". $item["job_type_id"]?> 
                         </div>
                         <div class="content_fck">
-                           <p>tuyetv oi</p>
+                           <p><?= $item["rexp_workdesc"]
+ ?></p>
                         </div>
                      </div>
+                  <?php   endforeach;?>
+                    
                   </div>
                         
                

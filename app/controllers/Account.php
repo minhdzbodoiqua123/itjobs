@@ -40,12 +40,25 @@ class Account extends Controller
                         "user_account_id " => "'$lastId'",
                     ]
                 );
+
                 $this->model("SeekerProfileModel")->insert(
                     "seeker_resume_title",
                     [
                         "user_account_id " => "'$lastId'"
                     ]
                 );
+
+                $this->model("SeekerProfileModel")->insert(
+                    "year_of_experience",
+                    [
+                        "user_account_id " => "'$lastId'"
+                    ]
+                );
+
+
+
+
+
 
 
                 $this->redirect("account/login");

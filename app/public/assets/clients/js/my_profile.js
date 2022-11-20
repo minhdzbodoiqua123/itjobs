@@ -21,15 +21,18 @@ const fileInput = $('input[name="file-input"]');
 const img_mem_avatar = document.getElementById('img_mem_avatar');
 
 const apiInfoUser = 'http://localhost//itjobs/jobseekers/my_profile/infoUser';
-// select_provinces.addEventListener("change", function(e){
-//   const id=this.value;
-//   const formData=new FormData();
-//   formData.append("id",id);
-//   axios.post("checkouts/dataDistricts",formData)
 
-//       displayDistrict(result.data)
+const not_experience=$("input[name='not_experience']")
+const yearOfExperience=$("input[name='yearOfExperience']")
 
-// })
+
+
+
+
+
+
+  
+
 
 async function loadInfoUser() {
   const data = await getData(apiInfoUser);
@@ -169,19 +172,6 @@ async function displayJobInfo() {
  
 }
 
-
-
-async function start() {
-
-  getProvinces()
-  loadInfoUser()
-  displayJobInfo();
-  
-  
-}
-
-start();
-
 async function getDistrict(code) {
   const api = `https://provinces.open-api.vn/api/p/${code}?depth=2`;
   const data = await getData(api);
@@ -200,6 +190,64 @@ async function desiredForm(data) {
   });
   location_id.innerHTML = htmls;
 }
+
+
+window.addEventListener('scroll',()=>{
+   
+    // const test=$(".main-widget .widget").filter(function(){
+    //   return this.offsetTop <Window.top+100;
+    // })
+    // console.log(test);
+})
+
+
+
+function handleSetAticve(){
+  const list_shortchut=$$(".list-shortchut li a");
+const widget=$$(".widget");
+
+
+list_shortchut.forEach(item=>{
+  const href=item.getAttribute('data-href');
+  item.addEventListener('click', () => {
+    widget.forEach(item2=>{
+      const id=item2.getAttribute("id");
+       if(href==id){
+        $(".list-shortchut li a.active").classList.remove("active");
+        item.classList.add("active")
+        const position=getOffset(item2);
+    
+        window.scrollTo(0, position);
+   
+        
+      } 
+    })
+  })
+ 
+
+})
+}
+
+function getOffset(el) {
+  const rect = el.getBoundingClientRect();
+  return  rect.top + window.scrollY -100
+}
+
+
+
+
+async function start() {
+  handleSetAticve()
+  getProvinces()
+  loadInfoUser()
+  displayJobInfo();
+  
+  
+}
+
+start();
+
+
 
 $("input[name='cboExperCurrent']").addEventListener("change", function (e){
   const rexp_month_end=$("select[name='rexp_month_end']")
@@ -220,6 +268,36 @@ $("input[name='cboExperCurrent']").addEventListener("change", function (e){
 
   }
 })
+
+
+not_experience.addEventListener("change", function (e){
+  
+
+  if(e.target.checked){
+    
+  
+    yearOfExperience.setAttribute('disabled','')
+
+    yearOfExperience.value=0
+   
+    
+  }
+  else{
+    yearOfExperience.removeAttribute('disabled')
+    yearOfExperience.value=1
+
+
+  }
+})
+
+if(not_experience.checked){
+  
+  yearOfExperience.setAttribute('disabled','')
+
+  yearOfExperience.value=0
+}
+
+
 
 
 select_provinces.addEventListener('change', async function () {
@@ -339,3 +417,5 @@ fileInput.addEventListener('change', (e) => {
 });
 
 flatpickr('.date_month', { dateFormat: 'd/m/Y', maxDate: '31.12.2017', allowInput: true });
+
+

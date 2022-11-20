@@ -8,7 +8,7 @@ class My_profile extends Controller
         }
         $id = isset($_SESSION["user"]["id"])? $_SESSION["user"]["id"]:"";
         
-       
+       $year_of_experience= $this->model("JobPositionModel")->query("SELECT year_of_experience.*,job_position.position FROM `job_position` join year_of_experience on job_position.id=year_of_experience.position_id where user_account_id='$id'")->fetch(PDO::FETCH_ASSOC); 
 
         $informationUser = $this->model("AccountUserModel")->query("select seeker_profile.*,user_account.email FROM `user_account` join seeker_profile on seeker_profile.user_account_id=id where id='$id'")->fetch(PDO::FETCH_ASSOC);
 
@@ -50,7 +50,9 @@ class My_profile extends Controller
         $this->data["sub_content"]["seeker_experience_detail"] = $seeker_experience_detail;
         $this->data["sub_content"]["count_exp"] = $count_exp;
 
+        $this->data["sub_content"]["year_of_experience"] = $year_of_experience;
 
+        
 
        
 
@@ -358,13 +360,25 @@ $this->model("SeekerProfileModel")->update("seeker_resume_title",$data,"user_acc
        
     public function update_yearofexperience(){
         if($_SERVER["REQUEST_METHOD"] == "POST"){
-            $rexp_title=$_POST["rexp_title"];
-            $not_experience=$_POST["not_experience"];
-            $levelcurrent_id=$_POST["levelcurrent_id"];
+            $user_account_id = $_SESSION["user"]["id"];
+            $yearOfExperience=isset($_POST["yearOfExperience"])?$_POST["yearOfExperience"] : "";
+            $not_experience=isset($_POST["not_experience"]) ? $_POST["not_experience"] : "";
+            $levelcurrent_id=$_POST["levelcurrent_id"]; 
 
             
+            $data=[
+                "yearOfExperience"=>"'$yearOfExperience'",
+                "not_experience"=>"'$not_experience'",
+                "position_id  "=>"'$levelcurrent_id'"
+            ];
+           
+ $this->model("JobPositionModel")->update("year_of_experience",$data,"user_account_id='$user_account_id'"); 
+        $this->redirect("jobseekers/my_profile");
+
 
         }
+        $this->redirect("jobseekers/my_profile");
+
     
     }
 
