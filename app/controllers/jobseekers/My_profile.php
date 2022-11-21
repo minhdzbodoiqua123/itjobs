@@ -12,13 +12,21 @@ class My_profile extends Controller
 
         $informationUser = $this->model("AccountUserModel")->query("select seeker_profile.*,user_account.email FROM `user_account` join seeker_profile on seeker_profile.user_account_id=id where id='$id'")->fetch(PDO::FETCH_ASSOC);
 
+        
+
         $informationProfession = $this->model("JobPositionModel")->query("SELECT * FROM `seeker_profession_detail` join profession on seeker_profession_id= profession.id WHERE user_account_id='$id'")->fetchAll(PDO::FETCH_ASSOC);
        
         $informationWelfare= $this->model("JobPositionModel")->get("seeker_welfare_detail","user_account_id='$id'")->fetchAll(PDO::FETCH_ASSOC);    
 
+        
+        $seeker_highest_degree =$this->model("JobPositionModel")->query(" SELECT seeker_highest_degree.*,degree_name FROM `seeker_highest_degree`  join degree on degree.id=seeker_highest_degree.degree_id WHERE user_account_id='$id'")->fetch(PDO::FETCH_ASSOC);  
+        
+        
+
         $seeker_experience_detail= $this->model("JobPositionModel")->get("seeker_experience_detail","user_account_id='$id'")->fetchAll(PDO::FETCH_ASSOC); 
        
-
+        $seeker_education_detail=  $this->model("JobPositionModel")->query(" SELECT seeker_education_detail.*,degree_name FROM `seeker_education_detail`  join degree on degree.id=seeker_education_detail.degree_id WHERE user_account_id='$id'")->fetchAll(PDO::FETCH_ASSOC);  
+     
         $seeker_job_information= $this->model("JobPositionModel")->query("    SELECT * FROM `seeker_job_information`  join job_position on job_position.id=seeker_job_information.position_id WHERE user_account_id='$id'")->fetch(PDO::FETCH_ASSOC); 
       
          $seeker_resume_title= $this->model("JobPositionModel")->get("seeker_resume_title","user_account_id='$id'")->fetch(PDO::FETCH_ASSOC); 
@@ -28,17 +36,26 @@ class My_profile extends Controller
         $data_position = $this->model("JobPositionModel")->get("job_position")->fetchAll(PDO::FETCH_ASSOC);
         $data_welfare= $this->model("JobPositionModel")->get("job_welfare")->fetchAll(PDO::FETCH_ASSOC);
         $data_profession= $this->model("JobPositionModel")->get("profession")->fetchAll(PDO::FETCH_ASSOC);
+        $data_degree= $this->model("JobPositionModel")->get("degree")->fetchAll(PDO::FETCH_ASSOC);
+
 
         $job_type=$this->model("JobPositionModel")->get("job_type")->fetchAll(PDO::FETCH_ASSOC);
         
         $count_exp=$this->model("JobPositionModel")->query("SELECT id
         FROM seeker_experience_detail where user_account_id='$id'")->rowCount();  
    
+        $count_sekeer_education=$this->model("JobPositionModel")->query("SELECT id
+        FROM seeker_education_detail where user_account_id='$id'")->rowCount();  
+
+
         $this->data["sub_content"]["job_type"] = $job_type;
 
         $this->data["sub_content"]["data_position"] = $data_position;
         $this->data["sub_content"]["data_welfare"] = $data_welfare;
         $this->data["sub_content"]["data_profession"] = $data_profession;
+        $this->data["sub_content"]["data_degree"] = $data_degree;
+
+
 
         $this->data["sub_content"]["informationProfession"] = $informationProfession;
         $this->data["sub_content"]["informationWelfare"] = $informationWelfare;
@@ -48,7 +65,12 @@ class My_profile extends Controller
         $this->data["sub_content"]["seeker_resume_title"] = $seeker_resume_title;
         $this->data["sub_content"]["seeker_type"] = $seeker_type;
         $this->data["sub_content"]["seeker_experience_detail"] = $seeker_experience_detail;
+        $this->data["sub_content"]["seeker_education_detail"] = $seeker_education_detail;
+        $this->data["sub_content"]["seeker_highest_degree"] = $seeker_highest_degree;
+
+        
         $this->data["sub_content"]["count_exp"] = $count_exp;
+        $this->data["sub_content"]["count_sekeer_education"] = $count_sekeer_education;
 
         $this->data["sub_content"]["year_of_experience"] = $year_of_experience;
 
@@ -65,6 +87,7 @@ class My_profile extends Controller
        echo json_encode($data);
     }
 
+    
   
 
     public function data_resume_experience($id=""){
@@ -81,6 +104,14 @@ class My_profile extends Controller
         $data= $this->model("SeekerProfileModel")->get("seeker_address_detail", "user_account_id='$id'")->fetch(PDO::FETCH_ASSOC);
         echo json_encode($data);
     }
+
+    public function  data_degree(){
+       $data= $this->model("JobPositionModel")->get("degree")->fetchAll(PDO::FETCH_ASSOC);
+       echo json_encode($data);
+    }
+
+
+
 
     public function job_type(){
         $job_type=$this->model("JobPositionModel")->get("job_type")->fetchAll(PDO::FETCH_ASSOC);
@@ -220,12 +251,15 @@ $this->model("SeekerProfileModel")->update("seeker_resume_title",$data,"user_acc
 
 
     public function upload_Avatar_User(){
-        if (($_SERVER['REQUEST_METHOD'] === 'POST') &&isset($_FILES['file-input']))
+        if (($_SERVER['REQUEST_METHOD'] === 'POST') && $_FILES['file-input']["size"]>0)
          {
         $user_account_id = $_SESSION["user"]["id"];
      
          $file_name=$_FILES['file-input']['name'];
          
+       
+       
+
          $upload_dir=''.__DIR_ROOT.'/app/public/assets/clients/images/';
          $upload_file=$upload_dir.$file_name;
          $type=pathinfo($file_name,PATHINFO_EXTENSION);
@@ -251,6 +285,8 @@ $this->model("SeekerProfileModel")->update("seeker_resume_title",$data,"user_acc
 
         }
             $this->redirect('jobseekers/my_profile');
+        
+
        }
 
 
@@ -293,7 +329,7 @@ $this->model("SeekerProfileModel")->update("seeker_resume_title",$data,"user_acc
                 "end_job"=>"'$end_job'",
                 "rexp_workdesc"=>"'$rexp_workdesc'",
                 'experCurrent'=>"'$cboExperCurrent'",
-                'status'=>"'1'",
+                
             ];
             
 
@@ -382,8 +418,85 @@ $this->model("SeekerProfileModel")->update("seeker_resume_title",$data,"user_acc
     
     }
 
-      
+    public function  insertEducationForm(){
+        if(count($_POST) > 0){
+ 
+            $user_account_id =$_SESSION["user"]["id"];
+            $redu_name=$_POST["redu_name"];
+            $redu_degree=$_POST["redu_degree"];
+            $redu_month=$_POST["redu_month"];
+            $redu_year=$_POST["redu_year"];
+            $redu_desc=$_POST["redu_desc"];
 
+            $data=[
+                "user_account_id"=>"'$user_account_id'",
+                "redu_name"=>"'$redu_name'",
+                "degree_id"=>"'$redu_degree'",
+                "start_date"=>"'$redu_month'",
+                "end_date"=>"'$redu_year'",
+                "detail_desc"=>"'$redu_desc'",
+
+            ];
+            $this->model("SeekerProfileModel")->insert("seeker_education_detail",$data);
+            
+
+        }
+        $this->redirect("jobseekers/my_profile");
+    }
+  
+    public function  updateEducationForm(){
+        if(count($_POST) > 0){
+        
+            $user_account_id =$_SESSION["user"]["id"];
+            $redu_id=$_POST["redu_id"];
+
+            $redu_name=$_POST["redu_name"];
+            $redu_degree=$_POST["redu_degree"];
+            $redu_month=$_POST["redu_month"];
+            $redu_year=$_POST["redu_year"];
+            $redu_desc=$_POST["redu_desc"];
+
+            $data=[
+                "user_account_id"=>"'$user_account_id'",
+                "redu_name"=>"'$redu_name'",
+                "degree_id"=>"'$redu_degree'",
+                "start_date"=>"'$redu_month'",
+                "end_date"=>"'$redu_year'",
+                "detail_desc"=>"'$redu_desc'",  
+            ];
+  $this->model("SeekerProfileModel")->update("seeker_education_detail",$data,"id='$redu_id'");
+            
+
+        }
+        $this->redirect("jobseekers/my_profile");
+    }
+    public function delete_education($id=""){
+        $this->model("SeekerProfileModel")->delete("seeker_education_detail","id='$id'");
+    }
+    
+
+    public function getSeekerEducation($id=""){
+         $data= $this->model("SeekerProfileModel")->get("seeker_education_detail","id='$id'")->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($data);
+
+    }
+
+    public function update_highest_degree(){
+        if(count($_POST) > 0){
+            $user_account_id =$_SESSION["user"]["id"];
+
+            $degree_id=$_POST["degree"];
+            $data=[
+                "degree_id"=>"'$degree_id'",       
+            ];
+   $this->model("SeekerProfileModel")->update("seeker_highest_degree",$data,"user_account_id='$user_account_id'");
+    
+        }
+        $this->redirect("jobseekers/my_profile");
+       
+    }
+
+    
 }
 
     

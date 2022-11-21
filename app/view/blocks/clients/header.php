@@ -19,7 +19,7 @@
                             <div class="dropdown-menu">
                                 <ul>
                                     <li>
-                                        <a href="https://careerbuilder.vn/viec-lam/tat-ca-viec-lam-vi.html"
+                                        <a href="<?= _WEB_ROOT . '/Alljob' ?>"
                                             title="Việc làm mới nhất">
                                             Việc làm mới nhất
                                         </a>

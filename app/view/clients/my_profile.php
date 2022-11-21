@@ -1,202 +1,194 @@
-
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/clients/css/my_profile.css" ?>">
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css" ?>">
-
 <script defer   src="<?= _WEB_ROOT . "/app/public/assets/clients/js/my_profile.js" ?>"></script>
-<script defer src="<?= _WEB_ROOT . "/app/public/assets/clients/js/handleExperienceForm.js" ?>">
-</script>
-
+<script defer src="<?= _WEB_ROOT . "/app/public/assets/clients/js/handleExperienceForm.js" ?>"></script>
+<script defer src="<?= _WEB_ROOT . "/app/public/assets/clients/js/handleEducationForm.js" ?>"></script>
 
 <style>
    html{
-      scroll-behavior: smooth;
+   scroll-behavior: smooth;
    }
    a{
-      cursor: pointer;
+   cursor: pointer;
    }
-.pristine-error {
-  color:red;
-  margin-left:15px;
-  font-size: 14px;
-}
-.grid{
+   .pristine-error {
+   color:red;
+   margin-left:15px;
+   font-size: 14px;
+   }
+   .grid{
    display: grid;
-}
-.grid-cols-2{
+   }
+   .grid-cols-2{
    grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-.flex{
+   }
+   .flex{
    display: flex;
-}
-.p-3{
+   }
+   .p-3{
    padding: 12px;
-}
-.border_orange{
+   }
+   .border_orange{
    border-bottom: 1px solid orange;
-}
-.border_orange_top{
+   }
+   .border_orange_top{
    border-top: 1px solid orange;
-}
-.file-input__input {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-.file-input{
+   }
+   .file-input__input {
+   width: 0.1px;
+   height: 0.1px;
+   opacity: 0;
+   overflow: hidden;
+   position: absolute;
+   z-index: -1;
+   }
+   .file-input{
    text-align: center;
-}
-.file-input__label {
-  min-width: 150px;
-  cursor: pointer;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #4245A8;
-  font-size: 14px;
-  padding: 6px 12px;
-  border: 2px dotted #4245A8;
-}
-
-.file-input__label:hover {
-  background-color: rgba(66, 69, 168, 0.25);
-}
-
-.file-input__label svg {
-  height: 16px;
-  margin-right: 4px;
-}
-.cv-template-15 .iavatar {
-    position: relative;
-    width: 154px;
-    height: 154px;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 145px;
-    -webkit-box-radius: 145px;
-    -moz-box-radius: 145px;
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
-    -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
-    -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-}
-.cv-template-15 h2 {
-    padding-top: 15px;
-}
-.cv-template-15 h4 {
+   }
+   .file-input__label {
+   min-width: 150px;
+   cursor: pointer;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 4px;
+   font-size: 14px;
+   font-weight: 600;
+   color: #4245A8;
+   font-size: 14px;
+   padding: 6px 12px;
+   border: 2px dotted #4245A8;
+   }
+   .file-input__label:hover {
+   background-color: rgba(66, 69, 168, 0.25);
+   }
+   .file-input__label svg {
+   height: 16px;
+   margin-right: 4px;
+   }
+   .cv-template-15 .iavatar {
+   position: relative;
+   width: 154px;
+   height: 154px;
+   margin: 0 auto;
+   background-color: #fff;
+   border-radius: 145px;
+   -webkit-box-radius: 145px;
+   -moz-box-radius: 145px;
+   box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+   -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+   -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+   }
+   .cv-template-15 h2 {
+   padding-top: 15px;
+   }
+   .cv-template-15 h4 {
    margin-bottom: 20px;
-  
-}
-.cv-template-15 .main-contact i.fa {
-    padding: 4px 10px 0 0;
-}
-.cv-template-15 .main-contact li{
+   }
+   .cv-template-15 .main-contact i.fa {
+   padding: 4px 10px 0 0;
+   }
+   .cv-template-15 .main-contact li{
    padding-bottom:5px;
-}
-.cv-template-15 .top {
-   
-    width: 100%;
-    margin-top: 30px;
-    background-position: center center;
-    background-repeat: no-repeat;
-}  
-.cv-template-15 .top {
-    background-image: url(https://static.careerbuilder.vn/themes/cvhaynew/images/template-15-yellow-top.png);
-}
-.cv-template-15 .iavatar img {
-    position: absolute;
-    left: 9px;
-    top: 9px;
-    width: 135px;
-    height: 135px;
-    border-radius: 135px;
-    -webkit-box-radius: 135px;
-    -moz-box-radius: 135px;
-}
- .head-modal .icon {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 70px;
-    min-width: 70px;
-    height: 70px;
-    overflow: hidden;
-    border-radius: 5px;
-    background: #ffffff;
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
-}
- .head-modal {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    padding-right: 30px;
-    background: #f3f3f3;
-}
-.head-modal .title {
-    padding-left: 15px;
-}
- .head-modal .icon em {
-    color: #2f4ba0;
-    font-size: 44px;
-}
-.swal2-actions{
+   }
+   .cv-template-15 .top {
+   width: 100%;
+   margin-top: 30px;
+   background-position: center center;
+   background-repeat: no-repeat;
+   }  
+   .cv-template-15 .top {
+   background-image: url(https://static.careerbuilder.vn/themes/cvhaynew/images/template-15-yellow-top.png);
+   }
+   .cv-template-15 .iavatar img {
+   position: absolute;
+   left: 9px;
+   top: 9px;
+   width: 135px;
+   height: 135px;
+   border-radius: 135px;
+   -webkit-box-radius: 135px;
+   -moz-box-radius: 135px;
+   }
+   .head-modal .icon {
+   -webkit-box-pack: center;
+   -ms-flex-pack: center;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 70px;
+   min-width: 70px;
+   height: 70px;
+   overflow: hidden;
+   border-radius: 5px;
+   background: #ffffff;
+   box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+   }
+   .head-modal {
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   align-items: center;
+   padding: 10px 20px;
+   padding-right: 30px;
+   background: #f3f3f3;
+   }
+   .head-modal .title {
+   padding-left: 15px;
+   }
+   .head-modal .icon em {
+   color: #2f4ba0;
+   font-size: 44px;
+   }
+   .swal2-actions{
    gap:10px;
-}
-.swal2-cancel{
-
-}
-.btn-success {
-    color: #fff;
-    background-color: #28a745;
-    border-color: #28a745;
-    padding: 0.5rem 0.75rem;
-    font-weight: normal;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    font-size: 1rem;
-    line-height: 1.25;
-    border-radius: 0.25rem;
-    transition: all 0.15s ease-in-out;
-}
-.btn-danger {
-    color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545;
-    padding: 0.5rem 0.75rem;
-    font-weight: normal;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    font-size: 1rem;
-    line-height: 1.25;
-    border-radius: 0.25rem;
-    transition: all 0.15s ease-in-out;
-}
-.text-edt .title {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
+   }
+   .swal2-cancel{
+   }
+   .btn-success {
+   color: #fff;
+   background-color: #28a745;
+   border-color: #28a745;
+   padding: 0.5rem 0.75rem;
+   font-weight: normal;
+   text-align: center;
+   white-space: nowrap;
+   vertical-align: middle;
+   font-size: 1rem;
+   line-height: 1.25;
+   border-radius: 0.25rem;
+   transition: all 0.15s ease-in-out;
+   }
+   .btn-danger {
+   color: #fff;
+   background-color: #dc3545;
+   border-color: #dc3545;
+   padding: 0.5rem 0.75rem;
+   font-weight: normal;
+   text-align: center;
+   white-space: nowrap;
+   vertical-align: middle;
+   font-size: 1rem;
+   line-height: 1.25;
+   border-radius: 0.25rem;
+   transition: all 0.15s ease-in-out;
+   }
+   .text-edt .title {
+   font-weight: bold;
+   margin-bottom: 5px;
+   }
+   .dbl-line{
+   padding-bottom: 5px;
+   }
 </style>
-
 <body class="my-profile-page"  >
-
-
    <main>
       <div class="page-content d-flex align-items-stretch">
       <div class="default-sidebar sticky">
@@ -206,10 +198,10 @@
                   <h2>My CareerBuilder Center</h2>
                </div>
                <ul class="list-unstyled">
-                  <li> <a href="https://careerbuilder.vn/vi/jobseekers/dashboard" title="Quản lý hồ sơ"> <em class="material-icons">color_lens</em><span>Quản lý hồ sơ</span></a></li>
-                  <li style="display:none"> <a href="https://careerbuilder.vn/vi/jobseekers/cv-hay/my-profile"> <em class="material-icons">person</em><span>Hồ sơ Careerbuilder</span></a></li>
-                  <li> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile" class="active"> <em class="material-icons">person</em><span>Hồ sơ Careerbuilder</span></a></li>
-                  <li> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/changetemplate"> <em class="material-icons">portrait</em><span>Chỉnh Mẫu Hồ Sơ</span></a></li>
+                  <li> <a href="<?= _WEB_ROOT . '/jobseekers/dashboard' ?>" title="Quản lý hồ sơ"> <em class="material-icons">color_lens</em><span>Quản lý hồ sơ</span></a></li>
+                  <li style="display:none"> <a href="<?= _WEB_ROOT . '/jobseekers/my_profile' ?>"> <em class="material-icons">person</em><span>Hồ sơ Careerbuilder</span></a></li>
+                  <li> <a href="" class="active"> <em class="material-icons">person</em><span>Hồ sơ Careerbuilder</span></a></li>
+                  <li> <a href=""> <em class="material-icons">portrait</em><span>Chỉnh Mẫu Hồ Sơ</span></a></li>
                   <li>
                      <a class="collapse " href="javascript:;"><em class="material-icons">edit</em><span>Việc làm của tôi</span></a>
                      <ul class="list-unstyled collapse">
@@ -265,44 +257,43 @@
                                        </div>
                                        <div class="information">
                                           <div class="assistant" id="titleresume_17611557">
-
                                           </div>
                                        </div>
                                     </div>
                                  </div>
                                  <div class="action-profile">
-                                 <div class="file-input">
-                                    <!-- upload avatar -->
-                                 <form action="my_profile/upload_Avatar_User" method="post"  enctype="multipart/form-data">
-                                 <input
-        type="file"
-        name="file-input"
-        id="file-input"
-        class="file-input__input"
-      />
-      <label class="file-input__label" for="file-input">
-        <svg
-          aria-hidden="true"
-          focusable="false"
-          data-prefix="fas"
-          data-icon="upload"
-          class="svg-inline--fa fa-upload fa-w-16"
-          role="img"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512"
-        >
-          <path
-            fill="currentColor"
-            d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
-          ></path>
-        </svg>
-        <span>Upload file</span></label
-      >  
-      <button type="submit"style="margin-top:50px;padding:6px 14px;width: 152px; ">Lưu thay đổi</button>
-                                 </form>
-                                </div>
+                                    <div class="file-input">
+                                       <!-- upload avatar -->
+                                       <form action="my_profile/upload_Avatar_User" method="post"  enctype="multipart/form-data">
+                                          <input
+                                             type="file"
+                                             name="file-input"
+                                             id="file-input"
+                                             class="file-input__input"
+                                             />
+                                          <label class="file-input__label" for="file-input">
+                                             <svg
+                                                aria-hidden="true"
+                                                focusable="false"
+                                                data-prefix="fas"
+                                                data-icon="upload"
+                                                class="svg-inline--fa fa-upload fa-w-16"
+                                                role="img"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 512 512"
+                                                >
+                                                <path
+                                                   fill="currentColor"
+                                                   d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+                                                   ></path>
+                                             </svg>
+                                             <span>Upload file</span>
+                                          </label
+                                             >
+                                          <button type="submit"style="margin-top:50px;padding:6px 14px;width: 152px; ">Lưu thay đổi</button>
+                                       </form>
+                                    </div>
                                  </div>
-                                 
                               </div>
                               <div class="col-lg-8 col-xl-9">
                                  <div class="cb-name">
@@ -369,19 +360,19 @@
                               <div class="figure">
                                  <div class="image"><img src="./img/dash-board/i14.png" alt=""></div>
                                  <div class="figcaption">
-                                 <h3>Tiêu đề hồ sơ *</h3>
-                     <?php 
-                       if(!empty($seeker_resume_title) && $seeker_resume_title["status"]==1 ){
-                                echo " <div class='status success'>
-                                     <p>Hoàn thành</p>
-                                  </div>";
-                       }
-                       else{
-                        echo " <div class='status error'>
-                        <p>Chưa hoàn thành</p>
-                     </div>";
-                       }
-                      ?>
+                                    <h3>Tiêu đề hồ sơ *</h3>
+                                    <?php 
+                  if(!empty($seeker_resume_title) && $seeker_resume_title["status"]==1 ){
+                                           echo " <div class='status success'>
+                                                     <p>Hoàn thành</p>
+                                                  </div>";
+                                       }
+                                       else{
+                                        echo " <div class='status error'>
+                                        <p>Chưa hoàn thành</p>
+                                       </div>";
+                                       }
+                                       ?>
                                  </div>
                               </div>
                               <div class="right-action">
@@ -430,19 +421,16 @@
                         </div>
                         <div class="widget-body">
                            <?php if(!empty($seeker_resume_title["resume_title"])){?>
-                             
-                              <div style="padding-left:20px;" class="content">
-              <p><?= $seeker_resume_title["resume_title"]?></p>
+                           <div style="padding-left:20px;" class="content">
+                              <p><?= $seeker_resume_title["resume_title"]?></p>
                            </div>
                            <?php } else {?>
-                              <div class="no-content">
-                <p>Tiêu đề hồ sơ</p
-                <a href="javascript:void(0)" data-bs-target="#tieudehoso"></a>
-                <a data-bs-toggle="modal" data-bs-target="#tieudehoso" href="javascript:void(0)"> <em class="mdi mdi-plus-circle"></em><span>Chỉnh sửa</span></a>
-        </div>
-                              <?php }?>
-                          
-                      
+                           <div class="no-content">
+                              <p>Tiêu đề hồ sơ</p
+                                 <a href="javascript:void(0)" data-bs-target="#tieudehoso"></a>
+                                 <a data-bs-toggle="modal" data-bs-target="#tieudehoso" href="javascript:void(0)"> <em class="mdi mdi-plus-circle"></em><span>Chỉnh sửa</span></a>
+                           </div>
+                           <?php }?>
                            <input type="hidden" id="title_hidden_value" value="Nhân viên nhân sự">
                         </div>
                      </div>
@@ -454,18 +442,17 @@
                                  <div class="figcaption">
                                     <h3>Thông tin cá nhân *</h3>
                                     <?php 
-                       if(!empty($informationUser) && $informationUser["status"]==1 ){
-                                echo " <div class='status success'>
-                                     <p>Hoàn thành</p>
-                                  </div>";
-                       }
-                       else{
-                        echo " <div class='status error'>
-                        <p>Chưa hoàn thành</p>
-                     </div>";
-                       }
-                                    ?>
-                               
+                                       if(!empty($informationUser) && $informationUser["status"]==1 ){
+                                                echo " <div class='status success'>
+                                                     <p>Hoàn thành</p>
+                                                  </div>";
+                                       }
+                                       else{
+                                        echo " <div class='status error'>
+                                        <p>Chưa hoàn thành</p>
+                                       </div>";
+                                       }
+                                                    ?>
                                  </div>
                               </div>
                               <div class="right-action">
@@ -494,40 +481,32 @@
                                        <td>Tên</td>
                                        <td><?= $informationUser["firstname"] ?></td>
                                     </tr>
-                            
                                     <tr>
                                        <td>Ngày sinh</td>
                                        <td><?= !empty($informationUser["date_of_birth"]) ?formatDate($informationUser["date_of_birth"]) : "" ?></td>
                                     </tr>
-                                  
-
                                     <tr>
                                        <td>Điện thoại</td>
-                      <td><?= !empty($informationUser["contact_number"]) ? $informationUser["contact_number"] : "" ?></td>
+                                       <td><?= !empty($informationUser["contact_number"]) ? $informationUser["contact_number"] : "" ?></td>
                                     </tr>
                                     <tr>
                                        <td>Email</td>
                                        <td><?= $informationUser["email"]  ?></td>
                                     </tr>
-
                                     <tr>
-                               
                                        <td>Tình trạng hôn nhân</td>
-                                    <?php $informationUser["marital_status"]==0 ? "Độc thân"  :"Đã kết hôn" ?>
+                                       <?php $informationUser["marital_status"]==0 ? "Độc thân"  :"Đã kết hôn" ?>
                                        <td><?php 
-                                       if(!empty($informationUser["marital_status"])){
-                                           if($informationUser["marital_status"]==1){
-                                             echo "Độc thân";
-                                           }
-                                           else{
-                                             echo "Đã kết hôn";
-                                           }
-                                       }
-                                       ?></td>
-                                      
-                                       
+                                          if(!empty($informationUser["marital_status"])){
+                                              if($informationUser["marital_status"]==1){
+                                                echo "Độc thân";
+                                              }
+                                              else{
+                                                echo "Đã kết hôn";
+                                              }
+                                          }
+                                          ?></td>
                                     </tr>
-                                
                                     <tr>
                                        <td>Tỉnh/ Thành phố</td>
                                        <td  class="provincesUser"></td>
@@ -559,20 +538,18 @@
                                           <div class="form-group form-text">
                                              <label>* Họ và tên lót</label>
                                              <input 
-                                             required 
-                                             data-pristine-required-message="Không được để trống"   
-                                             type="text" value="<?=  $informationUser["lastname"]?>"  name="lastname" id="lastname"  maxlength="30" class="valid">
-                                         
+                                                required 
+                                                data-pristine-required-message="Không được để trống"   
+                                                type="text" value="<?=  $informationUser["lastname"]?>"  name="lastname" id="lastname"  maxlength="30" class="valid">
                                           </div>
                                        </div>
                                        <div class="col-md-6">
                                           <div class="form-group form-text">
                                              <label>* Tên</label>
                                              <input
-                                             required 
-                                             data-pristine-required-message="Không được để trống"   
-
-                                              type="text" value="<?= $informationUser["firstname"] ?>"  name="firstname" id="firstname" value="Ba" maxlength="30">
+                                                required 
+                                                data-pristine-required-message="Không được để trống"   
+                                                type="text" value="<?= $informationUser["firstname"] ?>"  name="firstname" id="firstname" value="Ba" maxlength="30">
                                              <span class="err_firstname" style="display:none"></span>
                                           </div>
                                        </div>
@@ -598,21 +575,18 @@
                                           <div class="form-group form-birthday">
                                              <label for="">* Ngày sinh</label>
                                              <input 
-                                             required 
-                                             data-pristine-required-message="Nhập ngày tháng năm sinh của bạn"   
-                                             type="text" value="<?=  formatDate($informationUser["date_of_birth"])?>" class="date_month" name="birthday" ">
-                                 
+                                                required 
+                                                data-pristine-required-message="Nhập ngày tháng năm sinh của bạn"   
+                                                type="text" value="<?=  formatDate($informationUser["date_of_birth"])?>" class="date_month" name="birthday" ">
                                           </div>
                                        </div>
                                        <div class="col-md-6">
                                           <div class="form-group form-text">
                                              <label for="">* Số điện thoại</label>
                                              <input 
-                                             required 
-                                             data-pristine-required-message="Vui lòng nhập số điện thoại"   
-                                        
-                                             
-                                             type="text"  name="mobile" id="mobile" value="<?= !empty($informationUser["contact_number"])? $informationUser["contact_number"]: "" ?>" maxlength="20" style="margin-top:5px">
+                                                required 
+                                                data-pristine-required-message="Vui lòng nhập số điện thoại"   
+                                                type="text"  name="mobile" id="mobile" value="<?= !empty($informationUser["contact_number"])? $informationUser["contact_number"]: "" ?>" maxlength="20" style="margin-top:5px">
                                              <span class="err_mobile" style="display:none"></span>
                                           </div>
                                        </div>
@@ -622,35 +596,27 @@
                                              <input type="text"  id="email_member_edit" value="<?= $informationUser["email"] ?>" readonly="readonly" disabled="disabled" style="margin-top:5px">
                                           </div>
                                        </div>
-                                 
                                        <div class="col-md-6">
                                           <div class="form-group form-select">
                                              <label for="">* Tình trạng hôn nhân</label>
                                              <select name="slMarritial">
-                                             <option <?php 
-                                                if($informationUser["marital_status"]==1)
-                                                {echo 'selected';} 
-                                               
-                                               
-                                               ?> value="1" >Độc thân</option>
+                                                <option <?php 
+                                                   if($informationUser["marital_status"]==1)
+                                                   {echo 'selected';} 
+                                                   
+                                                   
+                                                   ?> value="1" >Độc thân</option>
                                                 <option <?php if($informationUser["marital_status"]==2){echo 'selected';} ?>  value="2">Đã kết hôn</option>
-                                             
                                              </select>
-                                           
                                           </div>
                                        </div>
-                                  
                                        <div class="col-md-6">
                                           <div class="form-group form-select">
                                              <label for="">* Tỉnh / Thành phố</label>
                                              <select 
-                                            
-                                             name="slcity" id="slcity" class="select-province-city" >                                      
+                                                name="slcity" id="slcity" class="select-province-city" >
                                                 <option value="">Chọn</option>
-                                              
-
                                              </select>
-                                          
                                              <span class="err_slcity" style="display:none"></span>
                                           </div>
                                        </div>
@@ -659,34 +625,30 @@
                                           <div class="form-group form-select">
                                              <label for="">* Quận/huyện</label>
                                              <select
-                                             required 
-                                             data-pristine-required-message="Không được để trống"     
-                                             name="sldistrict" id="sldistrict" class="select-district">
-                                      
+                                                required 
+                                                data-pristine-required-message="Không được để trống"     
+                                                name="sldistrict" id="sldistrict" class="select-district">
                                              </select>
                                              <span class="err_sldistrict" style="display:none"></span>
                                           </div>
                                        </div>
-                                       
                                        <div class="col-md-6">
                                           <label for="">* Địa chỉ (Số nhà, Đường)</label>
                                           <div class="form-group form-text">
                                              <input
-                                             required 
-                                             data-pristine-required-message="Không được để trống"  
-                                             type="text"  name="address" value="<?= !empty($informationUser["address"])? $informationUser["address"]: "" ?>">
-                                         
+                                                required 
+                                                data-pristine-required-message="Không được để trống"  
+                                                type="text"  name="address" value="<?= !empty($informationUser["address"])? $informationUser["address"]: "" ?>">
                                           </div>
                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                        <div class="button-save button-center">
-                                       <!-- data-bs-dismiss="modal" -->
+                                          <!-- data-bs-dismiss="modal" -->
                                           <button name="personalInfoForm" class="btn-primary" type="submit">Lưu lại</button>
                                        </div>
                                     </div>
                                  </form>
-                              
                               </div>
                            </div>
                         </div>
@@ -720,7 +682,6 @@
                               <a href="javascript:;" ><em class="mdi mdi-plus-circle"></em><span>Thêm mới</span></a>
                            </div>
                         </div>
-               
                         <div class="widget-body">
                            <div class="content">
                            </div>
@@ -734,18 +695,17 @@
                                  <div class="figcaption">
                                     <h3>Thông tin nghề nghiệp *</h3>
                                     <?php 
-                       if(!empty($seeker_job_information) && $seeker_job_information["status"]==1 ){
-                                echo " <div class='status success'>
-                                     <p>Hoàn thành</p>
-                                  </div>";
-                       }
-                       else{
-                        echo " <div class='status error'>
-                        <p>Chưa hoàn thành</p>
-                     </div>";
-                       }
-                                    ?>
-                                 
+                                       if(!empty($seeker_job_information) && $seeker_job_information["status"]==1 ){
+                                                echo " <div class='status success'>
+                                                     <p>Hoàn thành</p>
+                                                  </div>";
+                                       }
+                                       else{
+                                        echo " <div class='status error'>
+                                        <p>Chưa hoàn thành</p>
+                                       </div>";
+                                       }
+                                                    ?>
                                  </div>
                               </div>
                               <div class="right-action">
@@ -765,75 +725,69 @@
                         <div class="widget-body">
                            <table>
                               <tbody>
-                                     <tr>
+                                 <tr>
                                     <td>Cấp bậc mong muốn</td>
                                     <td>
-   <?php 
-    
-         if(!empty($seeker_job_information["position"])) { 
-            echo $seeker_job_information["position"];
-      }
-   ?>
+                                       <?php 
+                                          if(!empty($seeker_job_information["position"])) { 
+                                             echo $seeker_job_information["position"];
+                                          }
+                                          ?>
                                     </td>
                                  </tr>
                                  <tr>
                                     <td>Mức lương</td>
                                     <td>
-      <?php  if(isset($seeker_job_information["salary_from"])) {
-        echo $seeker_job_information["salary_from"]."-".$seeker_job_information["salary_to"] ." VND";
-                                 }
-                                  ?>
+                                       <?php  if(isset($seeker_job_information["salary_from"])) {
+                                          echo $seeker_job_information["salary_from"]."-".$seeker_job_information["salary_to"] ." VND";
+                                           }
+                                                 ?>
                                     </td>
                                  </tr>
                                  <tr>
                                     <td>Hình thức làm việc</td>
                                     <td>
                                        <?php if(!empty($seeker_type)){
-                                         $valueStr = '';
-                                          foreach ($seeker_type as $value) {
-                                       $valueStr .= " $value[job_type] " . ',';
-                                          }
-                                   $valueStr = rtrim($valueStr, ',');
-                                          echo $valueStr;
-                                       }  
-                                     
-                                  
-                                    ?></td>
+                                          $valueStr = '';
+                                           foreach ($seeker_type as $value) {
+                                          $valueStr .= " $value[job_type] " . ',';
+                                           }
+                                          $valueStr = rtrim($valueStr, ',');
+                                           echo $valueStr;
+                                          }  
+                                          
+                                          
+                                          ?>
+                                    </td>
                                  </tr>
-     <?php if(isset($seeker_job_information["work_from_home"])==1) { ?>
-                                    <tr>
+                                 <?php if(isset($seeker_job_information["work_from_home"])==1) { ?>
+                                 <tr>
                                     <td>Phương thức công việc</td>
                                     <td>
-                                    Work from home
+                                       Work from home
                                     </td>
-                                 </tr> 
-                                    <?php }?>
-
-                                    
-                                    
+                                 </tr>
+                                 <?php }?>
                                  <tr>
                                     <td>Ngành nghề</td>
                                     <td>
                                        <ul>
-                                       <?php if(!empty($informationProfession)){
-                                   
-                                          foreach ($informationProfession as $value) {
+                                          <?php if(!empty($informationProfession)){
+                                             foreach ($informationProfession as $value) {
+                                                
+                                                echo "<li> $value[profession_name]</li>";
                                              
-                                             echo "<li> $value[profession_name]</li>";
-                                     
-                                          }
-                                  
-                                          
-                                       }  
-                                    ?>
+                                             }
+                                             
+                                             
+                                             }  
+                                             ?>
                                        </ul>
-                                    
                                     </td>
                                  </tr>
                                  <tr>
                                     <td>Nơi làm việc</td>
                                     <td class="workplace">
-                                     
                                     </td>
                                  </tr>
                               </tbody>
@@ -856,20 +810,19 @@
                                              <div class="select-group">
                                                 <select name="level_id" id="level_id">
                                                    <option value="" style="display:none;" selected>Chọn</option>
-                                                 
-                                      <?php
-                                       foreach ($data_position as $item):?>
-                                          <option 
-                                          <?php 
-                                             if(!empty($seeker_job_information)){
-                                 if($item["id"] ==$seeker_job_information["position_id"]){
-                                                   echo 'selected';
-                                                }
-                                              }
-                                          ?>
-                                          value="<?= $item["id"] ?>"><?= $item["position"] ?>
-                                    <?php  endforeach;?>
-                                       </select>
+                                                   <?php
+                                                      foreach ($data_position as $item):?>
+                                                   <option 
+                                                      <?php 
+                             if(!empty($seeker_job_information)){
+                              if($item["id"] ==$seeker_job_information["position_id"]){
+                                                               echo 'selected';
+                                                            }
+                                                          }
+                                                         ?>
+                                                      value="<?= $item["id"] ?>"><?= $item["position"] ?>
+                                                      <?php  endforeach;?>
+                                                </select>
                                              </div>
                                           </div>
                                        </div>
@@ -879,15 +832,13 @@
                                           </div>
                                           <div class="col-lg-8">
                                              <div class="form-salary">
-                                            
                                                 <div class="form-select form-text">
                                                    <input placeholder="Từ *"off" type="text" size="12" name="salary_from" id="salary_from" required  data-pristine-required-message="Không được để trống"  maxlength="14" value="<?= !empty($seeker_job_information)? $seeker_job_information["salary_from"] : "" ?>" >
                                                 </div>
                                                 <div class="form-select form-text">
-                                        
                                                    <input  placeholder="Đến *"autocomplete="off" type="text"  size="12" name="salary_to" id="salary_to" maxlength="14" required  data-pristine-required-message="Không được để trống" 
-                                                   value="<?= !empty($seeker_job_information)?$seeker_job_information["salary_to"] : "" ?>"
-                                                   >
+                                                      value="<?= !empty($seeker_job_information)?$seeker_job_information["salary_to"] : "" ?>"
+                                                      >
                                                 </div>
                                              </div>
                                              <div class="form-error"><span class="err_salary_unit" style="display:none"></span></div>
@@ -899,67 +850,64 @@
                                           </div>
                                           <div class="col-lg-8">
                                              <div class="row form-of-work">
-                                        
                                                 <div class="col-md-6">
                                                    <div class="form-group form-checkbox">
                                                       <input  
-
-                                                      <?php if(isset($seeker_type)){
+                                                         <?php if(isset($seeker_type)){
                                                             foreach ($seeker_type as $item):
-                                                           
+                                                            
                                                                if($item["job_type_id"]==1){
                                                                   echo "checked";
                                                                   break;
                                                                }
                                                             endforeach;
-                                                      } ?>
-                                                      type="checkbox" name="chkResumeType[]"     id="chkResumeType_1" value="1">
+                                                            } ?>
+                                                         type="checkbox" name="chkResumeType[]"     id="chkResumeType_1" value="1">
                                                       <label for="chkResumeType_1">Nhân viên chính thức</label>
                                                    </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                    <div class="form-group form-checkbox">
                                                       <input   
-                                                      <?php if(isset($seeker_type)){
+                                                         <?php if(isset($seeker_type)){
                                                             foreach ($seeker_type as $item):
                                                                if($item["job_type_id"]==2){
                                                                   echo "checked";
                                                                   break;
                                                                }
                                                             endforeach;
-                                                      } ?>
-                                                      type="checkbox" name="chkResumeType[]" id="chkResumeType_2" value="2">
+                                                            } ?>
+                                                         type="checkbox" name="chkResumeType[]" id="chkResumeType_2" value="2">
                                                       <label for="chkResumeType_2">Bán thời gian</label>
                                                    </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                    <div class="form-group form-checkbox">
                                                       <input  
-                                                      <?php if(isset($seeker_type)){
+                                                         <?php if(isset($seeker_type)){
                                                             foreach ($seeker_type as $item):
                                                                if($item["job_type_id"]==3){
                                                                   echo "checked";
                                                                   break;
                                                                }
                                                             endforeach;
-                                                      } ?>
-                                                      
-                                                      type="checkbox" name="chkResumeType[]" id="chkResumeType_3" value="3">
+                                                            } ?>
+                                                         type="checkbox" name="chkResumeType[]" id="chkResumeType_3" value="3">
                                                       <label for="chkResumeType_3">Thời vụ - Nghề tự do </label>
                                                    </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                    <div class="form-group form-checkbox">
                                                       <input   
-                                                      <?php if(isset($seeker_type)){
+                                                         <?php if(isset($seeker_type)){
                                                             foreach ($seeker_type as $item):
                                                                if($item["job_type_id"]==4){
                                                                   echo "checked";
                                                                   break;
                                                                }
                                                             endforeach;
-                                                      } ?>
-                                                      type="checkbox" name="chkResumeType[]" id="chkResumeType_4" value="4">
+                                                            } ?>
+                                                         type="checkbox" name="chkResumeType[]" id="chkResumeType_4" value="4">
                                                       <label for="chkResumeType_4">Thực tập</label>
                                                    </div>
                                                 </div>
@@ -974,10 +922,9 @@
                                           <div class="col-lg-8">
                                              <div class="switch-group">
                                                 <label for="chkWorkHome">Work from home
-                                                 
                                                 <input   
-                                       <?php if(isset($seeker_job_information["work_from_home"])&& $seeker_job_information["work_from_home"]==1) echo "checked";?>
-                                                type="checkbox" name="chkWorkHome" id="chkWorkHome" value="1">
+                                                   <?php if(isset($seeker_job_information["work_from_home"])&& $seeker_job_information["work_from_home"]==1) echo "checked";?>
+                                                   type="checkbox" name="chkWorkHome" id="chkWorkHome" value="1">
                                                 <span class="slider"></span>
                                                 </label>
                                              </div>
@@ -990,27 +937,23 @@
                                           <div class="col-lg-8">
                                              <div class="form-select-chosen">
                                                 <select multiple class="chosen-select-max-three" name="INDUSTRY_ID[]" id="INDUSTRY_ID" data-placeholder="Ngành nghề">
-                                  
-                                       <?php foreach ($data_profession as $key=>$item): ?>
-                                      
-                      <option 
-                      <?php
-                      
-                          foreach ($informationProfession as $itemProfession) {
-                             if($item["id"]==$itemProfession["seeker_profession_id"] ){
-                                echo 'selected';
-                             }
-                           
-                          }
-                             
-                    
-                         ?>
-                       value="<?= $item["id"] ?>">
-                       <?= $item["profession_name"] ?>
-                        </option>        
-                      <?php    endforeach;?>
+                                                   <?php foreach ($data_profession as $key=>$item): ?>
+                                                   <option 
+                                                      <?php
+                                                         foreach ($informationProfession as $itemProfession) {
+                                                            if($item["id"]==$itemProfession["seeker_profession_id"] ){
+                                                               echo 'selected';
+                                                            }
+                                                          
+                                                         }
+                                                            
+                                                         
+                                                         ?>
+                                                      value="<?= $item["id"] ?>">
+                                                      <?= $item["profession_name"] ?>
+                                                   </option>
+                                                   <?php    endforeach;?>
                                                 </select>
-                                              
                                              </div>
                                              <div class="form-error"><span class="err_INDUSTRY_ID" style="display:none"></span></div>
                                           </div>
@@ -1027,13 +970,10 @@
                                                    <div class="row">
                                                       <div class="col-lg-8">
                                                          <div class="select-group">
-                                                         <select    name="location_id" class="" id="select_location_id_3">
-  
-</select>
+                                                            <select    name="location_id" class="" id="select_location_id_3">
+                                                            </select>
                                                          </div>
-                                                        
                                                       </div>
-                                                    
                                                    </div>
                                                 </div>
                                                 <div class="work-popup-item ">
@@ -1041,70 +981,17 @@
                                                       <div class="col-4">
                                                          <div class="select-group">
                                                             <select name="LOCATION_ID[]" class="" id="select_location_id_1">
-                                                               <option value="" disabled="disabled">Chọn</option>
-                                                               <option value="4" disabled="disabled">Hà Nội</option>
-                                                               <option value="8">Hồ Chí Minh</option>
-                                                               <option value="76">An Giang</option>
-                                                               <option value="64">Bà Rịa - Vũng Tàu</option>
-                                                               <option value="781">Bạc Liêu</option>
-                                                               <option value="281">Bắc Cạn</option>
-                                                               <option value="240">Bắc Giang</option>
-                                                               <option value="241">Bắc Ninh</option>
-                                                               <option value="75">Bến Tre</option>
-                                                               <option value="650">Bình Dương</option>
-                                                               <option value="56">Bình Định</option>
-                                                               <option value="651">Bình Phước</option>
-                                                               <option value="62">Bình Thuận</option>
-                                                               <option value="78">Cà Mau</option>
-                                                               <option value="26">Cao Bằng</option>
-                                                               <option value="71">Cần Thơ</option>
-                                                               <option value="50">Dak Lak</option>
-                                                               <option value="1042">Dak Nông</option>
-                                                               <option value="511">Đà Nẵng</option>
-                                                               <option value="900">Điện Biên</option>
-                                                               <option value="61">Đồng Nai</option>
-                                                               <option value="67">Đồng Tháp</option>
-                                                               <option value="59">Gia Lai</option>
-                                                               <option value="19">Hà Giang</option>
-                                                               <option value="351">Hà Nam</option>
-                                                               <option value="39">Hà Tĩnh</option>
-                                                               <option value="320">Hải Dương</option>
-                                                               <option value="31">Hải Phòng</option>
-                                                               <option value="780">Hậu Giang</option>
-                                                               <option value="18">Hòa Bình</option>
-                                                               <option value="321">Hưng Yên</option>
-                                                               <option value="58">Khánh Hòa</option>
-                                                               <option value="77">Kiên Giang</option>
-                                                               <option value="60">Kon Tum</option>
-                                                               <option value="23">Lai Châu</option>
-                                                               <option value="25">Lạng Sơn</option>
-                                                               <option value="20">Lào Cai</option>
-                                                               <option value="63">Lâm Đồng</option>
-                                                               <option value="72">Long An</option>
-                                                               <option value="350">Nam Định</option>
-                                                               <option value="38">Nghệ An</option>
-                                                               <option value="30">Ninh Bình</option>
-                                                               <option value="68">Ninh Thuận</option>
-                                                               <option value="210">Phú Thọ</option>
-                                                               <option value="57">Phú Yên</option>
-                                                               <option value="52">Quảng Bình</option>
-                                                               <option value="510">Quảng Nam</option>
-                                                               <option value="55">Quảng Ngãi</option>
-                                                               <option value="33">Quảng Ninh</option>
-                                                               <option value="53">Quảng Trị</option>
-                                                               <option value="79">Sóc Trăng</option>
-                                                               <option value="22">Sơn La</option>
-                                                               <option value="66">Tây Ninh</option>
-                                                               <option value="36">Thái Bình</option>
-                                                               <option value="280">Thái Nguyên</option>
-                                                               <option value="37">Thanh Hóa</option>
-                                                               <option value="54">Thừa Thiên- Huế</option>
-                                                               <option value="73">Tiền Giang</option>
-                                                               <option value="74">Trà Vinh</option>
-                                                               <option value="27">Tuyên Quang</option>
-                                                               <option value="70">Vĩnh Long</option>
-                                                               <option value="211">Vĩnh Phúc</option>
-                                                               <option value="29">Yên Bái</option>
+                                        <option value="" disabled="disabled">Chọn</option>
+                                         <option value="4" disabled="disabled">Hà Nội</option>
+                                                  <option value="8">Hồ Chí Minh</option>
+                                                   <option value="76">An Giang</option>
+                                                <option value="64">Bà Rịa - Vũng Tàu</option>
+                                                  <option value="781">Bạc Liêu</option>
+                                                      <option value="281">Bắc Cạn</option>
+                                                     <option value="240">Bắc Giang</option>
+                                                   <option value="241">Bắc Ninh</option>
+                                                    <option value="75">Bến Tre</option>
+                                                      
                                                             </select>
                                                          </div>
                                                          <div class="form-error"><span class="err_LOCATION_ID" style="display:none"></span></div>
@@ -1130,7 +1017,7 @@
                                                          <div class="form-error"><span class="err_select_district_id_1" style="display:none"></span></div>
                                                       </div>
                                                       <div class="col-2 col-cus-1-3">
-                                                         <div class="delete"><a onclick="return RemoveRowLoc(this, 1);"> <em class="material-icons">highlight_off</em></a></div>
+                                                         <div class="delete"><a > <em class="material-icons">highlight_off</em></a></div>
                                                       </div>
                                                    </div>
                                                 </div>
@@ -1139,70 +1026,10 @@
                                                       <div class="col-4">
                                                          <div class="select-group">
                                                             <select name="LOCATION_ID[]" class="" id="select_location_id_2" data-id="#select_district_id_2">
-                                                               <option value="" disabled="disabled">Chọn</option>
-                                                               <option value="4" disabled="disabled">Hà Nội</option>
-                                                               <option value="8">Hồ Chí Minh</option>
-                                                               <option value="76">An Giang</option>
-                                                               <option value="64">Bà Rịa - Vũng Tàu</option>
-                                                               <option value="781">Bạc Liêu</option>
-                                                               <option value="281">Bắc Cạn</option>
-                                                               <option value="240">Bắc Giang</option>
-                                                               <option value="241">Bắc Ninh</option>
-                                                               <option value="75">Bến Tre</option>
-                                                               <option value="650">Bình Dương</option>
-                                                               <option value="56">Bình Định</option>
-                                                               <option value="651">Bình Phước</option>
-                                                               <option value="62">Bình Thuận</option>
-                                                               <option value="78">Cà Mau</option>
-                                                               <option value="26">Cao Bằng</option>
-                                                               <option value="71">Cần Thơ</option>
-                                                               <option value="50">Dak Lak</option>
-                                                               <option value="1042">Dak Nông</option>
-                                                               <option value="511">Đà Nẵng</option>
-                                                               <option value="900">Điện Biên</option>
-                                                               <option value="61">Đồng Nai</option>
-                                                               <option value="67">Đồng Tháp</option>
-                                                               <option value="59">Gia Lai</option>
-                                                               <option value="19">Hà Giang</option>
-                                                               <option value="351">Hà Nam</option>
-                                                               <option value="39">Hà Tĩnh</option>
-                                                               <option value="320">Hải Dương</option>
-                                                               <option value="31">Hải Phòng</option>
-                                                               <option value="780">Hậu Giang</option>
-                                                               <option value="18">Hòa Bình</option>
-                                                               <option value="321">Hưng Yên</option>
-                                                               <option value="58">Khánh Hòa</option>
-                                                               <option value="77">Kiên Giang</option>
-                                                               <option value="60">Kon Tum</option>
-                                                               <option value="23">Lai Châu</option>
-                                                               <option value="25">Lạng Sơn</option>
-                                                               <option value="20">Lào Cai</option>
-                                                               <option value="63">Lâm Đồng</option>
-                                                               <option value="72">Long An</option>
-                                                               <option value="350">Nam Định</option>
-                                                               <option value="38">Nghệ An</option>
-                                                               <option value="30">Ninh Bình</option>
-                                                               <option value="68">Ninh Thuận</option>
-                                                               <option value="210">Phú Thọ</option>
-                                                               <option value="57">Phú Yên</option>
-                                                               <option value="52">Quảng Bình</option>
-                                                               <option value="510">Quảng Nam</option>
-                                                               <option value="55">Quảng Ngãi</option>
-                                                               <option value="33">Quảng Ninh</option>
-                                                               <option value="53">Quảng Trị</option>
-                                                               <option value="79">Sóc Trăng</option>
-                                                               <option value="22">Sơn La</option>
-                                                               <option value="66">Tây Ninh</option>
-                                                               <option value="36">Thái Bình</option>
-                                                               <option value="280">Thái Nguyên</option>
-                                                               <option value="37">Thanh Hóa</option>
-                                                               <option value="54">Thừa Thiên- Huế</option>
-                                                               <option value="73">Tiền Giang</option>
-                                                               <option value="74">Trà Vinh</option>
-                                                               <option value="27">Tuyên Quang</option>
-                                                               <option value="70">Vĩnh Long</option>
-                                                               <option value="211">Vĩnh Phúc</option>
-                                                               <option value="29">Yên Bái</option>
+                               <option value="" disabled="disabled">Chọn</option>            
+                                <option value="4" disabled="disabled">Hà Nội</option>           
+                                <option value="8">Hồ Chí Minh</option>
+
                                                             </select>
                                                          </div>
                                                          <div class="form-error"><span class="err_LOCATION_ID" style="display:none"></span></div>
@@ -1243,21 +1070,18 @@
                                           <div class="col-lg-8">
                                              <div class="form-select-chosen">
                                                 <select multiple search="true" name="BENEFIT_ID[]" id="BENEFIT_ID" class="chosen-select-max-three" data-placeholder="Chọn" title="Chọn" >
-                                                   
-                     <?php foreach ($data_welfare as $key => $item):?>
-             
-                   <option
-                   <?php   
-                  foreach ($informationWelfare as $itemWelfare) {
-                     if($item["id"]==$itemWelfare["seeker_welfare_id"] ){
-                        echo 'selected';
-                     }
-                   
-                  }
-                      ?>
-                    
-                   value="<?= $item["id"] ?>"><?= $item["welfare_type"] ?></option>
-                                             <?php   endforeach;?>
+                                                   <?php foreach ($data_welfare as $key => $item):?>
+                                                   <option
+                                                      <?php   
+                                                         foreach ($informationWelfare as $itemWelfare) {
+                                                            if($item["id"]==$itemWelfare["seeker_welfare_id"] ){
+                                                               echo 'selected';
+                                                            }
+                                                          
+                                                         }
+                                                             ?>
+                                                      value="<?= $item["id"] ?>"><?= $item["welfare_type"] ?></option>
+                                                   <?php   endforeach;?>
                                                 </select>
                                              </div>
                                           </div>
@@ -1286,20 +1110,18 @@
                                  <div class="image"><img src="./img/dash-board/i4.png" alt=""></div>
                                  <div class="figcaption">
                                     <h3>Kinh nghiệm làm việc *</h3>
-                                       <?php 
-                              
-                       if(!empty($seeker_experience_detail) && $seeker_experience_detail[0]["status"]==1 ){
-                                echo " <div class='status success'>
-                                     <p>Hoàn thành</p>
-                                  </div>";
-                       }
-                       else{
-                        echo " <div class='status error'>
-                        <p>Chưa hoàn thành</p>
-                     </div>";
-                       }
-                       ?>
-                                  
+                                    <?php 
+                                       if($count_exp>0){
+                                                echo " <div class='status success'>
+                                                     <p>Hoàn thành</p>
+                                                  </div>";
+                                       }
+                                       else{
+                                        echo " <div class='status error'>
+                                        <p>Chưa hoàn thành</p>
+                                       </div>";
+                                       }
+                                       ?>
                                  </div>
                               </div>
                               <div class="right-action">
@@ -1314,76 +1136,74 @@
                            </div>
                         </div>
                         <div class="widget-body">
-                        <div class="modal fade " id="year_of_experience" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog" >
-                           <div class="modal-dialog modal-dialog-centered">
-                              <div class="modal-content">
-                                 <div class="modal-header">
-                                    <h2 class="modal-title">Kinh nghiệm làm việc</h2>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                 </div>
-                                 <div class="modal-body">
-                                 <form name="frm_Experience" action="my_profile/update_yearofexperience" method="post"  id="frm_Experience">
-         <div class="form-group row">
-            <div class="col-lg-4">
-               <label for="">Số năm kinh nghiệm</label>
-            </div>
-            <div class="col-lg-8">
-               <div class="input-group">
-                  <input type="number" class="exp-yet valid" maxlength="2" name="yearOfExperience" id="yearOfExperience" min="1" max="55" value="<?= !empty($year_of_experience["yearOfExperience"]) ? $year_of_experience["yearOfExperience"]  : "1"?>" >
-               </div>
-               <div class="form-error"><span class="err_yearOfExperience" style="display: none;"></span></div> 
-               
-               <div class="form-group form-checkbox mt-1">
-                  <input type="checkbox" id="not_experience"
-                   <?= !empty($year_of_experience["not_experience"]) && $year_of_experience["not_experience"]==1 ? "checked" : "123"?>
-                  
-                  name="not_experience"  value="1" style="margin-right: 5px;" class="valid">
-                  <label class="no-exp-yet" for="not_experience">Chưa có kinh nghiệm</label>
-               </div>
-            </div>
-         </div>
-         <div class="form-group row">
-            <div class="col-lg-4">
-               <label for="">Cấp bậc hiện tại</label>
-            </div>
-            <div class="col-lg-8">
-               <div class="select-group">
-                  <select   name="levelcurrent_id" id="levelcurrent_id" style="float: left; width: 200px; margin-bottom:5px">
-                     <option value="">Chọn</option>
-                     <?php foreach ($data_position as $item): ?>
-<option
- <?= !empty($year_of_experience["position_id"]) && $year_of_experience["position_id"] ==  $item["id"]? "selected": "" ?>  value="<?= $item["id"] ?>"><?= $item["position"] ?></option>
-                    <?php endforeach;?>
-                   
-                  </select>
-               </div>
-               <div class="form-error"><span class="err_levelcurrent_id" style="display:none"></span></div>
-            </div>
-         </div>
-         <div class="form-group form-button">
-            <div class="button-save button-center">
-        <button class="btn-gradient" type="submit">Lưu Lại</button>
-            </div>
-         </div>
-      </form>
+                           <div class="modal fade " id="year_of_experience" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog" >
+                              <div class="modal-dialog modal-dialog-centered">
+                                 <div class="modal-content">
+                                    <div class="modal-header">
+                                       <h2 class="modal-title">Kinh nghiệm làm việc</h2>
+                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                       <form name="frm_Experience" action="my_profile/update_yearofexperience" method="post"  id="frm_Experience">
+                                          <div class="form-group row">
+                                             <div class="col-lg-4">
+                                                <label for="">Số năm kinh nghiệm</label>
+                                             </div>
+                                             <div class="col-lg-8">
+                                                <div class="input-group">
+                                                   <input type="number" class="exp-yet valid" maxlength="2" name="yearOfExperience" id="yearOfExperience" min="1" max="55" value="<?= !empty($year_of_experience["yearOfExperience"]) ? $year_of_experience["yearOfExperience"]  : "1"?>" >
+                                                </div>
+                                                <div class="form-error"><span class="err_yearOfExperience" style="display: none;"></span></div>
+                                                <div class="form-group form-checkbox mt-1">
+                                                   <input type="checkbox" id="not_experience"
+                                                      <?= !empty($year_of_experience["not_experience"]) && $year_of_experience["not_experience"]==1 ? "checked" : "123"?>
+                                                      name="not_experience"  value="1" style="margin-right: 5px;" class="valid">
+                                                   <label class="no-exp-yet" for="not_experience">Chưa có kinh nghiệm</label>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="form-group row">
+                                             <div class="col-lg-4">
+                                                <label for="">Cấp bậc hiện tại</label>
+                                             </div>
+                                             <div class="col-lg-8">
+                                                <div class="select-group">
+                                                   <select   name="levelcurrent_id" id="levelcurrent_id" style="float: left; width: 200px; margin-bottom:5px">
+                                                      <option value="">Chọn</option>
+                                                      <?php foreach ($data_position as $item): ?>
+                                                      <option
+                                                         <?= !empty($year_of_experience["position_id"]) && $year_of_experience["position_id"] ==  $item["id"]? "selected": "" ?>  value="<?= $item["id"] ?>"><?= $item["position"] ?></option>
+                                                      <?php endforeach;?>
+                                                   </select>
+                                                </div>
+                                                <div class="form-error"><span class="err_levelcurrent_id" style="display:none"></span></div>
+                                             </div>
+                                          </div>
+                                          <div class="form-group form-button">
+                                             <div class="button-save button-center">
+                                                <button class="btn-gradient" type="submit">Lưu Lại</button>
+                                             </div>
+                                          </div>
+                                       </form>
+                                    </div>
                                  </div>
                               </div>
                            </div>
-                        </div>
-                             <div style="margin-top:10px"class="experience">
+                           <div style="margin-top:10px"class="experience">
                               <table>
                                  <tbody>
                                     <tr>
                                        <td>Số năm kinh nghiệm</td>
                                        <td id="txt-experience">
-                                          <?= !empty($year_of_experience["yearOfExperience"]) ? $year_of_experience["yearOfExperience"]  : "Chưa có kinh nghiệm"?> </td>
+                                          <?= !empty($year_of_experience["yearOfExperience"]) ? $year_of_experience["yearOfExperience"]  : "Chưa có kinh nghiệm"?> 
+                                       </td>
                                        <td>
-                       <div class="link-edit" ><a data-bs-target="#year_of_experience" data-bs-toggle="modal"> <em class="material-icons">create</em></a></div>
+                                          <div class="link-edit" ><a data-bs-target="#year_of_experience" data-bs-toggle="modal"> <em class="material-icons">create</em></a></div>
                                        </td>
                                     </tr>
                                     <tr>
                                        <td>Cấp bậc hiện tại</td>
-                          <td id="cbprofile_levelpresent"><?= !empty($year_of_experience["position"]) ? $year_of_experience["position"]  : "Chưa cập nhật" ?></td>
+                                       <td id="cbprofile_levelpresent"><?= !empty($year_of_experience["position"]) ? $year_of_experience["position"]  : "Chưa cập nhật" ?></td>
                                        <td>
                                           <div class="link-edit" ><a  data-bs-target="#year_of_experience" data-bs-toggle="modal"> <em class="material-icons">create</em></a></div>
                                        </td>
@@ -1392,199 +1212,184 @@
                               </table>
                            </div>
                            <?php if($count_exp==0) {?>
-                              <div class="no-content">
+                           <div class="no-content">
                               <p>Bạn hãy thêm kinh nghiệp làm việc của mình để nhà tuyển dụng tham khảo</p>
                               <a data-bs-target="#kinhnghiemlamviec" data-bs-toggle="modal"><em class="mdi mdi-plus-circle"></em><span>Thêm mới</span></a>
                            </div>
-                         
-                              <?php } else {?>
-                               
+                           <?php } else {?>
                            <div class="sticker">
-                           <ul class="list-sticker">
-                            
+                              <ul class="list-sticker">
                                  <?php if(!empty($seeker_experience_detail)) { ?>
-                                    <?php foreach ($seeker_experience_detail as $item):  ?>
-                                       <li class="item" id="expList_<?= $item["id"]?>">
-                                 <div class="head-sticker active">
-                                    <div class="title">
-                                       <h4><?= $item["rexp_title"] ?></h4>
-                                       <div class="sub-title">
-                                          <p><?= $item["rexp_company"] ?></p>
+                                 <?php foreach ($seeker_experience_detail as $item):  ?>
+                                 <li class="item" id="expList_<?= $item["id"]?>">
+                                    <div class="head-sticker active">
+                                       <div class="title">
+                                          <h4><?= $item["rexp_title"] ?></h4>
+                                          <div class="sub-title">
+                                             <p><?= $item["rexp_company"] ?></p>
+                                          </div>
+                                          <div class="date">
+                                             <p><?= $item["experCurrent"]==0 ? $item["start_job"].'-'.$item["end_job"] : $item["start_job"].'-'."Hiện tại" ?> </p>
+                                          </div>
                                        </div>
-                                       <div class="date">
-                                          <p><?= $item["experCurrent"]==0 ? $item["start_job"].'-'.$item["end_job"] : $item["start_job"].'-'."Hiện tại" ?> </p>
+                                       <div class="right-head">
+                                          <ul class="list-action">
+                                             <li class="edit-link"><a href="javascript:void(0);" title="Chỉnh sửa" onclick="show_frmExperience(<?= $item['id']?>);"> <em class="material-icons">create</em></a></li>
+                                             <li class="delete">
+                                                <form id="delete_resume_experience" action="my_profile/delete_resume_experience" method="post">
+                                                   <input type="hidden" name="rexp_id" value="<?= $item['id'] ?>">
+                                                   <button onclick="deleteExperience(<?= $item['id'] ?>)" style="background-color:transparent;" title="Xóa" type="button">
+                                                      <em class="material-icons">highlight_off</em>
+                                                </form>
+                                                </a>
+                                             </li>
+                                          </ul>
                                        </div>
                                     </div>
-                                    <div class="right-head">
-      
-                                       <ul class="list-action">
-                                          <li class="edit-link"><a href="javascript:void(0);" title="Chỉnh sửa" onclick="show_frmExperience(<?= $item['id']?>);"> <em class="material-icons">create</em></a></li>
-                                          <li class="delete">
-                                             <form id="delete_resume_experience" action="my_profile/delete_resume_experience" method="post"> 
-                                                <input type="hidden" name="rexp_id" value="<?= $item['id'] ?>">
-                                             <button onclick="deleteExperience(<?= $item['id'] ?>)" style="background-color:transparent;" title="Xóa" type="button"> 
-                                                <em class="material-icons">highlight_off</em>
-                                             </form>
-                                         
-                                          </a>
-                                       </li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                                 <div class="body-sticker" style="display: block;">
+                                    <div class="body-sticker" style="display: block;">
                                     <div class="content"> <?= $item["rexp_workdesc"] ?> </div>
-                                 </div>
-                              </li>
-                               <?php  endforeach;?> 
-                                    
-                                            
-                                    <?php }?>
-                              
-                              
-                           </ul>
-                        </div>
-
+                                    </div>
+                                 </li>
+                                 <?php  endforeach;?> 
                                  <?php }?>
-                        
+                              </ul>
+                           </div>
+                           <?php }?>
                         </div>
                         <div class="widget-body">
-                        
                         </div>
                      </div>
-
-                        <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="kinhnghiemlamviec"        tabindex="-1" aria-modal="true" role="dialog">
-      <div class="modal-dialog">
-         <div class="modal-content">
-            <div class="modal-header">
-               <h2 class="modal-title">Kinh Nghiệm Làm Việc</h2>
-               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-         <form name="experience-form" id="experience-form" method="post"                  
-         action="my_profile/insert_resume_experience">
-      <input type="hidden" value="0" name="rexp_id" id="rexp_id">
-      <div class="form-group row">
-         <div class="col-lg-3 col-xl-3">
-            <label for="">Vị trí / Chức danh<span>*</span></label>
-         </div>
-         <div class="col-lg-9 col-xl-9">
-            <div class="input-group">
-               <input type="text" value="" class="form-control" name="rexp_title" maxlength="100">
-            </div>
-            <div class="form-error"><span class="err_rexp_title" style="display:none"></span></div>
-         </div>
-      </div>
-      <div class="form-group row">
-         <div class="col-lg-3 col-xl-3">
-            <label for="">Công ty<span>*</span></label>
-         </div>
-         <div class="col-lg-9 col-xl-9">
-            <div class="input-group">
-               <input type="text" value="" class="form-control" name="rexp_company" maxlength="200">
-            </div>
-            <div class="form-error"><span class="err_rexp_company" style="display:none"></span></div>
-         </div>
-      </div>
-      <div class="form-group row">
-         <div class="col-lg-3 col-xl-3">
-            <label for="">Phương thức công việc</label>
-         </div>
-         <div class="col-lg-9 col-xl-9">
-            <div class="select-group">
-               <select name="rexp_worktype">
-                  <option value="">Chọn</option>
-               
-                  <?php foreach ($job_type as $item): ?>
+                     <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="kinhnghiemlamviec"        tabindex="-1" aria-modal="true" role="dialog">
+                     <div class="modal-dialog">
+                     <div class="modal-content">
+                     <div class="modal-header">
+                     <h2 class="modal-title">Kinh Nghiệm Làm Việc</h2>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                     </div>
+                     <div class="modal-body">
+                     <form name="experience-form" id="experience-form" method="post"                  
+                        action="my_profile/insert_resume_experience">
+                     <input type="hidden" value="0" name="rexp_id" id="rexp_id">
+                     <div class="form-group row">
+                     <div class="col-lg-3 col-xl-3">
+                     <label for="">Vị trí / Chức danh<span>*</span></label>
+                     </div>
+                     <div class="col-lg-9 col-xl-9">
+                     <div class="input-group">
+                     <input type="text" value="" class="form-control" name="rexp_title" maxlength="100">
+                     </div>
+                     <div class="form-error"><span class="err_rexp_title" style="display:none"></span></div>
+                     </div>
+                     </div>
+                     <div class="form-group row">
+                     <div class="col-lg-3 col-xl-3">
+                     <label for="">Công ty<span>*</span></label>
+                     </div>
+                     <div class="col-lg-9 col-xl-9">
+                     <div class="input-group">
+                     <input type="text" value="" class="form-control" name="rexp_company" maxlength="200">
+                     </div>
+                     <div class="form-error"><span class="err_rexp_company" style="display:none"></span></div>
+                     </div>
+                     </div>
+                     <div class="form-group row">
+                     <div class="col-lg-3 col-xl-3">
+                     <label for="">Phương thức công việc</label>
+                     </div>
+                     <div class="col-lg-9 col-xl-9">
+                     <div class="select-group">
+                     <select name="rexp_worktype">
+                     <option value="">Chọn</option>
+                     <?php foreach ($job_type as $item): ?>
                      <option value="<?= $item["id"] ?>"><?= $item["job_type"] ?></option>
-               <?php  endforeach;?>
-               </select>
-            </div>
-         </div>
-      </div>
-      <div class="form-group row">
-         <div class="col-lg-3 col-xl-3">
-            <label for="">Thời gian làm việc</label>
-         </div>
-         <div class="col-lg-9 col-xl-9">
-            <div class="form-work-time">
-               <div class="start-date">
-                  <div class="select-group">
-                  <select name="rexp_month_start">
-                  <option value="">Tháng</option>
-                  <?php foreach(range(1, 12 ) as $month) { ?>
+                     <?php  endforeach;?>
+                     </select>
+                     </div>
+                     </div>
+                     </div>
+                     <div class="form-group row">
+                     <div class="col-lg-3 col-xl-3">
+                     <label for="">Thời gian làm việc</label>
+                     </div>
+                     <div class="col-lg-9 col-xl-9">
+                     <div class="form-work-time">
+                     <div class="start-date">
+                     <div class="select-group">
+                     <select name="rexp_month_start">
+                     <option value="">Tháng</option>
+                     <?php foreach(range(1, 12 ) as $month) { ?>
                      <option value="<?= $month ?>"><?= $month ?></option>
-                  <?php }?>
-
-               </select>
-                  </div>
-                  <div class="select-group">
-                  <select name="rexp_year_start">
-                  <option value="">Năm</option>
-                  <option value="2022">2022</option>
+                     <?php }?>
+                     </select>
+                     </div>
+                     <div class="select-group">
+                     <select name="rexp_year_start">
+                     <option value="">Năm</option>
+                     <option value="2022">2022</option>
                      <?php foreach(range((int)date("Y"), 1970 ) as $year) { ?>
                      <option value="<?= $year ?>"><?= $year ?></option>
-                  <?php }?>
-               </select>
-                  </div>
-               </div>
-               <div class="to"><span>Đến </span></div>
-               <div class="end-date">
-                  <div class="select-group">
+                     <?php }?>
+                     </select>
+                     </div>
+                     </div>
+                     <div class="to"><span>Đến </span></div>
+                     <div class="end-date">
+                     <div class="select-group">
                      <select name="rexp_month_end">
                      <option value="">Tháng</option>
                      <?php foreach(range(1, 12 ) as $month) { ?>
                      <option value="<?= $month ?>"><?= $month ?></option>
-                  <?php }?>
+                     <?php }?>
                      </select>
-                  </div>
-                  <div class="select-group">
-                  <select name="rexp_year_end">
-                  <option value="">Năm</option>
-                  <option value="2022">2022</option>
-                  <?php foreach(range((int)date("Y"), 1970 ) as $year) {
-    echo "\t<option value='".$year."'>".$year."</option>\n\r";
-   }
-   ?>
-               </select>
-                  </div>
-               </div>
-               <div class="no-date">
-                  <div class="form-group form-checkbox mt-1 work-time-now">
+                     </div>
+                     <div class="select-group">
+                     <select name="rexp_year_end">
+                     <option value="">Năm</option>
+                     <option value="2022">2022</option>
+                     <?php foreach(range((int)date("Y"), 1970 ) as $year) {
+                        echo "\t<option value='".$year."'>".$year."</option>\n\r";
+                        }
+                        ?>
+                     </select>
+                     </div>
+                     </div>
+                     <div class="no-date">
+                     <div class="form-group form-checkbox mt-1 work-time-now">
                      <input type="checkbox" name="cboExperCurrent" id="cboExperCurrent" value="1">
                      <label for="cboExperCurrent">Hiện nay</label>
-                  </div>
-               </div>
-            </div>
-            <div class="form-error">
-               <span class="err_rexp_month_start" style="display:none"></span>
-               <span class="err_rexp_year_start" style="display:none"></span>
-               <span class="err_cboExperCurrent" style="display:none"></span>
-            </div>
-         </div>
-      </div>
-      <div class="form-group row">
-         <div class="col-lg-3 col-xl-3">
-            <label for="">Mô tả công việc</label>
-         </div>
-         <div class="col-lg-9 col-xl-9">
-            <div class="textarea-group">
-               <textarea name="rexp_workdesc" rows="3" class="form-control" placeholder="Vui lòng nhập tối đa không quá 4.000 ký tự" maxlength="4000"></textarea>
-            </div>
-            <div class="form-error">
-               <span class="err_rexp_workdesc" style="display:none"></span>
-            </div>
-         </div>
-      </div>
-      <div class="form-group form-button">
-         <div class="button-save button-center">
-            <button class="btn-gradient" type="submit">Lưu Lại</button>
-         </div>
-      </div>
-   </form>         
-            </div>
-         </div>
-      </div>
-   </div>
+                     </div>
+                     </div>
+                     </div>
+                     <div class="form-error">
+                     <span class="err_rexp_month_start" style="display:none"></span>
+                     <span class="err_rexp_year_start" style="display:none"></span>
+                     <span class="err_cboExperCurrent" style="display:none"></span>
+                     </div>
+                     </div>
+                     </div>
+                     <div class="form-group row">
+                     <div class="col-lg-3 col-xl-3">
+                     <label for="">Mô tả công việc</label>
+                     </div>
+                     <div class="col-lg-9 col-xl-9">
+                     <div class="textarea-group">
+                     <textarea name="rexp_workdesc" rows="3" class="form-control" placeholder="Vui lòng nhập tối đa không quá 4.000 ký tự" maxlength="4000"></textarea>
+                     </div>
+                     <div class="form-error">
+                     <span class="err_rexp_workdesc" style="display:none"></span>
+                     </div>
+                     </div>
+                     </div>
+                     <div class="form-group form-button">
+                     <div class="button-save button-center">
+                     <button class="btn-gradient" type="submit">Lưu Lại</button>
+                     </div>
+                     </div>
+                     </form>         
+                     </div>
+                     </div>
+                     </div>
+                     </div>
                      <div class="widget widget-16" id="widget-16">
                         <div class="widget-head">
                            <div class="cb-title-h3">
@@ -1592,26 +1397,29 @@
                                  <div class="image"><img src="./img/dash-board/i7.png" alt=""></div>
                                  <div class="figcaption">
                                     <h3>Học vấn *</h3>
-                                    <div class="status error">
-                                       <p>Chưa hoàn thành</p>
-                                    </div>
+                                    <?php 
+                                       if($count_sekeer_education>0 ){
+                                                echo " <div class='status success'>
+                                                      <p>Hoàn thành</p>
+                                                   </div>";
+                                       }
+                                       else{
+                                          echo " <div class='status error'>
+                                          <p>Chưa hoàn thành</p>
+                                       </div>";
+                                       }
+                                       ?>
                                  </div>
                               </div>
                               <div class="right-action">
-                                 <div class="tips p1" onclick="openTipSlide('tip-education')">
+                                 <div class="tips p1">
                                     <div class="icon">
                                        <em class="mdi mdi-lightbulb"></em>
                                     </div>
                                     <p>Tips</p>
                                  </div>
-                                 <div class="link-add"><a href="javascript:void(0)" " title=" Thêm mới"> <em class="material-icons">add</em><span>Thêm mới</span></a></div>
+                                 <div class="link-add"><a onclick="show_frmEducation(0);"href="javascript:void(0)"  title=" Thêm mới"> <em class="material-icons">add</em><span>Thêm mới</span></a></div>
                               </div>
-                           </div>
-                        </div>
-                        <div class="widget-body">
-                           <div class="no-content">
-                              <p>Nhập thông tin học vấn của bạn</p>
-                              <a href="javascript:void(0)" " title=" Thêm mới"><em class="mdi mdi-plus-circle"></em><span>Thêm mới</span></a>
                            </div>
                         </div>
                         <div class="widget-body">
@@ -1621,43 +1429,70 @@
                                     <tr>
                                        <td>Bằng cấp cao nhất</td>
                                        <td>
-                                          <div class="box-edit-degree" id="cbprofile_degree_name">
-                                             Trung học
-                                             <div class="link-edit link-highest-degree"><a > <em class="material-icons">create</em></a></div>
+                             <div class="box-edit-degree" id="cbprofile_degree_name">
+                                <?= !empty($seeker_highest_degree) ? $seeker_highest_degree["degree_name"]: "Chưa cập nhật"?>
+                                             <div  class="link-edit link-highest-degree"><a > <em class="material-icons">create</em></a></div>
                                           </div>
                                           <div class="highest-degree">
                                              <div class="select-group">
-                                                <form id="resume-degree-form">
+                                                <form id="resume-degree-form" method="post" action="my_profile/update_highest_degree">
                                                    <select name="degree" id="degree">
                                                       <option value="">Chọn</option>
-                                                      <option value="0">Chưa tốt nghiệp</option>
-                                                      <option value="1" selected="selected">Trung học</option>
-                                                      <option value="2">Trung cấp</option>
-                                                      <option value="3">Cao đẳng</option>
-                                                      <option value="4">Đại học</option>
-                                                      <option value="5">Sau đại học</option>
-                                                      <option value="6">Khác</option>
+                                                      <?php foreach ($data_degree as $item): ?>
+                                                      <option <?= $item["id"]==2 ? "style='display:none'": "" ?> value="<?=  $item["id"] ?>"><?= $item["degree_name"] ?></option>
+                                                      <?php   endforeach;?>
                                                    </select>
-                                                </form>
                                              </div>
-                                             <div class="link-save"> <a ><em class="material-icons">save</em>Lưu Lại</a></div>
+                                             <button style="background-color: transparent;" type="submit" class="link-save"> <a ><em class="material-icons">save</em>Lưu Lại</a></button>
+                                             </form>
                                           </div>
                                        </td>
                                     </tr>
                                  </tbody>
                               </table>
                            </div>
+                           <?php if($count_sekeer_education==0) {?>
+                           <div class="no-content">
+                              <p>Nhập thông tin học vấn của bạn</p>
+                              <a onclick="show_frmEducation(0);"href="javascript:void(0)"title=" Thêm mới">  
+                              <em class="mdi mdi-plus-circle"></em>
+                              <span>Thêm mới</span>
+                              </a>
+                           </div>
+                           <?php } else {?>
                            <div class="sticker">
                               <ul class="list-sticker">
+                                 <?php foreach ($seeker_education_detail as $item): ?>
+                                 <li class="item" id="eduList_<?= $item["id"]?>">
+                                    <div class="head-sticker">
+                                       <div class="title">
+                                          <h4><?= $item["degree_name"] ?></h4>
+                                          <div class="sub-title">
+                                             <p><?= $item["redu_name"] ?></p>
+                                          </div>
+                                          <div class="date">
+                                             <p><?= !empty($item["start_date"]) && !empty($item["end_date"])  ? "Tốt nghiệp $item[start_date]-$item[end_date]"  : "" ?></p>
+                                          </div>
+                                       </div>
+                                       <div class="right-head">
+                                          <ul class="list-action">
+                                             <li class="edit-link"><a href="javascript:void(0);" onclick="show_frmEducation(<?= $item['id']?>);" title="Chỉnh sửa"> <em class="material-icons">create</em></a></li>
+                                             <li class="delete"><a href="javascript:void(0);" onclick="deleteEducation(<?= $item['id']?>);" title="Xóa"> <em class="material-icons">highlight_off</em></a></li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                    <div class="body-sticker" >
+                                       <div class="content">
+                                          <?= $item["detail_desc"] ?>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <?php  endforeach;?>
                               </ul>
                            </div>
+                           <?php }?>
                         </div>
                      </div>
-                 
-                    
-                
-                   
-                 
                      <div class="widget widget-20" id="widget-20">
                         <div class="widget-head">
                            <div class="cb-title-h3">
@@ -1696,16 +1531,15 @@
                               <li><a class="share-profile" ><em class="mdi mdi-share"></em><span>Chia sẻ hồ sơ</span> <span class="new-label"> New </span> </a></li>
                               <li> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/changetemplate"> <em class="material-icons">edit</em><span>Chỉnh Mẫu Hồ Sơ</span></a></li>
                               <li>
-                                  <a  data-bs-toggle="modal"  data-bs-target="#subCV"  id="btn_view_cbprofile">
-                                     <em class="material-icons">remove_red_eye</em>
-                              <span>Xem CV Template</span></a>
-                           </li>
-                              <li id="btn_download" style="display:none"> <a > <em class="material-icons">get_app</em><span>Tải hồ sơ</span></a>
+                  <a  data-bs-toggle="modal"  data-bs-target="#subCV"  id="btn_view_cbprofile">
+                                 <em class="material-icons">remove_red_eye</em>
+                                 <span>Xem CV Template</span></a>
+                              </li>
+                              <li id="btn_download" > <a href="javascript:generatePDF()"> <em class="material-icons">get_app</em><span>Tải hồ sơ</span></a>
                               </li>
                               <li><a class="hidden-info" ><em class="fa fa-eye-slash"></em><span>Ẩn thông tin</span></a></li>
                            </ul>
                         </div>
-                        
                         <div class="head-menu">
                            <div class="name-shortchut"><a class="active" >Careerbuilder Profile</a></div>
                            <div class="toggle-menu"><em class="material-icons">list</em></div>
@@ -1726,203 +1560,208 @@
                            <li><a data-href="widget-20">Người tham khảo</a></li>
                         </ul>
                      </div>
-                   
                   </div>
-
-                  <div class="modal fade " id="subCV" data-bs-toggle="modal" tabindex="-1" >
-   <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-         <div class="modal-header">
-            <h2 class="modal-title"    >Tiêu đề hồ sơ</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-         </div>
-         <div class="modal-body">
-                    
-                  <div class="container">
-   <div class="main-profile main-scroll-success">
-      <div class="view-template-wrap step-content cv-mode-finish">
-         <div class="editCVtemplate-wrapper editCVtemplate">
-            <div id="ZoneShowCVTemplate" class="cv-template-wrapper cv-template-15 fontCVRoboto clrYellow fontCVsize14">
-               <div class="col-xs-12 subCVpage">
-                  <div class="top" style="text-align: center;">
-                     <div class="iavatar">
-                        <img src="<?= _WEB_ROOT.'/app/public/assets/clients/images/'.$informationUser["location_image"] ?>">		
-                     </div>
-                  </div>
-                  <div class="col-sm-12 col name  border_orange" style="text-align: center; padding-bottom: 8px;">
-                        <h2><?= $informationUser["lastname"]." ". $informationUser["firstname"] ?></h2>
-                        <h4><?= !empty($seeker_resume_title["resume_title"]) ? $seeker_resume_title["resume_title"]: ""  ?></h4>
-                        <div class="col-xs-12 main-contact">
-                        <ul class="contact">
-                           <li class="phone"><i class="fa fa-phone"></i><span><?= !empty($informationUser["contact_number"]) ? $informationUser["contact_number"]: ""  ?>  </span></li>
-                           <li class="mail"><i class="fa fa-envelope"></i><span class="txt"><?= $informationUser["email"] ?></span></li>
-                           <li class="address2"><i class="fa fa-home"></i><span class="txt">đường 7, Huyện Lộc Ninh, Bình Phước, Việt Nam</span></li>
-                        </ul>
-                     </div>
-                     </div>
-                     <div class="col-sm-12 col border_orange"style=" padding:8px 0; ">
-                        <h3>Thông tin cá nhân</h3>
-                        <ul class="contact">
-                           <li class="flex">
-                              <label>Giới tính</label>
-                              <div class="annou">:  <?php 
-                            if  (isset($informationUser["gender"])){
-         echo $informationUser["gender"]==1 ? "Nam" : $informationUser["gender"]==2 ? "Nữ": "Khác";  
-                            }   
-                              
-                              ?> </div>
-                           </li>
-                           <li class="flex">
-                              <label>Ngày sinh</label>
-                              <div class="annou">:<?= !empty($informationUser["date_of_birth"]) ?formatDate($informationUser["date_of_birth"]): ""?> </div>
-                           </li>
-                           <li class="flex">
-                              <label>Tình trạng hôn nhân</label>
-                              <div class="annou">:  <?= $informationUser["marital_status"]==1 ? "Độc thân"  :"Đã kết hôn" ?></div>
-                           </li>
-                           <li class="flex">
-                              <label>Quốc tịch</label>
-                              <div class="annou">: Người Việt Nam</div>
-                           </li class="flex">
-                           <li class="flex">
-                              <label>Quốc gia</label>
-                              <div class="annou">: Việt Nam</div>
-                           </li>
-                        </ul>
-                     </div>      
-                  <div class="col-sm-12 col border_orange"style=" padding:5px 0;">
-                        <h3>Kỹ năng</h3>
-                        <ul class="skill flex">
-                           <li class="">
-                              <label>c#</label>
-                              <div class="point"><span></span><span></span><span></span></div>
-                           </li>
-                           <li class="">
-                              <label>php</label>
-                              <div class="point"><span></span><span></span><span></span></div>
-                           </li>
-                           <li class="">
-                              <label>tốt</label>
-                              <div class="point"><span></span><span></span><span></span></div>
-                           </li>
-                           <li class="">
-                              <label>js</label>
-                              <div class="point"><span></span><span></span><span></span></div>
-                           </li>
-                           <li class="">
-                              <label>html</label>
-                              <div class="point"><span></span><span></span><span></span></div>
-                           </li>
-                        </ul>
-                     </div>
-                  <div class="col-md-12 col border_orange" style=" padding:8px 0; ">
-                     <h3><span>Công Việc Mong Muốn</span></h3>
-                     <div class="expected-job">
-                        <ul class="contact">
-                           <li><label>Cấp bậc </label> :<?= !empty($seeker_job_information["position"]) ? $seeker_job_information["position"] : "" ?></li>
-                           <li class="dbl-line"><label>Mức lương</label><span>:&nbsp;</span><span class="txt">				  				
-                            <?=  !empty($seeker_job_information["salary_from"])? $seeker_job_information["salary_from"].'-'.$seeker_job_information["salary_to"]." VND" : "" ?>
-                              </span>
-                           </li>
-                           <li class="dbl-line"><label>Hình thức công việc</label><span>:&nbsp;</span><span class="txt">   
-                              <?php if(!empty($seeker_type)){
-                                         $valueStr = '';
-                                          foreach ($seeker_type as $value) {
-                                       $valueStr .= " $value[job_type] " . ',';
-                                          }
-                                   $valueStr = rtrim($valueStr, ',');
-                                          echo $valueStr;
-                                       }  
-                                     
-                                  
-                                    ?>
-                                    </span></li>
-                           <li class="dbl-line">
-                              <label>Ngành nghề</label><span>:&nbsp;</span><span class="txt">
-                         
-                                 <?php      
-                                
-                                if(!empty($informationProfession)){
-                                 $valueStr = '';
-                                 foreach ($informationProfession as $value) {
-                              $valueStr .= " $value[profession_name] " . ',';
-                                 }
-                          $valueStr = rtrim($valueStr, ',');
-                                 echo $valueStr;
-                              }  
-                              
-                             ?></span></li>
-                           <li class="dbl-line"><label>Nơi làm việc</label><span>:&nbsp;</span><span class="txt"> Hà Nội - Huyện Thanh Trì/Huyện Ba Vì
-                              </span>
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-
-                  <div class="col-sm-12 col" style=" padding:8px 0; ">
-                     <h3>Kinh Nghiệm Làm Việc</h3>
-                     <div class="content_fck yearofexp">
-                   
-                        <p>Số năm kinh nghiệm:
-                         <?= !empty($year_of_experience["yearOfExperience"]) ? $year_of_experience["yearOfExperience"]  : "Chưa có kinh nghiệm"?> </p>
-                        <p>Cấp bậc hiện tại:<?= !empty($year_of_experience["position"]) ? $year_of_experience["position"]  : "Chưa cập nhật" ?></p>
-                     </div>
-               
-                              
-                     <?php foreach ($seeker_experience_detail as $item): ?>
-                   
-                    
-                        <div class="exp text-edt">
-                        <div class="title">
-                        <?= $item["experCurrent"]==0 ? $item["start_job"].'-'.$item["end_job"] : $item["start_job"].'-'."Hiện tại" ?>:
-         <?= $item["rexp_title"]. " - ".$item["rexp_company"]." - ". $item["job_type_id"]?> 
-                        </div>
-                        <div class="content_fck">
-                           <p><?= $item["rexp_workdesc"]
- ?></p>
-                        </div>
-                     </div>
-                  <?php   endforeach;?>
-                    
-                  </div>
+                  <div class="modal fade " id="subCV" tabindex="-1" >
+                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h2 class="modal-title"    >Tiêu đề hồ sơ</h2>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                           </div>
+                           <div class="modal-body">
+                              <div class="container">
+                                 <div class="main-profile main-scroll-success">
+                                    <div class="view-template-wrap step-content cv-mode-finish">
+                                       <div class="editCVtemplate-wrapper editCVtemplate">
+                                          <div id="ZoneShowCVTemplate" class="cv-template-wrapper cv-template-15 fontCVRoboto clrYellow fontCVsize14">
+                                             <div class="col-xs-12 subCVpage">
+                                                <div class="top" style="text-align: center;">
+                                                   <div class="iavatar">
+                                                      <img src="<?= _WEB_ROOT.'/app/public/assets/clients/images/'.$informationUser["location_image"] ?>">		
+                                                   </div>
+                                                </div>
+                                                <div class="col-sm-12 col name  border_orange" style="text-align: center; padding-bottom: 8px;">
+                                                   <h2><?= $informationUser["lastname"]." ". $informationUser["firstname"] ?></h2>
+                                                   <h4><?= !empty($seeker_resume_title["resume_title"]) ? $seeker_resume_title["resume_title"]: ""  ?></h4>
+                                                   <div class="col-xs-12 main-contact">
+                                                      <ul class="contact">
+                                                         <li class="phone"><i class="fa fa-phone"></i><span><?= !empty($informationUser["contact_number"]) ? $informationUser["contact_number"]: ""  ?>  </span></li>
+                                                         <li class="mail"><i class="fa fa-envelope"></i><span class="txt"><?= $informationUser["email"] ?></span></li>
+                                                         <li class="address2"><i class="fa fa-home"></i><span class="txt">đường 7, Huyện Lộc Ninh, Bình Phước, Việt Nam</span></li>
+                                                      </ul>
+                                                   </div>
+                                                </div>
+                                                <div class="col-sm-12 col border_orange"style=" padding:8px 0; ">
+                                                   <h3>Thông tin cá nhân</h3>
+                                                   <ul class="contact">
+                                                      <li class="flex">
+                                                         <label>Giới tính</label>
+                                                         <div class="annou">:  <?php 
+                                                            if  (isset($informationUser["gender"])){
+                                                            echo $informationUser["gender"]==1 ? "Nam" : $informationUser["gender"]==2 ? "Nữ": "Khác";  
+                                                            }   
+                                                              
+                                                              ?> </div>
+                                                      </li>
+                                                      <li class="flex">
+                                                         <label>Ngày sinh</label>
+                                                         <div class="annou">:<?= !empty($informationUser["date_of_birth"]) ?formatDate($informationUser["date_of_birth"]): ""?> </div>
+                                                      </li>
+                                                      <li class="flex">
+                                                         <label>Tình trạng hôn nhân</label>
+                                                         <div class="annou">:  <?= $informationUser["marital_status"]==1 ? "Độc thân"  :"Đã kết hôn" ?></div>
+                                                      </li>
+                                                      <li class="flex">
+                                                         <label>Quốc tịch</label>
+                                                         <div class="annou">: Người Việt Nam</div>
+                                                         </li class="flex">
+                                                      <li class="flex">
+                                                         <label>Quốc gia</label>
+                                                         <div class="annou">: Việt Nam</div>
+                                                      </li>
+                                                   </ul>
+                                                </div>
+                                                <div class="col-sm-12 col border_orange"style=" padding:5px 0;">
+                                                   <h3>Kỹ năng</h3>
+                                                   <ul class="skill flex">
+                                                      <li class="">
+                                                         <label>c#</label>
+                                                         <div class="point"><span></span><span></span><span></span></div>
+                                                      </li>
+                                                      <li class="">
+                                                         <label>php</label>
+                                                         <div class="point"><span></span><span></span><span></span></div>
+                                                      </li>
+                                                      <li class="">
+                                                         <label>tốt</label>
+                                                         <div class="point"><span></span><span></span><span></span></div>
+                                                      </li>
+                                                      <li class="">
+                                                         <label>js</label>
+                                                         <div class="point"><span></span><span></span><span></span></div>
+                                                      </li>
+                                                      <li class="">
+                                                         <label>html</label>
+                                                         <div class="point"><span></span><span></span><span></span></div>
+                                                      </li>
+                                                   </ul>
+                                                </div>
+                                                <div class="col-md-12 col border_orange" style=" padding:8px 0; ">
+                                                   <h3><span>Công Việc Mong Muốn</span></h3>
+                                                   <div class="expected-job">
+                                                      <ul class="contact">
+                                                         <li><label>Cấp bậc </label> :<?= !empty($seeker_job_information["position"]) ? $seeker_job_information["position"] : "" ?></li>
+                                                         <li class="dbl-line"><label>Mức lương</label><span>:&nbsp;</span><span class="txt">				  				
+                                                            <?=  !empty($seeker_job_information["salary_from"])? $seeker_job_information["salary_from"].'-'.$seeker_job_information["salary_to"]." VND" : "" ?>
+                                                            </span>
+                                                         </li>
+                                                         <li class="dbl-line"><label>Hình thức công việc</label><span>:&nbsp;</span><span class="txt">   
+                                                            <?php if(!empty($seeker_type)){
+                                                               $valueStr = '';
+                                                                foreach ($seeker_type as $value) {
+                                                               $valueStr .= " $value[job_type] " . ',';
+                                                                }
+                                                               $valueStr = rtrim($valueStr, ',');
+                                                                echo $valueStr;
+                                                               }  
+                                                               
+                                                               
+                                                               ?>
+                                                            </span>
+                                                         </li>
+                                                         <li class="dbl-line">
+                                                            <label>Ngành nghề</label><span>:&nbsp;</span><span class="txt">
+                                                            <?php      
+                                                               if(!empty($informationProfession)){
+                                                                $valueStr = '';
+                                                                foreach ($informationProfession as $value) {
+                                                               $valueStr .= " $value[profession_name] " . ',';
+                                                                }
+                                                               $valueStr = rtrim($valueStr, ',');
+                                                                echo $valueStr;
+                                                               }  
+                                                               
+                                                               ?></span>
+                                                         </li>
+                                                         <li class="dbl-line"><label>Nơi làm việc</label><span>:&nbsp;</span><span class="txt"> Hà Nội - Huyện Thanh Trì/Huyện Ba Vì
+                                                            </span>
+                                                         </li>
+                                                      </ul>
+                                                   </div>
+                                                </div>
+                                                <div class="col-sm-12 col" style=" padding:8px 0; ">
+                                                   <h3>Kinh Nghiệm Làm Việc</h3>
+                                                   <div class="content_fck yearofexp">
+                                                      <p>Số năm kinh nghiệm:
+                                                         <?= !empty($year_of_experience["yearOfExperience"]) ? $year_of_experience["yearOfExperience"]  : "Chưa có kinh nghiệm"?> 
+                                                      </p>
+                                                      <p>Cấp bậc hiện tại:<?= !empty($year_of_experience["position"]) ? $year_of_experience["position"]  : "Chưa cập nhật" ?></p>
+                                                   </div>
+                                                   <?php foreach ($seeker_experience_detail as $item): ?>
+                                                   <div class="exp text-edt">
+                                                      <div class="title">
+                                                         <?= $item["experCurrent"]==0 ? $item["start_job"].'-'.$item["end_job"] : $item["start_job"].'-'."Hiện tại" ?>:
+                                                         <?= $item["rexp_title"]. " - ".$item["rexp_company"]." - ". $item["job_type_id"]?> 
+                                                      </div>
+                                                      <div class="content_fck">
+                                                         <p><?= $item["rexp_workdesc"]
+                                                            ?></p>
+                                                      </div>
+                                                   </div>
+                                                   <?php   endforeach;?>
+                                                </div>
+                                                <div class="col-sm-12 col border_orange_top"style=" padding:8px 0;">
+                                                   <h3>Học Vấn</h3>
+                     <div class="text-edt degree-name">Bằng cấp cao nhất:
+                         <?php foreach ($data_degree as $item): 
+                         if(!empty($seeker_highest_degree["degree_id"])){
+                           if($item["id"]==$seeker_highest_degree["degree_id"]){
+                              echo $item["degree_name"];
+                           }
+                         }
                         
-               
-                  <div class="col-sm-12 col border_orange_top"style=" padding:8px 0;">
-                     <h3>Học Vấn</h3>
-                        <div class="text-edt degree-name">Bằng cấp cao nhất: Trung học</div>
-                        <div class="exp text-edt">
-                           <div class="title">Không yêu cầu bằng cấp - fpt </div>
-                           <div class="content_fck">
-                              <p>chưa tốt nghiệp</p>
+                    endforeach;?>
+                       </div>
+                           <?php if(!empty($seeker_education_detail)) { ?>
+                          <?php foreach ($seeker_education_detail as $item): ?>
+                        
+                           <div class="exp text-edt">
+                          <div class="title"><?= "Tốt nghiệp ".$item["start_date"].'/'.$item["end_date"].':'  ?>  
+        <?= $item["degree_id"]==1?"Không yêu cầu bằng cấp" : $item["degree_name"] ?>
+                        <?= '- '.$item["redu_name"] ?>
+                        </div>
+                                                      <div class="content_fck">
+                                                         <p><?= $item["detail_desc"] ?></p>
+                                                      </div>
+                                                   </div>
+                          <?php  endforeach; ?>
+
+                      <?php    }?>
+                                                  
+                                                </div>
+                                                <div style=" padding:8px 0;" class="col-sm-12 col border_orange_top ">
+                                                   <h3>Thông Tin Tham Khảo</h3>
+                                                   <div class="text-edt">
+                                                      <div class="title">nguyen nhat minh</div>
+                                                      <div class="content_fck">
+                                                         <p>leader, fpt</p>
+                                                         <p>Phone: 0839704567</p>
+                                                         <p>Email: aolang69@gmail.com</p>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="col-xs-12 ">
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
                            </div>
                         </div>
-                  </div>
-                 
-               
-                 <div style=" padding:8px 0;" class="col-sm-12 col border_orange_top ">
-                  <h3>Thông Tin Tham Khảo</h3>
-                     <div class="text-edt">
-                        <div class="title">nguyen nhat minh</div>
-                        <div class="content_fck">
-                           <p>leader, fpt</p>
-                           <p>Phone: 0839704567</p>
-                           <p>Email: aolang69@gmail.com</p>
-                        </div>
                      </div>
                   </div>
-                  <div class="col-xs-12 ">
-                     
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>       
-         </div>
-      </div>
-   </div>
-</div>
                </div>
             </div>
             <div class="hidden-edit-modal edit-modal-dashboard" style="display: none">
@@ -2098,48 +1937,43 @@
                </div>
             </div>
             <div class="modal fade" id="tip-t-resume" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
-               
-                           <div class="modal-dialog modal-dialog-centered">
-                              
-                              <div class="modal-content">
-                                 <div class="tips-modal">
-                                    
-                                 </div>
-                              <div style="padding:0;background: #f3f3f3;"class="modal-header">
-                              <div class="head-modal">
-                  <div class="icon"><em class="mdi mdi-lightbulb-outline"></em></div>
-                  <div class="title">
-                     <h3>Để CV không chỉ Hay mà còn Đẹp trong mắt Nhà tuyển dụng</h3>
-                  </div>
-               </div> 
-               <button type="button" data-bs-dismiss="modal" aria-label="Close" class="fancybox-button fancybox-close-small" title="Close"><svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg></button>
- 
-                                    </button>
-                                 </div>
-
-                                 <div class="modal-body" style="padding:0">
-                                 <div class="tips-modal" >
-            
-               <div class="body-modal">
-                  <div class="widget widget-12">
-                     <div class="widget-body">
-                        <div class="swiper-container">
-                           <div class="swiper-wrapper">
-                              Tiêu đề hồ sơ:<br> Bạn nên để tiêu đề là vị trí bạn đang ứng tuyển hoặc muốn làm việc. Giúp Nhà tuyển dụng hiểu ngay vị trí mong muốn khi nhận hồ sơ của bạn.<br> Ví dụ: "Nhân viên kinh doanh" hoặc "Marketing
-                              Manager"<br> Lưu ý: hãy điều chỉnh tiêu đề theo từng công việc ứng tuyển nhé!
-                           </div>
-                         
-                        </div>
+               <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                     <div class="tips-modal">
                      </div>
-                  </div>
-               </div>
-             
-            </div>   
+                     <div style="padding:0;background: #f3f3f3;"class="modal-header">
+                        <div class="head-modal">
+                           <div class="icon"><em class="mdi mdi-lightbulb-outline"></em></div>
+                           <div class="title">
+                              <h3>Để CV không chỉ Hay mà còn Đẹp trong mắt Nhà tuyển dụng</h3>
+                           </div>
+                        </div>
+                        <button type="button" data-bs-dismiss="modal" aria-label="Close" class="fancybox-button fancybox-close-small" title="Close">
+                           <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
+                              <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
+                           </svg>
+                        </button>
+                        </button>
+                     </div>
+                     <div class="modal-body" style="padding:0">
+                        <div class="tips-modal" >
+                           <div class="body-modal">
+                              <div class="widget widget-12">
+                                 <div class="widget-body">
+                                    <div class="swiper-container">
+                                       <div class="swiper-wrapper">
+                                          Tiêu đề hồ sơ:<br> Bạn nên để tiêu đề là vị trí bạn đang ứng tuyển hoặc muốn làm việc. Giúp Nhà tuyển dụng hiểu ngay vị trí mong muốn khi nhận hồ sơ của bạn.<br> Ví dụ: "Nhân viên kinh doanh" hoặc "Marketing
+                                          Manager"<br> Lưu ý: hãy điều chỉnh tiêu đề theo từng công việc ứng tuyển nhé!
+                                       </div>
+                                    </div>
                                  </div>
                               </div>
                            </div>
                         </div>
-      
+                     </div>
+                  </div>
+               </div>
+            </div>
             <div class="tips-modal" id="tip-personalinfo" style="display: none">
                <div class="head-modal">
                   <div class="icon"><em class="mdi mdi-lightbulb-outline"></em></div>
@@ -2406,5 +2240,23 @@
          </div>
       </div>
       <input type="hidden" name="csrf_token" id="csrf_token" value="d44e1a55b7e04ef5568102668728106355166f132ceccd46a729b5aea7103e50" />
-      <div class="back-drop"></div>
+      <div class="back-drop">123</div>
    </main>
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js" integrity="sha512-1g3IT1FdbHZKcBVZzlk4a4m5zLRuBjMFMxub1FeIRvR+rhfqHFld9VFXXBYe66ldBWf+syHHxoZEbZyunH6Idg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script>
+   
+        async function generatePDF() {
+            // document.getElementById("btn_download").innerHTML = "Currently downloading, please wait";
+
+            //Downloading
+            var downloading = document.getElementById("ZoneShowCVTemplate");
+
+            html2canvas(downloading).then(canvas => {
+              
+               let base64image=canvas.toDataURL('image/png');
+               console.log(base64image)
+            })
+        }
+    </script>
+  -->

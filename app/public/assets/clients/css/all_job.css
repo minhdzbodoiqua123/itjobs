@@ -298,7 +298,14 @@
 }
 
 .page-heading-tool .form-group.form-select-chosen select {
-    display: none;
+    width: 100%;
+    height: 50px;
+    padding: 0 40px 0 16px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    color: #000;
+    font-size: 15px;
+    font-weight: 400;
 }
 
 .page-heading-tool .form-group.form-select-chosen label {

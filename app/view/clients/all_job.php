@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="<?= _WEB_ROOT."/app/public/assets/clients/css/all_job.css" ?>">
 <main>
-   <section class="page-heading-tool">
+   <sec  tion class="page-heading-tool">
       <div class="container">
          <div class="tool-wrapper">
             <div class="close-input-filter"><em class="lnr lnr-cross"></em></div>
@@ -12,7 +12,7 @@
                         <div class="cleartext"><em class="mdi mdi-close-circle"></em></div>
                      </div>
                      <div class="form-group form-select-chosen">
-                        <select id="industry" name="industry" class="chosen-select-max-three" data-placeholder="Tất cả ngành nghề" multiple>
+                        <select id="industry" name="industry" class="chosen-select-max-three" data-placeholder="Tất cả ngành nghề" >
                            <option value="">Chọn ngành nghề</option>
                            <option value="an-ninh-bao-ve_51">An Ninh / Bảo Vệ</option>
                            <option value="an-toan-lao-dong_58">An toàn lao động</option>
@@ -85,7 +85,7 @@
                         </select>
                      </div>
                      <div class="form-group form-select-chosen">
-                        <select id="location" name="location" class="chosen-select-max-three" data-placeholder="Tất cả địa điểm" multiple>
+                        <select id="location" name="location" class="chosen-select-max-three" data-placeholder="Tất cả địa điểm" >
                            <option value="">Chọn địa điểm</option>
                            <option value="ha-noi_4">Hà Nội</option>
                            <option value="ho-chi-minh_8">Hồ Chí Minh</option>
@@ -984,7 +984,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/ms-huong.35A8DDF9.html" target="_blank" title="Ms Huong">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot1/259321/155x155/90719image001.png" src="../kiemviecv32/images/graphics/blank.gif" alt="Ms Huong">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot1/259321/155x155/90719image001.png" src="../kiemviecv32/images/graphics/blank.gif" alt="Ms Huong">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1038,7 +1038,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/medigo-software.35A88553.html" target="_blank" title="Medigo Software ">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot7/236627/155x155/113148logomedigo.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Medigo Software ">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot7/236627/155x155/113148logomedigo.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Medigo Software ">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1092,7 +1092,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-co-phan-greenfeed-viet-nam.35A56979.html" target="_blank" title="Công Ty Cổ Phần GreenFeed Việt Nam">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employers/32889/155x155/142444output-onlinepngtools.png" src="../kiemviecv32/images/graphics/blank.gif" alt="Công Ty Cổ Phần GreenFeed Việt Nam">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employers/32889/155x155/142444output-onlinepngtools.png" src="../kiemviecv32/images/graphics/blank.gif" alt="Công Ty Cổ Phần GreenFeed Việt Nam">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1148,7 +1148,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/anheuser-busch-inbev-ab-inbev.35A816AA.html" target="_blank" title="Anheuser-Busch InBev (AB InBev)">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot8/208298/155x155/105618fullcolor-black.png" src="../kiemviecv32/images/graphics/blank.gif" alt="Anheuser-Busch InBev (AB InBev)">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot8/208298/155x155/105618fullcolor-black.png" src="../kiemviecv32/images/graphics/blank.gif" alt="Anheuser-Busch InBev (AB InBev)">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1201,7 +1201,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/diag.35A89197.html" target="_blank" title="Diag">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot7/239767/155x155/141244logo_diag-final_white.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Diag">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot7/239767/155x155/141244logo_diag-final_white.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Diag">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1253,7 +1253,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/diag.35A89197.html" target="_blank" title="Diag">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot7/239767/155x155/141244logo_diag-final_white.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Diag">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot7/239767/155x155/141244logo_diag-final_white.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Diag">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1306,7 +1306,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/diag.35A89197.html" target="_blank" title="Diag">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot7/239767/155x155/141244logo_diag-final_white.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Diag">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot7/239767/155x155/141244logo_diag-final_white.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Diag">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1358,7 +1358,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/rgf-hr-agent-vietnam-co-ltd.35A63BED.html" target="_blank" title="RGF HR Agent Vietnam Co., LTD">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot5/86765/155x155/142150rgf.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="RGF HR Agent Vietnam Co., LTD">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot5/86765/155x155/142150rgf.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="RGF HR Agent Vietnam Co., LTD">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1411,7 +1411,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/rgf-hr-agent-vietnam-co-ltd.35A63BED.html" target="_blank" title="RGF HR Agent Vietnam Co., LTD">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot5/86765/155x155/142150rgf.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="RGF HR Agent Vietnam Co., LTD">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot5/86765/155x155/142150rgf.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="RGF HR Agent Vietnam Co., LTD">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1464,7 +1464,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/rgf-hr-agent-vietnam-co-ltd.35A63BED.html" target="_blank" title="RGF HR Agent Vietnam Co., LTD">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot5/86765/155x155/142150rgf.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="RGF HR Agent Vietnam Co., LTD">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot5/86765/155x155/142150rgf.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="RGF HR Agent Vietnam Co., LTD">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1517,7 +1517,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-co-phan-chung-khoan-ks.35A94C0A.html" target="_blank" title="Công ty Cổ phần Chứng khoán KS">
-                              <img class="lazy-img" data-src="https://static.careerbuilder.vn/themes/kiemviecv32/images/graphics/logo-default.png" src="../kiemviecv32/images/graphics/blank.gif" alt="Công ty Cổ phần Chứng khoán KS">
+                              <img class="lazy-img" src="https://static.careerbuilder.vn/themes/kiemviecv32/images/graphics/logo-default.png" src="../kiemviecv32/images/graphics/blank.gif" alt="Công ty Cổ phần Chứng khoán KS">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1571,7 +1571,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/diag.35A89197.html" target="_blank" title="Diag">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot7/239767/155x155/141244logo_diag-final_white.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Diag">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot7/239767/155x155/141244logo_diag-final_white.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Diag">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1624,7 +1624,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/diag.35A89197.html" target="_blank" title="DIAG">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot7/239767/155x155/141244logo_diag-final_white.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="DIAG">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot7/239767/155x155/141244logo_diag-final_white.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="DIAG">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1677,7 +1677,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/fe-credit.35A637C6.html" target="_blank" title="FE CREDIT">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot2/85702/155x155/115503logo_fullcolor.png" src="../kiemviecv32/images/graphics/blank.gif" alt="FE CREDIT">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot2/85702/155x155/115503logo_fullcolor.png" src="../kiemviecv32/images/graphics/blank.gif" alt="FE CREDIT">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1731,7 +1731,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/kompa-technology.35A8689E.html" target="_blank" title="Kompa Technology">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot8/229278/155x155/224843logokompa_20122019.png" src="../kiemviecv32/images/graphics/blank.gif" alt="Kompa Technology">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot8/229278/155x155/224843logokompa_20122019.png" src="../kiemviecv32/images/graphics/blank.gif" alt="Kompa Technology">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1784,7 +1784,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-co-phan-kiwooza-edutainment-vietnam.35A87E40.html" target="_blank" title="CÔNG TY CỔ PHẦN KIWOOZA EDUTAINMENT VIETNAM">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot6/234816/155x155/111712kwzlogo.png" src="../kiemviecv32/images/graphics/blank.gif" alt="CÔNG TY CỔ PHẦN KIWOOZA EDUTAINMENT VIETNAM">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot6/234816/155x155/111712kwzlogo.png" src="../kiemviecv32/images/graphics/blank.gif" alt="CÔNG TY CỔ PHẦN KIWOOZA EDUTAINMENT VIETNAM">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1838,7 +1838,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/fe-credit.35A637C6.html" target="_blank" title="FE CREDIT">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot2/85702/155x155/115503logo_fullcolor.png" src="../kiemviecv32/images/graphics/blank.gif" alt="FE CREDIT">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot2/85702/155x155/115503logo_fullcolor.png" src="../kiemviecv32/images/graphics/blank.gif" alt="FE CREDIT">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1892,7 +1892,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-co-phan-greenfeed-viet-nam.35A56979.html" target="_blank" title="Công Ty Cổ Phần GreenFeed Việt Nam">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employers/32889/155x155/142444output-onlinepngtools.png" src="../kiemviecv32/images/graphics/blank.gif" alt="Công Ty Cổ Phần GreenFeed Việt Nam">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employers/32889/155x155/142444output-onlinepngtools.png" src="../kiemviecv32/images/graphics/blank.gif" alt="Công Ty Cổ Phần GreenFeed Việt Nam">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1946,7 +1946,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/acs-trading-vietnam-co-ltd.35A684FB.html" target="_blank" title="ACS Trading Vietnam Co. Ltd.">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot7/105467/155x155/191120hinh.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="ACS Trading Vietnam Co. Ltd.">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot7/105467/155x155/191120hinh.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="ACS Trading Vietnam Co. Ltd.">
                               </a>
                            </div>
                            <div class="figcaption">
@@ -1999,7 +1999,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/ngan-hang-xay-dung.35A792F5.html" target="_blank" title="Ngân Hàng Xây Dựng">
-                              <img class="lazy-img" data-src="https://images.careerbuilder.vn/employer_folders/lot1/174581/155x155/175116logo.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Ngân Hàng Xây Dựng">
+                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot1/174581/155x155/175116logo.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Ngân Hàng Xây Dựng">
                               </a>
                            </div>
                            <div class="figcaption">

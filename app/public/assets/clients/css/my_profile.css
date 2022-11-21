@@ -11002,7 +11002,7 @@ only screen and (min-resolution:1.5dppx) {
 }
 
 .widget-16 .sticker .list-sticker .item .body-sticker {
-    display: none;
+   
     padding: 15px 20px;
     border-top: 1px solid #e5e5e5;
 }

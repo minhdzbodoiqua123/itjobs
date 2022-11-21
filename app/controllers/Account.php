@@ -55,6 +55,12 @@ class Account extends Controller
                     ]
                 );
 
+                $this->model("SeekerProfileModel")->insert(
+                    "seeker_highest_degree",
+                    [
+                        "user_account_id " => "'$lastId'"
+                    ]
+                );
 
 
 

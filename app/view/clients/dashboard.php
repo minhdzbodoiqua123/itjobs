@@ -1,6 +1,191 @@
 
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/clients/css/dashboard.css" ?>">
+<link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css" ?>">
 
+<style>
+   html{
+   scroll-behavior: smooth;
+   }
+   a{
+   cursor: pointer;
+   }
+   .pristine-error {
+   color:red;
+   margin-left:15px;
+   font-size: 14px;
+   }
+   .grid{
+   display: grid;
+   }
+   .grid-cols-2{
+   grid-template-columns: repeat(2, minmax(0, 1fr));
+   }
+   .flex{
+   display: flex;
+   }
+   .p-3{
+   padding: 12px;
+   }
+   .border_orange{
+   border-bottom: 1px solid orange;
+   }
+   .border_orange_top{
+   border-top: 1px solid orange;
+   }
+   .file-input__input {
+   width: 0.1px;
+   height: 0.1px;
+   opacity: 0;
+   overflow: hidden;
+   position: absolute;
+   z-index: -1;
+   }
+   .file-input{
+   text-align: center;
+   }
+   .file-input__label {
+   min-width: 150px;
+   cursor: pointer;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 4px;
+   font-size: 14px;
+   font-weight: 600;
+   color: #4245A8;
+   font-size: 14px;
+   padding: 6px 12px;
+   border: 2px dotted #4245A8;
+   }
+   .file-input__label:hover {
+   background-color: rgba(66, 69, 168, 0.25);
+   }
+   .file-input__label svg {
+   height: 16px;
+   margin-right: 4px;
+   }
+   .cv-template-15 .iavatar {
+   position: relative;
+   width: 154px;
+   height: 154px;
+   margin: 0 auto;
+   background-color: #fff;
+   border-radius: 145px;
+   -webkit-box-radius: 145px;
+   -moz-box-radius: 145px;
+   box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+   -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+   -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+   }
+   .cv-template-15 h2 {
+   padding-top: 15px;
+   }
+   .cv-template-15 h4 {
+   margin-bottom: 20px;
+   }
+   .cv-template-15 .main-contact i.fa {
+   padding: 4px 10px 0 0;
+   }
+   .cv-template-15 .main-contact li{
+   padding-bottom:5px;
+   }
+   .cv-template-15 .top {
+   width: 100%;
+   margin-top: 30px;
+   background-position: center center;
+   background-repeat: no-repeat;
+   }  
+   .cv-template-15 .top {
+   background-image: url(https://static.careerbuilder.vn/themes/cvhaynew/images/template-15-yellow-top.png);
+   }
+   .cv-template-15 .iavatar img {
+   position: absolute;
+   left: 9px;
+   top: 9px;
+   width: 135px;
+   height: 135px;
+   border-radius: 135px;
+   -webkit-box-radius: 135px;
+   -moz-box-radius: 135px;
+   }
+   .head-modal .icon {
+   -webkit-box-pack: center;
+   -ms-flex-pack: center;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 70px;
+   min-width: 70px;
+   height: 70px;
+   overflow: hidden;
+   border-radius: 5px;
+   background: #ffffff;
+   box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+   }
+   .head-modal {
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   align-items: center;
+   padding: 10px 20px;
+   padding-right: 30px;
+   background: #f3f3f3;
+   }
+   .head-modal .title {
+   padding-left: 15px;
+   }
+   .head-modal .icon em {
+   color: #2f4ba0;
+   font-size: 44px;
+   }
+   .swal2-actions{
+   gap:10px;
+   }
+   .swal2-cancel{
+   }
+   .btn-success {
+   color: #fff;
+   background-color: #28a745;
+   border-color: #28a745;
+   padding: 0.5rem 0.75rem;
+   font-weight: normal;
+   text-align: center;
+   white-space: nowrap;
+   vertical-align: middle;
+   font-size: 1rem;
+   line-height: 1.25;
+   border-radius: 0.25rem;
+   transition: all 0.15s ease-in-out;
+   }
+   .btn-danger {
+   color: #fff;
+   background-color: #dc3545;
+   border-color: #dc3545;
+   padding: 0.5rem 0.75rem;
+   font-weight: normal;
+   text-align: center;
+   white-space: nowrap;
+   vertical-align: middle;
+   font-size: 1rem;
+   line-height: 1.25;
+   border-radius: 0.25rem;
+   transition: all 0.15s ease-in-out;
+   }
+   .text-edt .title {
+   font-weight: bold;
+   margin-bottom: 5px;
+   }
+   .dbl-line{
+   padding-bottom: 5px;
+   }
+</style>
 
 
 
@@ -16,9 +201,9 @@
                             <h2>My CareerBuilder Center</h2>
                         </div>
                         <ul class="list-unstyled">
-                            <li> <a class="active" href="https://careerbuilder.vn/vi/jobseekers/dashboard" title="Quản lý hồ sơ"> <em class="material-icons">color_lens</em><span>Quản lý hồ sơ</span></a></li>
+                            <li> <a class="active" href="<?= _WEB_ROOT . '/jobseekers/dashboard' ?>" title="Quản lý hồ sơ"> <em class="material-icons">color_lens</em><span>Quản lý hồ sơ</span></a></li>
                             <li style="display:none"> <a href="https://careerbuilder.vn/vi/jobseekers/cv-hay/my-profile"> <em class="material-icons">person</em><span>Hồ sơ Careerbuilder</span></a></li>
-                            <li> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile"> <em class="material-icons">person</em><span>Hồ sơ Careerbuilder</span></a></li>
+                            <li> <a href="<?= _WEB_ROOT . '/jobseekers/my_profile' ?>"> <em class="material-icons">person</em><span>Hồ sơ Careerbuilder</span></a></li>
                             <li> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/changetemplate"> <em class="material-icons">portrait</em><span>Chỉnh mẫu hồ sơ</span></a></li>
                             <li><a class="collapse " href="javascript:;"><em class="material-icons">edit</em><span>Việc làm của tôi</span></a>
                                 <ul class="list-unstyled collapse">
@@ -66,14 +251,14 @@
                                                 <div class="img-info">
                                                     <div class="figure">
                                                         <div class="image img-result hide">
-                                                            <input style="display: none;" onchange="return ajaxFileUpload();" type="file" class="file" id="fileAvatar" name="fileAvatar">
-                                                            <img id="img_mem_avatar" src="https://images.careerbuilder.vn/jobseekers/20221105/6327211_1667640553_162916.png" alt="Một Ba">
+                                                            <input style="display: none;"   type="file" class="file" id="fileAvatar" name="fileAvatar">
+      <img id="img_mem_avatar" src="<?= _WEB_ROOT.'/app/public/assets/clients/images/'.$informationUser["location_image"] ?> ?>" >
                                                         </div>
                                                         <div class="edit-image dropdown"><em class="mdi mdi-image-edit"></em>
                                                             <div class="dropdown-menu">
                                                                 <ul>
-                                                                    <li class="upload-pro"><a href="javascript:void(0);" onclick="choose_file();"> <em class="material-icons">add_photo_alternate</em><span>Tải hình ảnh</span></a></li>
-                                                                    <li class="view-pro"><a href="javascript:void(0);" onclick="removeAvarta();"> <em class="material-icons">highlight_off</em><span>Xóa hình ảnh</span></a></li>
+                                                                    <li class="upload-pro"><a href="javascript:void(0);" > <em class="material-icons">add_photo_alternate</em><span>Tải hình ảnh</span></a></li>
+                                                                    <li class="view-pro"><a href="javascript:void(0);" > <em class="material-icons">highlight_off</em><span>Xóa hình ảnh</span></a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -83,29 +268,41 @@
                                                             <h2>Một Ba</h2>
                                                         </div>
                                                         <div class="information">
-                                                            <div class="assistant"><span id="titleresume_17611557">Nhân viên nhân sự</span> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile" style="margin-left: 10px" title="Hồ sơ Careerbuilder"><em class="material-icons" style="font-size:16px">create</em></a></div>
+                                                            <div class="assistant"><span id="titleresume_17611557"><?= $seeker_resume_title["resume_title"]?></span> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile" style="margin-left: 10px" title="Hồ sơ Careerbuilder"><em class="material-icons" style="font-size:16px">create</em></a></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-8 col-xl-9">
                                                 <div class="cb-name">
-                                                    <h2>Một Ba</h2>
+                                                    <h2><?= $informationUser["lastname"]." ". $informationUser["firstname"] ?></h2>
                                                 </div>
                                                 <div class="information">
-                                                    <div class="assistant"><span>Nhân viên nhân sự</span> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile" style="margin-left: 10px" title="Hồ sơ Careerbuilder"><em class="material-icons" style="font-size:16px">create</em></a></div>
+                                                    <div class="assistant"><span><?= $seeker_resume_title["resume_title"]?></span> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile" style="margin-left: 10px" title="Hồ sơ Careerbuilder"><em class="material-icons" style="font-size:16px">create</em></a></div>
                                                     <ul class="desired">
+                             
+                                    <?php if (!empty($year_of_experience["yearOfExperience"]) ){ ?>
                                                         <li>
                                                             <em class="material-icons">star</em>
-                                                            <p>Số năm kinh nghiệm 1 </p>
+                 <p>Số năm kinh nghiệm <?= $year_of_experience["yearOfExperience"] ?> </p>
+                                                        </li>
+                                   <?php } else { ?>                
+                          <p    >Chưa có kinh nghiệm </p>
+
+                                    <?php }?>
+                                                     
+                                                        <li>
+                                        <em class="material-icons">person</em>
+                                  <p>Cấp bậc mong muốn: <span>   <?= 
+                   !empty($seeker_job_information["position"]) ?$seeker_job_information["position"] : "Chưa cập nhật";
+                                         
+                                          ?></span></p>
                                                         </li>
                                                         <li>
-                                                            <em class="material-icons">person</em>
-                                                            <p>Cấp bậc mong muốn: <span>Chưa cập nhật</span></p>
-                                                        </li>
-                                                        <li>
-                                                            <em class="material-icons">attach_money</em>
-                                                            <p>Mức lương mong muốn: <span>Chưa cập nhật</span></p>
+                                        <em class="material-icons">attach_money</em>
+                     <p>Mức lương mong muốn: <span>  <?=  !empty($seeker_job_information["salary_from"]) ? $seeker_job_information["salary_from"]."-".$seeker_job_information["salary_to"] ." VND" : "Chưa cập nhật"; 
+                                          
+                                                 ?></span></p>
                                                         </li>
                                                         <li style="position: relative;">
                                                             <em class="mdi mdi-calendar"></em>
@@ -295,7 +492,7 @@
                       </a>
                                                     </div>
                                                     <div class="item">
-                                                        <a id="btn_view_cbprofile" href="javascript:void(0);">
+                         <a id="btn_view_cbprofile" data-bs-toggle="modal"data-bs-target="#subCV" href="javascript:void(0);">
                         <span class="mdi mdi-eye"></span>
                         Xem hồ sơ
                       </a>
@@ -1097,7 +1294,210 @@
      
 
 
-        <div class="back-drop"></div>
+        <div class="modal fade " id="subCV" tabindex="-1" >
+                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h2 class="modal-title"    >Tiêu đề hồ sơ</h2>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                           </div>
+                           <div class="modal-body">
+                              <div class="container">
+                                 <div class="main-profile main-scroll-success">
+                                    <div class="view-template-wrap step-content cv-mode-finish">
+                                       <div class="editCVtemplate-wrapper editCVtemplate">
+                                          <div id="ZoneShowCVTemplate" class="cv-template-wrapper cv-template-15 fontCVRoboto clrYellow fontCVsize14">
+                                             <div class="col-xs-12 subCVpage">
+                                                <div class="top" style="text-align: center;">
+                                                   <div class="iavatar">
+                                                      <img src="<?= _WEB_ROOT.'/app/public/assets/clients/images/'.$informationUser["location_image"] ?>">		
+                                                   </div>
+                                                </div>
+                                                <div class="col-sm-12 col name  border_orange" style="text-align: center; padding-bottom: 8px;">
+                                                   <h2><?= $informationUser["lastname"]." ". $informationUser["firstname"] ?></h2>
+                                                   <h4><?= !empty($seeker_resume_title["resume_title"]) ? $seeker_resume_title["resume_title"]: ""  ?></h4>
+                                                   <div class="col-xs-12 main-contact">
+                                                      <ul class="contact">
+                                                         <li class="phone"><i class="fa fa-phone"></i><span><?= !empty($informationUser["contact_number"]) ? $informationUser["contact_number"]: ""  ?>  </span></li>
+                                                         <li class="mail"><i class="fa fa-envelope"></i><span class="txt"><?= $informationUser["email"] ?></span></li>
+                                                         <li class="address2"><i class="fa fa-home"></i><span class="txt">đường 7, Huyện Lộc Ninh, Bình Phước, Việt Nam</span></li>
+                                                      </ul>
+                                                   </div>
+                                                </div>
+                                                <div class="col-sm-12 col border_orange"style=" padding:8px 0; ">
+                                                   <h3>Thông tin cá nhân</h3>
+                                                   <ul class="contact">
+                                                      <li class="flex">
+                                                         <label>Giới tính</label>
+                                                         <div class="annou">:  <?php 
+                                                            if  (isset($informationUser["gender"])){
+                                                            echo $informationUser["gender"]==1 ? "Nam" : $informationUser["gender"]==2 ? "Nữ": "Khác";  
+                                                            }   
+                                                              
+                                                              ?> </div>
+                                                      </li>
+                                                      <li class="flex">
+                                                         <label>Ngày sinh</label>
+                                                         <div class="annou">:<?= !empty($informationUser["date_of_birth"]) ?formatDate($informationUser["date_of_birth"]): ""?> </div>
+                                                      </li>
+                                                      <li class="flex">
+                                                         <label>Tình trạng hôn nhân</label>
+                                                         <div class="annou">:  <?= $informationUser["marital_status"]==1 ? "Độc thân"  :"Đã kết hôn" ?></div>
+                                                      </li>
+                                                      <li class="flex">
+                                                         <label>Quốc tịch</label>
+                                                         <div class="annou">: Người Việt Nam</div>
+                                                         </li class="flex">
+                                                      <li class="flex">
+                                                         <label>Quốc gia</label>
+                                                         <div class="annou">: Việt Nam</div>
+                                                      </li>
+                                                   </ul>
+                                                </div>
+                                                <div class="col-sm-12 col border_orange"style=" padding:5px 0;">
+                                                   <h3>Kỹ năng</h3>
+                                                   <ul class="skill flex">
+                                                      <li class="">
+                                                         <label>c#</label>
+                                                         <div class="point"><span></span><span></span><span></span></div>
+                                                      </li>
+                                                      <li class="">
+                                                         <label>php</label>
+                                                         <div class="point"><span></span><span></span><span></span></div>
+                                                      </li>
+                                                      <li class="">
+                                                         <label>tốt</label>
+                                                         <div class="point"><span></span><span></span><span></span></div>
+                                                      </li>
+                                                      <li class="">
+                                                         <label>js</label>
+                                                         <div class="point"><span></span><span></span><span></span></div>
+                                                      </li>
+                                                      <li class="">
+                                                         <label>html</label>
+                                                         <div class="point"><span></span><span></span><span></span></div>
+                                                      </li>
+                                                   </ul>
+                                                </div>
+                                                <div class="col-md-12 col border_orange" style=" padding:8px 0; ">
+                                                   <h3><span>Công Việc Mong Muốn</span></h3>
+                                                   <div class="expected-job">
+                                                      <ul class="contact">
+                                                         <li><label>Cấp bậc </label> :<?= !empty($seeker_job_information["position"]) ? $seeker_job_information["position"] : "" ?></li>
+                                                         <li class="dbl-line"><label>Mức lương</label><span>:&nbsp;</span><span class="txt">				  				
+                                                            <?=  !empty($seeker_job_information["salary_from"])? $seeker_job_information["salary_from"].'-'.$seeker_job_information["salary_to"]." VND" : "" ?>
+                                                            </span>
+                                                         </li>
+                                                         <li class="dbl-line"><label>Hình thức công việc</label><span>:&nbsp;</span><span class="txt">   
+                                                            <?php if(!empty($seeker_type)){
+                                                               $valueStr = '';
+                                                                foreach ($seeker_type as $value) {
+                                                               $valueStr .= " $value[job_type] " . ',';
+                                                                }
+                                                               $valueStr = rtrim($valueStr, ',');
+                                                                echo $valueStr;
+                                                               }  
+                                                               
+                                                               
+                                                               ?>
+                                                            </span>
+                                                         </li>
+                                                         <li class="dbl-line">
+                                                            <label>Ngành nghề</label><span>:&nbsp;</span><span class="txt">
+                                                            <?php      
+                                                               if(!empty($informationProfession)){
+                                                                $valueStr = '';
+                                                                foreach ($informationProfession as $value) {
+                                                               $valueStr .= " $value[profession_name] " . ',';
+                                                                }
+                                                               $valueStr = rtrim($valueStr, ',');
+                                                                echo $valueStr;
+                                                               }  
+                                                               
+                                                               ?></span>
+                                                         </li>
+                                                         <li class="dbl-line"><label>Nơi làm việc</label><span>:&nbsp;</span><span class="txt"> Hà Nội - Huyện Thanh Trì/Huyện Ba Vì
+                                                            </span>
+                                                         </li>
+                                                      </ul>
+                                                   </div>
+                                                </div>
+                                                <div class="col-sm-12 col" style=" padding:8px 0; ">
+                                                   <h3>Kinh Nghiệm Làm Việc</h3>
+                                                   <div class="content_fck yearofexp">
+                                                      <p>Số năm kinh nghiệm:
+                                                         <?= !empty($year_of_experience["yearOfExperience"]) ? $year_of_experience["yearOfExperience"]  : "Chưa có kinh nghiệm"?> 
+                                                      </p>
+                                                      <p>Cấp bậc hiện tại:<?= !empty($year_of_experience["position"]) ? $year_of_experience["position"]  : "Chưa cập nhật" ?></p>
+                                                   </div>
+                                                   <?php foreach ($seeker_experience_detail as $item): ?>
+                                                   <div class="exp text-edt">
+                                                      <div class="title">
+                                                         <?= $item["experCurrent"]==0 ? $item["start_job"].'-'.$item["end_job"] : $item["start_job"].'-'."Hiện tại" ?>:
+                                                         <?= $item["rexp_title"]. " - ".$item["rexp_company"]." - ". $item["job_type_id"]?> 
+                                                      </div>
+                                                      <div class="content_fck">
+                                                         <p><?= $item["rexp_workdesc"]
+                                                            ?></p>
+                                                      </div>
+                                                   </div>
+                                                   <?php   endforeach;?>
+                                                </div>
+                                                <div class="col-sm-12 col border_orange_top"style=" padding:8px 0;">
+                                                   <h3>Học Vấn</h3>
+                     <div class="text-edt degree-name">Bằng cấp cao nhất:
+                         <?php foreach ($data_degree as $item): 
+                         if(!empty($seeker_highest_degree["degree_id"])){
+                           if($item["id"]==$seeker_highest_degree["degree_id"]){
+                              echo $item["degree_name"];
+                           }
+                         }
+                        
+                    endforeach;?>
+                       </div>
+                           <?php if(!empty($seeker_education_detail)) { ?>
+                          <?php foreach ($seeker_education_detail as $item): ?>
+                        
+                           <div class="exp text-edt">
+                          <div class="title"><?= "Tốt nghiệp ".$item["start_date"].'/'.$item["end_date"].':'  ?>  
+        <?= $item["degree_id"]==1?"Không yêu cầu bằng cấp" : $item["degree_name"] ?>
+                        <?= '- '.$item["redu_name"] ?>
+                        </div>
+                                                      <div class="content_fck">
+                                                         <p><?= $item["detail_desc"] ?></p>
+                                                      </div>
+                                                   </div>
+                          <?php  endforeach; ?>
+
+                      <?php    }?>
+                                                  
+                                                </div>
+                                                <div style=" padding:8px 0;" class="col-sm-12 col border_orange_top ">
+                                                   <h3>Thông Tin Tham Khảo</h3>
+                                                   <div class="text-edt">
+                                                      <div class="title">nguyen nhat minh</div>
+                                                      <div class="content_fck">
+                                                         <p>leader, fpt</p>
+                                                         <p>Phone: 0839704567</p>
+                                                         <p>Email: aolang69@gmail.com</p>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="col-xs-12 ">
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+                        
     </main>
 
  

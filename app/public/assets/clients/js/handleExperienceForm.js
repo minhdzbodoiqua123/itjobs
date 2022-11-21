@@ -39,7 +39,7 @@ async function show_frmExperience(id){
 
 
  function deleteExperience(id){
-   console.log(id);
+
    const expList=document.querySelector(`#expList_${id}`);
    modalAlert.fire(ConfigAlert("Bạn có muốn xóa kinh nghiệm này không ?")).then(async result => {
    if (result.isConfirmed) {
@@ -73,7 +73,7 @@ async function show_frmExperience(id){
     const arrMonths=[1,2,3,4,5,6,7,8,9,10,11,12];
     const job_type=await getData("http://localhost//itjobs/jobseekers/my_profile/job_type")
 const data_resume_experience=await getData(`http://localhost//itjobs/jobseekers/my_profile/data_resume_experience/${id}`);
-    console.log(data_resume_experience);
+   
 const [{rexp_title,rexp_workdesc,rexp_company,start_job,end_job,job_type_id,experCurrent}]=data_resume_experience
     
     const [rexp_month_start,rexp_year_start]=start_job.split("/");
