@@ -204,30 +204,30 @@
                             <li> <a class="active" href="<?= _WEB_ROOT . '/jobseekers/dashboard' ?>" title="Quản lý hồ sơ"> <em class="material-icons">color_lens</em><span>Quản lý hồ sơ</span></a></li>
                             <li style="display:none"> <a href="https://careerbuilder.vn/vi/jobseekers/cv-hay/my-profile"> <em class="material-icons">person</em><span>Hồ sơ Careerbuilder</span></a></li>
                             <li> <a href="<?= _WEB_ROOT . '/jobseekers/my_profile' ?>"> <em class="material-icons">person</em><span>Hồ sơ Careerbuilder</span></a></li>
-                            <li> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/changetemplate"> <em class="material-icons">portrait</em><span>Chỉnh mẫu hồ sơ</span></a></li>
+                            <!-- <li> <a href=""> <em class="material-icons">portrait</em><span>Chỉnh mẫu hồ sơ</span></a></li> -->
                             <li><a class="collapse " href="javascript:;"><em class="material-icons">edit</em><span>Việc làm của tôi</span></a>
                                 <ul class="list-unstyled collapse">
-                                    <li><a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/jobsaved">Việc làm đã lưu</a></li>
-                                    <li><a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/jobapplied">Việc làm đã nộp</a></li>
+                                    <li><a href="">Việc làm đã lưu</a></li>
+                                    <li><a href="">Việc làm đã nộp</a></li>
                                 </ul>
                             </li>
-                            <li> <a href="https://careerbuilder.vn/vi/jobseekers/jobalert"><em class="material-icons">notifications</em><span>Thông Báo Việc Làm</span></a></li>
+                            <li> <a href=""><em class="material-icons">notifications</em><span>Thông Báo Việc Làm</span></a></li>
                             <li> <a class="collapse " href="javascript:;"><em class="material-icons">remove_red_eye</em><span>Nhà tuyển dụng của tôi</span></a>
                                 <ul class="list-unstyled collapse">
-                                    <li> <a href="https://careerbuilder.vn/vi/jobseekers/myresume/viewbyemp">Nhà tuyển dụng xem hồ sơ của tôi</a></li>
-                                    <li> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/following">Following</a></li>
-                                    <li> <a href="https://careerbuilder.vn/vi/jobseekers/blacklist">Nhà tuyển dụng được cài đặt hạn chế xem hồ sơ của tôi</a></li>
-                                    <li> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/feedback">Phản hồi từ nhà tuyển dụng</a></li>
+                                    <li> <a href="">Nhà tuyển dụng xem hồ sơ của tôi</a></li>
+                                    <li> <a href="">Following</a></li>
+                                    <li> <a href="">Nhà tuyển dụng được cài đặt hạn chế xem hồ sơ của tôi</a></li>
+                                    <li> <a href="">Phản hồi từ nhà tuyển dụng</a></li>
                                 </ul>
                             </li>
-                            <li> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/notify" title="Xem tất cả thông báo"> <em class="material-icons">textsms</em><span>Xem tất cả thông báo</span></a></li>
+                            <li> <a href="" title="Xem tất cả thông báo"> <em class="material-icons">textsms</em><span>Xem tất cả thông báo</span></a></li>
                             <li> <a class="collapse " href="javascript:;"><em class="material-icons">settings</em><span>Cài đặt</span></a>
                                 <ul class="list-unstyled collapse">
-                                    <li> <a href="https://careerbuilder.vn/vi/jobseekers/member/myaccount" title="Tài Khoản">Tài Khoản</a></li>
-                                    <li> <a href="https://careerbuilder.vn/vi/jobseekers/member/emailmanagement" title="Cài Đặt Thông Báo">Cài Đặt Thông Báo</a></li>
+                                    <li> <a href="" title="Tài Khoản">Tài Khoản</a></li>
+                                    <li> <a href="" title="Cài Đặt Thông Báo">Cài Đặt Thông Báo</a></li>
                                 </ul>
                             </li>
-                            <li> <a href="https://careerbuilder.vn/vi/jobseekers/logout" title="Thoát"> <em class="material-icons">power_settings_new</em><span>Thoát</span></a></li>
+                            <li> <a href="<?= _WEB_ROOT . '/account/logout' ?>" title="Thoát"> <em class="material-icons">power_settings_new</em><span>Thoát</span></a></li>
                         </ul>
                     </div>
                     <div class="toggle-nav"><em class="material-icons">menu_open</em></div>
@@ -305,13 +305,13 @@
                                                  ?></span></p>
                                                         </li>
                                                         <li style="position: relative;">
-                                                            <em class="mdi mdi-calendar"></em>
+                                                            <!-- <em class="mdi mdi-calendar"></em>
                                                             <p id="date_17611557">
                                                                 Ngày cập nhật: 07/11/2022
                                                                 <a title="Cập nhật hồ sơ" href="javascript:void(0);" class="ac_refesh" rel="17611557">
                             <span class="material-icons refeshdate ">loop</span>
                           </a>
-                                                            </p>
+                                                            </p> -->
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -504,9 +504,9 @@
                       </a>
                                                     </div>
                                                 </div>
-                                                <div class="edit-profile">
+                                                <!-- <div class="edit-profile">
                                                     <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/changetemplate">Chỉnh mẫu hồ sơ</a>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -657,7 +657,7 @@
                                             <h4>Bạn cần tải hoặc tạo hồ sơ</h4>
                                             <p>Vui lòng thêm mục tiêu nghề nghiệp</p>
                                         </div>
-                                        <div class="button-upload" id="created-resume"><a href="javascript:void(0);">Tạo  Hồ Sơ Ngay!</a></div>
+               <div class="button-upload" id="created-resume"><a href="<?= _WEB_ROOT . '/jobseekers/myattach' ?>">Tạo  Hồ Sơ Ngay!</a></div>
                                     </div>
                                 </div>
                             </div>

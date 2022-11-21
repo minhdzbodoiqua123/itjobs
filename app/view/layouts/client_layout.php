@@ -14,7 +14,7 @@
     
 
     <script defer src="<?= _WEB_ROOT . "/app/global/js/multi-select-dropdown.js" ?>"></script>
-    <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/library/flatpickr/dist/flatpickr.min.css" ?>">
+ <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/library/flatpickr/dist/flatpickr.min.css" ?>">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 </head>

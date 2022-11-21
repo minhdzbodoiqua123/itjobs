@@ -205,21 +205,21 @@
                   <li>
                      <a class="collapse " href="javascript:;"><em class="material-icons">edit</em><span>Việc làm của tôi</span></a>
                      <ul class="list-unstyled collapse">
-                        <li><a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/jobsaved">Việc làm đã lưu</a></li>
-                        <li><a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/jobapplied">Việc làm đã nộp</a></li>
+                        <li><a href="">Việc làm đã lưu</a></li>
+                        <li><a href="">Việc làm đã nộp</a></li>
                      </ul>
                   </li>
-                  <li> <a href="https://careerbuilder.vn/vi/jobseekers/jobalert"><em class="material-icons">notifications</em><span>Thông Báo Việc Làm</span></a></li>
+                  <li> <a href=""><em class="material-icons">notifications</em><span>Thông Báo Việc Làm</span></a></li>
                   <li>
                      <a class="collapse " href="javascript:;"><em class="material-icons">remove_red_eye</em><span>Nhà tuyển dụng của tôi</span></a>
                      <ul class="list-unstyled collapse">
-                        <li> <a href="https://careerbuilder.vn/vi/jobseekers/myresume/viewbyemp">Nhà tuyển dụng xem hồ sơ của tôi</a></li>
-                        <li> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/following">Following</a></li>
-                        <li> <a href="https://careerbuilder.vn/vi/jobseekers/blacklist">Nhà tuyển dụng được cài đặt hạn chế xem hồ sơ của tôi</a></li>
-                        <li> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/feedback">Phản hồi từ nhà tuyển dụng</a></li>
+                        <li> <a href="">Nhà tuyển dụng xem hồ sơ của tôi</a></li>
+                        <li> <a href="">Following</a></li>
+                        <li> <a href="">Nhà tuyển dụng được cài đặt hạn chế xem hồ sơ của tôi</a></li>
+                        <li> <a href="">Phản hồi từ nhà tuyển dụng</a></li>
                      </ul>
                   </li>
-                  <li> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/notify" title="Xem tất cả thông báo"> <em class="material-icons">textsms</em><span>Xem tất cả thông báo</span></a></li>
+                  <li> <a href="" title="Xem tất cả thông báo"> <em class="material-icons">textsms</em><span>Xem tất cả thông báo</span></a></li>
                   <li>
                      <a class="collapse " href="javascript:;"><em class="material-icons">settings</em><span>Cài đặt</span></a>
                      <ul class="list-unstyled collapse">
@@ -1552,11 +1552,10 @@
                            <li><a data-href="widget-18">Thông tin nghề nghiệp</a></li>
                            <li><a data-href="widget-15">Kinh nghiệm làm việc</a></li>
                            <li><a data-href="widget-16">Học vấn</a></li>
-                           <li><a data-href="certificate-section">Chứng chỉ khác</a></li>
-                           <li><a data-href="language-section">Ngôn ngữ</a></li>
-                           <li><a data-href="widget-17">Kỹ năng chuyên môn</a></li>
-                           <li><a data-href="widget-19">Thành tích nổi bật</a></li>
-                           <li><a data-href="other-activity-section">Hoạt động khác</a></li>
+
+                           <!-- <li><a data-href="language-section">Ngôn ngữ</a></li> -->
+                           <!-- <li><a data-href="widget-17">Kỹ năng chuyên môn</a></li> -->
+                     
                            <li><a data-href="widget-20">Người tham khảo</a></li>
                         </ul>
                      </div>

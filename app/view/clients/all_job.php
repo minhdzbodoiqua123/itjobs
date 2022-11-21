@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="<?= _WEB_ROOT."/app/public/assets/clients/css/all_job.css" ?>">
+<link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css" ?>">
+
 <main>
-   <sec  tion class="page-heading-tool">
+   <section class="page-heading-tool">
       <div class="container">
          <div class="tool-wrapper">
             <div class="close-input-filter"><em class="lnr lnr-cross"></em></div>
@@ -12,7 +14,7 @@
                         <div class="cleartext"><em class="mdi mdi-close-circle"></em></div>
                      </div>
                      <div class="form-group form-select-chosen">
-                        <select id="industry" name="industry" class="chosen-select-max-three" data-placeholder="Tất cả ngành nghề" >
+                        <select id="industry"   name="industry" class="chosen-select-max-three" data-placeholder="Tất cả ngành nghề" >
                            <option value="">Chọn ngành nghề</option>
                            <option value="an-ninh-bao-ve_51">An Ninh / Bảo Vệ</option>
                            <option value="an-toan-lao-dong_58">An toàn lao động</option>
@@ -1354,7 +1356,7 @@
                            </div>
                         </div>
                      </div>
-                     <div class="job-item " id="job-item-35BAE5B5">
+                     <!-- <div class="job-item " id="job-item-35BAE5B5">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/rgf-hr-agent-vietnam-co-ltd.35A63BED.html" target="_blank" title="RGF HR Agent Vietnam Co., LTD">
@@ -1619,8 +1621,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE5B0">
+                     </div> -->
+                     <!-- <div class="job-item " id="job-item-35BAE5B0">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/diag.35A89197.html" target="_blank" title="DIAG">
@@ -2047,7 +2049,7 @@
                               </div>
                            </div>
                         </div>
-                     </div>
+                     </div> -->
                   </div>
                   <div class="pagination">
                      <ul>
