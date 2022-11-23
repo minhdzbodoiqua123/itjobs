@@ -89,7 +89,7 @@
                 <div class="col-sm-2">
   
                   <a class="btn btn-add btn-sm" href="form-add-don-hang.html" title="Thêm"><i class="fas fa-plus"></i>
-                    Tạo mới đơn hàng</a>
+                    Tạo mới công ty</a>
                 </div>
                 <div class="col-sm-2">
                   <a class="btn btn-delete btn-sm nhap-tu-file" type="button" title="Nhập" onclick="myFunction(this)"><i
@@ -128,6 +128,8 @@
                     <th>Tóm tắt công ty
 </th>
                     <th>Mã số thuế</th>
+                    <th>Chức năng</th>
+
                   </tr>
                 </thead>
                 <tbody>
@@ -139,8 +141,10 @@
                     <td>2</td>
                    
                     <td><span class="badge bg-success">Hoàn thành</span></td>
+                    <td></td>
                     <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button>
                       <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></td>
+                      
                   </tr>
                
                 </tbody>
