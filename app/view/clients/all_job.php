@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="<?= _WEB_ROOT."/app/public/assets/clients/css/all_job.css" ?>">
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css" ?>">
+<script defer src="<?= _WEB_ROOT . "/app/public/assets/employer/js/all_job.js"?>"></script>
 
 <main>
    <section class="page-heading-tool">
@@ -982,27 +983,29 @@
                </div>
                <div class="main-slide">
                   <div class="jobs-side-list" id="jobs-side-list-content">
-                     <div class="job-item " id="job-item-35BAE5BD">
+                     <?php foreach ($job_post as $item): ?>
+                        <div class="job-item " id="job-item-<?= $item["id"]?>">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/ms-huong.35A8DDF9.html" target="_blank" title="Ms Huong">
-                              <img class="lazy-img" src="https://images.careerbuilder.vn/employer_folders/lot1/259321/155x155/90719image001.png" src="../kiemviecv32/images/graphics/blank.gif" alt="Ms Huong">
+                              <img class="lazy-img" src="<?= $item["logo"] ?>" src="../kiemviecv32/images/graphics/blank.gif" alt="Ms Huong">
                               </a>
                            </div>
                            <div class="figcaption">
                               <div class="title ">
                                  <h2>
                                     <a class="job_link" data-id="35BAE5BD" href="https://careerbuilder.vn/vi/tim-viec-lam/video-translator-up-to-13mil.35BAE5BD.html" target="_blank" title="VIDEO TRANSLATOR  UP TO 13MIL">
-                                    VIDEO TRANSLATOR UP TO 13MIL
+                                  <?= $item["job_title"] ?>
                                     <span class="new">
                                     <font color="ff0000">(Mới)</font>
                                     </span> </a>
                                  </h2>
                               </div>
-                              <div class="caption">
+                            <div style="display:flex;justify-content: space-between;">
+                            <div class="caption">
                                  <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/ms-huong.35A8DDF9.html" title="Ms Huong">Ms Huong</a>
                                  <div class="salary">
-                                    <p><em class="fa fa-usd"></em>Lương: 10 Tr - 13 Tr VND</p>
+                                    <p><em class="fa fa-usd"></em>Lương: <?= format_price($item["min_salary"]).'-'.format_price($item["max_salary"]).' VND' ?></p>
                                  </div>
                                  <div class="location">
                                     <em class="mdi mdi-map-marker"></em>
@@ -1011,14 +1014,17 @@
                                     </ul>
                                  </div>
                                  <ul class="welfare">
-                                    <li><span class="fa fa-laptop"></span>Laptop</li>
-                                    <li><span class="fa fa-medkit"></span>Chế độ bảo hiểm</li>
-                                    <li><span class="fa fa-plane"></span>Du Lịch</li>
+                                    <?php foreach ($job_welfare_detail as $welfare): 
+                                      if($welfare["post_id"]==$item["id"]){ 
+                                       echo "  <li>$welfare[welfare_type]</li>";
+                                      }
+                                   endforeach;?>
+
                                  </ul>
                               </div>
-                              <div class="bottom-right-icon">
+                              <div style="top:50px;"class="">
                                  <ul>
-                                    <li><a class="play-video" href="https://www.youtube.com/watch?v=DrRaeCbws0I" data-fancybox=""><i class="mdi mdi-play-circle-outline"></i><span class="text"> Xem video</span></a></li>
+                                
                                     <li><a class="toollips save-job chk_save_35BAE5BD " href="javascript:void(0);" data-id="35BAE5BD" onclick="popuplogin()">
                                        <i class="mdi mdi-heart-outline"></i>
                                        <span class="text">Lưu việc làm</span>
@@ -1027,16 +1033,18 @@
                                  </ul>
                                  <div class="time">
                                     <em class="mdi mdi-calendar"></em>
-                                    <time>04-11-2022</time>
+                                    <time><?= formatDate($item["posted_date"]) ?></time>
                                     <div class="toolip">
                                        <p>Ngày cập nhật</p>
                                     </div>
                                  </div>
-                              </div>
+                              </div></div>
                            </div>
                         </div>
                      </div>
-                     <div class="job-item " id="job-item-35BAE5BB">
+                   <?php  endforeach;?>
+                   
+                     <!-- <div class="job-item " id="job-item-35BAE5BB">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/medigo-software.35A88553.html" target="_blank" title="Medigo Software ">
@@ -1355,7 +1363,7 @@
                               </div>
                            </div>
                         </div>
-                     </div>
+                     </div> -->
                      <!-- <div class="job-item " id="job-item-35BAE5B5">
                         <div class="figure">
                            <div class="image">

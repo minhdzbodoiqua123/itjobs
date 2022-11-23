@@ -39,7 +39,7 @@ class Database
             $valueStr = rtrim($valueStr, ',');
             
             $sql = "INSERT INTO $table ($fieldStr) VALUES ($valueStr)";
-           echo $sql;
+            
             $status = $this->query($sql);
             if ($status) {
                 return true;
@@ -97,7 +97,7 @@ class Database
         else{
             $sql="SELECT * from `$table` ";
         }
-      
+   
         $statement = $this->conn->prepare($sql);
         $statement->execute();
         return $statement;

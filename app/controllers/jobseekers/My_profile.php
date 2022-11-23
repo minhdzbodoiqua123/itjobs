@@ -481,6 +481,7 @@ $this->model("SeekerProfileModel")->update("seeker_resume_title",$data,"user_acc
 
     }
 
+    
     public function update_highest_degree(){
         if(count($_POST) > 0){
             $user_account_id =$_SESSION["user"]["id"];

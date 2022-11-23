@@ -22,5 +22,7 @@ require_once 'core/Functions.php';
 //Import file dể xác thực  tất cả các file admin  và user
 // require_once __DIR__."/app/models/Auth_admin.php";
 require_once __DIR__."/app/models/Auth_user.php";
+require_once __DIR__."/app/models/Auth_employer.php";
+
 
 $myApp=new App();

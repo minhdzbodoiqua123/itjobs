@@ -1,6 +1,33 @@
 
 <main>
-
+<section class="employer-navbar-2-1">
+  <div class="container">
+    <div class="category-nav">
+      <p>Danh Mục</p>
+      <em class="mdi mdi-chevron-down"></em> </div>
+    <div class="main-wrap">
+      <div class="left-wrap">         <ul class="list-menu">
+          <li > <a href="<?= _WEB_ROOT.'/employer/dashboard'?>" title="Dashboard">Dashboard</a> </li>   
+          <li class="active"> <a href="<?= _WEB_ROOT.'/employer/hrcentral/posting'?>" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
+          <li> <a href="https://careerbuilder.vn/vi/employers/hrcentral/manageresume" class="active" title="Quản Lý  Ứng Viên">Quản Lý  Ứng Viên</a> </li>
+          <li class=""> <a href="https://careerbuilder.vn/vi/employers/hrcentral/search-history" title="Lịch Sử Tìm Kiếm">Lịch Sử Tìm Kiếm</a> </li>
+          <li> <a href="https://careerbuilder.vn/vi/employers/hrcentral/reports/orders_available" title="Đơn Hàng ">Đơn Hàng </a> </li>
+          <li> <a href="https://careerbuilder.vn/vi/employers/hrcentral/emailcontentmanagement" title="Cấu Hình Email"> Cấu Hình Email </a> </li>
+          <li>
+          <a href="https://careerbuilder.vn/vi/employers/hrcentral/accounts" title=" Tài Khoản"> Tài Khoản</a>
+          </li>
+		            <li> <a href="https://careerbuilder.vn/vi/employers/careerbuilder-rewards" target="_blank" title="CBRewards">CBRewards</a> </li>
+		          </ul>
+         </div>
+      <div class="right-wrap">
+        <ul class="list-menu">
+          <li> <a href="https://careerbuilder.vn/vi/tim-ung-vien.html"> <em class="material-icons">find_in_page</em> Tìm Hồ Sơ </a> </li>
+          <li> <a class="but-createjob" href="https://careerbuilder.vn/vi/employers/postjobs"> <em class="material-icons">assignment_ind</em> Đăng Tuyển Dụng </a> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
     <div class="last-login-user">
         <div class="container">
             <p> Đăng nhập gần đây:
@@ -14,7 +41,7 @@
                 <div class="heading-manage">
                     <div class="left-heading">
                         <h1 class="title-manage">Quản Lý Tuyển Dụng</h1>
-                        <div class="button"><a class="btn-gradient" href="https://careerbuilder.vn/vi/employers/postjobs"><em class="material-icons">create</em>Tạo Mẫu Tuyển Dụng</a></div>
+                        <div class="button"><a class="btn-gradient" href="<?= _WEB_ROOT . '/employer/Postjobs' ?>"><em class="material-icons">create</em>Tạo Mẫu Tuyển Dụng</a></div>
                     </div>
                     <div class="right-heading"><a href="https://careerbuilder.vn/vi/employers/faq" target="_blank" target="_blank" class="support">Hướng dẫn</a></div>
                 </div>
@@ -61,28 +88,29 @@
                     </select>
                 </div>
                 <div class="main-tabslet">
-                    <ul class="tabslet-tab">
-                        <li class="active">
-                            <a href="https://careerbuilder.vn/vi/employers/hrcentral/posting/user_id/lop7cttnq.1667207375">
-                                Việc Làm Đang Đăng
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="https://careerbuilder.vn/vi/employers/hrcentral/waitposting/user_id/lop7cttnq.1667207375">
-                                Việc Làm Chờ Đăng
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="https://careerbuilder.vn/vi/employers/hrcentral/unposting/user_id/lop7cttnq.1667207375">
-                                Việc Làm Tạm Dừng Đăng
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="https://careerbuilder.vn/vi/employers/hrcentral/expireposting/user_id/lop7cttnq.1667207375">
-                                Việc Làm Hết Hạn
-                            </a>
-                        </li>
-                    </ul>
+                <ul class="tabslet-tab">
+    <li class="active">
+        <a href="<?= _WEB_ROOT . '/employer/hrcentral/Posting' ?>">
+            Việc Làm Đang Đăng
+        </a>
+    </li>
+    <li class="">
+        <a href="<?= _WEB_ROOT . '/employer/hrcentral/waitposting' ?>">
+            Việc Làm Chờ Đăng
+        </a>
+    </li>
+    <li class="">
+        <a href="<?= _WEB_ROOT . '/employer/hrcentral/unposting' ?>">
+            Việc Làm Tạm Dừng Đăng
+        </a>
+    </li>
+    <li class="">
+        <a href="<?= _WEB_ROOT . '/employer/hrcentral/expireposting' ?>">
+            Việc Làm Hết Hạn
+        </a>
+    </li>
+</ul>
+
 
 
 
@@ -120,22 +148,44 @@
                                     <table>
                                         <thead>
                                             <tr>
-                                                <th width="1%"></th>
+                                           
                                                 <th width="32%">Chức danh</th>
-                                                <th width="12%" onclick="setTypeSort('posting', 'asc', 3)">Ngày đăng<em class="material-icons">arrow_drop_down</em></th>
-                                                <th width="10%" onclick="setTypeSort('posting', 'asc', 4)">Hết hạn<em class="material-icons">sort</em></th>
-                                                <th width="10%" onclick="setTypeSort('posting', 'asc', 0)">Lượt Xem<em class="material-icons">sort</em></th>
-                                                <th width="10%" onclick="setTypeSort('posting', 'asc', 1)">Lượt Nộp<em class="material-icons">sort</em></th>
-                                                <th width="10%">CV Gợi Ý</th>
+                                                <th width="12%" >Ngày đăng<em class="material-icons">arrow_drop_down</em></th>
+                                                <th width="10%" >Hết hạn<em class="material-icons">sort</em></th>
+                                                <th width="10%" >Lượt Xem<em class="material-icons">sort</em></th>
+                                                <th width="10%" >Lượt Nộp<em class="material-icons">sort</em></th>
+                                            
                                                 <th width="15%">Thao tác</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php foreach ($job_post as $item): ?>
                                             <tr>
-                                                <td colspan="9" class="cb-text-center">
-                                                    <p><strong> Không có vị trí nào trong thư mục này.</strong></p>
+                                                <!-- <td colspan="9" class="cb-text-center">
+                                                <p><strong> Không có vị trí nào trong thư mục này.</strong></p>
+                                                 
+                                                </td> -->
+                                              
+                                              
+                                                <td><?= $item["job_title"] ?></td>
+                                                <td><?= formatDate($item["posted_date"]) ?></td>
+                                                <td><?= formatDate($item["end_date"]) ?></td>
+
+                                                <td></td>
+                                      
+                                                <td></td>
+                                                <td>
+                                                <ul class="list-manipulation">
+                     <li><a class="btn_recruit" data-id="19" title="Đăng tuyển"><em class="material-icons">publish </em></a></li>
+                     <li><a href="http://localhost//itjobs/employer/hrcentral/viewjob/detail/19" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
+                     <li><a href="http://localhost//itjobs/employer/hrcentral/posting/copyjob/lop7cttnq.1667207375/35BAFFA3/1/1" title="Nhân bản"><em class="material-icons">content_copy </em> </a></li>
+                     <li><a href="https://careerbuilder.vn/vi/employers/postjobs/35BAFFA3" title="Sửa"><em class="material-icons">created</em></a></li>
+                     <li class="end"><a href="javascript:void(0);" onclick="deleteItem_job('35BAFFA3');return false;" title="Xóa"><em class="material-icons">cancel </em></a></li>
+                   </ul>
                                                 </td>
+                                                
                                             </tr>
+                                            <?php  endforeach;?>
                                         </tbody>
                                     </table>
                                 </div>

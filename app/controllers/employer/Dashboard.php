@@ -2,9 +2,17 @@
 class Dashboard extends Controller
 {
     public function index(){
-        // $this->data["sub_content"][""]="";
-        // $this->data["content"]="employer/hrcentral/posting";
+        
+        if (!Auth_employer::logged_in()) {
+            $this->redirect("employer/login");
+        }
 
-        // $this->render('layouts/employer_layouts',$this->data);
+
+        $this->data["sub_content"][""]="";
+
+        $this->data["content"]="employer/dashboard";
+        $this->render('layouts/employer_layout',$this->data);
     }
+   
+    
 }

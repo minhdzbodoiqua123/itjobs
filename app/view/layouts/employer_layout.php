@@ -7,8 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/tailwind.css" ?>">
     <link rel="stylesheet" href="<?= _WEB_ROOT."/app/public/assets/employer/css/main.css" ?>">
+    
+    <script  src="<?= _WEB_ROOT . "/app/library/flatpickr/dist/flatpickr.js" ?>"></script>
+
+    <script  src="<?= _WEB_ROOT . "/app/library/pristinejs/dist/pristine.js" ?>"></script>
+
     <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="dist/pristine.js"  type="text/javascript"></script>
+    <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script defer src="<?= _WEB_ROOT . "/app/global/js/multi-select-dropdown.js" ?>"></script>
+    <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css" ?>">
+    
 </head>
 
 <body class="font-Helvetica">
