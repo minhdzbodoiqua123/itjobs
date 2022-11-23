@@ -17,7 +17,8 @@ class ViewJob extends Controller
         $employer_id=$_SESSION["employer"]["id"];
         $conn=$this->model("Job_postModel");
         
-        $job_post=$conn->query("SELECT job_post.*,degree_name,position,experience_type FROM `job_post` join degree on job_degree_id=degree.id join job_position on job_position_id=job_position.id join job_experience on job_experience_id=job_experience.id  and job_post.id=$id")->fetch(PDO::FETCH_ASSOC);
+        $job_post=$conn->query("SELECT job_post.*,degree_name,position,experience_type,company_name FROM `job_post` join degree on job_degree_id=degree.id join job_position on job_position_id=job_position.id join job_experience on job_experience_id=job_experience.id join company on job_post.company_id =company.id  where job_post.id=$id")->fetch(PDO::FETCH_ASSOC);
+        
         $job_experience_detail=$conn->get("job_experience_detail","post_id=$id")->fetch(PDO::FETCH_ASSOC);
      
         $job_profession_detail=$conn->query("SELECT * FROM `job_profession_detail` join profession on profession_id=profession.id WHERE post_id=$id")->fetchAll(PDO::FETCH_ASSOC);

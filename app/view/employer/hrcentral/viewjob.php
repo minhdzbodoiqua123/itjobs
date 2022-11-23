@@ -176,7 +176,22 @@
                                 <li>
                                   <p class="name">Kinh nghiệm</p>
                                   <p>
-                                    <?= $job_experience_detail["JOB_FROMEXPERIENCE"].'-'.$job_experience_detail["JOB_TOEXPERIENCE"].' Năm' ?>
+                                  <?php
+                                    switch($job_post["job_experience_id"]) {
+                                      case '1':
+                                        echo "Không yêu cầu kinh nghiệm";
+                                        break;
+                                      case '3':
+                                        echo "Chưa có kinh nghiệm";
+                                      
+                                        break;
+                                      default:
+               echo   $job_experience_detail["JOB_FROMEXPERIENCE"].'-'.$job_experience_detail["JOB_TOEXPERIENCE"].' Năm';
+                                        break;
+                                    }
+                                  
+                                    ?>
+                                
                                 
                                   </p>
                                 </li>
@@ -215,18 +230,7 @@
                                   <p class="name">Tuổi</p>
                                   <p> 
                                     <?php
-                                    switch($job_post["job_experience_id"]) {
-                                      case '1':
-                                        echo "Không yêu cầu kinh nghiệm";
-                                        break;
-                                      case '3':
-                                        echo "Chưa có kinh nghiệm";
-                                      
-                                        break;
-                                      default:
-                                    echo   $job_post["from_age"].'-'.$job_post["to_age"];
-                                        break;
-                                    }
+                                        echo   $job_post["from_age"].'-'.$job_post["to_age"];
                                   
                                     ?>
                                   </p>

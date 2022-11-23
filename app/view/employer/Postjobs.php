@@ -420,9 +420,7 @@
                             <div class="form-wrap video-wrap">
                               
                                 <div class="form-group form-submit form-continue">
-                                    <button class="btn-gradient btn-submit" id="btn_submit_form_postjobs" type="button" >
-                                        Tiếp tục
-                                    </button>
+                                  
                  <button class="btn-gradient btn-post" id="btn_submit_form_postjobs_finish" type="submit" >
                                         Lưu
                                     </button>

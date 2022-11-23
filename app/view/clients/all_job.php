@@ -987,14 +987,14 @@
                         <div class="job-item " id="job-item-<?= $item["id"]?>">
                         <div class="figure">
                            <div class="image">
-                              <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/ms-huong.35A8DDF9.html" target="_blank" title="Ms Huong">
+                              <a href="" target="_blank" title="Ms Huong">
                               <img class="lazy-img" src="<?= $item["logo"] ?>" src="../kiemviecv32/images/graphics/blank.gif" alt="Ms Huong">
                               </a>
                            </div>
                            <div class="figcaption">
                               <div class="title ">
                                  <h2>
-                                    <a class="job_link" data-id="35BAE5BD" href="https://careerbuilder.vn/vi/tim-viec-lam/video-translator-up-to-13mil.35BAE5BD.html" target="_blank" title="VIDEO TRANSLATOR  UP TO 13MIL">
+                                    <a class="job_link" data-id="35BAE5BD" href="<?= _WEB_ROOT.'/Alljob/detail/'.$item["id"] ?>" title="VIDEO TRANSLATOR  UP TO 13MIL">
                                   <?= $item["job_title"] ?>
                                     <span class="new">
                                     <font color="ff0000">(Mới)</font>
