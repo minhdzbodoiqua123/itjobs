@@ -9,6 +9,7 @@
 
     <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="dist/pristine.js"  type="text/javascript"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </head>
 
 <body class="font-Helvetica">
