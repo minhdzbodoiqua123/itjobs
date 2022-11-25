@@ -3,7 +3,7 @@ class Postjobs extends Controller
 {
     public function index(){
         if (!Auth_employer::logged_in()) {
-            $this->redirect("employer/login");
+            $this->redirect("employer/account/login");
         }
         $data_position = $this->model("JobPositionModel")->get("job_position")->fetchAll(PDO::FETCH_ASSOC);
         $data_welfare= $this->model("JobPositionModel")->get("job_welfare")->fetchAll(PDO::FETCH_ASSOC);

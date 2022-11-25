@@ -4,7 +4,7 @@ class Dashboard extends Controller
     public function index(){
         
         if (!Auth_employer::logged_in()) {
-            $this->redirect("employer/login");
+            $this->redirect("employer/account/login");
         }
 
 

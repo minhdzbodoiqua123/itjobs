@@ -11,7 +11,7 @@ class ViewJob extends Controller
     }
     public function detail($id=""){
         if (!Auth_employer::logged_in()) {
-            $this->redirect("employer/login");
+            $this->redirect("employer/account/login");
         }
 
         $employer_id=$_SESSION["employer"]["id"];

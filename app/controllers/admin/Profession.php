@@ -16,9 +16,9 @@ class Profession extends Controller
         if (count($_POST) > 0) {
             $profession_name =   $_POST["profession_name"];
             $data = [
-                "profession_name" => "'$profession_name'",
+            "profession_name" => "'$profession_name'",
             ];
-            $insertCompany = $conn->insert("profession", $data);
+            $insertProfession = $conn->insert("profession", $data);
             $this->redirect("admin/Profession");
         }
 

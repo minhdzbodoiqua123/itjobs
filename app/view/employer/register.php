@@ -912,7 +912,7 @@
                             <div class="title">
                                 <h2>Đăng Ký Tài Khoản Nhà Tuyển Dụng</h2>
                             </div>
-                <form name="frmRegister" id="frmRegister" method="post" action=" register/insertUser"autocomplete="off">
+       <form name="frmRegister" id="frmRegister" method="post" action=" "autocomplete="off">
                                 <div class="step-1" id="step-1">
                                     
                                     <div class="main-form">

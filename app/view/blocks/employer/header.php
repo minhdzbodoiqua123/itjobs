@@ -46,16 +46,16 @@
                     <div class="dropdown-menu">
                         <ul>
                             <li> <a href="https://careerbuilder.vn/vi/employers/hrcentral/accounts"> <em class="fa fa-cog"></em>Tài khoản</a></li>
-                            <li> <a href="https://careerbuilder.vn/vi/employers/logout"> <em class="fa fa-sign-out"> </em>Thoát</a></li>
+                            <li> <a href="<?= _WEB_ROOT.'/employer/account/logout' ?>"> <em class="fa fa-sign-out"> </em>Thoát</a></li>
                         </ul>
                     </div>
                 </div>
 
                             <?php } else {?>
                             <div class="main-login dropdown">
-                        <div class="title-login"><a href="<?= _WEB_ROOT.'/employer/login' ?>"> <span class="mdi mdi-account-circle"></span>Đăng nhập</a></div>
+                        <div class="title-login"><a href="<?= _WEB_ROOT.'/employer/account/login' ?>"> <span class="mdi mdi-account-circle"></span>Đăng nhập</a></div>
                       
-                    </div>       <div class="main-register"><a href="<?= _WEB_ROOT.'/employer/register' ?>">Đăng ký</a></div>
+                    </div>       <div class="main-register"><a href="<?= _WEB_ROOT.'/employer/account/register' ?>">Đăng ký</a></div>
 
                             <?php }?>
                 

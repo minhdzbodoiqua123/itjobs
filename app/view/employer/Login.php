@@ -921,7 +921,7 @@
 							</div>
 						</div>
 				    <div class="main-form">
-						<form name="frmLogin" id="frmLogin" method="post" action="login/checklogin">
+						<form name="frmLogin" id="frmLogin" method="post" action="">
 							<div class="form-group d-flex">
 								<div class="form-info">
 									<span>Email/Tên đăng nhập</span>
