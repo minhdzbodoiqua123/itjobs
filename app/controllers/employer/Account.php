@@ -120,7 +120,7 @@ class Account extends Controller
 
        $this->redirect('employer/login');
       }
-       $this->redirect('employer/account/register');
+     
        
    }
 
