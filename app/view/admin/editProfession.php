@@ -79,7 +79,7 @@
 
             <form id="formUpdate" method="post" action="" class="row">
 
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-12">
                 <label class="control-label">Tên nghề nghiệp</label>  
                 <input value="<?= $dataProfessionById["profession_name"] ?>" class="form-control" name="profession_name" type="text">
                 <small></small>

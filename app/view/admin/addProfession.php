@@ -67,14 +67,14 @@
     <main class="app-content">
         <div class="app-title">
             <ul class="app-breadcrumb breadcrumb">
-                <li class="breadcrumb-item"><a href="DataProduct" class="list_product">Quản lý nhân viên</a></li>
-                <li class="breadcrumb-item"><a href="#">Thêm công ty</a></li>
+                <li class="breadcrumb-item"><a href="DataProduct" class="list_product">Quản lý nghề nghiệp</a></li>
+                <li class="breadcrumb-item"><a href="#">Thêm nghề nghiệp</a></li>
             </ul>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="tile">
-                    <h3 class="tile-title">Thêm công ty</h3>
+                    <h3 class="tile-title">Thêm nghề nghiệp</h3>
                     <div class="tile-body">
 
 

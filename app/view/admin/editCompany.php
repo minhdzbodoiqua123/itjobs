@@ -67,8 +67,8 @@
   <main class="app-content">
     <div class="app-title">
       <ul class="app-breadcrumb breadcrumb">
-        <li class="breadcrumb-item"><a href="DataProduct" class="list_product">Quản lý nhân viên</a></li>
-        <li class="breadcrumb-item"><a href="#">Thêm công ty</a></li>
+        <li class="breadcrumb-item"><a href="http://localhost//itjobs/admin/company" class="list_product">Quản lý công ty</a></li>
+        <li class="breadcrumb-item"><a href="#">Sửa công ty</a></li>
       </ul>
     </div>
     <div class="row">
@@ -76,7 +76,6 @@
         <div class="tile">
           <h3 class="tile-title">Sửa công ty</h3>
           <div class="tile-body">
-
 
             <form id="formUpdate" method="post" action="" class="row">
 
@@ -151,7 +150,7 @@
 
               <div class="form-group col-md-12">
                 <button class="btn btn-save" name="submit" type="submit">Lưu lại</button>
-                <a class="btn btn-cancel" href="http://localhost//du_an_mau//admin/DataStaff">Hủy bỏ</a>
+                <a class="btn btn-cancel" href="http://localhost//itjobs/admin/company/">Hủy bỏ</a>
               </div>
             </form>
           </div>
