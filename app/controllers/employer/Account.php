@@ -26,7 +26,7 @@ class Account extends Controller
           $this->redirect('employer/dashboard');
       }
      
-      $this->redirect('employer/login');
+      $this->redirect('employer/account/login');
 
 
       //     if(empty($_POST["email"]) || empty($_POST["password"])  ){
@@ -39,7 +39,7 @@ class Account extends Controller
 
       }
 
-     $this->data["sub_content"][""]="";
+     $this->data["sub_content"]["errors"]="";
 
      $this->data["content"]="employer/login";
      $this->render('layouts/employer_layout',$this->data);
