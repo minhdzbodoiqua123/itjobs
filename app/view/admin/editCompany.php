@@ -13,8 +13,7 @@
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
   <!-- Font-icon css-->
-  <link rel="stylesheet" type="text/css"
-    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
@@ -24,8 +23,7 @@
 <body onload="time()" class="app sidebar-mini rtl">
   <!-- Navbar-->
   <header class="app-header">
-    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
-      aria-label="Hide Sidebar"></a>
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
     <!-- Navbar Right Menu-->
     <ul class="app-nav">
 
@@ -39,8 +37,7 @@
   <!-- Sidebar menu-->
   <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
   <aside class="app-sidebar">
-    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="/images/hay.jpg" width="50px"
-        alt="User Image">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="/images/hay.jpg" width="50px" alt="User Image">
       <div>
         <p class="app-sidebar__user-name"><b>Võ Trường</b></p>
         <p class="app-sidebar__user-designation">Chào mừng bạn trở lại</p>
@@ -50,103 +47,93 @@
     <ul class="app-menu">
       <li><a class="app-menu__item haha" href="phan-mem-ban-hang.html"><i class='app-menu__icon bx bx-cart-alt'></i>
           <span class="app-menu__label">POS Bán Hàng</span></a></li>
-      <li><a class="app-menu__item " href="index.html"><i class='app-menu__icon bx bx-tachometer'></i><span
-            class="app-menu__label">Bảng điều khiển</span></a></li>
+      <li><a class="app-menu__item " href="index.html"><i class='app-menu__icon bx bx-tachometer'></i><span class="app-menu__label">Bảng điều khiển</span></a></li>
       <li><a class="app-menu__item " href="table-data-table.html"><i class='app-menu__icon bx bx-id-card'></i>
           <span class="app-menu__label">Quản lý nhân viên</span></a></li>
-      <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-user-voice'></i><span
-            class="app-menu__label">Quản lý khách hàng</span></a></li>
-      <li><a class="app-menu__item" href="table-data-product.html"><i
-            class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý sản phẩm</span></a>
+      <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-user-voice'></i><span class="app-menu__label">Quản lý khách hàng</span></a></li>
+      <li><a class="app-menu__item" href="table-data-product.html"><i class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý sản phẩm</span></a>
       </li>
-      <li><a class="app-menu__item " href="table-data-oder.html"><i class='app-menu__icon bx bx-task'></i><span
-            class="app-menu__label">Quản lý đơn hàng</span></a></li>
-      <li><a class="app-menu__item active" href="table-data-banned.html"><i class='app-menu__icon bx bx-run'></i><span
-            class="app-menu__label">Quản lý nội bộ
+      <li><a class="app-menu__item " href="table-data-oder.html"><i class='app-menu__icon bx bx-task'></i><span class="app-menu__label">Quản lý đơn hàng</span></a></li>
+      <li><a class="app-menu__item active" href="table-data-banned.html"><i class='app-menu__icon bx bx-run'></i><span class="app-menu__label">Quản lý nội bộ
           </span></a></li>
-      <li><a class="app-menu__item" href="table-data-money.html"><i class='app-menu__icon bx bx-dollar'></i><span
-            class="app-menu__label">Bảng kê lương</span></a></li>
-      <li><a class="app-menu__item" href="quan-ly-bao-cao.html"><i
-            class='app-menu__icon bx bx-pie-chart-alt-2'></i><span class="app-menu__label">Báo cáo doanh thu</span></a>
+      <li><a class="app-menu__item" href="table-data-money.html"><i class='app-menu__icon bx bx-dollar'></i><span class="app-menu__label">Bảng kê lương</span></a></li>
+      <li><a class="app-menu__item" href="quan-ly-bao-cao.html"><i class='app-menu__icon bx bx-pie-chart-alt-2'></i><span class="app-menu__label">Báo cáo doanh thu</span></a>
       </li>
-      <li><a class="app-menu__item" href="page-calendar.html"><i class='app-menu__icon bx bx-calendar-check'></i><span
-            class="app-menu__label">Lịch công tác </span></a></li>
+      <li><a class="app-menu__item" href="page-calendar.html"><i class='app-menu__icon bx bx-calendar-check'></i><span class="app-menu__label">Lịch công tác </span></a></li>
       <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-cog'></i><span class="app-menu__label">Cài
             đặt hệ thống</span></a></li>
     </ul>
   </aside>
   <main class="app-content">
-  <div class="app-title">
-    <ul class="app-breadcrumb breadcrumb">
-      <li class="breadcrumb-item"><a href="DataProduct" class="list_product">Quản lý nhân viên</a></li>
-      <li class="breadcrumb-item"><a href="#">Thêm công ty</a></li>
-    </ul>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="tile">
-        <h3 class="tile-title">Thêm công ty</h3>
-        <div class="tile-body">
+    <div class="app-title">
+      <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><a href="DataProduct" class="list_product">Quản lý nhân viên</a></li>
+        <li class="breadcrumb-item"><a href="#">Thêm công ty</a></li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile">
+          <h3 class="tile-title">Sửa công ty</h3>
+          <div class="tile-body">
 
 
-          <form id="formUpdate" method="post" action="" class="row">
+            <form id="formUpdate" method="post" action="" class="row">
 
-            <div class="form-group col-md-3">
-              <label class="control-label">Tên công ty</label>
-              <input value="<?= $dataCompanyById["company_name"] ?>" class="form-control" name="company_name" type="text">
-              <small></small>
-              <span></span>
-            </div>
+              <div class="form-group col-md-3">
+                <label class="control-label">Tên công ty</label>
+                <input value="<?= $dataCompanyById["company_name"] ?>" class="form-control" name="company_name" type="text">
+                <small></small>
+                <span></span>
+              </div>
 
-            <div class="form-group col-md-3">
-              <label class="control-label">Địa chỉ trang web công ty</label>
-              <input class="form-control" value="<?= $dataCompanyById["company_website_url"] ?>" name="website_url" type="text">
-              <small></small>
-              <span></span>
-             </div>
+              <div class="form-group col-md-3">
+                <label class="control-label">Địa chỉ trang web công ty</label>
+                <input class="form-control" value="<?= $dataCompanyById["company_website_url"] ?>" name="website_url" type="text">
+                <small></small>
+                <span></span>
+              </div>
 
-             <div class="form-group col-md-3">
-              <label class="control-label">Loại công ty</label>
-              <select class="form-control" name="company_type">
-               
-              <option value=""style="display:none">Chọn </option>
-              <?php foreach ($company_type as $item) { ?>
-              <option 
-               <?=  $item["id"]==$dataCompanyById["company_type_id"] ? "selected" : "" ?>
-                value="<?= $item["id"] ?>"><?= $item["company_type"] ?>
-            </option>
-            <?php } ?>  
-            
-            
-            </select>
-              <small></small>
-              <span></span>
-            </div>
+              <div class="form-group col-md-3">
+                <label class="control-label">Loại công ty</label>
+                <select class="form-control" name="company_type">
 
-            <div class="form-group col-md-3">
-              <label class="control-label">Mã số thuế</label>
-              <input class="form-control" value="<?= $dataCompanyById["tax_code"] ?>" name="tax_code" type="text">
+                  <option value="" style="display:none">Chọn </option>
+                  <?php foreach ($company_type as $item) { ?>
+                    <option <?= $item["id"] == $dataCompanyById["company_type_id"] ? "selected" : "" ?> value="<?= $item["id"] ?>"><?= $item["company_type"] ?>
+                    </option>
+                  <?php } ?>
 
-              <small></small>
-              <span></span>
-            </div>
 
-            <div class="form-group col-md-3">
-              <label class="control-label">Tóm tắt công ty</label>
-                <textarea name="" id="" cols="30" rows="10" name="company_summary">
+                </select>
+                <small></small>
+                <span></span>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label class="control-label">Mã số thuế</label>
+                <input class="form-control" value="<?= $dataCompanyById["tax_code"] ?>" name="tax_code" type="text">
+
+                <small></small>
+                <span></span>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label class="control-label">Tóm tắt công ty</label>
+                <textarea  id="" cols="30" rows="10" name="company_summary">
                 <?= $dataCompanyById["company_summary"] ?>
                 </textarea>
-             
-            </div>
-            
-       
 
-        
-
-          
+              </div>
 
 
-            <!-- <div class="form-group col-md-12">
+
+
+
+
+
+
+              <!-- <div class="form-group col-md-12">
               <label class="control-label">Ảnh thẻ</label>
               <input type="file" id="uploadfile" name="ImageUpload" value="">
                 <input type="file" name="fileUpload" id="file-upload">
@@ -160,19 +147,21 @@
                   <small></small>
                   <span></span>
             </div> -->
-        
-            
-            <div class="form-group col-md-12">
-              <button class="btn btn-save" name="submit" type="submit">Lưu lại</button>
-              <a class="btn btn-cancel" href="http://localhost//du_an_mau//admin/DataStaff">Hủy bỏ</a>
-            </div>
-          </form>
+
+
+              <div class="form-group col-md-12">
+                <button class="btn btn-save" name="submit" type="submit">Lưu lại</button>
+                <a class="btn btn-cancel" href="http://localhost//du_an_mau//admin/DataStaff">Hủy bỏ</a>
+              </div>
+            </form>
+          </div>
+
         </div>
 
       </div>
-
-</div></div></main>
-   <!-- Essential javascripts for application to work-->
+    </div>
+  </main>
+  <!-- Essential javascripts for application to work-->
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -186,31 +175,33 @@
   <!-- Data table plugin-->
   <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
-  <script type="text/javascript">$('#sampleTable').DataTable();</script>
+  <script type="text/javascript">
+    $('#sampleTable').DataTable();
+  </script>
   <script>
     function deleteRow(r) {
       var i = r.parentNode.parentNode.rowIndex;
       document.getElementById("myTable").deleteRow(i);
     }
-    jQuery(function () {
-      jQuery(".trash").click(function () {
+    jQuery(function() {
+      jQuery(".trash").click(function() {
         swal({
-          title: "Cảnh báo",
-         
-          text: "Bạn có chắc chắn là muốn xóa?",
-          buttons: ["Hủy bỏ", "Đồng ý"],
-        })
+            title: "Cảnh báo",
+
+            text: "Bạn có chắc chắn là muốn xóa?",
+            buttons: ["Hủy bỏ", "Đồng ý"],
+          })
           .then((willDelete) => {
             if (willDelete) {
               swal("Đã xóa thành công.!", {
-                
+
               });
             }
           });
       });
     });
     oTable = $('#sampleTable').dataTable();
-    $('#all').click(function (e) {
+    $('#all').click(function(e) {
       $('#sampleTable tbody :checkbox').prop('checked', $(this).is(':checked'));
       e.stopImmediatePropagation();
     });
@@ -268,8 +259,8 @@
       }
     }
     //In dữ liệu
-    var myApp = new function () {
-      this.printTable = function () {
+    var myApp = new function() {
+      this.printTable = function() {
         var tab = document.getElementById('sampleTable');
         var win = window.open('', '', 'height=700,width=700');
         win.document.write(tab.outerHTML);
@@ -296,9 +287,13 @@
 
 
     //Modal
-    $("#show-emp").on("click", function () {
-      $("#ModalUP").modal({ backdrop: false, keyboard: false })
+    $("#show-emp").on("click", function() {
+      $("#ModalUP").modal({
+        backdrop: false,
+        keyboard: false
+      })
     });
   </script>
-  </body>
+</body>
+
 </html>

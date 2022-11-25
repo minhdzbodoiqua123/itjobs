@@ -1,8 +1,5 @@
 <title>Danh sách đơn hàng | Quản trị Admin</title>
 
-
-
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,8 +13,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
-
-
 
 <body onload="time()" class="app sidebar-mini rtl">
   <!-- Navbar-->
@@ -77,8 +72,8 @@
             <div class="row element-button">
               <div class="col-sm-2">
 
-                <a class="btn btn-add btn-sm" href="<?= _WEB_ROOT . '/admin/company/addCompany' ?>" title="Thêm"><i class="fas fa-plus"></i>
-                  Tạo mới công ty</a>
+                <a class="btn btn-add btn-sm" href="<?= _WEB_ROOT . '/admin/Profession/addProfession' ?>" title="Thêm"><i class="fas fa-plus"></i>
+                  Tạo mới nghề nghiệp</a>
               </div>
               <div class="col-sm-2">
                 <a class="btn btn-delete btn-sm nhap-tu-file" type="button" title="Nhập" onclick="myFunction(this)"><i class="fas fa-file-upload"></i> Tải từ file</a>
@@ -105,45 +100,23 @@
               <thead>
                 <tr>
                   <th width="10"><input type="checkbox" id="all"></th>
-                  <th>ID </th>
-                  <th>Tên công ty</th>
-                  <th>Logo</th>
-                  <th>Địa chỉ trang web công ty</th>
-                  <th>Tóm tắt công ty</th>
-                  <th>Loại công ty</th>
-                  <th>Mã số thuế</th>
+                  <th>ID</th>
+                  <th>Tên nghề nghiệp</th>
                   <th>Chức năng</th>
-
                 </tr>
               </thead>
               <tbody>
-                <?php foreach ($data_company as $item) { ?>
-
+                <?php foreach ($data_profession as $item) { ?>
                   <tr>
                     <td width="10"><input type="checkbox" name="check1" value="1"></td>
-                    <td><?= $item["id"] ?></td>
-                    <td><?= $item["company_name"] ?></td>
-                    <td></td>
-                    <td><?= $item["company_website_url"] ?></td>
-
-                    <td><?= $item["company_summary"] ?></td>
-                    <td><?php foreach ($company_type as $type) {
-                          if ($type["id"] == $item["company_type_id"]) {
-                            echo $type["company_type"];
-                          }
-                        } ?></td>
-                    <td><?= $item["tax_code"] ?></td>
+                    <td><?= $item['id'] ?></td>
+                    <td><?= $item["profession_name"] ?></td>
                     <td>
-
-                      <a href="<?= _WEB_ROOT . '/admin/company/deleteCompany/' . $item["id"] ?>" class="btn  btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </a>
-                      <a href="<?= _WEB_ROOT . '/admin/company/editCompany/' . $item["id"] ?>" class="btn  btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></a>
-
+                      <a href="<?= _WEB_ROOT . '/admin/Profession/deleteProfession/' . $item["id"] ?>" class="btn  btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </a>
+                      <a href="<?= _WEB_ROOT . '/admin/Profession/editProfession/' . $item["id"] ?>" class="btn  btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></a>
                     </td>
-
                   </tr>
                 <?php } ?>
-
-
               </tbody>
             </table>
           </div>
@@ -151,6 +124,4 @@
       </div>
     </div>
   </main>
-
-
 </body>

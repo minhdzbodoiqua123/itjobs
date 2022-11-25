@@ -64,6 +64,7 @@ class Database
                 $sql = "UPDATE $table SET $updateStr ";
             }
            
+           
             
             $status = $this->query($sql);
          
@@ -97,7 +98,7 @@ class Database
         else{
             $sql="SELECT * from `$table` ";
         }
-   
+       
         $statement = $this->conn->prepare($sql);
         $statement->execute();
         return $statement;

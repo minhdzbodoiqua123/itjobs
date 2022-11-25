@@ -74,61 +74,17 @@
     <div class="row">
       <div class="col-md-12">
         <div class="tile">
-          <h3 class="tile-title">Thêm công ty</h3>
+          <h3 class="tile-title">Sửa nghề nghiệp</h3>
           <div class="tile-body">
-
 
             <form id="formUpdate" method="post" action="" class="row">
 
               <div class="form-group col-md-3">
-                <label class="control-label">Tên công ty</label>
-                <input class="form-control" name="company_name" type="text">
+                <label class="control-label">Tên nghề nghiệp</label>  
+                <input value="<?= $dataProfessionById["profession_name"] ?>" class="form-control" name="profession_name" type="text">
                 <small></small>
                 <span></span>
               </div>
-
-              <div class="form-group col-md-3">
-                <label class="control-label">Địa chỉ trang web công ty</label>
-                <input class="form-control" name="website_url" type="text">
-                <small></small>
-                <span></span>
-              </div>
-
-              <div class="form-group col-md-3">
-                <label class="control-label">Loại công ty</label>
-                <select class="form-control" name="company_type">
-
-                  <option value="" style="display:none">Chọn </option>
-                  <?php foreach ($company_type as $item) { ?>
-                    <option value="<?= $item["id"] ?>"><?= $item["company_type"] ?></option>
-                  <?php } ?>
-
-
-                </select>
-                <small></small>
-                <span></span>
-              </div>
-
-              <div class="form-group col-md-3">
-                <label class="control-label">Mã số thuế</label>
-                <input class="form-control" name="tax_code" type="text">
-
-                <small></small>
-                <span></span>
-              </div>
-
-              <div class="form-group col-md-3">
-                <label class="control-label">Tóm tắt công ty</label>
-                <textarea name="" id="" cols="30" rows="10" name="company_summary"></textarea>
-
-              </div>
-
-
-
-
-
-
-
 
               <!-- <div class="form-group col-md-12">
               <label class="control-label">Ảnh thẻ</label>
@@ -148,7 +104,7 @@
 
               <div class="form-group col-md-12">
                 <button class="btn btn-save" name="submit" type="submit">Lưu lại</button>
-                <a class="btn btn-cancel" href="http://localhost//du_an_mau//admin/DataStaff">Hủy bỏ</a>
+                <a class="btn btn-cancel" href="http://localhost//itjobs/admin/Profession">Hủy bỏ</a>
               </div>
             </form>
           </div>

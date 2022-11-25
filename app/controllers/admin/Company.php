@@ -50,9 +50,8 @@ class Company extends Controller
 
     public function deleteCompany($id=""){
         $conn=$this->model("CompanyModel");
-
-         $deleteCompanyById=$conn->delete("company","id=$id");
-          $this->redirect("admin/company");
+        $deleteCompanyById=$conn->delete("company","id=$id");
+        $this->redirect("admin/company");
     }
 
     public function editCompany($id=""){
@@ -72,11 +71,11 @@ class Company extends Controller
                 "company_name"=>" '$company_name'",
                 "company_website_url"=>" '$website_url'",
                 "company_name"=>" '$company_name'",
-                "company_summary"=>" '$company_summary'",
+                "company_summary"=>"'$company_summary'",
                 "tax_code"=>" '$tax_code'",
              ];
             $updateCompanyById=$conn->update("company",$data,"id=$id");
-              $this->redirect("admin/company");
+            $this->redirect("admin/company");
 
         }
      
