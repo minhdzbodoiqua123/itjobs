@@ -171,8 +171,8 @@
                                 title="Change language">EN</a></div>
                     </div>
                 </div>
-                <div class="main-employer dropdown"><a href="https://careerbuilder.vn/vi/employers"
-                        title="Đăng tuyển, Tìm ứng viên">
+                <div class="main-employer dropdown"><a 
+                        >
                         <div class="dropdown-toggle">
                             <h4>Dành cho nhà tuyển dụng<em class="mdi mdi-chevron-down"></em></h4>
                             <p>Đăng tuyển, Tìm ứng viên</p>
@@ -180,17 +180,15 @@
                     </a>
                     <div class="dropdown-menu">
                         <ul>
-                            <li><a href="https://careerbuilder.vn/vi/employers/login" title="Đăng nhập">Đăng nhập</a>
+                            <li><a href="<?= _WEB_ROOT.'/employer/account/login'?>" >Đăng nhập</a>
                             </li>
-                            <li><a href="https://careerbuilder.vn/vi/employers/postjobs" title="Đăng Tuyển Dụng">Đăng
+                            <li><a href="<?= _WEB_ROOT.'/employer/postjobs'?>" title="Đăng Tuyển Dụng">Đăng
                                     Tuyển Dụng</a>
                             </li>
                             <li><a href="https://careerbuilder.vn/vi/resume-search.html" title="Tìm Ứng Viên">Tìm Ứng
                                     Viên</a>
                             </li>
-                            <li><a href="https://careerbuilder.vn/vi/employers/products-and-services"
-                                    title="Sản phẩm và Dịch vụ">Sản phẩm và Dịch vụ</a>
-                            </li>
+                           
                         </ul>
                     </div>
                 </div>
