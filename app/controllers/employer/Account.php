@@ -86,9 +86,8 @@ class Account extends Controller
      
            "company_summary "=>"'$company_summary'",
 
-
-
        ]);
+       
        //Thêm địa chỉ công ty bảng address_company
        $this->model("CompanyModel")->insert("address_company",[
            "company_id  "=>"'$company_id'",

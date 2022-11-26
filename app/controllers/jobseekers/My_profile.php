@@ -137,7 +137,7 @@ class My_profile extends Controller
             $provinces = $_POST["slcity"];
             $districts = $_POST["sldistrict"];
             $address = $_POST["address"];
-
+            
             $data = [
                 "firstname" => "'$firstname'",
                 "lastname" => "'$lastname'",
@@ -146,7 +146,6 @@ class My_profile extends Controller
                 "marital_status" => "'$marital_status'",
                 "date_of_birth" => "STR_TO_DATE('$date_of_birth', '%d/%m/%Y')",
                 "status"=>"'1'",
-               
             ];
             
             $condition = "user_account_id ='$id'";

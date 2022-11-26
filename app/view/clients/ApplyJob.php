@@ -2699,12 +2699,12 @@
                                     <label for="choose-resumes" class="lb-choose-resumes">Chọn từ hồ sơ của bạn</label>
                                     <div class="list-radio">
                                        <div class="form-group form-radio">
-                                          <input type="radio" name="resume_id" id="resume_17611557" value="17611557">
+   <input type="radio" name="resume_id" id="resume_<?= $seeker_id?>" value="<?= $seeker_id?>">
                                           <input type="radio" name="resume_kind" id="resume_kind_17611557" value="0" style="display:none;" />
-                                          <label for="resume_17611557">Frontend Developer <a href="https://careerbuilder.vn/vi/jobseekers/cv-hay/my-profile" target="_blank">                       [Xem]</a></label>
+                                          <label for="resume_<?= $seeker_id?>"><?= $seeker_resume_title["resume_title"] ?> <a href="<?= _WEB_ROOT.'/jobseekers/my_profile' ?>" target="_blank">   [Xem]</a></label>
                                        </div>
                                        <div class="form-group form-radio">
-                                          <input type="radio" name="resume_id" id="resume_17708653" value="17708653">
+                                          <input type="radio" name="resume_id" id="resume_<?= $seeker_id?>" value="17708653">
                                           <input type="radio" name="resume_kind" id="resume_kind_17708653" value="2" style="display:none;" />
                                           <label for="resume_17708653">front end <a href="https://careerbuilder.vn/vi/quan-ly-nghe-nghiep/ho-so-cua-toi/ho-so-dinh-kem/front-end-17708653" target="_blank">                      [Xem]</a></label>
                                        </div>

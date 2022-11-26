@@ -71,7 +71,7 @@ class Postjobs extends Controller
         
         $benefit_id=$_POST["BENEFIT_ID"];
         
-   $infoEmployer= $conn->query("select company_id from employer_infomation")->fetch(PDO::FETCH_ASSOC);
+   $infoEmployer= $conn->query("select company_id from employer_infomation where user_account_id =$user_account_id")->fetch(PDO::FETCH_ASSOC);
      
         $data=[
             "job_title" => "'$job_title'",
