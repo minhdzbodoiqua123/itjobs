@@ -5,6 +5,7 @@ class Jobs extends Controller
         
     }
     public function apply($id=""){
+        $this->recruitment();   
         $conn=$this->model("Job_postModel");
         $checkIdPost= $conn->get("job_post","id=$id")->rowCount();
         if($checkIdPost==0){
@@ -12,8 +13,8 @@ class Jobs extends Controller
         } 
         $seeker_id=$_SESSION["user"]["id"];
 
-  $seeker_resume_title= $conn->get("seeker_resume_title","user_account_id='$seeker_id'")->fetch(PDO::FETCH_ASSOC); 
-        print_r($seeker_resume_title);
+    $seeker_resume_title= $conn->get("seeker_resume_title","user_account_id='$seeker_id'")->fetch(PDO::FETCH_ASSOC); 
+
         $sql="SELECT job_post.*,degree_name,experience_type,logo,company_name,contact_name FROM `job_post` join degree on job_degree_id=degree.id join job_position on job_position_id=job_position.id join job_experience on job_experience_id=job_experience.id join company on company.id = job_post.company_id join  employer_infomation on employer_infomation.user_account_id=job_post.posted_by_id where status ='1' and job_post.id=$id";
         
 
@@ -35,11 +36,15 @@ class Jobs extends Controller
     }
 
     //Xử lý ứng viên ứng tuyển vị trí cần tuyển dụng
-    public function Recruitment(){
+    public function recruitment(){
         if(count($_POST)>0){
-            $session_id=$_POST["session_id"];
-
-            $data = [];
+            $user_account_id =$_POST["session_id"];
+            $job_id  =$_POST["job_id"];
+            
+            $data = [
+                "user_account_id"=>"'$user_account_id'",
+                "job_id"=>"'$job_id'",
+            ];
             $conn=$this->model("Job_postModel")->insert("job_post_activity",$data);
          }
 }

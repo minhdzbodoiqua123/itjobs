@@ -20,8 +20,20 @@
                                     <a class="employer job-company-name" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-thuong-mai-dich-vu-du-lich-anh-sao-thien-ast-travel.35A7769F.html"><?= $job_post["company_name"] ?> </a>
                                 </div>
                                 <div class="apply-type">
-                                    <div class="apply-now-btn "> <a href="javascript:void(0);" class="btn-gradient btnApplyClick" data-id="<?= $job_post["id"] ?>"> Nộp Đơn Ứng Tuyển </a>
-                                    </div>
+                                <?php if(!empty($job_post_activity)) {?>
+                <div class="apply-now-right">
+                <div class="apply-now-btn  success"> 
+               <a href="javascript:void(0);" class="btn-gradient"> Đã Nộp Ứng Tuyển </a>            </div>
+                        </div>
+<?php } else {?>
+    
+                       <div class="apply-now-btn ">
+                   <a href="javascript:void(0);" class="btn-gradient btnApplyClick" data-id="<?= $job_post["id"] ?>">
+Nộp Đơn Ứng Tuyển
+</a>
+               </div>
+                   <?php } ?>
+                                   
                                 </div>
                             </div>
                         </section>
@@ -256,9 +268,20 @@
                                                     </div>
 
                                                 </div>
-                                                <div class="apply-now-right">
-                                                    <div class="apply-now-btn  "> <a href="javascript:void(0);" class="btn-gradient btnApplyClick" data-id="<?= $job_post["id"] ?>"> Nộp Đơn Ứng Tuyển </a> </div>
-                                                </div>
+                                                <?php if(!empty($job_post_activity)) {?>
+
+<div class="apply-now-right">
+<div class="apply-now-btn  success">            <a href="javascript:void(0);" class="btn-gradient"> Đã Nộp Ứng Tuyển </a>            </div>
+</div>
+<?php } else {?>
+    <div class="apply-now-btn ">
+                   <a href="javascript:void(0);" class="btn-gradient btnApplyClick" data-id="<?= $job_post["id"] ?>">
+Nộp Đơn Ứng Tuyển
+</a>
+               </div>
+                   <?php } ?>
+             
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -366,11 +389,19 @@
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    <div class="box-apply ">
-                                                        <a href="javascript:void(0);" class="btn-gradient btnApplyClick" data-id="<?= $job_post["id"] ?>">
-                                    Nộp Đơn Ứng Tuyển
-                                </a>
-                                                    </div>
+                                                    <?php if(!empty($job_post_activity)) {?>
+
+                                     <div class="apply-now-right">
+        <div class="apply-now-btn  success">            <a href="javascript:void(0);" class="btn-gradient"> Đã Nộp Ứng Tuyển </a>            </div>
+      </div>
+                                     <?php } else {?>
+                                        <div class="apply-now-btn ">
+                   <a href="javascript:void(0);" class="btn-gradient btnApplyClick" data-id="<?= $job_post["id"] ?>">
+Nộp Đơn Ứng Tuyển
+</a>
+               </div>
+                                                        <?php } ?>
+                                                  
 
                                                     <div class="box-contact">
                                                         <ul>

@@ -97,7 +97,6 @@ class Database
         else{
             $sql="SELECT * from `$table` ";
         }
-       
         $statement = $this->conn->prepare($sql);
         $statement->execute();
         return $statement;

@@ -1,45 +1,8 @@
-<!--Start New Layout CB -->
-<!DOCTYPE html>
-<html lang="vi">
-   <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="robots" content="index,follow">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1" />
-      <base href="https://static.careerbuilder.vn/themes/careerbuilder/" />
-      <meta name="theme-color" content="#1e5c8b" />
-      <!-- <title>Nộp hồ sơ ứng tuyển: Legal Senior Executive</title> -->
-      <meta name="keywords" content="Việc làm, kiếm việc, tìm việc làm, tuyển dụng, ứng viên,  mạng tuyển dụng, việc làm online, HR, nghành nghề hot, công ty hàng đầu Việt Nam, việc làm bán thời gian" />
-      <meta name="description" content="CareerBuilder.vn - Mạng việc làm và tuyển dụng lớn nhất Việt Nam. Cho phép tìm kiếm việc làm nhanh và hiệu quả với hơn 10.000 việc làm mới và hấp dẫn mỗi tuần từ các công ty hàng đầu" />
-      <link href="https://careerbuilder.vn/vi/jobseekers/jobs/apply" hreflang="vi-vn" rel="alternate" />
-      <link href="https://careerbuilder.vn/en/jobseekers/jobs/apply" hreflang="x-default" rel="alternate" />
-      <meta property="og:url" content="https://careerbuilder.vn/vi/jobseekers/jobs/apply" />
-      <meta property="og:title" content="Nộp hồ sơ ứng tuyển: Legal Senior Executive" />
-      <meta property="og:description" content="CareerBuilder.vn - Mạng việc làm và tuyển dụng lớn nhất Việt Nam. Cho phép tìm kiếm việc làm nhanh và hiệu quả với hơn 10.000 việc làm mới và hấp dẫn mỗi tuần từ các công ty hàng đầu" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="#1e5c8b" />
-      <meta name="apple-mobile-web-app-title" content="CareerBuilder" />
-      <link rel="preconnect" href="https://connect.facebook.net/">
-      <link rel="preconnect" href="https://accounts.google.com/">
-      <link rel="preconnect" href="https://google-analytics.com/">
-      <link rel="preconnect" href="https://googletagmanager.com">
-      <link rel="preconnect" href="https://images.careerbuilder.vn">
-      <link rel="preconnect" href="https://static.careerbuilder.vn">
-      <link rel="preconnect" href="https://ads.careerbuilder.vn">
-      <link rel="apple-touch-icon" href="https://careerbuilder.vn/favicon_careerbuilder_v2.ico?t=1" />
-      <link rel="apple-touch-icon" sizes="57x57" href="https://static.careerbuilder.vn/themes/kiemviecv32/images/graphics/cb_57x57.png?t=1" />
-      <link rel="apple-touch-icon" sizes="76x76" href="https://static.careerbuilder.vn/themes/kiemviecv32/images/graphics/cb_76x76.png?t=1" />
-      <link rel="apple-touch-icon" sizes="120x120" href="https://static.careerbuilder.vn/themes/kiemviecv32/images/graphics/cb_120x120.png?t=1" />
-      <link rel="apple-touch-icon" sizes="152x152" href="https://static.careerbuilder.vn/themes/kiemviecv32/images/graphics/cb_152x152.png?t=1" />
-      <link rel="apple-touch-icon" sizes="167x167" href="https://static.careerbuilder.vn/themes/kiemviecv32/images/graphics/cb_167x167.png?t=1" />
-      <link rel="apple-touch-icon" sizes="180x180" href="https://static.careerbuilder.vn/themes/kiemviecv32/images/graphics/cb_180x180.png?t=1" />
-      <link href="https://careerbuilder.vn/manifest.json" rel="manifest" />
-      <meta property="og:image" content="https://static.careerbuilder.vn/themes/careerbuilder/img/CareerBuilder-social.png" />
-      <link data-page-subject="true" href="https://static.careerbuilder.vn/themes/careerbuilder/img/CareerBuilder-social.png" rel="image_src" />
-      <meta property="fb:app_id" content="143458889176984" />
-      <link rel="shortcut icon" href="https://careerbuilder.vn/favicon_careerbuilder_v2.ico?t=1" />
-      <link href="https://careerbuilder.vn/vi/jobseekers/jobs/apply" rel="canonical" />
-   </head>
+   <?php if(!empty($job_post_activity)){?>
+      <?php print_r($job_post_activity);?>
+      <?php } else{?>
+         <?php echo "b";?>
+         <?php }?>
    <body class="">
       <main>
          <style>
@@ -2649,11 +2612,7 @@
             }
             }
          </style>
-         <link href="https://static.careerbuilder.vn/js/datetimepicker/DateTimePicker.css" rel="stylesheet" />
-         <script src="https://static.careerbuilder.vn/js/datetimepicker/DateTimePicker.js" type="text/javascript"></script>
-         <script src="https://static.careerbuilder.vn/js/datetimepicker/i18n/DateTimePicker-i18n.js" type="text/javascript"></script>
-         <script src="https://static.careerbuilder.vn/js/autoNumeric.min.js" type="text/javascript"></script>
-         <script type="text/javascript" src="https://careerbuilder.vn/cv-hay/getdistricts"></script>
+       
          <section class="member cb-section">
             <div class="container">
                <div class="cb-title cb-title-center">
@@ -2720,7 +2679,7 @@
                                        <script src="https://static.careerbuilder.vn/2012/dropboxresume.js" type="text/javascript"></script>
                                        <input type="hidden" name="session_file" id="session_file" value="">
                                        <input type="hidden" name="session_type" id="session_type" value="">
-                                       <input type="hidden" name="session_id" id="session_id" value="<?= $seeker_id ?>">
+                                     <input type="hidden" name="session_id" id="session_id" value="<?= $seeker_id ?>">
                                        <div class="list-choose">
                                           <div class="choose-mycomputer">
                                              <label for="attach_file"><em class="mdi mdi-folder-outline"></em>Chọn từ máy tính</label>
@@ -2881,20 +2840,7 @@
                                     </li>
                                  </ul>
                               </div>
-                              <script type="text/javascript">
-                                 $(document).ready(function() {
-                                     if ($('#popup_resume').val() == 1) {
-                                         showboxchooseresume();
-                                     }
-                                 });
-                                 
-                                 function showboxchooseresume() {
-                                     $.fancybox.close();
-                                     $.fancybox.open({
-                                         'src': '#chooseresume',
-                                     });
-                                 }
-                              </script>
+                           
                               <div class="form-group form-submit">
                                  <button class="btn-gradient" name="btnsubmit" id="btnsubmit" type="submit">Nộp Ứng Tuyển</button>
                               </div>
