@@ -185,6 +185,52 @@
    .dbl-line{
    padding-bottom: 5px;
    }
+   .widget-2 .widget-body .progress-bar-status.incomplete .progress-bar .progress-row .line.active {
+    background: #00b2a3;
+   } 
+   .widget-2 .widget-body .progress-bar-status.incomplete .progress-bar .progress-row .line:last-child .success:after{
+    z-index: 11;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 22px;
+    height: 22px;
+    transform: translate(-50%, -50%);
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    background: #00b2a3;
+    content: "";
+   }
+   .widget-2 .widget-body .progress-bar-status .progress-bar .progress-row .line:last-child .nosuccess:after {
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    z-index: 11;
+    position: absolute;
+    top: 50%;
+    left: 93%;
+    width: 22px;
+    height: 22px;
+    transform: translate(-50%, -50%);
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    background: #ebeff4;
+    content: "";
+}
+.widget-2 .widget-body .progress-bar-status .progress-bar .progress-row .line:last-child .nosuccess:before {
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    /* background: green; */
+    content: "";
+}
+   
 </style>
 
 
@@ -316,10 +362,39 @@
                                                     </ul>
                                                 </div>
                                             </div>
+          <?php if($seeker_resume_title["status"]==1 && $informationUser["status"]==1 && $seeker_job_information["status"]==1 && $seeker_experience_detail[0]["status"]==1&&$seeker_education_detail[0]["status"]==1){?>
                                             <div class="col-lg-12">
                                                 <div class="progress-bar-status incomplete">
                                                     <div class="profile-strength">
-                                                        <p>Mức độ hoàn thành: <span>Chưa Hoàn Tất</span></p>
+                                                        <p>Mức độ hoàn thành: <span style="color: #00b2a3;">Hoàn thành</span></p>
+                                                    </div>
+                                                   
+                                                    <div class="progress-bar">
+                                                        <div class="progress">
+                                                            <progress class="progress-main" max="7" value="0"></progress>
+                                                        </div>
+                                          <div class="progress-row">
+                         <div class="line active"></div>
+                         <div class="line active"></div>
+                         <div class="line active"></div>
+                         <div class="line active"></div>
+                         <div class="line active"></div>
+                         <div class="line active"></div>
+                        <div class="line active">
+                          <span class="success"></span>
+                        </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <?php } else{?>
+                                                <div class="col-lg-12">
+                                                <div class="progress-bar-status incomplete">
+                                                    <div class="profile-strength">
+                                                        <p>Mức độ hoàn thành: <span >Chưa hoàn thành</span></p>
                                                     </div>
                                                     <div class="noti"><em class="mdi mdi-alert-circle-outline"></em>
                                                         <p>Chưa hoàn thành. Bạn vui lòng cập nhật và hoàn thành hồ sơ</p>
@@ -328,28 +403,47 @@
                                                         <div class="progress">
                                                             <progress class="progress-main" max="7" value="0"></progress>
                                                         </div>
-                                                        <div class="progress-row">
-                                                            <div class="line active"></div>
-                                                            <div class="line "></div>
-                                                            <div class="line "></div>
-                                                            <div class="line "></div>
-                                                            <div class="line "></div>
-                                                            <div class="line "></div>
-                                                            <div class="line "><span class="success"></span></div>
+                                          <div class="progress-row">
+                         <div class="line "></div>
+                         <div class="line "></div>
+                         <div class="line "></div>
+                         <div class="line "></div>
+                         <div class="line "></div>
+                         <div class="line "></div>
+                        <div class="line ">
+                          <span class="nosuccess"></span>
+                        </div>
                                                         </div>
+
+
                                                     </div>
                                                 </div>
                                             </div>
+
+                                                <?php }?>
                                             <div class="col-lg-12 cvcht-slide">
-                                                <div class="swiper-container">
-                                                    <div class="swiper-wrapper">
+                                                <div  class="swiper-container">
+                                                    <div  class="swiper-wrapper">
 
-
-                                                        <div class="swiper-slide">
+                                                    <?php if(!empty($seeker_resume_title["status"]&&$seeker_resume_title["status"])==0) {?>
+                                                    <div class="swiper-slide">
+                                                            <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#widget-20">
+                                                                <div class="item-cvcht">
+                                                                    <div class="col-sm-3 icon">
+                                                                        <img src="		https://static.careerbuilder.vn/themes/careerbuilder/img/dash-board/i14.png" alt="">
+                                                                    </div>
+                                                                    <div class="col-sm-9 txt">
+                                                                    Tiêu đề hồ sơ *
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                            <?php }?>
+                                                        <div class="swiper-slide glide__slide">
                                                             <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#widget-14">
                                                                 <div class="item-cvcht">
                                                                     <div class="col-sm-3 icon">
-                                                                        <img src="img/dash-board/i3.png" alt="">
+                                                                        <img src="https://static.careerbuilder.vn/themes/careerbuilder/img/dash-board/i3.png" alt="">
                                                                     </div>
                                                                     <div class="col-sm-9 txt">
                                                                         Mục tiêu nghề nghiệp
@@ -357,12 +451,29 @@
                                                                 </div>
                                                             </a>
                                                         </div>
+                          <?php if($informationUser["status"]==0) {?>
+                                                        
+                                                        <div class="swiper-slide glide__slide">
+                                                            <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#widget-14">
+                                                                <div class="item-cvcht">
+                                                                    <div class="col-sm-3 icon">
+                                                                        <img src="https://static.careerbuilder.vn/themes/careerbuilder/img/dash-board/i2.png" alt="">
+                                                                    </div>
+                                                                    <div class="col-sm-9 txt">
+                                                                       Thông tin cá nhân
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
 
-                                                        <div class="swiper-slide">
+                                                        <?php }?>
+
+                             <?php  if(!isset($seeker_job_information["status"])){?>              
+                                <div class="swiper-slide glide__slide">
                                                             <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#widget-18">
                                                                 <div class="item-cvcht">
                                                                     <div class="col-sm-3 icon">
-                                                                        <img src="img/dash-board/i5.png" alt="">
+                                                                        <img src="	https://static.careerbuilder.vn/themes/careerbuilder/img/dash-board/i5.png" alt="">
                                                                     </div>
                                                                     <div class="col-sm-9 txt">
                                                                         Công việc mong muốn
@@ -371,11 +482,16 @@
                                                             </a>
                                                         </div>
 
-                                                        <div class="swiper-slide">
+                                           <?php }?>
+              <?php if(!isset($seeker_experience_detail[0]["status"]) ) {?>
+
+             
+
+                    <div class="swiper-slide glide__slide">
                                                             <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#widget-15">
                                                                 <div class="item-cvcht">
                                                                     <div class="col-sm-3 icon">
-                                                                        <img src="img/dash-board/i4.png" alt="">
+                                                                        <img src="https://static.careerbuilder.vn/themes/careerbuilder/img/dash-board/i4.png" alt="">
                                                                     </div>
                                                                     <div class="col-sm-9 txt">
                                                                         Kinh nghiệm làm việc
@@ -383,12 +499,16 @@
                                                                 </div>
                                                             </a>
                                                         </div>
-
+               
+                       
+                   <?php }?>
+                                                       
+        <?php if(!isset($seeker_education_detail[0]["status"])) {?>
                                                         <div class="swiper-slide">
                                                             <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#widget-16">
                                                                 <div class="item-cvcht">
                                                                     <div class="col-sm-3 icon">
-                                                                        <img src="img/dash-board/i7.png" alt="">
+                                                                        <img src="https://static.careerbuilder.vn/themes/careerbuilder/img/dash-board/i7.png" alt="">
                                                                     </div>
                                                                     <div class="col-sm-9 txt">
                                                                         Học vấn
@@ -396,77 +516,18 @@
                                                                 </div>
                                                             </a>
                                                         </div>
+                                        <?php }?>
+                                                   
 
-                                                        <div class="swiper-slide">
-                                                            <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#certificate-section">
-                                                                <div class="item-cvcht">
-                                                                    <div class="col-sm-3 icon">
-                                                                        <img src="img/dash-board/i10.png" alt="">
-                                                                    </div>
-                                                                    <div class="col-sm-9 txt">
-                                                                        Chứng chỉ
-                                                                    </div>
-                                                                </div>
-                                                            </a>
-                                                        </div>
+                                                 
 
-                                                        <div class="swiper-slide">
-                                                            <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#language-section">
-                                                                <div class="item-cvcht">
-                                                                    <div class="col-sm-3 icon">
-                                                                        <span class="material-icons">translate</span>
-                                                                    </div>
-                                                                    <div class="col-sm-9 txt">
-                                                                        Trình độ ngôn ngữ
-                                                                    </div>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="swiper-slide">
-                                                            <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#widget-17">
-                                                                <div class="item-cvcht">
-                                                                    <div class="col-sm-3 icon">
-                                                                        <img src="img/dash-board/i9.png" alt="">
-                                                                    </div>
-                                                                    <div class="col-sm-9 txt">
-                                                                        Kỹ năng
-                                                                    </div>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="swiper-slide">
-                                                            <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#widget-19">
-                                                                <div class="item-cvcht">
-                                                                    <div class="col-sm-3 icon">
-                                                                        <img src="img/dash-board/i6.png" alt="">
-                                                                    </div>
-                                                                    <div class="col-sm-9 txt">
-                                                                        Thành tích
-                                                                    </div>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="swiper-slide">
-                                                            <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#other-activity-section">
-                                                                <div class="item-cvcht">
-                                                                    <div class="col-sm-3 icon">
-                                                                        <img src="img/dash-board/i13.png" alt="">
-                                                                    </div>
-                                                                    <div class="col-sm-9 txt">
-                                                                        Hoạt động khác
-                                                                    </div>
-                                                                </div>
-                                                            </a>
-                                                        </div>
+                                                   
 
                                                         <div class="swiper-slide">
                                                             <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#widget-20">
                                                                 <div class="item-cvcht">
                                                                     <div class="col-sm-3 icon">
-                                                                        <img src="img/dash-board/i8.png" alt="">
+                                                                        <img src="	https://static.careerbuilder.vn/themes/careerbuilder/img/dash-board/i8.png" alt="">
                                                                     </div>
                                                                     <div class="col-sm-9 txt">
                                                                         Người tham khảo
@@ -476,11 +537,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                              
+              
                                                 <div class="swiper-next">
-                                                    <span class="lnr lnr-chevron-right"></span>
+                                                    <span class="lnr lnr-chevron-right next "></span>
                                                 </div>
                                                 <div class="swiper-prev">
-                                                    <span class="lnr lnr-chevron-left"></span>
+                                                    <span class="lnr lnr-chevron-left prev"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 function-bottom">
@@ -1501,7 +1564,19 @@
     </main>
 
  
+    <script>
+        new Glider(document.querySelector('.swiper-wrapper'), {
+  slidesToShow: 1,
+  dots: '#dots',
+  duration: 1.5,
+  draggable: true,
+  arrows: {
+    prev: '.prev',
+    next: '.next'
+  }
+});
 
+</script>
     
 
 

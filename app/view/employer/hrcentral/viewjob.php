@@ -10,8 +10,8 @@
       <em class="mdi mdi-chevron-down"></em> </div>
     <div class="main-wrap">
       <div class="left-wrap">         <ul class="list-menu">
-          <li class=""> <a href="http://localhost//itjobs/employer/dashboard" title="Dashboard">Dashboard</a> </li>   
-          <li class="active"> <a href="http://localhost//itjobs/employer/hrcentral/posting" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
+          <li > <a href="<?= _WEB_ROOT.'/employer/dashboard'?>" title="Dashboard">Dashboard</a> </li>   
+          <li class="active"> <a href="<?= _WEB_ROOT.'/employer/hrcentral/posting'?>" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
           <li> <a href="https://careerbuilder.vn/vi/employers/hrcentral/manageresume" class="active" title="Quản Lý  Ứng Viên">Quản Lý  Ứng Viên</a> </li>
           <li class=""> <a href="https://careerbuilder.vn/vi/employers/hrcentral/search-history" title="Lịch Sử Tìm Kiếm">Lịch Sử Tìm Kiếm</a> </li>
           <li> <a href="https://careerbuilder.vn/vi/employers/hrcentral/reports/orders_available" title="Đơn Hàng ">Đơn Hàng </a> </li>
@@ -31,6 +31,7 @@
     </div>
   </div>
 </section>
+
   <div class="last-login-user">
     <div class="container">
       <p> Đăng nhập gần đây:
@@ -81,28 +82,29 @@
         </div>
      
         <div class="main-tabslet">
-          <ul class="tabslet-tab">
-            <li class="">
-              <a href="https://careerbuilder.vn/vi/employers/hrcentral/posting/user_id/lop7cttnq.1667207375">
-              Việc Làm Đang Đăng
-              </a>
-            </li>
-            <li class="active">
-              <a href="https://careerbuilder.vn/vi/employers/hrcentral/waitposting/user_id/lop7cttnq.1667207375">
-              Việc Làm Chờ Đăng
-              </a>
-            </li>
-            <li class="">
-              <a href="https://careerbuilder.vn/vi/employers/hrcentral/unposting/user_id/lop7cttnq.1667207375">
-              Việc Làm Tạm Dừng Đăng
-              </a>
-            </li>
-            <li class="">
-              <a href="https://careerbuilder.vn/vi/employers/hrcentral/expireposting/user_id/lop7cttnq.1667207375">
-              Việc Làm Hết Hạn
-              </a>
-            </li>
-          </ul>
+        <ul class="tabslet-tab">
+    <li class="">
+        <a href="<?= _WEB_ROOT . '/employer/hrcentral/Posting' ?>">
+            Việc Làm Đang Đăng
+        </a>
+    </li>
+    <li class="active">
+        <a href="<?= _WEB_ROOT . '/employer/hrcentral/waitposting' ?>">
+            Việc Làm Chờ Đăng
+        </a>
+    </li>
+    <li class="">
+        <a href="<?= _WEB_ROOT . '/employer/hrcentral/unposting' ?>">
+            Việc Làm Tạm Dừng Đăng
+        </a>
+    </li>
+    <li class="">
+        <a href="<?= _WEB_ROOT . '/employer/hrcentral/expireposting' ?>">
+            Việc Làm Hết Hạn
+        </a>
+    </li>
+</ul>
+
         
           <div class="tabslet-content active">
             <div class="main-jobs-posting">

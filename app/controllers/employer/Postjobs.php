@@ -134,15 +134,18 @@ class Postjobs extends Controller
             ]);
             }
             //Kinh nghiệm trong khoảng
+           
+
         if(!empty($JOB_FROMEXPERIENCE) &&  !empty($JOB_TOEXPERIENCE)) {
+     
             $conn->insert("job_experience_detail",[
                 "post_id"=>"'$postId'",
-                "JOB_FROMEXPERIENCE"=>"'$JOB_TOEXPERIENCE'",
+                "JOB_FROMEXPERIENCE"=>"'$JOB_FROMEXPERIENCE'",
                 "JOB_TOEXPERIENCE"=>"'$JOB_TOEXPERIENCE'"
             ]);
         }
-      
-       
+      $this->redirect("employer/hrcentral/waitposting");
+        
 
     }
     public function infoJobPost($id=""){

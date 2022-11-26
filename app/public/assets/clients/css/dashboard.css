@@ -3156,6 +3156,7 @@ footer {
     display: flex;
     border: 1px solid #ddd;
     border-radius: 5px;
+    margin-right: 5px;
     padding: 20px;
     margin-bottom: 2px;
     -ms-flex-align: center;

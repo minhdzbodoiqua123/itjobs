@@ -268,7 +268,7 @@
                                         <div class="form-group form-date">
                                             <label>Hạn nhận hồ sơ <font style="color: red">*</font></label> 
                                           
-                <input min="<?= date("Y-m-d") ?>" max="<?= date("Y")+100 ?>-<?= date("m-d") ?>" type="date" name="JOB_LASTDATE" id="JOB_LASTDATE" class="dates_cus_select_postjob required"/>
+                <input min="<?= date("Y-m")?>-<?= date("d")+1?>" max="<?= date("Y")+100 ?>-<?= date("m-d") ?>" type="date" name="JOB_LASTDATE" id="JOB_LASTDATE" class="dates_cus_select_postjob required"/>
                                             <div class="icon"><em class="material-icons">event</em></div>
                                             <span class="form-error error_job_lastdate"></span>
                                         </div>
