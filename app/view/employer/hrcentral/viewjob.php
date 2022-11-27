@@ -240,10 +240,10 @@
                                   <p> 
                                     <?php switch ($job_post["gender"]) {
                                       case '0':
-                                        echo "Nữ";
+                                        echo "Nam";
                                         break;
                                       case '1':
-                                        echo "Nam";
+                                        echo "Nữ";
                                         break;
                                       default:
                                       echo "Nam/Nữ";

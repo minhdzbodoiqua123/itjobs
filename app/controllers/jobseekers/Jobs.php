@@ -14,6 +14,8 @@ class Jobs extends Controller
         $seeker_id=$_SESSION["user"]["id"];
 
     $seeker_resume_title= $conn->get("seeker_resume_title","user_account_id='$seeker_id'")->fetch(PDO::FETCH_ASSOC); 
+    $seeker_resume= $conn->get("resume","user_account_id='$seeker_id'")->fetch(PDO::FETCH_ASSOC); 
+
 
         $sql="SELECT job_post.*,degree_name,experience_type,logo,company_name,contact_name FROM `job_post` join degree on job_degree_id=degree.id join job_position on job_position_id=job_position.id join job_experience on job_experience_id=job_experience.id join company on company.id = job_post.company_id join  employer_infomation on employer_infomation.user_account_id=job_post.posted_by_id where status ='1' and job_post.id=$id";
         
@@ -26,6 +28,7 @@ class Jobs extends Controller
         $this->data["sub_content"]["info_seeker"]=$info_seeker;
         $this->data["sub_content"]["fullname"]=$fullname;
         $this->data["sub_content"]["seeker_id"]=$seeker_id;
+        $this->data["sub_content"]["seeker_resume"]=$seeker_resume;
 
         $this->data["sub_content"]["seeker_resume_title"]=$seeker_resume_title;
 
@@ -40,10 +43,14 @@ class Jobs extends Controller
         if(count($_POST)>0){
             $user_account_id =$_POST["session_id"];
             $job_id  =$_POST["job_id"];
-            
+            $resume_id  =$_POST["resume_id"];
+
+
             $data = [
                 "user_account_id"=>"'$user_account_id'",
                 "job_id"=>"'$job_id'",
+                "resume_id"=>"'$resume_id'",
+
             ];
             $conn=$this->model("Job_postModel")->insert("job_post_activity",$data);
          }

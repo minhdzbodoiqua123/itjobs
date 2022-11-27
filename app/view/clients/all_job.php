@@ -1003,7 +1003,10 @@
                               </div>
                             <div style="display:flex;justify-content: space-between;">
                             <div class="caption">
-                                 <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/ms-huong.35A8DDF9.html" title="Ms Huong">Ms Huong</a>
+                           
+                                 <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/ms-huong.35A8DDF9.html" title="Ms Huong">
+                                 <?= $item["company_name"] ?>
+                                 </a>
                                  <div class="salary">
                                     <p><em class="fa fa-usd"></em>Lương: <?= format_price($item["min_salary"]).'-'.format_price($item["max_salary"]).' VND' ?></p>
                                  </div>

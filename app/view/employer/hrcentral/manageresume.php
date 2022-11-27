@@ -268,7 +268,6 @@
                                                     </th>
                                                     <th width="27%">Chọn tất cả</th>
                                                     <th width="10%">Ngày nộp</th>
-                                                    <th width="10%">Cập nhật</th>
                                                     <th width="10%%">Trạng thái</th>
                                                     <th width="10%">Xếp loại</th>
                                                     <th width="10%">Kinh nghiệm</th>
@@ -279,11 +278,79 @@
                                             <tbody>
                                                 <input name="list_resumes" type="hidden" value="">
                                                 <input name="folder_id" type="hidden" value="">
+                                            <?php foreach ($job_post_activity as $item): ?>
                                                 <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" name="listresumes[]" value="36175D2C_35F1D06E">
+                                            <input type="hidden" name="fresume_list_id[]" id="fresume_list_id_36175D2C_35F1D06E" value="3743679A">
+                                            <input type="hidden" name="folder_list_id[]" id="folder_list_id_36175D2C_35F1D06E" value="35BFE874">
+                                            <input type="hidden" name="jobseeker_list_id[]" id="jobseeker_list_id_36175D2C_35F1D06E" value="35F1D06E">
+                                        </div>
+                                    </td>
+                                   
+                                    <td>
+                                        <div class="title">
+                                            <a class="name" target="_blank" href="https://careerbuilder.vn/vi/employers/hrcentral/manage_resumes/resumes_detail/4/35BFE874/35BFE874/3743679A/3743679A/36175D2C/35F1D06E/lop7cttnq.1667207375/36175D2C/35F1D06E">
+                                                <?= $item["lastname"]." ".$item["firstname"] ?>
+                                            </a>
+                                            <a class="jobs-new-tab" href="javascript:void(0);">
+                                            <img src="https://static.careerbuilder.vn/images/icons/resume_type_0.gif" title="Hồ sơ Theo mẫu" alt="Hồ sơ Theo mẫu">
+                                            </a>
+                                        </div>
+                                        <!-- <div class="detail">
+                                            <p><strong>Chức danh:</strong> IT Director</p>
+                                            <p><strong>Địa điểm:</strong>
+                                                Hồ Chí Minh                                                                    
+                                            </p>
+                                            <p><strong>Thư mục</strong>
+                                                <a href="https://careerbuilder.vn/vi/employers/hrcentral/manageresume/4/35BFE874/*/0/*/*/7/2/6/2/1/desc/lop7cttnq.1667207375/1" title="Xem thư mục lưu trữ">ứng viên</a>                            
+                                            </p>
+                                            <p><strong>Việc làm gần nhất:</strong> IT Manager</p>
+                                            <p><strong>Công ty gần nhất:</strong> IFB Holdings</p>
+                                        </div> -->
+                                    </td>
+                                    <td>
+                                        <time>13-11-2022</time>
+                                    </td>
+                                  
+                                    <td>
+                                        <p>
+                                            Chưa quyết định
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>Chưa xếp loại</p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            15 năm
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            4,000
+                                            USD
+                                        </p>
+                                    </td>
+                                    <td>
+                                    <ul style="display:flex;gap:15px;align-items:center;justify-content: center;"class="">
+                <li> <a href="javascript:;" onclick="showFoldersSelected('369242CE', 'listresumes[]');" title="Lưu thư mục"> <em class="material-icons">folder_shared </em> </a> </li>
+                <li><a href="http://localhost//itjobs/employer/hrcentral/viewjob/detail/34" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
+                <li> <a href="javascript:;" onclick="showClassifiedResume('369242CE', '35BFE874', '','','');return false;" title="Cập nhật trạng thái"> <em class="material-icons">border_color</em> </a> </li>
+                        <li> <a href="javascript:;" onclick="showResumeForInvite('35BFE874','369242CE');return false;" title="Giới thiệu hồ sơ "> <i class="fa fa-forward" aria-hidden="true"></i> </a> </li>
+                  
+                        <!-- <li> <a href="javascript:;" onclick="downloadResume('369242CE', '35A4E923')" title="Xuất file PDF"> <em class="material-icons">picture_as_pdf </em> </a> </li>
+         -->
+              </ul>
+                                    </td>
+                                    </tr>
+                                          <?php  endforeach;?>
+                                                <!-- <tr>
                                                     <td colspan="9">
                                                         <p align="center"><strong> Hiện tại không có hồ sơ nào trong thư mục này!</strong></p>
                                                     </td>
-                                                </tr>
+                                                </tr> -->
                                             </tbody>
                                         </table>
                                     </div>
