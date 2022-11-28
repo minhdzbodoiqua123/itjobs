@@ -83,7 +83,7 @@ Nộp Đơn Ứng Tuyển
                                                 <div class="detail-box">
                                                     <div class="map">
                                                         <strong><em class="mdi mdi-map-marker"></em>Địa điểm</strong>
-                                                        <p><a href="https://careerbuilder.vn/viec-lam/ho-chi-minh-l8-vi.html">Hồ Chí Minh</a></p>
+                                                        <p><p class="addressCompany">Hồ Chí Minh</p></p>
                                                        
                                                     </div>
                                                 </div>

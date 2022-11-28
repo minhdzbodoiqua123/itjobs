@@ -105,6 +105,11 @@ class My_profile extends Controller
         echo json_encode($data);
     }
 
+     public function addressUserById($id=""){
+        $data= $this->model("SeekerProfileModel")->get("seeker_address_detail", "user_account_id='$id'")->fetch(PDO::FETCH_ASSOC);
+        echo json_encode($data);
+    }
+
     public function  data_degree(){
        $data= $this->model("JobPositionModel")->get("degree")->fetchAll(PDO::FETCH_ASSOC);
        echo json_encode($data);

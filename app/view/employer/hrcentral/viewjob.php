@@ -13,13 +13,9 @@
           <li > <a href="<?= _WEB_ROOT.'/employer/dashboard'?>" title="Dashboard">Dashboard</a> </li>   
           <li class="active"> <a href="<?= _WEB_ROOT.'/employer/hrcentral/posting'?>" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
           <li> <a href="https://careerbuilder.vn/vi/employers/hrcentral/manageresume" class="active" title="Quản Lý  Ứng Viên">Quản Lý  Ứng Viên</a> </li>
-          <li class=""> <a href="https://careerbuilder.vn/vi/employers/hrcentral/search-history" title="Lịch Sử Tìm Kiếm">Lịch Sử Tìm Kiếm</a> </li>
-          <li> <a href="https://careerbuilder.vn/vi/employers/hrcentral/reports/orders_available" title="Đơn Hàng ">Đơn Hàng </a> </li>
-          <li> <a href="https://careerbuilder.vn/vi/employers/hrcentral/emailcontentmanagement" title="Cấu Hình Email"> Cấu Hình Email </a> </li>
-          <li>
+        
           <a href="https://careerbuilder.vn/vi/employers/hrcentral/accounts" title=" Tài Khoản"> Tài Khoản</a>
-          </li>
-		            <li> <a href="https://careerbuilder.vn/vi/employers/careerbuilder-rewards" target="_blank" title="CBRewards">CBRewards</a> </li>
+         
 		          </ul>
          </div>
       <div class="right-wrap">
@@ -88,7 +84,7 @@
             Việc Làm Đang Đăng
         </a>
     </li>
-    <li class="active">
+    <li class="">
         <a href="<?= _WEB_ROOT . '/employer/hrcentral/waitposting' ?>">
             Việc Làm Chờ Đăng
         </a>
@@ -111,24 +107,15 @@
               <div class="jobs-posting-detail">
                 <h2 class="jobs-posting-title"><a href="javascript:;" "><?= $job_post["job_title"] ?></a></h2>
                 <div class="row jobs-posting-detail-top">
-                  <div class="col-lg-6 col-xl-4">
-                    <ul class="list-info-posting">
-                      <li>
-                        <p class="name">Trạng thái</p>
-                        <p>Hoàn tất</p>
-                      </li>
-                    
-                    </ul>
-                  </div>
+                
                   <div class="col-lg-6 col-xl-4">
                     <ul class="list-info-posting">
                     </ul>
                   </div>
                   <div class="col-lg-6 col-xl-4">
                     <ul class="list-action">
-                      <li><a href="javascript:void(0);" class="btn-gradient postjob_btn"  title="Đăng tuyển"><em class="material-icons">publish </em> Đăng tuyển</a></li>
-                      <li><a href="https://careerbuilder.vn/vi/employers/hrcentral/unposting/copyjob/lop7cttnq.1667207375/35BAE710/1" title="Nhân bản"><em class="material-icons">content_copy </em> Nhân bản</a></li>
-                      <li class="end"><a href="javascript:void(0);" onclick="activeTab(3);" title="Mail trả lời tự động"><em class="material-icons">email </em> Mail trả lời tự động</a></li>
+                    
+                  
                     </ul>
                   </div>
                 </div>
@@ -136,9 +123,9 @@
                   <div class="tabslet-detail">
                     <ul class="tabslet-tab-detail">
                       <li class="active" data-tab-detail="1"><a href="javascript:void(0);">Chi Tiết Công Việc</a></li>
-                      <li data-tab-detail="2"><a href="javascript:void(0);">Thông Tin Đăng Tuyển</a></li>
-                      <li data-tab-detail="3"><a href="javascript:void(0);">Thư Trả Lời Tự Động</a></li>
-                      <li data-tab-detail="4"><a href="javascript:void(0);">Quản Lý Tag</a></li>
+                      
+                      
+                
                     </ul>
                     <div class="tabslet-content-detail active" data-content-detail="1">
                       <div class="content-detail-top">
@@ -156,7 +143,7 @@
                                 </li>
                                 <li>
                                   <p class="name">Địa điểm</p>
-                                  <p> Hà Nội</p>
+                                  <p class="addressUser"></p>
                                 </li>
                                 <li>
                                   <p class="name">Mức lương</p>

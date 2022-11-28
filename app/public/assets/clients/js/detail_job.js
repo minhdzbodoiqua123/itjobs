@@ -7,3 +7,27 @@ btnApplyClick.forEach(item => {
 
     })
 })
+const $ = document.querySelector.bind(document);
+const addressCompany=$(".addressCompany");
+
+const query = window.location.href;
+
+
+async function displayInfoUser() {
+    const param=query.split("/")
+    const id=  param[param.length-1]
+
+    const {provinces} = await getData('http://localhost//itjobs/Alljob/address_company/'+id);
+ 
+    if (provinces) {
+      const dataProvinces = await getData(`https://provinces.open-api.vn/api/p/${provinces}`);
+        
+      const { name: nameProvinces } = dataProvinces;
+
+    
+      addressCompany.textContent = nameProvinces
+        
+
+    } 
+  }
+  displayInfoUser()

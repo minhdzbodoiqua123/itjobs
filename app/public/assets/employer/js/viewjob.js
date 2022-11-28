@@ -15,7 +15,10 @@ async function displayContactInfo(data){
     let company_name=$(".company_name")
     let contact_name=$(".contact_name")
     let contact_email=$(".contact_email")
-    let address=$(".address")
+    let address=$(".address");
+
+    let addressUser=$(".addressUser");
+
    
     const dataProvinces = await getData(`https://provinces.open-api.vn/api/p/${data.provinces}`);
     const dataDistricts = await getData(`https://provinces.open-api.vn/api/d/${data.districts}`);
@@ -26,7 +29,9 @@ async function displayContactInfo(data){
     contact_name.textContent=`Người liên hệ:${data.contact_name}`;
     contact_email.textContent=`Email:${data.email}`;
     address.textContent=`Địa chỉ liên hệ:${data.address},${nameDistricts},${nameProvinces}`
-   
+
+    addressUser.textContent=nameProvinces
+
 
  
 

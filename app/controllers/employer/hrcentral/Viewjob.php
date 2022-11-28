@@ -49,6 +49,7 @@ class ViewJob extends Controller
         $sql="select employer_infomation.*,email,company.*,address,provinces,districts from employer_infomation join user_account on employer_infomation.user_account_id = id join company on company_id=company.id join address_company on address_company.company_id=company.id where user_account_id=$employer_id"; 
       
         $infoEmployer= $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
+  
         echo json_encode($infoEmployer);
     }
    

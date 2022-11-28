@@ -58,4 +58,12 @@ class Alljob extends Controller
     //     $this->data["content"]="clients/detail_job";
     //     $this->render('layouts/client_layout',$this->data);
     // }
+    public function address_company($id=""){
+        
+        $conn=$this->model("Job_postModel");
+        $job_post=$conn->query("SELECT job_post.* FROM `job_post` join degree on job_degree_id=degree.id join job_position on job_position_id=job_position.id join job_experience on job_experience_id=job_experience.id join company on company.id = job_post.company_id where   status ='1' and job_post.id=$id  ")->fetch(PDO::FETCH_ASSOC);
+        $company_id=$job_post["company_id"];
+        $address_company=$conn->query("SELECT provinces FROM `job_post` join address_company on job_post.company_id=address_company.company_id WHERE job_post.company_id=$company_id and job_post.id=$id")->fetch(PDO::FETCH_ASSOC);
+        echo json_encode($address_company);
+    }
 }

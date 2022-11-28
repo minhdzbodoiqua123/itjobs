@@ -1013,7 +1013,7 @@
                                  <div class="location">
                                     <em class="mdi mdi-map-marker"></em>
                                     <ul>
-                                       <li>Hồ Chí Minh</li>
+                                       <li class=""></li>
                                     </ul>
                                  </div>
                                  <ul class="welfare">

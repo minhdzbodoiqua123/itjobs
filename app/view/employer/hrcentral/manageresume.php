@@ -8,16 +8,15 @@
                 <div class="main-wrap">
                     <div class="left-wrap">
                         <ul class="list-menu">
-                            <li> <a href="https://careerbuilder.vn/vi/employers/dashboard" title="Dashboard">Dashboard</a> </li>
-                            <li> <a href="https://careerbuilder.vn/vi/employers/hrcentral/posting" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
-                            <li class="active"> <a href="https://careerbuilder.vn/vi/employers/hrcentral/manageresume" class="active" title="Quản Lý  Ứng Viên">Quản Lý  Ứng Viên</a> </li>
-                            <li class=""> <a href="https://careerbuilder.vn/vi/employers/hrcentral/search-history" title="Lịch Sử Tìm Kiếm">Lịch Sử Tìm Kiếm</a> </li>
-                            <li> <a href="https://careerbuilder.vn/vi/employers/hrcentral/reports/orders_available" title="Đơn Hàng ">Đơn Hàng </a> </li>
-                            <li> <a href="https://careerbuilder.vn/vi/employers/hrcentral/emailcontentmanagement" title="Cấu Hình Email"> Cấu Hình Email </a> </li>
+                            <li> <a href="<?= _WEB_ROOT.'/employer/dashboard' ?>" title="Dashboard">Dashboard</a> </li>
+                            <li> <a href="<?= _WEB_ROOT.'/employer/hrcentral/posting' ?>" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
+                            <li class="active"> <a href="<?= _WEB_ROOT.'/employer/hrcentral/manageresume' ?>" class="active" title="Quản Lý  Ứng Viên">Quản Lý  Ứng Viên</a> </li>
+                           
+                           
                             <li>
                                 <a href="https://careerbuilder.vn/vi/employers/hrcentral/accounts" title=" Tài Khoản"> Tài Khoản</a>
                             </li>
-                            <li> <a href="https://careerbuilder.vn/vi/employers/careerbuilder-rewards" target="_blank" title="CBRewards">CBRewards</a> </li>
+                   
                         </ul>
                     </div>
                     <div class="right-wrap">
@@ -44,12 +43,7 @@
                             <h1 class="title-manage">
                                 Việc Làm Đang Đăng
                             </h1>
-                            <div class="button">
-                                <a class="btn-gradient" href="https://careerbuilder.vn/vi/employers/saved_search">
-                <em class="material-icons">notifications_none</em>
-                Thông Báo Ứng Viên
-            </a>
-                            </div>
+                           
                         </div>
                         <div class="right-heading">
                             <a class="support" target="_blank" href="https://careerbuilder.vn/vi/employers/faq">Hướng dẫn</a>
@@ -158,19 +152,19 @@
                     <div class="main-tabslet" data-toggle="tabslet">
                         <ul class="tabslet-tab">
                             <li class="active">
-                                <a href="https://careerbuilder.vn/vi/employers/hrcentral/manageresume/1/35A4E900/*/0/0/*/*/7/2/6/2/0/desc/lop7cttnq.1667207375/1">
+                                <a href="">
                                 Hồ Sơ Ứng Tuyển
                                 (0)
                             </a>
                             </li>
                             <li>
-                                <a href="https://careerbuilder.vn/vi/employers/hrcentral/manageresume/4/35A4E900/*/0/0/*/*/7/2/6/2/1/desc/lop7cttnq.1667207375/1">
+                                <a href="">
                                 Hồ Sơ Đã Lưu
                                 (2)
                             </a>
                             </li>
                             <li>
-                                <a href="https://careerbuilder.vn/vi/employers/hrcentral/manageresume/5/*/*/0/0/*/*/7/2/6/2/1/desc/lop7cttnq.1667207375/1">
+                                <a href="">
                                 Hồ Sơ Đã Xóa
                                 (0)
                             </a>
@@ -181,13 +175,7 @@
                                 <div class="heading-resume-applied">
                                     <div class="left-heading">
                                         <div class="form-group form-select form-filter">
-                                            <label>User</label>
-                                            <select id="foward_username" onchange="onchangeUserResume()">
-                    <option value="alluser" selected="selected">Tất cả</option>
-                                        <option value="lop7cttnq.1667207375" selected="selected" >
-                        minh nguyễn 123
-                    </option>
-                                    </select>
+                                           
                                         </div>
                                         <div class="form-group form-select form-filter">
                                             <select id="select-group">
@@ -209,9 +197,7 @@
                 </select>
                                         </div>
                                         <div class="form-group form-select form-filter">
-                                            <select class="go-link" id="select-folder" style="width: 400px;">
-                                            <option value="-1">Chọn thư mục</option>
-                                                                                                                                            </select>
+                                          
                                         </div>
                                         <ul class="list-check">
                                             <li class="view-posting-detail "><a href="javascript:void(0);">Chi tiết</a></li>
@@ -271,13 +257,14 @@
                                                     <th width="10%%">Trạng thái</th>
                                                     <th width="10%">Xếp loại</th>
                                                     <th width="10%">Kinh nghiệm</th>
-                                                    <th width="10%">Mức lương</th>
+                                                    <th width="20%">Mức lương</th>
                                                     <th width="12%">Thao tác</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <input name="list_resumes" type="hidden" value="">
                                                 <input name="folder_id" type="hidden" value="">
+                                         
                                             <?php foreach ($job_post_activity as $item): ?>
                                                 <tr>
                                     <td>
@@ -311,32 +298,45 @@
                                         </div> -->
                                     </td>
                                     <td>
-                                        <time>13-11-2022</time>
+                                        <time><?= formatDate($item["apply_date"])?></time>
                                     </td>
                                   
                                     <td>
                                         <p>
-                                            Chưa quyết định
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p>Chưa xếp loại</p>
-                                    </td>
-                                    <td>
-                                        <p>
-                                            15 năm
+                                           
+                                            <?php foreach ($data_resume_status as $value) { 
+                                              
+                                       if($item["resume_status_id"]==$value["id"]) {
+                                            echo $value["resume_name_status"];
+                                              }
+                                          }?>
                                         </p>
                                     </td>
                                     <td>
                                         <p>
-                                            4,000
-                                            USD
+                                        <?php foreach ($data_resume_type as $value) { 
+                                              
+                                              if($item["resume_type_id"]==$value["id"]) {
+                                                   echo $value["resume_type"];
+                                                     }
+                                                 }?>
+
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                        <?= !empty($item["yearOfExperience"]) ? $item["yearOfExperience"].' Năm '  : "Chưa có kinh nghiệm"?>  
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                        <?= $item["salary_from"]."-".$item["salary_to"] ." VND"; ?>
                                         </p>
                                     </td>
                                     <td>
                                     <ul style="display:flex;gap:15px;align-items:center;justify-content: center;"class="">
                 <li> <a href="javascript:;" onclick="showFoldersSelected('369242CE', 'listresumes[]');" title="Lưu thư mục"> <em class="material-icons">folder_shared </em> </a> </li>
-                <li><a href="http://localhost//itjobs/employer/hrcentral/viewjob/detail/34" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
+                <li><a href="<?= _WEB_ROOT.'/employer/hrcentral/manageresume/resumes_detail/'.$item["user_account_id"] ?>" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
                 <li> <a href="javascript:;" onclick="showClassifiedResume('369242CE', '35BFE874', '','','');return false;" title="Cập nhật trạng thái"> <em class="material-icons">border_color</em> </a> </li>
                         <li> <a href="javascript:;" onclick="showResumeForInvite('35BFE874','369242CE');return false;" title="Giới thiệu hồ sơ "> <i class="fa fa-forward" aria-hidden="true"></i> </a> </li>
                   
