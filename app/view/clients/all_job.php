@@ -988,7 +988,7 @@
                         <div class="figure">
                            <div class="image">
                               <a href="" target="_blank" title="Ms Huong">
-                              <img class="lazy-img" src="<?= $item["logo"] ?>" src="../kiemviecv32/images/graphics/blank.gif" alt="Ms Huong">
+                              <img class="lazy-img" src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$item["logo"] ?>" src="../kiemviecv32/images/graphics/blank.gif" alt="Ms Huong">
                               </a>
                            </div>
                            <div class="figcaption">

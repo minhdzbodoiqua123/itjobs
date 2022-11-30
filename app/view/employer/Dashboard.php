@@ -14,7 +14,8 @@
                            
                            
                             <li>
-                                <a href="https://careerbuilder.vn/vi/employers/hrcentral/accounts" title=" Tài Khoản"> Tài Khoản</a>
+                                    
+          <a href="<?= _WEB_ROOT.'/employer/hrcentral/accounts/edit_employer"'?>" title=" Tài Khoản"> Tài Khoản</a>
                             </li>
                    
                         </ul>

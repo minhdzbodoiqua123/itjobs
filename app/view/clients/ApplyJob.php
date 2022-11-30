@@ -2655,89 +2655,23 @@
                               <div class="upload-resume">
                                  <div class="form-group form-radio">
                                     <input type="radio" value="1" id="choose-resumes" name="your_resume">
-                                    <label for="choose-resumes" class="lb-choose-resumes">Chọn từ hồ sơ của bạn</label>
+                                    <label for="choose-resumes" class="lb-choose-resumes">Chọn từ hồ sơ của bạn</label> 
                                     <div class="list-radio">
+                                    <?php foreach ($seeker_resume as $item): ?>
                                        <div class="form-group form-radio">
-   <input type="radio" name="resume_id" id="resume_<?= $seeker_resume['id']?>" value="<?= $seeker_resume['id']?>">
+   <input type="radio" name="resume_id" id="resume_<?= $item['id']?>" value="<?= $item['id']?>">
                                           <input type="radio" name="resume_kind" id="resume_kind_17611557" value="0" style="display:none;" />
-                                          <label for="resume_<?= $seeker_resume['id']?>"><?= $seeker_resume_title["resume_title"] ?> <a href="<?= _WEB_ROOT.'/jobseekers/my_profile' ?>" target="_blank">   [Xem]</a></label>
+                                          <label for="resume_<?= $item['id']?>"><?= $item["resume_title"] ?> <a href="<?= _WEB_ROOT.'/jobseekers/myattach/viewfile/'.$item['user_account_id'].'/'.$item['id'].'/?file_name='.$item["file_location"] ?>" >   [Xem]</a></label>
                                        </div>
-                                       <div class="form-group form-radio">
-                                          <input type="radio" name="resume_id" id="resume_<?= $seeker_resume["id"]?>" value="<?= $seeker_resume['id']?>">
-                                          <input type="radio" name="resume_kind" id="resume_kind_17708653" value="2" style="display:none;" />
-                                          <label for="resume_17708653">front end <a href="https://careerbuilder.vn/vi/quan-ly-nghe-nghiep/ho-so-cua-toi/ho-so-dinh-kem/front-end-17708653" target="_blank">                      [Xem]</a></label>
-                                       </div>
-                                       <span class="err_resume_id" style="display:none"></span>
-                                       <p>Bạn muốn <a href="https://careerbuilder.vn/vi/jobseekers/dashboard">Tạo hồ sơ mới! </a></p>
+                                  
+                                    
+                                       <?php  endforeach;?>
                                     </div>
+
+                                  <p>Bạn muốn <a href="<?= _WEB_ROOT.'/jobseekers/jobs/applythanks' ?>">Tạo hồ sơ mới! </a></p>
                                  </div>
-                                 <div class="form-group form-radio">
-                                    <input type="radio" id="upload-resume" value="2" name="your_resume">
-                                    <label for="upload-resume">Upload hồ sơ: Hỗ trợ định dạng *.doc, *.docx, *.pdf và không quá 5MB</label>
-                                    <div class="list-radio">
-                                       <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" data-app-key="wpcl6nfph1hzjf2" id="dropboxjs"></script>
-                                       <script src="https://static.careerbuilder.vn/2012/dropboxresume.js" type="text/javascript"></script>
-                                       <input type="hidden" name="session_file" id="session_file" value="">
-                                       <input type="hidden" name="session_type" id="session_type" value="">
-                                     <input type="hidden" name="session_id" id="session_id" value="<?= $seeker_id ?>">
-                                       <div class="list-choose">
-                                          <div class="choose-mycomputer">
-                                             <label for="attach_file"><em class="mdi mdi-folder-outline"></em>Chọn từ máy tính</label>
-                                             <input class="d-none file" type="file" name="attach_file" id="attach_file" value="" accept=".doc,.docx,.pdf,application/msword,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-office">
-                                             <input type="hidden" name="ieattach_file" id="ieattach_file" value="">
-                                             <input type="hidden" name="ieattach_file_type" id="ieattach_file_type" value="">
-                                             <input type="hidden" name="ieattach_file_title" id="ieattach_file_title" value="">
-                                             <input type="hidden" name="ieattach_file_size" id="ieattach_file_size" value="">
-                                          </div>
-                                          <input type="hidden" name="dropbox_file" id="dropbox_file" value="">
-                                          <input type="hidden" name="dfile_title" id="dfile_title" value="">
-                                          <input type="hidden" name="dfile_size" id="dfile_size" value="">
-                                          <p>
-                                             <span class="err_session_file err_attach" style="display:none"></span> <span class="err_attach_file err_attach" style="display:none"></span> <span class="err_dropbox_file err_attach" style="display:none"></span>
-                                          </p>
-                                          <span class="imgload" style="display:none"><img src="https://static.careerbuilder.vn/themes/kiemviecv32/images/icons/icon_animated_busy2.gif" alt="Loading"></span>
-                                          <div class="form-show-file ">
-                                             <em class="material-icons">picture_as_pdf</em>
-                                             <input type="text" id="uploadFile" value="">
-                                             <a href="javascript:void(0);" onclick="removeFile()"> <em class="material-icons" >highlight_off</em>Xóa</a>
-                                          </div>
-                                        
-                                       </div>
-                                       <div class="notice box-noti">
-                                          <p class="name"><strong>Lưu ý:</strong></p>
-                                          <p>Trong trường hợp bạn gặp phải bất kỳ vấn đề gì trong quá trình thực hiện như tải hồ sơ không thành công hoặc không nhấn được nút Gửi hồ sơ, vui lòng kiểm tra lại nguyên nhân và thử các bước gợi ý sau.</p>
-                                          <ul>
-                                             <li>Hệ thống hiện chỉ hỗ trợ một tập tin được tải lên có các <strong>định dạng .doc, .docx hoặc .pdf</strong></li>
-                                             <li>Nếu bạn có nhiều loại bằng cấp hay giấy tờ khác muốn đính kèm thêm, <strong>vui lòng gộp chung vào một tập tin theo đúng định dạng với tổng dung lượng không vượt quá 5MB</strong></li>
-                                             <li><strong>Nâng cấp trình duyệt đang sử dụng lên phiên bản mới nhất</strong> (Firefox: 57 trở lên, Cốc Cốc: 75 trở lên, Microsoft Edge: MEdge 44 trở lên, Internet Explorer: 11 trở lên, Safari: 13.1
-                                                trở lên)
-                                             </li>
-                                             <li>Vào phần thiết lập của trình duyệt để<strong> tắt chức năng chặn quảng cáo (Ads Block)</strong></li>
-                                             <li>Chụp ảnh màn hình cùng mô tả cụ thể và gửi về bộ phận chăm sóc ứng viên của CareerBuilder: <a href="mailto:support@careerbuilder.vn" class="passChk"><b style="
-                                                font-size: 14px;
-                                                font-weight: normal;
-                                                ">support@careerbuilder.vn<b></b></b></a> để được hỗ trợ thêm
-                                             </li>
-                                          </ul>
-                                       </div>
-                                    </div>
-                                    <span class="err_your_resume" style="display:none"></span> 
-                                 </div>
-                                 <div class="form-group form-checkbox">
-                                    <input type="checkbox" name="chksendletter" id="chksendletter" value="1">
-                                    <div class="checkbox-group">
-                                       <label for="chksendletter">Sử dụng thư tự giới thiệu?</label>
-                                       <ul class="list-sample">
-                                          <li> <a class="sample-vn" href="javascript:void(0);">[Mẫu <b>tiếng Việt</b>]</a></li>
-                                          <li> <a class="sample-en" href="javascript:void(0);">[Mẫu <b>tiếng Anh</b>]</a></li>
-                                       </ul>
-                                    </div>
-                                    <textarea name="letter_content" id="letter_content"></textarea>
-                                    <span class="err_letter_content" style="display:none"></span>
-                                    <div class="notice">
-                                       <p>Vui lòng không nhập quá 5000 ký tự</p>
-                                    </div>
-                                 </div>
+                             
+                     
                               </div>
                               <div class="switch-box" style="display:none">
                                  <p>Tăng hơn 80% cơ hội tìm việc, <strong>Bạn có muốn lưu hồ sơ này không?</strong></p>

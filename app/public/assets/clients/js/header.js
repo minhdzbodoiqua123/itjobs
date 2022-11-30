@@ -10,9 +10,9 @@ async function getData(url) {
   }
   
   async function displayInfo(data){
-    const {firstname}=data
+    console.log(data);
     const nameUser=document.querySelector(".nameUser")
-        nameUser.textContent=firstname
+    nameUser.textContent=data.firstname
 }
  async  function start(){
     displayInfo(await loadInfoUser())

@@ -212,196 +212,72 @@
                         <div class="swiper-wrapper">
                            <div class="swiper-slide">
                               <div class="row">
-                                 <div class="col-lg-6 ">
-                                    <div class="job-item">
-                                       <div class="figure">
-                                          <div class="image"><a target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-co-phan-tap-doan-bizman.35A7F40B.html" title="Công ty Cổ Phần Tập Đoàn Bizman"><img src="../kiemviecv32/images/graphics/blank.gif" class="swiper-lazy" data-src="https://images.careerbuilder.vn/employer_folders/lot5/199435/67x67/164922bizman.jpg" alt="Công ty Cổ Phần Tập Đoàn Bizman" /></a></div>
-                                          <div class="figcaption">
-                                             <div class="title"><a target="_blank" href="https://careerbuilder.vn/vi/tim-viec-lam/chuyen-vien-seo-thu-nhap-tu-12-18-trieu-dong-thang.35BAE1CA.html" title="Chuyên viên SEO (Thu nhập từ 12-18 triệu đồng/tháng)">Chuyên viên SEO (Thu nhập từ 12-18 triệu đồng/tháng)</a></div>
-                                             <div class="caption">
-                                                <a class="company-name" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-co-phan-tap-doan-bizman.35A7F40B.html" title="Công ty Cổ Phần Tập Đoàn Bizman" target="_blank">Công ty Cổ Phần Tập Đoàn Bizman</a>
-                                                <p class="salary"><em class="fa fa-usd"></em>Lương: 12 Tr - 18 Tr VND</p>
-                                                <div class="location">
-                                                   <em class="mdi mdi-map-marker"></em>
-                                                   <p> Hà Nội</p>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <div class="top-icon"> <span class="top">Top</span> <span class="new">(Mới)</span> </div>
-                                       </div>
+                                 <?php foreach ($job_post as $item): ?>
+                                    <div class="col-lg-6 ">
+                                    <div class="job-item " id="job-item-<?= $item["id"]?>">
+                        <div class="figure">
+                           <div class="image">
+                              <a href="" target="_blank" title="Ms Huong">
+                              <img class="lazy-img" src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$item["logo"] ?>" src="../kiemviecv32/images/graphics/blank.gif" alt="Ms Huong">
+                              </a>
+                           </div>
+                           <div class="figcaption">
+                              <div class="title ">
+                                 <h2>
+                                    <a class="job_link" data-id="35BAE5BD" href="<?= _WEB_ROOT.'/Alljob/detail/'.$item["id"] ?>" title="VIDEO TRANSLATOR  UP TO 13MIL">
+                                  <?= $item["job_title"] ?>
+                                    <span class="new">
+                                    <font color="ff0000">(Mới)</font>
+                                    </span> </a>
+                                 </h2>
+                              </div>
+                            <div style="display:flex;justify-content: space-between;">
+                            <div class="caption">
+                           
+                                 <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/ms-huong.35A8DDF9.html" title="Ms Huong">
+                                 <?= $item["company_name"] ?>
+                                 </a>
+                                 <div class="salary">
+                                    <p><em class="fa fa-usd"></em>Lương: <?= format_price($item["min_salary"]).'-'.format_price($item["max_salary"]).' VND' ?></p>
+                                 </div>
+                                 <div class="location">
+                                    <em class="mdi mdi-map-marker"></em>
+                                    <ul>
+                                       <li class=""></li>
+                                    </ul>
+                                 </div>
+                                 <ul class="welfare">
+                                    <?php foreach ($job_welfare_detail as $welfare): 
+                                      if($welfare["post_id"]==$item["id"]){ 
+                                       echo "  <li>$welfare[welfare_type]</li>";
+                                      }
+                                   endforeach;?>
+
+                                 </ul>
+                              </div>
+                              <div style="top:50px;"class="">
+                                 <ul>
+                                
+                                    <li><a class="toollips save-job chk_save_35BAE5BD " href="javascript:void(0);" data-id="35BAE5BD" onclick="popuplogin()">
+                                       <i class="mdi mdi-heart-outline"></i>
+                                       <span class="text">Lưu việc làm</span>
+                                       </a>
+                                    </li>
+                                 </ul>
+                                 <div class="time">
+                                    <em class="mdi mdi-calendar"></em>
+                                    <time><?= formatDate($item["posted_date"]) ?></time>
+                                    <div class="toolip">
+                                       <p>Ngày cập nhật</p>
                                     </div>
                                  </div>
-                                 <div class="col-lg-6 ">
-                                    <div class="job-item">
-                                       <div class="figure">
-                                          <div class="image"><a target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/persolkelly-vietnam.35A87F90.html" title="PERSOLKELLY Vietnam"><img src="../kiemviecv32/images/graphics/blank.gif" class="swiper-lazy" data-src="https://images.careerbuilder.vn/employer_folders/lot2/235152/67x67/124949psklogo-002.jpg" alt="PERSOLKELLY Vietnam" /></a></div>
-                                          <div class="figcaption">
-                                             <div class="title"><a target="_blank" href="https://careerbuilder.vn/vi/tim-viec-lam/assistant-sales-manager-b2b.35BAE1A8.html" title="Assistant Sales Manager (B2B)">Assistant Sales Manager (B2B)</a></div>
-                                             <div class="caption">
-                                                <a class="company-name" href="https://careerbuilder.vn/vi/nha-tuyen-dung/persolkelly-vietnam.35A87F90.html" title="PERSOLKELLY Vietnam" target="_blank">PERSOLKELLY Vietnam</a>
-                                                <p class="salary"><em class="fa fa-usd"></em>Lương: 30 Tr - 50 Tr VND</p>
-                                                <div class="location">
-                                                   <em class="mdi mdi-map-marker"></em>
-                                                   <p> Hồ Chí Minh | Bình Dương</p>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <div class="top-icon"> <span class="top">Top</span> <span class="new">(Mới)</span> </div>
-                                       </div>
-                                    </div>
+                              </div></div>
+                           </div>
+                        </div>
+                     </div>
                                  </div>
-                                 <div class="col-lg-6 ">
-                                    <div class="job-item">
-                                       <div class="figure">
-                                          <div class="image"><a target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/persolkelly-vietnam.35A87F90.html" title="PERSOLKELLY Vietnam"><img src="../kiemviecv32/images/graphics/blank.gif" class="swiper-lazy" data-src="https://images.careerbuilder.vn/employer_folders/lot2/235152/67x67/124949psklogo-002.jpg" alt="PERSOLKELLY Vietnam" /></a></div>
-                                          <div class="figcaption">
-                                             <div class="title"><a target="_blank" href="https://careerbuilder.vn/vi/tim-viec-lam/quality-manager.35BAE194.html" title="Quality Manager">Quality Manager</a></div>
-                                             <div class="caption">
-                                                <a class="company-name" href="https://careerbuilder.vn/vi/nha-tuyen-dung/persolkelly-vietnam.35A87F90.html" title="PERSOLKELLY Vietnam" target="_blank">PERSOLKELLY Vietnam</a>
-                                                <p class="salary"><em class="fa fa-usd"></em>Lương: 40 Tr - 70 Tr VND</p>
-                                                <div class="location">
-                                                   <em class="mdi mdi-map-marker"></em>
-                                                   <p> Đồng Nai</p>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <div class="top-icon"> <span class="top">Top</span> <span class="new">(Mới)</span> </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="col-lg-6 ">
-                                    <div class="job-item">
-                                       <div class="figure">
-                                          <div class="image"><a target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-co-phan-greenfeed-viet-nam.35A56979.html" title="Công Ty Cổ Phần GreenFeed Việt Nam"><img src="../kiemviecv32/images/graphics/blank.gif" class="swiper-lazy" data-src="https://images.careerbuilder.vn/employers/32889/67x67/142444output-onlinepngtools.png" alt="Công Ty Cổ Phần GreenFeed Việt Nam" /></a></div>
-                                          <div class="figcaption">
-                                             <div class="title"><a target="_blank" href="https://careerbuilder.vn/vi/tim-viec-lam/nhan-vien-tu-van-ky-thuat-thuong-mai-thuy-san.35BAE16D.html" title="Nhân Viên Tư Vấn Kỹ Thuật Thương Mại Thủy Sản">Nhân Viên Tư Vấn Kỹ Thuật Thương Mại Thủy Sản</a></div>
-                                             <div class="caption">
-                                                <a class="company-name" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-co-phan-greenfeed-viet-nam.35A56979.html" title="Công Ty Cổ Phần GreenFeed Việt Nam" target="_blank">Công Ty Cổ Phần GreenFeed Việt Nam</a>
-                                                <p class="salary"><em class="fa fa-usd"></em>Lương: Cạnh Tranh</p>
-                                                <div class="location">
-                                                   <em class="mdi mdi-map-marker"></em>
-                                                   <p> Sóc Trăng | Bạc Liêu | Cà Mau</p>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <div class="top-icon"> <span class="top">Top</span> <span class="new">(Mới)</span> </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="col-lg-6 ">
-                                    <div class="job-item">
-                                       <div class="figure">
-                                          <div class="image"><a target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/heineken-vietnam-brewery.35A66A42.html" title="Heineken Vietnam Brewery"><img src="../kiemviecv32/images/graphics/blank.gif" class="swiper-lazy" data-src="https://images.careerbuilder.vn/employer_folders/lot6/98626/67x67/155027logohnk-vn.png" alt="Heineken Vietnam Brewery" /></a></div>
-                                          <div class="figcaption">
-                                             <div class="title"><a target="_blank" href="https://careerbuilder.vn/vi/tim-viec-lam/wms-specialist-chuyen-vien-he-thong-quan-li-kho-vung-tau-brewery.35BAA520.html" title="WMS Specialist - Chuyên viên Hệ thống Quản lí kho (Vung Tau Brewery)">WMS Specialist - Chuyên viên Hệ thống Quản lí kho (Vung Tau Brewery)</a></div>
-                                             <div class="caption">
-                                                <a class="company-name" href="https://careerbuilder.vn/vi/nha-tuyen-dung/heineken-vietnam-brewery.35A66A42.html" title="Heineken Vietnam Brewery" target="_blank">Heineken Vietnam Brewery</a>
-                                                <p class="salary"><em class="fa fa-usd"></em>Lương: Cạnh Tranh</p>
-                                                <div class="location">
-                                                   <em class="mdi mdi-map-marker"></em>
-                                                   <p> Bà Rịa - Vũng Tàu</p>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <div class="top-icon"> <span class="top">Top</span> </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="col-lg-6 ">
-                                    <div class="job-item">
-                                       <div class="figure">
-                                          <div class="image"><a target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/heineken-vietnam-brewery.35A66A42.html" title="Heineken Vietnam Brewery"><img src="../kiemviecv32/images/graphics/blank.gif" class="swiper-lazy" data-src="https://images.careerbuilder.vn/employer_folders/lot6/98626/67x67/155027logohnk-vn.png" alt="Heineken Vietnam Brewery" /></a></div>
-                                          <div class="figcaption">
-                                             <div class="title"><a target="_blank" href="https://careerbuilder.vn/vi/tim-viec-lam/technology-specialist-it-hardware-hcm.35BAA54D.html" title="Technology Specialist (IT - Hardware) - HCM">Technology Specialist (IT - Hardware) - HCM</a></div>
-                                             <div class="caption">
-                                                <a class="company-name" href="https://careerbuilder.vn/vi/nha-tuyen-dung/heineken-vietnam-brewery.35A66A42.html" title="Heineken Vietnam Brewery" target="_blank">Heineken Vietnam Brewery</a>
-                                                <p class="salary"><em class="fa fa-usd"></em>Lương: Cạnh Tranh</p>
-                                                <div class="location">
-                                                   <em class="mdi mdi-map-marker"></em>
-                                                   <p> Hồ Chí Minh</p>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <div class="top-icon"> <span class="top">Top</span> </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="col-lg-6 ">
-                                    <div class="job-item">
-                                       <div class="figure">
-                                          <div class="image"><a target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/heineken-vietnam-brewery.35A66A42.html" title="Heineken Vietnam Brewery"><img src="../kiemviecv32/images/graphics/blank.gif" class="swiper-lazy" data-src="https://images.careerbuilder.vn/employer_folders/lot6/98626/67x67/155027logohnk-vn.png" alt="Heineken Vietnam Brewery" /></a></div>
-                                          <div class="figcaption">
-                                             <div class="title"><a target="_blank" href="https://careerbuilder.vn/vi/tim-viec-lam/brewery-services-clerk-hanh-chinh-vung-tau-brewery.35BAA544.html" title="Brewery Services Clerk (Hành Chính) - Vung Tau Brewery">Brewery Services Clerk (Hành Chính) - Vung Tau Brewery</a></div>
-                                             <div class="caption">
-                                                <a class="company-name" href="https://careerbuilder.vn/vi/nha-tuyen-dung/heineken-vietnam-brewery.35A66A42.html" title="Heineken Vietnam Brewery" target="_blank">Heineken Vietnam Brewery</a>
-                                                <p class="salary"><em class="fa fa-usd"></em>Lương: Cạnh Tranh</p>
-                                                <div class="location">
-                                                   <em class="mdi mdi-map-marker"></em>
-                                                   <p> Bà Rịa - Vũng Tàu</p>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <div class="top-icon"> <span class="top">Top</span> </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="col-lg-6 ">
-                                    <div class="job-item">
-                                       <div class="figure">
-                                          <div class="image"><a target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/heineken-vietnam-brewery.35A66A42.html" title="Heineken Vietnam Brewery"><img src="../kiemviecv32/images/graphics/blank.gif" class="swiper-lazy" data-src="https://images.careerbuilder.vn/employer_folders/lot6/98626/67x67/155027logohnk-vn.png" alt="Heineken Vietnam Brewery" /></a></div>
-                                          <div class="figcaption">
-                                             <div class="title"><a target="_blank" href="https://careerbuilder.vn/vi/tim-viec-lam/supply-chain-digital-specialist-quang-nam.35BAA53D.html" title="Supply Chain Digital Specialist (Quang Nam)">Supply Chain Digital Specialist (Quang Nam)</a></div>
-                                             <div class="caption">
-                                                <a class="company-name" href="https://careerbuilder.vn/vi/nha-tuyen-dung/heineken-vietnam-brewery.35A66A42.html" title="Heineken Vietnam Brewery" target="_blank">Heineken Vietnam Brewery</a>
-                                                <p class="salary"><em class="fa fa-usd"></em>Lương: Cạnh Tranh</p>
-                                                <div class="location">
-                                                   <em class="mdi mdi-map-marker"></em>
-                                                   <p> Quảng Nam</p>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <div class="top-icon"> <span class="top">Top</span> </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="col-lg-6 ">
-                                    <div class="job-item">
-                                       <div class="figure">
-                                          <div class="image"><a target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/heineken-vietnam-brewery.35A66A42.html" title="Heineken Vietnam Brewery"><img src="../kiemviecv32/images/graphics/blank.gif" class="swiper-lazy" data-src="https://images.careerbuilder.vn/employer_folders/lot6/98626/67x67/155027logohnk-vn.png" alt="Heineken Vietnam Brewery" /></a></div>
-                                          <div class="figcaption">
-                                             <div class="title"><a target="_blank" href="https://careerbuilder.vn/vi/tim-viec-lam/wms-specialist-chuyen-vien-he-thong-quan-li-kho-hcm-brewery.35BAA524.html" title="WMS Specialist - Chuyên viên Hệ thống Quản lí kho (HCM Brewery)">WMS Specialist - Chuyên viên Hệ thống Quản lí kho (HCM Brewery)</a></div>
-                                             <div class="caption">
-                                                <a class="company-name" href="https://careerbuilder.vn/vi/nha-tuyen-dung/heineken-vietnam-brewery.35A66A42.html" title="Heineken Vietnam Brewery" target="_blank">Heineken Vietnam Brewery</a>
-                                                <p class="salary"><em class="fa fa-usd"></em>Lương: Cạnh Tranh</p>
-                                                <div class="location">
-                                                   <em class="mdi mdi-map-marker"></em>
-                                                   <p> Hồ Chí Minh</p>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <div class="top-icon"> <span class="top">Top</span> </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="col-lg-6 ">
-                                    <div class="job-item">
-                                       <div class="figure">
-                                          <div class="image"><a target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/heineken-vietnam-brewery.35A66A42.html" title="Heineken Vietnam Brewery"><img src="../kiemviecv32/images/graphics/blank.gif" class="swiper-lazy" data-src="https://images.careerbuilder.vn/employer_folders/lot6/98626/67x67/155027logohnk-vn.png" alt="Heineken Vietnam Brewery" /></a></div>
-                                          <div class="figcaption">
-                                             <div class="title"><a target="_blank" href="https://careerbuilder.vn/vi/tim-viec-lam/warehouse-transport-lead-shift-manager-vung-tau.35BAA508.html" title="Warehouse & Transport Lead (Shift Manager) - Vung Tau">Warehouse & Transport Lead (Shift Manager) - Vung Tau</a></div>
-                                             <div class="caption">
-                                                <a class="company-name" href="https://careerbuilder.vn/vi/nha-tuyen-dung/heineken-vietnam-brewery.35A66A42.html" title="Heineken Vietnam Brewery" target="_blank">Heineken Vietnam Brewery</a>
-                                                <p class="salary"><em class="fa fa-usd"></em>Lương: Cạnh Tranh</p>
-                                                <div class="location">
-                                                   <em class="mdi mdi-map-marker"></em>
-                                                   <p> Bà Rịa - Vũng Tàu</p>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <div class="top-icon"> <span class="top">Top</span> </div>
-                                       </div>
-                                    </div>
-                                 </div>
+                                <?php endforeach;?>
+                           
                               </div>
                            </div>
                         </div>

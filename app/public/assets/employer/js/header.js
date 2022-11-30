@@ -4,7 +4,7 @@ async function getData(url) {
     return (await axios.get(url)).data;
   }
   async function loadInfoUser(){
-    const apiInfoUser=`${baseURL}/employer/hrcentral/accounts/edit_employer/`;
+    const apiInfoUser=`${baseURL}/employer/hrcentral/accounts/contact_name/`;
     const data=await getData(apiInfoUser);
     return data;
   }

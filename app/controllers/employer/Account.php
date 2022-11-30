@@ -15,6 +15,7 @@ class Account extends Controller
       $remember = isset($_POST["chkSave"]) ? true : false;
       $result = $this->model("AccountUserModel")->checkEmployerLogin($email, $password);
      
+     
       if ($result->rowCount() == 1) {
   
           $user = $result->fetchAll(PDO::FETCH_ASSOC);

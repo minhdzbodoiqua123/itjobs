@@ -41,7 +41,7 @@ async function loadInfoUser() {
 }
 
 async function displayInfoUser(data) {
-  const {  firstname, lastname } = data;
+  const {firstname, lastname } = data;
   const {provinces,districts,address} = await getData('http://localhost//itjobs/jobseekers/my_profile/addressUser');
 
   const nameUser = $('.nameUser');
@@ -60,7 +60,7 @@ async function displayInfoUser(data) {
 
     address2.textContent = `${address},${nameDistricts},${nameProvinces}`;
 
-    nameUser.textContent = firstname;
+    // nameUser.textContent = firstname;
 
     input_lastname.value = lastname;
     input_firstname.value = firstname;
@@ -178,6 +178,7 @@ async function getDistrict(code) {
 
   return data.districts;
 }
+
 async function desiredForm(data) {
 
   const api = `http://localhost//itjobs/jobseekers/my_profile/desiredWork`;
@@ -254,7 +255,6 @@ $("input[name='cboExperCurrent']").addEventListener("change", function (e){
   const rexp_year_end=$("select[name='rexp_year_end']")
   if(e.target.checked){
     
-  
     rexp_month_end.setAttribute('disabled','')
     rexp_year_end.setAttribute('disabled','')  
     rexp_month_end.value=""

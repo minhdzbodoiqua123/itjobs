@@ -2757,6 +2757,7 @@ only screen and (min-resolution:1.5dppx) {
 .main-quick-upload-resume .form-group.form-checkbox label {
     position: relative;
     padding-left: 20px;
+    top:10px;
 }
 
 .main-quick-upload-resume .form-group.form-checkbox label:after {

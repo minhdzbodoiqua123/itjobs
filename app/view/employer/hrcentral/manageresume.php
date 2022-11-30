@@ -12,10 +12,10 @@
                             <li> <a href="<?= _WEB_ROOT.'/employer/hrcentral/posting' ?>" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
                             <li class="active"> <a href="<?= _WEB_ROOT.'/employer/hrcentral/manageresume' ?>" class="active" title="Quản Lý  Ứng Viên">Quản Lý  Ứng Viên</a> </li>
                            
-                           
                             <li>
-                                <a href="https://careerbuilder.vn/vi/employers/hrcentral/accounts" title=" Tài Khoản"> Tài Khoản</a>
-                            </li>
+             
+             <a href="<?= _WEB_ROOT.'/employer/hrcentral/accounts/edit_employer"'?>" title=" Tài Khoản"> Tài Khoản</a>
+             </li>
                    
                         </ul>
                     </div>
@@ -325,18 +325,18 @@
                                     </td>
                                     <td>
                                         <p>
-                                        <?= !empty($item["yearOfExperience"]) ? $item["yearOfExperience"].' Năm '  : "Chưa có kinh nghiệm"?>  
+                                        <?= $item["year_of_experience"]!=0 ? $item["year_of_experience"].' Năm '  : "Chưa có kinh nghiệm"?>  
                                         </p>
                                     </td>
                                     <td>
                                         <p>
-                                        <?= $item["salary_from"]."-".$item["salary_to"] ." VND"; ?>
+                                        <?= $item["min_salary"]."-".$item["max_salary"] ." VND"; ?>
                                         </p>
                                     </td>
                                     <td>
                                     <ul style="display:flex;gap:15px;align-items:center;justify-content: center;"class="">
                 <li> <a href="javascript:;" onclick="showFoldersSelected('369242CE', 'listresumes[]');" title="Lưu thư mục"> <em class="material-icons">folder_shared </em> </a> </li>
-                <li><a href="<?= _WEB_ROOT.'/employer/hrcentral/manageresume/resumes_detail/'.$item["user_account_id"] ?>" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
+    <li><a href="<?= _WEB_ROOT.'/employer/hrcentral/manageresume/resumes_detail/'.$item["user_account_id"].'/'.$item["resume_id"].'/?file_name='.$item["file_location"] ?>" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
                 <li> <a href="javascript:;" onclick="showClassifiedResume('369242CE', '35BFE874', '','','');return false;" title="Cập nhật trạng thái"> <em class="material-icons">border_color</em> </a> </li>
                         <li> <a href="javascript:;" onclick="showResumeForInvite('35BFE874','369242CE');return false;" title="Giới thiệu hồ sơ "> <i class="fa fa-forward" aria-hidden="true"></i> </a> </li>
                   

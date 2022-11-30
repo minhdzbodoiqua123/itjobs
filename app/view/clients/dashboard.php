@@ -298,7 +298,7 @@
                                                     <div class="figure">
                                                         <div class="image img-result hide">
                                                             <input style="display: none;"   type="file" class="file" id="fileAvatar" name="fileAvatar">
-      <img id="img_mem_avatar" src="<?= _WEB_ROOT.'/app/public/assets/clients/images/'.$informationUser["location_image"] ?> ?>" >
+      <img id="img_mem_avatar" src="<?= _WEB_ROOT.'/app/public/assets/clients/images/'.$informationUser["location_image"] ?> " >
                                                         </div>
                                                         <div class="edit-image dropdown"><em class="mdi mdi-image-edit"></em>
                                                             <div class="dropdown-menu">
@@ -715,11 +715,87 @@
                                         <p>Ngoài hồ sơ CareerBuilder, bạn có thể tạo hồ sơ đính kèm để ứng tuyển và tìm kiếm bởi nhà tuyển dụng</p>
                                     </div>
                                     <div class="widget-body">
+                                    <?php foreach ($data_resume as $item): ?>
+                                        <div class="attached-item">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="head-title">
+                      <div class="row">
+                        <div class="col-lg-5">
+                          <div class="title">
+                            <h4 id="titleresume_17708653"><?= $item["resume_title"] ?></h4>
+                            <div class="status success">
+                              <p>Hoàn Tất</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-7">
+                     
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-5">
+                    <div class="figure">
+                      <div class="image">
+                        <img src="https://static.careerbuilder.vn/themes/kiemviecv32/images/icons/ic-resume.png" alt="front end">
+                      </div>
+                      <div class="figcaption">
+                        <div class="time">
+                          <p>Ngày tạo</p>
+                          <time id="date_17708653"><?= formatDate($item["created_date"])?></time>
+                      
+                        </div>
+                        <div class="view-number">
+                          <p>Lượt xem:</p>
+                          <span>0</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-7">
+                    <div class="attached-status-area">
+                      <p>Cho phép tìm</p>
+                      <div class="switch-status group_searchable" id="cv_searchable_17708653" data-id="17708653" data-complete="1">
+                        <a href="javascript:void(0);" data-type="2" class="lock active"><em class="mdi mdi-lock"></em>Khóa</a>
+                        <a href="javascript:void(0);" data-type="1" class="public "><em class="mdi mdi-web"></em>Công khai</a>
+                        <a href="javascript:void(0);" data-type="3" class="flash "><em class="mdi mdi-flash"></em>Khẩn cấp</a>
+                      </div>
+                      <p class="text-notes text-notes-2 d-block">
+                        Bạn đang <span>vô hiệu hóa</span> hồ sơ. Nhà tuyển dụng sẽ không thấy được hồ sơ này của bạn.													
+                      </p>
+                      <p class="text-notes text-notes-1 d-none">
+                        Hồ sơ của bạn đang ở trạng thái <span>Công Khai</span>. Nhà tuyển dụng có thể tìm thấy Hồ sơ này của bạn.														
+                      </p>
+                      <p class="text-notes text-notes-3 d-none">
+                        Hồ sơ của bạn đang ở trạng thái <span>Khẩn cấp</span>. Hồ sơ của bạn sẽ được ưu tiên tìm thấy bởi các nhà tuyển dụng.															
+                      </p>
+                      <div class="right-action">
+                        <ul>
+  <li><a href="<?= _WEB_ROOT.'/jobseekers/myattach/viewfile/'.$item['user_account_id'].'/'.$item['id'].'/?file_name='.$item["file_location"] ?>" title="Xem" class="view">
+                            <em class="mdi mdi-eye"></em>Xem
+                          </a></li>
+                   
+              <!-- <li><a href="javascript:void(0);" onclick="downloadCvAttach(   <?= $item['id'] ?>);" title="Tải hồ sơ" class="down"><em class="mdi mdi-download"></em>Tải hồ sơ</a></li> -->
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                                  <?php  endforeach;?>
 
                                         <div class="box-text">
                                             <h4>Bạn cần tải hoặc tạo hồ sơ</h4>
                                             <p>Vui lòng thêm mục tiêu nghề nghiệp</p>
                                         </div>
+
+
+
                <div class="button-upload" id="created-resume"><a href="<?= _WEB_ROOT . '/jobseekers/myattach' ?>">Tạo  Hồ Sơ Ngay!</a></div>
                                     </div>
                                 </div>
@@ -1383,7 +1459,7 @@
                                                       <ul class="contact">
                                                          <li class="phone"><i class="fa fa-phone"></i><span><?= !empty($informationUser["contact_number"]) ? $informationUser["contact_number"]: ""  ?>  </span></li>
                                                          <li class="mail"><i class="fa fa-envelope"></i><span class="txt"><?= $informationUser["email"] ?></span></li>
-                                                         <li class="address2"><i class="fa fa-home"></i><span class="txt">đường 7, Huyện Lộc Ninh, Bình Phước, Việt Nam</span></li>
+                                                         <li class="address2"><i class="fa fa-home"></i><span class="txt"></span></li>
                                                       </ul>
                                                    </div>
                                                 </div>

@@ -5,7 +5,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const file_name = urlParams.get('file_name');
 var WEB_ROOT="http://localhost/itjobs";
-var DEFAULT_URL = `${WEB_ROOT}/app/library/pdfjs/web/images/Xuan_Tung_Dang_369242CE.pdf`;
+var DEFAULT_URL = `${WEB_ROOT}/app/library/pdfjs/web/images/${file_name}`;
 var DEFAULT_SCALE_DELTA = 1.1;
 var MIN_SCALE = 0.25;
 var MAX_SCALE = 10.0;
@@ -738,7 +738,6 @@ Preferences._readFromStorage = function(prefObj) {
 var DownloadManager = (function DownloadManagerClosure() {
 
     function download(blobUrl, filename) {
-        console.log(filename);
 
         var a = document.createElement('a');
         if (a.click) {
@@ -6663,11 +6662,10 @@ var PDFViewerApplication = {
     },
 
     download: function pdfViewDownload() {
-       
+       console.log('a');
         function downloadByUrl() {
             downloadManager.downloadUrl(url, filename);
         }
-
         var url = this.url.split('#')[0];
         var filename = getPDFFileNameFromURL(url);
         var downloadManager = new DownloadManager();
@@ -7503,10 +7501,10 @@ function webViewerInitialized() {
 
     document.getElementById('print').addEventListener('click',
         SecondaryToolbar.printClick.bind(SecondaryToolbar));
-
-    document.getElementById('download').addEventListener('click',
-        SecondaryToolbar.downloadClick.bind(SecondaryToolbar));
-
+//buttondownload
+    // document.getElementById('download').addEventListener('click',
+    //    );
+    SecondaryToolbar.downloadClick.bind(SecondaryToolbar)
 
     if (file && file.lastIndexOf('file:', 0) === 0) {
         // file:-scheme. Load the contents in the main thread because QtWebKit
@@ -8122,3 +8120,4 @@ window.addEventListener('afterprint', function afterPrint(evt) {
             window.requestAnimationFrame(resolve);
         });
 })();
+

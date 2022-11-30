@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/clients/css/myattach.css" ?>">
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/clients/css/bootstrap.css" ?>">
+<link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/clients/css/my_profile.css" ?>">
 
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css" ?>">
 <script defer src="<?= _WEB_ROOT . "/app/public/assets/clients/js/myattach.js" ?>"></script>
-
 
 <!--Start New Layout CB -->
 <!DOCTYPE html>
@@ -8391,8 +8391,8 @@
                 <div class="cb-title cb-title-center">
                     <h2>Tạo Hồ Sơ Đính Kèm</h2>
                 </div>
-                <div class="main-quick-upload-resume created-now-wrap">
-                    <form method="post" name="frmResumeDetail" id="frmResumeDetail" enctype="multipart/form-data" class="frmEditAttach" autocomplete="off">
+          <div class="main-quick-upload-resume created-now-wrap">
+        <form method="post" action="myattach/uploadMyAttach" name="frmResumeDetail" id="frmResumeDetail" enctype="multipart/form-data" class="frmEditAttach" autocomplete="off">
                         <input type="hidden" name="resume_id" id="resume_id" value="0" />
                         <input type="hidden" name="intSync" id="intSync" value="0" />
                         <input type="hidden" name="is_change" id="is_change" value="0" />
@@ -8464,7 +8464,7 @@
           <div class="cb-title-h3 d-flex justify-content-sb align-center ">
 			<h3>Thông tin cá nhân</h3>
 
-			 <div class="link-edit "><a href="javascript:void(0) " onclick="editProfile(); "> <em class="material-icons ">create</em><span> Chỉnh sửa</span></a></div>
+			 <div class="link-edit "><a href="javascript:void(0) "data-bs-toggle="modal" data-bs-target="#thongtincanhan"> <em class="material-icons ">create</em><span> Chỉnh sửa</span></a></div>
 			 </div>
 			 <p class="noted "> Xin vui lòng cập nhật thông tin cá nhân để hoàn tất hồ sơ</p>
         </div>
@@ -8481,45 +8481,37 @@
     <div class="col-md-6 ">
       <div class="form-group form-select ">
         <label>* Số năm kinh nghiệm</label>
-        <input type="number " onkeyup="this.setAttribute( 'value', this.value); " name="yearOfExperience " id="year_experience " value="1 "  maxlength="2 " min="1 " max="55 ">
+        <input type="number" onkeyup="this.setAttribute('value',this.value); " name="yearOfExperience" id="year_experience" value="1"  maxlength="2" min="1" max="55">
         <span class="error_yearOfExperience "></span> </div>
     </div>
     <div class="col-md-6 ">
       <div class="form-group form-select ">
         <label>* Bằng cấp cao nhất</label>
-        <select name="degree " id="degree " class="required width_186 ">
+        <select name="degree" id="degree " class="required width_186 ">
           <option value=" " >Chọn</option>
-          <option value="0 ">Chưa tốt nghiệp</option>
-<option value="1 ">Trung học</option>
-<option value="2 ">Trung cấp</option>
-<option value="3 ">Cao đẳng</option>
-<option value="4 ">Đại học</option>
-<option value="5 ">Sau đại học</option>
-<option value="6 ">Khác</option>
+          <?php foreach ($data_degree as $item): ?>
+          <option value="<?= $item["id"] ?>"><?= $item["degree_name"] ?></option>
+            
+        <?php endforeach;?>
+
 
         </select>
         <span class="error_degree "></span> </div>
     </div>
     <div class="col-md-12 ">
-      <div class="form-group form-checkbox form-no-exp ">
-        <input type="checkbox " name="cboExper " id="cboExper " value="1 " >
+      <div  class="form-group form-checkbox form-no-exp">
+        <input type="checkbox" name="cboExper" id="cboExper " value="1 " >
         <label for="cboExper ">Chưa có kinh nghiệm</label>
       </div>
     </div>
     <div class="col-md-6 ">
       <div class="form-group form-select ">
         <label>* Cấp bậc mong muốn</label>
-        <select name="level_id " id="level_id " >
+        <select name="level_id" id="level_id " >
           <option value=" " >Chọn</option>
-		      <option value="1 ">Sinh viên/ Thực tập sinh</option>
-<option value="2 ">Mới tốt nghiệp</option>
-<option value="3 ">Nhân viên</option>
-<option value="4 ">Trưởng nhóm / Giám sát</option>
-<option value="5 ">Quản lý</option>
-<option value="6 ">Phó Giám đốc</option>
-<option value="7 ">Giám đốc </option>
-<option value="8 ">Tổng giám đốc</option>
-<option value="9 ">Chủ tịch / Phó Chủ tịch</option>
+                <?php foreach ($data_job_position as $item):?>
+                    <option value="<?= $item["id"] ?>"><?= $item["position"] ?></option>
+              <?php  endforeach;?>
 
         </select>
         <span class="error_level_id "></span> </div>
@@ -8528,17 +8520,12 @@
     <div class="col-md-6 ">
       <div class="form-group form-select ">
         <label for=" ">Cấp bậc hiện tại</label>
-        <select class="width_186 " name="levelcurrent_id " id="levelcurrent_id " >
+        <select class="width_186 " name="levelcurrent_id" id="levelcurrent_id " >
           <option value=" " >Chọn</option>
-          <option value="1 ">Sinh viên/ Thực tập sinh</option>
-<option value="2 ">Mới tốt nghiệp</option>
-<option value="3 ">Nhân viên</option>
-<option value="4 ">Trưởng nhóm / Giám sát</option>
-<option value="5 ">Quản lý</option>
-<option value="6 ">Phó Giám đốc</option>
-<option value="7 ">Giám đốc </option>
-<option value="8 ">Tổng giám đốc</option>
-<option value="9 ">Chủ tịch / Phó Chủ tịch</option>
+          <?php foreach ($data_job_position as $item):?>
+                    <option value="<?= $item["id"] ?>"><?= $item["position"] ?></option>
+              <?php  endforeach;?>
+
 
         </select>
       </div>
@@ -8546,105 +8533,11 @@
     <div class="col-md-6 ">
       <div class="form-group form-select-chosen ">
         <label for=" ">* Ngành nghề mong muốn</label>
-        <select name="INDUSTRY_ID[] " id="select_industry_db "  multiple class="chosen-select-max-three " title="Vui lòng chọn ngành nghề ">
-                        <optgroup label="Bán hàng / Tiếp thị ">
-                            <option value="4 " >Tiếp thị / Marketing</option>
-                            <option value="30 " >Bán lẻ / Bán sỉ</option>
-                            <option value="31 " >Bán hàng / Kinh doanh</option>
-                            <option value="37 " >Tiếp thị trực tuyến</option>
-                            </optgroup>
-                        <optgroup label="Chăm sóc sức khỏe ">
-                            <option value="7 " >Dược phẩm</option>
-                            <option value="56 " >Y tế / Chăm sóc sức khỏe</option>
-                            </optgroup>
-                        <optgroup label="Dịch vụ ">
-                            <option value="9 " >Tư vấn</option>
-                            <option value="12 " >Dịch vụ khách hàng</option>
-                            <option value="20 " >Phi chính phủ / Phi lợi nhuận</option>
-                            <option value="24 " >Luật / Pháp lý</option>
-                            <option value="32 " >Bưu chính viễn thông</option>
-                            <option value="33 " >Vận chuyển / Giao nhận /  Kho vận</option>
-                            <option value="44 " >Lao động phổ thông</option>
-                            <option value="51 " >An Ninh / Bảo Vệ</option>
-                            </optgroup>
-                        <optgroup label="Giáo dục / Đào tạo ">
-                            <option value="13 " >Giáo dục / Đào tạo</option>
-                            <option value="57 " >Thư viện</option>
-                            </optgroup>
-                        <optgroup label="Hàng tiêu dùng ">
-                            <option value="10 " >Hàng gia dụng / Chăm sóc cá nhân</option>
-                            <option value="21 " >Thực phẩm &amp; Đồ uống</option>
-                            </optgroup>
-                        <optgroup label="Hành chính / Nhân sự ">
-                            <option value="3 " >Hành chính / Thư ký</option>
-                            <option value="17 " >Quản lý điều hành</option>
-                            <option value="22 " >Nhân sự</option>
-                            <option value="38 " >Biên phiên dịch</option>
-                            </optgroup>
-                        <optgroup label="Kế toán / Tài chính ">
-                            <option value="2 " >Kế toán / Kiểm toán</option>
-                            <option value="19 " >Ngân hàng</option>
-                            <option value="23 " >Bảo hiểm</option>
-                            <option value="46 " >Chứng khoán</option>
-                            <option value="59 " >Tài chính / Đầu tư</option>
-                            </optgroup>
-                        <optgroup label="Khách sạn / Du lịch ">
-                            <option value="29 " >Nhà hàng / Khách sạn</option>
-                            <option value="34 " >Du lịch</option>
-                            <option value="60 " >Hàng không</option>
-                            </optgroup>
-                        <optgroup label="Khoa học ">
-                            <option value="5 " >Nông nghiệp</option>
-                            <option value="36 " >Thống kê</option>
-                            <option value="49 " >Thủy sản / Hải sản</option>
-                            <option value="50 " >Lâm Nghiệp</option>
-                            <option value="52 " >Chăn nuôi / Thú y</option>
-                            <option value="53 " >Thủy lợi</option>
-                            <option value="54 " >Trắc địa / Địa Chất</option>
-                            <option value="61 " >Hàng hải</option>
-                            <option value="69 " >Công nghệ sinh học</option>
-                            <option value="70 " >Công nghệ thực phẩm / Dinh dưỡng</option>
-                            </optgroup>
-                        <optgroup label="Kỹ thuật ">
-                            <option value="14 " >Cơ khí / Ô tô / Tự động hóa</option>
-                            <option value="16 " >Môi trường</option>
-                            <option value="26 " >Dầu khí</option>
-                            <option value="41 " >Hóa học</option>
-                            <option value="48 " >Điện / Điện tử / Điện lạnh</option>
-                            <option value="65 " >Khoáng sản</option>
-                            <option value="71 " >Bảo trì / Sửa chữa</option>
-                            </optgroup>
-                        <optgroup label="Máy tính / Công nghệ thông tin ">
-                            <option value="1 " >CNTT - Phần mềm</option>
-                            <option value="63 " >CNTT - Phần cứng / Mạng</option>
-                            </optgroup>
-                        <optgroup label="Truyền thông / Media ">
-                            <option value="11 " >Mỹ thuật / Nghệ thuật / Thiết kế</option>
-                            <option value="15 " >Giải trí</option>
-                            <option value="66 " >Truyền hình / Báo chí / Biên tập</option>
-                            <option value="67 " >Quảng cáo / Đối ngoại / Truyền Thông</option>
-                            <option value="68 " >Tổ chức sự kiện</option>
-                            </optgroup>
-                        <optgroup label="Sản xuất ">
-                            <option value="18 " >Xuất nhập khẩu</option>
-                            <option value="25 " >Sản xuất / Vận hành sản xuất</option>
-                            <option value="35 " >Đồ gỗ</option>
-                            <option value="39 " >Dệt may / Da giày / Thời trang</option>
-                            <option value="42 " >Quản lý chất lượng (QA/QC)</option>
-                            <option value="43 " >Thu mua / Vật tư</option>
-                            <option value="58 " >An toàn lao động</option>
-                            <option value="64 " >In ấn / Xuất bản</option>
-                            </optgroup>
-                        <optgroup label="Xây dựng ">
-                            <option value="6 " >Kiến trúc</option>
-                            <option value="8 " >Xây dựng</option>
-                            <option value="28 " >Bất động sản</option>
-                            <option value="47 " >Nội ngoại thất</option>
-                            </optgroup>
-                        <optgroup label="Nhóm ngành khác ">
-                            <option value="27 " >Ngành khác</option>
-                            <option value="45 " >Mới tốt nghiệp / Thực tập</option>
-                            </optgroup>
+        <select name="INDUSTRY_ID[]" id="select_industry_db "  multiple class="chosen-select-max-three " title="Vui lòng chọn ngành nghề ">
+                    <?php foreach ($data_profession as $item): ?>
+                        <option value="<?= $item["id"] ?>"><?= $item["profession_name"] ?></option>
+                    
+                   <?php endforeach;?>
                   </select>
         <span class="error_select_industry_db "></span> </div>
     </div>
@@ -8653,18 +8546,14 @@
       <div class="form-big ">
         <div class="form-group form-select ">
           <select name="salary_unit " id="salary_unit ">
-            <option value="ltt ">Thỏa thuận</option>
             <option value="vnd " >VNĐ</option>
-            <option value="usd " >USD</option>
           </select>
         </div>
         <div class="form-group form-text ">
-          <input type="text " disabled onkeyup="this.setAttribute( 'value', this.value); " name="salary_from " id="salary_from "  value=" ">
-          <label>Từ</label>
+          <input placeholder="Từ"type="text "  onkeyup="this.setAttribute( 'value', this.value); " name="salary_from" id="salary_from"  >
         </div>
         <div class="form-group form-text ">
-          <input type="text " disabled onkeyup="this.setAttribute( 'value', this.value); " name="salary_to " id="salary_to "  value=" ">
-          <label>Đến </label>
+          <input type="text "  onkeyup="this.setAttribute( 'value', this.value); " name="salary_to" placeholder="Đến"id="salary_to"  >
         </div>
         <span class="error_salary_unit "></span> </div>
     </div>
@@ -8674,11 +8563,9 @@
     <div class="col-md-6 ">
         <div class="form-group form-select ">
             <label>* Nơi làm việc mong muốn</label>
-            <select name="LOCATION_ID[] " id="select_location_id_1 " >
+            <select name="provinces" id="select_location_id_1" >
                 <option value=" " >Chọn</option>
-                                    <option value="4 " >Hà Nội</option>
-                                    <option value="8 " >Hồ Chí Minh</option>
-                                    <option value="76 " >An Giang</option>
+                               
                                 
                             
                             </select>
@@ -8688,8 +8575,7 @@
     <div class="col-md-6 ">
         <div class="form-group form-select-chosen ">
             <label for=" ">Quận</label>
-            <select name="DISTRICT_ID[] " id="select_district_id_1 " class=" chosen-select-max-three "  data-placeholder="Quận " multiple>
-                <option value="0 " >Chọn</option>
+            <select  name="districts" id="select_district_id_1" class=" chosen-select-max-three"style="display:block;">
             </select>
             <span class="error_DISTRICT_ID "></span>
         </div>
@@ -8700,11 +8586,8 @@
     <div class="col-md-6 ">
         <div class="form-group form-select ">
             <label for=" ">Nơi làm việc mong muốn</label>
-            <select name="LOCATION_ID[] " id="select_location_id_2 " >
-                <option value=" " >Chọn</option>
-                                    <option value="4 " >Hà Nội</option>
-                                    <option value="8 " >Hồ Chí Minh</option>
-                                    <option value="76 " >An Giang</option>
+            <select name="LOCATION_ID" id="select_location_id_2 " >
+                           
                                    
                             </select>
             <span class="error_location_id error_select_location_id_2 "></span>
@@ -8713,7 +8596,7 @@
     <div class="col-md-6 ">
         <div class="form-group form-select-chosen ">
             <label for=" ">Quận</label>
-            <select name="DISTRICT_ID[] " id="select_district_id_2 " class="chosen-select-max-three " multiple>
+            <select name="DISTRICT_ID" id="select_district_id_2 " class="chosen-select-max-three " multiple>
                 <option value="0 " >Chọn</option>
             </select>
             <span class="error_DISTRICT_ID "></span>
@@ -8730,72 +8613,7 @@
                                     <option value="4 " >Hà Nội</option>
                                     <option value="8 " >Hồ Chí Minh</option>
                                     <option value="76 " >An Giang</option>
-                                    <option value="64 " >Bà Rịa - Vũng Tàu</option>
-                                    <option value="781 " >Bạc Liêu</option>
-                                    <option value="281 " >Bắc Cạn</option>
-                                    <option value="240 " >Bắc Giang</option>
-                                    <option value="241 " >Bắc Ninh</option>
-                                    <option value="75 " >Bến Tre</option>
-                                    <option value="650 " >Bình Dương</option>
-                                    <option value="56 " >Bình Định</option>
-                                    <option value="651 " >Bình Phước</option>
-                                    <option value="62 " >Bình Thuận</option>
-                                    <option value="78 " >Cà Mau</option>
-                                    <option value="26 " >Cao Bằng</option>
-                                    <option value="71 " >Cần Thơ</option>
-                                    <option value="50 " >Dak Lak</option>
-                                    <option value="1042 " >Dak Nông</option>
-                                    <option value="511 " >Đà Nẵng</option>
-                                    <option value="900 " >Điện Biên</option>
-                                    <option value="1064 " >Đồng Bằng Sông Cửu Long</option>
-                                    <option value="61 " >Đồng Nai</option>
-                                    <option value="67 " >Đồng Tháp</option>
-                                    <option value="59 " >Gia Lai</option>
-                                    <option value="19 " >Hà Giang</option>
-                                    <option value="351 " >Hà Nam</option>
-                                    <option value="39 " >Hà Tĩnh</option>
-                                    <option value="320 " >Hải Dương</option>
-                                    <option value="31 " >Hải Phòng</option>
-                                    <option value="780 " >Hậu Giang</option>
-                                    <option value="18 " >Hòa Bình</option>
-                                    <option value="321 " >Hưng Yên</option>
-                                    <option value="901 " >Khác</option>
-                                    <option value="58 " >Khánh Hòa</option>
-                                    <option value="77 " >Kiên Giang</option>
-                                    <option value="60 " >Kon Tum</option>
-                                    <option value="1071 " >KV Bắc Trung Bộ</option>
-                                    <option value="1069 " >KV Đông Nam Bộ</option>
-                                    <option value="1070 " >KV Nam Trung Bộ</option>
-                                    <option value="1072 " >KV Tây Nguyên</option>
-                                    <option value="23 " >Lai Châu</option>
-                                    <option value="25 " >Lạng Sơn</option>
-                                    <option value="20 " >Lào Cai</option>
-                                    <option value="63 " >Lâm Đồng</option>
-                                    <option value="72 " >Long An</option>
-                                    <option value="350 " >Nam Định</option>
-                                    <option value="38 " >Nghệ An</option>
-                                    <option value="30 " >Ninh Bình</option>
-                                    <option value="68 " >Ninh Thuận</option>
-                                    <option value="210 " >Phú Thọ</option>
-                                    <option value="57 " >Phú Yên</option>
-                                    <option value="52 " >Quảng Bình</option>
-                                    <option value="510 " >Quảng Nam</option>
-                                    <option value="55 " >Quảng Ngãi</option>
-                                    <option value="33 " >Quảng Ninh</option>
-                                    <option value="53 " >Quảng Trị</option>
-                                    <option value="79 " >Sóc Trăng</option>
-                                    <option value="22 " >Sơn La</option>
-                                    <option value="66 " >Tây Ninh</option>
-                                    <option value="36 " >Thái Bình</option>
-                                    <option value="280 " >Thái Nguyên</option>
-                                    <option value="37 " >Thanh Hóa</option>
-                                    <option value="54 " >Thừa Thiên- Huế</option>
-                                    <option value="73 " >Tiền Giang</option>
-                                    <option value="74 " >Trà Vinh</option>
-                                    <option value="27 " >Tuyên Quang</option>
-                                    <option value="70 " >Vĩnh Long</option>
-                                    <option value="211 " >Vĩnh Phúc</option>
-                                    <option value="29 " >Yên Bái</option>
+                              
                             </select>
             <span class="error_location_id error_select_location_id_3 "></span>
         </div>
@@ -8812,137 +8630,16 @@
     </div>
 </div>
 
-<script language="javascript ">
-var location_id_1 = 0;
-$(document).ready(function(){
-    $("#select_location_id_1 ").change(function(){
-        location_id_1 = $(this).val();
-        var str = '';
-        var i = 1;
-        for(k in districts) {
-            if(i == 1)
-                str+= '<option value="-1; '+location_id_1+' ">All</option>';
-            if(location_id_1 == districts[k][1]){
-                str += '<option value=" '+districts[k][0]+'; '+districts[k][1]+' ">'+districts[k][2]+'</option>';
-            }
-            i++;
-        }
-        $('#select_district_id_1 option').remove();
-        $('#select_district_id_1').append(str);
-        $('#select_district_id_1').trigger("chosen:updated ");
-    });
-    $("#select_district_id_1 ").change(function(){
-        var district_id = $(this).val();
-        var district_all = '-1;'+location_id_1;
-        if($.inArray( district_all, district_id ) >= 0){
-            $('#select_district_id_1 option').prop('disabled', true);
-            $("#select_district_id_1 option[value='"+district_id+"' ] ").prop('disabled', false);
-        }else{
-            $("#select_district_id_1 option[value='"+district_all+"' ] ").prop('disabled', true);
-        }
-        if(jQuery.isEmptyObject(district_id)){
-            $('#select_district_id_1 option').prop('disabled', false);
-        }
-        $('#select_district_id_1').trigger("chosen:updated ");
-    });
-    $("#select_location_id_2 ").change(function(){
-        location_id_2 = $(this).val();
-        var str = '';
-        var i = 1;
-        for(k in districts) {
-            if(i == 1)
-                str+= '<option value="-1; '+location_id_2+' ">All</option>';
-            if(location_id_2 == districts[k][1]){
-                str += '<option value=" '+districts[k][0]+'; '+districts[k][1]+' ">'+districts[k][2]+'</option>';
-            }
-            i++;
-        }
-        $('#select_district_id_2 option').remove();
-        $('#select_district_id_2').append(str);
-        $('#select_district_id_2').trigger("chosen:updated ");
-    });
-    $("#select_district_id_2 ").change(function(){
-        var district_id = $(this).val();
-        var district_all = '-1;'+location_id_2;
-        if($.inArray( district_all, district_id ) >= 0){
-            $('#select_district_id_2 option').prop('disabled', true);
-            $("#select_district_id_2 option[value='"+district_id+"' ] ").prop('disabled', false);
-        }else{
-            $("#select_district_id_2 option[value='"+district_all+"' ] ").prop('disabled', true);
-        }
-        if(jQuery.isEmptyObject(district_id)){
-            $('#select_district_id_2 option').prop('disabled', false);
-        }
-        $('#select_district_id_2').trigger("chosen:updated ");
-    });
-    $("#select_location_id_3 ").change(function(){
-        location_id_3 = $(this).val();
-        var str = '';
-        var i = 1;
-        for(k in districts) {
-            if(i == 1)
-                str+= '<option value="-1; '+location_id_3+' ">All</option>';
-            if(location_id_3 == districts[k][1]){
-                str += '<option value=" '+districts[k][0]+'; '+districts[k][1]+' ">'+districts[k][2]+'</option>';
-            }
-            i++;
-        }
-        $('#select_district_id_3 option').remove();
-        $('#select_district_id_3').append(str);
-        $('#select_district_id_3').trigger("chosen:updated ");
-    });
-    $("#select_district_id_3 ").change(function(){
-        var district_id = $(this).val();
-        var district_all = '-1;'+location_id_3;
-        if($.inArray( district_all, district_id ) >= 0){
-            $('#select_district_id_3 option').prop('disabled', true);
-            $("#select_district_id_3 option[value='"+district_id+"' ] ").prop('disabled', false);
-        }else{
-            $("#select_district_id_3 option[value='"+district_all+"' ] ").prop('disabled', true);
-        }
-        if(jQuery.isEmptyObject(district_id)){
-            $('#select_district_id_3 option').prop('disabled', false);
-        }
-        $('#select_district_id_3').trigger("chosen:updated ");
-    });
 
-
-    $("#select_location_id_1, #select_location_id_2, #select_location_id_3 ").change(function(){
-		
-		$('#list-workplace-desired .item.active').last().find('.chosen-select-max-three').prop('disabled', false);
-		$('#select_district_id_1,#select_district_id_2,#select_district_id_3').trigger("chosen:updated ");
-        var location_id_1 = $("#select_location_id_1 ").val();
-        var location_id_2 = $("#select_location_id_2 ").val();
-        var location_id_3 = $("#select_location_id_3 ").val();
-        $("#select_location_id_1 option ").prop('disabled', false);
-        $("#select_location_id_3 option ").prop('disabled', false);
-        $("#select_location_id_3 option ").prop('disabled', false);
-        if(location_id_2 != ''){
-            $("#select_location_id_1 option[value="+location_id_2+" ] ").prop('disabled', true);
-            $("#select_location_id_3 option[value="+location_id_2+" ] ").prop('disabled', true);
-        }
-        if(location_id_1 != ''){
-            $("#select_location_id_2 option[value="+location_id_1+" ] ").prop('disabled', true);
-            $("#select_location_id_3 option[value="+location_id_1+" ] ").prop('disabled', true);
-        }
-        if(location_id_3 != ''){
-            $("#select_location_id_2 option[value="+location_id_3+" ] ").prop('disabled', true);
-            $("#select_location_id_1 option[value="+location_id_3+" ] ").prop('disabled', true);
-        }
-    });
-	$("#select_location_id_1, #select_location_id_2, #select_location_id_3 ").trigger('change');
-		$('#select_district_id_1,#select_district_id_2,#select_district_id_3').trigger("change ");
-	$('#select_district_id_1,#select_district_id_2,#select_district_id_3').trigger("chosen:updated ");
-});
-</script>
- <a class="btn-add " href="javascript:void(0); "><em class="material-icons ">add_circle_outline</em><span>Thêm</span></a> </div>
+ </div>
     </div>
     <div class="col-md-12 ">
       <div class="row ">
        
         <div class="col-md-6 ">
           <div class="form-group form-select-chosen ">
-            <select name="BENEFIT_ID[] " class="chosen-select-max-three " multiple="multiple " data-placeholder="Phúc lợi mong muốn ">
+            <label for="">Phúc lợi mong muốn</label>
+            <select name="BENEFIT_ID[]" class="chosen-select-max-three " multiple="multiple " data-placeholder="Phúc lợi mong muốn ">
                           <option value="2 " >Chế độ bảo hiểm</option>
                            <option value="3 " >Du Lịch</option>
                            <option value="8 " >Chế độ thưởng</option>
@@ -8966,30 +8663,16 @@ $(document).ready(function(){
     <div class="col-md-12 form-of-work ">
       <h6>* Hình thức làm việc</h6>
       <div class="row ">
+       <?php foreach ($data_job_type as $item) { ?>
         <div class="col-md-6 ">
           <div class="form-group form-checkbox ">
-            <input type="checkbox " name="chkResumeType_1 " id="chkResumeType_1 "  value="1 ">
-            <label for="chkResumeType_1 ">Nhân viên chính thức</label>
+            <input type="checkbox" name="chkResumeType[]" id="chkResumeType<?= $item["id"]?>"  value="<?= $item["id"] ?>">
+            <label for="chkResumeType<?= $item["id"]?>"><?= $item["job_type"] ?></label>
           </div>
         </div>
-        <div class="col-md-6 ">
-          <div class="form-group form-checkbox ">
-            <input type="checkbox " name="chkResumeType_3 " id="chkResumeType_3 "  value="3 " >
-            <label for="chkResumeType_3 ">Bán thời gian</label>
-          </div>
-        </div>
-        <div class="col-md-6 ">
-          <div class="form-group form-checkbox ">
-            <input type="checkbox " name="chkResumeType_2 " id="chkResumeType_2 "  value="2 " >
-            <label for="chkResumeType_2 ">Nghề tự do</label>
-          </div>
-        </div>
-        <div class="col-md-6 ">
-          <div class="form-group form-checkbox ">
-            <input type="checkbox " name="chkResumeType_4 " id="chkResumeType_4 "  value="4 " >
-            <label for="chkResumeType_4 ">Thực tập</label>
-          </div>
-        </div>
+      <?php }?>
+       
+        
       </div>
       <span class="error_chkResumeType_1 "></span> 
     </div>
@@ -8998,7 +8681,7 @@ $(document).ready(function(){
       <div class="row ">
         <div class="col-md-6 ">
           <div class="form-group form-checkbox ">
-            <input type="checkbox " name="chkWorkHome " id="chkWorkHome "  value="1 ">
+            <input type="checkbox" name="chkWorkHome " id="chkWorkHome "  value="1 ">
             <label for="chkWorkHome ">Làm việc từ nhà</label>
           </div>
         </div>
@@ -9019,53 +8702,32 @@ $(document).ready(function(){
 }
 </style>
 
-		<div class="quick-upload quick-upload-2 ">
-	<div class="cb-title-h3 ">
-		<h3>Người tham khảo <span>Không bắt buộc</span></h3>
-	</div>
-	<div class="list-references ">
-		<div class="row " id="list_refer ">
-		
-		</div>
-		<div class="row ">
-			<div class="col-md-6 ">
-				<a onclick="show_frmRefer(0);return false; " href="javascript:void(0); "> <em class="material-icons ">note_add</em><span>Thêm người tham khảo</span></a>
-			</div>
-		</div>
-	</div>
-</div>		<div class="quick-upload quick-upload-2 ">
+			
+
+<div class="quick-upload quick-upload-2 ">
   <div class="cb-title-h3 ">
     <h3>Quyền riêng tư của hồ sơ</h3>
   </div>
-  <div class="status-area ">
-    <div class="switch-status switch-status-element ">
-      <a href="javascript:void(0); " data-type="1 " class="lock switch-status-element-1 active "><em class="mdi mdi-lock "></em>Khóa</a>
-      <a href="javascript:void(0); " data-type="2 " class="public switch-status-element-2 "><em class="mdi mdi-web "></em>Công khai</a>
-      <a href="javascript:void(0); " data-type="3 " class="flash switch-status-element-3 "><em class="mdi mdi-flash "></em>Khẩn cấp</a>
-    </div>
-    <div class="swap-content-1 ">
-      <p class="content-1 active ">
-        Bạn đang <span>vô hiệu hóa</span> hồ sơ. Nhà tuyển dụng sẽ không thấy được hồ sơ này của bạn.													
-      </p>
-      <p class="content-2 ">
-        Hồ sơ của bạn đang ở trạng thái <span>Công Khai</span>. Nhà tuyển dụng có thể tìm thấy Hồ sơ này của bạn.														
-      </p>
-      <p class="content-3 ">
-        Hồ sơ của bạn đang ở trạng thái <span>Khẩn cấp</span>. Hồ sơ của bạn sẽ được ưu tiên tìm thấy bởi các nhà tuyển dụng.															
-      </p>
-    </div>
+  <div style="display:flex;gap:15px;align-items:center;margin-bottom:30px;">
+  <label for="khoa">Khóa</label>
+    <input type="radio" id="khoa" name="status"value="1">
+    <label for="congkhai">Công khai</label>
+    <input type="radio" id="congkhai" name="status"value="2">
+    <label for="khancap">Khẩn cấp</label>
+    <input type="radio" id="khancap" name="status"value="3">
   </div>
-  <div class="row search-resume ">
+  
+  <!-- <div class="row search-resume ">
     <div class="col-md-6 ">
       <div class="form-group ">
         <span class="hide-infor ">Ẩn một số thông tin</span>
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="row ">
     <div class="col-md-12 ">
    
-	  <div class="form-group form-submit form-back "><a class="btn-gradient save-and-finish " href="javascript:void(0); " onclick="checkValidForm(2); ">Lưu và hoàn thành</a></div>
+	  <div class="form-group form-submit form-back "><button style="width:200px;"type="submit" class="btn-gradient save-and-finish">Lưu và hoàn thành</button></div>
     </div>
     <div class="col-md-12 ">
       <div class="form-group form-note ">
@@ -9120,26 +8782,151 @@ $(document).ready(function(){
 			<div class="row data-list ">
 				<div class="col-md-6 ">
 					<div class="form-group form-checkbox ">
-						<input class="input_confident " type="checkbox " id="chkConfidential_7 " name="chkConfidential[7] " data-bit="7 " value="1 "  />
-						<label for="chkConfidential_7 ">Hình thức làm việc</label>
+                        <?php foreach ($data_job_welfare as $item): ?>
+                      	<input class="input_confident" type="checkbox" id="chkConfidential_<?= $item["id"]?>" name="chkConfidential[]"  value="1"  />
+                          <label for="chkConfidential_<?= $item["id"]?>"><?= $item["welfare_type"]?></label>
+                     <?php endforeach;?>
+					
 					</div>
 				</div>
-				<div class="col-md-6 ">
-					<div class="form-group form-checkbox ">
-						<input class="input_confident " type="checkbox " id="chkConfidential_9 " name="chkConfidential[9] " data-bit="9 " value="1 "  />
-						<label for="chkConfidential_9 ">Mức lương mong muốn</label>
-					</div>
-				</div>
-				<div class="col-md-6 ">
-					<div class="form-group form-checkbox ">
-						<input class="input_confident " type="checkbox " id="chkConfidential_8 " name="chkConfidential[8] " data-bit="8 " value="1 "  />
-						<label for="chkConfidential_8 ">Phúc lợi mong muốn</label>
-					</div>
+				
 				</div>
 			</div>
 		</form>
 		<div class="button-modal "><a class="btn-gradient " onclick="saveConfResume(); "  href="javascript:void(0); ">Lưu lại</a></div>
 	</div>
+
+    <div class="modal fade"  data-bs-backdrop="static" data-bs-keyboard="false" id="thongtincanhan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div style="width:730px;" class="modal-dialog modal-dialog-centered">
+                           <div class="modal-content">
+                              <div class="modal-header">
+                                 <h2 class="modal-title"    >Thông tin cá nhân</h2>
+                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                 <form action="my_profile/UpdateProfile" method="post" id="personalInfoForm" autocomplete="off">
+                                    <div class="row">
+                                       <div class="col-md-6">
+                                          <div class="form-group form-text">
+                                             <label>* Họ và tên lót</label>
+                                             <input 
+                                                required 
+                                                data-pristine-required-message="Không được để trống"   
+                                                type="text" value="<?=  $informationUser["lastname"]?>"  name="lastname" id="lastname"  maxlength="30" class="valid">
+                                          </div>
+                                       </div>
+                                       <div class="col-md-6">
+                                          <div class="form-group form-text">
+                                             <label>* Tên</label>
+                                             <input
+                                                required 
+                                                data-pristine-required-message="Không được để trống"   
+                                                type="text" value="<?= $informationUser["firstname"] ?>"  name="firstname" id="firstname" value="Ba" maxlength="30">
+                                             <span class="err_firstname" style="display:none"></span>
+                                          </div>
+                                       </div>
+                                       <div class="col-md-6">
+                                          <div class="form-group form-radio">
+                                             <p style="width:100%;">* Giới tính</p>
+                                             <div class="gender">
+                                                <input <?php if($informationUser["gender"]=="1") {echo 'checked';}  ?>  type="radio" id="gender_m" value="1" checked="checked" name="gender">
+                                                <label for="gender_m">Nam</label>
+                                             </div>
+                                             <div class="gender">
+                                                <input <?php if($informationUser["gender"]=="2") {echo 'checked';}  ?> type="radio" id="gender_f" value="2" name="gender">
+                                                <label for="gender_f">Nữ</label>
+                                             </div>
+                                             <div class="gender">
+                                                <input <?php if($informationUser["gender"]=="3") {echo 'checked';}  ?> type="radio" id="gender_other" value="3" name="gender">
+                                                <label for="gender_other">Khác</label>
+                                             </div>
+                                             <span class="err_gender" style="display:none"></span>
+                                          </div>
+                                       </div>
+                                       <div class="col-md-6">
+                                          <div class="form-group form-birthday">
+                                             <label for="">* Ngày sinh</label>
+                                             <input 
+                                                required 
+                                                data-pristine-required-message="Nhập ngày tháng năm sinh của bạn"   
+                                                type="text" value="<?=  formatDate($informationUser["date_of_birth"])?>" class="date_month" name="birthday" ">
+                                          </div>
+                                       </div>
+                                       <div class="col-md-6">
+                                          <div class="form-group form-text">
+                                             <label for="">* Số điện thoại</label>
+                                             <input 
+                                                required 
+                                                data-pristine-required-message="Vui lòng nhập số điện thoại"   
+                                                type="text"  name="mobile" id="mobile" value="<?= !empty($informationUser["contact_number"])? $informationUser["contact_number"]: "" ?>" maxlength="20" style="margin-top:5px">
+                                             <span class="err_mobile" style="display:none"></span>
+                                          </div>
+                                       </div>
+                                       <div class="col-md-6">
+                                          <div class="form-group form-text">
+                                             <label for="">* Email</label>
+                                             <input type="text"  id="email_member_edit" value="<?= $informationUser["email"] ?>" readonly="readonly" disabled="disabled" style="margin-top:5px">
+                                          </div>
+                                       </div>
+                                       <div class="col-md-6">
+                                          <div class="form-group form-select">
+                                             <label for="">* Tình trạng hôn nhân</label>
+                                             <select name="slMarritial">
+                                                <option <?php 
+                                                   if($informationUser["marital_status"]==1)
+                                                   {echo 'selected';} 
+                                                   
+                                                   
+                                                   ?> value="1" >Độc thân</option>
+                                                <option <?php if($informationUser["marital_status"]==2){echo 'selected';} ?>  value="2">Đã kết hôn</option>
+                                             </select>
+                                          </div>
+                                       </div>
+                                       <div class="col-md-6">
+                                          <div class="form-group form-select">
+                                             <label for="">* Tỉnh / Thành phố</label>
+                                             <select 
+                                                name="slcity" id="slcity" class="select-province-city" >
+                                                <option value="">Chọn</option>
+                                             </select>
+                                             <span class="err_slcity" style="display:none"></span>
+                                          </div>
+                                       </div>
+                                       <div class="col-md-6">
+                                          <!--id="areaDistrict"-->
+                                          <div class="form-group form-select">
+                                             <label for="">* Quận/huyện</label>
+                                             <select
+                                                required 
+                                                data-pristine-required-message="Không được để trống"     
+                                                name="sldistrict" id="sldistrict" class="select-district">
+                                             </select>
+                                             <span class="err_sldistrict" style="display:none"></span>
+                                          </div>
+                                       </div>
+                                       <div class="col-md-6">
+                                          <label for="">* Địa chỉ (Số nhà, Đường)</label>
+                                          <div class="form-group form-text">
+                                             <input
+                                                required 
+                                                data-pristine-required-message="Không được để trống"  
+                                                type="text"  name="address" value="<?= !empty($informationUser["address"])? $informationUser["address"]: "" ?>">
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                       <div class="button-save button-center">
+                                          <!-- data-bs-dismiss="modal" -->
+                                          <button name="personalInfoForm" class="btn-primary" type="submit">Lưu lại</button>
+                                       </div>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+
 </div>
 
 

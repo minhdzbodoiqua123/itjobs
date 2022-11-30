@@ -15,11 +15,10 @@
                             <li> <a href="<?= _WEB_ROOT.'/employer/hrcentral/posting' ?>" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
                             <li class="active"> <a href="<?= _WEB_ROOT.'/employer/hrcentral/manageresume' ?>" class="active" title="Quản Lý  Ứng Viên">Quản Lý  Ứng Viên</a> </li>
                            
-                           
                             <li>
-                                <a href="https://careerbuilder.vn/vi/employers/hrcentral/accounts" title=" Tài Khoản"> Tài Khoản</a>
-                            </li>
-                   
+             
+             <a href="<?= _WEB_ROOT.'/employer/hrcentral/accounts/edit_employer"'?>" title=" Tài Khoản"> Tài Khoản</a>
+             </li>
                         </ul>
                     </div>
             <div class="right-wrap">
@@ -302,52 +301,72 @@
                                           <ul class="information-list">
                                              <li>
                                                 <p> <strong>Năm kinh nghiệm:</strong></p>
-                                                <p>1 Năm</p>
+                                                <p><?= $info_user["year_of_experience"]!=0 ? $info_user["year_of_experience"].' Năm '  : "Chưa có kinh nghiệm"?>  </p>
                                              </li>
                                              <li>
                                                 <p> <strong>Cấp bậc hiện tại:</strong></p>
-                                                <p>Nhân viên</p>
+                                                <p><?php foreach ($data_job_position as $item):
+                               if($item["id"]==$info_user["position_current_id"]){
+                                echo $item["position"];
+                            }
+                                endforeach;?></p>
                                              </li>
                                              <li>
                                                 <p> <strong>Bằng cấp cao nhất:</strong></p>
-                                                <p>Đại học</p>
+                                                <p><?php foreach ($data_degree as $item):
+                                if($item["id"]==$info_user["degree_id"]){
+                                    echo $item["degree_name"];
+                                }
+                                endforeach;?></p>
                                              </li>
-                                             <li>
-                                                <p> <strong>Ngoại ngữ:</strong></p>
-                                                <p>Tiếng Anh - Bản ngữ</p>
-                                             </li>
+                                          
                                              <li>
                                                 <p> <strong>Cấp bậc mong muốn:</strong></p>
-                                                <p>Nhân viên</p>
+                                                <p><?php foreach ($data_job_position as $item):
+                               if($item["id"]==$info_user["position_id"]){
+                                echo $item["position"];
+                            }
+                                endforeach;?></p>
                                              </li>
                                              <li>
                                                 <p> <strong>Mức lương mong muốn:</strong></p>
-                                                <p>Thỏa thuận</p>
+                                                <p><?= $info_user["min_salary"].'-'.$info_user["max_salary"].' VND ' ?></p>
                                              </li>
                                              <li>
                                                 <p> <strong>Ngành nghề mong muốn:</strong></p>
-                                                <p>CNTT - Phần mềm - Công nghệ sinh học</p>
+                                                <p> <?php
+                                          $valueStr = '';
+                                           foreach ($data_profession as $value) {
+                                          $valueStr .= " $value[profession_name] " . ',';
+                                           }
+                                          $valueStr = rtrim($valueStr, ',');
+                                           echo $valueStr;
+                                      
+                                          ?></p>
                                              </li>
                                              <li>
                                                 <p> <strong>Địa điểm:</strong></p>
-                                                <p>Long An, Hồ Chí Minh, Hà Nội</p>
+                                                <p class="addressWish"></p>
                                              </li>
                                              <li>
                                                 <p> <strong>Hình thức:</strong></p>
-                                                <p>Nhân viên chính thức</p>
+                                                <p>     
+                                    <?php 
+                                     $valueStr = '';
+                                    
+                                    foreach ($job_type_by_resume as $value): 
+                                        $valueStr .= " $value[job_type] " . ',';
+                                   
+                                  endforeach;
+                                  $valueStr = rtrim($valueStr, ',');
+                                  echo $valueStr;
+                                  ?></p>
                                              </li>
-                                             <li>
-                                                <p> <strong>Truy Cập:</strong></p>
-                                                <p></p>
-                                             </li>
-                                             <li>
-                                                <p> <strong>Cập nhật:</strong></p>
-                                                <p></p>
-                                             </li>
+                                           
                                           </ul>
                                        </div>
                                        <p class="title-flip">Nội dung hồ sơ</p>
-                                       <div class="profile-iframe"> <iframe id="frm_view_pdf" frameborder="0" scrolling="no" src="<?= _WEB_ROOT.'/jobseekers/myresume/viewfile/1' ?>"
+                                       <div class="profile-iframe"> <iframe id="frm_view_pdf" frameborder="0" scrolling="no" src="<?= _WEB_ROOT.'/jobseekers/myresume/viewfile/?file_name='.$_GET['file_name'] ?>"
                                           height="934" width="935"></iframe>
                                        </div>
                                     </div>

@@ -22,6 +22,10 @@ class Dashboard extends Controller
         $seeker_highest_degree =$this->model("JobPositionModel")->query(" SELECT seeker_highest_degree.*,degree_name FROM `seeker_highest_degree`  join degree on degree.id=seeker_highest_degree.degree_id WHERE user_account_id='$id'")->fetch(PDO::FETCH_ASSOC);
 
         $data_degree= $this->model("JobPositionModel")->get("degree")->fetchAll(PDO::FETCH_ASSOC);
+        
+        $data_resume=$this->model("ResumeModel")->get("resume")->fetchAll(PDO::FETCH_ASSOC);
+
+        $this->data["sub_content"]["data_resume"]=$data_resume;
 
 
         $this->data["sub_content"]["informationUser"]=$informationUser ;

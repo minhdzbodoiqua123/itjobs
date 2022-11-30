@@ -39,6 +39,7 @@ class Database
             $valueStr = rtrim($valueStr, ',');
             
             $sql = "INSERT INTO $table ($fieldStr) VALUES ($valueStr)";
+            echo $sql;
             $status = $this->query($sql);
             if ($status) {
                 return true;
@@ -62,7 +63,6 @@ class Database
             } else {
                 $sql = "UPDATE $table SET $updateStr ";
             }
-           
        
             
             $status = $this->query($sql);
@@ -81,7 +81,7 @@ class Database
         else{
             $sql="DELETE FROM '.$table.'";
         }
-       
+     
        
         $status = $this->query($sql);
      
