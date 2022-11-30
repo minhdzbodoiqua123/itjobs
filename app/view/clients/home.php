@@ -240,38 +240,22 @@
                                  <div class="salary">
                                     <p><em class="fa fa-usd"></em>Lương: <?= format_price($item["min_salary"]).'-'.format_price($item["max_salary"]).' VND' ?></p>
                                  </div>
-                                 <div class="location">
+                                 <!-- <div class="location">
                                     <em class="mdi mdi-map-marker"></em>
                                     <ul>
                                        <li class=""></li>
                                     </ul>
-                                 </div>
-                                 <ul class="welfare">
+                                 </div> -->
+                                 <!-- <ul class="welfare">
                                     <?php foreach ($job_welfare_detail as $welfare): 
                                       if($welfare["post_id"]==$item["id"]){ 
                                        echo "  <li>$welfare[welfare_type]</li>";
                                       }
                                    endforeach;?>
 
-                                 </ul>
+                                 </ul> -->
                               </div>
-                              <div style="top:50px;"class="">
-                                 <ul>
-                                
-                                    <li><a class="toollips save-job chk_save_35BAE5BD " href="javascript:void(0);" data-id="35BAE5BD" onclick="popuplogin()">
-                                       <i class="mdi mdi-heart-outline"></i>
-                                       <span class="text">Lưu việc làm</span>
-                                       </a>
-                                    </li>
-                                 </ul>
-                                 <div class="time">
-                                    <em class="mdi mdi-calendar"></em>
-                                    <time><?= formatDate($item["posted_date"]) ?></time>
-                                    <div class="toolip">
-                                       <p>Ngày cập nhật</p>
-                                    </div>
-                                 </div>
-                              </div></div>
+                              </div>
                            </div>
                         </div>
                      </div>

@@ -1010,18 +1010,14 @@
                                  <div class="salary">
                                     <p><em class="fa fa-usd"></em>Lương: <?= format_price($item["min_salary"]).'-'.format_price($item["max_salary"]).' VND' ?></p>
                                  </div>
-                                 <div class="location">
+                                 <!-- <div class="location">
                                     <em class="mdi mdi-map-marker"></em>
                                     <ul>
                                        <li class=""></li>
                                     </ul>
-                                 </div>
+                                 </div> -->
                                  <ul class="welfare">
-                                    <?php foreach ($job_welfare_detail as $welfare): 
-                                      if($welfare["post_id"]==$item["id"]){ 
-                                       echo "  <li>$welfare[welfare_type]</li>";
-                                      }
-                                   endforeach;?>
+                                   
 
                                  </ul>
                               </div>

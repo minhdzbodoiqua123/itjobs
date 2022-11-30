@@ -62,12 +62,12 @@ class Account extends Controller
                     ]
                 );
 
-                $this->model("SeekerProfileModel")->insert(
-                    "resume",
-                    [
-                    "user_account_id  " => "'$lastId'"
-                    ]
-                );
+                // $this->model("SeekerProfileModel")->insert(
+                //     "resume",
+                //     [
+                //     "user_account_id  " => "'$lastId'"
+                //     ]
+                // );
 
 
 

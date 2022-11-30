@@ -173,7 +173,7 @@
                      <li><a href="<?= _WEB_ROOT.'/employer/hrcentral/viewjob/detail/'.$item['id']?>" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
                      <li><a href="<?= _WEB_ROOT.'/employer/hrcentral/viewjob/detail/'.$item['id']?>" title="Nhân bản"><em class="material-icons">content_copy </em> </a></li>
                      <li><a href="<?= _WEB_ROOT.'/employer/hrcentral/viewjob/detail/'.$item['id']?>" title="Sửa"><em class="material-icons">created</em></a></li>
-                     <li class="end"><a href="javascript:void(0);" onclick="deleteItem_job('35BAFFA3');return false;" title="Xóa"><em class="material-icons">cancel </em></a></li>
+                     <li class="end"><a href="javascript:void(0);"  title="Tạm dừng đăng"><em class="material-icons">cancel </em></a></li>
                    </ul>
                                                 </td>
                                                 
