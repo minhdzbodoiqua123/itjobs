@@ -45,7 +45,7 @@
                             <div class="main-login dropdown logged"><a href="https://careerbuilder.vn/vi/employers/hrcentral/accounts" title="minh nguyễn 123"> <span class="mdi mdi-account-circle"></span>Hi, <span class="employer_name"></span></a>
                     <div class="dropdown-menu">
                         <ul>
-                            <li> <a href="https://careerbuilder.vn/vi/employers/hrcentral/accounts"> <em class="fa fa-cog"></em>Tài khoản</a></li>
+                            <li> <a href="<?= _WEB_ROOT.'/employer/hrcentral/accounts/edit_employer' ?>"> <em class="fa fa-cog"></em>Tài khoản</a></li>
                             <li> <a href="<?= _WEB_ROOT.'/employer/account/logout' ?>"> <em class="fa fa-sign-out"> </em>Thoát</a></li>
                         </ul>
                     </div>

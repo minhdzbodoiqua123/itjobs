@@ -69,7 +69,7 @@
                                 title="CareerMap">CareerMap</a></li>
                         <li> <a href="https://careerbuilder.vn/vi/talentcommunity" title="Cẩm Nang">Cẩm Nang</a>
                         </li>
-                        <li> <a href="https://careerbuilder.vn/tinh-luong-gross-net" title="Tính Lương">Tính Lương</a>
+                        <li> <a href="<?= _WEB_ROOT.'/tinh_luong_gross_net' ?>" title="Tính Lương">Tính Lương</a>
                         </li>
                         <li> <a href="https://careerstart.vn/" title="CareerStart">CareerStart <span class="new">
                                     <font color="ff0000">(Mới)</font>
@@ -198,7 +198,7 @@
     <div class="mobile-menu">
         <div class="mobile-wrap">
             <div class="header-logo"><a href="https://careerbuilder.vn/vi/"
-                    title="Tuyển dụng &amp; Tìm kiếm việc làm nhanh"><img class="lazy-bg" src="./img/logo.png"
+                    title="Tuyển dụng &amp; Tìm kiếm việc làm nhanh"><img class="lazy-bg" src=""
                         alt="Tuyển dụng &amp; Tìm kiếm việc làm nhanh" style=""></a></div>
             <div class="header-bottom">
                 <div class="header-bottom-top">
@@ -258,7 +258,7 @@
                             <li><a href="https://careerbuilder.vn/vi/talentcommunity" title="Cẩm Nang"> <i
                                         class="mdi mdi-lightbulb-on-outline"></i>Cẩm Nang</a>
                             </li>
-                            <li><a href="https://careerbuilder.vn/tinh-luong-gross-net" title="Tính Lương"> <i
+                            <li><a href="<?= _WEB_ROOT.'tinh_luong_gross_net' ?>" title="Tính Lương"> <i
                                         class="mdi mdi-calculator"></i>Tính Lương</a>
                             </li>
                             <li> <a href="https://careerstart.vn/" title="CareerStart">

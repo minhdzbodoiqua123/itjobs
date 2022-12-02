@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/employer/css/resumes_detail.css" ?>">
 <script defer src="<?= _WEB_ROOT . "/app/public/assets/employer/js/resumes_detail.js" ?>"></script>
+<script defer src="<?= _WEB_ROOT . "/app/public/assets/employer/js/manageresume.js" ?>"></script>
 
 <main>
    <section class="employer-navbar-2-1">
@@ -12,7 +13,7 @@
          <div class="left-wrap">
                         <ul class="list-menu">
                             <li> <a href="<?= _WEB_ROOT.'/employer/dashboard' ?>" title="Dashboard">Dashboard</a> </li>
-                            <li> <a href="<?= _WEB_ROOT.'/employer/hrcentral/posting' ?>" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
+                            <li> <a  href="<?= _WEB_ROOT.'/employer/hrcentral/posting' ?>" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
                             <li class="active"> <a href="<?= _WEB_ROOT.'/employer/hrcentral/manageresume' ?>" class="active" title="Quản Lý  Ứng Viên">Quản Lý  Ứng Viên</a> </li>
                            
                             <li>
@@ -23,7 +24,7 @@
                     </div>
             <div class="right-wrap">
                <ul class="list-menu">
-                  <li> <a href="https://careerbuilder.vn/vi/tim-ung-vien.html"> <em class="material-icons">find_in_page</em> Tìm Hồ Sơ </a> </li>
+                  <li> <a href="<?= _WEB_ROOT.'/employer/tim_ung_vien' ?>"> <em class="material-icons">find_in_page</em> Tìm Hồ Sơ </a> </li>
                   <li> <a class="but-createjob" href="https://careerbuilder.vn/vi/employers/postjobs"> <em class="material-icons">assignment_ind</em> Đăng Tuyển Dụng </a> </li>
                </ul>
             </div>
@@ -229,17 +230,16 @@
                                  <p>Thao tác</p>
                                  <ul class="list-manipulation">
                                     <li> <a href="javascript:;" onclick="showFoldersSelected('369242CE', 'listresumes[]');" title="Lưu thư mục"> <em class="material-icons">folder_shared </em> </a> </li>
-                                    <li> <a href="javascript:;" onclick="showClassifiedResume('369242CE', '35BFE874', '','','');return false;" title="Cập nhật trạng thái"> <em class="material-icons">border_color</em> </a> </li>
-                                    <li> <a href="javascript:;" onclick="showResumeForInvite('35BFE874','369242CE');return false;" title="Giới thiệu hồ sơ "> <i class="fa fa-forward" aria-hidden="true"></i> </a> </li>
-                                    <li> <a href="javascript:;" onclick="downloadResume('369242CE', '35A4E923')" title="Xuất file PDF"> <em class="material-icons">picture_as_pdf </em> </a> </li>
+                                    <li> <a href="javascript:;" onclick="showClassifiedResume('<?= $job_post_activity['job_id']?>','<?= $info_user['user_account_id']?>');return false;" title="Cập nhật trạng thái"> <em class="material-icons">border_color</em> </a> </li>
+                                    <li> <a href="javascript:;" onclick="showResumeForInvite('35BFE874','369242CE');return false;" title="Thông báo tuyển dụng "> <i class="fa fa-forward" aria-hidden="true"></i> </a> </li>
+                                  
                                  </ul>
                               </div>
                            </div>
                            <div class="view-resume-foot">
                               <ul class="tabslet-tab-detail">
                                  <li class="active" data-tab-detail="1"><a href="javascript:void(0)">Chi Tiết Hồ Sơ</a></li>
-                                 <li data-tab-detail="2"><a href="javascript:void(0)">Thư Giới Thiệu</a></li>
-                                 <li id="tab_intro" data-tab-detail="3"><a href="javascript:void(0)" onclick="loadResumeNoted(0, '369242CE','35BFE874');">Ghi Chú</a></li>
+                              
                               </ul>
                               <div class="tabslet-content-detail active" data-content-detail="1">
                                  <div class="box-flip-view">
@@ -257,6 +257,10 @@
                                                    <li>
                                                       <p> <strong>Ứng viên:</strong></p>
                                                       <p class="name"> <strong><?= $full_name ?></strong></p>
+                                                   </li>
+                                                   <li>
+                                                      <p> <strong>Email:</strong></p>
+                                                      <p > <?= $info_user["email"] ?></p>
                                                    </li>
                                                    <li>
                                                       <p><strong>Ngày sinh:</strong></p>

@@ -21,7 +21,7 @@ class Manageresume extends Controller
         $conn=$this->model("Job_postModel");
         $employer_id=$_SESSION["employer"]["id"];
 
-$info_user=$conn->query("SELECT seeker_profile.*,resume.* from seeker_profile  join seeker_resume_title on seeker_profile.user_account_id=seeker_resume_title.user_account_id join job_post_activity on job_post_activity.user_account_id=seeker_profile.user_account_id join resume on resume.id=resume_id  where 
+$info_user=$conn->query("SELECT seeker_profile.*,resume.*,email from seeker_profile join seeker_resume_title on seeker_profile.user_account_id=seeker_resume_title.user_account_id join job_post_activity on job_post_activity.user_account_id=seeker_profile.user_account_id join resume on resume.id=resume_id join user_account on user_account.id=seeker_profile.user_account_id where 
 seeker_profile.user_account_id=$id and resume.id=$resume_id ")->fetch(PDO::FETCH_ASSOC);
 
 $job_post_activity=$conn->query("SELECT seeker_profile.*,job_post_activity.*,salary_from,salary_to FROM `job_post_activity`  join job_post on job_post_activity.job_id=job_post.id  join seeker_profile on seeker_profile.user_account_id=job_post_activity.user_account_id  join seeker_job_information on seeker_job_information.user_account_id=seeker_profile.user_account_id where posted_by_id=$employer_id
@@ -56,4 +56,41 @@ $data_degree= $this->model("JobPositionModel")->get("degree")->fetchAll(PDO::FET
         
         $this->render('layouts/employer_layout',$this->data);
     }
+
+    public function updateResumeStatus(){
+        $resume_status=$_POST["resume_status"];
+        $resume_type=$_POST["resume_type"];
+        $job_id=$_POST["job_id"];
+        $user_account_id=$_POST["user_account_id"];
+        $data=[
+            "resume_status_id"=>"'$resume_status'",
+            "resume_type_id "=>"'$resume_type'",
+        ];
+
+ $this->model("ResumeModel")->update("job_post_activity",$data,"user_account_id=$user_account_id and job_id =$job_id");
+ $this->redirect("employer/hrcentral/Manageresume");
+    }
+    public function getResume($job_id,$user_account_id){
+        $data_resume=  $this->model("ResumeModel")->get("job_post_activity","user_account_id=$user_account_id and job_id =$job_id")->fetch(PDO::FETCH_ASSOC);
+        echo json_encode($data_resume);
+
+    }
+    public function resume_status(){
+
+      $data_resume_status=  $this->model("ResumeModel")->get("resume_status")->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($data_resume_status);
+    }
+    public function resume_type(){
+
+        $data_resume_type=  $this->model("ResumeModel")->get("resume_type")->fetchAll(PDO::FETCH_ASSOC);
+          echo json_encode($data_resume_type);
+      }
+
+      public function sendMail(){
+        $email=$_POST["f_mail"];
+        $title=$_POST["f_title"];
+        $content=$_POST["f_content"];
+        sendMail($email,$title,$content);
+      }
+   
 }

@@ -12,7 +12,7 @@
                 <div class="row no-gutters">
                     <div class="col-12 mb-15">
                         <section class="apply-now-banner  ">
-                            <div class="image"><img src="https://images.careerbuilder.vn/employer_folders/lot7/167327/173345banner.jpg" alt="Công ty TNHH Thương Mại Dịch Vụ Du Lịch Ánh Sao Thiên - AST TRAVEL ">
+                            <div class="image"><img src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$job_post["banner"] ?>" alt="Công ty TNHH Thương Mại Dịch Vụ Du Lịch Ánh Sao Thiên - AST TRAVEL ">
                             </div>
                             <div class="apply-now-content">
                                 <div class="job-desc">

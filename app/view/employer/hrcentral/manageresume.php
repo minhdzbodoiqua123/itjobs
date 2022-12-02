@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/employer/css/manageresume.css" ?>">
+<link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/clients/css/bootstrap.css" ?>">
 
+<script defer src="<?= _WEB_ROOT . "/app/public/assets/employer/js/manageresume.js" ?>"></script>
         <section class="employer-navbar-2-1">
             <div class="container">
                 <div class="category-nav">
@@ -308,7 +310,7 @@
                                               
                                        if($item["resume_status_id"]==$value["id"]) {
                                             echo $value["resume_name_status"];
-                                              }
+                                        }
                                           }?>
                                         </p>
                                     </td>
@@ -337,8 +339,8 @@
                                     <ul style="display:flex;gap:15px;align-items:center;justify-content: center;"class="">
                 <li> <a href="javascript:;" onclick="showFoldersSelected('369242CE', 'listresumes[]');" title="Lưu thư mục"> <em class="material-icons">folder_shared </em> </a> </li>
     <li><a href="<?= _WEB_ROOT.'/employer/hrcentral/manageresume/resumes_detail/'.$item["user_account_id"].'/'.$item["resume_id"].'/?file_name='.$item["file_location"] ?>" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
-                <li> <a href="javascript:;" onclick="showClassifiedResume('369242CE', '35BFE874', '','','');return false;" title="Cập nhật trạng thái"> <em class="material-icons">border_color</em> </a> </li>
-                        <li> <a href="javascript:;" onclick="showResumeForInvite('35BFE874','369242CE');return false;" title="Giới thiệu hồ sơ "> <i class="fa fa-forward" aria-hidden="true"></i> </a> </li>
+        <li> <a href="javascript:;" onclick="showClassifiedResume('<?= $item['job_id']?>','<?= $item['user_account_id']?>');return false;" title="Cập nhật trạng thái"> <em class="material-icons">border_color</em> </a> </li>
+                        <li> <a href="javascript:;" onclick="showResumeForInvite();return false;" title="Thông báo tuyển dụng"> <i class="fa fa-forward" aria-hidden="true"></i> </a> </li>
                   
                         <!-- <li> <a href="javascript:;" onclick="downloadResume('369242CE', '35A4E923')" title="Xuất file PDF"> <em class="material-icons">picture_as_pdf </em> </a> </li>
          -->
