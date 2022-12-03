@@ -62,18 +62,11 @@
                                 </ul>
                             </div>
                         </li>
-                        <li> <a href="https://careerbuilder.vn/cv-hay/" target="_blank" title="CV Hay">CV Hay</a></li>
-                        <li> <a href="https://vietnamsalary.careerbuilder.vn/" target="_blank"
-                                title="VietnamSalary">VietnamSalary</a></li>
-                        <li> <a href="https://careerbuilder.vn/careermap" target="_blank"
-                                title="CareerMap">CareerMap</a></li>
-                        <li> <a href="https://careerbuilder.vn/vi/talentcommunity" title="Cẩm Nang">Cẩm Nang</a>
-                        </li>
+
+                    
                         <li> <a href="<?= _WEB_ROOT.'/tinh_luong_gross_net' ?>" title="Tính Lương">Tính Lương</a>
                         </li>
-                        <li> <a href="https://careerstart.vn/" title="CareerStart">CareerStart <span class="new">
-                                    <font color="ff0000">(Mới)</font>
-                                </span></a></li>
+                   
                     </ul>
                 </div>
             </div>
@@ -195,109 +188,6 @@
             </div>
         </div>
     </div>
-    <div class="mobile-menu">
-        <div class="mobile-wrap">
-            <div class="header-logo"><a href="https://careerbuilder.vn/vi/"
-                    title="Tuyển dụng &amp; Tìm kiếm việc làm nhanh"><img class="lazy-bg" src=""
-                        alt="Tuyển dụng &amp; Tìm kiếm việc làm nhanh" style=""></a></div>
-            <div class="header-bottom">
-                <div class="header-bottom-top">
-                    <div class="profile">
-                        <div class="avatar"><img class="lazy-bg" src="./img/user_circle.png" alt="user circle" style="">
-                        </div>
-                        <div class="username">
-                            <p>welcome to careerbuilder</p>
-                        </div>
-                        <div class="back-menu-normal"><em class="mdi mdi-arrow-left"></em></div>
-                    </div>
-                    <div class="menu">
-                        <ul class="menu-normal">
-                            <li class="active"><a href="https://careerbuilder.vn/vi/"
-                                    title="Tuyển dụng &amp; Tìm kiếm việc làm nhanh"> <i
-                                        class="mdi mdi-home-outline"></i>Home</a></li>
-                            <li class="dropdown-mobile"><a href="javascript:void(0);" title="Tìm Việc Làm"> <i
-                                        class="mdi mdi-magnify"></i>Tìm Việc Làm</a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li><a href="<?= _WEB_ROOT . '/ALLjob' ?>" title="Việc làm mới nhất"> <i
-                                                    class="fa fa-thumb-tack"></i>Việc làm mới nhất</a>
-                                        </li>
-                                        <li><a href="https://careerbuilder.vn/tim-viec-lam.html"
-                                                title="Ngành nghề / Địa điểm"> <i class="fa fa-location-arrow"></i>Ngành
-                                                nghề / Địa điểm</a>
-                                        </li>
-                                        <li> <a href="https://careerbuilder.vn/viec-lam/ban-hang-kinh-doanh-c31-vi.html"
-                                                title="Bán hàng / Kinh doanh"> <i class="fa fa-connectdevelop"></i>Bán
-                                                hàng / Kinh doanh</a>
-                                        </li>
-                                        <li> <a href="https://careerbuilder.vn/viec-lam/hanh-chinh-thu-ky-c3-vi.html"
-                                                title="Hành chính / Thư ký"> <i class="fa fa-check"></i>Hành chính / Thư
-                                                ký</a>
-                                        </li>
-                                        <li> <a href="https://careerbuilder.vn/viec-lam/ke-toan-kiem-toan-c2-vi.html"
-                                                title="Kế toán / Kiểm toán"> <i class="fa fa-calculator"></i>Kế toán /
-                                                Kiểm toán</a>
-                                        </li>
-                                        <li> <a href="https://careerbuilder.vn/viec-lam/nhan-su-c22-vi.html"
-                                                title="Nhân sự"> <i class="fa fa-handshake-o"></i>Nhân sự</a>
-                                        </li>
-                                        <li> <a href="https://careerbuilder.vn/viec-lam/tiep-thi-marketing-c4-vi.html"
-                                                title="Tiếp thị / Marketing"> <i class="fa fa-line-chart"></i>Tiếp thị /
-                                                Marketing</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="https://careerbuilder.vn/cv-hay/" title="CV Hay"> <i
-                                        class="mdi mdi-file-document-edit-outline"></i>CV Hay</a>
-                            </li>
-                            <li><a href="https://vietnamsalary.careerbuilder.vn/" title="VietnamSalary"> <i
-                                        class="mdi mdi-currency-usd"></i>VietnamSalary</a></li>
-                            <li><a href="https://careerbuilder.vn/careermap" title="CareerMap"> <i
-                                        class="mdi mdi-chart-line-variant"></i>CareerMap</a></li>
-                            <li><a href="https://careerbuilder.vn/vi/talentcommunity" title="Cẩm Nang"> <i
-                                        class="mdi mdi-lightbulb-on-outline"></i>Cẩm Nang</a>
-                            </li>
-                            <li><a href="<?= _WEB_ROOT.'tinh_luong_gross_net' ?>" title="Tính Lương"> <i
-                                        class="mdi mdi-calculator"></i>Tính Lương</a>
-                            </li>
-                            <li> <a href="https://careerstart.vn/" title="CareerStart">
-                                    <i class="fa fa-plane"></i> CareerStart <span class="new">
-                                        <font color="ff0000">(Mới)</font>
-                                    </span></a></li>
-                        </ul>
-                    </div>
-                    <div class="authentication-links">
-                        <ul>
-                            <li><a href="https://careerbuilder.vn/vi/jobseekers/login" title="Đăng nhập"> <i
-                                        class="mdi mdi-login-variant"></i>Đăng nhập</a>
-                            </li>
-                            <li><a href="https://careerbuilder.vn/vi/jobseekers/register" title="Đăng ký"> <i
-                                        class="mdi mdi-account-plus-outline"></i>Đăng ký</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="header-bottom-bottom"> <a href="https://careerbuilder.vn/vi/employers"
-                        title="Dành cho nhà tuyển dụng">
-                        <div class="employer-site">
-                            <h4>Dành cho nhà tuyển dụng</h4>
-                            <p>Đăng tuyển, Tìm ứng viên</p>
-                        </div>
-                    </a>
-                    <div class="header-alert">
-                        <ul>
-                            <li><a href="https://careerbuilder.vn/thong-bao-viec-lam" title="Thông Báo Việc Làm"> <i
-                                        class="mdi mdi-bell-outline"></i><span>Thông Báo Việc Làm</span></a>
-                            </li>
-                            <li><a href="https://careerbuilder.vn/en" title="Change language"> <i
-                                        class="mdi mdi-web"></i><span>English</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+ 
     <div class="backdrop"></div>
 </header>

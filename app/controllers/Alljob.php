@@ -36,7 +36,7 @@ class Alljob extends Controller
         if($checkIdPost==0){
             $this->redirect("404page");
         }
-        $seeker_id=$_SESSION["user"]["id"];
+        $seeker_id=$_SESSION["user"]["id"] ?? "";
 
         $job_welfare_detail=$conn->query("SELECT welfare_type FROM `job_welfare_detail` join job_welfare on job_welfare_id=job_welfare.id WHERE post_id=$id limit 3")->fetchAll(PDO::FETCH_ASSOC);
         $job_post_activity=$conn->get("job_post_activity","user_account_id='$seeker_id' and job_id ='$id'")->fetch(PDO::FETCH_ASSOC);  

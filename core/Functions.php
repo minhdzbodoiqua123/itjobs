@@ -34,7 +34,7 @@ try {
   
     //Recipients
     $mail->setFrom('nhatminhnguyen6112003@gmail.com', 'ITJOBS');
-    $mail->addAddress($email,$name);     //Add a recipient
+    $mail->addAddress($email);     //Add a recipient
   
     //Attachments
     // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments

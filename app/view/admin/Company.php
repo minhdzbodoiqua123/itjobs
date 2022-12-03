@@ -100,6 +100,19 @@
 
                 </tr>
               </thead>
+              <style>
+                
+
+
+.max-lines {
+  display: block;/* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 3.6em;
+  line-height: 1.8em;
+}
+              </style>
               <tbody>
                 <?php foreach ($data_company as $item) { ?>
 
@@ -107,10 +120,12 @@
                     <td width="10"><input type="checkbox" name="check1" value="1"></td>
                     <td><?= $item["id"] ?></td>
                     <td><?= $item["company_name"] ?></td>
-                    <td></td>
+                    <td><img style="width:150px;height:100px;" src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$item["logo"] ?>" alt=""></td>
                     <td><?= $item["company_website_url"] ?></td>
 
-                    <td><?= $item["company_summary"] ?></td>
+                    <td>
+                    <?= $item["company_summary"] ?>
+                    </td>
                     <td><?php foreach ($company_type as $type) {
                           if ($type["id"] == $item["company_type_id"]) {
                             echo $type["company_type"];

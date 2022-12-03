@@ -5,6 +5,9 @@ class Jobs extends Controller
         
     }
     public function apply($id=""){
+        if (!Auth_user::logged_in()) {
+            $this->redirect("account/login");
+        }
         $this->recruitment();   
         $conn=$this->model("Job_postModel");
         $checkIdPost= $conn->get("job_post","id=$id")->rowCount();
