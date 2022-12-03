@@ -23,8 +23,7 @@ class Dashboard extends Controller
 
         $data_degree= $this->model("JobPositionModel")->get("degree")->fetchAll(PDO::FETCH_ASSOC);
         
-        $data_resume=$this->model("ResumeModel")->get("resume")->fetchAll(PDO::FETCH_ASSOC);
-
+        $data_resume=$this->model("ResumeModel")->get("resume","user_account_id='$id'")->fetchAll(PDO::FETCH_ASSOC);
         $this->data["sub_content"]["data_resume"]=$data_resume;
 
 
