@@ -1,7 +1,6 @@
-<script defer src="<?= _WEB_ROOT . "/app/public/assets/clients/js/all_job.js"?>"></script>
-
 <link rel="stylesheet" href="<?= _WEB_ROOT."/app/public/assets/clients/css/all_job.css" ?>">
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css"?>">
+<script defer src="<?= _WEB_ROOT . "/app/public/assets/employer/js/all_job.js"?>"></script>
 
 <style>
    .multiselect-dropdown{
@@ -31,22 +30,16 @@
             <div class="close-input-filter"><em class="lnr lnr-cross"></em></div>
             <div id="dropdownSelected" style="display:none"></div>
             <div class="search-job">
-               <form method="get" action="">
+               <form method="get" action="http://localhost//itjobs/Alljob">
                   <div class="form-wrap">
                      <div class="form-group form-keyword">
-                        <input  value="<?= !empty($searchKeyword) ? $searchKeyword : ''?>" type="search" class="keyword" name="keyword" id="keyword" placeholder="Chức danh, Tên công ty">
+                        <input type="search" class="keyword" name="keyword" id="keyword" placeholder="Chức danh, Tên công ty">
                         <div class="cleartext"><em class="mdi mdi-close-circle"></em></div>
                      </div>
                      <div class="form-group form-select-chosen">
                         <select id="industry" multiple  name="industry[]" class="chosen-select-max-three" placeholder="Tất cả ngành nghề" >
                            <?php foreach ($data_profession as $item): ?>
-             <option  <?php if(!empty($searchIndustry)) {
-                     foreach ($searchIndustry as $value) {
-                     if($value==$item["id"]){
-                        echo 'selected';
-                     }
-                     }
-             }  ?>  value="<?= $item["id"] ?>"><?= $item["profession_name"] ?></option> 
+             <option value="<?= $item["id"] ?>"><?= $item["profession_name"] ?></option>
                             
                          <?php  endforeach;?>
                         
@@ -164,9 +157,9 @@
          <div class="row">
             <div class="col-lg-8 col-custom-xxl-9">
                <div class="job-found">
-                  <div class="job-found-amout">
+                  <!-- <div class="job-found-amout">
                      <h1><?= count($job_post) ?> việc làm</h1>
-                  </div>
+                  </div> -->
                   <div class="job-found-sort">
                      <span class="sort-title dropdown">
                         Sắp xếp theo<em class="mdi mdi-chevron-down"></em>
@@ -179,7 +172,7 @@
                      </span>
                   </div>
                </div>
-                <?php if(count($job_post) == 0){?>              
+                <?php if(count($suitable_job) == 0){?>              
                   <div class="no-search">
     <div style="
     text-align: center;
@@ -208,7 +201,7 @@
                   <?php } else  {?>
                      <div class="main-slide">
                   <div class="jobs-side-list" id="jobs-side-list-content">
-                     <?php foreach ($job_post as $item): ?>
+                     <?php foreach ($suitable_job as $item): ?>
                         <div class="job-item " id="job-item-<?= $item["id"]?>">
                         <div class="figure">
                            <div class="image">
@@ -1285,32 +1278,16 @@
                         </div>
                      </div> -->
                   </div>
-                  <div class="pagination">
-                     <ul>
-                  
-                      <?php for ($num=1; $num <=$totalPages; $num++) {  
-                           if($num!=$current_page) { ?>
-                      <li >
-                     <a href="<?= _WEB_ROOT.'/Alljob/?page='.$num ?>"><?= $num ?></a>
-                      </li>
-                          <?php } else{  ?>
-                           <li class="active">
-             <a href="<?= _WEB_ROOT.'/Alljob/?page='.$current_page ?>"><?= $current_page ?></a>
-                      </li>
-                           <?php }?>
-                              
-                     
-                          <?php } ?>
-                          
-                
-                       
-                     </ul>
-                  </div>
+               
                </div>
 
                      <?php }?>
               
-            
+               <div class="job-bottom-banner" style="text-align:center;">
+                  <script type='text/javascript'>
+                     OA_show(853);
+                  </script>
+               </div>
             </div>
             <div class="col-lg-4 col-custom-xxl-3">
                <div class="box-most-find">
@@ -1378,7 +1355,9 @@
                   <div class="banner-ad loadAds" id="855"></div>
                   <div class="banner-ad loadAds" id="856"></div>
                   <div class="banner-ad" style="text-align:center">
-               
+                     <script type='text/javascript'>
+                        OA_show(772);
+                     </script>
                   </div>
                </div>
             </div>

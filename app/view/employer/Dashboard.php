@@ -8,9 +8,9 @@
     <div class="main-wrap">
     <div class="left-wrap">
                         <ul class="list-menu">
-                            <li> <a href="<?= _WEB_ROOT.'/employer/dashboard' ?>" title="Dashboard">Dashboard</a> </li>
+                            <li class="active"> <a href="<?= _WEB_ROOT.'/employer/dashboard' ?>" title="Dashboard">Dashboard</a> </li>
                             <li> <a href="<?= _WEB_ROOT.'/employer/hrcentral/posting' ?>" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
-                            <li class="active"> <a href="<?= _WEB_ROOT.'/employer/hrcentral/manageresume' ?>" class="active" title="Quản Lý  Ứng Viên">Quản Lý  Ứng Viên</a> </li>
+                            <li class=""> <a href="<?= _WEB_ROOT.'/employer/hrcentral/manageresume' ?>" class="active" title="Quản Lý  Ứng Viên">Quản Lý  Ứng Viên</a> </li>
                            
                            
                             <li>
@@ -33,47 +33,9 @@
             <div class="container">
                 <div class="main-dasboard-top">
                     <div class="row">
-                        <div class="col-sm-6 col-xl-3">
-                            <div class="box-dasboard-top">
-                                <div class="head">
-                                    <h2 class="title-dashboard">Thông tin tài khoản</h2>
-                                </div>
-                                <div class="body">
-                                    <div class="image">
-                                        <a href="https://careerbuilder.vn/careerbuilder-rewards" title="CareerBuilder Rewards 2022" target="_blank">
-                                                                            <img src="https://images.careerbuilder.vn/content/Event/CBR2023/icon/CB_CBR_2023_standard.jpg" alt="CareerBuilder Rewards 2022"/>
-                                                                    </a>
-                                    </div>
+                    
 
-                                    <ul class="list-account-information">
-                                        <li>
-                                            <p class="number intNumPostNoUse">0</p><a class="title" href="https://careerbuilder.vn/vi/employers/hrcentral/reports/orders_available">Vị trí chưa sử dụng</a>
-                                        </li>
-                                        <li>
-                                            <p class="number orderNew">0</p><a class="title" href="https://careerbuilder.vn/vi/employers/hrcentral/reports/orders_available">Đơn hàng đang sử dụng</a>
-                                        </li>
-                                        <li>
-                                            <p class="number JskNew">0</p><a class="title" href="https://careerbuilder.vn/vi/employers/hrcentral/manageresume">Ứng viên ứng tuyển</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-xl-3">
-                            <div class="box-dasboard-top">
-                                <div class="head">
-                                    <h2 class="title-dashboard">Tìm Kiếm Hồ Sơ</h2>
-                                </div>
-                                <div class="body">
-                                    <ul class="list-search-management">
-                                        <li>
-                                            <p class="textNodata">Chưa có điểm xem hồ sơ</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-xl-3">
+                        <div class="col-sm-6 col-xl-12">
                             <div class="box-dasboard-top">
                                 <div class="head">
                                     <h2 class="title-dashboard">Quản Lý Đăng Tuyển</h2>
@@ -114,68 +76,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-xl-3">
-                            <div class="box-dasboard-top">
-                                <div class="head">
-                                    <h2 class="title-dashboard">Lịch Sử Hoạt Động</h2>
-                                </div>
-                                <div class="body">
-                                    <ul class="list-operation-management">
-                                        <li>
-                                            <p class="time">
-                                                <time>22/11/2022</time>
-                                            </p>
-                                            <p class="title">Change Contact Information At 14:46:21 22-11-2022</p>
-                                        </li>
-                                        <li>
-                                            <p class="time">
-                                                <time>22/11/2022</time>
-                                            </p>
-                                            <p class="title">Name Company: Công ty it minh nguyễn</p>
-                                        </li>
-                                        <li>
-                                            <p class="time">
-                                                <time>22/11/2022</time>
-                                            </p>
-                                            <p class="title">Name Company: Công ty it minh nguyễn</p>
-                                        </li>
-                                    </ul>
-                                    <div class="view-more"><a class="btn-view-more" href="https://careerbuilder.vn/vi/employers/hrcentral/accounts/report_task_log">Xem thêm</a></div>
-                                </div>
-                            </div>
-                        </div>
+                      
                     </div>
                 </div>
-                <div class="main-dasboard-bottom">
+                <!-- <div class="main-dasboard-bottom">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <div class="box-dasboard-bottom">
-                                <h3 class="title-info">Thông Tin Nhân Viên Tư Vấn</h3>
-                                <div class="wrap-info">
-                                    <div class="image">
-                                        <img src="https://images.careerbuilder.vn//admin_avatar/1624174428_no_callcentrer.png" alt="cs-avtar">
-                                    </div>
-                                    <ul class="list-info">
-                                        <li>
-                                            <p class="name">
-                                                Lan Nguyen (Athena)
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>Tel: <a href="tel:(84.28) 3822 6060">(84.28) 3822 6060 (Ext) 222 </a></p>
-                                        </li>
-                                        <li>
-                                            <div class="email-and-history">
-                                                <p class="email">Email: <a href="mailto:lan.nguyentt@mail.careerbuilder.vn">lan.nguyentt@mail.careerbuilder.vn</a></p>
-                                            </div>
-                                        </li>
-                                        <li>
-
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+             
                         <div class="col-lg-6">
                             <div class="box-dasboard-bottom topresume-list">
                                 <div class="topresume-list-head">
@@ -188,7 +94,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="main-dasboard-middle">
                     <div class="row">
                         <div class="col-lg-6">

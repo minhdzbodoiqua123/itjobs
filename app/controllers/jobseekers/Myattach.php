@@ -182,4 +182,6 @@ class Myattach extends Controller
       $data_resume=$this->model("ResumeModel")->get("resume","id=$resume_id")->fetch(PDO::FETCH_ASSOC);
       echo json_encode($data_resume);
     }
+
+    
 }

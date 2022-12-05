@@ -10,7 +10,6 @@ async function getData(url) {
   }
   
   async function displayInfo(data){
-    console.log(data);
     const nameUser=document.querySelector(".nameUser")
     nameUser.textContent=data.firstname
 }
@@ -19,3 +18,4 @@ async function getData(url) {
   }
  
   start();
+  

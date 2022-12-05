@@ -5,8 +5,8 @@
             <div class="main-wrap">
                 <div class="left-wrap">
                     <div class="button-hambuger"><span class="mdi mdi-menu"></span></div>
-                    <div class="logo"><a href="https://careerbuilder.vn/vi/employers" title="homepage-employers">
-                    <img src="./img/logo.png" alt="CareerBuilder.vn - Nghĩ Nhân Tài, Nghĩ CareerBuilder" title="CareerBuilder.vn - Nghĩ Nhân Tài, Nghĩ CareerBuilder" /></a></div>
+                    <div class="logo"><a href="<?= _WEB_ROOT.'/employer/postjobs' ?>" title="homepage-employers">
+                    <img src="<?= _WEB_ROOT.'/employer/postjobs' ?>" alt="CareerBuilder.vn - Nghĩ Nhân Tài, Nghĩ CareerBuilder" title="CareerBuilder.vn - Nghĩ Nhân Tài, Nghĩ CareerBuilder" /></a></div>
                     <div class="main-menu">
                         <ul class="menu">
                             <li class=""><a href="https://careerbuilder.vn/vi/employers" alt="Trang chủ" title="Trang chủ">Trang Chủ</a></li>
@@ -82,7 +82,7 @@
         </div>
         <div class="mobile-menu">
             <div class="mobile-wrap">
-                <div class="header-logo"><a href="https://careerbuilder.vn/vi/employers" title="homepage-employers"><img src="https://images.careerbuilder.vn/logo/logo_1644552010.png" alt="CareerBuilder.vn - Nghĩ Nhân Tài, Nghĩ CareerBuilder" title="CareerBuilder.vn - Nghĩ Nhân Tài, Nghĩ CareerBuilder" /></a></div>
+                <div class="header-logo"><a href="<?= _WEB_ROOT.'/employer/dashboard' ?>" title="homepage-employers"><img src="https://images.careerbuilder.vn/logo/logo_1644552010.png" alt="CareerBuilder.vn - Nghĩ Nhân Tài, Nghĩ CareerBuilder" title="CareerBuilder.vn - Nghĩ Nhân Tài, Nghĩ CareerBuilder" /></a></div>
                 <div class="header-bottom">
                     <div class="header-bottom-top">
                         <div class="profile">

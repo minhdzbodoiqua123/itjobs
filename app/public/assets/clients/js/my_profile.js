@@ -234,15 +234,11 @@ function getOffset(el) {
   return  rect.top + window.scrollY -100
 }
 
-
-
-
 async function start() {
   handleSetAticve()
   getProvinces()
   loadInfoUser()
   displayJobInfo();
-  
   
 }
 

@@ -1,3 +1,6 @@
+
+<!-- <script defer src="<?= _WEB_ROOT . "/app/public/assets/clients/js/home.js"?>"></script> -->
+
 <style>
     .form-group .chosen-select {
     -webkit-appearance: none;
@@ -162,49 +165,56 @@
    </div>
 </section>
    </div>
+   <?php if(isset($suitable_job)) {?>
+      <section class="cb-section cb-section-border-bottom" id="box-job-suggest" style=""><div class="container">
+<div class="cb-title cb-title-center">
+  <h2>Việc làm phù hợp với bạn</h2>
+</div>
+<div class="recommend-job-list">
+  <div class="row">
+  	<?php foreach ($suitable_job as $item):?>
+      <div class="col-lg-6  col-xl-3">
+  <div class="job-item">
+    <div class="figure">
+      <div class="image"><a target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-interflour-viet-nam.35A87B78.html" title="Công Ty TNHH Interflour Việt Nam"><img src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$item["logo"] ?>" alt="<?= $item["company_name"] ?>"></a></div>
+      <div class="figcaption">
+        <div class="title"><a href="<?= _WEB_ROOT.'/Alljob/detail/'.$item["id"] ?>" title="Sales Supervisor"><?= $item["job_title"] ?></a></div>
+        <div class="caption">
+		  <a class="company-name" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-interflour-viet-nam.35A87B78.html" title="Công Ty TNHH Interflour Việt Nam" target="_blank"<?= $item["company_name"] ?></a>
+          <p class="salary"><em class="fa fa-usd"></em>Lương:<?= format_price($item["min_salary"]).'-'.format_price($item["max_salary"])?></p>
+          <!-- <div class="location locationSuitable">
+		  	<em class="mdi mdi-map-marker"></em>
+            <p>Hồ Chí Minh |  Hà Nội</p>
+          </div> -->
+        </div>
+      </div>
+      <div class="top-icon"></div>
+    </div>
+  </div>
+</div>  	
+  <?php endforeach;?>
+	
+
+
+
+
+</div>
+</div>
+<div class="view-more"><a href="https://careerbuilder.vn/viec-lam/viec-lam-phu-hop-voi-ban-m1-vi.html" title="Xem thêm">Xem thêm<span class="mdi mdi-arrow-right"></span></a></div>
+</div></section>
+      <?php }?>
+  
    <section class="cb-section cb-section-border-bottom" id="box-job-suggest" style="display:none"></section>
    <script src='https://ads1.careerbuilder.vn/js/cb/cb_homepage.js'></script>
    <script src='https://static.careerbuilder.vn/2012/library_v2.0.4.js'></script>
-   <section class="cb-section cb-section-border-bottom">
-      <div class="container">
-         <div class="cb-title cb-title-center">
-            <h2>NHÀ TUYỂN DỤNG HÀNG ĐẦU</h2>
-         </div>
-         <div class="top-employers-list">
-            <script>
-               if (typeof cb_homepage_logo_vip_home_cb !== 'undefined') {
-                   BannerADLOGO15(cb_homepage_logo_vip_home_cb, "class='item'", "class='image'");
-               }
-            </script>
-         </div>
-         <div class="top-employers-banner">
-            <div class="row">
-               <div class="col-lg-6">
-                  <div class="item">
-                     <div class="image adsTopBanner" id="846">
-                        <!--<script>OA_show(846);</script>-->
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-6">
-                  <div class="item">
-                     <div class="image adsTopBanner" id="847">
-                        <!--<script>OA_show(847);</script>-->
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
+  
    <section class="cb-section">
       <div class="container">
          <div class="hot-jobs-list">
             <div class="tabs">
                <ul class="tabs-toggle">
                   <li class="active"><a class="pointer " alt="#tab-1">Việc Làm Nổi Bật</a></li>
-                  <li><a class="pointer" alt="#tab-2">Việc Làm VIP ($1000+)</a></li>
-                  <li><a class="pointer" alt="#tab-3">Việc Làm Từ Top Headhunter</a></li>
+                 
                </ul>
                <div class="tab-content" id="tab-1">
                   <div class="hot-jobs-slide" id="hot-jobs-slide">
@@ -242,9 +252,7 @@
                                  </div>
                                  <!-- <div class="location">
                                     <em class="mdi mdi-map-marker"></em>
-                                    <ul>
-                                       <li class=""></li>
-                                    </ul>
+                                    <p>test</p>
                                  </div> -->
                                  <!-- <ul class="welfare">
                                     <?php foreach ($job_welfare_detail as $welfare): 
@@ -267,13 +275,13 @@
                         </div>
                         <div class="swiper-bottom">
                            <div class="swiper-navigation">
-                              <div class="swiper-prev"><span class="mdi mdi-chevron-left"></span></div>
+                            
                               <div class="main-pagination">
                                  <div class="swiper-pagination"></div>
                               </div>
-                              <div class="swiper-next"><span class="mdi mdi-chevron-right"></span></div>
+                           
                            </div>
-                           <div class="view-more"><a href="<?= _WEB_ROOT.'/alljob' ?>">Xem việc làm mới cập nhật<span
+                           <div class="view-more"><a href="<?= _WEB_ROOT.'/alljob' ?>">Xem tất cả việc làm<span
                               class="mdi mdi-arrow-right"></span></a></div>
                         </div>
                      </div>

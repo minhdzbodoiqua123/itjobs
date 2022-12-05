@@ -82,10 +82,18 @@ Nộp Đơn Ứng Tuyển
                                             <div class="col-lg-4 col-sm-6 item-blue">
                                                 <div class="detail-box">
                                                     <div class="map">
-                                                        <strong><em class="mdi mdi-map-marker"></em>Địa điểm</strong>
+                                       <strong><em class="mdi mdi-map-marker"></em>Địa điểm</strong>
                                                         <p><p class="addressCompany">Hồ Chí Minh</p></p>
                                                        
                                                     </div>
+                                                 <?php if($job_post["wrk_from_home"]==1){?>
+                                                    <div class="type-of-work">
+					<strong><em class="mdi mdi-home-city"></em>Phương thức làm việc</strong>
+					<ul>
+												<li>Việc làm từ nhà</li>
+											</ul>
+				</div>
+                                                    <?php }?>
                                                 </div>
                                             </div>
                                                             
@@ -217,12 +225,15 @@ Nộp Đơn Ứng Tuyển
                                     <div class="job-detail-bottom">
                                         <div class="job-detail-bottom-wrapper">
                                             <div class="apply-now-content">
-                                                <div class="job-desc">
-                                                    <a class="toollips save-job chk_save_35BB02B3 " href="javascript:void(0);" data-id="35BB02B3" onclick="popuplogin()">
+                                                <div style="display:flex;gap:5px;"class="job-desc">
+                                                   <form method="post"action="">
+                                                    <input type="hidden" name="job_id" value="<?= $job_id ?>">
+                      <a class="toollips save-job <?= !empty($job_saved) ? 'saved' : ''?> " href="javascript:void(0);" >
     <i class="mdi mdi-heart-outline"></i>
-        <span class="text">Lưu việc làm</span>
+  <button type="submit" name="savedjob" style="background-color: transparent;" class="text">Lưu việc làm</button>
 	</a>
-                                                    <a href="javascript:void(0);" onclick="showboxJobalert()"><i class="mdi mdi-email-outline"></i><span class="text">Gửi tôi việc làm tương tự</span></a>
+                                                   </form>
+                                                  
                                                     <a class="report-job toollips" href="javascript:void(0)"><i class="fa fa-flag-o"></i><span>Báo xấu</span><div class="toolip">
   <p> Báo xấu </p>
 </div>
@@ -406,7 +417,7 @@ Nộp Đơn Ứng Tuyển
                                                     <div class="box-contact">
                                                         <ul>
                                                             <li>
-                                                                <a class="toollips save-job chk_save_35BB02B3 " href="javascript:void(0);" data-id="35BB02B3" onclick="popuplogin()">
+                                                                <a class="toollips save-job chk_save_35BB02B3 " href="javascript:void(0);" " onclick="popuplogin()">
     <i class="mdi mdi-heart-outline"></i>
     	<div class="toolip">
 		<p>Lưu việc làm</p>

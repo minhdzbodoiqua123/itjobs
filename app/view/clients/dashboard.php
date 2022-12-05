@@ -1,7 +1,7 @@
 
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/clients/css/dashboard.css" ?>">
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css" ?>">
-
+<script defer   src="<?= _WEB_ROOT . "/app/public/assets/clients/js/dashboard.js" ?>"></script>
 <style>
    html{
    scroll-behavior: smooth;
@@ -253,8 +253,8 @@
                             <!-- <li> <a href=""> <em class="material-icons">portrait</em><span>Chỉnh mẫu hồ sơ</span></a></li> -->
                             <li><a class="collapse " href="javascript:;"><em class="material-icons">edit</em><span>Việc làm của tôi</span></a>
                                 <ul class="list-unstyled collapse">
-                                    <li><a href="">Việc làm đã lưu</a></li>
-                                    <li><a href="">Việc làm đã nộp</a></li>
+                                    <li><a href="<?= _WEB_ROOT.'/jobseekers/Mykiemviec/jobsaved' ?>">Việc làm đã lưu</a></li>
+                                    <li><a href="<?= _WEB_ROOT.'/jobseekers/Mykiemviec/jobapplied' ?>">Việc làm đã nộp</a></li>
                                 </ul>
                             </li>
                             <li> <a href=""><em class="material-icons">notifications</em><span>Thông Báo Việc Làm</span></a></li>
@@ -362,8 +362,8 @@
                                                     </ul>
                                                 </div>
                                             </div>
-          <?php if($seeker_resume_title["status"]==1 && $informationUser["status"]==1 && $seeker_job_information["status"]==1 && $seeker_experience_detail[0]["status"]==1&&$seeker_education_detail[0]["status"]==1){?>
-                                            <div class="col-lg-12">
+        
+                                            <!-- <div class="col-lg-12">
                                                 <div class="progress-bar-status incomplete">
                                                     <div class="profile-strength">
                                                         <p>Mức độ hoàn thành: <span style="color: #00b2a3;">Hoàn thành</span></p>
@@ -388,9 +388,9 @@
 
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
 
-                                            <?php } else{?>
+                                         
                                                 <div class="col-lg-12">
                                                 <div class="progress-bar-status incomplete">
                                                     <div class="profile-strength">
@@ -420,7 +420,6 @@
                                                 </div>
                                             </div>
 
-                                                <?php }?>
                                             <div class="col-lg-12 cvcht-slide">
                                                 <div  class="swiper-container">
                                                     <div  class="swiper-wrapper">
@@ -440,7 +439,7 @@
                                                         </div>
                                                             <?php }?>
                                                         <div class="swiper-slide glide__slide">
-                                                            <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#widget-14">
+                                                            <a href="http://localhost//itjobs/jobseekers/my_profile">
                                                                 <div class="item-cvcht">
                                                                     <div class="col-sm-3 icon">
                                                                         <img src="https://static.careerbuilder.vn/themes/careerbuilder/img/dash-board/i3.png" alt="">
@@ -454,7 +453,7 @@
                           <?php if($informationUser["status"]==0) {?>
                                                         
                                                         <div class="swiper-slide glide__slide">
-                                                            <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#widget-14">
+                                                            <a href="http://localhost//itjobs/jobseekers/my_profile">
                                                                 <div class="item-cvcht">
                                                                     <div class="col-sm-3 icon">
                                                                         <img src="https://static.careerbuilder.vn/themes/careerbuilder/img/dash-board/i2.png" alt="">
@@ -470,7 +469,7 @@
 
                              <?php  if(!isset($seeker_job_information["status"])){?>              
                                 <div class="swiper-slide glide__slide">
-                                                            <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#widget-18">
+                                                            <a href="http://localhost//itjobs/jobseekers/my_profile">
                                                                 <div class="item-cvcht">
                                                                     <div class="col-sm-3 icon">
                                                                         <img src="	https://static.careerbuilder.vn/themes/careerbuilder/img/dash-board/i5.png" alt="">
@@ -488,7 +487,7 @@
              
 
                     <div class="swiper-slide glide__slide">
-                                                            <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#widget-15">
+                                                            <a href="http://localhost//itjobs/jobseekers/my_profile">
                                                                 <div class="item-cvcht">
                                                                     <div class="col-sm-3 icon">
                                                                         <img src="https://static.careerbuilder.vn/themes/careerbuilder/img/dash-board/i4.png" alt="">
@@ -505,7 +504,7 @@
                                                        
         <?php if(!isset($seeker_education_detail[0]["status"])) {?>
                                                         <div class="swiper-slide">
-                                                            <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#widget-16">
+                                                            <a href="http://localhost//itjobs/jobseekers/my_profile">
                                                                 <div class="item-cvcht">
                                                                     <div class="col-sm-3 icon">
                                                                         <img src="https://static.careerbuilder.vn/themes/careerbuilder/img/dash-board/i7.png" alt="">
@@ -524,7 +523,7 @@
                                                    
 
                                                         <div class="swiper-slide">
-                                                            <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#widget-20">
+                                                            <a href="http://localhost//itjobs/jobseekers/my_profile">
                                                                 <div class="item-cvcht">
                                                                     <div class="col-sm-3 icon">
                                                                         <img src="	https://static.careerbuilder.vn/themes/careerbuilder/img/dash-board/i8.png" alt="">
@@ -730,7 +729,24 @@
                           </div>
                         </div>
                         <div class="col-lg-7">
-                     
+                        <div class="top-action">
+                            <div class="switch-box jobalert-cv-widget">
+                              <label for="cv_jobalert_17872871">
+                   
+                             
+                              </label>
+                            </div>
+                            <div class="action">
+                              <ul>
+                                <li class="edit">
+                                                                                                                                                                                                            <a href="https://careerbuilder.vn/vi/jobseekers/myresume/myattach?id=17872871">Chỉnh sửa</a>
+                                </li>
+                                <li class="delete">
+                                  <a href="javascript:void(0);" onclick="deleteResume('17872871','bank end', '','2'); return false;">Xóa</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                       </div>
 
@@ -780,7 +796,7 @@
                             <em class="mdi mdi-eye"></em>Xem
                           </a></li>
                    
-              <!-- <li><a href="javascript:void(0);" onclick="downloadCvAttach(   <?= $item['id'] ?>);" title="Tải hồ sơ" class="down"><em class="mdi mdi-download"></em>Tải hồ sơ</a></li> -->
+              <li><a href="javascript:void(0);" onclick="downloadCvAttach(<?= $item['id'] ?>);" title="Tải hồ sơ" class="down"><em class="mdi mdi-download"></em>Tải hồ sơ</a></li>
                         </ul>
                       </div>
                     </div>
@@ -1493,31 +1509,7 @@
                                                       </li>
                                                    </ul>
                                                 </div>
-                                                <div class="col-sm-12 col border_orange"style=" padding:5px 0;">
-                                                   <h3>Kỹ năng</h3>
-                                                   <ul class="skill flex">
-                                                      <li class="">
-                                                         <label>c#</label>
-                                                         <div class="point"><span></span><span></span><span></span></div>
-                                                      </li>
-                                                      <li class="">
-                                                         <label>php</label>
-                                                         <div class="point"><span></span><span></span><span></span></div>
-                                                      </li>
-                                                      <li class="">
-                                                         <label>tốt</label>
-                                                         <div class="point"><span></span><span></span><span></span></div>
-                                                      </li>
-                                                      <li class="">
-                                                         <label>js</label>
-                                                         <div class="point"><span></span><span></span><span></span></div>
-                                                      </li>
-                                                      <li class="">
-                                                         <label>html</label>
-                                                         <div class="point"><span></span><span></span><span></span></div>
-                                                      </li>
-                                                   </ul>
-                                                </div>
+                                            
                                                 <div class="col-md-12 col border_orange" style=" padding:8px 0; ">
                                                    <h3><span>Công Việc Mong Muốn</span></h3>
                                                    <div class="expected-job">

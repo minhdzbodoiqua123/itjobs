@@ -39,6 +39,7 @@ class Dashboard extends Controller
 
 
         $this->data["sub_content"]["year_of_experience"] = $year_of_experience;
+        $this->data["sub_content"]["user_id"] = $id;
 
 
         $this->data["content"]="clients/dashboard";

@@ -45,6 +45,8 @@ class Postjobs extends Controller
         $JOB_TOAGE=$_POST["JOB_TOAGE"];
 
         $gender=$_POST["JOB_GENDER"];
+        $wrk_from_home=$_POST["JOB_WFH"] ?? "0";
+
         
         
         $job_profession_id=$_POST["INDUSTRY_ID"];
@@ -78,6 +80,7 @@ class Postjobs extends Controller
             "job_desc" => "'$job_desc'",
             "job_request" => "'$job_req'",
             "posted_by_id"=>"'$user_account_id'",
+            "wrk_from_home"=>"'$wrk_from_home'",
       
             "job_degree_id "=>"'$job_degree_id'",
             "job_position_id "=>"'$job_position_id'",

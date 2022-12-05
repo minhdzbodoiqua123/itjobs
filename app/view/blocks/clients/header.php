@@ -16,54 +16,35 @@
                             <a title="Tìm Việc Làm">
                                 Tìm Việc Làm
                             </a>
-                            <div class="dropdown-menu">
-                                <ul>
-                                    <li>
-                                        <a href="<?= _WEB_ROOT . '/Alljob' ?>"
+                            <style>
+                              
+                            </style>
+                            <a class="px-2"href="<?= _WEB_ROOT . '/Alljob' ?>"
                                             title="Việc làm mới nhất">
                                             Việc làm mới nhất
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://careerbuilder.vn/tim-viec-lam.html"
+                               </a>
+                           
+                                       
+
+                           
+                        </li>
+                        <li>      <a class="px-2"href="<?= _WEB_ROOT.'/tim_viec_lam' ?>"
                                             title="Ngành nghề / Địa điểm">
                                             Ngành nghề / Địa điểm
                                         </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://careerbuilder.vn/viec-lam/ban-hang-kinh-doanh-c31-vi.html"
-                                            title="Bán hàng / Kinh doanh">
-                                            Bán hàng / Kinh doanh
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://careerbuilder.vn/viec-lam/hanh-chinh-thu-ky-c3-vi.html"
-                                            title="Hành chính / Thư ký">
-                                            Hành chính / Thư ký
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://careerbuilder.vn/viec-lam/ke-toan-kiem-toan-c2-vi.html"
-                                            title="Kế toán / Kiểm toán">
-                                            Kế toán / Kiểm toán
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://careerbuilder.vn/viec-lam/nhan-su-c22-vi.html" title="Nhân sự">
-                                            Nhân sự
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://careerbuilder.vn/viec-lam/tiep-thi-marketing-c4-vi.html"
+                        </li>
+
+                        <li>   <a class="px-2" href="http://localhost//itjobs/Alljob?keyword=&industry%5B%5D=1"
                                             title="Tiếp thị / Marketing">
                                             Tiếp thị / Marketing
                                         </a>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
 
-                    
+                        <li>  <a class="px-2" href="http://localhost//itjobs/Alljob?keyword=&industry%5B%5D=2"
+                                            title="CNTT - Phần mềm">
+                                            CNTT - Phần mềm
+                                        </a>
+                        </li>
                         <li> <a href="<?= _WEB_ROOT.'/tinh_luong_gross_net' ?>" title="Tính Lương">Tính Lương</a>
                         </li>
                    
@@ -120,13 +101,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/jobsaved" rel="nofollow">
+                                <a href="<?= _WEB_ROOT.'/jobseekers/mykiemviec/jobsaved' ?>" rel="nofollow">
                                     Việc làm đã lưu
                                 </a>
                             </li>
                             <li>
-                                <a href="https://careerbuilder.vn/vi/jobseekers/jobalert" rel="nofollow">
-                                    Thông Báo Việc Làm
+                                <a href="<?= _WEB_ROOT.'/jobseekers/mykiemviec/jobapplied' ?>" rel="nofollow">
+                                Việc làm đã ứng tuyển
                                 </a>
                             </li>
                             <li>
@@ -134,11 +115,7 @@
                                     Nhà tuyển dụng của tôi
                                 </a>
                             </li>
-                            <li>
-                                <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/notify" rel="nofollow">
-                                    Xem tất cả thông báo
-                                </a>
-                            </li>
+                           
                             <li>
                                 <a href="https://careerbuilder.vn/vi/jobseekers/member/emailmanagement" rel="nofollow">
                                     Cài đặt

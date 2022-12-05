@@ -1,8 +1,4 @@
-   <?php if(!empty($job_post_activity)){?>
-      <?php print_r($job_post_activity);?>
-      <?php } else{?>
-         <?php echo "b";?>
-         <?php }?>
+<link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/clients/css/bootstrap.css" ?>">
    <body class="">
       <main>
          <style>
@@ -2668,7 +2664,7 @@
                                        <?php  endforeach;?>
                                     </div>
 
-                                  <p>Bạn muốn <a href="<?= _WEB_ROOT.'/jobseekers/jobs/applythanks' ?>">Tạo hồ sơ mới! </a></p>
+                                  <p>Bạn muốn <a href="<?= _WEB_ROOT.'/jobseekers/myattach' ?>">Tạo hồ sơ mới! </a></p>
                                  </div>
                              
                      
@@ -2901,6 +2897,45 @@
          </div>
          <div class="back-drop"></div>
       </main>
+      <?php 
+      $msg=$_GET["msg"];
+      if(isset($msg)){ ?>
+           <div class="modal fade"  id="errorCv" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+      <div class="modal-title">
+         <p>Thông báo</p>
+      </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <div class="remove-modal fancybox-content" style="">
+   
+      <div class="modal-body">
+         <div class="icon"><img src="https://static.careerbuilder.vn/themes/careerbuilder/img/icon-error.png" alt=""></div>
+         <p>Vui lòng chọn CV</p>
+      </div>
+      <button type="button" data-fancybox-close="" class="fancybox-button fancybox-close-small" title="Close">
+         <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
+            <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
+         </svg>
+      </button>
+</div>
+      </div>
+   
+    </div>
+  </div>
+</div>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script  >
+       const errorCv=document.getElementById("errorCv");
+       console.log(errorCv)
+    new bootstrap.Modal(errorCv).show();
+</script>
+    <?php  } ?>
+     
+   
       <style>
          /*common.css*/
          .reset-bullet {

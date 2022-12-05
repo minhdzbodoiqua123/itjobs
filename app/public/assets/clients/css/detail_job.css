@@ -9285,13 +9285,18 @@ button.swiper-pagination-bullet {
 .job-detail-bottom .apply-now-content {
     padding: 15px
 }
+ form > a.saved,form a.saved button {
+    color: #e8c80d;
+}
 
-.job-detail-bottom .job-desc,
+/* .job-detail-bottom .job-desc,
 .job-detail-bottom .job-desc>a {
     display: flex;
     align-items: center;
+} */
+.job-desc button:hover{
+    text-decoration: underline;
 }
-
 .job-detail-bottom .job-desc>a {
     color: inherit;
     font-size: 14.5px;

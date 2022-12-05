@@ -45,8 +45,8 @@ class Jobs extends Controller
         if(count($_POST)>0){
             $user_account_id =$_SESSION["user"]["id"];
             $job_id  =$_POST["job_id"];
-            $resume_id  =$_POST["resume_id"];
-
+            $resume_id  =$_POST["resume_id"] ?? "";
+            
 
             $data = [
                 "user_account_id"=>"'$user_account_id'",
@@ -54,8 +54,12 @@ class Jobs extends Controller
                 "resume_id"=>"'$resume_id'",
 
             ];
-            $conn=$this->model("Job_postModel")->insert("job_post_activity",$data);
-            $this->redirect("jobseekers/jobs/applythanks/{$job_id}");
+            if(!empty($resume_id)){
+                $conn=$this->model("Job_postModel")->insert("job_post_activity",$data);
+                $this->redirect("jobseekers/jobs/applythanks/{$job_id}");
+            }
+            $this->redirect("jobseekers/jobs/apply/{$job_id}?msg=notexists");
+
          }
         }
         public function applythanks($id=""){

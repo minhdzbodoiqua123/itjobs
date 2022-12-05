@@ -17,7 +17,6 @@ class AccountUserModel extends Database
     }
     public function checkEmployerLogin($email, $password){
         $sql="SELECT * FROM $this->table   WHERE email='$email' and password='$password'  and user_type_id ='2'";
-        echo $sql;
         $row_count = $this->query($sql);
         return $row_count;
     }

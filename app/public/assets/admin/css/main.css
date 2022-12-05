@@ -443,7 +443,7 @@ legend {
 summary {
   display: list-item;
 }
-.badge:empty,
+/* .badge:empty,
 .collapse:not(.show),
 .navbar-expand .navbar-toggler,
 .popover-header:empty,
@@ -453,7 +453,7 @@ div.dataTables_scrollBody table thead .sorting_asc:after,
 div.dataTables_scrollBody table thead .sorting_desc:after,
 template {
   display: none;
-}
+} */
 .d-none,
 [hidden] {
   display: none !important;

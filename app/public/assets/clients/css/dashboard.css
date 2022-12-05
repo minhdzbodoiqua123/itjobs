@@ -7676,7 +7676,7 @@ footer {
     padding: 0 15px;
 }
 
-.list-action li:before {
+/* .list-action li:before {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     position: absolute;
@@ -7687,7 +7687,7 @@ footer {
     transform: translateY(-50%);
     background: #5d677a;
     content: "";
-}
+} */
 
 .list-action li:first-child::before {
     display: none;
@@ -8233,6 +8233,11 @@ header.header-dashboard .mobile-menu .menu .menu-logged ul li.dropdown-mobile .d
 
 .side-navbar .list-unstyled li .list-unstyled.collapse {
     display: none;
+    padding: 0;
+    background: #2d3953;
+}
+.side-navbar .list-unstyled li .list-unstyled.collapse.active{
+    display: block;
     padding: 0;
     background: #2d3953;
 }

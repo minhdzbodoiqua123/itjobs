@@ -13390,6 +13390,12 @@ header.header-dashboard .mobile-menu .menu .menu-logged ul li.dropdown-mobile .d
     background: #2d3953;
 }
 
+.side-navbar .list-unstyled li .list-unstyled.collapse.active {
+    display: block;
+    padding: 0;
+    background: #2d3953;
+}
+
 .side-navbar .list-unstyled li .list-unstyled.collapse li {
     padding-left: 37px;
     border-bottom: none;
@@ -17178,9 +17184,7 @@ header.header-dashboard .mobile-menu .menu .menu-logged ul li.dropdown-mobile .d
 .fade:not(.show) {
     opacity: 0
 }
-.collapse:not(.show) {
-    display: none
-}
+
 .collapsing {
     height: 0;
     overflow: hidden;

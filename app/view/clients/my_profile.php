@@ -203,10 +203,10 @@
                   <li> <a href="" class="active"> <em class="material-icons">person</em><span>Hồ sơ Careerbuilder</span></a></li>
                   <li> <a href=""> <em class="material-icons">portrait</em><span>Chỉnh Mẫu Hồ Sơ</span></a></li>
                   <li>
-                     <a class="collapse " href="javascript:;"><em class="material-icons">edit</em><span>Việc làm của tôi</span></a>
+                     <a class="collapse" ><em class="material-icons">edit</em><span>Việc làm của tôi</span></a>
                      <ul class="list-unstyled collapse">
-                        <li><a href="">Việc làm đã lưu</a></li>
-                        <li><a href="">Việc làm đã nộp</a></li>
+                     <li><a href="<?= _WEB_ROOT.'/jobseekers/Mykiemviec/jobsaved' ?>">Việc làm đã lưu</a></li>
+                                    <li><a href="<?= _WEB_ROOT.'/jobseekers/Mykiemviec/jobapplied' ?>">Việc làm đã nộp</a></li>
                      </ul>
                   </li>
                   <li> <a href=""><em class="material-icons">notifications</em><span>Thông Báo Việc Làm</span></a></li>
@@ -653,7 +653,7 @@
                            </div>
                         </div>
                      </div>
-                     <div class="widget widget-14" id="widget-14">
+                     <!-- <div class="widget widget-14" id="widget-14">
                         <div class="widget-head">
                            <div class="cb-title-h3">
                               <div class="figure">
@@ -686,7 +686,7 @@
                            <div class="content">
                            </div>
                         </div>
-                     </div>
+                     </div> -->
                      <div class="widget widget-18" id="widget-18">
                         <div class="widget-head">
                            <div class="cb-title-h3">
@@ -1493,43 +1493,43 @@
                            <?php }?>
                         </div>
                      </div>
-                     <div class="widget widget-20" id="widget-20">
-                        <div class="widget-head">
-                           <div class="cb-title-h3">
-                              <div class="figure">
-                                 <div class="image"><img src="./img/dash-board/i8.png" alt=""></div>
-                                 <div class="figcaption">
-                                    <h3>Người tham khảo</h3>
-                                    <div class="status default">
-                                       <p>Không bắt buộc</p>
+                        <!-- <div class="widget widget-20" id="widget-20">
+                           <div class="widget-head">
+                              <div class="cb-title-h3">
+                                 <div class="figure">
+                                    <div class="image"><img src="./img/dash-board/i8.png" alt=""></div>
+                                    <div class="figcaption">
+                                       <h3>Người tham khảo</h3>
+                                       <div class="status default">
+                                          <p>Không bắt buộc</p>
+                                       </div>
                                     </div>
                                  </div>
-                              </div>
-                              <div class="right-action">
-                                 <div class="tips p1">
-                                    <div class="icon">
-                                       <em class="mdi mdi-lightbulb"></em>
+                                 <div class="right-action">
+                                    <div class="tips p1">
+                                       <div class="icon">
+                                          <em class="mdi mdi-lightbulb"></em>
+                                       </div>
+                                       <p>Tips</p>
                                     </div>
-                                    <p>Tips</p>
+                                    <div class="link-add"><a > <em class="material-icons">add</em><span>Thêm mới</span></a></div>
                                  </div>
-                                 <div class="link-add"><a > <em class="material-icons">add</em><span>Thêm mới</span></a></div>
                               </div>
                            </div>
-                        </div>
-                        <div class="widget-body">
-                           <div class="no-content">
-                              <p>Vui lòng thêm thông tin người tham khảo</p>
-                              <a ><em class="mdi mdi-plus-circle"></em><span>Thêm mới</span></a>
+                           <div class="widget-body">
+                              <div class="no-content">
+                                 <p>Vui lòng thêm thông tin người tham khảo</p>
+                                 <a ><em class="mdi mdi-plus-circle"></em><span>Thêm mới</span></a>
+                              </div>
                            </div>
-                        </div>
-                     </div>
+                        </div> -->
                   </div>
                   <div class="col-lg-4 col-xl-3 main-menu">
                      <div style="top:100px" class="menu-shortchut active">
                         <div class="list-button">
                            <ul>
                               <li><a class="share-profile" ><em class="mdi mdi-share"></em><span>Chia sẻ hồ sơ</span> <span class="new-label"> New </span> </a></li>
-                              <li> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/changetemplate"> <em class="material-icons">edit</em><span>Chỉnh Mẫu Hồ Sơ</span></a></li>
+                              <!-- <li> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/changetemplate"> <em class="material-icons">edit</em><span>Chỉnh Mẫu Hồ Sơ</span></a></li> -->
                               <li>
                   <a  data-bs-toggle="modal"  data-bs-target="#subCV"  id="btn_view_cbprofile">
                                  <em class="material-icons">remove_red_eye</em>
@@ -1537,7 +1537,7 @@
                               </li>
                               <li id="btn_download" > <a href="javascript:generatePDF()"> <em class="material-icons">get_app</em><span>Tải hồ sơ</span></a>
                               </li>
-                              <li><a class="hidden-info" ><em class="fa fa-eye-slash"></em><span>Ẩn thông tin</span></a></li>
+                              <!-- <li><a class="hidden-info" ><em class="fa fa-eye-slash"></em><span>Ẩn thông tin</span></a></li> -->
                            </ul>
                         </div>
                         <div class="head-menu">

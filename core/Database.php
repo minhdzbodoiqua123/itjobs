@@ -63,7 +63,6 @@ class Database
                 $sql = "UPDATE $table SET $updateStr ";
             }
        
-            // echo $sql;
             $status = $this->query($sql);
          
             if ($status) {
@@ -80,7 +79,7 @@ class Database
         else{
             $sql="DELETE FROM '.$table.'";
         }
-     
+        
        
         $status = $this->query($sql);
      
@@ -104,7 +103,6 @@ class Database
     
     function query($sql)
     {
-
         $statement = $this->conn->prepare($sql);
         $statement->execute();
         return $statement;
