@@ -199,9 +199,9 @@
                </div>
                <ul class="list-unstyled">
                   <li> <a href="<?= _WEB_ROOT . '/jobseekers/dashboard' ?>" title="Quản lý hồ sơ"> <em class="material-icons">color_lens</em><span>Quản lý hồ sơ</span></a></li>
-                  <li style="display:none"> <a href="<?= _WEB_ROOT . '/jobseekers/my_profile' ?>"> <em class="material-icons">person</em><span>Hồ sơ Careerbuilder</span></a></li>
-                  <li> <a href="" class="active"> <em class="material-icons">person</em><span>Hồ sơ Careerbuilder</span></a></li>
-                  <li> <a href=""> <em class="material-icons">portrait</em><span>Chỉnh Mẫu Hồ Sơ</span></a></li>
+                  <li style="display:none"> <a href="<?= _WEB_ROOT . '/jobseekers/my_profile' ?>"> <em class="material-icons">person</em><span>Hồ sơ của tôi</span></a></li>
+                  <li> <a href="" class="active"> <em class="material-icons">person</em><span>Hồ sơ của tôi</span></a></li>
+                
                   <li>
                      <a class="collapse" ><em class="material-icons">edit</em><span>Việc làm của tôi</span></a>
                      <ul class="list-unstyled collapse">
@@ -209,7 +209,7 @@
                                     <li><a href="<?= _WEB_ROOT.'/jobseekers/Mykiemviec/jobapplied' ?>">Việc làm đã nộp</a></li>
                      </ul>
                   </li>
-                  <li> <a href=""><em class="material-icons">notifications</em><span>Thông Báo Việc Làm</span></a></li>
+               
                   <li>
                      <a class="collapse " href="javascript:;"><em class="material-icons">remove_red_eye</em><span>Nhà tuyển dụng của tôi</span></a>
                      <ul class="list-unstyled collapse">
@@ -219,7 +219,7 @@
                         <li> <a href="">Phản hồi từ nhà tuyển dụng</a></li>
                      </ul>
                   </li>
-                  <li> <a href="" title="Xem tất cả thông báo"> <em class="material-icons">textsms</em><span>Xem tất cả thông báo</span></a></li>
+               
                   <li>
                      <a class="collapse " href="javascript:;"><em class="material-icons">settings</em><span>Cài đặt</span></a>
                      <ul class="list-unstyled collapse">
@@ -227,7 +227,7 @@
                         <li> <a href="https://careerbuilder.vn/vi/jobseekers/member/emailmanagement" title="Cài Đặt Thông Báo">Cài Đặt Thông Báo</a></li>
                      </ul>
                   </li>
-                  <li> <a href="https://careerbuilder.vn/vi/jobseekers/logout" title="Thoát"> <em class="material-icons">power_settings_new</em><span>Thoát</span></a></li>
+                  <li> <a href="http://localhost//itjobs/account/logout" title="Thoát"> <em class="material-icons">power_settings_new</em><span>Thoát</span></a></li>
                </ul>
             </div>
             <div class="toggle-nav"><em class="material-icons">menu_open</em></div>
@@ -1556,7 +1556,7 @@
                            <!-- <li><a data-href="language-section">Ngôn ngữ</a></li> -->
                            <!-- <li><a data-href="widget-17">Kỹ năng chuyên môn</a></li> -->
                      
-                           <li><a data-href="widget-20">Người tham khảo</a></li>
+                        
                         </ul>
                      </div>
                   </div>

@@ -2,7 +2,9 @@
 class Dashboard extends Controller
 {
     public function index(){
- 
+        if(!Auth_user::logged_in()){
+            $this->redirect("account/login");
+        }
         $id = isset($_SESSION["user"]["id"])? $_SESSION["user"]["id"]:"";
 
 
