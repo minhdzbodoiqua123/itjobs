@@ -2,6 +2,7 @@
 
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/clients/css/dashboard.css" ?>">
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css" ?>">
+
 <script defer   src="<?= _WEB_ROOT . "/app/public/assets/clients/js/dashboard.js" ?>"></script>
 <style>
    html{
@@ -231,7 +232,41 @@
     /* background: green; */
     content: "";
 }
-   
+#popup_message {
+    background: url(https://static.careerbuilder.vn/themes/careerbuilder/img/icon-confirm.png) top center no-repeat;
+    padding-top: 120px;
+}
+#popup_ok {
+    background: -webkit-gradient(linear, left top, right top, from(#2f4ba0), color-stop(#2f4ba0), to(#2f4ba0));
+    background: -o-linear-gradient(left, #2f4ba0, #2f4ba0, #2f4ba0);
+    background: linear-gradient(to right, #2f4ba0, #1e9bd3, #2f4ba0);
+    background-size: 200% 100%;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+#popup_cancel {
+    padding: 5px 10px;
+    border-radius: 5px;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    border: 0;
+    font-size: 14.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border: none;
+}
+#popup_panel {
+    text-align: center;
+    margin: 1em 0em 0em 1em;
+}
+#popup_panel {
+    margin-top: 30px;
+}   
 </style>
 
 
@@ -526,7 +561,7 @@
 
                                                    
 
-                                                        <div class="swiper-slide">
+                                                        <!-- <div class="swiper-slide">
                                                             <a href="http://localhost//itjobs/jobseekers/my_profile">
                                                                 <div class="item-cvcht">
                                                                     <div class="col-sm-3 icon">
@@ -537,7 +572,7 @@
                                                                     </div>
                                                                 </div>
                                                             </a>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                 </div>
                               
@@ -602,7 +637,7 @@
                                     <p>Bạn có thể cho phép nhà tuyển dụng tìm kiếm hồ sơ CareerBuilder</p>
                                 </div>
 
-                                <div class="widget-b jobalert-cv-widget">
+                                <!-- <div class="widget-b jobalert-cv-widget">
                                     <h4>Nhận thông báo việc làm
                                         <div class="tips p2" data-type="2">
                                             <div class="icon">
@@ -616,7 +651,7 @@
                                         <a href="javascript:void(0);" data-type="1" class="actives ">Nhận</a>
                                     </div>
                                     <p>Nhận thông báo việc làm phù hợp với hồ sơ này mỗi 2 tuần</p>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
@@ -780,10 +815,10 @@
                   <div class="col-lg-7">
                     <div class="attached-status-area">
                       <p>Cho phép tìm</p>
-                      <div class="switch-status group_searchable" id="cv_searchable_17708653" data-id="17708653" data-complete="1">
-                        <a href="javascript:void(0);" data-type="2" class="lock active"><em class="mdi mdi-lock"></em>Khóa</a>
-                        <a href="javascript:void(0);" data-type="1" class="public "><em class="mdi mdi-web"></em>Công khai</a>
-                        <a href="javascript:void(0);" data-type="3" class="flash "><em class="mdi mdi-flash"></em>Khẩn cấp</a>
+<div class="switch-status group_searchable" id="cv_searchable_<?=$item['id'] ?>" data-id="<?=$item['id'] ?>" >
+                        <a href="javascript:void(0);" data-type="1" class="lock <?= $item["resume_active"]==1 ? "active":"" ?>"><em class="mdi mdi-lock"></em>Khóa</a>
+                        <a href="javascript:void(0);" data-type="2" class="public <?= $item["resume_active"]==2 ? "active":"" ?>"><em class="mdi mdi-web"></em>Công khai</a>
+                        <a href="javascript:void(0);" data-type="3" class="flash <?= $item["resume_active"]==3 ? "active":"" ?>"><em class="mdi mdi-flash"></em>Khẩn cấp</a>
                       </div>
                       <p class="text-notes text-notes-2 d-block">
                         Bạn đang <span>vô hiệu hóa</span> hồ sơ. Nhà tuyển dụng sẽ không thấy được hồ sơ này của bạn.													

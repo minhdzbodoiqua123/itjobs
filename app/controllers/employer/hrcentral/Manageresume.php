@@ -92,5 +92,20 @@ $data_degree= $this->model("JobPositionModel")->get("degree")->fetchAll(PDO::FET
         $content=$_POST["f_content"];
         sendMail($email,$title,$content);
       }
-   
+
+      public function SwitchResumeStatus(){
+        $id=$_POST["resume_id"];
+        $resume_active=$_POST["resume_active"];
+        $seeker_id=$_SESSION["user"]["id"];
+        $data=[
+            "resume_active "=>"'$resume_active'",
+        ];
+        if($resume_active!="1"){
+        $this->model("ResumeModel")->update("resume",[
+            "resume_active "=>"'1'"
+        ],
+        "user_account_id =$seeker_id");
+        }
+        $this->model("ResumeModel")->update("resume",$data," id=$id");
+      }
 }

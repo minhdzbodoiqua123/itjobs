@@ -47,4 +47,8 @@ class Dashboard extends Controller
         $this->data["content"]="clients/dashboard";
         $this->render('layouts/client_layout',$this->data);
     }
+    public function DataResume(){
+        $data=$this->model("ResumeModel")->get("resume")->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($data);
+    }    
 }

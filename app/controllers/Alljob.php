@@ -22,10 +22,13 @@ class Alljob extends Controller
         
               
         $data_job_position= $this->model("JobPositionModel")->get("job_position")->fetchAll(PDO::FETCH_ASSOC);
+        $searchKeyword=$_GET["keyword"] ?? "";
         $searchIndustry=$_GET["industry"] ?? "";
         $searchLocation=$_GET["location"] ?? "";
-        $searchKeyword=$_GET["keyword"] ?? "";
+        $seeker_id=$_SESSION["user"]["id"] ?? "";
 
+        
+     
 
          $this->data["sub_content"]["searchIndustry"]=$searchIndustry;
          $this->data["sub_content"]["searchLocation"]=$searchLocation;
@@ -41,6 +44,7 @@ class Alljob extends Controller
         $this->data["sub_content"]["data_profession"] = $data_profession;
         $this->data["sub_content"]["totalPages"] = $totalPages;
         $this->data["sub_content"]["current_page"] = $current_page;
+        $this->data["sub_content"]["seeker_id"] = $seeker_id;
 
         $this->render('layouts/client_layout',$this->data);
     }
@@ -57,7 +61,7 @@ class Alljob extends Controller
         $job_welfare_detail=$conn->query("SELECT welfare_type FROM `job_welfare_detail` join job_welfare on job_welfare_id=job_welfare.id WHERE post_id=$id limit 3")->fetchAll(PDO::FETCH_ASSOC);
         $job_post_activity=$conn->get("job_post_activity","user_account_id='$seeker_id' and job_id ='$id'")->fetch(PDO::FETCH_ASSOC);  
       
-        $job_post=$conn->query("SELECT job_post.*,degree_name,position,experience_type,logo,company_name,banner FROM `job_post` join degree on job_degree_id=degree.id join job_position on job_position_id=job_position.id join job_experience on job_experience_id=job_experience.id join company on company.id = job_post.company_id where  status ='1' and job_post.id=$id  ")->fetch(PDO::FETCH_ASSOC);
+        $job_post=$conn->query("SELECT job_post.*,degree_name,position,experience_type,logo,company_name,banner FROM `job_post` left join degree on job_degree_id=degree.id left join job_position on job_position_id=job_position.id left join job_experience on job_experience_id=job_experience.id left join company on company.id = job_post.company_id where  status ='1' and job_post.id=$id  ")->fetch(PDO::FETCH_ASSOC);
       
         $job_experience_detail=$conn->get("job_experience_detail","post_id=$id")->fetch(PDO::FETCH_ASSOC);
         $job_saved=$conn->get("job_saved","user_account_id=$seeker_id and job_id =$id")->fetch(PDO::FETCH_ASSOC);
@@ -93,7 +97,8 @@ class Alljob extends Controller
         $keyword=$_GET["keyword"] ?? "";
         $industry=$_GET["industry"] ?? "";
         $location=$_GET["location"] ?? "";
-        $wrk_from_home=$_GET["wrk_from_home"] ?? "0";
+        $wrk_from_home=$_GET["wrk_from_home"] ?? "";
+        $seeker_id=$_SESSION["user"]["id"] ?? "";
 
         
         $item_per_page=5;
@@ -102,8 +107,16 @@ class Alljob extends Controller
       
 
 
-        $sql="SELECT DISTINCT job_post.*,logo,company_name FROM `job_post`join company on company.id = job_post.company_id join job_location on job_location.post_id =job_post.id join job_profession_detail on job_profession_detail.post_id=job_post.id
-        where NOW() < end_date and status='1'  ";
+        $sql="SELECT DISTINCT job_post.*,logo,company_name,job_saved.job_id as job_saved_id,job_saved.user_account_id as job_saved_account_id FROM `job_post`join company on company.id = job_post.company_id join job_location on job_location.post_id =job_post.id join job_profession_detail on job_profession_detail.post_id=job_post.id ";
+         
+
+        if(!empty($seeker_id)){
+            $sql.="left join job_saved on job_saved.job_id=job_post.id and (job_saved.user_account_id=$seeker_id)";
+
+        }
+        else{
+            $sql.=" where NOW() < end_date and status='1'";
+        }
 
         if(!empty($keyword)){
             $sql.="and job_title  LIKE '%$keyword%' or company_name LIKE '%$keyword%'";
@@ -117,7 +130,10 @@ class Alljob extends Controller
             $location=join(',',$location);
             $sql.=" and provinces in ($location)";
         }
-        $sql.=" and wrk_from_home = '$wrk_from_home'";
+        if(!empty($wrk_from_home)){
+            $sql.=" and wrk_from_home = '$wrk_from_home'";
+        }
+
       
         $sql.="order by job_post.id limit $item_per_page offset $offset";
             return $sql;
@@ -146,12 +162,11 @@ class Alljob extends Controller
         if(!Auth_user::logged_in()){
             $this->redirect("account/login");
         }
-        if(isset($_POST["savedjob"])){
+        if(isset($_POST["savedjob"]) ){
         $conn=$this->model("Job_postModel");
         $user_account_id=$_SESSION["user"]["id"];
         $job_id=$_POST["job_id"];
         $checkJob=$conn->get("job_saved","user_account_id=$user_account_id and job_id=$job_id")->rowCount();
-            
             if($checkJob==0){
                 $data=[ 
                     "user_account_id"=>"'$user_account_id'",
@@ -163,6 +178,22 @@ class Alljob extends Controller
             }
          
       
+        }
+        else if(isset($_POST["savedjob_full"])){
+            $conn=$this->model("Job_postModel");
+            $user_account_id=$_SESSION["user"]["id"];
+            $job_id=$_POST["job_id"];
+            $checkJob=$conn->get("job_saved","user_account_id=$user_account_id and job_id=$job_id")->rowCount();
+                if($checkJob==0){
+                    $data=[ 
+                        "user_account_id"=>"'$user_account_id'",
+                        "job_id "=>"'$job_id'",
+                    ];
+                    $conn->insert("job_saved",$data);
+                }else{
+                    $conn->delete("job_saved","user_account_id=$user_account_id and job_id=$job_id");
+                }
+                $this->redirect("Alljob");
         }
     }
 }

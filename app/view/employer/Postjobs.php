@@ -8,31 +8,33 @@
 
 <main>
 <section class="employer-navbar-2-1">
-  <div class="container">
-    <div class="category-nav">
-      <p>Danh Mục</p>
-      <em class="mdi mdi-chevron-down"></em> </div>
-    <div class="main-wrap">
-      <div class="left-wrap">         <ul class="list-menu">
-          <li > <a href="<?= _WEB_ROOT.'/employer/dashboard'?>" title="Dashboard">Dashboard</a> </li>
-          <li class="active"> <a href="<?= _WEB_ROOT.'/employer/hrcentral/posting'?>" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
-          <li> <a href="<?= _WEB_ROOT.'/employer/hrcentral/Manageresume'?>" class="active" title="Quản Lý  Ứng Viên">Quản Lý  Ứng Viên</a> </li>
-          <li class=""> <a href="https://careerbuilder.vn/vi/employers/hrcentral/search-history" title="Lịch Sử Tìm Kiếm">Lịch Sử Tìm Kiếm</a> </li>
-        
-          <a href="<?= _WEB_ROOT.'/employer/hrcentral/accounts/edit_employer"'?>" title=" Tài Khoản"> Tài Khoản</a>
-          </li>
-		      
-		          </ul>
-         </div>
-      <div class="right-wrap">
-        <ul class="list-menu">
-          <li> <a href="https://careerbuilder.vn/vi/tim-ung-vien.html"> <em class="material-icons">find_in_page</em> Tìm Hồ Sơ </a> </li>
-          <li> <a class="but-createjob" href="https://careerbuilder.vn/vi/employers/postjobs"> <em class="material-icons">assignment_ind</em> Đăng Tuyển Dụng </a> </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+            <div class="container">
+                <div class="category-nav">
+                    <p>Danh Mục</p>
+                    <em class="mdi mdi-chevron-down"></em> </div>
+                <div class="main-wrap">
+                    <div class="left-wrap">
+                        <ul class="list-menu">
+                            <li> <a href="http://localhost//itjobs/employer/dashboard" title="Dashboard">Dashboard</a> </li>
+                            <li class="active"> <a href="http://localhost//itjobs/employer/hrcentral/posting" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
+                            <li class=""> <a href="http://localhost//itjobs/employer/hrcentral/manageresume" class="active" title="Quản Lý  Ứng Viên">Quản Lý  Ứng Viên</a> </li>
+                           
+                            <li>
+             
+             <a href="http://localhost//itjobs/employer/hrcentral/accounts/edit_employer" "="" title=" Tài Khoản"> Tài Khoản</a>
+             </li>
+                   
+                        </ul>
+                    </div>
+                    <div class="right-wrap">
+                        <ul class="list-menu">
+                            <li> <a href="https://careerbuilder.vn/vi/tim-ung-vien.html"> <em class="material-icons">find_in_page</em> Tìm Hồ Sơ </a> </li>
+                            <li> <a class="but-createjob" href="https://careerbuilder.vn/vi/employers/postjobs"> <em class="material-icons">assignment_ind</em> Đăng Tuyển Dụng </a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 <section class="manage-job-posting-post-jobs cb-section bg-manage">
 
     <div class="container">

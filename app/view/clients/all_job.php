@@ -248,13 +248,23 @@
 
                                  </ul>
                               </div>
+                              <style>
+              form > a.saved, form a.saved button {
+            color: #e8c80d;
+              }
+                              </style>
                               <div style="top:50px;"class="">
                                  <ul>
                                 
-                                    <li><a class="toollips save-job chk_save_35BAE5BD " href="javascript:void(0);" data-id="35BAE5BD" onclick="popuplogin()">
-                                       <i class="mdi mdi-heart-outline"></i>
-                                       <span class="text">Lưu việc làm</span>
-                                       </a>
+                                    <li>
+                                       <form method="post" action="http://localhost//itjobs/Alljob/jobsaved">
+               <input type="hidden" name="job_id" value="<?= $item["id"]?> ">
+    
+  <a  class="toollips save-job <?= ($item["job_saved_id"]==$item["id"] && $item["job_saved_account_id"]==$seeker_id) ? 'saved' : ''?> " href="javascript:void(0);" >
+    <i class="mdi mdi-heart-outline"></i>
+  <button type="submit" name="savedjob_full" style="background-color: transparent;" class="text">Lưu việc làm</button>
+	</a>
+                                                   </form>
                                     </li>
                                  </ul>
                                  <div class="time">

@@ -2898,8 +2898,8 @@
          <div class="back-drop"></div>
       </main>
       <?php 
-      $msg=$_GET["msg"];
-      if(isset($msg)){ ?>
+      $msg=$_GET["msg"]??"";
+      if(!empty($msg)){ ?>
            <div class="modal fade"  id="errorCv" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">

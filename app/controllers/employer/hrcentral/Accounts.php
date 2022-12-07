@@ -128,4 +128,11 @@ class Accounts extends Controller
        return [$logo,$image1];
 
     }
+    public function changepassword(){
+        
+        $this->data["sub_content"][""] ="" ;
+        $this->data["content"] = "";
+
+        $this->data["content"]="employer/hrcentral/accounts/edit_employer";
+    }
 }

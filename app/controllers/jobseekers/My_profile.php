@@ -151,7 +151,7 @@ class My_profile extends Controller
                 "firstname" => "'$firstname'",
                 "lastname" => "'$lastname'",
                 "gender" => "'$gender'",
-                "contact_number" => "'$contact_number'",
+                "contact_phone" => "'$contact_number'",
                 "marital_status" => "'$marital_status'",
                 "date_of_birth" => "STR_TO_DATE('$date_of_birth', '%d/%m/%Y')",
                 "status"=>"'1'",

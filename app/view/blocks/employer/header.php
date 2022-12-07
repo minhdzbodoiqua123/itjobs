@@ -6,7 +6,7 @@
                 <div class="left-wrap">
                     <div class="button-hambuger"><span class="mdi mdi-menu"></span></div>
                     <div class="logo"><a href="<?= _WEB_ROOT.'/employer/postjobs' ?>" title="homepage-employers">
-                    <img src="<?= _WEB_ROOT.'/employer/postjobs' ?>" alt="CareerBuilder.vn - Nghĩ Nhân Tài, Nghĩ CareerBuilder" title="CareerBuilder.vn - Nghĩ Nhân Tài, Nghĩ CareerBuilder" /></a></div>
+                    <img style="height:80px;"src="<?= _WEB_ROOT.'/app/public/assets/clients/images/it_jobs.png' ?>" alt="CareerBuilder.vn - Nghĩ Nhân Tài, Nghĩ CareerBuilder" title="CareerBuilder.vn - Nghĩ Nhân Tài, Nghĩ CareerBuilder" /></a></div>
                     <div class="main-menu">
                         <ul class="menu">
                             <li class=""><a href="https://careerbuilder.vn/vi/employers" alt="Trang chủ" title="Trang chủ">Trang Chủ</a></li>

@@ -7,7 +7,7 @@
                 <div class="button-hambuger"><span class="mdi mdi-menu"></span></div>
                 <div class="logo">
                     <a href="<?= _WEB_ROOT ?>" title="Tuyển dụng &amp; Tìm kiếm việc làm nhanh">
-                        <img src="./img/logo.png" alt="Tuyển dụng &amp; Tìm kiếm việc làm nhanh">
+                        <img style="height:80px;"src="<?= _WEB_ROOT.'/app/public/assets/clients/images/it_jobs.png' ?>" alt="Tuyển dụng &amp; Tìm kiếm việc làm nhanh">
                     </a>
                 </div>
                 <div class="main-menu">

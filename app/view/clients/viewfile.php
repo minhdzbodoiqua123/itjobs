@@ -356,7 +356,7 @@
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Điện thoại</label>
-                                <div class="col-sm-9"><?= $info["contact_number"] ?> </div>
+                                <div class="col-sm-9"><?= $info["contact_phone"] ?> </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Email</label>
