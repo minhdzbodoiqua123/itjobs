@@ -13,8 +13,7 @@
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
   <!-- Font-icon css-->
-  <link rel="stylesheet" type="text/css"
-    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
@@ -24,8 +23,7 @@
 <body onload="time()" class="app sidebar-mini rtl">
   <!-- Navbar-->
   <header class="app-header">
-    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
-      aria-label="Hide Sidebar"></a>
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
     <!-- Navbar Right Menu-->
     <ul class="app-nav">
 
@@ -39,8 +37,7 @@
   <!-- Sidebar menu-->
   <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
   <aside class="app-sidebar">
-    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="/images/hay.jpg" width="50px"
-        alt="User Image">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="/images/hay.jpg" width="50px" alt="User Image">
       <div>
         <p class="app-sidebar__user-name"><b>Võ Trường</b></p>
         <p class="app-sidebar__user-designation">Chào mừng bạn trở lại</p>
@@ -48,30 +45,30 @@
     </div>
     <hr>
     <ul class="app-menu">
-   
-   <li><a class="app-menu__item " href="index.html"><span class="app-menu__label">Bảng điều khiển</span></a></li>
-   <li><a class="app-menu__item " href="<?= _WEB_ROOT.'/admin/employeeManager' ?>">
-       <span class="app-menu__label">Quản lý nhân viên</span></a></li>
-   <li><a class="app-menu__item active" href="http://localhost//itjobs/admin/seekerManager"><span class="app-menu__label">Quản lý người ứng tuyển</span></a></li>
-   <li><a class="app-menu__item " href="http://localhost//itjobs/admin/EmployerManager"><span class="app-menu__label">Quản lý nhà tuyển dụng</span></a>
-   </li>
-   <li><a class="app-menu__item " href="<?= _WEB_ROOT.'/admin/company' ?>"></i><span class="app-menu__label">Quản lý công ty</span></a></li>
-   <li><a class="app-menu__item " href="<?= _WEB_ROOT.'/admin/Jobwelfare' ?>"></i><span class="app-menu__label">Quản lý phúc lợi</span></a></li>
-   
-   <li><a class="app-menu__item " href="<?= _WEB_ROOT.'/admin/Profession' ?>"></i><span class="app-menu__label">Quản lý nghề nghiệp</span></a></li>
-   <li><a class="app-menu__item " href="<?= _WEB_ROOT.'/admin/Profession' ?>"></i><span class="app-menu__label">Quản lý báo cáo</span></a></li>
+
+      <li><a class="app-menu__item " href="index.html"><span class="app-menu__label">Bảng điều khiển</span></a></li>
+      <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/employeeManager' ?>">
+          <span class="app-menu__label">Quản lý nhân viên</span></a></li>
+      <li><a class="app-menu__item " href="http://localhost//itjobs/admin/seekerManager"><span class="app-menu__label">Quản lý người ứng tuyển</span></a></li>
+      <li><a class="app-menu__item " href="http://localhost//itjobs/admin/EmployerManager"><span class="app-menu__label">Quản lý nhà tuyển dụng</span></a>
+      </li>
+      <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/company' ?>"></i><span class="app-menu__label">Quản lý công ty</span></a></li>
+      <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/Jobwelfare' ?>"></i><span class="app-menu__label">Quản lý phúc lợi</span></a></li>
+
+      <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/Profession' ?>"></i><span class="app-menu__label">Quản lý nghề nghiệp</span></a></li>
+      <li><a class="app-menu__item active" href="<?= _WEB_ROOT . '/admin/reportJobManager' ?>"></i><span class="app-menu__label">Quản lý báo cáo</span></a></li>
 
 
-  
-   <!-- <li><a class="app-menu__item" href="page-calendar.html"><i class='app-menu__icon bx bx-calendar-check'></i><span class="app-menu__label">Lịch công tác </span></a></li> -->
-   <li><a class="app-menu__item" href="#"><span class="app-menu__label">Cài
-         đặt hệ thống</span></a></li>
- </ul>
+
+      <!-- <li><a class="app-menu__item" href="page-calendar.html"><i class='app-menu__icon bx bx-calendar-check'></i><span class="app-menu__label">Lịch công tác </span></a></li> -->
+      <li><a class="app-menu__item" href="#"><span class="app-menu__label">Cài
+            đặt hệ thống</span></a></li>
+    </ul>
   </aside>
   <main class="app-content">
     <div class="app-title">
       <ul class="app-breadcrumb breadcrumb side">
-        <li class="breadcrumb-item active"><a href="#"><b>Danh sách nhân viên</b></a></li>
+        <li class="breadcrumb-item active"><a href="#"><b>Danh sách báo cáo</b></a></li>
       </ul>
       <div id="clock"></div>
     </div>
@@ -81,40 +78,8 @@
         <div class="tile">
           <div class="tile-body">
 
-            <div class="row element-button">
-              <div class="col-sm-2">
 
-                <a class="btn btn-add btn-sm" href="form-add-nhan-vien.html" title="Thêm"><i class="fas fa-plus"></i>
-                  Tạo mới nhân viên</a>
-              </div>
-              <div class="col-sm-2">
-                <a class="btn btn-delete btn-sm nhap-tu-file" type="button" title="Nhập" onclick="myFunction(this)"><i
-                    class="fas fa-file-upload"></i> Tải từ file</a>
-              </div>
-
-              <div class="col-sm-2">
-                <a class="btn btn-delete btn-sm print-file" type="button" title="In" onclick="myApp.printTable()"><i
-                    class="fas fa-print"></i> In dữ liệu</a>
-              </div>
-              <div class="col-sm-2">
-                <a class="btn btn-delete btn-sm print-file js-textareacopybtn" type="button" title="Sao chép"><i
-                    class="fas fa-copy"></i> Sao chép</a>
-              </div>
-
-              <div class="col-sm-2">
-                <a class="btn btn-excel btn-sm" href="" title="In"><i class="fas fa-file-excel"></i> Xuất Excel</a>
-              </div>
-              <div class="col-sm-2">
-                <a class="btn btn-delete btn-sm pdf-file" type="button" title="In" onclick="myFunction(this)"><i
-                    class="fas fa-file-pdf"></i> Xuất PDF</a>
-              </div>
-              <div class="col-sm-2">
-                <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i
-                    class="fas fa-trash-alt"></i> Xóa tất cả </a>
-              </div>
-            </div>
-            <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0"
-              id="sampleTable">
+            <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0" id="sampleTable">
               <thead>
                 <tr>
                   <th>ID</th>
@@ -124,46 +89,45 @@
                   <!-- <th>Chức vụ</th> -->
                   <th>Mô tả báo cao </th>
                   <th>Vấn đề</th>
-                 
+
                   <th width="100">Tính năng</th>
                 </tr>
               </thead>
               <tbody>
-               <?php foreach ($report_job as $item):?>
-                <tr>
+                <?php foreach ($report_job as $item) : ?>
+                  <tr>
                     <td><?= $item["id"] ?></td>
                     <td><?= $item["email"] ?></td>
                     <td><a href="<?= $item["job_url"] ?>"><?= $item["job_url"] ?></a></td>
 
                     <td><?= $item["desc_report"] ?></td>
-                  <td><?php 
-                  switch ($item["reason"]) {
-                    case '1':
-                        echo " Việc làm không hợp pháp ";
+                    <td><?php
+                        switch ($item["reason"]) {
+                          case '1':
+                            echo " Việc làm không hợp pháp ";
 
-                        break;
-                    case '2':
-                        echo "Nữ";
+                            break;
+                          case '2':
+                            echo "Nữ";
 
-                        break;
-                    default:
-                       echo "Khác";
-                        break;
-                  }
-                  ?></td>
+                            break;
+                          default:
+                            echo "Khác";
+                            break;
+                        }
+                        ?></td>
 
+
+
+                    <td class="table-td-center">
+                    <a href="reportJobManager/deleteJobManager/<?= $item["id"] ?>" class="btn  btn-sm trash" type="submit" title="Xóa">
+                        <i class="fas fa-trash-alt"></i> 
+                      </a>
                 
-                
-                  <td class="table-td-center"><button class="btn btn-sm trash" type="button" title="Xóa"
-                      onclick="myFunction(this)"><i class="fas fa-trash-alt"></i>
-                    </button>
-                    <button class="btn  btn-sm edit" type="button" title="Sửa" id="show-emp"
-                      data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i>
-                    </button>
-                  </td>
-                </tr>
-          <?php     endforeach;?>
-               
+                    </td>
+                  </tr>
+                <?php endforeach; ?>
+
 
               </tbody>
             </table>
@@ -176,8 +140,7 @@
   <!--
   MODAL
 -->
-  <div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
-    data-keyboard="false">
+  <div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
 
@@ -258,31 +221,33 @@
   <!-- Data table plugin-->
   <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
-  <script type="text/javascript">$('#sampleTable').DataTable();</script>
+  <script type="text/javascript">
+    $('#sampleTable').DataTable();
+  </script>
   <script>
     function deleteRow(r) {
       var i = r.parentNode.parentNode.rowIndex;
       document.getElementById("myTable").deleteRow(i);
     }
-    jQuery(function () {
-      jQuery(".trash").click(function () {
+    jQuery(function() {
+      jQuery(".trash").click(function() {
         swal({
-          title: "Cảnh báo",
-         
-          text: "Bạn có chắc chắn là muốn xóa nhân viên này?",
-          buttons: ["Hủy bỏ", "Đồng ý"],
-        })
+            title: "Cảnh báo",
+
+            text: "Bạn có chắc chắn là muốn xóa nhân viên này?",
+            buttons: ["Hủy bỏ", "Đồng ý"],
+          })
           .then((willDelete) => {
             if (willDelete) {
               swal("Đã xóa thành công.!", {
-                
+
               });
             }
           });
       });
     });
     oTable = $('#sampleTable').dataTable();
-    $('#all').click(function (e) {
+    $('#all').click(function(e) {
       $('#sampleTable tbody :checkbox').prop('checked', $(this).is(':checked'));
       e.stopImmediatePropagation();
     });
@@ -340,8 +305,8 @@
       }
     }
     //In dữ liệu
-    var myApp = new function () {
-      this.printTable = function () {
+    var myApp = new function() {
+      this.printTable = function() {
         var tab = document.getElementById('sampleTable');
         var win = window.open('', '', 'height=700,width=700');
         win.document.write(tab.outerHTML);
@@ -368,8 +333,11 @@
 
 
     //Modal
-    $("#show-emp").on("click", function () {
-      $("#ModalUP").modal({ backdrop: false, keyboard: false })
+    $("#show-emp").on("click", function() {
+      $("#ModalUP").modal({
+        backdrop: false,
+        keyboard: false
+      })
     });
   </script>
 </body>

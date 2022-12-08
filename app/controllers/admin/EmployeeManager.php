@@ -79,4 +79,11 @@ class EmployeeManager extends Controller
        move_uploaded_file($_FILES['fileUpload']['tmp_name'],$upload_file);
          return $file_name;
     }
+  
+    public function deleteStaff($id=""){
+        $conn=$this->model("AccountUserModel");
+        $deleteStaffById=$conn->delete("user_account","id=$id");
+        $this->redirect("admin/EmployeeManager");
+    }
 }
+   

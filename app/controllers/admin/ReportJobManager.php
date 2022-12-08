@@ -10,4 +10,9 @@ class ReportJobManager extends Controller
 
         $this->render('layouts/admin_layout', $this->data);
     }
+    public function deleteJobManager($id=""){
+        $conn= $this->model("Job_postModel");
+        $deleteStaffById=$conn->delete("report_job","id=$id");
+        $this->redirect("admin/reportJobManager");
+    }
 }

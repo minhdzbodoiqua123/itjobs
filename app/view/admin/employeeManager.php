@@ -44,19 +44,22 @@
     </div>
     <hr>
     <ul class="app-menu">
-   
-      <li><a class="app-menu__item " href="index.html"><i class='app-menu__icon bx bx-tachometer'></i><span class="app-menu__label">Bảng điều khiển</span></a></li>
-      <li><a class="app-menu__item active" href="http://localhost//itjobs/admin/EmployeeManager"><i class='app-menu__icon bx bx-id-card'></i>
+      <li><a class="app-menu__item " href="index.html"><span class="app-menu__label">Bảng điều khiển</span></a></li>
+      <li><a class="app-menu__item active" href="<?= _WEB_ROOT . '/admin/employeeManager' ?>">
           <span class="app-menu__label">Quản lý nhân viên</span></a></li>
-      <li><a class="app-menu__item" href="http://localhost//itjobs/admin/SeekerManager"><i class='app-menu__icon bx bx-user-voice'></i><span class="app-menu__label">Quản lý người ứng tuyển</span></a></li>
-      <li><a class="app-menu__item " href="http://localhost//itjobs/admin/EmployerManager"><i class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý nhà tuyển dụng</span></a>
+      <li><a class="app-menu__item " href="http://localhost//itjobs/admin/seekerManager"><span class="app-menu__label">Quản lý người ứng tuyển</span></a></li>
+      <li><a class="app-menu__item " href="http://localhost//itjobs/admin/EmployerManager"><span class="app-menu__label">Quản lý nhà tuyển dụng</span></a>
       </li>
-      <li><a class="app-menu__item " href="http://localhost//itjobs/admin/company"><i class='app-menu__icon bx bx-task'></i><span class="app-menu__label">Quản lý công ty</span></a></li>
-   
+      <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/company' ?>"></i><span class="app-menu__label">Quản lý công ty</span></a></li>
+      <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/Jobwelfare' ?>"></i><span class="app-menu__label">Quản lý phúc lợi</span></a></li>
 
-     
+      <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/Profession' ?>"></i><span class="app-menu__label">Quản lý nghề nghiệp</span></a></li>
+      <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/reportJobManager' ?>"></i><span class="app-menu__label">Quản lý báo cáo</span></a></li>
+
+
+
       <!-- <li><a class="app-menu__item" href="page-calendar.html"><i class='app-menu__icon bx bx-calendar-check'></i><span class="app-menu__label">Lịch công tác </span></a></li> -->
-      <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-cog'></i><span class="app-menu__label">Cài
+      <li><a class="app-menu__item" href="#"><span class="app-menu__label">Cài
             đặt hệ thống</span></a></li>
     </ul>
   </aside>
@@ -149,12 +152,12 @@
                       <input type="hidden" name="id"value="<?=  $item["id"]?>">
                       <input type="hidden" name="id_position"value="<?=  $item["id_position"]?>">
 
-                     <button class="btn  btn-sm trash" type="submit" title="Xóa">
+                     <a href="EmployeeManager/deleteStaff/<?= $item["id"] ?>" class="btn  btn-sm trash" type="submit" title="Xóa">
                         <i class="fas fa-trash-alt"></i> 
-                      </button>
-                    </form>
-                    <a href="DataStaff/updateStaff/<?= $item["id"] ?>" class="btn  btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></a>
+                      </a>
+                    <a href="EmployeeManager/editStaff/<?= $item["id"] ?>" class="btn  btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></a>
                       </td>
+                    </form>
               </tr>
                       </tr>
                   <?php endforeach;?>

@@ -44,19 +44,22 @@
     </div>
     <hr>
     <ul class="app-menu">
-   
-      <li><a class="app-menu__item " href="index.html"><i class='app-menu__icon bx bx-tachometer'></i><span class="app-menu__label">Bảng điều khiển</span></a></li>
-      <li><a class="app-menu__item " href="table-data-table.html"><i class='app-menu__icon bx bx-id-card'></i>
+      <li><a class="app-menu__item " href="index.html"><span class="app-menu__label">Bảng điều khiển</span></a></li>
+      <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/employeeManager' ?>">
           <span class="app-menu__label">Quản lý nhân viên</span></a></li>
-      <li><a class="app-menu__item" href="http://localhost//itjobs/admin/EmployerManager"><i class='app-menu__icon bx bx-user-voice'></i><span class="app-menu__label">Quản lý người ứng tuyển</span></a></li>
-      <li><a class="app-menu__item " href="table-data-product.html"><i class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý nhà tuyển dụng</span></a>
+      <li><a class="app-menu__item " href="http://localhost//itjobs/admin/seekerManager"><span class="app-menu__label">Quản lý người ứng tuyển</span></a></li>
+      <li><a class="app-menu__item " href="http://localhost//itjobs/admin/EmployerManager"><span class="app-menu__label">Quản lý nhà tuyển dụng</span></a>
       </li>
-      <li><a class="app-menu__item active" href="http://localhost//itjobs/admin/company"><i class='app-menu__icon bx bx-task'></i><span class="app-menu__label">Quản lý công ty</span></a></li>
-   
+      <li><a class="app-menu__item active" href="<?= _WEB_ROOT . '/admin/company' ?>"></i><span class="app-menu__label">Quản lý công ty</span></a></li>
+      <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/Jobwelfare' ?>"></i><span class="app-menu__label">Quản lý phúc lợi</span></a></li>
 
-     
+      <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/Profession' ?>"></i><span class="app-menu__label">Quản lý nghề nghiệp</span></a></li>
+      <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/reportJobManager' ?>"></i><span class="app-menu__label">Quản lý báo cáo</span></a></li>
+
+
+
       <!-- <li><a class="app-menu__item" href="page-calendar.html"><i class='app-menu__icon bx bx-calendar-check'></i><span class="app-menu__label">Lịch công tác </span></a></li> -->
-      <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-cog'></i><span class="app-menu__label">Cài
+      <li><a class="app-menu__item" href="#"><span class="app-menu__label">Cài
             đặt hệ thống</span></a></li>
     </ul>
   </aside>
@@ -78,9 +81,6 @@
                   Tạo mới công ty</a>
               </div>
 
-              <div class="col-sm-2">
-                <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i class="fas fa-trash-alt"></i> Xóa tất cả </a>
-              </div>
             </div>
             <table class="table table-hover table-bordered" id="sampleTable">
               <thead>
@@ -117,7 +117,7 @@
                     <td width="10"><input type="checkbox" name="check1" value="1"></td>
                     <td><?= $item["id"] ?></td>
                     <td><?= $item["company_name"] ?></td>
-                    <td><img style="width:100px;height:100px;object-fit:cover;" src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$item["logo"] ?>" alt=""></td>
+                    <td><img style="width:100%;height:100%;object-fit:cover;" src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$item["logo"] ?>" alt=""></td>
                     <td><a href="<?= $item["company_website_url"] ?>"><?= $item["company_website_url"] ?></a></td>
 
                     <!-- <td>

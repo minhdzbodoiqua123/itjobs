@@ -68,13 +68,13 @@
     <div class="app-title">
       <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><a href="http://localhost//itjobs/admin/employeeManager" class="list_product">Quản lý nhân viên</a></li>
-        <li class="breadcrumb-item"><a href="#">Thêm nhân viên</a></li>
+        <li class="breadcrumb-item"><a href="#">Sửa nhân viên</a></li>
       </ul>
     </div>
     <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <h3 class="tile-title">Thêm nhân viên</h3>
+        <h3 class="tile-title">Sửa nhân viên</h3>
         <div class="tile-body">
           <div class="row element-button">
            
@@ -103,7 +103,7 @@
              </div>
              <div class="form-group col-md-3">
               <label class="control-label">Password</label>
-              <input  class="form-control" name="password" type="password">
+              <input  class="form-control" name="password" type="text">
               <small></small>
               <span></span>
             </div>
