@@ -71,14 +71,20 @@ $arrDay=[];
         $start_date_this_month=$today-$max_date;
 
         }
-        
+
         foreach ($arr as $job_id=> $each) {
             $arr2[$job_id]=[
                 "name"=>$each["name"],
                 "id"=>$job_id,
             ];
             $arr2[$job_id]["data"]=[];
-            
+            for ($i=$start_day_last_month; $i<= $max_day_last_month ; $i++) { 
+                $key=$i.'-'.$last_month;
+                $arr2[$job_id]['data'][$key]=[
+                    $key,
+                    0
+                ];
+                }
                 for ($i=$start_date_this_month; $i<= $today ; $i++) { 
                     $key=$i.'-'.$this_month;
                     $arr2[$job_id]['data'][$key]=[
@@ -86,6 +92,7 @@ $arrDay=[];
                         0
                     ];
                  }
+                
                  
            
         }

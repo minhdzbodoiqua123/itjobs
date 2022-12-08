@@ -3,7 +3,7 @@ class EmployeeManager extends Controller
 {
     public function index(){
          $conn=$this->model("AccountUserModel");   
-         $allStaff=$conn->query("select user_account.*,fullname,image,user_type_name	 from user_account left join admin_info on user_account_id = user_account.id join user_type on user_type.id=user_type_id   where user_type_id=3")->fetchAll(PDO::FETCH_ASSOC);
+         $allStaff=$conn->query("select user_account.*,fullname,image,user_type_name	 from user_account left join admin_info on user_account_id = user_account.id join user_type on user_type.id=user_type_id   where user_type_id>=3")->fetchAll(PDO::FETCH_ASSOC);
         $this->data["sub_content"]["allStaff"] = $allStaff;
        
 
