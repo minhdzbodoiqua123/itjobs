@@ -86,7 +86,7 @@
                   </div>
                </form>
             </div>
-            <div class="filter-emp-user-create">
+            <!-- <div class="filter-emp-user-create">
                <label>Việc làm đăng bởi</label>
                <select name="user_id" onchange="SetUserId(this.value, 'posting');">
                   &gt;
@@ -95,7 +95,7 @@
                      minh nguyễn 
                   </option>
                </select>
-            </div>
+            </div> -->
             <div class="main-tabslet">
                <ul class="tabslet-tab">
                   <li class="">

@@ -164,9 +164,11 @@
                                                 <td><?= formatDate($item["posted_date"]) ?></td>
                                                 <td><?= formatDate($item["end_date"]) ?></td>
 
-                                                <td></td>
+                                                <td><?= $item["view"] ?></td>
+                                                    <td>     <?php foreach ($count_submitted as $value):?>
+                                 <?= $item["id"]==$value["job_id"] ? $value["num_submit"] : "" ?>
                                       
-                                                <td></td>
+                                               <?php endforeach;?></td>
                                                 <td>
                                 <ul class="list-manipulation">
                      

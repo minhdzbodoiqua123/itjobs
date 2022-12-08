@@ -90,7 +90,7 @@
                   <th>Tên công ty</th>
                   <th>Logo</th>
                   <th>Địa chỉ trang web công ty</th>
-                  <th>Tóm tắt công ty</th>
+                  <!-- <th>Tóm tắt công ty</th> -->
                   <th>Loại công ty</th>
                   <th>Mã số thuế</th>
                   <th>Chức năng</th>
@@ -117,12 +117,12 @@
                     <td width="10"><input type="checkbox" name="check1" value="1"></td>
                     <td><?= $item["id"] ?></td>
                     <td><?= $item["company_name"] ?></td>
-                    <td><img style="width:150px;height:100px;" src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$item["logo"] ?>" alt=""></td>
-                    <td><?= $item["company_website_url"] ?></td>
+                    <td><img style="width:100px;height:100px;object-fit:cover;" src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$item["logo"] ?>" alt=""></td>
+                    <td><a href="<?= $item["company_website_url"] ?>"><?= $item["company_website_url"] ?></a></td>
 
-                    <td>
+                    <!-- <td>
                     <?= $item["company_summary"] ?>
-                    </td>
+                    </td> -->
                     <td><?php foreach ($company_type as $type) {
                           if ($type["id"] == $item["company_type_id"]) {
                             echo $type["company_type"];

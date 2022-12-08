@@ -57,7 +57,14 @@ class Alljob extends Controller
             $this->redirect("404page");
         }
         $seeker_id=$_SESSION["user"]["id"] ?? "";
-
+        $job_view=$conn->get("job_post","id =$id")->fetch(PDO::FETCH_ASSOC);
+        $job_view["view"]++;
+            $data=[
+                "view" => $job_view["view"]
+            ];
+            $condition="id =$id";
+            $conn->update("job_post",$data,$condition);
+            
         $job_welfare_detail=$conn->query("SELECT welfare_type FROM `job_welfare_detail` join job_welfare on job_welfare_id=job_welfare.id WHERE post_id=$id limit 3")->fetchAll(PDO::FETCH_ASSOC);
         $job_post_activity=$conn->get("job_post_activity","user_account_id='$seeker_id' and job_id ='$id'")->fetch(PDO::FETCH_ASSOC);  
       

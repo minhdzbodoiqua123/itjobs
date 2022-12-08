@@ -155,7 +155,7 @@
                             <li><a href="<?= _WEB_ROOT.'/employer/postjobs'?>" title="Đăng Tuyển Dụng">Đăng
                                     Tuyển Dụng</a>
                             </li>
-                            <li><a href="https://careerbuilder.vn/vi/resume-search.html" title="Tìm Ứng Viên">Tìm Ứng
+                            <li><a href="<?= _WEB_ROOT.'/employer/tim_ung_vien'?>">Tìm Ứng
                                     Viên</a>
                             </li>
                            
