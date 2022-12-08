@@ -59,7 +59,7 @@
    <li><a class="app-menu__item " href="<?= _WEB_ROOT.'/admin/Jobwelfare' ?>"></i><span class="app-menu__label">Quản lý phúc lợi</span></a></li>
    
    <li><a class="app-menu__item " href="<?= _WEB_ROOT.'/admin/Profession' ?>"></i><span class="app-menu__label">Quản lý nghề nghiệp</span></a></li>
-   <li><a class="app-menu__item " href="<?= _WEB_ROOT.'/admin/Profession' ?>"></i><span class="app-menu__label">Quản lý báo cao</span></a></li>
+   <li><a class="app-menu__item " href="<?= _WEB_ROOT.'/admin/Profession' ?>"></i><span class="app-menu__label">Quản lý báo cáo</span></a></li>
 
 
   
@@ -117,32 +117,26 @@
               id="sampleTable">
               <thead>
                 <tr>
-                  <th width="10"><input type="checkbox" id="all"></th>
                   <th>ID</th>
-                  <th width="150">Họ và tên</th>
+                  <th width="150">Địa chỉ bài viết</th>
 
-                  <th width="300">Hình ảnh</th>
                   <!-- <th>Chức vụ</th> -->
-                  <th>Giới tính</th>
-                  <th>Tình trạng hôn nhân</th>
-                  <th>Số điện thoại </th>
-                  <th>Ngày sinh</th>
+                  <th>Mô tả báo cao </th>
+                  <th>Vấn đề</th>
                  
                   <th width="100">Tính năng</th>
                 </tr>
               </thead>
               <tbody>
-               <?php foreach ($data_seeker_profile as $item):?>
+               <?php foreach ($report_job as $item):?>
                 <tr>
-                  <td width="10"><input type="checkbox" name="check1" value="1"></td>
-                  <td><?= $item["user_account_id"] ?></td>
-                  <td><?= $item["lastname"].' '.$item["firstname"]  ?></td>
-                  <td><img style="height:100px;width:100px;object-fit:cover;"src="<?= _WEB_ROOT.'/app/public/assets/clients/images/'.$item["location_image"] ?>" alt=""></td>
-              
+                    <td><?= $item["id"] ?></td>
+                    <td><a href="<?= $item["job_url"] ?>"><?= $item["job_url"] ?></a></td>
+                    <td><?= $item["desc_report"] ?></td>
                   <td><?php 
-                  switch ($item["gender"]) {
+                  switch ($item["reason"]) {
                     case '1':
-                        echo "Nam";
+                        echo " Việc làm không hợp pháp ";
 
                         break;
                     case '2':
@@ -154,10 +148,8 @@
                         break;
                   }
                   ?></td>
-                  <td><?= $item["marital_status"]=="1"?'Độc thân':'Đã kết hôn' ?></td>
-                  <td><?= formatDate($item["date_of_birth"]) ?></td>
 
-                  <td><?= $item["contact_phone"] ?></td>
+                
                 
                   <td class="table-td-center"><button class="btn btn-sm trash" type="button" title="Xóa"
                       onclick="myFunction(this)"><i class="fas fa-trash-alt"></i>

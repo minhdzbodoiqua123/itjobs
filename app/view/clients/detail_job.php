@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css" ?>">
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/clients/css/detail_job.css" ?>">
+<link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/clients/css/bootstrap.css" ?>">
 
 <script defer src="<?= _WEB_ROOT."/app/public/assets/clients/js/detail_job.js"?>"></script>
 
@@ -46,7 +47,7 @@ Nộp Đơn Ứng Tuyển
                                     <li id="tabs-job-company"><a href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-thuong-mai-dich-vu-du-lich-anh-sao-thien-ast-travel.35A7769F.html" data-href="#tab-2" title="Tổng quan công ty">Tổng quan công ty</a></li>
                                 </ul>
                                 <div class="job-detail-tool">
-                                    <ol class="tabs-saved">
+                                    <!-- <ol class="tabs-saved">
                                         <li>
                                             <a class="toollips save-job chk_save_35BB02B3 " href="javascript:void(0);" data-id="35BB02B3" onclick="popuplogin()">
     <i class="mdi mdi-heart-outline"></i>
@@ -72,7 +73,7 @@ Nộp Đơn Ứng Tuyển
   <p> Báo xấu </p>
 </div>
 </a> </li>
-                                    </ol>
+                                    </ol> -->
                                 </div>
                             </nav>
                             <div class="tab-content" id="tab-1">
@@ -197,16 +198,16 @@ Nộp Đơn Ứng Tuyển
                                     </div>
                                  
 
-                                    <div class="share-this-job">
+                                    <!-- <div class="share-this-job">
                                         <span>Chia sẻ việc làm này:</span>
                                         <a target="_blank" href="https://api.addthis.com/oexchange/0.8/forward/facebook/offer?url=https://careerbuilder.vn/vi/tim-viec-lam/ke-toan-no-phai-thu.35BB02B3.html&pubid=ra-559220ee7f9c15d6&title=KẾ TOÁN NỢ PHẢI THU&ct=1&pco=tbxnj-1.0"> <i class="fa fa-facebook"></i> </a>
                                         <a target="_blank" href="https://api.addthis.com/oexchange/0.8/forward/linkedin/offer?url=https://careerbuilder.vn/vi/tim-viec-lam/ke-toan-no-phai-thu.35BB02B3.html&pubid=ra-559220ee7f9c15d6&title=KẾ TOÁN NỢ PHẢI THU&ct=1&pco=tbxnj-1.0">  <i class="fa fa-linkedin"></i></a>
                                         <a target="_blank" href="https://api.addthis.com/oexchange/0.8/forward/gmail/offer?url=https://careerbuilder.vn/vi/tim-viec-lam/ke-toan-no-phai-thu.35BB02B3.html&pubid=ra-559220ee7f9c15d6&title=KẾ TOÁN NỢ PHẢI THU&ct=1&pco=tbxnj-1.0">  <i class="fa fa-google"></i></a>
                                         <div class="zalo-share-button" data-href="" data-oaid="579745863508352884" data-layout="2" data-color="white" data-customize=false></div>
 
-                                    </div>
+                                    </div> -->
 
-                                    <div class="job-tags ">
+                                    <!-- <div class="job-tags ">
                                         <h2>Job tags / skills</h2>
                                         <ul>
                                             <li><a href="https://careerbuilder.vn/vi/tag/thong-ke.html" title=" thống kê"> thống kê</a></li>
@@ -220,7 +221,7 @@ Nộp Đơn Ứng Tuyển
                                             <li><a href="https://careerbuilder.vn/vi/tag/receivable-accountant.html" title=" Receivable accountant"> Receivable accountant</a></li>
                                             <li><a href="https://careerbuilder.vn/vi/tag/accountant.html" title=" Accountant"> Accountant</a></li>
                                         </ul>
-                                    </div>
+                                    </div> -->
 
                                     <div class="job-detail-bottom">
                                         <div class="job-detail-bottom-wrapper">
@@ -234,7 +235,7 @@ Nộp Đơn Ứng Tuyển
 	</a>
                                                    </form>
                                                   
-                                                    <a class="report-job toollips" href="javascript:void(0)"><i class="fa fa-flag-o"></i><span>Báo xấu</span><div class="toolip">
+                                                    <a data-bs-toggle="modal" data-bs-target="#formReport" class="report-job toollips" href="javascript:void(0)"><i class="fa fa-flag-o"></i><span>Báo xấu</span><div class="toolip">
   <p> Báo xấu </p>
 </div>
 </a>
@@ -1227,7 +1228,47 @@ Nộp Đơn Ứng Tuyển
             </div>
         </div>
     
+        <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="formReport"    tabindex="-1" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+       <div class="modal-content">
+          <div class="modal-header">
+             <h2 class="modal-title">Vì sao bạn muốn báo xấu nhà tuyển dụng này? </h2>
+             <button type="button" class="btn-close close_form_rexp" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+    <form name="feedback_job" id="feedback_job" method="POST" autocomplete="off">
+      <input type="hidden" name="job_url" id="job_url" value="<?= $job_post["id"] ?>">
+      <input type="hidden" name="job_url" id="job_url" value="<?= current_url() ?>">
 
+      <div class="form-group">
+        <input style="margin:20px 0;width: 100%;padding:5px 5px;"type="text" id="email" name="email" placeholder="Nhập địa chỉ email "  value="">
+        <p class="text-validate error_email"> </p>
+      </div>
+      <div class="list-radio" id="reason" name="reason">
+        <input type="radio" id="reason-1" name="reason" value="1">
+        <label for="reason-1"> Việc làm không hợp pháp </label>
+        <br>
+        <input style="margin:10px 0;"type="radio" id="reason-2" name="reason" value="2">
+        <label for="reason-2"> Không cung cấp đủ thông tin </label>
+        <br>
+        <input style="margin:10px 0;"type="radio" id="reason-3" name="reason" value="3">
+        <label for="reason-3"> Khác </label>
+        <div>
+        <textarea name="desc_report" style="width:100%;height:200px" ></textarea>
+        </div>
+      </div>
+    
+   
+  
+       
+	<div class="form-group" style="clear:left">
+      <button style="margin:10px 0;"class="btn-send-report" onclick="saveFeedbackJob();return false;"> Báo xấu </button>
+	  </div>
+    </form>
+  </div>
+       </div>
+    </div>
+  </div>
 
 
      

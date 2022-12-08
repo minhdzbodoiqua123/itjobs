@@ -23,35 +23,7 @@ class Dashboard extends Controller
         ")->fetchAll(PDO::FETCH_ASSOC);
  $max_date=30;
 $arrDay=[];
-//Xem hôm này là ngày bao nhiêu
- $today=date('d');
- //Đếm tháng này có bao nhiêu ngày
-  $last_date=date('t');
-  $this_month=date('m');
- 
- if($today <  $max_date){
- 
-  
-  //Lấy ra ngày còn thiếu từ tháng trước
-  $get_day_last_month= $max_date-$today;
-  //Lấy ra tháng trước là tháng bao nhiêu
- 
-  $last_month=date('m',strtotime("-1 month"));
-  $last_month_date=date('Y-m-d',strtotime("-1 month"));
-  //Lấy ra số ngày max của tháng đấy
-  $max_day_last_month=(new DateTime($last_month_date))->format('t');
-  //Ngày bắt đầu từ 30 ngày trước
-  $start_day_last_month=$max_day_last_month-$get_day_last_month;
-     for ($i=$start_day_last_month; $i<= $max_day_last_month ; $i++) { 
-    $key=$i.'-'.$last_month;
-    $arrDay[$key]=0;
- }
- $start_date_this_month=1;
- }
- else{
-  $start_date_this_month=$today-$max_date;
- 
- }
+
  
 
         $arr=[];
@@ -70,7 +42,36 @@ $arrDay=[];
           
         }
         $arr2=[];
+        //Xem hôm này là ngày bao nhiêu
+        $today=date('d');
+        //Đếm tháng này có bao nhiêu ngày
+        $last_date=date('t');
+        $this_month=date('m');
 
+        if($today <  $max_date){
+
+        
+        //Lấy ra ngày còn thiếu từ tháng trước
+        $get_day_last_month= $max_date-$today;
+        //Lấy ra tháng trước là tháng bao nhiêu
+
+        $last_month=date('m',strtotime("-1 month"));
+        $last_month_date=date('Y-m-d',strtotime("-1 month"));
+        //Lấy ra số ngày max của tháng đấy
+        $max_day_last_month=(new DateTime($last_month_date))->format('t');
+        //Ngày bắt đầu từ 30 ngày trước
+        $start_day_last_month=$max_day_last_month-$get_day_last_month;
+            for ($i=$start_day_last_month; $i<= $max_day_last_month ; $i++) { 
+        $key=$i.'-'.$last_month;
+        $arrDay[$key]=0;
+        }
+        $start_date_this_month=1;
+        }
+        else{
+        $start_date_this_month=$today-$max_date;
+
+        }
+        
         foreach ($arr as $job_id=> $each) {
             $arr2[$job_id]=[
                 "name"=>$each["name"],
