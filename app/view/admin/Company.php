@@ -90,7 +90,6 @@
                   <th>Tên công ty</th>
                   <th>Logo</th>
                   <th>Địa chỉ trang web công ty</th>
-                  <th>Tóm tắt công ty</th>
                   <th>Loại công ty</th>
                   <th>Mã số thuế</th>
                   <th>Chức năng</th>
@@ -120,9 +119,7 @@
                     <td><img style="width:150px;height:100px;" src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$item["logo"] ?>" alt=""></td>
                     <td><?= $item["company_website_url"] ?></td>
 
-                    <td>
-                    <?= $item["company_summary"] ?>
-                    </td>
+                  
                     <td><?php foreach ($company_type as $type) {
                           if ($type["id"] == $item["company_type_id"]) {
                             echo $type["company_type"];

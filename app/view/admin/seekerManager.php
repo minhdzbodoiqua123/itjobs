@@ -156,7 +156,7 @@
                   <td><?= $item["marital_status"]=="1"?'Độc thân':'Đã kết hôn' ?></td>
                   <td><?= formatDate($item["date_of_birth"]) ?></td>
 
-                  <td><?= $item["contact_phone"] ?></td>
+                  <td><?= $item["contact_number"] ?></td>
                 
                   <td class="table-td-center"><button class="btn btn-sm trash" type="button" title="Xóa"
                       onclick="myFunction(this)"><i class="fas fa-trash-alt"></i>
