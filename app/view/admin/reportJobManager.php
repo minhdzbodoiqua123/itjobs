@@ -118,6 +118,7 @@
               <thead>
                 <tr>
                   <th>ID</th>
+                  <th width="150">Email</th>
                   <th width="150">Địa chỉ bài viết</th>
 
                   <!-- <th>Chức vụ</th> -->
@@ -131,7 +132,9 @@
                <?php foreach ($report_job as $item):?>
                 <tr>
                     <td><?= $item["id"] ?></td>
+                    <td><?= $item["email"] ?></td>
                     <td><a href="<?= $item["job_url"] ?>"><?= $item["job_url"] ?></a></td>
+
                     <td><?= $item["desc_report"] ?></td>
                   <td><?php 
                   switch ($item["reason"]) {
