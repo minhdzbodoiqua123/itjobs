@@ -57,7 +57,6 @@
             <p>Email: contact@careerbuilder.vn</p>
             <p>Copyright © IT JOBS</p>
          </div>
-         <div class="right-bottom-footer"><a target="_blank" rel="nofollow,noreferrer" href="http://online.gov.vn/Home/WebDetails/22254?AspxAutoDetectCookieSupport=1" title="bct"><img class="lazy-bg" data-src="./img/dk.png" src="../kiemviecv32/images/graphics/blank.gif" alt="bct"></a></div>
       </section>
    </div>
 </footer>

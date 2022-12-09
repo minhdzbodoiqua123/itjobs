@@ -72,91 +72,92 @@
       </ul>
     </div>
     <div class="row">
-    <div class="col-md-12">
-      <div class="tile">
-        <h3 class="tile-title">Sửa nhân viên</h3>
-        <div class="tile-body">
-          <div class="row element-button">
-           
-            <div class="col-sm-2">
-              <a class="btn btn-add btnAddCategories btn-sm" href="<?= _WEB_ROOT."/admin/DataStaff/addPosition" ?>"><i class="fas fa-folder-plus"></i> Thêm chức vụ</a>
-            </div>
-            <!-- <div class="col-sm-2">
+      <div class="col-md-12">
+        <div class="tile">
+          <h3 class="tile-title">Sửa nhân viên</h3>
+          <div class="tile-body">
+            <div class="row element-button">
+
+              <div class="col-sm-2">
+                <a class="btn btn-add btnAddCategories btn-sm" href="<?= _WEB_ROOT . "/admin/EmployeeManager" ?>"><i class="fas fa-folder-plus"></i> Sửa chức vụ</a>
+              </div>
+              <!-- <div class="col-sm-2">
               <a class="btn btn-add btnAddBrand btn-sm" data-bs-toggle="modal" data-bs-target="#brand"><i class="fas fa-folder-plus"></i> Thêm thương hiệu</a>
             </div> -->
-          </div>
+            </div>
 
-          <form id="formUpdate" method="post" class="row" enctype="multipart/form-data">
+            <form id="formUpdate" method="post" class="row" enctype="multipart/form-data">
 
-            <div class="form-group col-md-3">
-              <label class="control-label">Tên nhân viên</label>
-              <input  class="form-control" name="name" type="text">
+              <div class="form-group col-md-3">
+                <label class="control-label">Tên nhân viên</label>
+                <input class="form-control" name="name" type="text" value="<?= $allStaff["fullname"] ?>">
               <small></small>
               <span></span>
             </div>
 
-            <div class="form-group col-md-3">
-              <label class="control-label">Email</label>
-              <input  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" class="form-control" name="email" type="text">
-              <small></small>
-              <span></span>
-             </div>
-             <div class="form-group col-md-3">
-              <label class="control-label">Password</label>
-              <input  class="form-control" name="password" type="text">
-              <small></small>
-              <span></span>
-            </div>
-            <div class="form-group col-md-3">
-              <label class="control-label">Chức vụ</label>
-              <select class="form-control"name="position" >
-                <?php foreach ($allPosition as $item): ?>
+            <div class=" form-group col-md-3">
+                <label class="control-label">Email</label>
+                <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" class="form-control" name="email" type="text" value="<?= $allStaff["email"] ?>" readonly>
+                <small></small>
+                <span></span>
+              </div>
+              <div class="form-group col-md-3">
+                <label class="control-label">Password</label>
+                <input class="form-control" name="password" type="password" readonly value="<?= $allStaff['password'] ?>">
+                <small></small>
+                <span></span>
+              </div>
+              <div class="form-group col-md-3">
+                <label class="control-label">Chức vụ</label>
+                <select class="form-control" name="position">
+                  <?php foreach ($allPosition as $item) : ?>
                     <option value="<?= $item["id"] ?>"><?= $item["user_type_name"] ?></option>
-               <?php endforeach;?>
-           </select>
-              <small></small>
-              <span></span>
-            </div>
-            
-            <div class="form-group col-md-3">
-              <label class="control-label">Số điện thoại</label>
-              <input  class="form-control" pattern="(84|0[3|5|7|8|9])+([0-9]{8})\b" name="phone_number" type="text">
+                  <?php endforeach; ?>
+                </select>
+                <small></small>
+                <span></span>
+              </div>
 
-              <small></small>
-              <span></span>
-            </div>
+              <div class="form-group col-md-3">
+                <label class="control-label">Số điện thoại</label>
+                <input class="form-control" pattern="(84|0[3|5|7|8|9])+([0-9]{8})\b" name="phone_number" type="text" value="<?= $allStaff["contact_phone"] ?>">
 
-          
+                <small></small>
+                <span></span>
+              </div>
 
 
-            <div class="form-group col-md-12">
-              <label class="control-label">Ảnh thẻ</label>
-              <input type="file" id="uploadfile" name="ImageUpload"value=""  />
+
+
+              <div class="form-group col-md-12">
+                <label class="control-label">Ảnh thẻ</label>
+                <input type="file" id="uploadfile" name="ImageUpload" value="" />
                 <input type="file" name="fileUpload" id="file-upload">
                 <label style="margin-top:10px" class="file-upload Choicefile" for="file-upload">Upload file</label>
-                <div style="margin:20px 0" class="file-upload-filename"></div>
-              
-             <div class="box">
-             <div class="loader d-none"></div>
-             <img style="margin:15px 0;" height="400" width="400" src="" id="thumbimage"class="preview d-none" height="200" alt="Image preview">
-             </div>
-                  <small></small>
-                  <span></span>
-            </div>
-        
-            
-            <div class="form-group col-md-12">
-              <button class="btn btn-save" name="submit" type="submit">Lưu lại</button>
-              <a class="btn btn-cancel" href="<?= _WEB_ROOT."/admin/EmployeeManager" ?>">Hủy bỏ</a>
-            </div>
-          </form>
-        </div>
+                <div style="margin:20px 0" class="file-upload-filename">
+                <img src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$allStaff["image"] ?>" alt="" style="height: 400px; width: 400px;">
+              </div>
+                <div class="box">
+                  <div class="loader d-none"></div>
+                  <img style="margin:15px 0;" height="400" width="400" src="" id="thumbimage" class="preview d-none" height="200" alt="Image preview">
+                </div>
+                <small></small>
+                <span></span>
+              </div>
 
+
+              <div class="form-group col-md-12">
+                <button class="btn btn-save" name="submit" type="submit">Lưu lại</button>
+                <a class="btn btn-cancel" href="<?= _WEB_ROOT . "/admin/EmployeeManager" ?>">Hủy bỏ</a>
+              </div>
+            </form>
+          </div>
+
+        </div>
       </div>
     </div>
-    </div>
   </main>
-<script  src="<?php echo _WEB_ROOT;?>/app/public/assets/admin/js/AddStaff.js"></script>
+  <script src="<?php echo _WEB_ROOT; ?>/app/public/assets/admin/js/AddStaff.js"></script>
 
   <!-- Essential javascripts for application to work-->
   <script src="js/jquery-3.2.1.min.js"></script>

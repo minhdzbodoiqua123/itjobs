@@ -3,26 +3,26 @@
       <div class="container">
          <div class="category-nav">
             <p>Danh Mục</p>
-            <em class="mdi mdi-chevron-down"></em> 
+            <em class="mdi mdi-chevron-down"></em>
          </div>
          <div class="main-wrap">
-         <div class="left-wrap">
-                        <ul class="list-menu">
-                            <li> <a href="<?= _WEB_ROOT.'/employer/dashboard' ?>" title="Dashboard">Dashboard</a> </li>
-                            <li> <a href="<?= _WEB_ROOT.'/employer/hrcentral/posting' ?>" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
-                            <li class="active"> <a href="<?= _WEB_ROOT.'/employer/hrcentral/manageresume' ?>" class="active" title="Quản Lý  Ứng Viên">Quản Lý  Ứng Viên</a> </li>
-                           
-                            <li>
-             
-             <a href="<?= _WEB_ROOT.'/employer/hrcentral/accounts/edit_employer"'?>" title=" Tài Khoản"> Tài Khoản</a>
-             </li>
-                   
-                        </ul>
-                    </div>
+            <div class="left-wrap">
+               <ul class="list-menu">
+                  <li> <a href="<?= _WEB_ROOT . '/employer/dashboard' ?>" title="Dashboard">Dashboard</a> </li>
+                  <li> <a href="<?= _WEB_ROOT . '/employer/hrcentral/posting' ?>" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
+                  <li class="active"> <a href="<?= _WEB_ROOT . '/employer/hrcentral/manageresume' ?>" class="active" title="Quản Lý  Ứng Viên">Quản Lý Ứng Viên</a> </li>
+
+                  <li>
+
+                     <a href="<?= _WEB_ROOT . '/employer/hrcentral/accounts/edit_employer"' ?>" title=" Tài Khoản"> Tài Khoản</a>
+                  </li>
+
+               </ul>
+            </div>
             <div class="right-wrap">
                <ul class="list-menu">
-                  <li> <a href="https://careerbuilder.vn/vi/tim-ung-vien.html"> <em class="material-icons">find_in_page</em> Tìm Hồ Sơ </a> </li>
-                  <li> <a class="but-createjob" href="https://careerbuilder.vn/vi/employers/postjobs"> <em class="material-icons">assignment_ind</em> Đăng Tuyển Dụng </a> </li>
+                  <li> <a href="<?= _WEB_ROOT . '/employer/tim_ung_vien' ?>"> <em class="material-icons">find_in_page</em> Tìm Hồ Sơ </a> </li>
+                  <li> <a class="but-createjob" href="http://localhost//itjobs/employer/hrcentral/posting"> <em class="material-icons">assignment_ind</em> Đăng Tuyển Dụng </a> </li>
                </ul>
             </div>
          </div>
@@ -100,22 +100,22 @@
                <ul class="tabslet-tab">
                   <li class="">
                      <a href="<?= _WEB_ROOT . '/employer/hrcentral/Posting' ?>">
-                     Việc Làm Đang Đăng
+                        Việc Làm Đang Đăng
                      </a>
                   </li>
                   <li class="">
                      <a href="<?= _WEB_ROOT . '/employer/hrcentral/waitposting' ?>">
-                     Việc Làm Chờ Đăng
+                        Việc Làm Chờ Đăng
                      </a>
                   </li>
                   <li class="">
                      <a href="<?= _WEB_ROOT . '/employer/hrcentral/unposting' ?>">
-                     Việc Làm Tạm Dừng Đăng
+                        Việc Làm Tạm Dừng Đăng
                      </a>
                   </li>
                   <li class="active">
                      <a href="<?= _WEB_ROOT . '/employer/hrcentral/expireposting' ?>">
-                     Việc Làm Hết Hạn
+                        Việc Làm Hết Hạn
                      </a>
                   </li>
                </ul>
@@ -126,7 +126,7 @@
                            <p class="name">Hiển thị </p>
                            <ul class="list-check">
                               <li class="view-posting-detail active"><a href="javascript:void(0);" id="dtail">Chi tiết</a></li>
-                              <li class="view-posting-summary"><a href="javascript:void(0)">Xem tóm tắt   </a></li>
+                              <li class="view-posting-summary"><a href="javascript:void(0)">Xem tóm tắt </a></li>
                               <li><a href="javascript:void(0);" id="copy_multi_job">Nhân bản</a></li>
                               <li> <a href="javascript:void(0);" id="unposting_multi_job">Tạm Dừng Đăng</a></li>
                            </ul>
@@ -150,61 +150,61 @@
                      <div class="boding-jobs-posting">
                         <div class="table table-jobs-posting">
                            <table>
-                           <table>
-                                        <thead>
-                                            <tr>
-                                           
-                                                <th width="32%">Chức danh</th>
-                                                <th width="12%" >Ngày đăng<em class="material-icons">arrow_drop_down</em></th>
-                                                <th width="10%" >Hết hạn<em class="material-icons">sort</em></th>
-                                                <th width="10%" >Lượt Xem<em class="material-icons">sort</em></th>
-                                                <th width="10%" >Lượt Nộp<em class="material-icons">sort</em></th>
-                                            
-                                                <th width="15%">Thao tác</th>
-                                            </tr>
-                                        </thead>
-                              <tbody>
-                               <?php if(!empty($job_post)) {?>
-                                <?php foreach ($job_post as $item): ?>
-                                            <tr>
-                                                <!-- <td colspan="9" class="cb-text-center">
+                              <table>
+                                 <thead>
+                                    <tr>
+
+                                       <th width="32%">Chức danh</th>
+                                       <th width="12%">Ngày đăng<em class="material-icons">arrow_drop_down</em></th>
+                                       <th width="10%">Hết hạn<em class="material-icons">sort</em></th>
+                                       <th width="10%">Lượt Xem<em class="material-icons">sort</em></th>
+                                       <th width="10%">Lượt Nộp<em class="material-icons">sort</em></th>
+
+                                       <th width="15%">Thao tác</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <?php if (!empty($job_post)) { ?>
+                                       <?php foreach ($job_post as $item) : ?>
+                                          <tr>
+                                             <!-- <td colspan="9" class="cb-text-center">
                                                 <p><strong> Không có vị trí nào trong thư mục này.</strong></p>
                                                  
                                                 </td> -->
-                                              
-                                              
-                                                <td><?= $item["job_title"] ?></td>
-                                                <td><?= formatDate($item["posted_date"]) ?></td>
-                                                <td><?= formatDate($item["end_date"]) ?></td>
 
-                                                <td></td>
-                                      
-                                                <td></td>
-                                                <td>
+
+                                             <td><?= $item["job_title"] ?></td>
+                                             <td><?= formatDate($item["posted_date"]) ?></td>
+                                             <td><?= formatDate($item["end_date"]) ?></td>
+
+                                             <td></td>
+
+                                             <td></td>
+                                             <td>
                                                 <ul class="list-manipulation">
-                     <li><a class="btn_recruit" data-id="19" title="Đăng tuyển"><em class="material-icons">publish </em></a></li>
-                     <li><a href="http://localhost//itjobs/employer/hrcentral/viewjob/detail/19" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
-                     <li><a href="http://localhost//itjobs/employer/hrcentral/posting/copyjob/lop7cttnq.1667207375/35BAFFA3/1/1" title="Nhân bản"><em class="material-icons">content_copy </em> </a></li>
-                     <li><a href="https://careerbuilder.vn/vi/employers/postjobs/35BAFFA3" title="Sửa"><em class="material-icons">created</em></a></li>
-                     <li class="end"><a href="javascript:void(0);" onclick="deleteItem_job('35BAFFA3');return false;" title="Xóa"><em class="material-icons">cancel </em></a></li>
-                   </ul>
-                                                </td>
-                                                
-                                            </tr>
-                                            <?php  endforeach;?>
-                                        </tbody>
+                                                   <li><a class="btn_recruit" data-id="19" title="Đăng tuyển"><em class="material-icons">publish </em></a></li>
+                                                   <li><a href="http://localhost//itjobs/employer/hrcentral/viewjob/detail/19" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
+                                                   <li><a href="http://localhost//itjobs/employer/hrcentral/posting/copyjob/lop7cttnq.1667207375/35BAFFA3/1/1" title="Nhân bản"><em class="material-icons">content_copy </em> </a></li>
+                                                   <li><a href="https://careerbuilder.vn/vi/employers/postjobs/35BAFFA3" title="Sửa"><em class="material-icons">created</em></a></li>
+                                                   <li class="end"><a href="javascript:void(0);" onclick="deleteItem_job('35BAFFA3');return false;" title="Xóa"><em class="material-icons">cancel </em></a></li>
+                                                </ul>
+                                             </td>
 
-                                <?php } else { ?>
-                                  <tr>
+                                          </tr>
+                                       <?php endforeach; ?>
+                                 </tbody>
+
+                              <?php } else { ?>
+                                 <tr>
                                     <td colspan="9" class="cb-text-center">
                                        <p><strong> Không có vị trí nào trong thư mục này.</strong></p>
                                     </td>
                                  </tr>
-                                  <?php }?>
+                              <?php } ?>
 
-                                
+
                               </tbody>
-                           </table>
+                              </table>
                         </div>
                      </div>
                      <div class="main-button-sticky">

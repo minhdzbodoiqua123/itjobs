@@ -10,7 +10,7 @@
         <section class="signin-form cb-section">
             <div class="container">
                 <div class="cb-title cb-title-center">
-                    <h2>Chào mừng bạn tham gia CareerBuilder.vn</h2>
+                    <h2>Chào mừng bạn tham gia itJobs</h2>
                 </div>
                 <div class="box-shadown">
                     <div class="row">

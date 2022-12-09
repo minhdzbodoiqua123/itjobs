@@ -25,10 +25,10 @@
                         </ul>
                     </div>
       <div class="right-wrap">
-        <ul class="list-menu">
-          <li> <a href="http://localhost//itjobs/employer/tim_ung_vien"> <em class="material-icons">find_in_page</em> Tìm Hồ Sơ </a> </li>
-          <li> <a class="but-createjob" href="http://localhost//itjobs/employer/Postjobs"> <em class="material-icons">assignment_ind</em> Đăng Tuyển Dụng </a> </li>
-        </ul>
+            <ul class="list-menu">
+                        <li> <a href="<?= _WEB_ROOT . '/employer/tim_ung_vien' ?>"> <em class="material-icons">find_in_page</em> Tìm Hồ Sơ </a> </li>
+                        <li> <a class="but-createjob" href="http://localhost//itjobs/employer/hrcentral/posting"> <em class="material-icons">assignment_ind</em> Đăng Tuyển Dụng </a> </li>
+            </ul>
       </div>
     </div>
   </div>
