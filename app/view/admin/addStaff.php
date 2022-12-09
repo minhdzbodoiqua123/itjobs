@@ -76,15 +76,6 @@
       <div class="tile">
         <h3 class="tile-title">Thêm nhân viên</h3>
         <div class="tile-body">
-          <div class="row element-button">
-           
-            <div class="col-sm-2">
-              <a class="btn btn-add btnAddCategories btn-sm" href=""><i class="fas fa-folder-plus"></i> Thêm chức vụ</a>
-            </div>
-            <!-- <div class="col-sm-2">
-              <a class="btn btn-add btnAddBrand btn-sm" data-bs-toggle="modal" data-bs-target="#brand"><i class="fas fa-folder-plus"></i> Thêm thương hiệu</a>
-            </div> -->
-          </div>
 
           <form id="formUpdate" method="post" class="row" enctype="multipart/form-data">
 

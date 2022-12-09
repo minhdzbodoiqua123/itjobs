@@ -37,22 +37,7 @@
 
                             <?php }?>
                 
-
-             
                     <div class="main-noti" style="display: none"><a href="javascript:void(0);"> <span class="mdi mdi-cart"></span></a></div>
-                    <div class="main-language dropdown">
-                        <div class="dropdown-toggle">
-                            <p>VI<em class="mdi mdi-chevron-down"></em></p>
-                        </div>
-                        <div class="dropdown-menu">
-                            <div class="item active">
-                                <a class="dropdown-item" href="javascript:void(0);" title="Change language">VI</a>
-                            </div>
-                            <div class="item">
-                                <a class="dropdown-item" href="https://careerbuilder.vn/en/employers/register" title="Change language">EN</a>
-                            </div>
-                        </div>
-                    </div>
                     <div class="main-candidates"><a href="<?= _WEB_ROOT ?>"><em class="fa fa-external-link"></em>
                         <h4>Dành cho Ứng Viên</h4></a></div>
                 </div>

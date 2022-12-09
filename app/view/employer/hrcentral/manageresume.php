@@ -231,19 +231,12 @@
             </div>
                         <ul class="list-check">
                 <li class="view-posting-detail "><a href="javascript:void(0);">Chi tiết</a></li>
-                <li class="view-posting-summary active"><a href="javascript:void(0);">Xem tóm tắt</a></li>
 
 
-                
-                                    <li>
-                        <a href="javascript:void(0);" onclick="editResume('listresumes[]')">
-                            Xem và Đánh giá hồ sơ
-                        </a>
-                    </li>
+
                             </ul>
         </div>
     </div>
-           
 <div class="boding-resume-applied">
     <div class="table table-resume-applied">
     <table>

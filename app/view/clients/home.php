@@ -334,7 +334,7 @@
                   <h3>Bạn có vị trí cần đăng tuyển?</h3>
                   <p>Chúng tôi có những giải pháp tối ưu phù hợp với<br> nhiều loại hình công ty và tiêu chuẩn riêng</p>
                </div>
-               <div class="post-a-job-btn"><a class="btn-gradient" href="https://careerbuilder.vn/vi/employers/postjobs" target="_blank">Đăng tin Tuyển dụng
+               <div class="post-a-job-btn"><a class="btn-gradient" href="" target="_blank">Đăng tin Tuyển dụng
                   </a>
                </div>
             </div>
