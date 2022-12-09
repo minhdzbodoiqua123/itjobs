@@ -111,7 +111,7 @@
                 <label class="control-label">Chức vụ</label>
                 <select class="form-control" name="position">
                   <?php foreach ($allPosition as $item) : ?>
-                    <option value="<?= $item["id"] ?>"><?= $item["user_type_name"] ?></option>
+                    <option <?= $allStaff["user_type_id"]==$item["id"] ?"selected":"" ?> value="<?= $item["id"] ?>"><?= $item["user_type_name"] ?></option>
                   <?php endforeach; ?>
                 </select>
                 <small></small>
@@ -135,7 +135,7 @@
                 <input type="file" name="fileUpload" id="file-upload">
                 <label style="margin-top:10px" class="file-upload Choicefile" for="file-upload">Upload file</label>
                 <div style="margin:20px 0" class="file-upload-filename">
-                <img src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$allStaff["image"] ?>" alt="" style="height: 400px; width: 400px;">
+                <img src="<?= _WEB_ROOT.'/app/public/assets/admin/images/'.$allStaff["image"] ?>" alt="" style="height: 400px; width: 400px;">
               </div>
                 <div class="box">
                   <div class="loader d-none"></div>

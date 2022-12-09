@@ -67,7 +67,9 @@ class Jobs extends Controller
 
             $sql="SELECT job_post.*,degree_name,experience_type,logo,company_name,contact_name FROM `job_post` join degree on job_degree_id=degree.id join job_position on job_position_id=job_position.id join job_experience on job_experience_id=job_experience.id join company on company.id = job_post.company_id join  employer_infomation on employer_infomation.user_account_id=job_post.posted_by_id where status ='1' and job_post.id=$id";
         $job_post=$conn->query($sql)->fetch(PDO::FETCH_ASSOC);
-        // print_r($job_post);
+            
+     
+
         $this->data["sub_content"]["job_post"]=$job_post;
 
 

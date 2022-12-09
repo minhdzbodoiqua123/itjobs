@@ -48,11 +48,11 @@
                         <div class="form-group form-text">
                            <label>Nội dung hồ sơ</label>
                            <input type="text" name="keyword" id="keyword" placeholder="Nhập từ khóa" autocomplete="off">
-                           <div class="search_option">
+                           <!-- <div class="search_option">
                               <span>Tìm</span>
                               <label><input type="radio" name="keyword_match" value="all" checked="checked"/> Nội dung hồ sơ</label>
                               <label><input type="radio" name="keyword_match" value="title" /> Chức danh/ Vị trí</label>
-                           </div>
+                           </div> -->
                         </div>
                         <style>
                            .multiselect-dropdown{

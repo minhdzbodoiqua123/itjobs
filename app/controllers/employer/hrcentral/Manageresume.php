@@ -2,12 +2,46 @@
 class Manageresume extends Controller
 {
     public function index(){
+
         $employer_id=$_SESSION["employer"]["id"];
         $conn=$this->model("Job_postModel");
- $job_post_activity=$conn->query("SELECT seeker_profile.*,job_post_activity.*,salary_from,salary_to,resume.* FROM `job_post_activity`  join job_post on job_post_activity.job_id=job_post.id  join seeker_profile on seeker_profile.user_account_id=job_post_activity.user_account_id  join seeker_job_information on seeker_job_information.user_account_id=seeker_profile.user_account_id join resume on resume.id=resume_id where posted_by_id=$employer_id
-    ")->fetchAll(PDO::FETCH_ASSOC);
+ 
+        $job_status=$_GET["job_status"]??"";
+        $job_id=$_GET["job_id"]??"";
+        $sql="SELECT seeker_profile.*,job_post_activity.*,salary_from,salary_to,resume.*,job_post.job_title FROM `job_post_activity`  join job_post on job_post_activity.job_id=job_post.id  join seeker_profile on seeker_profile.user_account_id=job_post_activity.user_account_id  join seeker_job_information on seeker_job_information.user_account_id=seeker_profile.user_account_id join resume on resume.id=resume_id where posted_by_id=$employer_id ";
+        if(!empty($job_status) && $job_status ==1 ){
+            $sql.="and job_post.status='1' and now()<job_post.end_date";
+        }
+        else if(!empty($job_status) && $job_status ==2){
+            $sql.="and job_post.status='1' and now()>job_post.end_date";
+        }
+    
+        
+        $job_post_activity=$conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+        
+        if(!empty($job_status) && $job_status ==1 ){
+            $data_job_current=$conn->query("SELECT id,job_title FROM `job_post` WHERE now()<end_date and status='1' and posted_by_id=20")->fetchAll(PDO::FETCH_ASSOC);
+        }        
+        else if(!empty($job_status) && $job_status ==2){
+            $data_job_current=$conn->query("SELECT id,job_title FROM `job_post` WHERE now()>end_date and status='1' and posted_by_id=20")->fetchAll(PDO::FETCH_ASSOC);
+        }
+        // else if(!empty($job_status) && $job_status ==3){
+        //     $data_job_current=$conn->query("SELECT job_title FROM `job_post` WHERE now()>end_date and status='1' and posted_by_id=20")->fetchAll(PDO::FETCH_ASSOC);
+        // }
+      if(empty($data_job_current)){
+        $data_job_current=$conn->query("SELECT id,job_title FROM `job_post` WHERE now()<end_date and status='1' and posted_by_id=20")->fetchAll(PDO::FETCH_ASSOC);
+      }
+
+
+
         $data_resume_status=$conn->get("resume_status")->fetchAll(PDO::FETCH_ASSOC);
         $data_resume_type=$conn->get("resume_type")->fetchAll(PDO::FETCH_ASSOC);
+
+        $this->data["sub_content"]["data_job_current"] =$data_job_current;
+        $this->data["sub_content"]["job_status"] =$job_status;
+        $this->data["sub_content"]["job_id"] =$job_id;
+
+
 
         $this->data["sub_content"]["job_post_activity"] =$job_post_activity;
         $this->data["sub_content"]["data_resume_status"] =$data_resume_status;

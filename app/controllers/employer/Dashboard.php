@@ -3,13 +3,17 @@ class Dashboard extends Controller
 {
     public function index()
     {
-
         if (!Auth_employer::logged_in()) {
             $this->redirect("employer/account/login");
         }
+        $conn=$this->model("Job_postModel");
+        $count_job_posted=$conn->query("select count(id) as posted_job from job_post where posted_by_id=20 and status ='1' and now()<end_date group by posted_by_id ")->fetch(PDO::FETCH_ASSOC);
+        $count_expired_job=$conn->query("select count(id) as expired_job from job_post where posted_by_id=20 and status ='1' and now()>end_date group by posted_by_id")->fetch(PDO::FETCH_ASSOC);
+        $count_job_waiting = $conn->query("select count(id) as job_waiting from job_post where posted_by_id=20 and status ='0' group by posted_by_id")->fetch(PDO::FETCH_ASSOC);
+        $this->data["sub_content"]["count_job_posted"] = $count_job_posted;
+        $this->data["sub_content"]["count_expired_job"] = $count_expired_job;
+        $this->data["sub_content"]["count_job_waiting"] = $count_job_waiting;
 
-
-        $this->data["sub_content"][""] = "";
 
         $this->data["content"] = "employer/dashboard";
         $this->render('layouts/employer_layout', $this->data);
@@ -19,8 +23,8 @@ class Dashboard extends Controller
     {
         $employer_id=$_SESSION["employer"]["id"];
         $conn=$this->model("Job_postModel");
-        $result=$conn->query("SELECT DATE_FORMAT(apply_date, '%e-%m') as ngay_apply,count(resume_id) as so_luong_ho_so,job_id,resume_id,job_title FROM `job_post_activity` join job_post on job_id=job_post.id  where job_post.posted_by_id=$employer_id and date(apply_date)>= CURDATE() - INTERVAL 30 DAY group by DATE_FORMAT(apply_date, '%e-%m'),job_id
-        ")->fetchAll(PDO::FETCH_ASSOC);
+        $result=$conn->query("SELECT DATE_FORMAT(apply_date, '%e-%m') as ngay_apply,count(resume_id) as so_luong_ho_so,job_id,resume_id,job_title FROM `job_post_activity` join job_post on job_id=job_post.id  where job_post.posted_by_id=$employer_id and date(apply_date)>= CURDATE() - INTERVAL 30 DAY group by DATE_FORMAT(apply_date, '%e-%m'),job_id")->fetchAll(PDO::FETCH_ASSOC);
+        
  $max_date=30;
 $arrDay=[];
 

@@ -6,7 +6,7 @@ class EmployeeManager extends Controller
         $conn = $this->model("AccountUserModel");
         $allStaff = $conn->query("select user_account.*,fullname,image,user_type_name	 from user_account left join admin_info on user_account_id = user_account.id join user_type on user_type.id=user_type_id   where user_type_id>=3")->fetchAll(PDO::FETCH_ASSOC);
         $this->data["sub_content"]["allStaff"] = $allStaff;
-
+    
 
         $this->data["content"] = "admin/EmployeeManager";
 
@@ -87,16 +87,31 @@ class EmployeeManager extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $name = $_POST["name"];
             $phone_number = $_POST["phone_number"];
+             $file_size= $_FILES['fileUpload']['size'];
             $image =  $this->uploadFile();
+        
             $position = $_POST["position"];
+           if($file_size>0){
+           
             $data = [
                 "fullname" => "'$name'",
                 "contact_phone" => "'$phone_number'",
                 "image" => "'$image'",
+         
             ];
+           }
+           else{
+            $data = [
+                "fullname" => "'$name'",
+                "contact_phone" => "'$phone_number'",
+            ];
+           }
+           $conn->update("user_account",[
+            "user_type_id" => "'$position'",
+           ], "id=$id");
             $conn->update("admin_info", $data, "user_account_id=$id");
             $this->redirect("admin/EmployeeManager");
-            return;
+            
         }
 
 

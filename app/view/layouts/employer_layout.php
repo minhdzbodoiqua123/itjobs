@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/tailwind.css" ?>">
     <link rel="stylesheet" href="<?= _WEB_ROOT."/app/public/assets/employer/css/main.css" ?>">
     
     <script  src="<?= _WEB_ROOT . "/app/library/flatpickr/dist/flatpickr.js" ?>"></script>
 
-    <script  src="<?= _WEB_ROOT . "/app/library/pristinejs/dist/pristine.js" ?>"></script>
+    <script defer src="<?= _WEB_ROOT . "/app/library/pristinejs/dist/pristine.js" ?>"></script>
 
     <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

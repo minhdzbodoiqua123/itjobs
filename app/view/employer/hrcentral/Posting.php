@@ -153,20 +153,14 @@
                                         </thead>
                                         <tbody>
                                             <?php foreach ($job_post as $item) : ?>
-                                                <tr>
-                                                    <!-- <td colspan="9" class="cb-text-center">
-                                                <p><strong> Không có vị trí nào trong thư mục này.</strong></p>
-                                                 
-                                                </td> -->
-
-
-                                                    <td><?= $item["job_title"] ?></td>
+                                                     <tr>
+                                                     <td><?= $item["job_title"] ?></td>
                                                     <td><?= formatDate($item["posted_date"]) ?></td>
                                                     <td><?= formatDate($item["end_date"]) ?></td>
 
                                                     <td><?= $item["view"] ?></td>
                                                     <td> <?php foreach ($count_submitted as $value) : ?>
-                                                            <?= $item["id"] == $value["job_id"] ? $value["num_submit"] : "" ?>
+           <?= $item["id"] == $value["job_id"] ? $value["num_submit"] : "" ?>
 
                                                         <?php endforeach; ?></td>
                                                     <td>
@@ -178,9 +172,8 @@
                                                             <li class="end"><a href="javascript:void(0);" title="Tạm dừng đăng"><em class="material-icons">cancel </em></a></li>
                                                         </ul>
                                                     </td>
-
-                                                </tr>
-                                            <?php endforeach; ?>
+                                                     </tr>
+                                            <?php  endforeach;?>
                                         </tbody>
                                     </table>
                                 </div>

@@ -1,3 +1,4 @@
+<script defer src="<?= _WEB_ROOT."/app/public/assets/employer/js/login.js"?>"></script>
 
 
 <body>
@@ -927,7 +928,7 @@
 									<span>Email/Tên đăng nhập</span>
 								</div>
 								<div class="form-input">
-									<input type="text" name="username" class="form-control" placeholder=" Vui lòng nhập thông tin" onkeyup="this.setAttribute('value', this.value);" value="" onfocus="javascript:if(this.value=='Email/Tên đăng nhập') this.value='';">
+									<input required data-pristine-required-message="Vui lòng nhập email của bạn"type="text" name="username" class="form-control" placeholder=" Vui lòng nhập thông tin"  value="" onfocus="javascript:if(this.value=='Email/Tên đăng nhập') this.value='';">
 										<span class="form-error error_username">
 																					</span>
 								</div>
@@ -937,9 +938,9 @@
 									<span>Mật khẩu</span>
 								</div>
 								<div class="form-input">
-									<input type="password" class="form-control" placeholder=" Vui lòng nhập thông tin" onkeyup="this.setAttribute('value', this.value);" name="password" value="">
+									<input required data-pristine-required-message="Vui lòng nhập password của bạn " class="form-control" placeholder=" Vui lòng nhập thông tin" name="password" value="">
 										<span class="form-error error_password">
-																																	</span>
+                                       <?= isset($errors['login'])?$errors['login']:"" ?>															</span>
 								</div>
 							</div>
 							<div class="user-action">

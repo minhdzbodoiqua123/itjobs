@@ -44,7 +44,18 @@
             <div class="heading-manage">
                 <div class="left-heading">
                     <h1 class="title-manage">
-                        Việc Làm Đang Đăng
+                        <?php switch ($job_status) {
+                            case '3':
+                                echo "Việc Làm Tạm Dừng Đăng";
+                                break;
+                            case '2':
+                                echo "Việc Làm Hết Hạn";
+
+                                break;
+                            default:
+                              echo "Việc Làm Đang Đăng ";
+                                break;
+                        }?>
                     </h1>
 
                 </div>
@@ -174,75 +185,68 @@
                     </li>
                 </ul>
                 <div class="tabslet-content active" id="tab-1">
-                    <div class="main-resume-applied">
-                        <div class="heading-resume-applied">
-                            <div class="left-heading">
-                                <div class="form-group form-select form-filter">
+                                                    <div class="main-resume-applied">
+    <div class="heading-resume-applied">
+        <div class="left-heading">
+                            <!-- <div class="form-group form-select form-filter">
+                    <label>User</label>
+                    <select id="foward_username" onchange="onchangeUserResume()">
+                        <option value="alluser" selected="selected">Tất cả</option>
+                                            <option value="lop7cttnq.1667207375" selected="selected">
+                            minh nguyễn 123
+                        </option>
+                                        </select>
+                </div> -->
+                        <div class="form-group form-select form-filter">
+                <select id="select-group">
+                    
+                    <option <?= empty($job_status) ? "":$job_status==1?"selected":""?> data-group="1" value="<?= _WEB_ROOT.'/employer/hrcentral/manageresume?job_status=1' ?>" >
+                        Việc Làm Đang Đăng (<?= count($data_job_current) ?>)
+                    </option>
+                    <option <?= empty($job_status) ? "":$job_status==3?"selected":""?> data-group="3" value="<?= _WEB_ROOT.'/employer/hrcentral/manageresume?job_status=3' ?>">
+                        Việc Làm Tạm Dừng Đăng (<?= count($data_job_current) ?>)
+                    </option>
+                    <option <?= empty($job_status) ? "":$job_status==2?"selected":""?> data-group="2" value="<?= _WEB_ROOT.'/employer/hrcentral/manageresume?job_status=2' ?>">
+                        Việc Làm Hết Hạn (<?= count($data_job_current) ?>)
+                    </option>
+                </select>
+            </div>
+            <div class="form-group form-select form-filter">
+                <select class="go-link" id="select-folder" style="width: 400px;">
+          <option value="-1">Chọn thư mục</option>
+         <?php foreach ($data_job_current as $item):?>
+            <option <?= empty($job_id) ? "" :$item["id"]==$job_id ?"selected":"" ?> value="<?php switch ($job_status) {
+                case '2':
+                    echo _WEB_ROOT.'/employer/hrcentral/manageresume?job_status='.$job_status.'&job_id='.$item["id"];
+                    break;
+                case '3':
+                    echo _WEB_ROOT.'/employer/hrcentral/manageresume?job_status='.$job_status.'&job_id='.$item["id"];
+                    break;
+                default:
+                    echo _WEB_ROOT.'/employer/hrcentral/manageresume?job_status=1'.'&job_id='.$item["id"];
+                    break;
+            }?>"><?=  $item["job_title"] ?></option>
+                                           
+            <?php endforeach;?>                                                                             </select>
+            </div>
+                        <ul class="list-check">
+                <li class="view-posting-detail "><a href="javascript:void(0);">Chi tiết</a></li>
+                <li class="view-posting-summary active"><a href="javascript:void(0);">Xem tóm tắt</a></li>
 
-                                </div>
-                                <div class="form-group form-select form-filter">
-                                    <select id="select-group">
-                                        <option data-group="1" value="https://careerbuilder.vn/vi/employers/hrcentral/manageresume/1/35A4E900/*/0/0/*/*/7/2/6/2/0/desc/lop7cttnq.1667207375/1" selected>
-                                            Việc Làm Đang Đăng (0)
-                                        </option>
-                                        <option data-group="3" value="https://careerbuilder.vn/vi/employers/hrcentral/manageresume/3/35A4E900/*/0/0/*/*/7/2/6/2/0/desc/lop7cttnq.1667207375/1">
-                                            Việc Làm Tạm Dừng Đăng (0)
-                                        </option>
-                                        <option data-group="2" value="https://careerbuilder.vn/vi/employers/hrcentral/manageresume/2/35A4E900/*/0/0/*/*/7/2/6/2/0/desc/lop7cttnq.1667207375/1">
-                                            Việc Làm Hết Hạn (0)
-                                        </option>
-                                    </select>
-                                </div>
-                                <div class="form-group form-select form-filter">
 
-                                </div>
-                                <ul class="list-check">
-                                    <li class="view-posting-detail "><a href="javascript:void(0);">Chi tiết</a></li>
-                                    <li class="view-posting-summary active"><a href="javascript:void(0);">Xem tóm tắt</a></li>
-
-
-
+                
                                     <li>
-                                        <a href="javascript:void(0);" onclick="editResume('listresumes[]')">
-                                            Xem và Đánh giá hồ sơ
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="heading-resume-applied">
-                            <div class="left-heading">
-                                <div class="hor-var"><img src="./img/employer/2-arrow.png" alt="2-arrow"></div>
-                                <p class="name">Chọn và xử lý:</p>
-                                <ul class="list-check">
-                                    <li class="view-flip">
-                                        <a href="javascript:void(0);" onclick="windowFlipViewHR('aW50Rm9sZGVySUQ9MCZpbnRFbXBJRD0yODc2MTYmaW50VXNlcklEPWxvcDdjdHRucS4xNjY3MjA3Mzc1JmludEdldFN0YXR1cz0xJnN0cktleXdvcmQ9JmludEtleXdvcmRUeXBlPTAmanNrX3R5cGU9MCZzdHJGcm9tRGF0ZT0mc3RyVG9EYXRlPSZpbnRTdGF0dXM9NyZpbnRSZXN1bWVWaWV3PTImaW50U3VpdGFibGU9MiZpbnRUeXBlPTYmaW50Tm90ZT0yJmludEtpbmQ9MSZpbnRTb3J0VHlwZT0wJnN0clNvcnQ9ZGVzYyZpbnRQYWdlPTEmaW50TGltaXQ9MjAmc2NvcmU9LTImaW50Rm9sZGVyVHlwZT0x', 1, 1)">
-                                            Flipview All
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" onclick="deleteFolderResume('listresumes[]')">
-                                            Xóa hồ sơ
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" onclick="showFoldersSelected('', 'listresumes[]');">
-                                            Lưu thư mục
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="right-heading">
-                                <div class="to-display">
-                                    <p class="name-display">
-
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="boding-resume-applied">
-                            <div class="table table-resume-applied">
-                                <table>
+                        <a href="javascript:void(0);" onclick="editResume('listresumes[]')">
+                            Xem và Đánh giá hồ sơ
+                        </a>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+           
+<div class="boding-resume-applied">
+    <div class="table table-resume-applied">
+    <table>
                                     <thead>
                                         <tr>
 
@@ -251,7 +255,8 @@
                                             </th>
                                             <th width="27%">Chọn tất cả</th>
                                             <th width="10%">Ngày nộp</th>
-                                            <th width="10%%">Trạng thái</th>
+                             
+                                            <th width="10%">Trạng thái</th>
                                             <th width="10%">Xếp loại</th>
                                             <th width="10%">Kinh nghiệm</th>
                                             <th width="20%">Mức lương</th>
@@ -350,45 +355,14 @@
                                                 </tr> -->
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="main-pagination">
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- <script>
-                                var str_option_1 = '';
-                                var str_option_2 = '';
-                                var str_option_3 = '';
-                                $(document).ready(function() {
-                                    $("#select-group").on('change', function(event) {
-                                        event.preventDefault();
-                                        var id_group = $('option:selected', this).data('group');
-                                        var modeview_resume = $.cookie('modeview_resume');
-                                        if (modeview_resume == 0 || modeview_resume == undefined) {
-                                            var link = $(this).val();
-                                            window.location.href = link;
-                                            return false;
-                                        } else {
-                                            $("#select-folder option").remove();
-                                            var str_option_ = str_option_1;
-                                            if (id_group == 2)
-                                                str_option_ = str_option_2;
-                                            else if (id_group == 3)
-                                                str_option_ = str_option_3;
-
-                                            $("#select-folder").html(str_option_)
-                                            var link_folder = $('#select-folder option:first').val();
-                                            window.location.href = link_folder;
-                                            return false;
-                                        }
+    </div>
+    <div class="main-pagination">
+        
+    </div>
+</div>    </div>
 
 
-                                    });
-                                });
-                            </script> -->
-                </div>
+                                            </div>
             </div>
         </div>
     </div>
