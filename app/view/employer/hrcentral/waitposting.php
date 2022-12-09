@@ -60,10 +60,9 @@
       <div class="main-wrap">
         <div class="left-wrap">
           <ul class="list-menu">
-            <li> <a href="https://careerbuilder.vn/vi/employers/dashboard" title="Dashboard">Dashboard</a> </li>
+            <li> <a href="http://localhost//itjobs/employer/dashboard" title="Dashboard">Dashboard</a> </li>
             <li class="active"> <a href="<?= _WEB_ROOT . '/employer/hrcentral/posting' ?>" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
             <li> <a href="<?= _WEB_ROOT . '/employer/hrcentral/manageresume' ?>" class="active" title="Quản Lý  Ứng Viên">Quản Lý Ứng Viên</a> </li>
-            <li class=""> <a href="https://careerbuilder.vn/vi/employers/hrcentral/search-history" title="Lịch Sử Tìm Kiếm">Lịch Sử Tìm Kiếm</a> </li>
 
             <li>
 
@@ -90,7 +89,6 @@
             <h1 class="title-manage">Việc Làm Chờ Đăng </h1>
             <div class="button"><a class="btn-gradient" href="<?= _WEB_ROOT . '/employer/Postjobs' ?>"><em class="material-icons">create</em>Tạo Mẫu Tuyển Dụng</a></div>
           </div>
-          <div class="right-heading"><a href="https://careerbuilder.vn/vi/employers/faq" target="_blank" class="support">Hướng dẫn</a></div>
         </div>
         <div class="main-form-posting">
           <form name="frmSearchJob" id="frmSearchJob" action="" method="post" onsubmit="return validateSearch();">
