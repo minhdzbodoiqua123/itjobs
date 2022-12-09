@@ -54,12 +54,12 @@
                     <div class="main-tabslet" data-toggle="tabslet">
 
                         <ul class="tabslet-tab">
-                            <li><a href="https://careerbuilder.vn/vi/employers/hrcentral/accounts/1" alt="Quản lý user"><span>Quản lý user</span></a></li>
-                            <li class="active"><a href="https://careerbuilder.vn/vi/employers/hrcentral/accounts/edit_employer" alt="Thông tin công ty"><span>Thông tin công ty</span></a></li>
-                            <li><a href="https://careerbuilder.vn/vi/employers/hrcentral/accounts/edit_contact" alt="Thông tin liên hệ"><span>Thông tin liên hệ</span></a></li>
-                           
+                            <!-- <li><a href="https://careerbuilder.vn/vi/employers/hrcentral/accounts/1" alt="Quản lý user"><span>Quản lý user</span></a></li> -->
+                            <li class="active"><a href="<?= _WEB_ROOT.'/employer/hrcentral/accounts/edit_employer' ?>" alt="Thông tin công ty"><span>Thông tin công ty</span></a></li>
+                            <!-- <li><a href="https://careerbuilder.vn/vi/employers/hrcentral/accounts/edit_contact" alt="Thông tin liên hệ"><span>Thông tin liên hệ</span></a></li>
+                            -->
                        
-                            <li><a href="https://careerbuilder.vn/vi/employers/hrcentral/accounts/changepassword" alt="Đổi mật khẩu"><span>Đổi mật khẩu</span></a></li>
+                            <li><a href="<?= _WEB_ROOT.'/employer/hrcentral/accounts/changepassword' ?>" alt="Đổi mật khẩu"><span>Đổi mật khẩu</span></a></li>
                         </ul>
                         <div class="tabslet-content active" id="tab-2">
                             <form name="editCompany" id="editCompany" action="" method="post" enctype="multipart/form-data">

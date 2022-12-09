@@ -166,7 +166,7 @@
 
                                                 <td><?= $item["view"] ?></td>
                                                     <td>     <?php foreach ($count_submitted as $value):?>
-                                 <?= $item["id"]==$value["job_id"] ? $value["num_submit"] : "" ?>
+                                   <?= $item["id"]==$value["job_id"] ? $value["num_submit"] : "" ?>
                                       
                                                <?php endforeach;?></td>
                                                 <td>
@@ -174,7 +174,7 @@
                      
                      <li><a href="<?= _WEB_ROOT.'/employer/hrcentral/viewjob/detail/'.$item['id']?>" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
                     
-                     <li><a href="<?= _WEB_ROOT.'/employer/hrcentral/viewjob/detail/'.$item['id']?>" title="Sửa"><em class="material-icons">created</em></a></li>
+                     <!-- <li><a href="<?= _WEB_ROOT.'/employer/hrcentral/viewjob/detail/'.$item['id']?>" title="Sửa"><em class="material-icons">created</em></a></li> -->
                      <li class="end"><a href="javascript:void(0);"  title="Tạm dừng đăng"><em class="material-icons">cancel </em></a></li>
                    </ul>
                                                 </td>

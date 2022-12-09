@@ -113,8 +113,7 @@ async function renderDataResume(data_provinces,data)
                    
                        
                        <li><a href="javascript:void(0)" onclick="showFoldersSelected('361DF78D');" class="btn-save-folder" href="javascript:void(0)" title="Lưu vào thư mục"><em class="material-icons">folder_shared </em></a></li>
-                       <li><a href="https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/nhan vien tham dinh/noi-lam-viec/da-nang" title="Xem hồ sơ tương tự"> <em class="material-icons">account_box </em></a></li>
-                       <li><a class="btn-delete" href="javascript:void(0)" onclick="return addResumeHidden(1, 7933581);" title="Ẩn hồ sơ"> <em class="material-icons">cancel </em></a></li>
+                       
                     </ul>
                  </td>
               </tr>

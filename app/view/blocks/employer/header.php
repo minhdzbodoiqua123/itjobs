@@ -28,7 +28,7 @@
                             <li class="dropdown  "><a href="https://careerbuilder.vn/vi/employers/dashboard">HR Central</a>
                                 <div class="dropdown-menu">
                                     <ul>
-                                        <li><a href="https://careerbuilder.vn/vi/employers/dashboard">Dashboard</a></li>
+                                        <li><a href="<?= _WEB_ROOT.'/employer/dashboard' ?>">Dashboard</a></li>
                                         <li><a href="https://careerbuilder.vn/vi/employers/postjobs">Đăng Tuyển Dụng</a></li>
                                         <li><a href="https://careerbuilder.vn/vi/tim-ung-vien.html">Tìm Hồ Sơ</a></li>
 
@@ -42,7 +42,7 @@
                 </div>
                 <div class="right-wrap">
                         <?php if(isset($_SESSION["employer"])) {?>
-                            <div class="main-login dropdown logged"><a href="https://careerbuilder.vn/vi/employers/hrcentral/accounts" title="minh nguyễn 123"> <span class="mdi mdi-account-circle"></span>Hi, <span class="employer_name"></span></a>
+                            <div class="main-login dropdown logged"><a href="<?= _WEB_ROOT.'/employer/hrcentral/accounts/edit_employer' ?>" title="minh nguyễn 123"> <span class="mdi mdi-account-circle"></span>Hi, <span class="employer_name"></span></a>
                     <div class="dropdown-menu">
                         <ul>
                             <li> <a href="<?= _WEB_ROOT.'/employer/hrcentral/accounts/edit_employer' ?>"> <em class="fa fa-cog"></em>Tài khoản</a></li>

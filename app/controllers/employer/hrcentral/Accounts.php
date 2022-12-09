@@ -131,8 +131,9 @@ class Accounts extends Controller
     public function changepassword(){
         
         $this->data["sub_content"][""] ="" ;
-        $this->data["content"] = "";
 
-        $this->data["content"]="employer/hrcentral/accounts/edit_employer";
+        $this->data["content"]="employer/hrcentral/accounts/changepassword";
+        $this->render('layouts/employer_layout',$this->data);
+
     }
 }

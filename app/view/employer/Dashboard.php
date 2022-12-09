@@ -92,7 +92,6 @@
                 <div class="main-dasboard-top">
                     <div class="row">
                     
-
                         <div class="col-sm-6 col-xl-12">
                             <div class="box-dasboard-top">
                                 <div class="head">
@@ -102,13 +101,17 @@
                                     <ul class="list-post-management">
                                         <li>
                                             <a href="https://careerbuilder.vn/vi/employers/hrcentral/posting/user_id/lop7cttnq.1667207375">
-                                        <span class="number green">0</span>
+                                        <span class="number green"><?= 
+                                        !empty($count_job_posted["posted_job"]) ? $count_job_posted["posted_job"]:0 
+                                         ?></span>
                                         <span class="title">Việc làm đang đăng</span>
                                     </a>
                                         </li>
                                         <li>
                                             <a href="https://careerbuilder.vn/vi/employers/hrcentral/waitposting/user_id/lop7cttnq.1667207375">
-                                        <span class="number blue">6</span>
+                                        <span class="number blue"><?= 
+                                        !empty($count_job_waiting["job_waiting"]) ? $count_job_waiting["job_waiting"]:0 
+                                         ?></span>
                                         <span class="title">Việc làm chờ đăng</span>
                                     </a>
                                         </li>
@@ -120,16 +123,11 @@
                                         </li>
                                         <li>
                                             <a href="https://careerbuilder.vn/vi/employers/hrcentral/expireposting/user_id/lop7cttnq.1667207375">
-                                        <span class="number ">0</span>
+        <span class="number "><?= !empty($count_expired_job["expired_job"]) ? $count_expired_job["expired_job"]:0 ?></span>
                                         <span class="title">Việc làm hết hạn</span>
                                     </a>
                                         </li>
-                                        <li>
-                                            <a href="https://careerbuilder.vn/vi/employers/hrcentral/manageresume/followers">
-                                        <span class="number ">0</span>
-                                        <span class="title">Followers</span>
-                                    </a>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </div>
