@@ -1515,13 +1515,21 @@
             }
 
             .employer-dasboard .main-dasboard-middle .box-dasboard-middle .body .chart {
-                max-width: 480px;
-                height: 200px;
+                height: 500px;
+                display: flex;
+                justify-content: center;
                 margin-top: 25px;
                 margin-right: auto;
                 margin-left: auto;
             }
+            .highcharts-drilldown-axis-label{
+                font-family: Roboto;
+                text-decoration:none!important;
+            }
+.highcharts-breadcrumbs-button{
+    font-family: Roboto;
 
+}
             .employer-dasboard .main-dasboard-middle .box-dasboard-middle .body .chart-legend {
                 margin-top: 5px;
             }

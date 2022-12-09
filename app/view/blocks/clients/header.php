@@ -12,21 +12,12 @@
                 </div>
                 <div class="main-menu">
                     <ul class="menu">
-                        <li class="dropdown">
-                            <a title="Tìm Việc Làm">
-                                Tìm Việc Làm
-                            </a>
-                            <style>
-                              
-                            </style>
-                            <a class="px-2"href="<?= _WEB_ROOT . '/Alljob' ?>"
+                       
+                        <li>
+                        <a class="px-2"href="<?= _WEB_ROOT . '/Alljob' ?>"
                                             title="Việc làm mới nhất">
                                             Việc làm mới nhất
                                </a>
-                           
-                                       
-
-                           
                         </li>
                         <li>      <a class="px-2"href="<?= _WEB_ROOT.'/tim_viec_lam' ?>"
                                             title="Ngành nghề / Địa điểm">
@@ -53,7 +44,7 @@
             </div>
             <div class="right-wrap">
                 <div class="main-noti dropdown">
-                    <a href="https://careerbuilder.vn/thong-bao-viec-lam" title="Thông Báo Việc Làm">
+                    <!-- <a href="https://careerbuilder.vn/thong-bao-viec-lam" title="Thông Báo Việc Làm">
                         <span class="mdi mdi-bell"></span>
                     </a>
                     <div class="dropdown-menu">
@@ -67,13 +58,13 @@
                                 Tạo Ngay
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <?php if (!isset($_SESSION["user"])) { ?>
                 <div class="main-login dropdown">
                     <div class="title-login">
                         <a href="<?= _WEB_ROOT . '/account/login' ?>" title="Đăng nhập">
-                            <span class="mdi mdi-account-circle"></span>
+                            <!-- <span class="mdi mdi-account-circle"></span> -->
                             Đăng nhập
                         </a>
                     </div>
@@ -155,7 +146,7 @@
                             <li><a href="<?= _WEB_ROOT.'/employer/postjobs'?>" title="Đăng Tuyển Dụng">Đăng
                                     Tuyển Dụng</a>
                             </li>
-                            <li><a href="https://careerbuilder.vn/vi/resume-search.html" title="Tìm Ứng Viên">Tìm Ứng
+                            <li><a href="<?= _WEB_ROOT.'/employer/tim_ung_vien'?>">Tìm Ứng
                                     Viên</a>
                             </li>
                            

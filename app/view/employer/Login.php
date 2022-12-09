@@ -917,7 +917,7 @@
 								<h3>THÔNG TIN ĐĂNG NHẬP</h3>
 							</div>
 							<div class="text-sup">
-								  <a href="https://careerbuilder.vn/vi/employers/faq" target="_blank" class="support">Hướng dẫn</a>
+								  <a href="" target="_blank" class="support">Hướng dẫn</a>
 							</div>
 						</div>
 				    <div class="main-form">
@@ -948,7 +948,7 @@
 									<input type="hidden" name="csrf_token" value="6701df501af25e1d27f3c0fba557920bec75d15323a9e95d454558ed622ace3d">
 									<button type="submit" class="btn-action">Đăng nhập </button>
 								</div>
-								<p> <a class="register" href="javascript:void()" onclick="location.href='https://careerbuilder.vn/vi/employers/register'">Quý khách chưa có tài khoản?</a> Đăng ký dễ dàng, hoàn toàn miễn phí</p>
+								<p> <a class="register" href="javascript:void()" onclick="location.href='http://localhost//itjobs/employer/account/register'">Quý khách chưa có tài khoản?</a> Đăng ký dễ dàng, hoàn toàn miễn phí</p>
 							</div>
 						</form>
 					</div>

@@ -27,7 +27,7 @@ class Tim_ung_vien extends Controller
             }
             else{
                 $sql="select distinct resume.*,firstname,lastname,degree_name,position from resume left join  seeker_profession_by_resume on seeker_profession_by_resume.resume_id =resume.id join seeker_profile on seeker_profile.user_account_id=resume.user_account_id join degree on degree_id=degree.id
-                join job_position on job_position.id=position_id where resume_active =1  ";
+                join job_position on job_position.id=position_id where resume_active =3  ";
             }
             if(!empty($keyword)){
                 $sql.="and  resume_title LIKE '%$keyword%' ";

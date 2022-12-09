@@ -60,11 +60,10 @@ class Database
 
             if (!empty($condition)) {
                 $sql = "UPDATE $table SET $updateStr WHERE $condition";
-                echo $sql;
             } else {
                 $sql = "UPDATE $table SET $updateStr ";
             }
-       
+            
             $status = $this->query($sql);
          
             if ($status) {

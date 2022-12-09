@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Danh sách nhân viên | Quản trị Admin</title>
+  <title>Danh sách đơn hàng | Quản trị Admin</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,10 +46,10 @@
     <hr>
     <ul class="app-menu">
       <li><a class="app-menu__item " href="index.html"><span class="app-menu__label">Bảng điều khiển</span></a></li>
-      <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/employeeManager' ?>">
+      <li><a class="app-menu__item active" href="<?= _WEB_ROOT . '/admin/employeeManager' ?>">
           <span class="app-menu__label">Quản lý nhân viên</span></a></li>
       <li><a class="app-menu__item " href="http://localhost//itjobs/admin/seekerManager"><span class="app-menu__label">Quản lý người ứng tuyển</span></a></li>
-      <li><a class="app-menu__item active" href="http://localhost//itjobs/admin/EmployerManager"><span class="app-menu__label">Quản lý nhà tuyển dụng</span></a>
+      <li><a class="app-menu__item " href="http://localhost//itjobs/admin/EmployerManager"><span class="app-menu__label">Quản lý nhà tuyển dụng</span></a>
       </li>
       <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/company' ?>"></i><span class="app-menu__label">Quản lý công ty</span></a></li>
       <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/Jobwelfare' ?>"></i><span class="app-menu__label">Quản lý phúc lợi</span></a></li>
@@ -66,139 +66,98 @@
   </aside>
   <main class="app-content">
     <div class="app-title">
-      <ul class="app-breadcrumb breadcrumb side">
-        <li class="breadcrumb-item active"><a href="#"><b>Danh sách nhà tuyển dụng</b></a></li>
+      <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><a href="http://localhost//itjobs/admin/employeeManager" class="list_product">Quản lý nhân viên</a></li>
+        <li class="breadcrumb-item"><a href="#">Sửa nhân viên</a></li>
       </ul>
-      <div id="clock"></div>
     </div>
-
     <div class="row">
       <div class="col-md-12">
         <div class="tile">
+          <h3 class="tile-title">Sửa nhân viên</h3>
           <div class="tile-body">
-<<<<<<< HEAD
-
             <div class="row element-button">
-              <div class="col-sm-2">
-
-                <a class="btn btn-add btn-sm" href="form-add-nhan-vien.html" title="Thêm"><i class="fas fa-plus"></i>
-                  Tạo mới nhân viên</a>
-              </div>
 
               <div class="col-sm-2">
-                <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i
-                    class="fas fa-trash-alt"></i> Xóa tất cả </a>
+                <a class="btn btn-add btnAddCategories btn-sm" href="<?= _WEB_ROOT . "/admin/EmployeeManager" ?>"><i class="fas fa-folder-plus"></i> Sửa chức vụ</a>
               </div>
+              <!-- <div class="col-sm-2">
+              <a class="btn btn-add btnAddBrand btn-sm" data-bs-toggle="modal" data-bs-target="#brand"><i class="fas fa-folder-plus"></i> Thêm thương hiệu</a>
+            </div> -->
             </div>
-            <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0"
-              id="sampleTable">
-=======
-            <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0" id="sampleTable">
->>>>>>> 742c748aa6be3d625d8b09f8bb2d0594d53fd85f
-              <thead>
-                <tr>
-                  <th width="10"><input type="checkbox" id="all"></th>
-                  <th>ID</th>
-                  <th width="150">Họ và tên</th>
 
-                  <th width="300">Số điện thoại</th>
-                  <!-- <th>Chức vụ</th> -->
-                  <th>Tên công ty</th>
+            <form id="formUpdate" method="post" class="row" enctype="multipart/form-data">
 
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach ($data_employer as $item) : ?>
-                  <tr>
-                    <td width="10"><input type="checkbox" name="check1" value="1"></td>
-                    <td><?= $item["id"] ?></td>
-                    <td><?= $item["contact_name"] ?></td>
+              <div class="form-group col-md-3">
+                <label class="control-label">Tên nhân viên</label>
+                <input class="form-control" name="name" type="text" value="<?= $allStaff["fullname"] ?>">
+              <small></small>
+              <span></span>
+            </div>
 
-                    <td><?= $item["contact_phone"] ?></td>
-                    <!-- <td><?= $item["position"] ?></td> -->
-                    <td><?= $item["company_name"] ?></td>
+            <div class=" form-group col-md-3">
+                <label class="control-label">Email</label>
+                <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" class="form-control" name="email" type="text" value="<?= $allStaff["email"] ?>" readonly>
+                <small></small>
+                <span></span>
+              </div>
+              <div class="form-group col-md-3">
+                <label class="control-label">Password</label>
+                <input class="form-control" name="password" type="password" readonly value="<?= $allStaff['password'] ?>">
+                <small></small>
+                <span></span>
+              </div>
+              <div class="form-group col-md-3">
+                <label class="control-label">Chức vụ</label>
+                <select class="form-control" name="position">
+                  <?php foreach ($allPosition as $item) : ?>
+                    <option value="<?= $item["id"] ?>"><?= $item["user_type_name"] ?></option>
+                  <?php endforeach; ?>
+                </select>
+                <small></small>
+                <span></span>
+              </div>
 
-                  </tr>
-                <?php endforeach; ?>
+              <div class="form-group col-md-3">
+                <label class="control-label">Số điện thoại</label>
+                <input class="form-control" pattern="(84|0[3|5|7|8|9])+([0-9]{8})\b" name="phone_number" type="text" value="<?= $allStaff["contact_phone"] ?>">
+
+                <small></small>
+                <span></span>
+              </div>
 
 
-              </tbody>
-            </table>
+
+
+              <div class="form-group col-md-12">
+                <label class="control-label">Ảnh thẻ</label>
+                <input type="file" id="uploadfile" name="ImageUpload" value="" />
+                <input type="file" name="fileUpload" id="file-upload">
+                <label style="margin-top:10px" class="file-upload Choicefile" for="file-upload">Upload file</label>
+                <div style="margin:20px 0" class="file-upload-filename">
+                <img src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$allStaff["image"] ?>" alt="" style="height: 400px; width: 400px;">
+              </div>
+                <div class="box">
+                  <div class="loader d-none"></div>
+                  <img style="margin:15px 0;" height="400" width="400" src="" id="thumbimage" class="preview d-none" height="200" alt="Image preview">
+                </div>
+                <small></small>
+                <span></span>
+              </div>
+
+
+              <div class="form-group col-md-12">
+                <button class="btn btn-save" name="submit" type="submit">Lưu lại</button>
+                <a class="btn btn-cancel" href="<?= _WEB_ROOT . "/admin/EmployeeManager" ?>">Hủy bỏ</a>
+              </div>
+            </form>
           </div>
+
         </div>
       </div>
     </div>
   </main>
-
-  <!--
-  MODAL
--->
-  <div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-
-        <div class="modal-body">
-          <div class="row">
-            <div class="form-group  col-md-12">
-              <span class="thong-tin-thanh-toan">
-                <h5>Chỉnh sửa thông tin nhân viên cơ bản</h5>
-              </span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group col-md-6">
-              <label class="control-label">ID nhân viên</label>
-              <input class="form-control" type="text" required value="#CD2187" disabled>
-            </div>
-            <div class="form-group col-md-6">
-              <label class="control-label">Họ và tên</label>
-              <input class="form-control" type="text" required value="Võ Trường">
-            </div>
-            <div class="form-group  col-md-6">
-              <label class="control-label">Số điện thoại</label>
-              <input class="form-control" type="number" required value="09267312388">
-            </div>
-            <div class="form-group col-md-6">
-              <label class="control-label">Địa chỉ email</label>
-              <input class="form-control" type="text" required value="truong.vd2000@gmail.com">
-            </div>
-            <div class="form-group col-md-6">
-              <label class="control-label">Ngày sinh</label>
-              <input class="form-control" type="date" value="15/03/2000">
-            </div>
-            <div class="form-group  col-md-6">
-              <label for="exampleSelect1" class="control-label">Chức vụ</label>
-              <select class="form-control" id="exampleSelect1">
-                <option>Bán hàng</option>
-                <option>Tư vấn</option>
-                <option>Dịch vụ</option>
-                <option>Thu Ngân</option>
-                <option>Quản kho</option>
-                <option>Bảo trì</option>
-                <option>Kiểm hàng</option>
-                <option>Bảo vệ</option>
-                <option>Tạp vụ</option>
-              </select>
-            </div>
-          </div>
-          <BR>
-          <a href="#" style="    float: right;
-        font-weight: 600;
-        color: #ea0000;">Chỉnh sửa nâng cao</a>
-          <BR>
-          <BR>
-          <button class="btn btn-save" type="button">Lưu lại</button>
-          <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
-          <BR>
-        </div>
-        <div class="modal-footer">
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--
-  MODAL
--->
+  <script src="<?php echo _WEB_ROOT; ?>/app/public/assets/admin/js/AddStaff.js"></script>
 
   <!-- Essential javascripts for application to work-->
   <script src="js/jquery-3.2.1.min.js"></script>
@@ -227,7 +186,7 @@
         swal({
             title: "Cảnh báo",
 
-            text: "Bạn có chắc chắn là muốn xóa nhân viên này?",
+            text: "Bạn có chắc chắn là muốn xóa?",
             buttons: ["Hủy bỏ", "Đồng ý"],
           })
           .then((willDelete) => {

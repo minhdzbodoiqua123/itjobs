@@ -45,17 +45,18 @@
     </div>
     <hr>
     <ul class="app-menu">
+
       <li><a class="app-menu__item " href="index.html"><span class="app-menu__label">Bảng điều khiển</span></a></li>
       <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/employeeManager' ?>">
           <span class="app-menu__label">Quản lý nhân viên</span></a></li>
       <li><a class="app-menu__item " href="http://localhost//itjobs/admin/seekerManager"><span class="app-menu__label">Quản lý người ứng tuyển</span></a></li>
-      <li><a class="app-menu__item active" href="http://localhost//itjobs/admin/EmployerManager"><span class="app-menu__label">Quản lý nhà tuyển dụng</span></a>
+      <li><a class="app-menu__item " href="http://localhost//itjobs/admin/EmployerManager"><span class="app-menu__label">Quản lý nhà tuyển dụng</span></a>
       </li>
       <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/company' ?>"></i><span class="app-menu__label">Quản lý công ty</span></a></li>
       <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/Jobwelfare' ?>"></i><span class="app-menu__label">Quản lý phúc lợi</span></a></li>
 
       <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/Profession' ?>"></i><span class="app-menu__label">Quản lý nghề nghiệp</span></a></li>
-      <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/reportJobManager' ?>"></i><span class="app-menu__label">Quản lý báo cáo</span></a></li>
+      <li><a class="app-menu__item active" href="<?= _WEB_ROOT . '/admin/reportJobManager' ?>"></i><span class="app-menu__label">Quản lý báo cáo</span></a></li>
 
 
 
@@ -67,7 +68,7 @@
   <main class="app-content">
     <div class="app-title">
       <ul class="app-breadcrumb breadcrumb side">
-        <li class="breadcrumb-item active"><a href="#"><b>Danh sách nhà tuyển dụng</b></a></li>
+        <li class="breadcrumb-item active"><a href="#"><b>Danh sách báo cáo</b></a></li>
       </ul>
       <div id="clock"></div>
     </div>
@@ -76,48 +77,54 @@
       <div class="col-md-12">
         <div class="tile">
           <div class="tile-body">
-<<<<<<< HEAD
 
-            <div class="row element-button">
-              <div class="col-sm-2">
 
-                <a class="btn btn-add btn-sm" href="form-add-nhan-vien.html" title="Thêm"><i class="fas fa-plus"></i>
-                  Tạo mới nhân viên</a>
-              </div>
-
-              <div class="col-sm-2">
-                <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i
-                    class="fas fa-trash-alt"></i> Xóa tất cả </a>
-              </div>
-            </div>
-            <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0"
-              id="sampleTable">
-=======
             <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0" id="sampleTable">
->>>>>>> 742c748aa6be3d625d8b09f8bb2d0594d53fd85f
               <thead>
                 <tr>
-                  <th width="10"><input type="checkbox" id="all"></th>
                   <th>ID</th>
-                  <th width="150">Họ và tên</th>
+                  <th width="150">Email</th>
+                  <th width="150">Địa chỉ bài viết</th>
 
-                  <th width="300">Số điện thoại</th>
                   <!-- <th>Chức vụ</th> -->
-                  <th>Tên công ty</th>
+                  <th>Mô tả báo cao </th>
+                  <th>Vấn đề</th>
 
+                  <th width="100">Tính năng</th>
                 </tr>
               </thead>
               <tbody>
-                <?php foreach ($data_employer as $item) : ?>
+                <?php foreach ($report_job as $item) : ?>
                   <tr>
-                    <td width="10"><input type="checkbox" name="check1" value="1"></td>
                     <td><?= $item["id"] ?></td>
-                    <td><?= $item["contact_name"] ?></td>
+                    <td><?= $item["email"] ?></td>
+                    <td><a href="<?= $item["job_url"] ?>"><?= $item["job_url"] ?></a></td>
 
-                    <td><?= $item["contact_phone"] ?></td>
-                    <!-- <td><?= $item["position"] ?></td> -->
-                    <td><?= $item["company_name"] ?></td>
+                    <td><?= $item["desc_report"] ?></td>
+                    <td><?php
+                        switch ($item["reason"]) {
+                          case '1':
+                            echo " Việc làm không hợp pháp ";
 
+                            break;
+                          case '2':
+                            echo "Nữ";
+
+                            break;
+                          default:
+                            echo "Khác";
+                            break;
+                        }
+                        ?></td>
+
+
+
+                    <td class="table-td-center">
+                    <a href="reportJobManager/deleteJobManager/<?= $item["id"] ?>" class="btn  btn-sm trash" type="submit" title="Xóa">
+                        <i class="fas fa-trash-alt"></i> 
+                      </a>
+                
+                    </td>
                   </tr>
                 <?php endforeach; ?>
 
