@@ -1,1 +1,1 @@
-This is a job search project  used in php
+This is a job search project  used  php and mvc model
