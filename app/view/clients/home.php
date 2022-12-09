@@ -25,7 +25,7 @@
             <div class="swiper-container">
                <div class="swiper-wrapper" id="pc-swiper-wrapper">
                   <div class="swiper-slide">
-                     <a href="https://careerbuilder.vn/vi/jobseekers/ajax/counterbannerclick?url=aHR0cHM6Ly9jYXJlZXJzdGFydC52bi8=&id=280" rel="nofollow;noreferrer" target="_blank">
+                     <a href="" rel="nofollow;noreferrer" target="_blank">
                         <div class="image"> <img src="https://images.careerbuilder.vn/background/careerstart_plb_desktop_1900x570_2022_08_15_1660563408.jpg" alt="Banner"> </div>
                      </a>
                   </div>
@@ -158,7 +158,7 @@
             <div class="content">
                <p>Đăng hồ sơ nghề nghiệp để dễ dàng ứng tuyển nhanh</p>
             </div>
-            <div class="upload-resume">               <button class="btn-gradient" onclick="window.location='https://careerbuilder.vn/vi/jobseekers/mycareerbuilder'">Cập nhật hồ sơ</button>
+            <div class="upload-resume">               <button class="btn-gradient" onclick="window.location=''">Cập nhật hồ sơ</button>
             </div>
          </div>
       </div>

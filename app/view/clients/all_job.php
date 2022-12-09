@@ -165,7 +165,7 @@
             <div class="col-lg-8 col-custom-xxl-9">
                <div class="job-found">
                   <div class="job-found-amout">
-                     <h1><?= count($job_post) ?> việc làm</h1>
+                     <h1><?= $totalRecords ?> việc làm</h1>
                   </div>
                   <div class="job-found-sort">
                      <span class="sort-title dropdown">
@@ -1301,11 +1301,21 @@
                       <?php for ($num=1; $num <=$totalPages; $num++) {  
                            if($num!=$current_page) { ?>
                       <li >
-                     <a href="<?= _WEB_ROOT.'/Alljob/?page='.$num ?>"><?= $num ?></a>
+                     <a href="<?= _WEB_ROOT.'/Alljob/?page='.$num ?><?= !empty($searchKeyword)? "&keyword=$searchKeyword":"" ?><?php if(!empty($searchIndustry)){
+                        foreach ($searchIndustry as $item) {
+                           echo "&industry%5B%5D=$item";
+                        }
+                     } ?><?php if(!empty($searchIndustry)){
+                        foreach ($searchLocation as $item) {
+                           echo "&location%5B%5D=$item";
+                        }
+                     } ?>"
+                     <?= !empty($wrk_from_home)? "&wrk_from_home=$wrk_from_home":"" ?>
+                     ><?= $num ?></a>
                       </li>
                           <?php } else{  ?>
                            <li class="active">
-             <a href="<?= _WEB_ROOT.'/Alljob/?page='.$current_page ?>"><?= $current_page ?></a>
+             <a href="<?= _WEB_ROOT.'/Alljob/?page='.$current_page ?> "><?= $current_page ?></a>
                       </li>
                            <?php }?>
                               

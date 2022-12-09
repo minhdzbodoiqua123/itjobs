@@ -2,7 +2,11 @@
 <link rel="stylesheet" href="<?= _WEB_ROOT."/app/public/assets/employer/css/postjobs.css" ?>">
 <script src="//cdn.ckeditor.com/4.20.0/basic/ckeditor.js"></script>
 
-
+<style>
+    .pristine-error{
+        color:red;
+    }
+</style>
 
 <script defer src="<?= _WEB_ROOT . "/app/public/assets/employer/js/postjobs.js"?>"></script>
 
@@ -28,9 +32,9 @@
                     </div>
                     <div class="right-wrap">
                         <ul class="list-menu">
-                            <li> <a href="https://careerbuilder.vn/vi/tim-ung-vien.html"> <em class="material-icons">find_in_page</em> Tìm Hồ Sơ </a> </li>
-                            <li> <a class="but-createjob" href="https://careerbuilder.vn/vi/employers/postjobs"> <em class="material-icons">assignment_ind</em> Đăng Tuyển Dụng </a> </li>
-                        </ul>
+                        <li> <a href="<?= _WEB_ROOT . '/employer/tim_ung_vien' ?>"> <em class="material-icons">find_in_page</em> Tìm Hồ Sơ </a> </li>
+                        <li> <a class="but-createjob" href="http://localhost//itjobs/employer/hrcentral/posting"> <em class="material-icons">assignment_ind</em> Đăng Tuyển Dụng </a> </li>
+                    </ul>
                     </div>
                 </div>
             </div>
@@ -70,7 +74,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group form-text">
-                                            <input type="text" id="job_title" class="keyword" name="job_title" value=""  placeholder="Chức danh tuyển dụng">
+                                            <input required data-pristine-required-message="Không được để trống" type="text" id="job_title" class="keyword" name="job_title" value=""  placeholder="Chức danh tuyển dụng">
                                             <span class="form-error"></span>
                                         </div>
                                     </div>
@@ -83,26 +87,26 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-3">
+                                    <!-- <div class="col-lg-3">
                                         <div class="form-group form-text">
                                             <input type="text" id="job_code" name="job_code" maxlength="12" value="" placeholder="Mã công việc">
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="col-lg-6">
                                         <div class="d-flex mt-20 align-center">
-                                            <div class="noti"> <em class="material-icons">info</em>
+                                            <!-- <div class="noti"> <em class="material-icons">info</em>
                                                 <div class="toolip">
                                                     Quý khách có thể chọn <strong>Mẫu Quảng Cáo Tuyển Dụng</strong> có sẵn của chúng tôi.
                                                 </div>
-                                            </div>
-                                            <ul class="list-link">
+                                            </div> -->
+                                            <!-- <ul class="list-link">
                                                 <li>
                                                     <a href="javascript:void(0);" id="job_template" class="btn-use-templates">Sử dụng mẫu có sẵn</a>
                                                 </li>
                                                 <li>
                                                     <a href="javascript:void(0);" onclick="chooseFromListJob('lop7cttnq.1667207375');" class="btn-created-job-list">Chọn từ danh sách việc làm đã tạo</a>
                                                 </li>
-                                            </ul>
+                                            </ul> -->
                                         </div>
                                     </div>
                                 </div>

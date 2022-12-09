@@ -37,7 +37,7 @@ class Database
             }
             $fieldStr = rtrim($fieldStr, ',');
             $valueStr = rtrim($valueStr, ',');
-            
+
             $sql = "INSERT INTO $table ($fieldStr) VALUES ($valueStr)";
             echo $sql;
             $status = $this->query($sql);
@@ -102,7 +102,8 @@ class Database
     }
     
     function query($sql)
-    {
+    
+    {   
         $statement = $this->conn->prepare($sql);
         $statement->execute();
         return $statement;

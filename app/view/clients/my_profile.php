@@ -487,7 +487,7 @@
                                     </tr>
                                     <tr>
                                        <td>Điện thoại</td>
-                                       <td><?= !empty($informationUser["contact_number"]) ? $informationUser["contact_number"] : "" ?></td>
+                                       <td><?= !empty($informationUser["contact_phone"]) ? $informationUser["contact_phone"] : "" ?></td>
                                     </tr>
                                     <tr>
                                        <td>Email</td>
@@ -586,7 +586,7 @@
                                              <input 
                                                 required 
                                                 data-pristine-required-message="Vui lòng nhập số điện thoại"   
-                                                type="text"  name="mobile" id="mobile" value="<?= !empty($informationUser["contact_number"])? $informationUser["contact_number"]: "" ?>" maxlength="20" style="margin-top:5px">
+                                                type="text"  name="mobile" id="mobile" value="<?= !empty($informationUser["contact_phone"])? $informationUser["contact_phone"]: "" ?>" maxlength="20" style="margin-top:5px">
                                              <span class="err_mobile" style="display:none"></span>
                                           </div>
                                        </div>

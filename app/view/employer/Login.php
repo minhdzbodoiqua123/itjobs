@@ -1,3 +1,4 @@
+<script defer src="<?= _WEB_ROOT."/app/public/assets/employer/js/login.js"?>"></script>
 
 
 <body>
@@ -917,7 +918,7 @@
 								<h3>THÔNG TIN ĐĂNG NHẬP</h3>
 							</div>
 							<div class="text-sup">
-								  <a href="https://careerbuilder.vn/vi/employers/faq" target="_blank" class="support">Hướng dẫn</a>
+								  <a href="" target="_blank" class="support">Hướng dẫn</a>
 							</div>
 						</div>
 				    <div class="main-form">
@@ -927,7 +928,7 @@
 									<span>Email/Tên đăng nhập</span>
 								</div>
 								<div class="form-input">
-									<input type="text" name="username" class="form-control" placeholder=" Vui lòng nhập thông tin" onkeyup="this.setAttribute('value', this.value);" value="" onfocus="javascript:if(this.value=='Email/Tên đăng nhập') this.value='';">
+									<input required data-pristine-required-message="Vui lòng nhập email của bạn"type="text" name="username" class="form-control" placeholder=" Vui lòng nhập thông tin"  value="" onfocus="javascript:if(this.value=='Email/Tên đăng nhập') this.value='';">
 										<span class="form-error error_username">
 																					</span>
 								</div>
@@ -937,9 +938,9 @@
 									<span>Mật khẩu</span>
 								</div>
 								<div class="form-input">
-									<input type="password" class="form-control" placeholder=" Vui lòng nhập thông tin" onkeyup="this.setAttribute('value', this.value);" name="password" value="">
+									<input required data-pristine-required-message="Vui lòng nhập password của bạn " class="form-control" placeholder=" Vui lòng nhập thông tin" name="password" value="">
 										<span class="form-error error_password">
-																																	</span>
+                                       <?= isset($errors['login'])?$errors['login']:"" ?>															</span>
 								</div>
 							</div>
 							<div class="user-action">
@@ -948,7 +949,7 @@
 									<input type="hidden" name="csrf_token" value="6701df501af25e1d27f3c0fba557920bec75d15323a9e95d454558ed622ace3d">
 									<button type="submit" class="btn-action">Đăng nhập </button>
 								</div>
-								<p> <a class="register" href="javascript:void()" onclick="location.href='https://careerbuilder.vn/vi/employers/register'">Quý khách chưa có tài khoản?</a> Đăng ký dễ dàng, hoàn toàn miễn phí</p>
+								<p> <a class="register" href="javascript:void()" onclick="location.href='http://localhost//itjobs/employer/account/register'">Quý khách chưa có tài khoản?</a> Đăng ký dễ dàng, hoàn toàn miễn phí</p>
 							</div>
 						</form>
 					</div>

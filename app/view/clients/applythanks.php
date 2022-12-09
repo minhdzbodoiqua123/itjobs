@@ -4995,7 +4995,7 @@
                             <div class="figure">
                                 <div class="image">
                              <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/sabeco-saigon-beer-alcohol-beverage-corporation.35A84FDF.html" title="SABECO - Saigon Beer-Alcohol-Beverage Corporation" target="_blank"><img class="lazy-bg"
-                     src="<?= _WEB_ROOT.'app/public/assets/employer/images/'.$job_post["logo"] ?>" src="../kiemviecv32/images/graphics/blank.gif"
+                     src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$job_post["logo"] ?>" src="../kiemviecv32/images/graphics/blank.gif"
                           alt="SABECO - Saigon Beer-Alcohol-Beverage Corporation"></a>
                                 </div>
                                 <div class="figcaption">
@@ -5024,7 +5024,7 @@
                         </div>
                     </div>
                     <div class="btn-applied">
-                        <a href="javascript:void(0)" class="btn-apply-now btn-gradient">
+                        <a href="http://localhost//itjobs/jobseekers/Mykiemviec/jobapplied"class="btn-apply-now btn-gradient">
               Xem các công việc đã ứng tuyển
             </a>
                     </div>

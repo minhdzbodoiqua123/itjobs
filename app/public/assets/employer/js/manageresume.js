@@ -201,6 +201,43 @@ function showSuccessMessage(){
  </div>
 `
 }
+
+function selectGroup(){
+   const select_folder=document.getElementById('select-group');
+   
+   select_folder.addEventListener('change',function(){
+      const value=this.value;
+      window.location.href=value;
+   })
+   
+}
+function selectFolder(){
+   const select_folder=document.getElementById('select-group');
+   
+   select_folder.addEventListener('change',function(){
+      const value=this.value;
+      window.location.href=value;
+   })
+   
+}
+function  selectGroup() {
+   const select_folder=document.getElementById('select-folder');
+   
+   select_folder.addEventListener('change',function(e){
+      const value=this.value;
+      if(+value===-1){
+         return;
+      }
+         window.location.href=value;
+
+   })
+}
+
+function start() {
+   selectGroup()
+   selectFolder()
+}
+start()
 document.addEventListener('click', function (e) {
    if(e.target.closest(".closeFormSuccess")){
    const showSuccess=document.getElementById("showSuccess");

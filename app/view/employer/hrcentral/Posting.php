@@ -1,34 +1,34 @@
-
 <main>
-<section class="employer-navbar-2-1">
-  <div class="container">
-    <div class="category-nav">
-      <p>Danh Mục</p>
-      <em class="mdi mdi-chevron-down"></em> </div>
-    <div class="main-wrap">
-    <div class="left-wrap">
-                        <ul class="list-menu">
-                            <li> <a href="<?= _WEB_ROOT.'/employer/dashboard' ?>" title="Dashboard">Dashboard</a> </li>
-                            <li class="active"> <a href="<?= _WEB_ROOT.'/employer/hrcentral/posting' ?>" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
-                            <li class=""> <a href="<?= _WEB_ROOT.'/employer/hrcentral/manageresume' ?>" class="active" title="Quản Lý  Ứng Viên">Quản Lý  Ứng Viên</a> </li>
-                           
-                           
-                            <li>
-             
-          <a href="<?= _WEB_ROOT.'/employer/hrcentral/accounts/edit_employer"'?>" title=" Tài Khoản"> Tài Khoản</a>
-          </li>
-                   
-                        </ul>
-                    </div>
-      <div class="right-wrap">
-        <ul class="list-menu">
-          <li> <a href="https://careerbuilder.vn/vi/tim-ung-vien.html"> <em class="material-icons">find_in_page</em> Tìm Hồ Sơ </a> </li>
-          <li> <a class="but-createjob" href="https://careerbuilder.vn/vi/employers/postjobs"> <em class="material-icons">assignment_ind</em> Đăng Tuyển Dụng </a> </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+    <section class="employer-navbar-2-1">
+        <div class="container">
+            <div class="category-nav">
+                <p>Danh Mục</p>
+                <em class="mdi mdi-chevron-down"></em>
+            </div>
+            <div class="main-wrap">
+                <div class="left-wrap">
+                    <ul class="list-menu">
+                        <li> <a href="<?= _WEB_ROOT . '/employer/dashboard' ?>" title="Dashboard">Dashboard</a> </li>
+                        <li class="active"> <a href="<?= _WEB_ROOT . '/employer/hrcentral/posting' ?>" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
+                        <li class=""> <a href="<?= _WEB_ROOT . '/employer/hrcentral/manageresume' ?>" class="active" title="Quản Lý  Ứng Viên">Quản Lý Ứng Viên</a> </li>
+
+
+                        <li>
+
+                            <a href="<?= _WEB_ROOT . '/employer/hrcentral/accounts/edit_employer"' ?>" title=" Tài Khoản"> Tài Khoản</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="right-wrap">
+                    <ul class="list-menu">
+                        <li> <a href="<?= _WEB_ROOT . '/employer/tim_ung_vien' ?>"> <em class="material-icons">find_in_page</em> Tìm Hồ Sơ </a> </li>
+                        <li> <a class="but-createjob" href="http://localhost//itjobs/employer/hrcentral/posting"> <em class="material-icons">assignment_ind</em> Đăng Tuyển Dụng </a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="last-login-user">
         <div class="container">
             <p> Đăng nhập gần đây:
@@ -81,28 +81,28 @@
 
 
                 <div class="main-tabslet">
-                <ul class="tabslet-tab">
-    <li class="active">
-        <a href="<?= _WEB_ROOT . '/employer/hrcentral/Posting' ?>">
-            Việc Làm Đang Đăng
-        </a>
-    </li>
-    <li class="">
-        <a href="<?= _WEB_ROOT . '/employer/hrcentral/waitposting' ?>">
-            Việc Làm Chờ Đăng
-        </a>
-    </li>
-    <li class="">
-        <a href="<?= _WEB_ROOT . '/employer/hrcentral/unposting' ?>">
-            Việc Làm Tạm Dừng Đăng
-        </a>
-    </li>
-    <li class="">
-        <a href="<?= _WEB_ROOT . '/employer/hrcentral/expireposting' ?>">
-            Việc Làm Hết Hạn
-        </a>
-    </li>
-</ul>
+                    <ul class="tabslet-tab">
+                        <li class="active">
+                            <a href="<?= _WEB_ROOT . '/employer/hrcentral/Posting' ?>">
+                                Việc Làm Đang Đăng
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="<?= _WEB_ROOT . '/employer/hrcentral/waitposting' ?>">
+                                Việc Làm Chờ Đăng
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="<?= _WEB_ROOT . '/employer/hrcentral/unposting' ?>">
+                                Việc Làm Tạm Dừng Đăng
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="<?= _WEB_ROOT . '/employer/hrcentral/expireposting' ?>">
+                                Việc Làm Hết Hạn
+                            </a>
+                        </li>
+                    </ul>
 
 
 
@@ -141,45 +141,38 @@
                                     <table>
                                         <thead>
                                             <tr>
-                                           
+
                                                 <th width="32%">Chức danh</th>
-                                                <th width="12%" >Ngày đăng<em class="material-icons">arrow_drop_down</em></th>
-                                                <th width="10%" >Hết hạn<em class="material-icons">sort</em></th>
-                                                <th width="10%" >Lượt Xem<em class="material-icons">sort</em></th>
-                                                <th width="10%" >Lượt Nộp<em class="material-icons">sort</em></th>
-                                            
+                                                <th width="12%">Ngày đăng<em class="material-icons">arrow_drop_down</em></th>
+                                                <th width="10%">Hết hạn<em class="material-icons">sort</em></th>
+                                                <th width="10%">Lượt Xem<em class="material-icons">sort</em></th>
+                                                <th width="10%">Lượt Nộp<em class="material-icons">sort</em></th>
+
                                                 <th width="15%">Thao tác</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($job_post as $item): ?>
-                                            <tr>
-                                                <!-- <td colspan="9" class="cb-text-center">
-                                                <p><strong> Không có vị trí nào trong thư mục này.</strong></p>
-                                                 
-                                                </td> -->
-                                              
-                                              
-                                                <td><?= $item["job_title"] ?></td>
-                                                <td><?= formatDate($item["posted_date"]) ?></td>
-                                                <td><?= formatDate($item["end_date"]) ?></td>
+                                            <?php foreach ($job_post as $item) : ?>
+                                                     <tr>
+                                                     <td><?= $item["job_title"] ?></td>
+                                                    <td><?= formatDate($item["posted_date"]) ?></td>
+                                                    <td><?= formatDate($item["end_date"]) ?></td>
 
-                                                <td><?= $item["view"] ?></td>
-                                                    <td>     <?php foreach ($count_submitted as $value):?>
-                                   <?= $item["id"]==$value["job_id"] ? $value["num_submit"] : "" ?>
-                                      
-                                               <?php endforeach;?></td>
-                                                <td>
-                                <ul class="list-manipulation">
-                     
-                     <li><a href="<?= _WEB_ROOT.'/employer/hrcentral/viewjob/detail/'.$item['id']?>" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
-                    
-                     <!-- <li><a href="<?= _WEB_ROOT.'/employer/hrcentral/viewjob/detail/'.$item['id']?>" title="Sửa"><em class="material-icons">created</em></a></li> -->
-                     <li class="end"><a href="javascript:void(0);"  title="Tạm dừng đăng"><em class="material-icons">cancel </em></a></li>
-                   </ul>
-                                                </td>
-                                                
-                                            </tr>
+                                                    <td><?= $item["view"] ?></td>
+                                                    <td> <?php foreach ($count_submitted as $value) : ?>
+           <?= $item["id"] == $value["job_id"] ? $value["num_submit"] : "" ?>
+
+                                                        <?php endforeach; ?></td>
+                                                    <td>
+                                                        <ul class="list-manipulation">
+
+                                                            <li><a href="<?= _WEB_ROOT . '/employer/hrcentral/viewjob/detail/' . $item['id'] ?>" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
+
+                                                            <li><a href="<?= _WEB_ROOT . '/employer/hrcentral/viewjob/detail/' . $item['id'] ?>" title="Sửa"><em class="material-icons">created</em></a></li>
+                                                            <li class="end"><a href="javascript:void(0);" title="Tạm dừng đăng"><em class="material-icons">cancel </em></a></li>
+                                                        </ul>
+                                                    </td>
+                                                     </tr>
                                             <?php  endforeach;?>
                                         </tbody>
                                     </table>

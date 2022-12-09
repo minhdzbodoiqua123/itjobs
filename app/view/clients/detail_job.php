@@ -227,7 +227,7 @@ Nộp Đơn Ứng Tuyển
                                         <div class="job-detail-bottom-wrapper">
                                             <div class="apply-now-content">
                                                 <div style="display:flex;gap:5px;"class="job-desc">
-                                                   <form method="post"action="">
+                                                   <form method="post"action="<?= _WEB_ROOT.'/Alljob/jobsaved' ?>">
                                                     <input type="hidden" name="job_id" value="<?= $job_id ?>">
                       <a class="toollips save-job <?= !empty($job_saved) ? 'saved' : ''?> " href="javascript:void(0);" >
     <i class="mdi mdi-heart-outline"></i>
@@ -273,7 +273,7 @@ Nộp Đơn Ứng Tuyển
                                                                         id="key_captcha" value="a4086c09dc2dcbca6df3753e25108f3a"></div>
                                                                 <a style="padding-left: 10px" onclick="refeshImgCaptcha('captchaim');" href="javascript:void(0);" class="line_bot" id="trynewcode">Thử mã mới</a>
                                                                 <div class="form-group" style="clear:left">
-                                                                    <button class="btn-send-report" onclick="saveFeedbackJob();return false;"> Báo xấu </button>
+                                                                    <button class="btn-send-report" > Báo xấu </button>
                                                                 </div>
                                                             </form>
                                                         </div>

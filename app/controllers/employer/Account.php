@@ -27,7 +27,8 @@ class Account extends Controller
           $this->redirect('employer/dashboard');
       }
      
-      $this->redirect('employer/account/login');
+      $errors['login']="Tên đăng nhập hoặc mật khẩu không chính xác";
+
 
 
       //     if(empty($_POST["email"]) || empty($_POST["password"])  ){
@@ -39,8 +40,7 @@ class Account extends Controller
       //     }
 
       }
-
-     $this->data["sub_content"]["errors"]="";
+        $this->data["sub_content"]["errors"] = $errors;
 
      $this->data["content"]="employer/login";
      $this->render('layouts/employer_layout',$this->data);

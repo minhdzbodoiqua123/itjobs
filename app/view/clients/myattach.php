@@ -4,7 +4,11 @@
 
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css" ?>">
 <script defer src="<?= _WEB_ROOT . "/app/public/assets/clients/js/myattach.js" ?>"></script>
-
+<style>
+    .pristine-error{
+        color:red;
+    }
+</style>
 <!--Start New Layout CB -->
 <!DOCTYPE html>
 <html lang="vi">
@@ -8427,7 +8431,7 @@
                                     <div class="list-choose">
                                         <div class="choose-mycomputer">
                                             <label for="attach_file"><em class="mdi mdi-folder-outline"></em>Tải hồ sơ từ máy tính</label>
-                                            <input class="d-none" type="file" id="attach_file" name="attach_file" onchange=" return ajaxOnlyFile(this);">
+                                            <input class="d-none" type="file" id="attach_file" name="attach_file"   required data-pristine-required-message="Không được để trống" onchange=" return ajaxOnlyFile(this);">
                                         </div>
                                         <!--<a class="choose-drive" href="#"><img src="./img/quick-upload-resume/Google_Drive_logo.png" alt="">Choose From Google Drive</a>-->
                                         <button type="button" name="dropbox_button" id="dropbox_button" class="choose-dropbox file">
@@ -8444,7 +8448,8 @@
                             </div>
 
                             <div class="form-group form-text">
-                                <input type="text" onkeyup="this.setAttribute('value', this.value);" name="resume_title" id="resume_title" maxlength="400" class="keyword" value="" autocomplete="off">
+                                <input type="text"  required 
+                                                data-pristine-required-message="Không được để trống"      name="resume_title" id="resume_title" maxlength="400" class="keyword" value="" autocomplete="off">
                                 <label>* Tiêu đề hồ sơ</label>
                                 <span class="error_resume_title"></span>
                                 <div class="form-note">
@@ -8487,8 +8492,8 @@
     <div class="col-md-6 ">
       <div class="form-group form-select ">
         <label>* Bằng cấp cao nhất</label>
-        <select name="degree" id="degree " class="required width_186 ">
-          <option value=" " >Chọn</option>
+        <select  required required data-pristine-required-message="Không được để trống"name="degree" id="degree " class="required width_186 ">
+          <option value="" >Chọn</option>
           <?php foreach ($data_degree as $item): ?>
           <option value="<?= $item["id"] ?>"><?= $item["degree_name"] ?></option>
             
@@ -8507,8 +8512,8 @@
     <div class="col-md-6 ">
       <div class="form-group form-select ">
         <label>* Cấp bậc mong muốn</label>
-        <select name="level_id" id="level_id " >
-          <option value=" " >Chọn</option>
+        <select  required required data-pristine-required-message="Không được để trống" name="level_id" id="level_id " >
+          <option value="" >Chọn</option>
                 <?php foreach ($data_job_position as $item):?>
                     <option value="<?= $item["id"] ?>"><?= $item["position"] ?></option>
               <?php  endforeach;?>
@@ -8520,8 +8525,8 @@
     <div class="col-md-6 ">
       <div class="form-group form-select ">
         <label for=" ">Cấp bậc hiện tại</label>
-        <select class="width_186 " name="levelcurrent_id" id="levelcurrent_id " >
-          <option value=" " >Chọn</option>
+        <select class="width_186 "  name="levelcurrent_id" required required data-pristine-required-message="Không được để trống" id="levelcurrent_id " >
+          <option value="" >Chọn</option>
           <?php foreach ($data_job_position as $item):?>
                     <option value="<?= $item["id"] ?>"><?= $item["position"] ?></option>
               <?php  endforeach;?>
@@ -8550,10 +8555,12 @@
           </select>
         </div>
         <div class="form-group form-text ">
-          <input placeholder="Từ"type="text "  onkeyup="this.setAttribute( 'value', this.value); " name="salary_from" id="salary_from"  >
+          <input placeholder="Từ"type="text "  onkeyup="this.setAttribute( 'value', this.value); " required 
+                                                data-pristine-required-message="Không được để trống" name="salary_from" id="salary_from"  >
         </div>
         <div class="form-group form-text ">
-          <input type="text "  onkeyup="this.setAttribute( 'value', this.value); " name="salary_to" placeholder="Đến"id="salary_to"  >
+          <input type="text " required 
+                                                data-pristine-required-message="Không được để trống"  onkeyup="this.setAttribute( 'value', this.value); " name="salary_to" placeholder="Đến"id="salary_to"  >
         </div>
         <span class="error_salary_unit "></span> </div>
     </div>
@@ -8563,8 +8570,8 @@
     <div class="col-md-6 ">
         <div class="form-group form-select ">
             <label>* Nơi làm việc mong muốn</label>
-            <select name="provinces" id="select_location_id_1" >
-                <option value=" " >Chọn</option>
+            <select required required data-pristine-required-message="Không được để trống" name="provinces" id="select_location_id_1" >
+                <option value="" >Chọn</option>
                                
                                 
                             
@@ -8575,7 +8582,7 @@
     <div class="col-md-6 ">
         <div class="form-group form-select-chosen ">
             <label for=" ">Quận</label>
-            <select  name="districts" id="select_district_id_1" class=" chosen-select-max-three"style="display:block;">
+            <select  required required data-pristine-required-message="Không được để trống" name="districts" id="select_district_id_1" class=" chosen-select-max-three"style="display:block;">
             </select>
             <span class="error_DISTRICT_ID "></span>
         </div>
@@ -8639,22 +8646,13 @@
         <div class="col-md-6 ">
           <div class="form-group form-select-chosen ">
             <label for="">Phúc lợi mong muốn</label>
-            <select name="BENEFIT_ID[]" class="chosen-select-max-three " multiple="multiple " data-placeholder="Phúc lợi mong muốn ">
-                          <option value="2 " >Chế độ bảo hiểm</option>
-                           <option value="3 " >Du Lịch</option>
-                           <option value="8 " >Chế độ thưởng</option>
-                           <option value="9 " >Chăm sóc sức khỏe</option>
-                           <option value="10 " >Đào tạo</option>
-                           <option value="11 " >Tăng lương</option>
-                           <option value="1 " >Laptop</option>
-                           <option value="4 " >Phụ cấp</option>
-                           <option value="5 " >Xe đưa đón</option>
-                           <option value="6 " >Du lịch nước ngoài</option>
-                           <option value="7 " >Đồng phục</option>
-                           <option value="12 " >Công tác phí</option>
-                           <option value="13 " >Phụ cấp thâm niên</option>
-                           <option value="14 " >Nghỉ phép năm</option>
-                           <option value="15 " >CLB thể thao</option>
+            <select  required required data-pristine-required-message="Không được để trống" name="BENEFIT_ID[]" class="chosen-select-max-three " multiple="multiple " placeholder="Phúc lợi mong muốn">
+
+                <?php foreach ($data_job_welfare as $item):?>
+                    <option value="<?= $item["id"] ?>" ><?= $item["welfare_type"] ?></option>
+                    
+               <?php endforeach;?>
+                      
                          </select>
           </div>
         </div>
@@ -8662,18 +8660,18 @@
     </div>
     <div class="col-md-12 form-of-work ">
       <h6>* Hình thức làm việc</h6>
-      <div class="row ">
+     
        <?php foreach ($data_job_type as $item) { ?>
-        <div class="col-md-6 ">
+       
           <div class="form-group form-checkbox ">
-            <input type="checkbox" name="chkResumeType[]" id="chkResumeType<?= $item["id"]?>"  value="<?= $item["id"] ?>">
+          <input type="checkbox" name="chkResumeType[]" id="chkResumeType<?= $item["id"]?>"  value="<?= $item["id"] ?>">
             <label for="chkResumeType<?= $item["id"]?>"><?= $item["job_type"] ?></label>
           </div>
-        </div>
+       
       <?php }?>
        
         
-      </div>
+    
       <span class="error_chkResumeType_1 "></span> 
     </div>
     <div class="col-md-12 form-of-work ">
@@ -8858,7 +8856,7 @@
                                              <input 
                                                 required 
                                                 data-pristine-required-message="Vui lòng nhập số điện thoại"   
-                                                type="text"  name="mobile" id="mobile" value="<?= !empty($informationUser["contact_number"])? $informationUser["contact_number"]: "" ?>" maxlength="20" style="margin-top:5px">
+                                                type="text"  name="mobile" id="mobile" value="<?= !empty($informationUser["contact_phone"])? $informationUser["contact_phone"]: "" ?>" maxlength="20" style="margin-top:5px">
                                              <span class="err_mobile" style="display:none"></span>
                                           </div>
                                        </div>

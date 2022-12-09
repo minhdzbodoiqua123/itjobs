@@ -79,7 +79,7 @@
           <div class="row element-button">
            
             <div class="col-sm-2">
-              <a class="btn btn-add btnAddCategories btn-sm" href="<?= _WEB_ROOT."/admin/DataStaff/addPosition" ?>"><i class="fas fa-folder-plus"></i> Thêm chức vụ</a>
+              <a class="btn btn-add btnAddCategories btn-sm" href=""><i class="fas fa-folder-plus"></i> Thêm chức vụ</a>
             </div>
             <!-- <div class="col-sm-2">
               <a class="btn btn-add btnAddBrand btn-sm" data-bs-toggle="modal" data-bs-target="#brand"><i class="fas fa-folder-plus"></i> Thêm thương hiệu</a>
@@ -125,8 +125,6 @@
               <small></small>
               <span></span>
             </div>
-
-          
 
 
             <div class="form-group col-md-12">

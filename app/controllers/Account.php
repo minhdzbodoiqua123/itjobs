@@ -92,6 +92,7 @@ class Account extends Controller
         if (Auth_user::logged_in()) {
             $this->redirect("home");
         }
+        $errors=[];
         if (count($_POST) > 0) {
             $email = $_POST["email"];
             $password = $_POST["password"];
@@ -110,19 +111,14 @@ class Account extends Controller
                 }
                 $this->redirect('home');
             }
+            $errors['login']="Tên đăng nhập hoặc mật khẩu không chính xác";
 
 
-            //     if(empty($_POST["email"]) || empty($_POST["password"])  ){
-
-            //      $errors['empty']="Bạn phải nhập đầy đủ các trường";
-            //     }
-            //    else { 
-            //      $errors['login']="Tên đăng nhập hoặc mật khẩu không chính xác";
-            //     }
+           
 
         }
 
-        $this->data["sub_content"][] = "";
+        $this->data["sub_content"]["errors"] = $errors;
 
         $this->data["content"] = "clients/login";
         $this->render('layouts/client_layout', $this->data);

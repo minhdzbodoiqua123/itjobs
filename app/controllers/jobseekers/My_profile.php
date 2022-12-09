@@ -156,6 +156,7 @@ class My_profile extends Controller
                 "date_of_birth" => "STR_TO_DATE('$date_of_birth', '%d/%m/%Y')",
                 "status"=>"'1'",
             ];
+            // print_r($data);
             
             $condition = "user_account_id ='$id'";
 

@@ -9,34 +9,12 @@
                     <img style="height:80px;"src="<?= _WEB_ROOT.'/app/public/assets/clients/images/it_jobs.png' ?>" alt="CareerBuilder.vn - Nghĩ Nhân Tài, Nghĩ CareerBuilder" title="CareerBuilder.vn - Nghĩ Nhân Tài, Nghĩ CareerBuilder" /></a></div>
                     <div class="main-menu">
                         <ul class="menu">
-                            <li class=""><a href="https://careerbuilder.vn/vi/employers" alt="Trang chủ" title="Trang chủ">Trang Chủ</a></li>
-                            <li class="dropdown "><a href="https://careerbuilder.vn/vi/employers/products-and-services">Sản Phẩm và Dịch Vụ</a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li><a href="https://careerbuilder.vn/vi/employers/products-and-services/dang-tuyen-dung/3">Đăng Tuyển Dụng</a></li>
-                                        <li><a href="https://careerbuilder.vn/vi/employers/products-and-services/tim-ho-so-ung-vien/8">Tìm Hồ Sơ Ứng Viên</a></li>
-                                        <li><a href="https://careerbuilder.vn/vi/employers/products-and-services/talent-solution/">Talent Solution</a></li>
-                                        <li><a href="https://careerbuilder.vn/vi/employers/products-and-services/quang-cao-tuyen-dung/9">Quảng Cáo Tuyển Dụng</a></li>
-                                        <li><a href="https://careerbuilder.vn/vi/employers/products-and-services/talent-driver/14">Talent Driver</a></li>
-                                        <li><a href="https://careerbuilder.vn/vi/employers/products-and-services/targeted-email-marketing/">Targeted Email Marketing</a></li>
-                                        <li><a href="https://careerbuilder.vn/vi/employers/products-and-services/talent-referral/">Talent Referral</a></li>
-                                        <li><a href="https://careerbuilder.vn/vi/employers/products-and-services/dang-tuyen-dung-va-tim-ho-so-quoc-te/10">Đăng Tuyển Dụng và Tìm Hồ Sơ Quốc tế</a></li>
-                                        <li><a href="https://careerbuilder.vn/vi/employers/products-and-services">Xem tất cả sản phẩm / dịch vụ</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="dropdown  "><a href="https://careerbuilder.vn/vi/employers/dashboard">HR Central</a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li><a href="<?= _WEB_ROOT.'/employer/dashboard' ?>">Dashboard</a></li>
-                                        <li><a href="https://careerbuilder.vn/vi/employers/postjobs">Đăng Tuyển Dụng</a></li>
-                                        <li><a href="https://careerbuilder.vn/vi/tim-ung-vien.html">Tìm Hồ Sơ</a></li>
-
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class=""><a href="https://careerbuilder.vn/vi/hiringsite">Cẩm Nang Tuyển Dụng</a></li>
-                            <li class=""><a href="https://careerbuilder.vn/vi/employers/services/contact">Liên hệ</a></li>
+                            <li class=""><a href="<?= _WEB_ROOT.'/employer/dashboard' ?>" alt="Trang chủ" title="Trang chủ">Trang Chủ</a></li>
+                        
+                        
+                            <li><a href="<?= _WEB_ROOT.'/employer/dashboard' ?>">Dashboard</a></li>
+                            <li><a href="<?= _WEB_ROOT.'/employer/Postjobs' ?>">Đăng Tuyển Dụng</a></li>
+                            <li><a href="<?= _WEB_ROOT.'/employer/tim_ung_vien' ?>">Tìm Hồ Sơ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -100,21 +78,7 @@
                         <div class="menu">
                             <ul class="menu-normal">
                                 <li class="active"><a href="https://careerbuilder.vn/vi/employers" title="homepage-employers"><i class="mdi mdi-home-outline"></i>Trang Chủ</a></li>
-                                <li class="dropdown-mobile"><a href="https://careerbuilder.vn/vi/employers/products-and-services"> <i class="mdi mdi-apps"></i>Sản Phẩm và Dịch Vụ</a>
-                                    <div class="dropdown-menu">
-                                        <ul>
-                                            <li><a href="https://careerbuilder.vn/vi/employers/products-and-services/dang-tuyen-dung/3">Đăng Tuyển Dụng</a></li>
-                                            <li><a href="https://careerbuilder.vn/vi/employers/products-and-services/tim-ho-so-ung-vien/8">Tìm Hồ Sơ Ứng Viên</a></li>
-                                            <li><a href="https://careerbuilder.vn/vi/employers/products-and-services/talent-solution/">Talent Solution</a></li>
-                                            <li><a href="https://careerbuilder.vn/vi/employers/products-and-services/quang-cao-tuyen-dung/9">Quảng Cáo Tuyển Dụng</a></li>
-                                            <li><a href="https://careerbuilder.vn/vi/employers/products-and-services/talent-driver/14">Talent Driver</a></li>
-                                            <li><a href="https://careerbuilder.vn/vi/employers/products-and-services/targeted-email-marketing/">Targeted Email Marketing</a></li>
-                                            <li><a href="https://careerbuilder.vn/vi/employers/products-and-services/talent-referral/">Talent Referral</a></li>
-                                            <li><a href="https://careerbuilder.vn/vi/employers/products-and-services/dang-tuyen-dung-va-tim-ho-so-quoc-te/10">Đăng Tuyển Dụng và Tìm Hồ Sơ Quốc tế</a></li>
-                                            <li><a href="https://careerbuilder.vn/vi/employers/products-and-services">Xem tất cả sản phẩm / dịch vụ</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
+                             
                                 <li class="dropdown-mobile"><a href="https://careerbuilder.vn/vi/employers/dashboard"> <i class="mdi mdi-briefcase-account"></i>HR Central</a>
                                     <div class="dropdown-menu">
                                         <ul>

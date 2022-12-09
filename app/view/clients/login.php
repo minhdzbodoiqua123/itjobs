@@ -10,7 +10,7 @@
         <section class="signin-form cb-section">
             <div class="container">
                 <div class="cb-title cb-title-center">
-                    <h2>Chào mừng bạn tham gia CareerBuilder.vn</h2>
+                    <h2>Chào mừng bạn tham gia itJobs</h2>
                 </div>
                 <div class="box-shadown">
                     <div class="row">
@@ -84,6 +84,7 @@
                                             <input type="checkbox" name="chkSave" value="1" id="chkSave">
                                             <label for="chkSave">Tự động đăng nhập</label>
                                         </div>
+                                        <div style="color:red;"><?= isset($errors['login'])?$errors['login']:"" ?></div>
                                         <div class="form-group form-submit">
                                             <input type="hidden" name="csrf_token" value="5545314c84717442166559a7b549300aff5e36d6518566998ab36b8478c4516b" />
                                             <button type="submit" id="submit_login" class="btn-gradient">Đăng nhập</button>
