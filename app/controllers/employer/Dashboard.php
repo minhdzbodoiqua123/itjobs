@@ -7,9 +7,10 @@ class Dashboard extends Controller
             $this->redirect("employer/account/login");
         }
         $conn=$this->model("Job_postModel");
-        $count_job_posted=$conn->query("select count(id) as posted_job from job_post where posted_by_id=20 and status ='1' and now()<end_date group by posted_by_id ")->fetch(PDO::FETCH_ASSOC);
-        $count_expired_job=$conn->query("select count(id) as expired_job from job_post where posted_by_id=20 and status ='1' and now()>end_date group by posted_by_id")->fetch(PDO::FETCH_ASSOC);
-        $count_job_waiting = $conn->query("select count(id) as job_waiting from job_post where posted_by_id=20 and status ='0' group by posted_by_id")->fetch(PDO::FETCH_ASSOC);
+        $employer_id=$_SESSION["employer"]["id"]??"";
+        $count_job_posted=$conn->query("select count(id) as posted_job from job_post where posted_by_id=$employer_id and status ='1' and now()<end_date")->fetch(PDO::FETCH_ASSOC);
+        $count_expired_job=$conn->query("select count(id) as expired_job from job_post where posted_by_id=$employer_id and status ='1' and now()>end_date ")->fetch(PDO::FETCH_ASSOC);
+        $count_job_waiting = $conn->query("select count(id) as job_waiting from job_post where posted_by_id=$employer_id and status ='0' ")->fetch(PDO::FETCH_ASSOC);
         $this->data["sub_content"]["count_job_posted"] = $count_job_posted;
         $this->data["sub_content"]["count_expired_job"] = $count_expired_job;
         $this->data["sub_content"]["count_job_waiting"] = $count_job_waiting;
