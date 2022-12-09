@@ -2,6 +2,9 @@
 class Tim_ung_vien extends Controller
 {
     public function index(){
+        if(!Auth_employer::logged_in()){
+            $this->redirect("employer/account/login");
+        }
         $conn=$this->model("Job_postModel");
         // echo $sql_data_resume;
         $data_profession= $conn->get("profession")->fetchAll(PDO::FETCH_ASSOC);
