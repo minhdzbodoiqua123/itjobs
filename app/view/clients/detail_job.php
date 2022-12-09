@@ -1254,6 +1254,7 @@ Nộp Đơn Ứng Tuyển
         <input style="margin:10px 0;"type="radio" id="reason-3" name="reason" value="3">
         <label for="reason-3"> Khác </label>
         <div>
+        <label for="">Mô tả báo cáo</label>
         <textarea name="desc_report" style="width:100%;height:200px" ></textarea>
         </div>
       </div>
