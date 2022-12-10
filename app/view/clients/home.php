@@ -176,11 +176,11 @@
       <div class="col-lg-6  col-xl-3">
   <div class="job-item">
     <div class="figure">
-      <div class="image"><a target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-interflour-viet-nam.35A87B78.html" title="Công Ty TNHH Interflour Việt Nam"><img src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$item["logo"] ?>" alt="<?= $item["company_name"] ?>"></a></div>
+      <div class="image"><a  href="<?= _WEB_ROOT.'/alljob/'.$item['id'] ?>" title="Công Ty TNHH Interflour Việt Nam"><img src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$item["logo"] ?>" alt="<?= $item["company_name"] ?>"></a></div>
       <div class="figcaption">
         <div class="title"><a href="<?= _WEB_ROOT.'/Alljob/detail/'.$item["id"] ?>" title="Sales Supervisor"><?= $item["job_title"] ?></a></div>
         <div class="caption">
-		  <a class="company-name" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-interflour-viet-nam.35A87B78.html" title="Công Ty TNHH Interflour Việt Nam" target="_blank"<?= $item["company_name"] ?></a>
+		  <a class="company-name" href="<?= _WEB_ROOT.'/alljob/'.$item['id'] ?>" title="Công Ty TNHH Interflour Việt Nam" target="_blank"<?= $item["company_name"] ?></a>
           <p class="salary"><em class="fa fa-usd"></em>Lương:<?= format_price($item["min_salary"]).'-'.format_price($item["max_salary"])?></p>
           <!-- <div class="location locationSuitable">
 		  	<em class="mdi mdi-map-marker"></em>

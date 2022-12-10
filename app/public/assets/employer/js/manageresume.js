@@ -16,8 +16,12 @@ async  function update_resume_status(job_id,user_account_id){
    const data_resume_type=await getData("http://localhost//itjobs/employer/hrcentral/Manageresume/resume_type");
   const {resume_status_id,resume_type_id}=await getData(`http://localhost//itjobs/employer/hrcentral/Manageresume/getResume/${job_id}/${user_account_id}`);
 
-  
-   
+  const queryString = window.location.search;   
+  const urlParams = new URLSearchParams(queryString);
+  const job_id_search = urlParams.get('job_id')
+  const job_status = urlParams.get('job_status')
+ 
+
     return `  <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="myModal"    tabindex="-1" aria-modal="true" role="dialog">
     <div class="modal-dialog modal-dialog-centered ">
        <div class="modal-content">
@@ -55,10 +59,10 @@ async  function update_resume_status(job_id,user_account_id){
                       </div>
                    </div>
                 </div>
-                <input type="hidden" name="strFolderId" id="strFolderId" value="369242CE">
-                <input type="hidden" name="strResumeId" id="strResumeId" value="35BFE874">
+                <input type="hidden" name="status" id="strFolderId" value="${job_status}">
+                <input type="hidden" name="job_id" id="strResumeId" value="${job_id_search}">
                 <div class="form-group form-submit">
-                   <button class="btn-gradient btn-submit" id="saveClassified_resume_btn" type="submit">Lưu</button>
+                   <button class="btn-gradient btn-submit" name="submit" id="saveClassified_resume_btn" type="submit">Lưu</button>
                 </div>
              </div>
           </form>
@@ -225,9 +229,7 @@ function  selectGroup() {
    
    select_folder.addEventListener('change',function(e){
       const value=this.value;
-      if(+value===-1){
-         return;
-      }
+      
          window.location.href=value;
 
    })

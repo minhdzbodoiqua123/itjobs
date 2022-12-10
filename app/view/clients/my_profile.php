@@ -1682,7 +1682,7 @@
                                                                
                                                                ?></span>
                                                          </li>
-                                                         <li class="dbl-line"><label>Nơi làm việc</label><span>:&nbsp;</span><span class="txt"> Hà Nội - Huyện Thanh Trì/Huyện Ba Vì
+                                                         <li class="dbl-line"><label>Nơi làm việc</label><span>:&nbsp;</span><span class="txt workplace"> 
                                                             </span>
                                                          </li>
                                                       </ul>
@@ -1738,7 +1738,7 @@
                       <?php    }?>
                                                   
                                                 </div>
-                                                <div style=" padding:8px 0;" class="col-sm-12 col border_orange_top ">
+                                                <!-- <div style=" padding:8px 0;" class="col-sm-12 col border_orange_top ">
                                                    <h3>Thông Tin Tham Khảo</h3>
                                                    <div class="text-edt">
                                                       <div class="title">nguyen nhat minh</div>
@@ -1748,7 +1748,7 @@
                                                          <p>Email: aolang69@gmail.com</p>
                                                       </div>
                                                    </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="col-xs-12 ">
                                                 </div>
                                              </div>

@@ -20,4 +20,10 @@ class AccountUserModel extends Database
         $row_count = $this->query($sql);
         return $row_count;
     }
+    public function checkLoginAdmin($email, $password)
+    {
+        $row_count = $this->query("SELECT * FROM $this->table WHERE email='$email' and password='$password' and user_type_id in(3,4)"  );
+        return $row_count;
+    }
+   
 }

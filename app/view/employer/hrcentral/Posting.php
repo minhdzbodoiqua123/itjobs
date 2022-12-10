@@ -169,7 +169,10 @@
                                                             <li><a href="<?= _WEB_ROOT . '/employer/hrcentral/viewjob/detail/' . $item['id'] ?>" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
 
                                                             <li><a href="<?= _WEB_ROOT . '/employer/hrcentral/viewjob/detail/' . $item['id'] ?>" title="Sửa"><em class="material-icons">created</em></a></li>
-                                                            <li class="end"><a href="javascript:void(0);" title="Tạm dừng đăng"><em class="material-icons">cancel </em></a></li>
+                 <form action="Posting/pause_posting"method="post">
+                    <input type="hidden"name="job_id" value="<?= $item['id'] ?>">
+                            <li class="end"><button style="background-color: transparent;border:transparent" type="submit" title="Tạm dừng đăng"><em class="material-icons">cancel </em></button></li>
+                                                        </form>
                                                         </ul>
                                                     </td>
                                                      </tr>

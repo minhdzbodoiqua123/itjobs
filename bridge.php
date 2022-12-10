@@ -23,6 +23,7 @@ require_once 'core/Functions.php';
 // require_once __DIR__."/app/models/Auth_admin.php";
 require_once __DIR__."/app/models/Auth_user.php";
 require_once __DIR__."/app/models/Auth_employer.php";
+require_once __DIR__."/app/models/Auth_admin.php";
 
 
 $myApp=new App();

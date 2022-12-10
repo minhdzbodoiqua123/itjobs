@@ -8,7 +8,9 @@ async function displayInfoUser() {
 
 
     const {provinces,districts,address} = await getData('http://localhost//itjobs/jobseekers/my_profile/addressUserById/'+user_id);
+ 
     const data = await getData('http://localhost//itjobs/jobseekers/my_profile/addressWish/'+resume_id);
+
     const addressUser = $('.address');
     const provincesUser=$(".provinces");
     const districtsUser=$(".districts");

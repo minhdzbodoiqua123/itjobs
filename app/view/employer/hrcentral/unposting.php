@@ -132,21 +132,61 @@
                 <table>
                     <thead>
                         <tr>
-                            <th width="1%"></th>
-                            <th width="">Chức danh</th>
+                   
+                        <th width="32%">Chức danh</th>
+                                       <th width="12%">Ngày đăng<em class="material-icons">arrow_drop_down</em></th>
+                                       <th width="10%">Hết hạn<em class="material-icons">sort</em></th>
+                                       <th width="10%">Lượt Xem<em class="material-icons">sort</em></th>
+                                       <th width="10%">Lượt Nộp<em class="material-icons">sort</em></th>
+
+                                       <th width="15%">Thao tác</th>
+                            <!-- <th width="">Chức danh</th>
                             <th width="10%" onclick="setTypeSort('unposting', 'asc', 3)">Ngày đăng<em class="material-icons">arrow_drop_down</em></th>
                             <th width="10%" onclick="setTypeSort('unposting', 'asc', 4)">Hết hạn<em class="material-icons">sort</em></th>
                             <th width="10%" onclick="setTypeSort('unposting', 'asc', 0)">Lượt Xem<em class="material-icons">sort</em></th>
                             <th width="10%" onclick="setTypeSort('unposting', 'asc', 1)">Lượt Nộp<em class="material-icons">sort</em></th>
                             <th width="10%" onclick="setTypeSort('unposting', 'asc', 2)">Email<em class="material-icons">sort</em></th>
-                            <th width="15%">Thao tác</th>
+                            <th width="15%">Thao tác</th> -->
                         </tr>
                     </thead>
                     <tbody>
-                                              
-                                <tr><td colspan="8"><p align="center"><strong> Không có vị trí nào trong thư mục này.</strong></p></td>
-                          </tr>
-                                        </tbody>
+                                    <?php if (!empty($job_post)) { ?>
+                                       <?php foreach ($job_post as $item) : ?>
+                                          <tr>
+                                             <!-- <td colspan="9" class="cb-text-center">
+                                                <p><strong> Không có vị trí nào trong thư mục này.</strong></p>
+                                                 
+                                                </td> -->
+
+
+                                             <td><?= $item["job_title"] ?></td>
+                                             <td><?= formatDate($item["posted_date"]) ?></td>
+                                             <td><?= formatDate($item["end_date"]) ?></td>
+
+                                             <td></td>
+
+                                             <td></td>
+                                             <td>
+                                                <ul class="list-manipulation">
+                                                   <li><a class="btn_recruit" data-id="19" title="Đăng tuyển"><em class="material-icons">publish </em></a></li>
+                                                   <li><a href="http://localhost//itjobs/employer/hrcentral/viewjob/detail/19" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
+                                                   <li><a href="http://localhost//itjobs/employer/hrcentral/posting/copyjob/lop7cttnq.1667207375/35BAFFA3/1/1" title="Nhân bản"><em class="material-icons">content_copy </em> </a></li>
+                                                   <li><a href="https://careerbuilder.vn/vi/employers/postjobs/35BAFFA3" title="Sửa"><em class="material-icons">created</em></a></li>
+                                                   <li class="end"><a href="javascript:void(0);" onclick="deleteItem_job('35BAFFA3');return false;" title="Xóa"><em class="material-icons">cancel </em></a></li>
+                                                </ul>
+                                             </td>
+
+                                          </tr>
+                                       <?php endforeach; ?>
+                                 </tbody>
+
+                              <?php } else { ?>
+                                 <tr>
+                                    <td colspan="9" class="cb-text-center">
+                                       <p><strong> Không có vị trí nào trong thư mục này.</strong></p>
+                                    </td>
+                                 </tr>
+                              <?php } ?>
                 </table>
             </div>
                     </div>

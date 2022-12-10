@@ -16,4 +16,14 @@ class Posting extends Controller
         $this->data["content"]="employer/hrcentral/posting";
         $this->render('layouts/employer_layout',$this->data);
     }
+
+    public function pause_posting(){
+        $job_id=$_POST["job_id"];
+        $conn=$this->model("Job_postModel");
+        $conn->update("job_post",[
+            "status" => "'2'"
+        ],"id=$job_id");
+        $this->redirect("employer/hrcentral/Posting");
+    }
+
 }

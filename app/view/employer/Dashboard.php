@@ -117,7 +117,9 @@
                                         </li>
                                         <li>
                                             <a href="https://careerbuilder.vn/vi/employers/hrcentral/unposting/user_id/lop7cttnq.1667207375">
-                                        <span class="number ">0</span>
+                                        <span class="number "><?= 
+                                        !empty($count_expired_job["expired_job"]) ? $count_expired_job["expired_job"]:0 
+                                         ?></span>
                                         <span class="title">Việc làm tạm dừng đăng</span>
                                     </a>
                                         </li>

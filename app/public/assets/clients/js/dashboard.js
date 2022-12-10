@@ -1,3 +1,7 @@
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+
+
 async function downloadCvAttach(resume_id){
     const params = new URLSearchParams();
 
@@ -102,9 +106,66 @@ popup_cancel.onclick=function(){
     ModalSwitchStatus.remove()
 }
 }
+async function loadInfoUser() {
+    const data = await getData("http://localhost//itjobs/jobseekers/my_profile/infoUser");
+    displayInfoUser(data);
+    
+  }
+  
+async function displayInfoUser(data) {
+    const {firstname, lastname } = data;
+    const {provinces,districts,address} = await getData('http://localhost//itjobs/jobseekers/my_profile/addressUser');
+  
+    const nameUser = $('.nameUser');
+    const address2 = $('.address2 span');
+  
+    if (provinces && districts) {
+      const dataProvinces = await getData(`https://provinces.open-api.vn/api/p/${provinces}`);
+      const dataDistricts = await getData(`https://provinces.open-api.vn/api/d/${districts}`);
+  
+      const { name: nameProvinces } = dataProvinces;
+      const { name: nameDistricts } = dataDistricts;
+  
+    //   provincesUser.textContent = nameProvinces;
+    //   districtsUser.textContent = nameDistricts;
+    //   addressUser.textContent = `${address},${nameDistricts},${nameProvinces}`;
+  
+      address2.textContent = `${address},${nameDistricts},${nameProvinces}`;
+  
+    //   // nameUser.textContent = firstname;
+  
+    //   input_lastname.value = lastname;
+    //   input_firstname.value = firstname;
+    } else {
+      address2.textContent = '';
+    }
+  }
+  async function displayJobInfo() {
+    const api = `http://localhost//itjobs/jobseekers/my_profile/desiredWork`;
+    const workplace=$(".workplace")
+    try {
+      const desiredWork = await getData(api);
+      const { provinces } = desiredWork;
+      const dataProvinces=await getData(`https://provinces.open-api.vn/api/p/${provinces}`);
+    if(provinces){
+    
+      const { name } = dataProvinces;
+      workplace.textContent=name
+    }
+    } catch (error) {
+      console.log(error);
+    }
+  
+    
+   
+  }
+  
+
+
 function start() {
     handleSwtichStatus()
-  
+    loadInfoUser()
+    displayJobInfo();
 
 }
 start()

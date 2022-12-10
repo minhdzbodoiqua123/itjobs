@@ -9,6 +9,9 @@
 
     <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="dist/pristine.js"  type="text/javascript"></script>
+    <script defer src="<?= _WEB_ROOT . "/app/library/pristinejs/dist/pristine.js" ?>"></script>
+    <!-- <link rel="stylesheet" href="<?php echo _WEB_ROOT;?>/app/public/assets/admin/css/main.css"> -->
+
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </head>
 

@@ -267,6 +267,17 @@
 #popup_panel {
     margin-top: 30px;
 }   
+.box-not-share-location {
+    background: #fceceb;
+    border-left: 4px solid #de4637;
+    border-radius: 5px;
+    color: #de4637;
+    display: none;
+    font-size: 15px;
+    margin-bottom: 16px;
+    padding: 14px 20px;
+    transition: .3s;
+}
 </style>
 
 
@@ -477,7 +488,7 @@
                                                             </a>
                                                         </div>
                                                             <?php }?>
-                                                        <div class="swiper-slide glide__slide">
+                                                        <!-- <div class="swiper-slide glide__slide">
                                                             <a href="http://localhost//itjobs/jobseekers/my_profile">
                                                                 <div class="item-cvcht">
                                                                     <div class="col-sm-3 icon">
@@ -488,7 +499,7 @@
                                                                     </div>
                                                                 </div>
                                                             </a>
-                                                        </div>
+                                                        </div> -->
                           <?php if($informationUser["status"]==0) {?>
                                                         
                                                         <div class="swiper-slide glide__slide">
@@ -778,7 +789,7 @@
                             <div class="action">
                               <ul>
                                 <li class="edit">
-                                                                                                                                                                                                            <a href="https://careerbuilder.vn/vi/jobseekers/myresume/myattach?id=17872871">Chỉnh sửa</a>
+                                                                                                                                                                                                            <a href="<?= _WEB_ROOT.'/jobseekers/myattach/edit_myattach'.'/'.$item['id']?>">Chỉnh sửa</a>
                                 </li>
                                 <li class="delete">
                                   <a href="javascript:void(0);" onclick="deleteResume('17872871','bank end', '','2'); return false;">Xóa</a>
@@ -855,43 +866,43 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="widget widget-5">
-                                    <div class="widget-head">
-                                        <div class="cb-title-h3">
-                                            <h3>Cài đặt hạn chế nhà tuyển dụng</h3>
-                                        </div>
-                                    </div>
-                                    <div class="widget-body">
-                                        <div class="main-form">
-                                            <div class="form-group form-text">
-                                                <div class="form-group form-keyword">
-                                                    <input type="text" name="company_name_blacklist" placeholder="Nhập tên công ty" class="company_name" id="company_name_blacklist">
-                                                    <div class="cleartext"><em class="mdi mdi-close-circle"></em></div>
-                                                </div>
-                                                <div class="form-group form-submit"><a class="btn-gradient" href="javascript:void(0);" onclick="addBlackListDashboard();">Thêm</a></div>
+                                <!-- <div class="col-lg-4">
+                                    <div class="widget widget-5">
+                                        <div class="widget-head">
+                                            <div class="cb-title-h3">
+                                                <h3>Cài đặt hạn chế nhà tuyển dụng</h3>
                                             </div>
                                         </div>
-                                        <div class="top-employers-list">
-                                        </div>
-                                        <div class="main-form">
-                                            <div class="form-group form-text">
-                                                <div class="form-group form-keyword">
-                                                    <input type="text" name="company_domain_blacklist" placeholder="Nhập domain công ty" class="company_domain" id="company_domain_blacklist">
-                                                    <div class="cleartext active-clear"><em class="mdi mdi-close-circle"></em></div>
+                                        <div class="widget-body">
+                                            <div class="main-form">
+                                                <div class="form-group form-text">
+                                                    <div class="form-group form-keyword">
+                                                        <input type="text" name="company_name_blacklist" placeholder="Nhập tên công ty" class="company_name" id="company_name_blacklist">
+                                                        <div class="cleartext"><em class="mdi mdi-close-circle"></em></div>
+                                                    </div>
+                                                    <div class="form-group form-submit"><a class="btn-gradient" href="javascript:void(0);" onclick="addBlackListDashboard();">Thêm</a></div>
                                                 </div>
-                                                <div class="form-group form-submit"><a class="btn-gradient" href="javascript:void(0);" onclick="addBlackListDomain();">Thêm</a></div>
                                             </div>
-                                        </div>
-                                        <div class="domain-saved">
+                                            <div class="top-employers-list">
+                                            </div>
+                                            <div class="main-form">
+                                                <div class="form-group form-text">
+                                                    <div class="form-group form-keyword">
+                                                        <input type="text" name="company_domain_blacklist" placeholder="Nhập domain công ty" class="company_domain" id="company_domain_blacklist">
+                                                        <div class="cleartext active-clear"><em class="mdi mdi-close-circle"></em></div>
+                                                    </div>
+                                                    <div class="form-group form-submit"><a class="btn-gradient" href="javascript:void(0);" onclick="addBlackListDomain();">Thêm</a></div>
+                                                </div>
+                                            </div>
+                                            <div class="domain-saved">
 
-                                        </div>
-                                        <div class="view-more"><a href="https://careerbuilder.vn/vi/jobseekers/blacklist-domain">Xem thêm <span class="mdi mdi-arrow-right"></span></a></div>
+                                            </div>
+                                            <div class="view-more"><a href="https://careerbuilder.vn/vi/jobseekers/blacklist-domain">Xem thêm <span class="mdi mdi-arrow-right"></span></a></div>
 
-                                        <form action="" method="post" id="frmAddBlacklist"><input type="hidden" value="0" name="jblacklist_id[]" id="company_id_blacklist"></form>
+                                            <form action="" method="post" id="frmAddBlacklist"><input type="hidden" value="0" name="jblacklist_id[]" id="company_id_blacklist"></form>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                </div> -->
                         </div>
                         <div class="row">
                             <div class="col-12">
@@ -902,233 +913,37 @@
                                                 <p style="font-size:24px;">Xem các vị trí gợi ý với CV của bạn</p>
                                                 <p></p>
 
-                                                <p style="font-size:24px;">Ứng tuyển nhiều vị trí phù hợp - Gia tăng cơ hội phỏng vấn ngay!</p>
+                                                <p style="font-size:24px;">Ứng tuyển  vị trí phù hợp - Gia tăng cơ hội phỏng vấn ngay!</p>
                                             </h3>
                                         </div>
                                     </div>
                                     <div class="apply-job-area">
                                         <div class="row">
-                                            <div class="col-lg-4">
+                                        <div class="col-lg-4">
                                                 <div class="list-job jobs-list-ajax" id="jobs-list">
+                                                 
+                                                <?php if(!isset($suitable_job)){?>
+                                                    <p></p>
+                                                    <div class="box-not-share-location" style="display: block;">Bạn vui lòng cập nhật hồ sơ để chúng tôi có thể đề xuất những việc làm phù hợp </div>
+
+                                              <?php  } else{?>
+     <?php foreach ($suitable_job as $item):?>
                                                     <div class="item">
-                                                        <div class="ckb-item">
-                                                            <label class="container-ckb">
-        <input type="checkbox" checked="checked" name="jobchk[]" value="35BAE939">
-        <span class="checkmark"></span>
-    </label>
-                                                        </div>
-                                                        <div class="job-item" id="job-item-35BAE939">
-                                                            <div class="figure">
-                                                                <div class="image"><a href="https://careerbuilder.vn/vi/nha-tuyen-dung/ngan-hang-tmcp-ban-viet-viet-capital-bank.35A66798.html" target="_blank" title="Ngân hàng TMCP Bản Việt (Viet Capital Bank)"><img  class="lazy-bg" data-src="https://images.careerbuilder.vn/employer_folders/lot4/97944/79x79/104652bvb.png" src="../kiemviecv32/images/graphics/blank.gif" alt="Ngân hàng TMCP Bản Việt (Viet Capital Bank)"></a></div>
-                                                                <div class="figcaption">
-                                                                    <div class="title"><a class="job_link" data-id="35BAE939" href="https://careerbuilder.vn/vi/tim-viec-lam/human-resource-business-partner.35BAE939.html" title="Human Resource Business Partner" target="_blank">Human Resource Business Partner</a></div>
-                                                                    <div class="caption">
-                                                                        <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/ngan-hang-tmcp-ban-viet-viet-capital-bank.35A66798.html" title="Ngân hàng TMCP Bản Việt (Viet Capital Bank)">Ngân hàng TMCP Bản Việt (Viet Capital Bank)</a>
-                                                                        <p class="salary"><em class="fa fa-usd"></em> Cạnh Tranh</p>
-                                                                        <div class="location">
-                                                                            <ul>
-                                                                                <li>Hồ Chí Minh | Hà Nội</li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="ckb-item">
-                                                            <label class="container-ckb">
-        <input type="checkbox" checked="checked" name="jobchk[]" value="35BAE935">
-        <span class="checkmark"></span>
-    </label>
-                                                        </div>
-                                                        <div class="job-item" id="job-item-35BAE935">
-                                                            <div class="figure">
-                                                                <div class="image"><a href="https://careerbuilder.vn/vi/nha-tuyen-dung/westcoast-international-healthcare-company.35A7F9E4.html" target="_blank" title="WESTCOAST INTERNATIONAL HEALTHCARE COMPANY"><img  class="lazy-bg" data-src="https://static.careerbuilder.vn/themes/kiemviecv32/images/graphics/logo-default.png" src="../kiemviecv32/images/graphics/blank.gif" alt="WESTCOAST INTERNATIONAL HEALTHCARE COMPANY"></a></div>
-                                                                <div class="figcaption">
-                                                                    <div class="title"><a class="job_link" data-id="35BAE935" href="https://careerbuilder.vn/vi/tim-viec-lam/clinical-assistant-receptionists.35BAE935.html" title="Clinical Assistant/ Receptionists" target="_blank">Clinical Assistant/ Receptionists</a></div>
-                                                                    <div class="caption">
-                                                                        <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/westcoast-international-healthcare-company.35A7F9E4.html" title="WESTCOAST INTERNATIONAL HEALTHCARE COMPANY">WESTCOAST INTERNATIONAL HEALTHCARE COMPANY</a>
-                                                                        <p class="salary"><em class="fa fa-usd"></em> Cạnh Tranh</p>
-                                                                        <div class="location">
-                                                                            <ul>
-                                                                                <li>Hồ Chí Minh</li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="ckb-item">
-                                                            <label class="container-ckb">
-        <input type="checkbox" checked="checked" name="jobchk[]" value="35BA7135">
-        <span class="checkmark"></span>
-    </label>
-                                                        </div>
-                                                        <div class="job-item" id="job-item-35BA7135">
-                                                            <div class="figure">
-                                                                <div class="image"><a href="https://careerbuilder.vn/vi/nha-tuyen-dung/tong-cong-ty-doi-tac-chan-that.35A7F3FC.html" target="_blank" title="Tổng Công ty Đối Tác Chân Thật"><img  class="lazy-bg" data-src="https://images.careerbuilder.vn/employer_folders/lot0/199420/79x79/101854logo.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Tổng Công ty Đối Tác Chân Thật"></a></div>
-                                                                <div class="figcaption">
-                                                                    <div class="title"><a class="job_link" data-id="35BA7135" href="https://careerbuilder.vn/vi/tim-viec-lam/nhan-vien-tuyen-dung-co-kinh-nghiem.35BA7135.html" title="NHÂN VIÊN TUYỂN DỤNG CÓ KINH NGHIỆM" target="_blank">NHÂN VIÊN TUYỂN DỤNG CÓ KINH NGHIỆM</a></div>
-                                                                    <div class="caption">
-                                                                        <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/tong-cong-ty-doi-tac-chan-that.35A7F3FC.html" title="Tổng Công ty Đối Tác Chân Thật">Tổng Công ty Đối Tác Chân Thật</a>
-                                                                        <p class="salary"><em class="fa fa-usd"></em> 9 Tr - 12 Tr VND</p>
-                                                                        <div class="location">
-                                                                            <ul>
-                                                                                <li>Hồ Chí Minh</li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="ckb-item">
-                                                            <label class="container-ckb">
-        <input type="checkbox" checked="checked" name="jobchk[]" value="35BA70CC">
-        <span class="checkmark"></span>
-    </label>
-                                                        </div>
-                                                        <div class="job-item" id="job-item-35BA70CC">
-                                                            <div class="figure">
-                                                                <div class="image"><a href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-co-phan-tap-doan-dau-tu-ecapital.35A93AC2.html" target="_blank" title="CÔNG TY CỔ PHẦN TẬP ĐOÀN ĐẦU TƯ ECAPITAL"><img  class="lazy-bg" data-src="https://static.careerbuilder.vn/themes/kiemviecv32/images/graphics/logo-default.png" src="../kiemviecv32/images/graphics/blank.gif" alt="CÔNG TY CỔ PHẦN TẬP ĐOÀN ĐẦU TƯ ECAPITAL"></a></div>
-                                                                <div class="figcaption">
-                                                                    <div class="title"><a class="job_link" data-id="35BA70CC" href="https://careerbuilder.vn/vi/tim-viec-lam/nhan-vien-tuyen-dung.35BA70CC.html" title="Nhân viên tuyển dụng" target="_blank">Nhân viên tuyển dụng</a></div>
-                                                                    <div class="caption">
-                                                                        <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-co-phan-tap-doan-dau-tu-ecapital.35A93AC2.html" title="CÔNG TY CỔ PHẦN TẬP ĐOÀN ĐẦU TƯ ECAPITAL">CÔNG TY CỔ PHẦN TẬP ĐOÀN ĐẦU TƯ ECAPITAL</a>
-                                                                        <p class="salary"><em class="fa fa-usd"></em> Cạnh Tranh</p>
-                                                                        <div class="location">
-                                                                            <ul>
-                                                                                <li>Hà Nội</li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="ckb-item">
-                                                            <label class="container-ckb">
-        <input type="checkbox" checked="checked" name="jobchk[]" value="35BA71D3">
-        <span class="checkmark"></span>
-    </label>
-                                                        </div>
-                                                        <div class="job-item" id="job-item-35BA71D3">
-                                                            <div class="figure">
-                                                                <div class="image"><a href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-mtv-nang-luong-an-viet-phat.35A75F9E.html" target="_blank" title="Công Ty TNHH MTV Năng Lượng An Việt Phát	"><img  class="lazy-bg" data-src="https://images.careerbuilder.vn/employer_folders/lot8/161438/79x79/152942logo.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Công Ty TNHH MTV Năng Lượng An Việt Phát	"></a></div>
-                                                                <div class="figcaption">
-                                                                    <div class="title"><a class="job_link" data-id="35BA71D3" href="https://careerbuilder.vn/vi/tim-viec-lam/hanh-chinh-nhan-su-duc-hoa-long-an.35BA71D3.html" title="Hành Chính - Nhân Sự (Đức Hòa, Long An)"
-                                                                            target="_blank">Hành Chính - Nhân Sự (Đức Hòa, Long An)</a></div>
-                                                                    <div class="caption">
-                                                                        <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-mtv-nang-luong-an-viet-phat.35A75F9E.html" title="Công Ty TNHH MTV Năng Lượng An Việt Phát	">Công Ty TNHH MTV Năng Lượng An Việt Phát	</a>
-                                                                        <p class="salary"><em class="fa fa-usd"></em> 9 Tr - 13 Tr VND</p>
-                                                                        <div class="location">
-                                                                            <ul>
-                                                                                <li>Long An</li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="ckb-item">
-                                                            <label class="container-ckb">
-        <input type="checkbox" checked="checked" name="jobchk[]" value="35BA706B">
-        <span class="checkmark"></span>
-    </label>
-                                                        </div>
-                                                        <div class="job-item" id="job-item-35BA706B">
-                                                            <div class="figure">
-                                                                <div class="image"><a href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-cong-nghiep-bao-tien.35A8D904.html" target="_blank" title="CÔNG TY TNHH CÔNG NGHIỆP BẢO TIÊN"><img  class="lazy-bg" data-src="https://images.careerbuilder.vn/employer_folders/lot2/258052/79x79/143813logo.png" src="../kiemviecv32/images/graphics/blank.gif" alt="CÔNG TY TNHH CÔNG NGHIỆP BẢO TIÊN"></a></div>
-                                                                <div class="figcaption">
-                                                                    <div class="title"><a class="job_link" data-id="35BA706B" href="https://careerbuilder.vn/vi/tim-viec-lam/nhan-vien-nhan-su-phu-trach-tuyen-dung.35BA706B.html" title="Nhân viên nhân sự phụ trách tuyển dụng"
-                                                                            target="_blank">Nhân viên nhân sự phụ trách tuyển dụng</a></div>
-                                                                    <div class="caption">
-                                                                        <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-cong-nghiep-bao-tien.35A8D904.html" title="CÔNG TY TNHH CÔNG NGHIỆP BẢO TIÊN">CÔNG TY TNHH CÔNG NGHIỆP BẢO TIÊN</a>
-                                                                        <p class="salary"><em class="fa fa-usd"></em> 6,5 Tr - 8 Tr VND</p>
-                                                                        <div class="location">
-                                                                            <ul>
-                                                                                <li>Hải Phòng</li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="ckb-item">
-                                                            <label class="container-ckb">
-        <input type="checkbox" checked="checked" name="jobchk[]" value="35BAB1D0">
-        <span class="checkmark"></span>
-    </label>
-                                                        </div>
-                                                        <div class="job-item" id="job-item-35BAB1D0">
-                                                            <div class="figure">
-                                                                <div class="image"><a href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-co-phan-dau-tu-bica-holdings.35A9265B.html" target="_blank" title="CÔNG TY CỔ PHẦN ĐẦU TƯ BICA HOLDINGS"><img  class="lazy-bg" data-src="https://images.careerbuilder.vn/employer_folders/lot1/277851/79x79/173743z3637974593018_b9add5518b791c8c38ed396058652806.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="CÔNG TY CỔ PHẦN ĐẦU TƯ BICA HOLDINGS"></a></div>
-                                                                <div class="figcaption">
-                                                                    <div class="title"><a class="job_link" data-id="35BAB1D0" href="https://careerbuilder.vn/vi/tim-viec-lam/nhan-vien-hanh-chinh-nhan-su-tong-hop.35BAB1D0.html" title="Nhân viên hành chính nhân sự tổng hợp"
-                                                                            target="_blank">Nhân viên hành chính nhân sự tổng hợp</a></div>
-                                                                    <div class="caption">
-                                                                        <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-co-phan-dau-tu-bica-holdings.35A9265B.html" title="CÔNG TY CỔ PHẦN ĐẦU TƯ BICA HOLDINGS">CÔNG TY CỔ PHẦN ĐẦU TƯ BICA HOLDINGS</a>
-                                                                        <p class="salary"><em class="fa fa-usd"></em> 9 Tr - 10 Tr VND</p>
-                                                                        <div class="location">
-                                                                            <ul>
-                                                                                <li>Hà Nội</li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="ckb-item">
-                                                            <label class="container-ckb">
-        <input type="checkbox" checked="checked" name="jobchk[]" value="35BAB1AD">
-        <span class="checkmark"></span>
-    </label>
-                                                        </div>
-                                                        <div class="job-item" id="job-item-35BAB1AD">
-                                                            <div class="figure">
-                                                                <div class="image"><a href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-dich-vu-va-thuong-mai-tan-nam-chinh.35A7C53B.html" target="_blank" title="Công ty TNHH Dịch vụ và Thương Mại Tân Nam Chinh"><img  class="lazy-bg" data-src="https://images.careerbuilder.vn/employer_folders/lot1/187451/79x79/105935logotncen.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Công ty TNHH Dịch vụ và Thương Mại Tân Nam Chinh"></a></div>
-                                                                <div class="figcaption">
-                                                                    <div class="title"><a class="job_link" data-id="35BAB1AD" href="https://careerbuilder.vn/vi/tim-viec-lam/truong-vpdd-tai-binh-thuan.35BAB1AD.html" title="Trưởng VPĐD tại Bình Thuận" target="_blank">Trưởng VPĐD tại Bình Thuận</a></div>
-                                                                    <div class="caption">
-                                                                        <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-dich-vu-va-thuong-mai-tan-nam-chinh.35A7C53B.html" title="Công ty TNHH Dịch vụ và Thương Mại Tân Nam Chinh">Công ty TNHH Dịch vụ và Thương Mại Tân Nam Chinh</a>
-                                                                        <p class="salary"><em class="fa fa-usd"></em> 20 Tr - 25 Tr VND</p>
-                                                                        <div class="location">
-                                                                            <ul>
-                                                                                <li>Bình Thuận</li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="ckb-item">
+                                                        <!-- <div class="ckb-item">
                                                             <label class="container-ckb">
         <input type="checkbox" checked="checked" name="jobchk[]" value="35BAB1A4">
         <span class="checkmark"></span>
     </label>
-                                                        </div>
-                                                        <div class="job-item" id="job-item-35BAB1A4">
+                                                        </div> -->
+               <div class="job-item" id="job-item-<?= $item["id"]?>">
                                                             <div class="figure">
-                                                                <div class="image"><a href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-sat-thep-ngoc-bien.35A8A045.html" target="_blank" title="Công Ty TNHH Sắt Thép Ngọc Biển"><img  class="lazy-bg" data-src="https://images.careerbuilder.vn/employer_folders/lot5/243525/79x79/83327e63209683187c3d99a96.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Công Ty TNHH Sắt Thép Ngọc Biển"></a></div>
+                                                                <div class="image"><a href="<?= _WEB_ROOT.'/alljob/detail/'.$item["id"] ?>" title="<?= $item["company_name"] ?>"><img  class="lazy-bg" src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$item["logo"] ?>" alt="<?= $item["company_name"] ?>"></a></div>
                                                                 <div class="figcaption">
-                                                                    <div class="title"><a class="job_link" data-id="35BAB1A4" href="https://careerbuilder.vn/vi/tim-viec-lam/nhan-vien-tuyen-dung-va-dao-tao.35BAB1A4.html" title="NHÂN VIÊN TUYỂN DỤNG VÀ ĐÀO TẠO" target="_blank">NHÂN VIÊN TUYỂN DỤNG VÀ ĐÀO TẠO</a></div>
+                                                                    <div class="title"><a class="job_link" data-id="35BAB1A4" href="<?= _WEB_ROOT.'/alljob/detail/'.$item["id"] ?>" title="<?= $item["job_title"] ?>" ><?= $item["job_title"] ?></a></div>
                                                                     <div class="caption">
-                                                                        <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-sat-thep-ngoc-bien.35A8A045.html" title="Công Ty TNHH Sắt Thép Ngọc Biển">Công Ty TNHH Sắt Thép Ngọc Biển</a>
-                                                                        <p class="salary"><em class="fa fa-usd"></em> 9 Tr - 12 Tr VND</p>
-                                                                        <div class="location">
+                                                                        <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-sat-thep-ngoc-bien.35A8A045.html" title="Công Ty TNHH Sắt Thép Ngọc Biển"><?= $item["company_name"] ?></a>
+                                                                        <p class="salary"><em class="fa fa-usd"></em><?= format_price($item["min_salary"]).'-'.format_price($item["max_salary"])?> VND</p>
+                                                                        <div data-provinces="<?= $item["provinces"] ?>" class="location">
                                                                             <ul>
                                                                                 <li>Hồ Chí Minh</li>
                                                                             </ul>
@@ -1138,31 +953,16 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="item">
-                                                        <div class="ckb-item">
-                                                            <label class="container-ckb">
-        <input type="checkbox" checked="checked" name="jobchk[]" value="35BAC394">
-        <span class="checkmark"></span>
-    </label>
-                                                        </div>
-                                                        <div class="job-item" id="job-item-35BAC394">
-                                                            <div class="figure">
-                                                                <div class="image"><a href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-my-pham-thien-nhien-mela.35A93BDF.html" target="_blank" title="Công ty TNHH mỹ phẩm thiên nhiên Mela"><img  class="lazy-bg" data-src="https://images.careerbuilder.vn/employer_folders/lot9/283359/79x79/85557logo-mela-final-brown-v.jpg" src="../kiemviecv32/images/graphics/blank.gif" alt="Công ty TNHH mỹ phẩm thiên nhiên Mela"></a></div>
-                                                                <div class="figcaption">
-                                                                    <div class="title"><a class="job_link" data-id="35BAC394" href="https://careerbuilder.vn/vi/tim-viec-lam/nhan-vien-nhan-su.35BAC394.html" title="Nhân viên nhân sự" target="_blank">Nhân viên nhân sự</a></div>
-                                                                    <div class="caption">
-                                                                        <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-tnhh-my-pham-thien-nhien-mela.35A93BDF.html" title="Công ty TNHH mỹ phẩm thiên nhiên Mela">Công ty TNHH mỹ phẩm thiên nhiên Mela</a>
-                                                                        <p class="salary"><em class="fa fa-usd"></em> 9 Tr - 11 Tr VND</p>
-                                                                        <div class="location">
-                                                                            <ul>
-                                                                                <li>Hà Nội</li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                  <?php endforeach;?>
+                                                   
+                                                    
+                                               <?php }?>
+                                                  
+                                                 
+                                                   
+                                                 
+                                                  
+                                                   
 
 
                                               
@@ -1368,7 +1168,7 @@
                                                 </div>
                                                 <div class="detail-content"></div>
 
-                                                <div class="follow-area">
+                                                <!-- <div class="follow-area">
                                                     <a href="https://careerbuilder.vn/vi/jobs/recommended" class="left-follow">Xem thêm</a>
                                                     <div class="right-follow">
                                                         <a href="javascript:void(0)" class="btn-apply-all btn-gradient-1">
@@ -1378,7 +1178,7 @@
                     Ứng tuyển ngay
                     </a>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
 
@@ -1586,7 +1386,7 @@
                                                                
                                                                ?></span>
                                                          </li>
-                                                         <li class="dbl-line"><label>Nơi làm việc</label><span>:&nbsp;</span><span class="txt"> Hà Nội - Huyện Thanh Trì/Huyện Ba Vì
+                                                         <li class="dbl-line"><label>Nơi làm việc</label><span>:&nbsp;</span><span class="txt workplace"> 
                                                             </span>
                                                          </li>
                                                       </ul>
@@ -1642,7 +1442,7 @@
                       <?php    }?>
                                                   
                                                 </div>
-                                                <div style=" padding:8px 0;" class="col-sm-12 col border_orange_top ">
+                                                <!-- <div style=" padding:8px 0;" class="col-sm-12 col border_orange_top ">
                                                    <h3>Thông Tin Tham Khảo</h3>
                                                    <div class="text-edt">
                                                       <div class="title">nguyen nhat minh</div>
@@ -1652,7 +1452,7 @@
                                                          <p>Email: aolang69@gmail.com</p>
                                                       </div>
                                                    </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="col-xs-12 ">
                                                 </div>
                                              </div>

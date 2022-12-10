@@ -27,7 +27,23 @@ class Myattach extends Controller
         $this->data["content"]="clients/myattach";
         $this->render('layouts/client_layout',$this->data);
     }
+    public function edit_myattach($id=""){
+        $conn=$this->model("JobPositionModel");
+        $data_degree= $conn->get("degree")->fetchAll(PDO::FETCH_ASSOC);
+        $data_job_type= $conn->get("job_type")->fetchAll(PDO::FETCH_ASSOC);
+        $data_job_position= $conn->get("job_position")->fetchAll(PDO::FETCH_ASSOC);
+        $data_profession= $conn->get("profession")->fetchAll(PDO::FETCH_ASSOC);
+        $data_job_welfare= $conn->get("job_welfare")->fetchAll(PDO::FETCH_ASSOC);
 
+        $this->data["sub_content"]["data_job_type"]=$data_job_type;
+        $this->data["sub_content"]["data_degree"]=$data_degree;
+
+        $this->data["sub_content"]["data_job_position"]=$data_job_position;
+        $this->data["sub_content"]["data_profession"]=$data_profession;
+        $this->data["sub_content"]["data_job_welfare"]=$data_job_welfare;
+        $this->data["content"]="clients/edit_myattach";
+        $this->render('layouts/client_layout',$this->data);
+    }
     public function uploadMyAttach() {
         if(count($_POST) > 0){
            $file_name= $this->upload_Avatar_User();
@@ -70,12 +86,9 @@ class Myattach extends Controller
                 "year_of_experience" => "'$yearOfExperience'",    
                 "position_id" => "'$level_id'",    
                 "position_current_id" => "'$levelcurrent_id'",    
-
-                
                 "provinces" => "'$provinces'",        
                 "districts" => "'$districts'",
                 "resume_active" => "'$status'",
-                
             ];
            $resume_id= $conn->insertData($data);  
 
@@ -151,15 +164,16 @@ class Myattach extends Controller
 
         $info = $this->model("AccountUserModel")->query("select seeker_profile.*,user_account.email FROM `user_account` join seeker_profile on 
         seeker_profile.user_account_id=id join seeker_address_detail on seeker_address_detail.user_account_id =seeker_profile.user_account_id   where id='$id'")->fetch(PDO::FETCH_ASSOC);
+  
        $data_resume=$this->model("ResumeModel")->get("resume","id=$resume_id")->fetch(PDO::FETCH_ASSOC);
 
      
-       $data_profession= $this->model("JobPositionModel")->query("select * from seeker_profession_by_resume join profession on profession.id=profession_id")->fetchAll(PDO::FETCH_ASSOC);
+       $data_profession= $this->model("JobPositionModel")->query("select * from seeker_profession_by_resume join profession on profession.id=profession_id where resume_id=$resume_id")->fetchAll(PDO::FETCH_ASSOC);
        $data_job_welfare= $this->model("JobPositionModel")->get("job_welfare")->fetchAll(PDO::FETCH_ASSOC);
 
        $data_job_position= $this->model("JobPositionModel")->get("job_position")->fetchAll(PDO::FETCH_ASSOC);
        $job_type_by_resume= $this->model("JobPositionModel")->query("select * from job_type_by_resume join job_type on job_type.id=job_type_by_resume.job_type_id where resume_id=$resume_id")->fetchAll(PDO::FETCH_ASSOC);
-       
+    //    print_r($job_type_by_resume);
         $full_name=$info["lastname"]." ".$info["firstname"];
         $this->data["sub_content"]["info"]=$info;
         $this->data["sub_content"]["full_name"]=$full_name;

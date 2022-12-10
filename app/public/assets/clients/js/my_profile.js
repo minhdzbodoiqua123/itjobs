@@ -154,7 +154,7 @@ function displayDistrict(data) {
 
 async function displayJobInfo() {
   const api = `http://localhost//itjobs/jobseekers/my_profile/desiredWork`;
-  const workplace=$(".workplace")
+  const workplace=$$(".workplace")
   try {
     const desiredWork = await getData(api);
     const { provinces } = desiredWork;
@@ -162,7 +162,10 @@ async function displayJobInfo() {
   if(provinces){
   
     const { name } = dataProvinces;
-    workplace.textContent = name;
+    workplace.forEach(element => {
+      element.textContent=name
+      
+    });
   }
   } catch (error) {
     console.log(error);
@@ -193,13 +196,7 @@ async function desiredForm(data) {
 }
 
 
-window.addEventListener('scroll',()=>{
-   
-    // const test=$(".main-widget .widget").filter(function(){
-    //   return this.offsetTop <Window.top+100;
-    // })
-    // console.log(test);
-})
+
 
 
 

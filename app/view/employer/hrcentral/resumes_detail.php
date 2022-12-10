@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/employer/css/resumes_detail.css" ?>">
 <script defer src="<?= _WEB_ROOT . "/app/public/assets/employer/js/resumes_detail.js" ?>"></script>
-<script defer src="<?= _WEB_ROOT . "/app/public/assets/employer/js/manageresume.js" ?>"></script>
+<!-- <script defer src="<?= _WEB_ROOT . "/app/public/assets/employer/js/manageresume.js" ?>"></script> -->
 
 <main>
    <section class="employer-navbar-2-1">
@@ -227,13 +227,13 @@
                                  </li>
                               </ul>
                               <div class="action">
-                                 <p>Thao tác</p>
+                                 <!-- <p>Thao tác</p>
                                  <ul class="list-manipulation">
                                     <li> <a href="javascript:;" onclick="showFoldersSelected('369242CE', 'listresumes[]');" title="Lưu thư mục"> <em class="material-icons">folder_shared </em> </a> </li>
                                     <li> <a href="javascript:;" onclick="showClassifiedResume('<?= $job_post_activity['job_id']?>','<?= $info_user['user_account_id']?>');return false;" title="Cập nhật trạng thái"> <em class="material-icons">border_color</em> </a> </li>
                                     <li> <a href="javascript:;" onclick="showResumeForInvite('35BFE874','369242CE');return false;" title="Thông báo tuyển dụng "> <i class="fa fa-forward" aria-hidden="true"></i> </a> </li>
                                   
-                                 </ul>
+                                 </ul> -->
                               </div>
                            </div>
                            <div class="view-resume-foot">

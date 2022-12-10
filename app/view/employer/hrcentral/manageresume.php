@@ -211,9 +211,20 @@
                     </option>
                 </select>
             </div>
+            <!-- <?php switch ($job_status) {
+                case '2':
+                    echo _WEB_ROOT.'/employer/hrcentral/manageresume?job_status='.$job_status;
+                    break;
+                case '3':
+                    echo _WEB_ROOT.'/employer/hrcentral/manageresume?job_status='.$job_status;
+                    break;
+                default:
+                    echo _WEB_ROOT.'/employer/hrcentral/manageresume?job_status=1';
+                    break;
+            }?> -->
             <div class="form-group form-select form-filter">
                 <select class="go-link" id="select-folder" style="width: 400px;">
-          <option value="-1">Chọn thư mục</option>
+          <option  value="">Chọn thư mục</option>
          <?php foreach ($data_job_current as $item):?>
             <option <?= empty($job_id) ? "" :$item["id"]==$job_id ?"selected":"" ?> value="<?php switch ($job_status) {
                 case '2':
@@ -266,8 +277,12 @@
                                     <tbody>
                                         <input name="list_resumes" type="hidden" value="">
                                         <input name="folder_id" type="hidden" value="">
-
-                                        <?php foreach ($job_post_activity as $item) : ?>
+                                        <?php if(empty($job_id)) {?>
+                                            <tr>
+                    <td colspan="9"><p align="center"><strong> Hiện tại không có hồ sơ nào trong thư mục này!</strong></p></td>
+                </tr>   
+                                            <?php } else {?>
+                                                <?php foreach ($job_post_activity as $item) : ?>
                                             <tr>
                                                 <td>
                                                     <div class="checkbox">
@@ -348,6 +363,9 @@
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
+                                                <?php }?>
+                                 
+                                      
                                         <!-- <tr>
                                                     <td colspan="9">
                                                         <p align="center"><strong> Hiện tại không có hồ sơ nào trong thư mục này!</strong></p>

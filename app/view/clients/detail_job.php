@@ -1237,7 +1237,7 @@ Nộp Đơn Ứng Tuyển
           </div>
           <div class="modal-body">
     <form name="feedback_job" id="feedback_job" method="POST" autocomplete="off">
-      <input type="hidden" name="job_url" id="job_url" value="<?= $job_post["id"] ?>">
+      <input type="hidden" name="job_id" id="job_url" value="<?= $job_post["id"] ?>">
       <input type="hidden" name="job_url" id="job_url" value="<?= current_url() ?>">
 
       <div class="form-group">

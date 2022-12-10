@@ -308,7 +308,7 @@
                         <div class="data-field">
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Tiêu đề hồ sơ</label>
-                                <div class="col-sm-9">front end</div>
+                                <div class="col-sm-9"><?= $data_resume["resume_title"] ?></div>
                             </div>
                           
                             <div class="form-group row">
@@ -458,7 +458,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Nơi làm việc</label>
                                 <div class="col-sm-9 workplace">
-
+                                           
                                 </div>
                             </div>
                         </div>
@@ -470,7 +470,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label nonetext">&nbsp;</label>
                                 <div class="col-sm-9 list-button">
-                                    <a class="btn-white" href="https://careerbuilder.vn/vi/jobseekers/dashboard">Quản lý hồ sơ<em class="fa fa-bars"></em></a>
+                                    <a class="btn-white" href="<?= _WEB_ROOT.'/jobseekers/dashboard' ?>">Quản lý hồ sơ<em class="fa fa-bars"></em></a>
                                     <a class="btn-gradient" href="https://careerbuilder.vn/vi/jobseekers/myresume/myattach?id=17708653">Chỉnh sửa</a>
                                 </div>
                             </div>

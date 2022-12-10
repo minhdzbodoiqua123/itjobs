@@ -43,7 +43,7 @@
                   </div>
                </div>
                <div class="form-body">
-                  <form name="frm_search" id="frm_search" >
+                  <form name="frm_search" id="frm_search" method="GET" >
                      <div class="form-wrap form-normal">
                         <div class="form-group form-text">
                            <label>Nội dung hồ sơ</label>
@@ -61,7 +61,7 @@
                         </style>
                         <div class="form-group form-select-chosen">
                            <label>Ngành nghề</label>
-                           <select name="list_industries" id="industry" class="chosen-select-max-three" multiple placeholder="Tất cả ngành nghề">
+                           <select name="list_industries[]" id="industry" class="chosen-select-max-three" multiple placeholder="Tất cả ngành nghề">
                            <?php foreach ($data_profession as $item):?>
                  <option value="<?= $item["id"] ?>" ><?= $item["profession_name"] ?></option>
 
@@ -70,7 +70,7 @@
                         </div>
                         <div class="form-group form-select-chosen">
                            <label>Địa điểm</label>
-                       <select name="list_location" id="location" class="chosen-select-max-three" multiple data-placeholder="Tất cả địa điểm"><option value="1">Thành phố Hà Nội</option><option value="2">Tỉnh Hà Giang</option><option value="4">Tỉnh Cao Bằng</option><option value="6">Tỉnh Bắc Kạn</option><option value="8">Tỉnh Tuyên Quang</option><option value="10">Tỉnh Lào Cai</option><option value="11">Tỉnh Điện Biên</option><option value="12">Tỉnh Lai Châu</option><option value="14">Tỉnh Sơn La</option><option value="15">Tỉnh Yên Bái</option><option value="17">Tỉnh Hoà Bình</option><option value="19">Tỉnh Thái Nguyên</option><option value="20">Tỉnh Lạng Sơn</option><option value="22">Tỉnh Quảng Ninh</option><option value="24">Tỉnh Bắc Giang</option><option value="25">Tỉnh Phú Thọ</option><option value="26">Tỉnh Vĩnh Phúc</option><option value="27">Tỉnh Bắc Ninh</option><option value="30">Tỉnh Hải Dương</option><option value="31">Thành phố Hải Phòng</option><option value="33">Tỉnh Hưng Yên</option><option value="34">Tỉnh Thái Bình</option><option value="35">Tỉnh Hà Nam</option><option value="36">Tỉnh Nam Định</option><option value="37">Tỉnh Ninh Bình</option><option value="38">Tỉnh Thanh Hóa</option><option value="40">Tỉnh Nghệ An</option><option value="42">Tỉnh Hà Tĩnh</option><option value="44">Tỉnh Quảng Bình</option><option value="45">Tỉnh Quảng Trị</option><option value="46">Tỉnh Thừa Thiên Huế</option><option value="48">Thành phố Đà Nẵng</option><option value="49">Tỉnh Quảng Nam</option><option value="51">Tỉnh Quảng Ngãi</option><option value="52">Tỉnh Bình Định</option><option value="54">Tỉnh Phú Yên</option><option value="56">Tỉnh Khánh Hòa</option><option value="58">Tỉnh Ninh Thuận</option><option value="60">Tỉnh Bình Thuận</option><option value="62">Tỉnh Kon Tum</option><option value="64">Tỉnh Gia Lai</option><option value="66">Tỉnh Đắk Lắk</option><option value="67">Tỉnh Đắk Nông</option><option value="68">Tỉnh Lâm Đồng</option><option value="70">Tỉnh Bình Phước</option><option value="72">Tỉnh Tây Ninh</option><option value="74">Tỉnh Bình Dương</option><option value="75">Tỉnh Đồng Nai</option><option value="77">Tỉnh Bà Rịa - Vũng Tàu</option><option value="79">Thành phố Hồ Chí Minh</option><option value="80">Tỉnh Long An</option><option value="82">Tỉnh Tiền Giang</option><option value="83">Tỉnh Bến Tre</option><option value="84">Tỉnh Trà Vinh</option><option value="86">Tỉnh Vĩnh Long</option><option value="87">Tỉnh Đồng Tháp</option><option value="89">Tỉnh An Giang</option><option value="91">Tỉnh Kiên Giang</option><option value="92">Thành phố Cần Thơ</option><option value="93">Tỉnh Hậu Giang</option><option value="94">Tỉnh Sóc Trăng</option><option value="95">Tỉnh Bạc Liêu</option><option value="96">Tỉnh Cà Mau</option></select>
+                       <select name="list_location[]" id="location" class="chosen-select-max-three" multiple placeholder="Tất cả địa điểm"></select>
                        
                         </div>
                         <div class="form-group form-select">
@@ -427,7 +427,7 @@
             </div>
                            
             <div class="box-resume-search-search-result">
-               <div class="search-result-top">
+               <!-- <div class="search-result-top">
                   <div class="top">
                      <p class="success">
                         Chúng tôi đã tìm thấy <strong> 104,874</strong> <strong>hồ sơ phù hợp</strong> theo như tiêu chí tìm kiếm của quý khách
@@ -442,7 +442,7 @@
                         </p>
                      </div>
                   </div>
-               </div>
+               </div> -->
                <div class="main-jobs-posting">
                   <div class="heading-jobs-posting">
                      <div class="left-heading">
@@ -472,7 +472,7 @@
                   <div class="boding-jobs-posting">
                      <div class="table table-jobs-posting">
                         <table>
-                           <thead>
+                           <!-- <thead>
                               <tr>
                                  <th width="38%">Ứng Viên</th>
                                  <th width="10%">
@@ -489,14 +489,138 @@
                               
                                  <th width="32%">Thao tác</th>
                               </tr>
-                           </thead>
+                           </thead> -->
                            <tbody class="data_resume">
-                        
+                           <div class="main-jobs-posting">
+        <!-- <div class="heading-jobs-posting">
+           <div class="left-heading">
+              <p class="name">Xem:</p>
+              <ul class="list-check">
+                 <li class="view-posting-detail"><a href="javascript:;">Chi tiết</a></li>
+                 <li class="view-posting-summary active"><a href="javascript:void(0)">Tóm tắt</a></li>
+              </ul>
+           </div>
+           <div class="right-heading">
+              <div class="to-display">
+                 <p class="name">Sắp xếp</p>
+                 <div class="form-sort">
+                    <select id="box_sort_change" onchange="changesort('https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n');">
+                       <option value="phh">Phù hợp</option>
+                       <option value="kng" >Kinh nghiệm</option>
+                       <option value="lng" >Mức lương</option>
+                       <option value="date"  selected="selected">Ngày truy cập</option>
+                    </select>
+                 </div>
+                 <p class="name-display">
+                    Hiển thị <strong>1 - 20 </strong> trong <strong>104,874</strong> hồ sơ
+                 </p>
+              </div>
+           </div>
+        </div> -->
+        <div class="boding-jobs-posting">
+           <div class="table table-jobs-posting">
+              <table>
+                 <thead>
+                    <tr>
+                       <th width="38%">Ứng Viên</th>
+                       <th width="10%">
+                          <a href="https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n/sort/kng_desc">
+                          Kinh nghiệm
+                          </a>
+                       </th>
+                       <th width="20%">
+                          <a href="https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n/sort/lng_desc">
+                          Lương
+                          </a>
+                       </th>
+                       <th width="10%">Nơi làm việc</th>
+                    
+                       <th width="32%">Thao tác</th>
+                    </tr>
+                 </thead>
+                 <tbody class="data_resume">
+                           <?php foreach ($data_resume as $item):?>
+                              <tr>
+                 <td>
+                    <div class="title">
+                       <div class="job-name">
+                          <a class="job-title" href="https://careerbuilder.vn/vi/employers/popup/resumeinfo/35A4E900/35A4E900/nhan-vien-tham-dinh/361DF78D.html?&highlight=Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n" target="_blank" title="Nhân viên Thẩm định">
+                          <b><?= $item["resume_title"] ?></b>
+                          </a>
+                          <p class="status viewed chkBuy" data-idcheck="361DF78D">
+                             <em class="material-icons">visibility </em> Đã xem&nbsp;
+                          </p>
+                         
+                       </div>
+                       <div class="status">
+                       </div>
+                       <a class="name" href="https://careerbuilder.vn/vi/employers/popup/resumeinfo/35A4E900/35A4E900/nhan-vien-tham-dinh/361DF78D.html?&highlight=Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n">
+                        <?= $item["lastname"].' '.$item["firstname"] ?>
+                       </a>
+                       <a class="attach-button" href="javascript:;">
+                       </a>
+                       <ul class="info-list">
+                          <li>
+                             <p> <strong>Học vấn: </strong><?= $item["degree_name"] ?></p>
+                          </li>
+                          <li>
+                             <p> <strong>Cấp bậc: </strong><?= $item["position"] ?></p>
+                          </li>
+                       </ul>
+                    </div>
+                  
+                 </td>
+                 <td>
+                    <p><?= $item["year_of_experience"] ?> năm</p>
+                 </td>
+                 <td>
+                    <p>
+                     <?= $item["min_salary"].'-'.$item["max_salary"].'VND' ?>
+         
+                    </p>
+                 </td>
+                 <td class="location"data-provinces="<?= $item["provinces"] ?>">
+             
+                 </td>
+                
+                 <td>
+                    <ul class="list-manipulation">
+                   
+                       
+                       <li><a href="javascript:void(0)" onclick="showFoldersSelected('361DF78D');" class="btn-save-folder" href="javascript:void(0)" title="Lưu vào thư mục"><em class="material-icons">folder_shared </em></a></li>
+                       
+                    </ul>
+                 </td>
+              </tr>
+                         <?php  endforeach;?>
+               
+                 </tbody>
+              </table>
+           </div>
+           <div class="main-pagination">
+              <div class="main-pagination">
+                 <ul class="pagination">
+                    <li class="PagerOtherPageCells active"><a href="javascript:void(0);">1</a></li>
+                    <li class="PagerOtherPageCells"><a href='https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n/sort/date_desc/page/2'>2</a></li>
+                    <li class="PagerOtherPageCells"><a href='https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n/sort/date_desc/page/3'>3</a></li>
+                    <li class="PagerOtherPageCells"><a href='https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n/sort/date_desc/page/4'>4</a></li>
+                    <li class="PagerOtherPageCells"><a href='https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n/sort/date_desc/page/5'>5</a></li>
+                    <li class="PagerOtherPageCells"><a class="LastPage" href='https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n/sort/date_desc/page/2'><em class="mdi mdi-chevron-right"></em></a></li>
+                 </ul>
+              </div>
+           </div>
+           <div class="main-button-sticky">
+              <div class="button-prev disabled"><em class="mdi mdi-chevron-left"></em></div>
+              <div class="button-next"><em class="mdi mdi-chevron-right"></em></div>
+           </div>
+        </div>
+     </div>
+        
                          
                            </tbody>
                         </table>
                      </div>
-                     <div class="main-pagination">
+                     <!-- <div class="main-pagination">
                         <div class="main-pagination">
                            <ul class="pagination">
                               <li class="PagerOtherPageCells active"><a href="javascript:void(0);">1</a></li>
@@ -507,7 +631,7 @@
                               <li class="PagerOtherPageCells"><a class="LastPage" href='https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n/sort/date_desc/page/2'><em class="mdi mdi-chevron-right"></em></a></li>
                            </ul>
                         </div>
-                     </div>
+                     </div> -->
                      <div class="main-button-sticky">
                         <div class="button-prev disabled"><em class="mdi mdi-chevron-left"></em></div>
                         <div class="button-next"><em class="mdi mdi-chevron-right"></em></div>

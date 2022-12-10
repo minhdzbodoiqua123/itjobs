@@ -8,17 +8,23 @@ class Manageresume extends Controller
  
         $job_status=$_GET["job_status"]??"";
         $job_id=$_GET["job_id"]??"";
-        $sql="SELECT seeker_profile.*,job_post_activity.*,salary_from,salary_to,resume.*,job_post.job_title FROM `job_post_activity`  join job_post on job_post_activity.job_id=job_post.id  join seeker_profile on seeker_profile.user_account_id=job_post_activity.user_account_id  join seeker_job_information on seeker_job_information.user_account_id=seeker_profile.user_account_id join resume on resume.id=resume_id where posted_by_id=$employer_id ";
+        $sql="SELECT  seeker_profile.*,job_post_activity.*,salary_from,salary_to,resume.* FROM `job_post_activity` join job_post on job_post_activity.job_id=job_post.id left join seeker_profile on seeker_profile.user_account_id=job_post_activity.user_account_id left  join seeker_job_information on seeker_job_information.user_account_id=seeker_profile.user_account_id left join resume on resume.id=resume_id where posted_by_id=$employer_id ";
         if(!empty($job_status) && $job_status ==1 ){
-            $sql.="and job_post.status='1' and now()<job_post.end_date";
+            $sql.="and job_post.status='1' and now() < job_post.end_date";
         }
-        else if(!empty($job_status) && $job_status ==2){
+         if(!empty($job_status) && $job_status ==2){
             $sql.="and job_post.status='1' and now()>job_post.end_date";
         }
+        if(!empty($job_id)){
+            $sql.=" and job_id=$job_id";
+
+        }
+
+        
     
-        
+
         $job_post_activity=$conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-        
+
         if(!empty($job_status) && $job_status ==1 ){
             $data_job_current=$conn->query("SELECT id,job_title FROM `job_post` WHERE now()<end_date and status='1' and posted_by_id=20")->fetchAll(PDO::FETCH_ASSOC);
         }        
@@ -94,16 +100,23 @@ $data_degree= $this->model("JobPositionModel")->get("degree")->fetchAll(PDO::FET
     public function updateResumeStatus(){
         $resume_status=$_POST["resume_status"];
         $resume_type=$_POST["resume_type"];
+        $status=$_POST["status"];
         $job_id=$_POST["job_id"];
+        
         $user_account_id=$_POST["user_account_id"];
+
         $data=[
             "resume_status_id"=>"'$resume_status'",
             "resume_type_id "=>"'$resume_type'",
         ];
 
  $this->model("ResumeModel")->update("job_post_activity",$data,"user_account_id=$user_account_id and job_id =$job_id");
- $this->redirect("employer/hrcentral/Manageresume");
+           
+ $this->redirect("employer/hrcentral/Manageresume?job_status=$status&job_id=$job_id");
+      
+      
     }
+
     public function getResume($job_id,$user_account_id){
         $data_resume=  $this->model("ResumeModel")->get("job_post_activity","user_account_id=$user_account_id and job_id =$job_id")->fetch(PDO::FETCH_ASSOC);
         echo json_encode($data_resume);
