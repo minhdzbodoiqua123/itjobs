@@ -444,54 +444,6 @@
                   </div>
                </div> -->
                <div class="main-jobs-posting">
-                  <div class="heading-jobs-posting">
-                     <div class="left-heading">
-                        <p class="name">Xem:</p>
-                        <ul class="list-check">
-                           <li class="view-posting-detail"><a href="javascript:;">Chi tiết</a></li>
-                           <li class="view-posting-summary active"><a href="javascript:void(0)">Tóm tắt</a></li>
-                        </ul>
-                     </div>
-                     <div class="right-heading">
-                        <div class="to-display">
-                           <p class="name">Sắp xếp</p>
-                           <div class="form-sort">
-                              <select id="box_sort_change" onchange="changesort('https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n');">
-                                 <option value="phh">Phù hợp</option>
-                                 <option value="kng" >Kinh nghiệm</option>
-                                 <option value="lng" >Mức lương</option>
-                                 <option value="date"  selected="selected">Ngày truy cập</option>
-                              </select>
-                           </div>
-                           <p class="name-display">
-                              Hiển thị <strong>1 - 20 </strong> trong <strong>104,874</strong> hồ sơ
-                           </p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="boding-jobs-posting">
-                     <div class="table table-jobs-posting">
-                        <table>
-                           <!-- <thead>
-                              <tr>
-                                 <th width="38%">Ứng Viên</th>
-                                 <th width="10%">
-                                    <a href="https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n/sort/kng_desc">
-                                    Kinh nghiệm
-                                    </a>
-                                 </th>
-                                 <th width="20%">
-                                    <a href="https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n/sort/lng_desc">
-                                    Lương
-                                    </a>
-                                 </th>
-                                 <th width="10%">Nơi làm việc</th>
-                              
-                                 <th width="32%">Thao tác</th>
-                              </tr>
-                           </thead> -->
-                           <tbody class="data_resume">
-                           <div class="main-jobs-posting">
         <!-- <div class="heading-jobs-posting">
            <div class="left-heading">
               <p class="name">Xem:</p>
@@ -615,29 +567,6 @@
            </div>
         </div>
      </div>
-        
-                         
-                           </tbody>
-                        </table>
-                     </div>
-                     <!-- <div class="main-pagination">
-                        <div class="main-pagination">
-                           <ul class="pagination">
-                              <li class="PagerOtherPageCells active"><a href="javascript:void(0);">1</a></li>
-                              <li class="PagerOtherPageCells"><a href='https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n/sort/date_desc/page/2'>2</a></li>
-                              <li class="PagerOtherPageCells"><a href='https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n/sort/date_desc/page/3'>3</a></li>
-                              <li class="PagerOtherPageCells"><a href='https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n/sort/date_desc/page/4'>4</a></li>
-                              <li class="PagerOtherPageCells"><a href='https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n/sort/date_desc/page/5'>5</a></li>
-                              <li class="PagerOtherPageCells"><a class="LastPage" href='https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n/sort/date_desc/page/2'><em class="mdi mdi-chevron-right"></em></a></li>
-                           </ul>
-                        </div>
-                     </div> -->
-                     <div class="main-button-sticky">
-                        <div class="button-prev disabled"><em class="mdi mdi-chevron-left"></em></div>
-                        <div class="button-next"><em class="mdi mdi-chevron-right"></em></div>
-                     </div>
-                  </div>
-               </div>
             </div>
          </div>
       </section>
