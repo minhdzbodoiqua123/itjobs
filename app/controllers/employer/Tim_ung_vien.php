@@ -10,8 +10,7 @@ class Tim_ung_vien extends Controller
         // echo $sql_data_resume;
         $data_profession= $conn->get("profession")->fetchAll(PDO::FETCH_ASSOC);
         $data_resume= $conn->query($sql_data_resume)->fetchAll(PDO::FETCH_ASSOC);
-
-        // print_r($data_resume);
+        
         $this->data["sub_content"]["data_profession"] = $data_profession;
         $this->data["sub_content"]["data_resume"] = $data_resume;
        

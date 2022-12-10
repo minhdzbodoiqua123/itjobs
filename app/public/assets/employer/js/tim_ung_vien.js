@@ -3,48 +3,48 @@ async function getData(url) {
  }
 async function renderDataResume(data_provinces,data)
 {
-   console.log(data);
-  
     // for (let i = 0; i < data.length; i++) {
     // var result = doSearch(data_provinces,data[i].provinces);
     // }
    const result=document.querySelectorAll('.location');
    const arr=[]
    result.forEach(element => {
-
-          const htmls=data.map((item) => {
-        return `
-        ${data_provinces.map(provinces=>{
-         if(+provinces.code==+item.provinces){
-            arr.push(provinces.code)
-             return provinces.code
+      const pronvinces_id=element.getAttribute('data-provinces')
+      data.forEach((item) => {
+         if(+pronvinces_id==+item.provinces){
+            data_provinces.map(provinces=>{
+               if(+provinces.code==+item.provinces){
+                  element.innerHTML=provinces.name; 
+               }
+            })
          }
       
-     }).join("")}
-        `     
-    })
-    
-   //  element.innerHTML=htmls.join("");
-
-   });
-   const value=[...new Set(arr)];
-
-   result.forEach((element,index) => {
-      console.log(value[index]);
-      const value_id=element.getAttribute("data-provinces")
-      if(+value_id==+value[index]){
-         const test=""
-         data_provinces.forEach(provinces=>{
-            if(+provinces.code==value_id){
-         element.innerHTML=provinces.name;
-              
-            }
+      })
          
-        })
-      }
+     })
+       
+    
+
+
+  
+  
+//    const value=[...new Set(arr)];
+
+//    result.forEach((element,index) => {
+//       const value_id=element.getAttribute("data-provinces")
+//       if(+value_id==+value[index]){
+//          const test=""
+//          data_provinces.forEach(provinces=>{
+//             if(+provinces.code==value_id){
+//          element.innerHTML=provinces.name;
+              
+//             }
+         
+//         })
+//       }
       
 
-});
+// });
    
 
 

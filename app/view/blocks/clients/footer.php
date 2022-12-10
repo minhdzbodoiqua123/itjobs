@@ -2,7 +2,6 @@
    .left-bottom-footer p{
       color: #fff;
       font-size:16px;   
-
    }
   
 </style>
