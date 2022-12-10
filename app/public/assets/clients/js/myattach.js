@@ -188,7 +188,6 @@ start();
 window.onload = function () {
 
   var form = document.getElementById("frmResumeDetail");
-  console.log(form);
   // create the pristine instance
   var pristine = new Pristine(form);
 

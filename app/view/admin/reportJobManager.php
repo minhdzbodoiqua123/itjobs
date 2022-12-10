@@ -108,8 +108,8 @@
 
                             break;
                           case '2':
-                            echo "Nữ";
-
+                            echo "Không cung cấp đủ thông tin";
+                            
                             break;
                           default:
                             echo "Khác";

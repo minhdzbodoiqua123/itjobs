@@ -8478,7 +8478,7 @@
     <h3>Thông tin nghề nghiệp</h3>
     <div class="user-action ">
       <ul>
-	  			<li> <a href="https://careerbuilder.vn/vi/jobseekers/myresume/myattach?sync=1 " title=" " class="action-1 "><em class="fa fa-sync "></em>Đồng bộ thông tin với Hồ Sơ CareerBuilder</a> </li>
+	  			<!-- <li> <a href="https://careerbuilder.vn/vi/jobseekers/myresume/myattach?sync=1 " title=" " class="action-1"><em class="fa fa-sync "></em>Đồng bộ thông tin với Hồ Sơ CareerBuilder</a> </li> -->
 		      </ul>
     </div>
   </div>

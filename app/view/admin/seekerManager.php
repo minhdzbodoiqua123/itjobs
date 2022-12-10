@@ -118,9 +118,9 @@
                         }
                         ?></td>
                     <td><?= $item["marital_status"] == "1" ? 'Độc thân' : 'Đã kết hôn' ?></td>
+                    <td><?= $item["contact_phone"] ?></td>
                     <td><?= formatDate($item["date_of_birth"]) ?></td>
 
-                    <td><?= $item["contact_phone"] ?></td>
 
                 
                   </tr>

@@ -60,10 +60,9 @@
       <div class="main-wrap">
         <div class="left-wrap">
           <ul class="list-menu">
-            <li> <a href="https://careerbuilder.vn/vi/employers/dashboard" title="Dashboard">Dashboard</a> </li>
+            <li> <a href="http://localhost//itjobs/employer/dashboard" title="Dashboard">Dashboard</a> </li>
             <li class="active"> <a href="<?= _WEB_ROOT . '/employer/hrcentral/posting' ?>" title="Quản Lý Đăng Tuyển">Quản Lý Đăng Tuyển</a> </li>
             <li> <a href="<?= _WEB_ROOT . '/employer/hrcentral/manageresume' ?>" class="active" title="Quản Lý  Ứng Viên">Quản Lý Ứng Viên</a> </li>
-            <li class=""> <a href="https://careerbuilder.vn/vi/employers/hrcentral/search-history" title="Lịch Sử Tìm Kiếm">Lịch Sử Tìm Kiếm</a> </li>
 
             <li>
 
@@ -90,7 +89,6 @@
             <h1 class="title-manage">Việc Làm Chờ Đăng </h1>
             <div class="button"><a class="btn-gradient" href="<?= _WEB_ROOT . '/employer/Postjobs' ?>"><em class="material-icons">create</em>Tạo Mẫu Tuyển Dụng</a></div>
           </div>
-          <div class="right-heading"><a href="https://careerbuilder.vn/vi/employers/faq" target="_blank" class="support">Hướng dẫn</a></div>
         </div>
         <div class="main-form-posting">
           <form name="frmSearchJob" id="frmSearchJob" action="" method="post" onsubmit="return validateSearch();">
@@ -166,30 +164,6 @@
 
           <div class="tabslet-content active">
             <div class="main-jobs-posting">
-              <div class="heading-jobs-posting">
-                <div class="left-heading">
-                  <p class="name">Chọn và thao tác</p>
-                  <ul class="list-check">
-                    <li class="view-posting-detail active"><a href="javascript:void(0);" id="dtail">Chi tiết</a></li>
-                    <li class="view-posting-summary"><a href="javascript:void(0)">Xem tóm tắt</a></li>
-                    <li><a href="javascript:void(0);" id="copy_multi_job">Nhân bản</a></li>
-                  </ul>
-                </div>
-                <div class="right-heading">
-                  <div class="to-display">
-                    <p class="name">Hiển thị </p>
-                    <div class="form-display">
-                      <select name="limit" id="limit">
-                        <option value="20" selected="">20</option>
-                        <option value="30">30</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                      </select>
-                    </div>
-                    <p class="name-display">Hiển thị 1 - 6 của 6 việc làm</p>
-                  </div>
-                </div>
-              </div>
               <div class="boding-jobs-posting">
                 <div class="table table-jobs-posting">
                   <table>

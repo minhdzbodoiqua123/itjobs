@@ -305,7 +305,7 @@
                                     <li><a href="<?= _WEB_ROOT.'/jobseekers/Mykiemviec/jobapplied' ?>">Việc làm đã nộp</a></li>
                      </ul>
                   </li>
-               
+<!--                
                   <li>
                      <a class="collapse " href="javascript:;"><em class="material-icons">remove_red_eye</em><span>Nhà tuyển dụng của tôi</span></a>
                      <ul class="list-unstyled collapse">
@@ -314,7 +314,7 @@
                         <li> <a href="">Nhà tuyển dụng được cài đặt hạn chế xem hồ sơ của tôi</a></li>
                         <li> <a href="">Phản hồi từ nhà tuyển dụng</a></li>
                      </ul>
-                  </li>
+                  </li> -->
                
                   <li>
                      <a class="collapse " href="javascript:;"><em class="material-icons">settings</em><span>Cài đặt</span></a>

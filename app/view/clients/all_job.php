@@ -1,24 +1,26 @@
-<script defer src="<?= _WEB_ROOT . "/app/public/assets/clients/js/all_job.js"?>"></script>
+<script defer src="<?= _WEB_ROOT . "/app/public/assets/clients/js/all_job.js" ?>"></script>
 
-<link rel="stylesheet" href="<?= _WEB_ROOT."/app/public/assets/clients/css/all_job.css" ?>">
-<link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css"?>">
+<link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/clients/css/all_job.css" ?>">
+<link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css" ?>">
 
 <style>
-   .multiselect-dropdown{
+   .multiselect-dropdown {
       background-color: white;
       width: 100%;
-    height: 50px;
-    padding: 0 40px 0 16px;
-    border: 1px solid #e5e5e5;
-    border-radius: 3px;
-    color: #000;
-    font-size: 15px;
-    font-weight: 400;
+      height: 50px;
+      padding: 0 40px 0 16px;
+      border: 1px solid #e5e5e5;
+      border-radius: 3px;
+      color: #000;
+      font-size: 15px;
+      font-weight: 400;
    }
-   span.placeholder{
-    position: relative;
+
+   span.placeholder {
+      position: relative;
       top: 12px;
    }
+
    span.optext {
       position: relative;
       top: 12px;
@@ -34,22 +36,22 @@
                <form method="get" action="">
                   <div class="form-wrap">
                      <div class="form-group form-keyword">
-                        <input  value="<?= !empty($searchKeyword) ? $searchKeyword : ''?>" type="search" class="keyword" name="keyword" id="keyword" placeholder="Chức danh, Tên công ty">
+                        <input value="<?= !empty($searchKeyword) ? $searchKeyword : '' ?>" type="search" class="keyword" name="keyword" id="keyword" placeholder="Chức danh, Tên công ty">
                         <div class="cleartext"><em class="mdi mdi-close-circle"></em></div>
                      </div>
                      <div class="form-group form-select-chosen">
-                        <select id="industry" multiple  name="industry[]" class="chosen-select-max-three" placeholder="Tất cả ngành nghề" >
-                           <?php foreach ($data_profession as $item): ?>
-             <option  <?php if(!empty($searchIndustry)) {
-                     foreach ($searchIndustry as $value) {
-                     if($value==$item["id"]){
-                        echo 'selected';
-                     }
-                     }
-             }  ?>  value="<?= $item["id"] ?>"><?= $item["profession_name"] ?></option> 
-                            
-                         <?php  endforeach;?>
-                        
+                        <select id="industry" multiple name="industry[]" class="chosen-select-max-three" placeholder="Tất cả ngành nghề">
+                           <?php foreach ($data_profession as $item) : ?>
+                              <option <?php if (!empty($searchIndustry)) {
+                                          foreach ($searchIndustry as $value) {
+                                             if ($value == $item["id"]) {
+                                                echo 'selected';
+                                             }
+                                          }
+                                       }  ?> value="<?= $item["id"] ?>"><?= $item["profession_name"] ?></option>
+
+                           <?php endforeach; ?>
+
                         </select>
                      </div>
                      <div class="form-group form-select-chosen">
@@ -57,71 +59,71 @@
                            <option value="">Chọn địa điểm</option>
                               
                         </select> -->
-                        <select id="location"multiple name="location[]" class="chosen-select-max-three" placeholder="Tất cả địa điểm">
-   <option value="1">Thành phố Hà Nội</option>
-   <option value="2">Tỉnh Hà Giang</option>
-   <option value="4">Tỉnh Cao Bằng</option>
-   <option value="6">Tỉnh Bắc Kạn</option>
-   <option value="8">Tỉnh Tuyên Quang</option>
-   <option value="10">Tỉnh Lào Cai</option>
-   <option value="11">Tỉnh Điện Biên</option>
-   <option value="12">Tỉnh Lai Châu</option>
-   <option value="14">Tỉnh Sơn La</option>
-   <option value="15">Tỉnh Yên Bái</option>
-   <option value="17">Tỉnh Hoà Bình</option>
-   <option value="19">Tỉnh Thái Nguyên</option>
-   <option value="20">Tỉnh Lạng Sơn</option>
-   <option value="22">Tỉnh Quảng Ninh</option>
-   <option value="24">Tỉnh Bắc Giang</option>
-   <option value="25">Tỉnh Phú Thọ</option>
-   <option value="26">Tỉnh Vĩnh Phúc</option>
-   <option value="27">Tỉnh Bắc Ninh</option>
-   <option value="30">Tỉnh Hải Dương</option>
-   <option value="31">Thành phố Hải Phòng</option>
-   <option value="33">Tỉnh Hưng Yên</option>
-   <option value="34">Tỉnh Thái Bình</option>
-   <option value="35">Tỉnh Hà Nam</option>
-   <option value="36">Tỉnh Nam Định</option>
-   <option value="37">Tỉnh Ninh Bình</option>
-   <option value="38">Tỉnh Thanh Hóa</option>
-   <option value="40">Tỉnh Nghệ An</option>
-   <option value="42">Tỉnh Hà Tĩnh</option>
-   <option value="44">Tỉnh Quảng Bình</option>
-   <option value="45">Tỉnh Quảng Trị</option>
-   <option value="46">Tỉnh Thừa Thiên Huế</option>
-   <option value="48">Thành phố Đà Nẵng</option>
-   <option value="49">Tỉnh Quảng Nam</option>
-   <option value="51">Tỉnh Quảng Ngãi</option>
-   <option value="52">Tỉnh Bình Định</option>
-   <option value="54">Tỉnh Phú Yên</option>
-   <option value="56">Tỉnh Khánh Hòa</option>
-   <option value="58">Tỉnh Ninh Thuận</option>
-   <option value="60">Tỉnh Bình Thuận</option>
-   <option value="62">Tỉnh Kon Tum</option>
-   <option value="64">Tỉnh Gia Lai</option>
-   <option value="66">Tỉnh Đắk Lắk</option>
-   <option value="67">Tỉnh Đắk Nông</option>
-   <option value="68">Tỉnh Lâm Đồng</option>
-   <option value="70">Tỉnh Bình Phước</option>
-   <option value="72">Tỉnh Tây Ninh</option>
-   <option value="74">Tỉnh Bình Dương</option>
-   <option value="75">Tỉnh Đồng Nai</option>
-   <option value="77">Tỉnh Bà Rịa - Vũng Tàu</option>
-   <option value="79">Thành phố Hồ Chí Minh</option>
-   <option value="80">Tỉnh Long An</option>
-   <option value="82">Tỉnh Tiền Giang</option>
-   <option value="83">Tỉnh Bến Tre</option>
-   <option value="84">Tỉnh Trà Vinh</option>
-   <option value="86">Tỉnh Vĩnh Long</option>
-   <option value="87">Tỉnh Đồng Tháp</option>
-   <option value="89">Tỉnh An Giang</option>
-   <option value="91">Tỉnh Kiên Giang</option>
-   <option value="92">Thành phố Cần Thơ</option>
-   <option value="93">Tỉnh Hậu Giang</option>
-   <option value="94">Tỉnh Sóc Trăng</option>
-   <option value="95">Tỉnh Bạc Liêu</option>
-   <option value="96">Tỉnh Cà Mau</option>
-</select>
+                        <select id="location" multiple name="location[]" class="chosen-select-max-three" placeholder="Tất cả địa điểm">
+                           <option value="1">Thành phố Hà Nội</option>
+                           <option value="2">Tỉnh Hà Giang</option>
+                           <option value="4">Tỉnh Cao Bằng</option>
+                           <option value="6">Tỉnh Bắc Kạn</option>
+                           <option value="8">Tỉnh Tuyên Quang</option>
+                           <option value="10">Tỉnh Lào Cai</option>
+                           <option value="11">Tỉnh Điện Biên</option>
+                           <option value="12">Tỉnh Lai Châu</option>
+                           <option value="14">Tỉnh Sơn La</option>
+                           <option value="15">Tỉnh Yên Bái</option>
+                           <option value="17">Tỉnh Hoà Bình</option>
+                           <option value="19">Tỉnh Thái Nguyên</option>
+                           <option value="20">Tỉnh Lạng Sơn</option>
+                           <option value="22">Tỉnh Quảng Ninh</option>
+                           <option value="24">Tỉnh Bắc Giang</option>
+                           <option value="25">Tỉnh Phú Thọ</option>
+                           <option value="26">Tỉnh Vĩnh Phúc</option>
+                           <option value="27">Tỉnh Bắc Ninh</option>
+                           <option value="30">Tỉnh Hải Dương</option>
+                           <option value="31">Thành phố Hải Phòng</option>
+                           <option value="33">Tỉnh Hưng Yên</option>
+                           <option value="34">Tỉnh Thái Bình</option>
+                           <option value="35">Tỉnh Hà Nam</option>
+                           <option value="36">Tỉnh Nam Định</option>
+                           <option value="37">Tỉnh Ninh Bình</option>
+                           <option value="38">Tỉnh Thanh Hóa</option>
+                           <option value="40">Tỉnh Nghệ An</option>
+                           <option value="42">Tỉnh Hà Tĩnh</option>
+                           <option value="44">Tỉnh Quảng Bình</option>
+                           <option value="45">Tỉnh Quảng Trị</option>
+                           <option value="46">Tỉnh Thừa Thiên Huế</option>
+                           <option value="48">Thành phố Đà Nẵng</option>
+                           <option value="49">Tỉnh Quảng Nam</option>
+                           <option value="51">Tỉnh Quảng Ngãi</option>
+                           <option value="52">Tỉnh Bình Định</option>
+                           <option value="54">Tỉnh Phú Yên</option>
+                           <option value="56">Tỉnh Khánh Hòa</option>
+                           <option value="58">Tỉnh Ninh Thuận</option>
+                           <option value="60">Tỉnh Bình Thuận</option>
+                           <option value="62">Tỉnh Kon Tum</option>
+                           <option value="64">Tỉnh Gia Lai</option>
+                           <option value="66">Tỉnh Đắk Lắk</option>
+                           <option value="67">Tỉnh Đắk Nông</option>
+                           <option value="68">Tỉnh Lâm Đồng</option>
+                           <option value="70">Tỉnh Bình Phước</option>
+                           <option value="72">Tỉnh Tây Ninh</option>
+                           <option value="74">Tỉnh Bình Dương</option>
+                           <option value="75">Tỉnh Đồng Nai</option>
+                           <option value="77">Tỉnh Bà Rịa - Vũng Tàu</option>
+                           <option value="79">Thành phố Hồ Chí Minh</option>
+                           <option value="80">Tỉnh Long An</option>
+                           <option value="82">Tỉnh Tiền Giang</option>
+                           <option value="83">Tỉnh Bến Tre</option>
+                           <option value="84">Tỉnh Trà Vinh</option>
+                           <option value="86">Tỉnh Vĩnh Long</option>
+                           <option value="87">Tỉnh Đồng Tháp</option>
+                           <option value="89">Tỉnh An Giang</option>
+                           <option value="91">Tỉnh Kiên Giang</option>
+                           <option value="92">Thành phố Cần Thơ</option>
+                           <option value="93">Tỉnh Hậu Giang</option>
+                           <option value="94">Tỉnh Sóc Trăng</option>
+                           <option value="95">Tỉnh Bạc Liêu</option>
+                           <option value="96">Tỉnh Cà Mau</option>
+                        </select>
                      </div>
                      <div class="form-group form-submit">
                         <button class="btn-gradient" onClick="return validataSearchHomePage('vi');">
@@ -129,40 +131,40 @@
                            <span class="mdi mdi-magnify"></span>
                         </button>
                      </div>
-                     <div style="margin-top:10px;"class="switch-group toollips switch-group-sp">
-                  <div class="form-group">
-                     <label for="work-home-fli">Work from home
-                     <input id="work-home-fli" name="wrk_from_home" type="checkbox" value="1" >
-                     <span class="slider"></span> </label>
-                  </div>
-               </div>
-                  
+                     <div style="margin-top:10px;" class="switch-group toollips switch-group-sp">
+                        <div class="form-group">
+                           <label for="work-home-fli">Work from home
+                              <input id="work-home-fli" name="wrk_from_home" type="checkbox" value="1">
+                              <span class="slider"></span> </label>
+                        </div>
+                     </div>
 
-                 
-                              
+
+
+
                   </div>
                </form>
             </div>
-         
-          
+
+
          </div>
       </div>
-      
-        
-                    </div>
-                </div>
-                                    </div>
-            </div>
-        </div>
-        </div>
-    
-    
-        <input type="hidden" id="recommend" name="recommend" value="" />
+
+
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+
+
+      <input type="hidden" id="recommend" name="recommend" value="" />
    </section>
    <section class="search-result-list">
       <div class="container">
          <div class="row">
-            <div class="col-lg-8 col-custom-xxl-9">
+            <div class="col-lg-12 col-custom-xxl-12">
                <div class="job-found">
                   <div class="job-found-amout">
                      <h1><?= $totalRecords ?> việc làm</h1>
@@ -179,108 +181,111 @@
                      </span>
                   </div>
                </div>
-                <?php if(count($job_post) == 0){?>              
+               <?php if (count($job_post) == 0) { ?>
                   <div class="no-search">
-    <div style="
+                     <div style="
     text-align: center;
-"class="image">
-        <figure>
-            <img src="	https://static.careerbuilder.vn/themes/careerbuilder/img/no-search.png" alt="">
-            <figcaption>
-                Chưa có công việc phù hợp với tiêu chí của
-                   <?= $_GET["keyword"] ?? "" ?>
-                            </figcaption>
-        </figure>
-    </div>
-    <div class="job-search-suggestions">
-                    <p style="line-height:22px; padding-top:20px; color:#505050;text-align:center">
-<strong>Gợi ý tìm việc:</strong><br>
-• Tìm kiếm với từ khoá cụ thể như vị trí công việc. Ví dụ: Nhân viên kinh doanh hoặc Kế toán viên ...
-<br>
-• Tìm kiếm theo ngành nghề. <a href="https://careerbuilder.vn/vi/tim-viec-nhanh.html" style="color:#0078c9">Xem ngay</a>
-<br>
-• Tìm kiếm theo danh sách việc làm mới cập nhật và lọc theo tỉnh/thành phố. <a href="https://careerbuilder.vn/viec-lam/tat-ca-viec-lam-vi.html " style="color:#0078c9">Xem ngay </a>
-            </p></div>
-    <div class="apply-now-banner">
-        <div class="apply-now-content"></div>
-    </div>
-</div>
-                  <?php } else  {?>
-                     <div class="main-slide">
-                  <div class="jobs-side-list" id="jobs-side-list-content">
-                     <?php foreach ($job_post as $item): ?>
-                        <div class="job-item " id="job-item-<?= $item["id"]?>">
-                        <div class="figure">
-                           <div class="image">
-                              <a href="" target="_blank" title="Ms Huong">
-                              <img class="lazy-img" src="<?= _WEB_ROOT.'/app/public/assets/employer/images/'.$item["logo"] ?>" src="../kiemviecv32/images/graphics/blank.gif" alt="Ms Huong">
-                              </a>
-                           </div>
-                           <div class="figcaption">
-                              <div class="title ">
-                                 <h2>
-                                    <a class="job_link" data-id="35BAE5BD" href="<?= _WEB_ROOT.'/Alljob/detail/'.$item["id"] ?>" title="VIDEO TRANSLATOR  UP TO 13MIL">
-                                  <?= $item["job_title"] ?>
-                                    <span class="new">
-                                   
-                                       <font color="ff0000">(Mới)</font>
-                                      
-                                    </span> </a>
-                                 </h2>
-                              </div>
-                            <div style="display:flex;justify-content: space-between;">
-                            <div class="caption">
-                           
-                                 <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/ms-huong.35A8DDF9.html" title="Ms Huong">
-                                 <?= $item["company_name"] ?>
-                                 </a>
-                                 <div class="salary">
-                                    <p><em class="fa fa-usd"></em>Lương: <?= format_price($item["min_salary"]).'-'.format_price($item["max_salary"]).' VND' ?></p>
+" class="image">
+                        <figure>
+                           <img src="	https://static.careerbuilder.vn/themes/careerbuilder/img/no-search.png" alt="">
+                           <figcaption>
+                              Chưa có công việc phù hợp với tiêu chí của
+                              <?= $_GET["keyword"] ?? "" ?>
+                           </figcaption>
+                        </figure>
+                     </div>
+                     <div class="job-search-suggestions">
+                        <p style="line-height:22px; padding-top:20px; color:#505050;text-align:center">
+                           <strong>Gợi ý tìm việc:</strong><br>
+                           • Tìm kiếm với từ khoá cụ thể như vị trí công việc. Ví dụ: Nhân viên kinh doanh hoặc Kế toán viên ...
+                           <br>
+                           • Tìm kiếm theo ngành nghề. <a href="https://careerbuilder.vn/vi/tim-viec-nhanh.html" style="color:#0078c9">Xem ngay</a>
+                           <br>
+                           • Tìm kiếm theo danh sách việc làm mới cập nhật và lọc theo tỉnh/thành phố. <a href="https://careerbuilder.vn/viec-lam/tat-ca-viec-lam-vi.html " style="color:#0078c9">Xem ngay </a>
+                        </p>
+                     </div>
+                     <div class="apply-now-banner">
+                        <div class="apply-now-content"></div>
+                     </div>
+                  </div>
+               <?php } else { ?>
+                  <div class="main-slide">
+                     <div class="jobs-side-list" id="jobs-side-list-content">
+                        <?php foreach ($job_post as $item) : ?>
+                           <div class="job-item " id="job-item-<?= $item["id"] ?>">
+                              <div class="figure">
+                                 <div class="image">
+                                    <a href="" target="_blank" title="Ms Huong">
+                                       <img class="lazy-img" src="<?= _WEB_ROOT . '/app/public/assets/employer/images/' . $item["logo"] ?>" src="../kiemviecv32/images/graphics/blank.gif" alt="Ms Huong">
+                                    </a>
                                  </div>
-                                 <!-- <div class="location">
+                                 <div class="figcaption">
+                                    <div class="title ">
+                                       <h2>
+                                          <a class="job_link" data-id="35BAE5BD" href="<?= _WEB_ROOT . '/Alljob/detail/' . $item["id"] ?>" title="VIDEO TRANSLATOR  UP TO 13MIL">
+                                             <?= $item["job_title"] ?>
+                                             <span class="new">
+
+                                                <font color="ff0000">(Mới)</font>
+
+                                             </span> </a>
+                                       </h2>
+                                    </div>
+                                    <div style="display:flex;justify-content: space-between;">
+                                       <div class="caption">
+
+                                          <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/ms-huong.35A8DDF9.html" title="Ms Huong">
+                                             <?= $item["company_name"] ?>
+                                          </a>
+                                          <div class="salary">
+                                             <p><em class="fa fa-usd"></em>Lương: <?= format_price($item["min_salary"]) . '-' . format_price($item["max_salary"]) . ' VND' ?></p>
+                                          </div>
+                                          <!-- <div class="location">
                                     <em class="mdi mdi-map-marker"></em>
                                     <ul>
                                        <li class=""></li>
                                     </ul>
                                  </div> -->
-                                 <ul class="welfare">
-                                   
+                                          <ul class="welfare">
 
-                                 </ul>
-                              </div>
-                              <style>
-              form > a.saved, form a.saved button {
-            color: #e8c80d;
-              }
-                              </style>
-                              <div style="top:50px;"class="">
-                                 <ul>
-                                
-                                    <li>
-                                       <form method="post" action="http://localhost//itjobs/Alljob/jobsaved">
-               <input type="hidden" name="job_id" value="<?= $item["id"]?> ">
-    
-  <a  class="toollips save-job <?= ($item["job_saved_id"]==$item["id"] && $item["job_saved_account_id"]==$seeker_id) ? 'saved' : ''?> " href="javascript:void(0);" >
-    <i class="mdi mdi-heart-outline"></i>
-  <button type="submit" name="savedjob_full" style="background-color: transparent;" class="text">Lưu việc làm</button>
-	</a>
-                                                   </form>
-                                    </li>
-                                 </ul>
-                                 <div class="time">
-                                    <em class="mdi mdi-calendar"></em>
-                                    <time><?= formatDate($item["posted_date"]) ?></time>
-                                    <div class="toolip">
-                                       <p>Ngày cập nhật</p>
+
+                                          </ul>
+                                       </div>
+                                       <style>
+                                          form>a.saved,
+                                          form a.saved button {
+                                             color: #e8c80d;
+                                          }
+                                       </style>
+                                       <div style="top:50px;" class="">
+                                          <ul>
+
+                                             <li>
+                                                <form method="post" action="http://localhost//itjobs/Alljob/jobsaved">
+                                                   <input type="hidden" name="job_id" value="<?= $item["id"] ?> ">
+
+                                                   <a class="toollips save-job <?= ($item["job_saved_id"] == $item["id"] && $item["job_saved_account_id"] == $seeker_id) ? 'saved' : '' ?> " href="javascript:void(0);">
+                                                      <i class="mdi mdi-heart-outline"></i>
+                                                      <button type="submit" name="savedjob_full" style="background-color: transparent;" class="text">Lưu việc làm</button>
+                                                   </a>
+                                                </form>
+                                             </li>
+                                          </ul>
+                                          <div class="time">
+                                             <em class="mdi mdi-calendar"></em>
+                                             <time><?= formatDate($item["posted_date"]) ?></time>
+                                             <div class="toolip">
+                                                <p>Ngày cập nhật</p>
+                                             </div>
+                                          </div>
+                                       </div>
                                     </div>
                                  </div>
-                              </div></div>
+                              </div>
                            </div>
-                        </div>
-                     </div>
-                   <?php  endforeach;?>
-                   
-                     <!-- <div class="job-item " id="job-item-35BAE5BB">
+                        <?php endforeach; ?>
+
+                        <!-- <div class="job-item " id="job-item-35BAE5BB">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/medigo-software.35A88553.html" target="_blank" title="Medigo Software ">
@@ -600,7 +605,7 @@
                            </div>
                         </div>
                      </div> -->
-                     <!-- <div class="job-item " id="job-item-35BAE5B5">
+                        <!-- <div class="job-item " id="job-item-35BAE5B5">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/rgf-hr-agent-vietnam-co-ltd.35A63BED.html" target="_blank" title="RGF HR Agent Vietnam Co., LTD">
@@ -866,7 +871,7 @@
                            </div>
                         </div>
                      </div> -->
-                     <!-- <div class="job-item " id="job-item-35BAE5B0">
+                        <!-- <div class="job-item " id="job-item-35BAE5B0">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/diag.35A89197.html" target="_blank" title="DIAG">
@@ -1294,124 +1299,42 @@
                            </div>
                         </div>
                      </div> -->
-                  </div>
-                  <div class="pagination">
-                     <ul>
-                  
-                      <?php for ($num=1; $num <=$totalPages; $num++) {  
-                           if($num!=$current_page) { ?>
-                      <li >
-                     <a href="<?= _WEB_ROOT.'/Alljob/?page='.$num ?><?= !empty($searchKeyword)? "&keyword=$searchKeyword":"" ?><?php if(!empty($searchIndustry)){
-                        foreach ($searchIndustry as $item) {
-                           echo "&industry%5B%5D=$item";
-                        }
-                     } ?><?php if(!empty($searchIndustry)){
-                        foreach ($searchLocation as $item) {
-                           echo "&location%5B%5D=$item";
-                        }
-                     } ?>"
-                     <?= !empty($wrk_from_home)? "&wrk_from_home=$wrk_from_home":"" ?>
-                     ><?= $num ?></a>
-                      </li>
-                          <?php } else{  ?>
-                           <li class="active">
-             <a href="<?= _WEB_ROOT.'/Alljob/?page='.$current_page ?> "><?= $current_page ?></a>
-                      </li>
-                           <?php }?>
-                              
-                     
-                          <?php } ?>
-                          
-                
-                       
-                     </ul>
-                  </div>
-               </div>
+                     </div>
+                     <div class="pagination">
+                        <ul>
+                           <?php for ($num = 1; $num <= $totalPages; $num++) {
+                              if ($num != $current_page) { ?>
+                                 <li>
+                                    <a href="<?= _WEB_ROOT . '/Alljob/?page=' . $num ?><?= !empty($searchKeyword) ? "&keyword=$searchKeyword" : "" ?><?php if (!empty($searchIndustry)) {
+                                                                                                                                                   foreach ($searchIndustry as $item) {
+                                                                                                                                                      echo "&industry%5B%5D=$item";
+                                                                                                                                                   }
+                                                                                                                                                } ?><?php if (!empty($searchIndustry)) {
+                                    foreach ($searchLocation as $item) {
+                                       echo "&location%5B%5D=$item";
+                                    }
+                                 } ?>" <?= !empty($wrk_from_home) ? "&wrk_from_home=$wrk_from_home" : "" ?>><?= $num ?></a>
+                                 </li>
+                              <?php } else {  ?>
+                                 <li class="active">
+                                    <a href="<?= _WEB_ROOT . '/Alljob/?page=' . $current_page ?> "><?= $current_page ?></a>
+                                 </li>
+                              <?php } ?>
 
-                     <?php }?>
-              
-            
+
+                           <?php } ?>
+
+                        </ul>
+                     </div>
+                  </div>
+
+               <?php } ?>
+
             </div>
-            <div class="col-lg-4 col-custom-xxl-3">
-               <div class="box-most-find">
-                  <div class="box-title">
-                     <h4>Việc làm được tìm kiếm nhiều nhất</h4>
-                  </div>
-                  <div class="box-content">
-                     <ul>
-                        <li>
-                           <a href="https://careerbuilder.vn/viec-lam/Đại-diện-kinh-doanh-k-vi.html">
-                           Đại diện kinh doanh
-                           </a>
-                        </li>
-                        <li>
-                           <a href="https://careerbuilder.vn/viec-lam/Kế-toán-trưởng-k-vi.html">
-                           Kế toán trưởng
-                           </a>
-                        </li>
-                        <li>
-                           <a href="https://careerbuilder.vn/viec-lam/Purchasing-k-vi.html">
-                           Purchasing
-                           </a>
-                        </li>
-                        <li>
-                           <a href="https://careerbuilder.vn/viec-lam/Kế-toán-tổng-hợp-k-vi.html">
-                           Kế toán tổng hợp
-                           </a>
-                        </li>
-                        <li>
-                           <a href="https://careerbuilder.vn/viec-lam/Marketing-k-vi.html">
-                           Marketing
-                           </a>
-                        </li>
-                        <li>
-                           <a href="https://careerbuilder.vn/viec-lam/kế-toán-k-vi.html">
-                           kế toán
-                           </a>
-                        </li>
-                        <li>
-                           <a href="https://careerbuilder.vn/viec-lam/Nhân-viên-tuyển-dụng-k-vi.html">
-                           Nhân viên tuyển dụng
-                           </a>
-                        </li>
-                        <li>
-                           <a href="https://careerbuilder.vn/viec-lam/Accountant-k-vi.html">
-                           Accountant
-                           </a>
-                        </li>
-                        <li>
-                           <a href="https://careerbuilder.vn/viec-lam/Nhân-viên-thực-tập-k-vi.html">
-                           Nhân viên thực tập
-                           </a>
-                        </li>
-                        <li>
-                           <a href="https://careerbuilder.vn/viec-lam/Nhân-viên-kế-toán-k-vi.html">
-                           Nhân viên kế toán
-                           </a>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="list-banner-search-result">
-                  <!-- remve class sticky-->
-                  <div class="banner-ad loadAds" id="854"></div>
-                  <div class="banner-ad loadAds" id="855"></div>
-                  <div class="banner-ad loadAds" id="856"></div>
-                  <div class="banner-ad" style="text-align:center">
-               
-                  </div>
-               </div>
-            </div>
+
          </div>
       </div>
    </section>
-   <div class="sticker-jobs active">
-      <div class="icons"><em class="material-icons">access_alarms</em></div>
-      <div class="content">
-         <p>Gửi tôi việc làm tương tự</p>
-      </div>
-      <div class="button"> <a href="javascript:void(0);" onclick="return adVanceJobalert();">Đăng ký ngay</a></div>
-   </div>
    <div class="login-modal" style="display: none">
       <div class="modal-title">
          <p>Vui lòng đăng nhập để thực hiện chức năng này</p>

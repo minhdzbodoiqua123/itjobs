@@ -47,7 +47,6 @@
                 <div class="left-heading">
                     <h1 class="title-manage">Đăng Tuyển Dụng</h1>
                 </div>
-                <div class="right-heading"><a href="https://careerbuilder.vn/vi/employers/faq" target="_blank" class="support" target="_blank">Hướng dẫn</a></div>
             </div>
             <form name="frmEditJob" id="frmEditJob" method="post" action="postjobs/InsertJob">
                 <div class="main-tabslet">
@@ -113,7 +112,7 @@
                                 <div class="form-group form-editor" id="div_jobdesc">
                                     <label>Mô Tả Công Việc <font style="color: red">*</font></label>
                                   
-          <textarea name="job_desc" id="editor1" rows="10" cols="80">
+          <textarea name="job_desc" id="editor1" rows="10" cols="80" required data-pristine-required-message="Vui lòng nhập địa chỉ " >
               
             </textarea>
  
@@ -195,7 +194,9 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group form-select-chosen">
                                                     <label>Địa chỉ làm việc</label>
-                           <input name="work_location" class="chosen-select work_location"   " data-placeholder="Địa điểm làm việc">
+                           <input name="work_location" class="chosen-select  work_location"    data-placeholder="Địa điểm làm việc"
+                           required data-pristine-required-message="Vui lòng nhập địa chỉ " 
+                           >
                                                         <option value="">Chọn địa điểm làm việc</option>
                                                     </inp>
                                                     <span class="form-error"></span>

@@ -109,33 +109,6 @@
 
                     <div class="tabslet-content active">
                         <div class="main-jobs-posting">
-                            <div class="heading-jobs-posting">
-                                <div class="left-heading">
-                                    <p class="name">Hiển thị </p>
-                                    <ul class="list-check">
-                                        <li class="view-posting-detail active"><a href="javascript:void(0);" id="dtail">Chi tiết</a></li>
-                                        <li class="view-posting-summary"><a href="javascript:void(0)">Xem tóm tắt </a></li>
-
-                                        <li><a href="javascript:void(0);" id="copy_multi_job">Nhân bản</a></li>
-                                        <li> <a href="javascript:void(0);" id="unposting_multi_job">Tạm Dừng Đăng</a></li>
-                                    </ul>
-                                </div>
-                                <div class="right-heading">
-                                    <div class="export-file"><a href="javascript:void(0);" onclick="exportJobs();"> <em class="material-icons">get_app</em>Xuất file job</a></div>
-                                    <div class="to-display">
-                                        <p class="name">Hiển thị </p>
-                                        <div class="form-display">
-                                            <select name="limit" id="limit">
-                                                <option value="20" selected>20</option>
-                                                <option value="30">30</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                            </select>
-                                        </div>
-                                        <p class="name-display"></p>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="boding-jobs-posting">
                                 <div class="table table-jobs-posting">
                                     <table>

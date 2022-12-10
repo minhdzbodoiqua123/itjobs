@@ -8396,8 +8396,8 @@
                     <h2>Tạo Hồ Sơ Đính Kèm</h2>
                 </div>
           <div class="main-quick-upload-resume created-now-wrap">
-        <form method="post" action="myattach/uploadMyAttach" name="frmResumeDetail" id="frmResumeDetail" enctype="multipart/form-data" class="frmEditAttach" autocomplete="off">
-                        <input type="hidden" name="resume_id" id="resume_id" value="0" />
+        <form method="post" action="" name="frmResumeDetail" id="frmResumeDetail" enctype="multipart/form-data" class="frmEditAttach" autocomplete="off">
+                        <input type="hidden" name="resume_id" id="resume_id" value="<?= $data_resume["id"] ?>" />
                         <input type="hidden" name="intSync" id="intSync" value="0" />
                         <input type="hidden" name="is_change" id="is_change" value="0" />
                         <input type="hidden" name="resume_kind" value="2" />
@@ -8414,7 +8414,12 @@
                             <div class="cb-title-h3">
                                 <h3>Hồ sơ</h3>
                             </div>
-
+                            <div class="form-show-file active" id="uploadFile_file">
+                                <label>* Tên Hồ Sơ:</label>
+                                <em class="material-icons">picture_as_pdf</em>
+                                <p class="show-file"><?= $data_resume["file_location"] ?></p>
+                                <a href="javascript:void(0)" class="removefile" onclick="removefile(); return false;"><em class="material-icons">highlight_off </em>Xóa</a>
+                            </div>
                             <div class="form-show-file " id="uploadFile_file">
                                 <label>* Tên Hồ Sơ:</label>
                                 <em class="material-icons">picture_as_pdf</em>
@@ -8431,7 +8436,7 @@
                                     <div class="list-choose">
                                         <div class="choose-mycomputer">
                                             <label for="attach_file"><em class="mdi mdi-folder-outline"></em>Tải hồ sơ từ máy tính</label>
-                                            <input class="d-none" type="file" id="attach_file" name="attach_file"   required data-pristine-required-message="Không được để trống" onchange=" return ajaxOnlyFile(this);">
+                                            <input class="d-none" type="file" id="attach_file" name="attach_file"    onchange=" return ajaxOnlyFile(this);">
                                         </div>
                                         <!--<a class="choose-drive" href="#"><img src="./img/quick-upload-resume/Google_Drive_logo.png" alt="">Choose From Google Drive</a>-->
                                         <button type="button" name="dropbox_button" id="dropbox_button" class="choose-dropbox file">
@@ -8449,7 +8454,8 @@
 
                             <div class="form-group form-text">
                                 <input type="text"  required 
-                                                data-pristine-required-message="Không được để trống"      name="resume_title" id="resume_title" maxlength="400" class="keyword" value="" autocomplete="off">
+                                                data-pristine-required-message="Không được để trống"    value="<?= $data_resume["resume_title"]
+                                                 ?>"  name="resume_title" id="resume_title" maxlength="400" class="keyword" value="" autocomplete="off">
                                 <label>* Tiêu đề hồ sơ</label>
                                 <span class="error_resume_title"></span>
                                 <div class="form-note">
@@ -8478,7 +8484,7 @@
     <h3>Thông tin nghề nghiệp</h3>
     <div class="user-action ">
       <ul>
-	  			<li> <a href="https://careerbuilder.vn/vi/jobseekers/myresume/myattach?sync=1 " title=" " class="action-1 "><em class="fa fa-sync "></em>Đồng bộ thông tin với Hồ Sơ CareerBuilder</a> </li>
+	  			<!-- <li> <a href="https://careerbuilder.vn/vi/jobseekers/myresume/myattach?sync=1 " title=" " class="action-1 "><em class="fa fa-sync "></em>Đồng bộ thông tin với Hồ Sơ CareerBuilder</a> </li> -->
 		      </ul>
     </div>
   </div>
@@ -8486,16 +8492,17 @@
     <div class="col-md-6 ">
       <div class="form-group form-select ">
         <label>* Số năm kinh nghiệm</label>
-        <input type="number" onkeyup="this.setAttribute('value',this.value); " name="yearOfExperience" id="year_experience" value="1"  maxlength="2" min="1" max="55">
+        <input type="number" name="yearOfExperience" id="year_experience" <?= (int)$data_resume["year_of_experience"]===0 ? "disabled" :"" ?> value="<?= (int)$data_resume["year_of_experience"]!==0 ? $data_resume["year_of_experience"] :"" ?>"  maxlength="2" min="1" max="55">
         <span class="error_yearOfExperience "></span> </div>
     </div>
+   
     <div class="col-md-6 ">
       <div class="form-group form-select ">
         <label>* Bằng cấp cao nhất</label>
         <select  required required data-pristine-required-message="Không được để trống"name="degree" id="degree " class="required width_186 ">
           <option value="" >Chọn</option>
           <?php foreach ($data_degree as $item): ?>
-          <option value="<?= $item["id"] ?>"><?= $item["degree_name"] ?></option>
+          <option <?= $data_resume["degree_id"]== $item["id"] ? "selected":"" ?> value="<?= $item["id"] ?>"><?= $item["degree_name"] ?></option>
             
         <?php endforeach;?>
 
@@ -8505,17 +8512,27 @@
     </div>
     <div class="col-md-12 ">
       <div  class="form-group form-checkbox form-no-exp">
-        <input type="checkbox" name="cboExper" id="cboExper " value="1 " >
+        <input type="checkbox" name="cboExper" id="cboExper" <?= $data_resume["year_of_experience"]==0?"checked":""  ?> value="1" >
         <label for="cboExper ">Chưa có kinh nghiệm</label>
       </div>
     </div>
+    <script>
+        const cboExper=document.querySelector('#cboExper');
+    
+        cboExper.addEventListener('click',(e)=>{
+            console.log('a');
+            if(e.target.checked){
+           
+            }
+        })
+    </script>
     <div class="col-md-6 ">
       <div class="form-group form-select ">
         <label>* Cấp bậc mong muốn</label>
         <select  required required data-pristine-required-message="Không được để trống" name="level_id" id="level_id " >
           <option value="" >Chọn</option>
                 <?php foreach ($data_job_position as $item):?>
-                    <option value="<?= $item["id"] ?>"><?= $item["position"] ?></option>
+                    <option <?= $data_resume["position_id"]== $item["id"] ? "selected":"" ?> value="<?= $item["id"] ?>"><?= $item["position"] ?></option>
               <?php  endforeach;?>
 
         </select>
@@ -8528,7 +8545,7 @@
         <select class="width_186 "  name="levelcurrent_id" required required data-pristine-required-message="Không được để trống" id="levelcurrent_id " >
           <option value="" >Chọn</option>
           <?php foreach ($data_job_position as $item):?>
-                    <option value="<?= $item["id"] ?>"><?= $item["position"] ?></option>
+                    <option  <?= $data_resume["position_current_id"]== $item["id"] ? "selected":"" ?>><?= $item["position"] ?></option>
               <?php  endforeach;?>
 
 
@@ -8540,7 +8557,11 @@
         <label for=" ">* Ngành nghề mong muốn</label>
         <select name="INDUSTRY_ID[]" id="select_industry_db "  multiple class="chosen-select-max-three " title="Vui lòng chọn ngành nghề ">
                     <?php foreach ($data_profession as $item): ?>
-                        <option value="<?= $item["id"] ?>"><?= $item["profession_name"] ?></option>
+                        <option value="<?= $item["id"] ?>"<?php foreach ($seeker_profession_by_resume as $value) {
+                         if($value["profession_id"]==$item["id"]){
+                            echo "selected";
+                         }
+                         }?>><?= $item["profession_name"] ?></option>
                     
                    <?php endforeach;?>
                   </select>
@@ -8555,12 +8576,12 @@
           </select>
         </div>
         <div class="form-group form-text ">
-          <input placeholder="Từ"type="text "  onkeyup="this.setAttribute( 'value', this.value); " required 
-                                                data-pristine-required-message="Không được để trống" name="salary_from" id="salary_from"  >
+          <input placeholder="Từ"type="text"required 
+                                                data-pristine-required-message="Không được để trống" name="salary_from" id="salary_from"  value="<?= $data_resume["min_salary"] ?>">
         </div>
         <div class="form-group form-text ">
-          <input type="text " required 
-                                                data-pristine-required-message="Không được để trống"  onkeyup="this.setAttribute( 'value', this.value); " name="salary_to" placeholder="Đến"id="salary_to"  >
+ <input type="text" required 
+  data-pristine-required-message="Không được để trống"   name="salary_to" placeholder="Đến"id="salary_to" value="<?= $data_resume["max_salary"] ?>" >
         </div>
         <span class="error_salary_unit "></span> </div>
     </div>
@@ -8617,9 +8638,7 @@
             <label for=" ">Nơi làm việc mong muốn</label>
             <select name="LOCATION_ID[] " id="select_location_id_3 " >
                 <option value=" " >Chọn</option>
-                                    <option value="4 " >Hà Nội</option>
-                                    <option value="8 " >Hồ Chí Minh</option>
-                                    <option value="76 " >An Giang</option>
+                                 
                               
                             </select>
             <span class="error_location_id error_select_location_id_3 "></span>
@@ -8647,11 +8666,19 @@
           <div class="form-group form-select-chosen ">
             <label for="">Phúc lợi mong muốn</label>
             <select  required required data-pristine-required-message="Không được để trống" name="BENEFIT_ID[]" class="chosen-select-max-three " multiple="multiple " placeholder="Phúc lợi mong muốn">
+            <?php foreach ($data_job_welfare as $item): ?>
+                        <option value="<?= $item["id"] ?>"<?php foreach ($seeker_welfare_by_resume as $value) {
+                         if($value["welfare_id"]==$item["id"]){
+                            echo "selected";
+                         }
+                         }?>><?= $item["welfare_type"] ?></option>
+                    
+                   <?php endforeach;?>
 
-                <?php foreach ($data_job_welfare as $item):?>
+                <!-- <?php foreach ($data_job_welfare as $item):?>
                     <option value="<?= $item["id"] ?>" ><?= $item["welfare_type"] ?></option>
                     
-               <?php endforeach;?>
+               <?php endforeach;?> -->
                       
                          </select>
           </div>
@@ -8662,9 +8689,13 @@
       <h6>* Hình thức làm việc</h6>
      
        <?php foreach ($data_job_type as $item) { ?>
-       
+    
           <div class="form-group form-checkbox ">
-          <input type="checkbox" name="chkResumeType[]" id="chkResumeType<?= $item["id"]?>"  value="<?= $item["id"] ?>">
+<input type="checkbox"     <?php foreach ($job_type_by_resume as $value) {
+                         if($value["job_type_id"]==$item["id"]){
+                            echo "checked";
+                         }
+            }?> name="chkResumeType[]" id="chkResumeType<?= $item["id"]?>"  value="<?= $item["id"] ?>">
             <label for="chkResumeType<?= $item["id"]?>"><?= $item["job_type"] ?></label>
           </div>
        
@@ -8679,7 +8710,7 @@
       <div class="row ">
         <div class="col-md-6 ">
           <div class="form-group form-checkbox ">
-            <input type="checkbox" name="chkWorkHome " id="chkWorkHome "  value="1 ">
+            <input type="checkbox" name="chkWorkHome" <?= $data_resume["wrk_from_home"]==1?"checked":"" ?>id="chkWorkHome "  value="1 ">
             <label for="chkWorkHome ">Làm việc từ nhà</label>
           </div>
         </div>
@@ -8708,11 +8739,11 @@
   </div>
   <div style="display:flex;gap:15px;align-items:center;margin-bottom:30px;">
   <label for="khoa">Khóa</label>
-    <input type="radio" id="khoa" name="status"value="1">
+    <input <?= $data_resume["resume_active"]=="1"?"checked":"" ?> type="radio" id="khoa" name="status"value="1">
     <label for="congkhai">Công khai</label>
-    <input type="radio" id="congkhai" name="status"value="2">
+    <input <?= $data_resume["resume_active"]=="2"?"checked":"" ?> type="radio" id="congkhai" name="status"value="2">
     <label for="khancap">Khẩn cấp</label>
-    <input type="radio" id="khancap" name="status"value="3">
+    <input <?= $data_resume["resume_active"]=="3"?"checked":"" ?> type="radio" id="khancap" name="status"value="3">
   </div>
   
   <!-- <div class="row search-resume ">
@@ -10312,4 +10343,4 @@ $.fn.autoComplete.defaults={source:0,minChars:3,delay:150,cache:1,menuClass:'',r
                               </div>
                            </div>
                         </div>
-                     </div>
+                     </div> 

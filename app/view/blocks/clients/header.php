@@ -74,7 +74,7 @@
                 </div>
                 <?php } else { ?>
                 <div class="main-login logged dropdown">
-                    <a href="https://careerbuilder.vn/vi/jobseekers/dashboard" rel="nofollow">
+                    <a href="http://localhost//itjobs/jobseekers/dashboard" rel="nofollow">
                         <span class="mdi mdi-account-circle"></span>
                         Chào
                         <span class="nameUser"></span>
@@ -88,7 +88,7 @@
                             </li>
                             <li>
                                 <a href="<?= _WEB_ROOT . '/jobseekers/my_profile' ?>" rel="nofollow">
-                                    Hồ sơ CareerBuilder
+                                    Hồ sơ của tôi
                                 </a>
                             </li>
                             <li>
@@ -102,13 +102,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://careerbuilder.vn/vi/jobseekers/myresume/viewbyemp" rel="nofollow">
-                                    Nhà tuyển dụng của tôi
-                                </a>
-                            </li>
-                           
-                            <li>
-                                <a href="https://careerbuilder.vn/vi/jobseekers/member/emailmanagement" rel="nofollow">
+                                <a href="" rel="nofollow">
                                     Cài đặt
                                 </a>
                             </li>
@@ -121,17 +115,6 @@
                     </div>
                 </div>
                 <?php } ?>
-                <div class="main-language dropdown">
-                    <div class="dropdown-toggle">
-                        <p>VI<em class="mdi mdi-chevron-down"></em></p>
-                    </div>
-                    <div class="dropdown-menu">
-                        <div class="item active"><a class="dropdown-item" href="javascript:;"
-                                title="Change language">VI</a></div>
-                        <div class="item"><a class="dropdown-item" href="https://careerbuilder.vn/en"
-                                title="Change language">EN</a></div>
-                    </div>
-                </div>
                 <div class="main-employer dropdown"><a 
                         >
                         <div class="dropdown-toggle">

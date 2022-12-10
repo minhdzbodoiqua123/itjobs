@@ -28,22 +28,119 @@ class Myattach extends Controller
         $this->render('layouts/client_layout',$this->data);
     }
     public function edit_myattach($id=""){
+        $this->updateAttach();
+
         $conn=$this->model("JobPositionModel");
         $data_degree= $conn->get("degree")->fetchAll(PDO::FETCH_ASSOC);
         $data_job_type= $conn->get("job_type")->fetchAll(PDO::FETCH_ASSOC);
         $data_job_position= $conn->get("job_position")->fetchAll(PDO::FETCH_ASSOC);
         $data_profession= $conn->get("profession")->fetchAll(PDO::FETCH_ASSOC);
         $data_job_welfare= $conn->get("job_welfare")->fetchAll(PDO::FETCH_ASSOC);
-
+        $user_id = isset($_SESSION["user"]["id"])? $_SESSION["user"]["id"]:"";
+        $job_type_by_resume= $this->model("JobPositionModel")->query("select * from job_type_by_resume join job_type on job_type.id=job_type_by_resume.job_type_id where resume_id=$id")->fetchAll(PDO::FETCH_ASSOC);
+        $data_resume=$this->model("ResumeModel")->get("resume","id=$id")->fetch(PDO::FETCH_ASSOC);
+  
+        $seeker_profession_by_resume= $this->model("JobPositionModel")->query("select * from seeker_profession_by_resume join profession on profession.id=profession_id where resume_id=$id")->fetchAll(PDO::FETCH_ASSOC);
+        $seeker_welfare_by_resume= $this->model("JobPositionModel")->query("select * from seeker_welfare_by_resume join job_welfare on job_welfare.id=welfare_id  where resume_id=$id")->fetchAll(PDO::FETCH_ASSOC);
+        // print_r($seeker_profession_by_resume);
+        $informationUser = $this->model("AccountUserModel")->query("select seeker_profile.*,user_account.email FROM `user_account` join seeker_profile on seeker_profile.user_account_id=id where id='$user_id'")->fetch(PDO::FETCH_ASSOC);
         $this->data["sub_content"]["data_job_type"]=$data_job_type;
         $this->data["sub_content"]["data_degree"]=$data_degree;
 
         $this->data["sub_content"]["data_job_position"]=$data_job_position;
         $this->data["sub_content"]["data_profession"]=$data_profession;
         $this->data["sub_content"]["data_job_welfare"]=$data_job_welfare;
+        $this->data["sub_content"]["job_type_by_resume"]=$job_type_by_resume;
+        
+        $this->data["sub_content"]["data_resume"]=$data_resume;
+        $this->data["sub_content"]["informationUser"]=$informationUser;
+        $this->data["sub_content"]["seeker_profession_by_resume"]=$seeker_profession_by_resume;
+        $this->data["sub_content"]["seeker_welfare_by_resume"]=$seeker_welfare_by_resume;
+
+
         $this->data["content"]="clients/edit_myattach";
         $this->render('layouts/client_layout',$this->data);
     }
+    public function updateAttach(){
+        if(count($_POST) > 0){
+           $file_name= $this->upload_Avatar_User();
+           $conn=$this->model("ResumeModel");
+           $user_account_id = $_SESSION["user"]["id"];
+
+           $resume_title=$_POST["resume_title"];
+           $yearOfExperience=isset($_POST["yearOfExperience"])? $_POST["yearOfExperience"]:"0";
+           // $cboExper=isset($_POST["cboExper"])? $_POST["cboExper"] : $_POST["yearOfExperience"];
+   
+           $degree=$_POST["degree"];
+           $resume_title=$_POST["resume_title"];
+           $level_id=$_POST["level_id"];
+           $chkWorkHome=isset($_POST["chkWorkHome"]) ? $_POST["chkWorkHome"] : "0";
+           $chkResumeType=$_POST["chkResumeType"];
+  
+           $INDUSTRY_ID=$_POST["INDUSTRY_ID"];
+           $salary_from=$_POST["salary_from"];
+           $salary_to=$_POST["salary_to"];
+           $levelcurrent_id=$_POST["levelcurrent_id"];
+           $provinces=$_POST["provinces"];
+           $districts=$_POST["districts"];
+           $BENEFIT_ID=$_POST["BENEFIT_ID"];
+           $status=$_POST["status"];
+
+           $resume_id= $_POST["resume_id"];  
+
+         $file_size=$_FILES['attach_file']['size'];
+         $data=[ 
+            "resume_title" => "'$resume_title'",    
+            "file_location" => "'$file_name'",    
+            "user_account_id" => "'$user_account_id'",  
+            "wrk_from_home" => "'$chkWorkHome'",        
+            "degree_id" => "'$degree'",        
+            "min_salary" => "'$salary_from'",        
+            "max_salary" => "'$salary_to'",    
+            "year_of_experience" => "'$yearOfExperience'",    
+            "position_id" => "'$level_id'",    
+            "position_current_id" => "'$levelcurrent_id'",    
+            "provinces" => "'$provinces'",        
+            "districts" => "'$districts'",
+            "resume_active" => "'$status'",
+        ];
+             if($file_size<0){
+                unset($data[1]);
+             }   
+           $conn->update("resume",$data,"id=$resume_id"); 
+            $conn->delete("seeker_profession_by_resume","resume_id=$resume_id");
+            $conn->delete("job_type_by_resume","resume_id=$resume_id");
+            $conn->delete("seeker_welfare_by_resume","resume_id=$resume_id");
+
+           foreach ($INDUSTRY_ID as $id) {
+                       
+            $conn->insert("seeker_profession_by_resume",[
+                "resume_id"=>"'$resume_id'",
+                "user_account_id"=>"'$user_account_id'",
+                "profession_id"=>"'$id'"
+              ]);  
+        }
+        foreach ($chkResumeType as $id) {
+            $conn->insert("job_type_by_resume",[
+                "resume_id"=>"'$resume_id'",
+                "user_account_id"=>"'$user_account_id'",
+                "job_type_id"=>"'$id'"
+              ]);  
+        }
+         foreach ($BENEFIT_ID as $id) {
+                   
+            $conn->insert("seeker_welfare_by_resume",[
+                "resume_id"=>"'$resume_id'",
+                "user_account_id"=>"'$user_account_id'",
+                "welfare_id"=>"'$id'"
+              ]);  
+        }
+
+
+
+        }
+    }
+
     public function uploadMyAttach() {
         if(count($_POST) > 0){
            $file_name= $this->upload_Avatar_User();
