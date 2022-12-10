@@ -71,7 +71,7 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group form-text form-input-label">
-                                                    <input type="text" name="EMP_NAME" id="EMP_NAME" value="<?= $data_company["company_name"] ?>" maxlength="150" onkeyup="this.setAttribute('value', this.value);">
+                                                    <input type="text"     name="EMP_NAME" id="EMP_NAME" value="<?= $data_company["company_name"] ?>" maxlength="150" onkeyup="this.setAttribute('value', this.value);">
                                                     <label>Tên công ty   <font style="color: red">*</font></label>
                                                     <span class="error error_EMP_NAME"> </span>
                                                 </div>
@@ -209,7 +209,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group form-submit form-continue">
-                                    <a class="btn-cancel btn-preview-account-user" href="javascript:;" onclick="window.open('https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-it-minh-nguyen.35A94C80.html', '_blank'); return false;  ">
+                                    <a class="btn-cancel btn-preview-account-user" href="javascript:;" onclick="window.open('http://localhost//itjobs/employer/dashboard', '_blank'); return false;  ">
                                         Xem lại</a>
                                     <button class="btn-gradient btn-submit" type="submit" id="update_info_company_form" onclick="updateInfoCompany()">Cập nhật</button>
                                 </div>

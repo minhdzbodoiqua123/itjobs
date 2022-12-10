@@ -1,8 +1,8 @@
-<script defer src="<?= _WEB_ROOT."/app/public/assets/employer/js/login.js"?>"></script>
+<script defer src="<?= _WEB_ROOT . "/app/public/assets/employer/js/login.js" ?>"></script>
 
 
 <body>
-   
+
     <main>
         <style>
             /*employer-signup.css*/
@@ -148,6 +148,7 @@
                 header.for-customers .main-menu .menu li {
                     padding: 0 10px;
                 }
+
                 header.for-customers .main-menu .menu li a {
                     font-size: 14.5px;
                 }
@@ -729,33 +730,42 @@
                 .row-intro [class*="col-"] {
                     margin-bottom: 15px;
                 }
+
                 .employer-signup-new .box-intro-3 {
                     justify-content: flex-start;
                 }
+
                 .employer-signup-new .box-intro-3 img {
                     margin-right: 30px;
                     position: relative;
                     left: 10px;
                 }
+
                 .employer-signup-new .box-intro-1 img {
                     margin-right: 22px;
                 }
+
                 .employer-signup-new .row-sp {
                     margin: 0 -15px;
                 }
+
                 .employer-signup-new .row-sp>[class*="col-"] {
                     padding: 0 15px;
                 }
+
                 .employer-signup-new .box-img {
                     margin-right: 0;
                 }
+
                 .employer-signup-new .box-info-signup {
                     margin-left: 0;
                 }
+
                 .employer-signup-new .main-form .form-group .noti {
                     right: 0;
                     top: -5px;
                 }
+
                 .employer-signup-new .main-form .form-group.info-company {
                     padding-top: 20px;
                 }
@@ -768,6 +778,7 @@
                     flex: 0 0 calc(100% - 200px);
                     max-width: calc(100% - 200px);
                 }
+
                 .employer-signup-new .main-form .form-group .box-captcha {
                     -ms-flex: 0 0 100%;
                     -webkit-box-flex: 0;
@@ -783,31 +794,38 @@
                     font-size: 22px;
                     margin-bottom: 10px;
                 }
+
                 .box-info-signup .main-step-title h3 {
                     font-size: 18px;
                 }
+
                 .box-info-signup .step-title {
                     flex-direction: column;
                     margin-bottom: 5px;
                 }
+
                 .box-info-signup .main-step-title p {
                     margin-left: 75px;
                 }
+
                 .employer-signup-new.login .box-info-signup .step-title {
                     flex-direction: row;
                     margin-bottom: 20px;
                 }
+
                 .employer-signup-new .main-form .form-group>.note {
                     top: -25px;
                     right: 0;
                     transform: none;
                 }
+
                 .employer-signup-new .main-form .form-group .form-info {
                     -ms-flex: 0 0 165px;
                     -webkit-box-flex: 0;
                     flex: 0 0 165px;
                     max-width: 165px;
                 }
+
                 .employer-signup-new .main-form .form-group .form-input,
                 .employer-signup-new .main-form .form-group .form-input.short {
                     -ms-flex: 0 0 calc(100% - 165px);
@@ -815,16 +833,20 @@
                     flex: 0 0 calc(100% - 165px);
                     max-width: calc(100% - 165px);
                 }
+
                 .employer-signup-new .box-intro-1 p strong,
                 .employer-signup-new .box-intro-3 p strong {
                     font-size: 20px;
                 }
+
                 .employer-signup-new .noti .toolip {
                     max-width: 250px;
                 }
+
                 .row+.row {
                     margin-top: 0;
                 }
+
                 .employer-signup-new .box-intro img {
                     max-height: 30px;
                 }
@@ -834,6 +856,7 @@
                 .employer-signup-new .main-form .form-group {
                     flex-wrap: wrap;
                 }
+
                 .employer-signup-new .main-form .form-group .form-info,
                 .employer-signup-new .main-form .form-group .form-input,
                 .employer-signup-new .main-form .form-group .form-input.short {
@@ -842,6 +865,7 @@
                     flex: 0 0 100%;
                     max-width: 100%;
                 }
+
                 .employer-signup-new .main-form .form-group .form-info span {
                     height: auto;
                     background: none;
@@ -850,15 +874,19 @@
                     margin-bottom: 5px;
                     font-size: 16px;
                 }
+
                 .employer-signup-new .main-form .form-group .form-input .form-control {
                     border-radius: 8px;
                 }
+
                 .employer-signup-new .main-form .form-group>.note {
                     top: 0;
                 }
+
                 .employer-signup-new .main-form .form-group.info-company {
                     padding-top: 0;
                 }
+
                 .employer-signup-new .main-form .form-group .noti {
                     top: 0;
                 }
@@ -895,13 +923,14 @@
                     margin-bottom: 15px;
                 }
             }
-            .pristine-error{
+
+            .pristine-error {
                 color: red;
                 display: block;
-    width: 100%;
+                width: 100%;
             }
         </style>
-       
+
         <section class="employer-signup-new step-1 cb-section">
             <div class="container">
                 <div class="row row-sp">
@@ -909,68 +938,65 @@
                         <div class="box-img"> <img src="https://images.careerbuilder.vn/content/images/Banner/pic-laptop.png" alt=""> </div>
                     </div>
                     <div class="col-xl-7">
-					<div class="box-info-signup">
-						<div class="title">
-							<h2>Dành Cho Nhà Tuyển Dụng</h2>
-						</div>
-						<div class="step-title d-flex align-center">
-							<div class="main-step-title">
-								<h3>THÔNG TIN ĐĂNG NHẬP</h3>
-							</div>
-							<div class="text-sup">
-								  <a href="" target="_blank" class="support">Hướng dẫn</a>
-							</div>
-						</div>
-				    <div class="main-form">
-						<form name="frmLogin" id="frmLogin" method="post" action="">
-							<div class="form-group d-flex">
-								<div class="form-info">
-									<span>Email/Tên đăng nhập</span>
-								</div>
-								<div class="form-input">
-									<input required data-pristine-required-message="Vui lòng nhập email của bạn"type="text" name="username" class="form-control" placeholder=" Vui lòng nhập thông tin"  value="" onfocus="javascript:if(this.value=='Email/Tên đăng nhập') this.value='';">
-										<span class="form-error error_username">
-																					</span>
-								</div>
-							</div>
-							<div class="form-group d-flex">
-								<div class="form-info">
-									<span>Mật khẩu</span>
-								</div>
-								<div class="form-input">
-									<input required data-pristine-required-message="Vui lòng nhập password của bạn " class="form-control" placeholder=" Vui lòng nhập thông tin" name="password" value="">
-										<span class="form-error error_password">
-                                       <?= isset($errors['login'])?$errors['login']:"" ?>															</span>
-								</div>
-							</div>
-							<div class="user-action">
-								<a href="https://careerbuilder.vn/vi/employers/forgetpassword.html"> Quên Mật Khẩu </a>
-								<div class="btn-area">
-									<input type="hidden" name="csrf_token" value="6701df501af25e1d27f3c0fba557920bec75d15323a9e95d454558ed622ace3d">
-									<button type="submit" class="btn-action">Đăng nhập </button>
-								</div>
-								<p> <a class="register" href="javascript:void()" onclick="location.href='http://localhost//itjobs/employer/account/register'">Quý khách chưa có tài khoản?</a> Đăng ký dễ dàng, hoàn toàn miễn phí</p>
-							</div>
-						</form>
-					</div>
-					</div>
-				</div>
-                               
-                           
+                        <div class="box-info-signup">
+                            <div class="title">
+                                <h2>Dành Cho Nhà Tuyển Dụng</h2>
+                            </div>
+                            <div class="step-title d-flex align-center">
+                                <div class="main-step-title">
+                                    <h3>THÔNG TIN ĐĂNG NHẬP</h3>
+                                </div>
+                            </div>
+                            <div class="main-form">
+                                <form name="frmLogin" id="frmLogin" method="post" action="">
+                                    <div class="form-group d-flex">
+                                        <div class="form-info">
+                                            <span>Email/Tên đăng nhập</span>
+                                        </div>
+                                        <div class="form-input">
+                                            <input required data-pristine-required-message="Vui lòng nhập email của bạn" type="text" name="username" class="form-control" placeholder=" Vui lòng nhập thông tin" value="" onfocus="javascript:if(this.value=='Email/Tên đăng nhập') this.value='';">
+                                            <span class="form-error error_username">
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group d-flex">
+                                        <div class="form-info">
+                                            <span>Mật khẩu</span>
+                                        </div>
+                                        <div class="form-input">
+                                            <input required data-pristine-required-message="Vui lòng nhập password của bạn " class="form-control" placeholder=" Vui lòng nhập thông tin" name="password" value="" type="password">
+                                            <span class="form-error error_password">
+                                                <?= isset($errors['login']) ? $errors['login'] : "" ?> </span>
+                                        </div>
+                                    </div>
+                                    <div class="user-action">
+                                        <a href="https://careerbuilder.vn/vi/employers/forgetpassword.html"> Quên Mật Khẩu </a>
+                                        <div class="btn-area">
+                                            <input type="hidden" name="csrf_token" value="6701df501af25e1d27f3c0fba557920bec75d15323a9e95d454558ed622ace3d">
+                                            <button type="submit" class="btn-action">Đăng nhập </button>
+                                        </div>
+                                        <p> <a class="register" href="javascript:void()" onclick="location.href='http://localhost//itjobs/employer/account/register'">Quý khách chưa có tài khoản?</a> Đăng ký dễ dàng, hoàn toàn miễn phí</p>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
+
+
                 </div>
-             
+            </div>
+            </div>
+
             </div>
         </section>
-        
-    </main>
-   
 
-   
-    
- 
-   
+    </main>
+
+
+
+
+
+
 
 
 </body>

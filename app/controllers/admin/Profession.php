@@ -16,7 +16,7 @@ class Profession extends Controller
         if (count($_POST) > 0) {
             $profession_name =   $_POST["profession_name"];
             $data = [
-            "profession_name" => "'$profession_name'",
+                "profession_name" => "'$profession_name'",
             ];
             $insertProfession = $conn->insert("profession", $data);
             $this->redirect("admin/Profession");
@@ -39,17 +39,17 @@ class Profession extends Controller
         $conn = $this->model("ProfessionModel");
         if (count($_POST) > 0) {
 
-            $profession_name =$_POST["profession_name"];
+            $profession_name = $_POST["profession_name"];
 
             $data = [
                 "profession_name" => "'$profession_name'",
             ];
 
-            $updateProfessionById=$conn->update("profession",$data,"id=$id");
+            $updateProfessionById = $conn->update("profession", $data, "id=$id");
 
             $this->redirect("admin/Profession");
         }
-        $dataProfessionById = $conn->get("profession","id=$id")->fetch(PDO::FETCH_ASSOC);
+        $dataProfessionById = $conn->get("profession", "id=$id")->fetch(PDO::FETCH_ASSOC);
         $this->data["sub_content"]["dataProfessionById"] = $dataProfessionById;
         // print_r($dataProfessionById);
         $this->data["content"] = "admin/editProfession";
