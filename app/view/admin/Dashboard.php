@@ -16,10 +16,72 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+<script defer src="<?= _WEB_ROOT . "/app/public/assets/admin/js/dashboard.js" ?>"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 
 
-<body onload="time()" class="app sidebar-mini rtl">
+<style>
+  .highcharts-figure,
+.highcharts-data-table table {
+    min-width: 310px;
+    max-width: 1000px;
+    margin: 1em auto;
+}
+
+#container {
+    height: 400px;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+.embed-responsive-16by9::before{
+  padding:0;
+}
+.highcharts-drilldown-axis-label{
+  text-decoration: none!important;
+}
+</style>
+
+<body  class="app sidebar-mini rtl">
   <!-- Navbar-->
   <header class="app-header">
     <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
@@ -83,40 +145,40 @@
         <div class="row">
           <!-- col-6 -->
           <div class="col-md-6 col-lg-6">
-            <div class="widget-small primary coloured-icon"><i class='icon bx bxs-user-account fa-3x'></i>
+            <div class="widget-small primary coloured-icon">
               <div class="info">
-                <h4>Tổng khách hàng</h4>
-                <p><b style="font-size:14px"><?= $number_customers ?> khách hàng</b></p>
-                <p class="info-tong">Tổng số khách hàng được quản lý.</p>
+                <h4>Tổng số người tuyển dụng</h4>
+                <p><b style="font-size:14px"><?= $count_employer ?> người tuyển dụng</b></p>
+                <p class="info-tong">Tổng số người tuyển dụng được quản lý.</p>
               </div>
             </div>
           </div>
           <!-- col-6 -->
           <div class="col-md-6 col-lg-6">
-            <div class="widget-small info coloured-icon"><i class='icon bx bxs-data fa-3x'></i>
+            <div class="widget-small info coloured-icon">
               <div class="info">
-                <h4>Tổng sản phẩm</h4>
-                <p><b style="font-size:14px"><?= $number_products ?> sản phẩm</b></p>
-                <p class="info-tong">Tổng số sản phẩm được quản lý.</p>
+                <h4>Tổng số người ứng tuyển </h4>
+                <p><b style="font-size:14px"><?= $count_seeker ?> người ứng tuyển</b></p>
+                <p class="info-tong">Tổng số người ứng tuyển được quản lý.</p>
               </div>
             </div>
           </div>
           <!-- col-6 -->
           <div class="col-md-6 col-lg-6">
-            <div class="widget-small warning coloured-icon"><i class='icon bx bxs-shopping-bags fa-3x'></i>
+            <div class="widget-small warning coloured-icon">
               <div class="info">
-                <h4>Tổng đơn hàng</h4>
-                <p><b style="font-size:14px"><?= $number_order ?> đơn hàng</b></p>
+                <h4>Tổng số công ty</h4>
+                <p><b style="font-size:14px"><?= $count_company ?>  công ty</b></p>
                 <p class="info-tong">Tổng số hóa đơn bán hàng trong tháng.</p>
               </div>
             </div>
           </div>
           <!-- col-6 -->
           <div class="col-md-6 col-lg-6">
-            <div class="widget-small danger coloured-icon"><i class='icon  fas fa-book'></i>
+            <div class="widget-small danger coloured-icon">
               <div class="info">
-                <h4>Tổng danh mục</h4>
-                <p><b style="font-size:14px"><?= $number_cate ?> danh mục</b></p>
+                <h4>Tổng số bài đăng</h4>
+                <p><b style="font-size:14px"><?= $count_job_post ?>  bài đăng</b></p>
                 <p class="info-tong">Tổng số danh mục được quản lý</p>
               </div>
             </div>
@@ -224,68 +286,23 @@
       </div>
       <!--END left-->
       <!--Right-->
-      <div class="col-md-12 col-lg-6">
-        <div class="row">
-          <div class="col-md-12">
-            <div style="margin:0;border-radius:0px;-webkit-border-radius: 0;" class="tile">
-              <h3 style="margin-bottom:0px;"class="tile-title">Thống kê hàng hóa</h3>
-              <figure class="highcharts-figure">
-</div>
-<div class="row">
-        <div class="col-md-12">
-          <div class="tile">
-            <div class="tile-body">
-        
-              <table class="table table-hover table-bordered" id="sampleTable">
-                <thead>
-                  <tr>
-
-                    <th>Danh mục sản phẩm</th>
-                    <th>Số lượng</th>
-                    <th>Giá cao nhất</th>
-                    <th>Giá thấp nhất</th>
-                    <th>Giá trung bình</th>
-
-                  </tr>
-                </thead>
-          
-                <tbody>
-                  <?php foreach ($dataCate as $key=> $item): ?>
-                  <tr>
-                    <td><?=  $item["cat_name"] ?></td>
-                    <td><?= $detail_Statistical[$key]["quantity"] ?></td>
-                    <td>
-                    <?= product_price($detail_Statistical[$key]["maxPrice"])."đ" ?>
-                    </td>
-                    <td>
-                    <?= product_price($detail_Statistical[$key]["minPrice"])."đ" ?>
-                    </td>
-                    <td>
-                    <?= product_price($detail_Statistical[$key]["average"])."đ" ?>
-                    </td>
-                  </tr>
-                  <?php  endforeach;?>
-
-                
-                </tbody>
-              </table>
+     
+  <!-- <div id="container"></div> -->
             </div>
           </div>
-        </div>
-      </div>
-  <div id="container"></div>
-
-</figure>
-            </div>
-          </div>
-          <!-- <div class="col-md-12">
+          <div class="">
             <div class="tile">
-              <h3 class="tile-title">Thống kê 6 tháng doanh thu</h3>
+              <h3 class="tile-title">Thống kê bài đăng của từng công ty</h3>
               <div class="embed-responsive embed-responsive-16by9">
-                <canvas class="embed-responsive-item" id="barChartDemo"></canvas>
+              <figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+     
+    </p>
+</figure>
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
 
       </div>
@@ -297,7 +314,8 @@
       <p><b>Copyright
           <script type="text/javascript">
             document.write(new Date().getFullYear());
-          </script> Phần mềm quản lý bán hàng
+            
+          </script> Phần mềm quản lý 
         </b></p>
     </div>
   </main>

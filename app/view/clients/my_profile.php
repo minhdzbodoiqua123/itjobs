@@ -211,7 +211,7 @@
                   </li>
                
                   <li>
-                     <a class="collapse " href="javascript:;"><em class="material-icons">remove_red_eye</em><span>Nhà tuyển dụng của tôi</span></a>
+                     <!-- <a class="collapse " href="javascript:;"><em class="material-icons">remove_red_eye</em><span>Nhà tuyển dụng của tôi</span></a> -->
                      <ul class="list-unstyled collapse">
                         <li> <a href="">Nhà tuyển dụng xem hồ sơ của tôi</a></li>
                         <li> <a href="">Following</a></li>
@@ -1620,7 +1620,7 @@
                                                       </li>
                                                    </ul>
                                                 </div>
-                                                <div class="col-sm-12 col border_orange"style=" padding:5px 0;">
+                                                <!-- <div class="col-sm-12 col border_orange"style=" padding:5px 0;">
                                                    <h3>Kỹ năng</h3>
                                                    <ul class="skill flex">
                                                       <li class="">
@@ -1644,7 +1644,7 @@
                                                          <div class="point"><span></span><span></span><span></span></div>
                                                       </li>
                                                    </ul>
-                                                </div>
+                                                </div> -->
                                                 <div class="col-md-12 col border_orange" style=" padding:8px 0; ">
                                                    <h3><span>Công Việc Mong Muốn</span></h3>
                                                    <div class="expected-job">

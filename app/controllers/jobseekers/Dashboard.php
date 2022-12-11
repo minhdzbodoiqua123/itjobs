@@ -9,9 +9,10 @@ class Dashboard extends Controller
 
         $id = isset($_SESSION["user"]["id"])? $_SESSION["user"]["id"]:"";
         $user_account_id=$_SESSION["user"]["id"] ?? "";
-
+        
     
             $seeker_job_information=$conn->get("seeker_job_information", "user_account_id=$user_account_id")->fetch(PDO::FETCH_ASSOC);
+ 
             $seeker_profession_detail=$conn->get("seeker_profession_detail", "user_account_id=$user_account_id")->fetchAll(PDO::FETCH_ASSOC);
             if(!empty($seeker_profession_detail)){
                 $provinces=$seeker_job_information["provinces"];
@@ -22,14 +23,16 @@ class Dashboard extends Controller
                 }
                 $strProfession_id = rtrim($strProfession_id, ',');
             }
-        
+
             if(!empty($seeker_job_information)){
-                $suitable_job="SELECT DISTINCT job_post.*,provinces,logo,company_name from job_post join job_profession_detail on post_id =job_post.id join job_location on job_location.post_id  = job_post.id join company on company.id = job_post.company_id where status='1' and now()< end_date and profession_id in ($strProfession_id) and provinces in ($provinces) ";
+                $salary_from=preg_replace('/[.,]/', '', $seeker_job_information["salary_from"]);
+                
+                $suitable_job="SELECT DISTINCT job_post.*,provinces,logo,company_name from job_post join job_profession_detail on post_id =job_post.id join job_location on job_location.post_id  = job_post.id join company on company.id = job_post.company_id where status='1' and now()< end_date and profession_id in ($strProfession_id) and provinces in ($provinces) and min_salary>=$salary_from and wrk_from_home='$seeker_job_information[work_from_home]' ";
+                // echo $suitable_job;
                 $suitable_job=$conn->query($suitable_job)->fetchAll(PDO::FETCH_ASSOC);
                 $this->data["sub_content"]["suitable_job"] = $suitable_job;
             }
-          
-     
+
             
         
 

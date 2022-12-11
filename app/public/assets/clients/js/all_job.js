@@ -69,6 +69,7 @@ async function getData(url) {
     const api = 'https://provinces.open-api.vn/api/';
     const data = await getData(api)
     .then((result) => {
+  
       renderPronvinces(result);
     })
     
@@ -78,13 +79,14 @@ async function getData(url) {
   
 async function renderPronvinces (data) {
 const all_location=document.getElementById('location');
-
+  console.log(all_location);
  let searchLocation= trueTypeOf(getAllUrlParams()["location%5b%5d"])=="string"?[getAllUrlParams()["location%5b%5d"]]: getAllUrlParams()["location%5b%5d"];
+ console.log(searchLocation);
  const htmls= data.map((item,index) => {
     return `<option 
     ${searchLocation ? searchLocation.map(value => {
       if(value==item.code){
-        return `selected`
+       return `selected`
       }
     }).join("") : "" }
 

@@ -3,6 +3,9 @@ class Profession extends Controller
 {
     public function index()
     {
+        if(!Auth_admin::logged_in()){
+            $this->redirect('admin/account/login');
+        }
         $conn = $this->model("ProfessionModel");
         $this->data["content"] = "admin/profession";
         $data_profession = $conn->get("profession")->fetchAll(PDO::FETCH_ASSOC);

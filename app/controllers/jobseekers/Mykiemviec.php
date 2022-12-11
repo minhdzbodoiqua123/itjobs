@@ -41,4 +41,11 @@ class Mykiemviec extends Controller
         $this->data["content"]="clients/jobsaved";
         $this->render('layouts/client_layout',$this->data);
     }
+    public function deleteJobSaved(){
+        $user_account_id=$_SESSION["user"]["id"];
+        $job_id=$_POST["job_id"];
+        $conn=$this->model("Job_postModel");
+ $conn->delete("job_saved","user_account_id=$user_account_id and job_id=$job_id");
+ $this->redirect("jobseekers/Mykiemviec/jobsaved");   
+    }
 }

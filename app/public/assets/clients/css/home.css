@@ -9652,16 +9652,16 @@ input[type='search']::-webkit-search-results-decoration {
   padding: 0 4px;
 }
 
-.cb-box-find .main-box .main-form .form-group label {
+/* .cb-box-find .main-box .main-form .form-group label {
   z-index: 11;
   position: absolute;
   top: 8px;
   left: 10px;
   color: #cccccc;
   font-size: 20px;
-}
+} */
 
-.cb-box-find .main-box .main-form .form-group input,
+/* .cb-box-find .main-box .main-form .form-group input,
 .cb-box-find .main-box .main-form .form-group .chosen-container {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -9676,7 +9676,7 @@ input[type='search']::-webkit-search-results-decoration {
   color: #172642;
   font-size: 16px;
   font-weight: 500;
-}
+} */
 
 .cb-box-find .main-box .main-form .form-group input:focus,
 .cb-box-find .main-box .main-form .form-group .chosen-container:focus {

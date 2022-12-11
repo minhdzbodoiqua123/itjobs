@@ -56,10 +56,10 @@
                         </div>
                     </div>
                     <div class="widget-body">
-                                                    <div class="content">
+                                                    <!-- <div class="content">
                                 <p>Bạn đã ứng tuyển vào các vị trí tuyển dụng trong 6 tháng gần nhất</p>
                                 <div class="list-hidden"><a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/jobappliedhidden">Danh Sách Việc Làm Đã Ẩn</a></div>
-                            </div>
+                            </div> -->
                                                 <div class="table">
   <form name="frmJobapplied" id="frmJobapplied" method="post" action="">
     <input type="hidden" name="intIsHide" id="intIsHide" value="1">

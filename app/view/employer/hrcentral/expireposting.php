@@ -39,23 +39,22 @@
                <div class="right-heading"><a href="https://careerbuilder.vn/vi/employers/faq" target="_blank" class="support">Hướng dẫn</a></div>
             </div>
             <div class="main-form-posting">
-               <form name="frmSearchJob" id="frmSearchJob" action="" method="post" onsubmit="return validateSearch();">
+               <form name="frmSearchJob" id="frmSearchJob" action="" method="get" >
                   <div class="form-wrap">
                      <div class="form-group form-text">
                         <label>Từ khóa</label>
-                        <input type="text" name="keyword" id="keyword" placeholder="Nhập từ khóa" value="">
+                        <input type="text" value="<?= $keyword??"" ?>" name="keyword" id="keyword" placeholder="Nhập từ khóa" value="">
                      </div>
                      <div class="form-group form-select">
                         <label>Tìm theo ngày</label>
                         <select class="fl_left mar_left46" name="date_type" id="date_type">
-                           <option value="0">Ngày đăng</option>
-                           <option value="1">Ngày hết hạn</option>
+                        <option <?= empty($date_type)?"":$date_type==0?'selected':'' ?>value="0">Ngày đăng</option>
+                                    <option  <?= empty($date_type)?"":$date_type=='1'?'selected':'' ?> value="1">Ngày hết hạn</option>
                         </select>
                      </div>
                      <div class="form-group form-date start-date">
                         <label>Từ</label>
-                        <input type="text" readonly="" name="date_from" id="date_from" placeholder="Chọn" class="dates_cus_select" value="">
-                        <div class="icon"><em class="material-icons">event</em></div>
+                        <input  type="date"  name="date_from" id="date_from" placeholder="Chọn" class="dates_cus_select" value="<?= $date_from??"" ?>">
                         <div id="start-date" class="dtpicker-overlay dtpicker-mobile">
                            <div class="dtpicker-bg">
                               <div class="dtpicker-cont">
@@ -68,8 +67,7 @@
                      </div>
                      <div class="form-group form-date end-date">
                         <label>Đến</label>
-                        <input type="text" readonly="" name="date_to" id="date_to" placeholder="Chọn" class="dates_cus_select" value="">
-                        <div class="icon"><em class="material-icons">event</em></div>
+                        <input type="date"  name="date_to" id="date_to" placeholder="Chọn" class="dates_cus_select" value="<?= $date_to??"" ?>">
                         <div id="end-date" class="dtpicker-overlay dtpicker-mobile">
                            <div class="dtpicker-bg">
                               <div class="dtpicker-cont">
@@ -156,9 +154,9 @@
                                              <td></td>
                                              <td>
                                                 <ul class="list-manipulation">
-                                                   <li><a class="btn_recruit" data-id="19" title="Đăng tuyển"><em class="material-icons">publish </em></a></li>
-                                                   <li><a href="http://localhost//itjobs/employer/hrcentral/viewjob/detail/19" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
-                                                   <li><a href="http://localhost//itjobs/employer/hrcentral/posting/copyjob/lop7cttnq.1667207375/35BAFFA3/1/1" title="Nhân bản"><em class="material-icons">content_copy </em> </a></li>
+                                                   <!-- <li><a class="btn_recruit" data-id="19" title="Đăng tuyển"><em class="material-icons">publish </em></a></li> -->
+                                                   <li><a href="http://localhost//itjobs/employer/hrcentral/viewjob/detail/<?= $item["id"] ?>" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
+                                                   <!-- <li><a href="http://localhost//itjobs/employer/hrcentral/posting/copyjob/lop7cttnq.1667207375/35BAFFA3/1/1" title="Nhân bản"><em class="material-icons">content_copy </em> </a></li> -->
                                                    <li><a href="https://careerbuilder.vn/vi/employers/postjobs/35BAFFA3" title="Sửa"><em class="material-icons">created</em></a></li>
                                                    <li class="end"><a href="javascript:void(0);" onclick="deleteItem_job('35BAFFA3');return false;" title="Xóa"><em class="material-icons">cancel </em></a></li>
                                                 </ul>

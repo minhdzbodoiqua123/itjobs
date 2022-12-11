@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/clients/css/my_profile.css" ?>">
 
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css" ?>">
-<script defer src="<?= _WEB_ROOT . "/app/public/assets/clients/js/myattach.js" ?>"></script>
+<script defer src="<?= _WEB_ROOT . "/app/public/assets/clients/js/edit_myattach.js" ?>"></script>
 <style>
     .pristine-error{
         color:red;
@@ -8453,7 +8453,7 @@
                             </div>
 
                             <div class="form-group form-text">
-                                <input type="text"  required 
+         <input type="text"  required 
                                                 data-pristine-required-message="Không được để trống"    value="<?= $data_resume["resume_title"]
                                                  ?>"  name="resume_title" id="resume_title" maxlength="400" class="keyword" value="" autocomplete="off">
                                 <label>* Tiêu đề hồ sơ</label>
@@ -8512,20 +8512,11 @@
     </div>
     <div class="col-md-12 ">
       <div  class="form-group form-checkbox form-no-exp">
-        <input type="checkbox" name="cboExper" id="cboExper" <?= $data_resume["year_of_experience"]==0?"checked":""  ?> value="1" >
+        <input  type="checkbox" id="cboExper" name="cboExper" <?= $data_resume["year_of_experience"]==0?"checked":""  ?> value="1" >
         <label for="cboExper ">Chưa có kinh nghiệm</label>
       </div>
     </div>
-    <script>
-        const cboExper=document.querySelector('#cboExper');
-    
-        cboExper.addEventListener('click',(e)=>{
-            console.log('a');
-            if(e.target.checked){
-           
-            }
-        })
-    </script>
+  
     <div class="col-md-6 ">
       <div class="form-group form-select ">
         <label>* Cấp bậc mong muốn</label>
@@ -8545,7 +8536,7 @@
         <select class="width_186 "  name="levelcurrent_id" required required data-pristine-required-message="Không được để trống" id="levelcurrent_id " >
           <option value="" >Chọn</option>
           <?php foreach ($data_job_position as $item):?>
-                    <option  <?= $data_resume["position_current_id"]== $item["id"] ? "selected":"" ?>><?= $item["position"] ?></option>
+                    <option <?= $data_resume["position_current_id"]==$item["id"] ? "selected":"" ?> value="<?= $item["id"] ?>"><?= $item["position"] ?></option>
               <?php  endforeach;?>
 
 

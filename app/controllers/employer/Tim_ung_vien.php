@@ -9,10 +9,13 @@ class Tim_ung_vien extends Controller
         $conn=$this->model("Job_postModel");
         // echo $sql_data_resume;
         $data_profession= $conn->get("profession")->fetchAll(PDO::FETCH_ASSOC);
+        $list_industries=$_GET["list_industries"] ?? "";
+
         $data_resume= $conn->query($sql_data_resume)->fetchAll(PDO::FETCH_ASSOC);
-        
         $this->data["sub_content"]["data_profession"] = $data_profession;
         $this->data["sub_content"]["data_resume"] = $data_resume;
+        $this->data["sub_content"]["list_industries"] = $list_industries;
+
        
 
         $this->data["content"]="employer/tim_ung_vien";

@@ -91,11 +91,11 @@
           </div>
         </div>
         <div class="main-form-posting">
-          <form name="frmSearchJob" id="frmSearchJob" action="" method="post" onsubmit="return validateSearch();">
+          <form name="frmSearchJob" id="frmSearchJob" action="" method="get" >
             <div class="form-wrap">
               <div class="form-group form-text">
                 <label>Từ khóa</label>
-                <input type="text" name="keyword" id="keyword" placeholder="Nhập từ khóa" value="">
+                <input type="text" name="keyword" id="keyword" value="<?= $keyword??"" ?>" placeholder="Nhập từ khóa" value="">
               </div>
               <div class="form-group form-select">
                 <label>Tìm theo ngày</label>
@@ -105,8 +105,8 @@
               </div>
               <div class="form-group form-date start-date">
                 <label>Từ</label>
-                <input type="text" readonly="" name="date_from" id="date_from" placeholder="Chọn" class="dates_cus_select" value="">
-                <div class="icon"><em class="material-icons">event</em></div>
+                <input type="date"  name="date_from" id="date_from" placeholder="Chọn" class="dates_cus_select" value="<?= $date_from??"" ?>">
+             
                 <div id="start-date" class="dtpicker-overlay dtpicker-mobile">
                   <div class="dtpicker-bg">
                     <div class="dtpicker-cont">
@@ -119,8 +119,7 @@
               </div>
               <div class="form-group form-date end-date">
                 <label>Đến</label>
-                <input type="text" readonly="" name="date_to" id="date_to" placeholder="Chọn" class="dates_cus_select" value="">
-                <div class="icon"><em class="material-icons">event</em></div>
+                <input type="date"  name="date_to" id="date_to" placeholder="Chọn" class="dates_cus_select" value="<?= $date_to??"" ?>">
                 <div id="end-date" class="dtpicker-overlay dtpicker-mobile">
                   <div class="dtpicker-bg">
                     <div class="dtpicker-cont">
@@ -171,7 +170,7 @@
                       <tr>
 
                         <th width="40%">Chức danh</th>
-                        <th width="25%" onclick="setTypeSort('waitposting', 'asc', 0)">Cập nhật<em class="material-icons">sort</em></th>
+                        <th width="25%" >Cập nhật<em class="material-icons">sort</em></th>
 
                         <th width="15%">Đăng tuyển<em class="material-icons"></em></th>
                         <th width="25%">Thao tác</th>
@@ -194,7 +193,7 @@
                               </div>
                             </td>
                             <td>
-                              <time><?= formatDate($item["created_date"]); ?></time>
+                              <time><?= formatDate($item["update_at"]); ?></time>
                             </td>
 
                             <td>
@@ -205,15 +204,21 @@
                               <ul class="list-manipulation">
                                 <li><a class="btn_recruit" data-id="<?= $item["id"] ?>" title="Đăng tuyển"><em class="material-icons">publish </em></a></li>
                                 <li><a href="<?= _WEB_ROOT . '/employer/hrcentral/viewjob/detail/' . $item['id'] ?>" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
-                                <li><a href="<?= _WEB_ROOT . '/employer/hrcentral/posting' ?>/copyjob/lop7cttnq.1667207375/35BAFFA3/1/1" title="Nhân bản"><em class="material-icons">content_copy </em> </a></li>
-                                <li><a href="https://careerbuilder.vn/vi/employers/postjobs/35BAFFA3" title="Sửa"><em class="material-icons">created</em></a></li>
+                               
+                                <li><a href="<?= _WEB_ROOT.'/employer/hrcentral/Posting/edit_job/'.$item["id"] ?>" title="Sửa"><em class="material-icons">created</em></a></li>
                                 <li class="end"><a href="javascript:void(0);" onclick="deleteItem_job('35BAFFA3');return false;" title="Xóa"><em class="material-icons">cancel </em></a></li>
                               </ul>
                             </td>
                           </tr>
                         <?php endforeach; ?>
 
-                      <?php } ?>
+                      <?php } else{?>
+                        <tr>
+                                    <td colspan="9" class="cb-text-center">
+                                       <p><strong> Không có vị trí nào trong thư mục này.</strong></p>
+                                    </td>
+                                 </tr>
+                        <?php }?>
 
                     </tbody>
                   </table>

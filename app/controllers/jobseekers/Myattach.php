@@ -11,7 +11,6 @@ class Myattach extends Controller
         $data_job_welfare= $this->model("JobPositionModel")->get("job_welfare")->fetchAll(PDO::FETCH_ASSOC);
         $data_resume=$this->model("ResumeModel")->get("resume")->fetch(PDO::FETCH_ASSOC);
 
-
         $informationUser = $this->model("AccountUserModel")->query("select seeker_profile.*,user_account.email FROM `user_account` join seeker_profile on seeker_profile.user_account_id=id where id='$id'")->fetch(PDO::FETCH_ASSOC);
         
         $this->data["sub_content"]["data_degree"]=$data_degree;
@@ -39,7 +38,8 @@ class Myattach extends Controller
         $user_id = isset($_SESSION["user"]["id"])? $_SESSION["user"]["id"]:"";
         $job_type_by_resume= $this->model("JobPositionModel")->query("select * from job_type_by_resume join job_type on job_type.id=job_type_by_resume.job_type_id where resume_id=$id")->fetchAll(PDO::FETCH_ASSOC);
         $data_resume=$this->model("ResumeModel")->get("resume","id=$id")->fetch(PDO::FETCH_ASSOC);
-  
+        // print_r($data_resume);
+
         $seeker_profession_by_resume= $this->model("JobPositionModel")->query("select * from seeker_profession_by_resume join profession on profession.id=profession_id where resume_id=$id")->fetchAll(PDO::FETCH_ASSOC);
         $seeker_welfare_by_resume= $this->model("JobPositionModel")->query("select * from seeker_welfare_by_resume join job_welfare on job_welfare.id=welfare_id  where resume_id=$id")->fetchAll(PDO::FETCH_ASSOC);
         // print_r($seeker_profession_by_resume);
@@ -87,7 +87,6 @@ class Myattach extends Controller
            $status=$_POST["status"];
 
            $resume_id= $_POST["resume_id"];  
-
          $file_size=$_FILES['attach_file']['size'];
          $data=[ 
             "resume_title" => "'$resume_title'",    
@@ -104,12 +103,12 @@ class Myattach extends Controller
             "districts" => "'$districts'",
             "resume_active" => "'$status'",
         ];
-             if($file_size<0){
-                unset($data[1]);
+             if($file_size==0){
+                unset($data["file_location"]);
              }   
            $conn->update("resume",$data,"id=$resume_id"); 
-            $conn->delete("seeker_profession_by_resume","resume_id=$resume_id");
-            $conn->delete("job_type_by_resume","resume_id=$resume_id");
+           $conn->delete("seeker_profession_by_resume","resume_id=$resume_id");
+           $conn->delete("job_type_by_resume","resume_id=$resume_id");
             $conn->delete("seeker_welfare_by_resume","resume_id=$resume_id");
 
            foreach ($INDUSTRY_ID as $id) {
@@ -135,7 +134,7 @@ class Myattach extends Controller
                 "welfare_id"=>"'$id'"
               ]);  
         }
-
+        $this->redirect("jobseekers/dashboard");
 
 
         }

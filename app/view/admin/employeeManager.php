@@ -86,7 +86,7 @@
         <div id="sampleTable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer" style="margin-bottom:15px;">
           <div style="margin:30px 0;" class="row">
             <div class="col-sm-12 col-md-6">
-              <div class="dataTables_length" id="sampleTable_length"><label>Hiện
+              <!-- <div class="dataTables_length" id="sampleTable_length"><label>Hiện
                   <select style="width:60px;" name="itemPerPage" aria-controls="sampleTable" class="form-control form-control-sm">
                    <option value="3">3</option>
                     <option value="5">5</option>
@@ -94,10 +94,10 @@
                     <option value="25">25</option>
                     <option value="50">50</option>
                     <option value="100">100</option>
-                  </select> danh mục</label></div>
+                  </select> danh mục</label></div> -->
             </div>
             <div class="col-sm-12 col-md-6">
-              <div id="sampleTable_filter" class="dataTables_filter">
+              <!-- <div id="sampleTable_filter" class="dataTables_filter">
                 <div class="d-flex  align-items-center " style="background-color:#f1f1f1;width:300px;">
                   <span class="d-flex align-items-center" style="white-space: nowrap; margin-right:5px; ">Tìm kiếm:</span>
                   <input name="search" style="font-size:16px;height:30px;padding:4px;background-color: transparent;outline:none;border:none;" type="search" class="form-control form-control-sm searchByName" placeholder="" aria-controls="sampleTable">
@@ -106,7 +106,7 @@
                   </svg>
                 </div>
 
-              </div>
+              </div> -->
             </div>
 
           </div>

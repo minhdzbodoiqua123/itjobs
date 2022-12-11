@@ -92,6 +92,7 @@
                   <th>Tình trạng hôn nhân</th>
                   <th>Số điện thoại </th>
                   <th>Ngày sinh</th>
+                  <th>Chức năng</th>
                 </tr>
               </thead>
               <tbody>
@@ -120,7 +121,7 @@
                     <td><?= $item["marital_status"] == "1" ? 'Độc thân' : 'Đã kết hôn' ?></td>
                     <td><?= $item["contact_phone"] ?></td>
                     <td><?= formatDate($item["date_of_birth"]) ?></td>
-
+                    <td><a href="" title="Xem chi tiết hồ sơ ứng viên">Xem chi tiết</a></td>
 
                 
                   </tr>

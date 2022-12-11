@@ -3,7 +3,6 @@ class Auth_admin
 {
     public static function authenticate($row)
     {   
-       
        $_SESSION["admin"]=$row;
     }
     public static function logout()

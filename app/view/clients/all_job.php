@@ -1,29 +1,25 @@
 <script defer src="<?= _WEB_ROOT . "/app/public/assets/clients/js/all_job.js" ?>"></script>
-
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/public/assets/clients/css/all_job.css" ?>">
 <link rel="stylesheet" href="<?= _WEB_ROOT . "/app/global/css/multi-select-dropdown.css" ?>">
-
 <style>
    .multiselect-dropdown {
-      background-color: white;
-      width: 100%;
-      height: 50px;
-      padding: 0 40px 0 16px;
-      border: 1px solid #e5e5e5;
-      border-radius: 3px;
-      color: #000;
-      font-size: 15px;
-      font-weight: 400;
+   background-color: white;
+   width: 100%;
+   height: 50px;
+   padding: 0 40px 0 16px;
+   border: 1px solid #e5e5e5;
+   border-radius: 3px;
+   color: #000;
+   font-size: 15px;
+   font-weight: 400;
    }
-
    span.placeholder {
-      position: relative;
-      top: 12px;
+   position: relative;
+   top: 12px;
    }
-
    span.optext {
-      position: relative;
-      top: 12px;
+   position: relative;
+   top: 12px;
    }
 </style>
 <main>
@@ -42,23 +38,21 @@
                      <div class="form-group form-select-chosen">
                         <select id="industry" multiple name="industry[]" class="chosen-select-max-three" placeholder="Tất cả ngành nghề">
                            <?php foreach ($data_profession as $item) : ?>
-                              <option <?php if (!empty($searchIndustry)) {
-                                          foreach ($searchIndustry as $value) {
-                                             if ($value == $item["id"]) {
-                                                echo 'selected';
-                                             }
-                                          }
-                                       }  ?> value="<?= $item["id"] ?>"><?= $item["profession_name"] ?></option>
-
+                           <option <?php if (!empty($searchIndustry)) {
+                              foreach ($searchIndustry as $value) {
+                                 if ($value == $item["id"]) {
+                                    echo 'selected';
+                                 }
+                              }
+                              }  ?> value="<?= $item["id"] ?>"><?= $item["profession_name"] ?></option>
                            <?php endforeach; ?>
-
                         </select>
                      </div>
                      <div class="form-group form-select-chosen">
                         <!-- <select id="location"multiple name="location" class="chosen-select-max-three" data-placeholder="Tất cả địa điểm" >
                            <option value="">Chọn địa điểm</option>
                               
-                        </select> -->
+                           </select> -->
                         <select id="location" multiple name="location[]" class="chosen-select-max-three" placeholder="Tất cả địa điểm">
                            <option value="1">Thành phố Hà Nội</option>
                            <option value="2">Tỉnh Hà Giang</option>
@@ -134,31 +128,21 @@
                      <div style="margin-top:10px;" class="switch-group toollips switch-group-sp">
                         <div class="form-group">
                            <label for="work-home-fli">Work from home
-                              <input id="work-home-fli" name="wrk_from_home" type="checkbox" value="1">
-                              <span class="slider"></span> </label>
+                           <input id="work-home-fli" name="wrk_from_home" type="checkbox" value="1">
+                           <span class="slider"></span> </label>
                         </div>
                      </div>
-
-
-
-
                   </div>
                </form>
             </div>
-
-
          </div>
       </div>
-
-
       </div>
       </div>
       </div>
       </div>
       </div>
       </div>
-
-
       <input type="hidden" id="recommend" name="recommend" value="" />
    </section>
    <section class="search-result-list">
@@ -182,110 +166,102 @@
                   </div>
                </div>
                <?php if (count($job_post) == 0) { ?>
-                  <div class="no-search">
-                     <div style="
-    text-align: center;
-" class="image">
-                        <figure>
-                           <img src="	https://static.careerbuilder.vn/themes/careerbuilder/img/no-search.png" alt="">
-                           <figcaption>
-                              Chưa có công việc phù hợp với tiêu chí của
-                              <?= $_GET["keyword"] ?? "" ?>
-                           </figcaption>
-                        </figure>
-                     </div>
-                     <div class="job-search-suggestions">
-                        <p style="line-height:22px; padding-top:20px; color:#505050;text-align:center">
-                           <strong>Gợi ý tìm việc:</strong><br>
-                           • Tìm kiếm với từ khoá cụ thể như vị trí công việc. Ví dụ: Nhân viên kinh doanh hoặc Kế toán viên ...
-                           <br>
-                           • Tìm kiếm theo ngành nghề. <a href="https://careerbuilder.vn/vi/tim-viec-nhanh.html" style="color:#0078c9">Xem ngay</a>
-                           <br>
-                           • Tìm kiếm theo danh sách việc làm mới cập nhật và lọc theo tỉnh/thành phố. <a href="https://careerbuilder.vn/viec-lam/tat-ca-viec-lam-vi.html " style="color:#0078c9">Xem ngay </a>
-                        </p>
-                     </div>
-                     <div class="apply-now-banner">
-                        <div class="apply-now-content"></div>
-                     </div>
+               <div class="no-search">
+                  <div style="
+                     text-align: center;
+                     " class="image">
+                     <figure>
+                        <img src="	https://static.careerbuilder.vn/themes/careerbuilder/img/no-search.png" alt="">
+                        <figcaption>
+                           Chưa có công việc phù hợp với tiêu chí của
+                           <?= $_GET["keyword"] ?? "" ?>
+                        </figcaption>
+                     </figure>
                   </div>
+                  <div class="job-search-suggestions">
+                     <p style="line-height:22px; padding-top:20px; color:#505050;text-align:center">
+                        <strong>Gợi ý tìm việc:</strong><br>
+                        • Tìm kiếm với từ khoá cụ thể như vị trí công việc. Ví dụ: Nhân viên kinh doanh hoặc Kế toán viên ...
+                        <br>
+                        • Tìm kiếm theo ngành nghề. <a href="https://careerbuilder.vn/vi/tim-viec-nhanh.html" style="color:#0078c9">Xem ngay</a>
+                        <br>
+                        • Tìm kiếm theo danh sách việc làm mới cập nhật và lọc theo tỉnh/thành phố. <a href="https://careerbuilder.vn/viec-lam/tat-ca-viec-lam-vi.html " style="color:#0078c9">Xem ngay </a>
+                     </p>
+                  </div>
+                  <div class="apply-now-banner">
+                     <div class="apply-now-content"></div>
+                  </div>
+               </div>
                <?php } else { ?>
-                  <div class="main-slide">
-                     <div class="jobs-side-list" id="jobs-side-list-content">
-                        <?php foreach ($job_post as $item) : ?>
-                           <div class="job-item " id="job-item-<?= $item["id"] ?>">
-                              <div class="figure">
-                                 <div class="image">
-                                    <a href="" target="_blank" title="Ms Huong">
-                                       <img class="lazy-img" src="<?= _WEB_ROOT . '/app/public/assets/employer/images/' . $item["logo"] ?>" src="../kiemviecv32/images/graphics/blank.gif" alt="Ms Huong">
+               <div class="main-slide">
+                  <div class="jobs-side-list" id="jobs-side-list-content">
+                     <?php foreach ($job_post as $item) : ?>
+                     <div class="job-item " id="job-item-<?= $item["id"] ?>">
+                        <div class="figure">
+                           <div class="image">
+                              <a href="" target="_blank" title="Ms Huong">
+                              <img class="lazy-img" src="<?= _WEB_ROOT . '/app/public/assets/employer/images/' . $item["logo"] ?>" src="../kiemviecv32/images/graphics/blank.gif" alt="Ms Huong">
+                              </a>
+                           </div>
+                           <div class="figcaption">
+                              <div class="title ">
+                                 <h2>
+                                    <a class="job_link" data-id="35BAE5BD" href="<?= _WEB_ROOT . '/Alljob/detail/' . $item["id"] ?>" title="VIDEO TRANSLATOR  UP TO 13MIL">
+                                    <?= $item["job_title"] ?>
+                                    <span class="new">
+                                    <font color="ff0000">(Mới)</font>
+                                    </span> </a>
+                                 </h2>
+                              </div>
+                              <div style="display:flex;justify-content: space-between;">
+                                 <div class="caption">
+                                    <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/ms-huong.35A8DDF9.html" title="Ms Huong">
+                                    <?= $item["company_name"] ?>
                                     </a>
-                                 </div>
-                                 <div class="figcaption">
-                                    <div class="title ">
-                                       <h2>
-                                          <a class="job_link" data-id="35BAE5BD" href="<?= _WEB_ROOT . '/Alljob/detail/' . $item["id"] ?>" title="VIDEO TRANSLATOR  UP TO 13MIL">
-                                             <?= $item["job_title"] ?>
-                                             <span class="new">
-
-                                                <font color="ff0000">(Mới)</font>
-
-                                             </span> </a>
-                                       </h2>
+                                    <div class="salary">
+                                       <p><em class="fa fa-usd"></em>Lương: <?= format_price($item["min_salary"]) . '-' . format_price($item["max_salary"]) . ' VND' ?></p>
                                     </div>
-                                    <div style="display:flex;justify-content: space-between;">
-                                       <div class="caption">
-
-                                          <a class="company-name" target="_blank" href="https://careerbuilder.vn/vi/nha-tuyen-dung/ms-huong.35A8DDF9.html" title="Ms Huong">
-                                             <?= $item["company_name"] ?>
-                                          </a>
-                                          <div class="salary">
-                                             <p><em class="fa fa-usd"></em>Lương: <?= format_price($item["min_salary"]) . '-' . format_price($item["max_salary"]) . ' VND' ?></p>
-                                          </div>
-                                          <!-- <div class="location">
-                                    <em class="mdi mdi-map-marker"></em>
-                                    <ul>
-                                       <li class=""></li>
+                                    <!-- <div class="location">
+                                       <em class="mdi mdi-map-marker"></em>
+                                       <ul>
+                                          <li class=""></li>
+                                       </ul>
+                                       </div> -->
+                                    <ul class="welfare">
                                     </ul>
-                                 </div> -->
-                                          <ul class="welfare">
-
-
-                                          </ul>
-                                       </div>
-                                       <style>
-                                          form>a.saved,
-                                          form a.saved button {
-                                             color: #e8c80d;
-                                          }
-                                       </style>
-                                       <div style="top:50px;" class="">
-                                          <ul>
-
-                                             <li>
-                                                <form method="post" action="http://localhost//itjobs/Alljob/jobsaved">
-                                                   <input type="hidden" name="job_id" value="<?= $item["id"] ?> ">
-
-                                                   <a class="toollips save-job <?= ($item["job_saved_id"] == $item["id"] && $item["job_saved_account_id"] == $seeker_id) ? 'saved' : '' ?> " href="javascript:void(0);">
-                                                      <i class="mdi mdi-heart-outline"></i>
-                                                      <button type="submit" name="savedjob_full" style="background-color: transparent;" class="text">Lưu việc làm</button>
-                                                   </a>
-                                                </form>
-                                             </li>
-                                          </ul>
-                                          <div class="time">
-                                             <em class="mdi mdi-calendar"></em>
-                                             <time><?= formatDate($item["posted_date"]) ?></time>
-                                             <div class="toolip">
-                                                <p>Ngày cập nhật</p>
-                                             </div>
-                                          </div>
+                                 </div>
+                                 <style>
+                                    form>a.saved,
+                                    form a.saved button {
+                                    color: #e8c80d;
+                                    }
+                                 </style>
+                                 <div style="top:50px;" class="">
+                                    <ul>
+                                       <li>
+                                          <form method="post" action="http://localhost//itjobs/Alljob/jobsaved">
+                                             <input type="hidden" name="job_id" value="<?= $item["id"] ?> ">
+                                             <a class="toollips save-job <?= ($item["job_saved_id"] == $item["id"] && $item["job_saved_account_id"] == $seeker_id) ? 'saved' : '' ?> " href="javascript:void(0);">
+                                             <i class="mdi mdi-heart-outline"></i>
+                                             <button type="submit" name="savedjob_full" style="background-color: transparent;" class="text">Lưu việc làm</button>
+                                             </a>
+                                          </form>
+                                       </li>
+                                    </ul>
+                                    <div class="time">
+                                       <em class="mdi mdi-calendar"></em>
+                                       <time><?= formatDate($item["posted_date"]) ?></time>
+                                       <div class="toolip">
+                                          <p>Ngày cập nhật</p>
                                        </div>
                                     </div>
                                  </div>
                               </div>
                            </div>
-                        <?php endforeach; ?>
-
-                        <!-- <div class="job-item " id="job-item-35BAE5BB">
+                        </div>
+                     </div>
+                     <?php endforeach; ?>
+                     <!-- <div class="job-item " id="job-item-35BAE5BB">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/medigo-software.35A88553.html" target="_blank" title="Medigo Software ">
@@ -338,8 +314,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE5BC">
+                        </div>
+                        <div class="job-item " id="job-item-35BAE5BC">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-co-phan-greenfeed-viet-nam.35A56979.html" target="_blank" title="Công Ty Cổ Phần GreenFeed Việt Nam">
@@ -394,8 +370,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE5BA">
+                        </div>
+                        <div class="job-item " id="job-item-35BAE5BA">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/anheuser-busch-inbev-ab-inbev.35A816AA.html" target="_blank" title="Anheuser-Busch InBev (AB InBev)">
@@ -447,8 +423,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE5B8">
+                        </div>
+                        <div class="job-item " id="job-item-35BAE5B8">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/diag.35A89197.html" target="_blank" title="Diag">
@@ -499,8 +475,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE5B7">
+                        </div>
+                        <div class="job-item " id="job-item-35BAE5B7">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/diag.35A89197.html" target="_blank" title="Diag">
@@ -552,8 +528,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE5B6">
+                        </div>
+                        <div class="job-item " id="job-item-35BAE5B6">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/diag.35A89197.html" target="_blank" title="Diag">
@@ -604,8 +580,8 @@
                               </div>
                            </div>
                         </div>
-                     </div> -->
-                        <!-- <div class="job-item " id="job-item-35BAE5B5">
+                        </div> -->
+                     <!-- <div class="job-item " id="job-item-35BAE5B5">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/rgf-hr-agent-vietnam-co-ltd.35A63BED.html" target="_blank" title="RGF HR Agent Vietnam Co., LTD">
@@ -657,8 +633,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE5B4">
+                        </div>
+                        <div class="job-item " id="job-item-35BAE5B4">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/rgf-hr-agent-vietnam-co-ltd.35A63BED.html" target="_blank" title="RGF HR Agent Vietnam Co., LTD">
@@ -710,8 +686,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE5B3">
+                        </div>
+                        <div class="job-item " id="job-item-35BAE5B3">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/rgf-hr-agent-vietnam-co-ltd.35A63BED.html" target="_blank" title="RGF HR Agent Vietnam Co., LTD">
@@ -763,8 +739,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE5B2">
+                        </div>
+                        <div class="job-item " id="job-item-35BAE5B2">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-co-phan-chung-khoan-ks.35A94C0A.html" target="_blank" title="Công ty Cổ phần Chứng khoán KS">
@@ -817,8 +793,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE5B1">
+                        </div>
+                        <div class="job-item " id="job-item-35BAE5B1">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/diag.35A89197.html" target="_blank" title="Diag">
@@ -870,8 +846,8 @@
                               </div>
                            </div>
                         </div>
-                     </div> -->
-                        <!-- <div class="job-item " id="job-item-35BAE5B0">
+                        </div> -->
+                     <!-- <div class="job-item " id="job-item-35BAE5B0">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/diag.35A89197.html" target="_blank" title="DIAG">
@@ -923,8 +899,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE5AE">
+                        </div>
+                        <div class="job-item " id="job-item-35BAE5AE">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/fe-credit.35A637C6.html" target="_blank" title="FE CREDIT">
@@ -977,8 +953,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE5AA">
+                        </div>
+                        <div class="job-item " id="job-item-35BAE5AA">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/kompa-technology.35A8689E.html" target="_blank" title="Kompa Technology">
@@ -1030,8 +1006,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE5AD">
+                        </div>
+                        <div class="job-item " id="job-item-35BAE5AD">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-co-phan-kiwooza-edutainment-vietnam.35A87E40.html" target="_blank" title="CÔNG TY CỔ PHẦN KIWOOZA EDUTAINMENT VIETNAM">
@@ -1084,8 +1060,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE5AC">
+                        </div>
+                        <div class="job-item " id="job-item-35BAE5AC">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/fe-credit.35A637C6.html" target="_blank" title="FE CREDIT">
@@ -1138,8 +1114,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE535">
+                        </div>
+                        <div class="job-item " id="job-item-35BAE535">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-co-phan-greenfeed-viet-nam.35A56979.html" target="_blank" title="Công Ty Cổ Phần GreenFeed Việt Nam">
@@ -1192,8 +1168,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE55C">
+                        </div>
+                        <div class="job-item " id="job-item-35BAE55C">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/acs-trading-vietnam-co-ltd.35A684FB.html" target="_blank" title="ACS Trading Vietnam Co. Ltd.">
@@ -1245,8 +1221,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="job-item " id="job-item-35BAE5AB">
+                        </div>
+                        <div class="job-item " id="job-item-35BAE5AB">
                         <div class="figure">
                            <div class="image">
                               <a href="https://careerbuilder.vn/vi/nha-tuyen-dung/ngan-hang-xay-dung.35A792F5.html" target="_blank" title="Ngân Hàng Xây Dựng">
@@ -1298,40 +1274,34 @@
                               </div>
                            </div>
                         </div>
-                     </div> -->
-                     </div>
-                     <div class="pagination">
-                        <ul>
-                           <?php for ($num = 1; $num <= $totalPages; $num++) {
-                              if ($num != $current_page) { ?>
-                                 <li>
-                                    <a href="<?= _WEB_ROOT . '/Alljob/?page=' . $num ?><?= !empty($searchKeyword) ? "&keyword=$searchKeyword" : "" ?><?php if (!empty($searchIndustry)) {
-                                                                                                                                                   foreach ($searchIndustry as $item) {
-                                                                                                                                                      echo "&industry%5B%5D=$item";
-                                                                                                                                                   }
-                                                                                                                                                } ?><?php if (!empty($searchIndustry)) {
-                                    foreach ($searchLocation as $item) {
-                                       echo "&location%5B%5D=$item";
-                                    }
-                                 } ?>" <?= !empty($wrk_from_home) ? "&wrk_from_home=$wrk_from_home" : "" ?>><?= $num ?></a>
-                                 </li>
-                              <?php } else {  ?>
-                                 <li class="active">
-                                    <a href="<?= _WEB_ROOT . '/Alljob/?page=' . $current_page ?> "><?= $current_page ?></a>
-                                 </li>
-                              <?php } ?>
-
-
-                           <?php } ?>
-
-                        </ul>
-                     </div>
+                        </div> -->
                   </div>
-
+                  <div class="pagination">
+                     <ul>
+                        <?php for ($num = 1; $num <= $totalPages; $num++) {
+                           if ($num != $current_page) { ?>
+                        <li>
+                           <a href="<?= _WEB_ROOT . '/Alljob/?page=' . $num ?><?= !empty($searchKeyword) ? "&keyword=$searchKeyword" : "" ?><?php if (!empty($searchIndustry)) {
+                              foreach ($searchIndustry as $item) {
+                                 echo "&industry%5B%5D=$item";
+                              }
+                              } ?><?php if (!empty($searchIndustry)) {
+                              foreach ($searchLocation as $item) {
+                                 echo "&location%5B%5D=$item";
+                              }
+                              } ?>" <?= !empty($wrk_from_home) ? "&wrk_from_home=$wrk_from_home" : "" ?>><?= $num ?></a>
+                        </li>
+                        <?php } else {  ?>
+                        <li class="active">
+                           <a href="<?= _WEB_ROOT . '/Alljob/?page=' . $current_page ?> "><?= $current_page ?></a>
+                        </li>
+                        <?php } ?>
+                        <?php } ?>
+                     </ul>
+                  </div>
+               </div>
                <?php } ?>
-
             </div>
-
          </div>
       </div>
    </section>

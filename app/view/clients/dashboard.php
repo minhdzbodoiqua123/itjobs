@@ -338,7 +338,7 @@
                                 <div class="widget widget-2">
                                     <div class="widget-head">
                                         <div class="cb-title-h3">
-                                            <h3>Careerbuilder Profile</h3>
+                                            <h3></h3>
                                         </div>
                                     </div>
                                     <div class="widget-body">
@@ -364,7 +364,7 @@
                                                             <h2>Một Ba</h2>
                                                         </div>
                                                         <div class="information">
-                                                            <div class="assistant"><span id="titleresume_17611557"><?= $seeker_resume_title["resume_title"]?></span> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile" style="margin-left: 10px" title="Hồ sơ Careerbuilder"><em class="material-icons" style="font-size:16px">create</em></a></div>
+                                                     
                                                         </div>
                                                     </div>
                                                 </div>
@@ -374,7 +374,7 @@
                                                     <h2><?= $informationUser["lastname"]." ". $informationUser["firstname"] ?></h2>
                                                 </div>
                                                 <div class="information">
-                                                    <div class="assistant"><span><?= $seeker_resume_title["resume_title"]?></span> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile" style="margin-left: 10px" title="Hồ sơ Careerbuilder"><em class="material-icons" style="font-size:16px">create</em></a></div>
+                                               
                                                     <ul class="desired">
                              
                                     <?php if (!empty($year_of_experience["yearOfExperience"]) ){ ?>
@@ -476,7 +476,7 @@
 
                                                     <?php if(!empty($seeker_resume_title["status"]&&$seeker_resume_title["status"])==0) {?>
                                                     <div class="swiper-slide">
-                                                            <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/my-profile#widget-20">
+                                                            <a href="<?= _WEB_ROOT.'/jobseekers/my_profile' ?>">
                                                                 <div class="item-cvcht">
                                                                     <div class="col-sm-3 icon">
                                                                         <img src="		https://static.careerbuilder.vn/themes/careerbuilder/img/dash-board/i14.png" alt="">
@@ -500,7 +500,7 @@
                                                                 </div>
                                                             </a>
                                                         </div> -->
-                          <?php if($informationUser["status"]==0) {?>
+           <?php if(!empty($informationUser["status"])&&$informationUser["status"]==0) {?>
                                                         
                                                         <div class="swiper-slide glide__slide">
                                                             <a href="http://localhost//itjobs/jobseekers/my_profile">
@@ -596,12 +596,12 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 function-bottom">
-                                                <div class="button-list">
+                                                <div style="displaY:flex;justify-content: center;"class="button-list">
                                                     <div class="item">
-                                                        <a title="Cập nhật hồ sơ" href="javascript:void(0);" class="ac_refesh" rel="17611557">
+                                                        <!-- <a title="Cập nhật hồ sơ" href="javascript:void(0);" class="ac_refesh" rel="17611557">
                         <span class="mdi mdi-rotate-3d-variant"></span>
                         Cập nhật hồ sơ
-                      </a>
+                      </a> -->
                                                     </div>
                                                     <div class="item">
                          <a id="btn_view_cbprofile" data-bs-toggle="modal"data-bs-target="#subCV" href="javascript:void(0);">
@@ -609,12 +609,12 @@
                         Xem hồ sơ
                       </a>
                                                     </div>
-                                                    <div class="item">
+                                                    <!-- <div class="item">
                                                         <a href="javascript:void(0);" onclick="downloadCvProfile(17611557)">
                         <span class="mdi mdi-download"></span>
                         Tải hồ sơ
                       </a>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                                 <!-- <div class="edit-profile">
                                                     <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/changetemplate">Chỉnh mẫu hồ sơ</a>
@@ -667,7 +667,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-sm-6 col-lg-3">
+                            <!-- <div class="col-sm-6 col-lg-3">
                                 <div class="widget-1 b1">
                                     <div class="widget-head">
                                         <p>0</p>
@@ -700,8 +700,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">
+                            </div> -->
+                            <!-- <div class="col-sm-6 col-lg-3">
                                 <div class="widget-1 b2">
                                     <div class="widget-head">
                                         <p>0</p>
@@ -713,8 +713,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">
+                            </div> -->
+                            <div class="col-sm-6 col-lg-6">
                                 <div class="widget-1 b3">
                                     <div class="widget-head">
                                         <p>0</p>
@@ -722,12 +722,12 @@
                                     </div>
                                     <div class="widget-body">
                                         <div class="item">
-                                            <div class="nonum"><a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/jobsaved">Xem thêm</a></div>
+                                            <div class="nonum"><a href="<?= _WEB_ROOT.'/jobseekers/Mykiemviec/jobsaved' ?>">Xem thêm</a></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-3">
+                            <div class="col-sm-6 col-lg-6">
                                 <div class="widget-1 b4">
                                     <div class="widget-head">
                                         <p>0</p>
@@ -755,7 +755,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-8">
+                            <div class="col-lg-12">
                                 <div class="widget widget-4 attached-resume">
                                     <div class="widget-head">
                                         <div class="cb-title-h3">
@@ -924,7 +924,7 @@
                                                  
                                                 <?php if(!isset($suitable_job)){?>
                                                     <p></p>
-                                                    <div class="box-not-share-location" style="display: block;">Bạn vui lòng cập nhật hồ sơ để chúng tôi có thể đề xuất những việc làm phù hợp </div>
+                                                    <div class="box-not-share-location" style="display: block;">Bạn vui lòng cập nhật thông tin nghề nghiệp  để chúng tôi có thể đề xuất những việc làm phù hợp </div>
 
                                               <?php  } else{?>
      <?php foreach ($suitable_job as $item):?>

@@ -60,15 +60,15 @@
 
                 </div>
                 <div class="right-heading">
-                    <a class="support" target="_blank" href="https://careerbuilder.vn/vi/employers/faq">Hướng dẫn</a>
+                    <!-- <a class="support" target="_blank" href="https://careerbuilder.vn/vi/employers/faq">Hướng dẫn</a> -->
                 </div>
             </div>
             <div class="main-form-posting">
-                <form name="frmSearchResume">
+                <form name="frmSearchResume" >
                     <div class="form-wrap">
                         <div class="form-group form-text">
                             <label>Từ khóa</label>
-                            <input type="text" id="strKeyword" value="" maxlength="200" placeholder="Nhập từ khóa" />
+                            <input type="text" id="strKeyword" name="strKeyword" value="" maxlength="200" placeholder="Nhập từ khóa" />
                         </div>
                         <div class="form-group form-select">
                             <label>Tìm theo</label>
@@ -94,14 +94,14 @@
                             <input type="text" name="" id="strToDate" value="" class="dates_cus_select" placeholder="Chọn" autocomplete="off" readonly>
                             <div class="icon"><em class="material-icons">event</em></div>
                         </div>
-                        <div class="form-group form-submit form-submit-less">
+                        <!-- <div class="form-group form-submit form-submit-less">
                             <button class="btn-submit btn-gradient" type="button" onclick="searchResumeApply()"><em class="material-icons">find_in_page</em>Tìm</button>
-                        </div>
-                        <div class="form-group form-filter-advanced">
+                        </div> -->
+                        <!-- <div class="form-group form-filter-advanced">
                             <a class="btn-filter-advanced" href="javascript:void(0);"><em class="material-icons">zoom_in</em> Lọc nâng cao</a>
-                        </div>
+                        </div> -->
                     </div>
-                    <div class="form-wrap-advanced">
+                    <div style="display:block;"class="form-wrap-advanced">
                         <div class="form-wrap">
                             <div class="form-group form-select">
                                 <label>Trạng thái</label>
@@ -117,14 +117,7 @@
                                     <option value="6">Nhận việc</option>
                                 </select>
                             </div>
-                            <div class="form-group form-select">
-                                <label>Phân loại tự động</label>
-                                <select id="intSuitable">
-                                    <option value="2" selected="selected">Tất cả</option>
-                                    <option value="1">Phù hợp</option>
-                                    <option value="0">Tiềm Năng</option>
-                                </select>
-                            </div>
+                          
                             <div class="form-group form-select">
                                 <label>Xếp loại</label>
                                 <select id="intType">
@@ -137,25 +130,18 @@
                                     <option value="5">Rất Tốt</option>
                                 </select>
                             </div>
-                            <div class="form-group form-select">
-                                <label>Ghi chú</label>
-                                <select id="intNote">
-                                    <option value="2" selected="selected">Tất cả</option>
-                                    <option value="1">Có ghi chú</option>
-                                    <option value="0">Không có ghi chú</option>
-                                </select>
-                            </div>
-                            <div class="form-group form-reset">
+                           
+                            <!-- <div class="form-group form-reset">
                                 <button class="btn-reset" type="button" onclick="resetFormSearchResume()"><em class="material-icons">loop</em>Xóa</button>
-                            </div>
+                            </div> -->
                             <div class="form-group form-submit">
-                                <button class="btn-submit btn-gradient" type="button" onclick="searchResumeApply()"><em class="material-icons">find_in_page</em>Tìm</button>
+                                <button class="btn-submit btn-gradient" type="submit" onclick="searchResumeApply()"><em class="material-icons">find_in_page</em>Tìm</button>
                             </div>
                             <div class="form-group form-filter-less">
-                                <a class="btn-filter-less" href="javascript:void(0);;">
+                                <!-- <a class="btn-filter-less" href="javascript:void(0);;">
                                     <em class="material-icons">highlight_off</em>
                                     Thu gọn
-                                </a>
+                                </a> -->
                             </div>
                         </div>
                     </div>
@@ -201,13 +187,19 @@
                 <select id="select-group">
                     
                     <option <?= empty($job_status) ? "":$job_status==1?"selected":""?> data-group="1" value="<?= _WEB_ROOT.'/employer/hrcentral/manageresume?job_status=1' ?>" >
-                        Việc Làm Đang Đăng (<?= count($data_job_current) ?>)
+                        Việc Làm Đang Đăng (<?= 
+                                        !empty($count_job_posted["posted_job"]) ? $count_job_posted["posted_job"]:0 
+                                         ?>)
                     </option>
                     <option <?= empty($job_status) ? "":$job_status==3?"selected":""?> data-group="3" value="<?= _WEB_ROOT.'/employer/hrcentral/manageresume?job_status=3' ?>">
-                        Việc Làm Tạm Dừng Đăng (<?= count($data_job_current) ?>)
+                        Việc Làm Tạm Dừng Đăng (<?= 
+                                        !empty($tam_dung_dang["tam_dung_dang"]) ? $tam_dung_dang["tam_dung_dang"]:0 
+                                         ?>)
                     </option>
                     <option <?= empty($job_status) ? "":$job_status==2?"selected":""?> data-group="2" value="<?= _WEB_ROOT.'/employer/hrcentral/manageresume?job_status=2' ?>">
-                        Việc Làm Hết Hạn (<?= count($data_job_current) ?>)
+                        Việc Làm Hết Hạn (<?= 
+                                        !empty($count_expired_job["expired_job"]) ? $count_expired_job["expired_job"]:0 
+                                         ?>)
                     </option>
                 </select>
             </div>
@@ -254,10 +246,10 @@
                                     <thead>
                                         <tr>
 
-                                            <th width="1%">
+                                            <!-- <th width="1%">
                                                 <div class="checkbox"><input type="checkbox" id="check-all"></div>
-                                            </th>
-                                            <th width="27%">Chọn tất cả</th>
+                                            </th> -->
+                                            <th width="27%">Tên ứng viên</th>
                                             <th width="10%">Ngày nộp</th>
                              
                                             <th width="10%">Trạng thái</th>
@@ -277,14 +269,14 @@
                                             <?php } else {?>
                                                 <?php foreach ($job_post_activity as $item) : ?>
                                             <tr>
-                                                <td>
+                                                <!-- <td>
                                                     <div class="checkbox">
                                                         <input type="checkbox" name="listresumes[]" value="36175D2C_35F1D06E">
                                                         <input type="hidden" name="fresume_list_id[]" id="fresume_list_id_36175D2C_35F1D06E" value="3743679A">
                                                         <input type="hidden" name="folder_list_id[]" id="folder_list_id_36175D2C_35F1D06E" value="35BFE874">
                                                         <input type="hidden" name="jobseeker_list_id[]" id="jobseeker_list_id_36175D2C_35F1D06E" value="35F1D06E">
                                                     </div>
-                                                </td>
+                                                </td> -->
 
                                                 <td>
                                                     <div class="title">

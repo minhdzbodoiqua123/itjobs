@@ -8,13 +8,18 @@ class Dashboard extends Controller
         }
         $conn=$this->model("Job_postModel");
         $employer_id=$_SESSION["employer"]["id"]??"";
+        //đang đăng
         $count_job_posted=$conn->query("select count(id) as posted_job from job_post where posted_by_id=$employer_id and status ='1' and now()<end_date")->fetch(PDO::FETCH_ASSOC);
-        $count_expired_job=$conn->query("select count(id) as expired_job from job_post where posted_by_id=$employer_id and status ='2' ")->fetch(PDO::FETCH_ASSOC);
+        //hết hạn
+        $count_expired_job=$conn->query("select count(id) as expired_job from job_post where posted_by_id=$employer_id and status ='1' and now()>end_date ")->fetch(PDO::FETCH_ASSOC);
+        //việc làm chờ đăng
         $count_job_waiting = $conn->query("select count(id) as job_waiting from job_post where posted_by_id=$employer_id and status ='0' ")->fetch(PDO::FETCH_ASSOC);
         // print_r($count_expired_job);
+        $tam_dung_dang = $conn->query("select count(id) as tam_dung_dang from job_post where posted_by_id=$employer_id and status ='2' ")->fetch(PDO::FETCH_ASSOC);
         $this->data["sub_content"]["count_job_posted"] = $count_job_posted;
         $this->data["sub_content"]["count_expired_job"] = $count_expired_job;
         $this->data["sub_content"]["count_job_waiting"] = $count_job_waiting;
+        $this->data["sub_content"]["tam_dung_dang"] = $tam_dung_dang;
 
 
         $this->data["content"] = "employer/dashboard";

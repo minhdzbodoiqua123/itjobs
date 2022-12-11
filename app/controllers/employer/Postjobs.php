@@ -12,7 +12,7 @@ class Postjobs extends Controller
 
         $data_job_type= $this->model("JobPositionModel")->get("job_type")->fetchAll(PDO::FETCH_ASSOC);
         $data_job_experience= $this->model("JobPositionModel")->get("job_experience")->fetchAll(PDO::FETCH_ASSOC);
-
+        
         $this->data["sub_content"]["data_position"] = $data_position;
         $this->data["sub_content"]["data_welfare"] = $data_welfare;
         $this->data["sub_content"]["data_profession"] = $data_profession;
@@ -157,6 +157,13 @@ class Postjobs extends Controller
         $job_post=$conn->query("SELECT created_date,end_date,job_title FROM `job_post`  where status ='0' and job_post.id=$id")->fetch(PDO::FETCH_ASSOC);
         echo json_encode($job_post);
     }
+     public function infoJobPost2($id=""){
+        $conn=$this->model("Job_postModel");
+
+        $job_post=$conn->query("SELECT created_date,end_date,job_title FROM `job_post`  where status ='2' and job_post.id=$id")->fetch(PDO::FETCH_ASSOC);
+        echo json_encode($job_post);
+    }
+
 
     public function post_success($id=""){
       

@@ -3,14 +3,15 @@ const query = window.location.href;
 
 async function displayInfoUser() {
     const param=query.split("/")
-    const user_id=  param[param.length-2]
-    const resume_id=  param[param.length-1]
+   
+    const user_id=  param[9]
+    const resume_id=  param[10]
 
-
+  console.log(resume_id);
     const {provinces,districts,address} = await getData('http://localhost//itjobs/jobseekers/my_profile/addressUserById/'+user_id);
  
     const data = await getData('http://localhost//itjobs/jobseekers/my_profile/addressWish/'+resume_id);
-
+  console.log(data);
     const addressUser = $('.address');
     const provincesUser=$(".provinces");
     const districtsUser=$(".districts");
@@ -31,4 +32,6 @@ async function displayInfoUser() {
 
     } 
   }
+
+
   displayInfoUser()

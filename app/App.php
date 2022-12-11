@@ -16,7 +16,6 @@ class App
 
         //controller//action/param
       
-
     function getUrl(){
         if(isset($_SERVER["PATH_INFO"])){
             $url = $_SERVER["PATH_INFO"];  

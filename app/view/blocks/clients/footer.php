@@ -6,7 +6,7 @@
   
 </style>
 <footer>
-   <div style="background-color: #182642;" class="container">
+   <div style="background-color: #182642;padding:50px;" class="">
       <!-- <section class="top-footer cb-section cb-section-border-bottom">
          <div class="row">
             <div class="col-lg-12 logo"><img class="lazy-bg" data-src="./img/logo.png" src="../kiemviecv32/images/graphics/blank.gif" alt="Tuyển dụng & Tìm kiếm việc làm nhanh"></div>

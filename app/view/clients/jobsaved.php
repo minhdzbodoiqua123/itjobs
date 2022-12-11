@@ -99,9 +99,9 @@
                 <?php if ($check==0): ?>
                     <li class="apply-now-btn "><a class="btn-gradient" href="https://careerbuilder.vn/vi/tim-viec-lam/nhan-vien-ke-toan-thanh-toan.35BB088F.html"> Ứng Tuyển</a></li>
                <?php endif;?>                            
-                                                                                                                    <form action="" >
-               <input type="hidden" value="<?= $item["job_id"] ?>" name="job_id">                                                                        <li class="delete"><a href="javascript:void(0);" > <em class="material-icons">highlight_off</em><button type="submit" style="background-color:transparent;color:red;font-size:16px;font-weight:bold;">Xóa</button></a></li>
-                                                                                                                    </form>
+                                                                                                                    <form action="" method="Mykiemviec/deleteJobSaved" >
+             <input type="hidden" value="<?= $item["job_id"] ?>" name="job_id">                                                                        <li class="delete"><a href="javascript:void(0);" > <em class="material-icons">highlight_off</em><button type="submit" style="background-color:transparent;color:red;font-size:16px;font-weight:bold;">Xóa</button></a></li>
+                      </form>
                                                         </ul>
                                                     </td>
                                                 </tr>

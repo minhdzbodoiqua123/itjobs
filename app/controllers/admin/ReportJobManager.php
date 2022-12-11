@@ -3,6 +3,9 @@ class ReportJobManager extends Controller
 {
     public function index()
     {
+        if(!Auth_admin::logged_in()){
+            $this->redirect('admin/account/login');
+        }
         $conn = $this->model("Job_postModel");
         $report_job = $conn->get("report_job");
 

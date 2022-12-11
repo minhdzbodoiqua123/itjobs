@@ -9,15 +9,15 @@ const not_experience=document.querySelector("input[name='cboExper']")
 const yearOfExperience=document.querySelector("input[name='yearOfExperience']")
 
 
+not_experience.addEventListener('click', function(e){
+    not_experience.checked = true;
+    console.log('a');
+})
+
 not_experience.addEventListener("change", function (e){
-  
-
   if(e.target.checked){
-    
-  
     yearOfExperience.setAttribute('disabled','')
-
-    yearOfExperience.value=""
+    yearOfExperience.value="";
    
     
   }

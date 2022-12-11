@@ -3,6 +3,9 @@ class Jobwelfare extends Controller
 {
     public function index()
     {
+        if(!Auth_admin::logged_in()){
+            $this->redirect('admin/account/login');
+        }
         $conn = $this->model("JobwelfareModel");
         $data_job_welfare = $conn->get("job_welfare")->fetchAll(PDO::FETCH_ASSOC);
         

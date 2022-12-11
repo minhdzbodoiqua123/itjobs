@@ -2,6 +2,9 @@
 class Company extends Controller
 {
     public function index(){
+        if(!Auth_admin::logged_in()){
+            $this->redirect('admin/account/login');
+        }
         $conn=$this->model("CompanyModel");
         $data_company=$conn->get("company")->fetchAll(PDO::FETCH_ASSOC);
         $company_type=$conn->get("company_type")->fetchAll(PDO::FETCH_ASSOC);

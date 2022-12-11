@@ -40,6 +40,7 @@ class Database
 
             $sql = "INSERT INTO $table ($fieldStr) VALUES ($valueStr)";
             $status = $this->query($sql);
+
             if ($status) {
                 return true;
             }
@@ -48,7 +49,6 @@ class Database
     }
     function update($table, $data, $condition = '')
     {   
-       
         if (!empty($data)) {
             $updateStr = '';
 
@@ -56,13 +56,12 @@ class Database
                 $updateStr .= "$key=$value,";
             }
             $updateStr = rtrim($updateStr, ',');
-
+            
             if (!empty($condition)) {
                 $sql = "UPDATE $table SET $updateStr WHERE $condition";
             } else {
                 $sql = "UPDATE $table SET $updateStr ";
             }
-            
             $status = $this->query($sql);
          
             if ($status) {
@@ -102,7 +101,7 @@ class Database
     
     function query($sql)
     
-    {   
+    {       
         $statement = $this->conn->prepare($sql);
         $statement->execute();
         return $statement;

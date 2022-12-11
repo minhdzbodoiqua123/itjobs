@@ -238,6 +238,7 @@ function  selectGroup() {
 function start() {
    selectGroup()
    selectFolder()
+   searchResume()
 }
 start()
 document.addEventListener('click', function (e) {
@@ -248,3 +249,4 @@ document.addEventListener('click', function (e) {
    }
  
  })
+

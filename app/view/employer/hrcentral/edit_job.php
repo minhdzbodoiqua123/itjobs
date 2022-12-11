@@ -8,7 +8,7 @@
     }
 </style>
 
-<script defer src="<?= _WEB_ROOT . "/app/public/assets/employer/js/postjobs.js"?>"></script>
+<script defer src="<?= _WEB_ROOT . "/app/public/assets/employer/js/edit_job.js"?>"></script>
 
 <main>
 <section class="employer-navbar-2-1">
@@ -45,20 +45,22 @@
         <div class="box-manage-job-posting">
             <div class="heading-manage">
                 <div class="left-heading">
-                    <h1 class="title-manage">Đăng Tuyển Dụng</h1>
+                    <h1 class="title-manage">Sửa Bài Đăng Tuyển Dụng</h1>
                 </div>
             </div>
-            <form name="frmEditJob" id="frmEditJob" method="post" action="postjobs/InsertJob">
+   <form name="frmEditJob" id="frmEditJob" method="post" action="<?= _WEB_ROOT.'/employer/hrcentral/Posting/updateJobPost' ?>">
                 <div class="main-tabslet">
                     <ul class="tabslet-tab">
                         <li class="active"> <a href="javascript:void(0);">Thông Tin Tuyển Dụng</a></li>
-                     
+                        <li> <a href="javascript:void(0)" >Thông Tin Liên Hệ</a></li>
+                        <li> <a href="javascript:void(0)" >Thiết Lập Độ Phù Hợp Ứng Viên</a></li>
                     </ul>
 
                     <div class="tabslet-content active" id="tab-1">
                         <input name="ispublic" type="hidden" value="0">
                         <input name="emp_id" type="hidden" value="35A94C80">
-                        <input name="job_id" type="hidden" value="35A4E900">
+                        <input name="job_id" type="hidden" value="<?= $data_post["id"] ?>"> 
+        <input type="hidden" name="current_url" value="<?= current_url(); ?>" >
                         <input type="hidden" id="jobsamp_id" name="jobsamp_id" value="" />
                         <input type="hidden" id="lang" name="lang" value="" />
                         <input name="intSave" id="intSave" type="hidden" value="1">
@@ -72,7 +74,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group form-text">
-                                            <input required data-pristine-required-message="Không được để trống" type="text" id="job_title" class="keyword" name="job_title" value=""  placeholder="Chức danh tuyển dụng">
+                                            <input required data-pristine-required-message="Không được để trống" type="text" id="job_title" value="<?= $data_post["job_title"] ?>" class="keyword" name="job_title" value=""  placeholder="Chức danh tuyển dụng">
                                             <span class="form-error"></span>
                                         </div>
                                     </div>
@@ -112,7 +114,7 @@
                                     <label>Mô Tả Công Việc <font style="color: red">*</font></label>
                                   
           <textarea name="job_desc" id="editor1" rows="10" cols="80" required data-pristine-required-message="Vui lòng nhập địa chỉ " >
-              
+          <?= $data_post["job_desc"] ?>
             </textarea>
  
                                     <span class="form-error"></span>
@@ -124,7 +126,7 @@
                                 <div class="form-group form-editor" id="div_jobreq">
                                     <label>Yêu cầu công việc <font style="color: red">*</font></label>
 
-                                    <textarea cols="80" rows="5" id="job_req" name="job_req" class="editor"></textarea>
+                                    <textarea  cols="80" rows="5" id="job_req" name="job_req" class="editor"><?= $data_post["job_request"] ?></textarea>
                                     <span class="form-error"></span>
                                     <div class="note">
                                         <p>Nhỏ hơn 10 000 kí tự</p>
@@ -134,11 +136,19 @@
                                     <div class="col-lg-6">
                                         <div class="form-group form-select-chosen">
                                             <label>Ngành nghề <font style="color: red">*</font></label>
-                                            <select multiple search="true" name="INDUSTRY_ID[]" id="select_industry_db" class="chosen-select-max-three" >
+                                            <select 
+
+                                            multiple search="true" name="INDUSTRY_ID[]" id="select_industry_db" class="chosen-select-max-three" >
                                           
 
-                                                <?php foreach ($data_profession as $item):?>
-                                                    <option value="<?= $item["id"] ?>"><?= $item["profession_name"] ?></option>
+                    <?php foreach ($data_profession as $item):?>
+                     <option 
+                     <?php foreach ($job_profession_detail as $value):
+                     if($value["profession_id"]==$item["id"]){
+                        echo "selected";
+                     }
+                     endforeach;?>
+                     value="<?= $item["id"] ?>"><?= $item["profession_name"] ?></option>
                                            <?php   endforeach;?>
                                             
                                                   
@@ -193,7 +203,7 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group form-select-chosen">
                                                     <label>Địa chỉ làm việc</label>
-                           <input name="work_location" class="chosen-select  work_location"    data-placeholder="Địa điểm làm việc"
+                           <input value="" name="work_location" class="chosen-select  work_location"    data-placeholder="Địa điểm làm việc"
                            required data-pristine-required-message="Vui lòng nhập địa chỉ " 
                            >
                                                         <option value="">Chọn địa điểm làm việc</option>
@@ -224,10 +234,10 @@
                                                 </select>
                                             </div>
                                             <div class="form-group form-text">
-                                                <input type="text" name="salary_from" id="salary_from" maxlength="12" value="" onblur="checkAlertSalary();" placeholder="Tối Thiểu *">
+                                                <input type="text" name="salary_from" id="salary_from" maxlength="12" value="<?= $data_post["min_salary"] ?>" onblur="checkAlertSalary();" placeholder="Tối Thiểu *">
                                             </div>
                                             <div class="form-group form-text">
-                                                <input type="text" name="salary_to" id="salary_to" maxlength="12" value="" onblur="checkAlertSalary();" placeholder="Tối Đa *">
+                                                <input type="text" name="salary_to" id="salary_to" maxlength="12" value="<?= $data_post["max_salary"] ?>" onblur="checkAlertSalary();" placeholder="Tối Đa *">
                                             </div>
                                             <span class="form-error" id="error_salary" style="width: 100%;max-width: none;flex: 1;"></span>
                                         </div>
@@ -256,9 +266,15 @@
                                     </div>
                                     <div class="row">
                                         <?php foreach ($data_job_type as $item): ?>
-                                            <div class="col-sm-6 col-lg-3">
-                                            <div class="form-group form-checkbox">
-  <input type="checkbox" class="require-one-job-type input_margin" id="job_type<?= $item["id"] ?>" name="job_type[]" value="<?= $item["id"] ?>" />
+          <div class="col-sm-6 col-lg-3">
+        <div class="form-group form-checkbox">
+  <input 
+  <?php foreach ($job_type_detail as $value):
+    if($value["job_type_id"]==$item["id"]){
+        echo 'checked';
+    }
+  endforeach;?>
+  type="checkbox" class="require-one-job-type input_margin" id="job_type<?= $item["id"] ?>" name="job_type[]" value="<?= $item["id"] ?>"  />
                                                 <label ><?= $item["job_type"] ?></label>
                                             </div>
                                         </div>
@@ -272,7 +288,7 @@
                                         <div class="form-group form-date">
                                             <label>Hạn nhận hồ sơ <font style="color: red">*</font></label> 
                                           
-                <input min="<?= date("Y-m")?>-<?= date("d")+1?>" max="<?= date("Y")+100 ?>-<?= date("m-d") ?>" type="date" name="JOB_LASTDATE" id="JOB_LASTDATE" class="dates_cus_select_postjob required"/>
+                <input min="<?= date("Y-m")?>-<?= date("d")+1?>" max="<?= date("Y")+100 ?>-<?= date("m-d") ?>" type="date" value="<?= $data_post["end_date"] ?>" name="JOB_LASTDATE" id="JOB_LASTDATE" class="dates_cus_select_postjob required"/>
                                             <div class="icon"><em class="material-icons">event</em></div>
                                             <span class="form-error error_job_lastdate"></span>
                                         </div>
@@ -285,7 +301,12 @@
                                     <?php foreach ($data_welfare as $item): ?>
                                         <div class="col-sm-6 col-lg-3">
                                         <div class="form-group form-checkbox">
- <input type="checkbox"  id="BENEFIT_ID_2" name="BENEFIT_ID[]" value="<?= $item["id"] ?>" >
+ <input   <?php foreach ($job_welfare_detail as $value):
+    if($value["job_welfare_id"]==$item["id"]){
+        echo 'checked';
+    }
+  endforeach;?>
+  type="checkbox"  id="BENEFIT_ID_2" name="BENEFIT_ID[]" value="<?= $item["id"] ?>" >
                                            </em><?= $item["welfare_type"] ?></label>
                                         </div>
                                     </div>
@@ -305,15 +326,15 @@
                                         <div class="d-flex gender-wrap">
                                            
                                             <div class="form-group form-radio">
-         <input value="0" type="radio" id="rnam" name="JOB_GENDER"  >
+              <input  <?= $data_post["gender"]==0?"checked":"" ?> value="0" type="radio" id="rnam" name="JOB_GENDER"  >
                                                 <label for="rnam">Nam</label>
                                             </div>
                                             <div class="form-group form-radio">
-                       <input value="1" type="radio" id="rnu" name="JOB_GENDER" >
+                       <input <?= $data_post["gender"]==1?"checked":"" ?> value="1" type="radio" id="rnu" name="JOB_GENDER" >
                                                 <label for="rnu">Nữ</label>
                                             </div>
                                             <div class="form-group form-radio">
-                <input value="2" type="radio" id="rnamnu" name="JOB_GENDER"  >
+                <input <?= $data_post["gender"]==2?"checked":"" ?> value="2" type="radio" id="rnamnu" name="JOB_GENDER"  >
                                                 <label for="rnamnu">Nam/Nữ</label>
                                             </div>
                                         </div>
@@ -327,11 +348,11 @@
                                         <div class="d-flex form-age align-center">
                                             <div class="form-group form-text">
                                                 <label>Từ</label>
-                                                <input type="text" name="JOB_FROMAGE" id="JOB_FROMAGE" onkeyup="change_age(this);" onblur="chckage();">
+                                                <input value="<?= $data_post["from_age"] ?>" type="text" name="JOB_FROMAGE" id="JOB_FROMAGE" onkeyup="change_age(this);" onblur="chckage();">
                                             </div>
                                             <div class="form-group form-text">
                                                 <label>Đến</label>
-                                                <input type="text" name="JOB_TOAGE" id="JOB_TOAGE" onkeyup="change_age(this);" onblur="chckage();">
+                                                <input value="<?= $data_post["to_age"] ?>" type="text" name="JOB_TOAGE" id="JOB_TOAGE" onkeyup="change_age(this);" onblur="chckage();">
                                             </div>
                                         </div>
                                     </div>
@@ -341,10 +362,10 @@
                                         <div class="form-group form-select">
                               <label>Kinh nghiệm <font style="color: red">*</font></label>
                               
-               <select class="" name="JOB_ISEXPERIENCE" id="JOB_ISEXPERIENCE"onchange="loadExperience(this.value);" >
+               <select class="" name="JOB_ISEXPERIENCE" id="JOB_ISEXPERIENCE">
                               <option value="">Chọn Kinh nghiệm</option>
                                         <?php foreach ($data_job_experience as $item): ?>
-                            <option value="<?= $item["id"] ?> "><?= $item["experience_type"] ?> </option>
+      <option <?= $data_post["job_experience_id"]==$item["id"]?"selected":"" ?> value="<?= $item["id"] ?> "><?= $item["experience_type"] ?> </option>
 
                                        <?php endforeach;?>
                    
@@ -360,11 +381,11 @@
                                         <div class="d-flex form-age align-center">
                                             <div class="form-group form-text">
                                                 <label>Từ</label>
-              <input name="JOB_FROMEXPERIENCE" id="JOB_FROMEXPERIENCE"  />
+              <input  value="<?= $job_experience_detail["JOB_FROMEXPERIENCE"] ?>" name="JOB_FROMEXPERIENCE" id="JOB_FROMEXPERIENCE"  />
                                             </div>
                                             <div class="form-group form-text">
                                                 <label>Đến</label>
-                                                <input name="JOB_TOEXPERIENCE" id="JOB_TOEXPERIENCE"  />
+                                                <input value="<?= $job_experience_detail["JOB_TOEXPERIENCE"] ?>" name="JOB_TOEXPERIENCE" id="JOB_TOEXPERIENCE"  />
                                             </div>
                                         </div>
                                     </div>
@@ -376,7 +397,7 @@
                                             <select name="LEVEL_ID" id="LEVEL_ID">
                                                 <option value="">Chọn Cấp bậc</option>
                                                 <?php foreach ($data_position as $item): ?>
-                                        <option value="<?=  $item["id"] ?>"><?= $item["position"] ?></option>
+             <option <?= $data_post["job_position_id"]==$item["id"]?"selected":"" ?> value="<?=  $item["id"] ?>"><?= $item["position"] ?></option>
                                 <?php   endforeach;?>
                                      
                                                
@@ -392,6 +413,7 @@
                                             <select name="DEGREE_ID" id="DEGREE_ID">
                                                 <?php foreach ($data_degree as $item): ?>
                                         <option 
+      <?= $data_post["job_degree_id"]==$item["id"]?"selected":"" ?>
                                         <?= $item["id"]==1 ? "style='display:none'": "" ?>
                                         <?= $item["id"]==2 ? "selected": "" ?>
                                         
@@ -408,7 +430,7 @@
                                 <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group form-checkbox">
-                                            <input type="checkbox" value="1" name="JOB_WFH" id="JOB_WFH" class="input_margin">
+                                            <input <?= $data_post["wrk_from_home"]=="1" ? "checked":"" ?> type="checkbox" value="1" name="JOB_WFH" id="JOB_WFH" class="input_margin">
                                             <label for="JOB_WFH">Work from home</label>
                                         </div>
                                         <div class="form-group mt-0 form-note-workfromhome">
@@ -557,8 +579,8 @@
                                     <div class="form-standard" id="MailReply">
                                         <div class="row">
                                             <div class="col-lg-7">
-                                                <form action="">
-                                                    <input name="job_id" type="hidden" value="35A4E900" />
+                                                <form action="" method="post">
+               <input name="job_id" type="hidden" value="<?= $data_post["id"] ?>" />
                                                     <input name="savetype" type="hidden" value="1" />
                                                     <input name="emp_id" type="hidden" value="287616" />
                                                     <div class="form-wrap">
