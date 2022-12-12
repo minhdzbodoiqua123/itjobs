@@ -221,10 +221,10 @@
                   </li>
                
                   <li>
-                     <a class="collapse " href="javascript:;"><em class="material-icons">settings</em><span>Cài đặt</span></a>
+                     <a class="" href="javascript:;"><em class="material-icons">settings</em><span>Cài đặt</span></a>
                      <ul class="list-unstyled collapse">
-                        <li> <a href="https://careerbuilder.vn/vi/jobseekers/member/myaccount" title="Tài Khoản">Tài Khoản</a></li>
-                        <li> <a href="https://careerbuilder.vn/vi/jobseekers/member/emailmanagement" title="Cài Đặt Thông Báo">Cài Đặt Thông Báo</a></li>
+                        <li> <a href="" title="Tài Khoản">Tài Khoản</a></li>
+                        <li> <a href="" title="Cài Đặt Thông Báo">Cài Đặt Thông Báo</a></li>
                      </ul>
                   </li>
                   <li> <a href="http://localhost//itjobs/account/logout" title="Thoát"> <em class="material-icons">power_settings_new</em><span>Thoát</span></a></li>
@@ -241,7 +241,7 @@
                      <div class="widget widget-2 widget-11" id="widget-11">
                         <div class="widget-head">
                            <div class="cb-title-h3">
-                              <h3>Careerbuilder Profile</h3>
+                              <h3>ITJOBS Profile</h3>
                            </div>
                         </div>
                         <div class="widget-body">
@@ -326,7 +326,7 @@
                                           </div>
                                        </div>
                                     </div>
-                                    <div class="searchable-cv-widget status-area attached-status-area">
+                                    <!-- <div class="searchable-cv-widget status-area attached-status-area">
                                        <div class="switch-status group_searchable" id="cv_searchable_17611557" data-id="17611557" data-complete="0">
                                           <a data-type="2" class="lock active" style="border-radius: 21px;text-align: center;"><em class="mdi mdi-lock"></em>Khóa</a>
                                           <a data-type="1" class="public " style="text-decoration:none;border-radius: 21px;text-align: center;"><em class="mdi mdi-web"></em>Công khai</a>
@@ -341,13 +341,13 @@
                                        <p class="text-notes text-notes-3 d-none">
                                           Hồ sơ của bạn đang ở trạng thái <span>Khẩn cấp</span>. Hồ sơ của bạn sẽ được ưu tiên tìm thấy bởi các nhà tuyển dụng.
                                        </p>
-                                    </div>
+                                    </div> -->
                                     <div class="check-box">
-                                       <div class="form-group form-check-box job-alerts">
+                                       <!-- <div class="form-group form-check-box job-alerts">
                                           <label for="cv_jobalert_17611557">Nhận thông báo việc làm
                                           <input type="checkbox" name="cv_jobalert_17611557" id="cv_jobalert_17611557" value="17611557" disabled="disabled" onclick="updateCvJobalert(this);">
                                           <span class="slider"></span> </label>
-                                       </div>
+                                       </div> -->
                                     </div>
                                  </div>
                               </div>
@@ -1528,15 +1528,15 @@
                      <div style="top:100px" class="menu-shortchut active">
                         <div class="list-button">
                            <ul>
-                              <li><a class="share-profile" ><em class="mdi mdi-share"></em><span>Chia sẻ hồ sơ</span> <span class="new-label"> New </span> </a></li>
+                              <!-- <li><a class="share-profile" ><em class="mdi mdi-share"></em><span>Chia sẻ hồ sơ</span> <span class="new-label"> New </span> </a></li> -->
                               <!-- <li> <a href="https://careerbuilder.vn/vi/jobseekers/mykiemviec/changetemplate"> <em class="material-icons">edit</em><span>Chỉnh Mẫu Hồ Sơ</span></a></li> -->
                               <li>
                   <a  data-bs-toggle="modal"  data-bs-target="#subCV"  id="btn_view_cbprofile">
                                  <em class="material-icons">remove_red_eye</em>
                                  <span>Xem CV Template</span></a>
                               </li>
-                              <li id="btn_download" > <a href="javascript:generatePDF()"> <em class="material-icons">get_app</em><span>Tải hồ sơ</span></a>
-                              </li>
+                              <!-- <li id="btn_download" > <a href="javascript:generatePDF()"> <em class="material-icons">get_app</em><span>Tải hồ sơ</span></a>
+                              </li> -->
                               <!-- <li><a class="hidden-info" ><em class="fa fa-eye-slash"></em><span>Ẩn thông tin</span></a></li> -->
                            </ul>
                         </div>
@@ -1548,7 +1548,7 @@
                            <li><a class="active" data-href="widget-11">Careerbuilder Profile</a></li>
                            <li><a data-href="t-resume-section">Tiêu đề hồ sơ</a></li>
                            <li><a data-href="personalinfo-section">Thông tin cá nhân</a></li>
-                           <li><a data-href="widget-14">Mục tiêu nghề nghiệp</a></li>
+                           <!-- <li><a data-href="widget-14">Mục tiêu nghề nghiệp</a></li> -->
                            <li><a data-href="widget-18">Thông tin nghề nghiệp</a></li>
                            <li><a data-href="widget-15">Kinh nghiệm làm việc</a></li>
                            <li><a data-href="widget-16">Học vấn</a></li>

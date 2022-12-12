@@ -29,7 +29,7 @@
 
 
       <!-- User Menu-->
-      <li><a class="app-nav__item" href="/index.html"><i class='bx bx-log-out bx-rotate-180'></i> </a>
+      <li><a class="app-nav__item" href="http://localhost/itjobs/admin/account/logout"><i class='bx bx-log-out bx-rotate-180'></i> </a>
 
       </li>
     </ul>
@@ -37,15 +37,15 @@
   <!-- Sidebar menu-->
   <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
   <aside class="app-sidebar">
-    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="/images/hay.jpg" width="50px" alt="User Image">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="<?=  "http://localhost//itjobs/app/public/assets/admin/images/".$_SESSION['admin']['image']?>" width="50px" alt="User Image">
       <div>
-        <p class="app-sidebar__user-name"><b>Võ Trường</b></p>
+        <p class="app-sidebar__user-name"><b><?= $_SESSION['admin']['fullname']?></b></p>
         <p class="app-sidebar__user-designation">Chào mừng bạn trở lại</p>
       </div>
     </div>
     <hr>
     <ul class="app-menu">
-      <li><a class="app-menu__item " href="index.html"><span class="app-menu__label">Bảng điều khiển</span></a></li>
+      <li><a class="app-menu__item " href="http://localhost//itjobs/admin/dashboard"><span class="app-menu__label">Bảng điều khiển</span></a></li>
       <li><a class="app-menu__item " href="<?= _WEB_ROOT . '/admin/employeeManager' ?>">
           <span class="app-menu__label">Quản lý nhân viên</span></a></li>
       <li><a class="app-menu__item " href="http://localhost//itjobs/admin/seekerManager"><span class="app-menu__label">Quản lý người ứng tuyển</span></a></li>
@@ -138,7 +138,7 @@
               
              <div class="box">
              <div class="loader d-none"></div>
-             <img style="margin:15px 0;" height="400" width="400" src="" id="thumbimage" class="preview d-none" alt="Image preview">
+             <img style="margin:15px 0;" height="400" width="400" src="<?=  "http://localhost//itjobs/app/public/assets/admin/images/".$_SESSION['admin']['image']?>" id="thumbimage" class="preview d-none" alt="Image preview">
              </div>
                   <small></small>
                   <span></span>

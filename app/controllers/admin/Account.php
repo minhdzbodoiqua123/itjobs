@@ -13,14 +13,16 @@ class Account extends Controller
          
             $email=$_POST["email"];
             $password=$_POST["password"];
-  
-   $result= $this->model("AccountUserModel")->checkLoginAdmin($email,$password);
+  $conn=$this->model("AccountUserModel");
+   $result=$conn->checkLoginAdmin($email,$password);
 
             $remember=isset($_POST["remember"])?true:false;
-            // $token=uniqid('user_',true);  
             if($result->rowCount()==1){
                $user=$result->fetchAll(PDO::FETCH_ASSOC);
-                foreach ($user as $row) {
+               $user_id= $user[0]["id"];
+     $admin_info=$conn->get("admin_info","user_account_id =$user_id")->fetchAll(PDO::FETCH_ASSOC);
+              
+                foreach ($admin_info as $row) {
                  Auth_admin::authenticate($row);
                 }
                 if($remember){
@@ -43,5 +45,10 @@ class Account extends Controller
         
         $this->render('admin/forgetpassword',$this->data);
 
+    }
+    public function logout()
+    {
+        Auth_admin::logout();
+        $this->redirect('admin/account/login');
     }
 }

@@ -182,7 +182,7 @@
                            <div class="breadcrumb-gotopage">
                               <nav aria-label="breadcrumb">
                                  <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"> <a href="https://careerbuilder.vn/vi/employers/hrcentral/manageresume/4/35A4E900/*/0/*/*/7/2/6/2/1/desc/lop7cttnq.1667207375/1"> Hồ Sơ Đã Lưu </a> </li>
+                                    <li class="breadcrumb-item"> <a href="http://localhost//itjobs/employer/hrcentral/manageresume/resume_saved"> Hồ Sơ Đã Lưu </a> </li>
                                     <li class="breadcrumb-item active" aria-current="page">ứng viên</li>
                                  </ol>
                               </nav>

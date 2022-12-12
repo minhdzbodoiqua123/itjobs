@@ -133,7 +133,6 @@ class Accounts extends Controller
         $conn=$this->model("AccountUserModel");     
         $info_employer=$conn->get("employer_infomation","user_account_id=$user_account_id");
         $this->data["sub_content"]["info_employer"] =$info_employer;
-        print_r($info_employer);
         $this->data["content"]="employer/hrcentral/accounts/changepassword";
         $this->render('layouts/employer_layout',$this->data);
 

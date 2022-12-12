@@ -4,8 +4,11 @@ class Alljob extends Controller
     public function index(){
         $conn=$this->model("Job_postModel");
         $sql=$this->search();
-        // echo $sql;
+  
+
+   
         $job_post=$conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+
         $item_per_page=5;
         $current_page=!empty($_GET["page"]) ? $_GET["page"] : 1 ;
         $offset=($current_page-1)*$item_per_page;
@@ -72,7 +75,8 @@ class Alljob extends Controller
 
         $seeker_id=$_SESSION["user"]["id"] ?? "";
         
-     
+        $data_provinces=  CallAPI("GET","https://provinces.open-api.vn/api/");
+        
 
          $this->data["sub_content"]["searchIndustry"]=$searchIndustry;
          $this->data["sub_content"]["searchLocation"]=$searchLocation;
@@ -81,6 +85,7 @@ class Alljob extends Controller
 
         $this->data["content"]="clients/all_job";
         $this->data["sub_content"]["job_post"] = $job_post;
+        $this->data["sub_content"]["data_provinces"] =  json_decode($data_provinces);
         $this->data["sub_content"]["job_welfare_detail"] = $job_welfare_detail;
         $this->data["sub_content"]["data_job_welfare"] = $data_job_welfare;
         $this->data["sub_content"]["data_job_type"] = $data_job_type;
@@ -201,7 +206,7 @@ class Alljob extends Controller
         }
 
       
-        $sql.="order by job_post.id limit $item_per_page offset $offset";
+        $sql.="order by RAND() limit $item_per_page offset $offset";
             return $sql;
 
   

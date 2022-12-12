@@ -60,9 +60,16 @@ class Dashboard extends Controller
                 
 
         $informationProfession = $this->model("JobPositionModel")->query("SELECT * FROM `seeker_profession_detail` join profession on seeker_profession_id= profession.id WHERE user_account_id='$id'")->fetchAll(PDO::FETCH_ASSOC);
-       
+            
+        $count_job_saved=$this->model("JobPositionModel")->get("job_saved","user_account_id='$id'")->rowCount();
+        $count_job_posted=$this->model("JobPositionModel")->get("job_post_activity","user_account_id='$id'")->rowCount();
+        
+        
         $this->data["sub_content"]["data_resume"]=$data_resume;
         $this->data["sub_content"]["seeker_type"]=$seeker_type;
+
+        $this->data["sub_content"]["count_job_saved"]=$count_job_saved;
+        $this->data["sub_content"]["count_job_posted"]=$count_job_posted;
 
 
         $this->data["sub_content"]["informationUser"]=$informationUser ;

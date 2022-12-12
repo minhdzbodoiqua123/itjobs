@@ -27,4 +27,29 @@ async function notification(){
     })
    
 }
+ async function deleteItem_job(){
+  const deleteItem_job=document.querySelectorAll('.deleteItem_job');
+  deleteItem_job.forEach( (element) => {
+   
+    element.addEventListener('click', async () =>{
+      const id=element.getAttribute('data-id')
+      const {created_date,end_date,job_title}=await getData("http://localhost//itjobs/employer/postjobs/infoJobPost/"+id);
+      modalAlert.fire(ConfigAlert("XÁC NHẬN XÓA BÀI ĐĂNG TUYỂN DỤNG","","",
+      `<div style='text-align:left;margin-bottom:15px;'>Chức danh:<b style='color:red'>${job_title}</b>  </div>
+   `
+       ))
+       .then(result =>{
+        if(result.isConfirmed){
+            axios.post("http://localhost//itjobs/employer/hrcentral/waitposting/deleteJobPost/"+id);
+    
+            location.reload();  
+        }
+    })
+    })
+   
+  });
+
+
+}
 notification();
+deleteItem_job()

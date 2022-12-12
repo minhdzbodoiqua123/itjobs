@@ -68,31 +68,43 @@ async function getData(url) {
   async function getProvinces() {
     const api = 'https://provinces.open-api.vn/api/';
     const data = await getData(api)
-    .then((result) => {
+      .then((result) => {
   
       renderPronvinces(result);
     })
     
+  //   const arr=[];
+  //  const test= data.map(element => {
+  //     return {
+  //       "id":`${element.code}`,
+  //       "name":`${element.name}`,
+
+  //     }
+      
+  //   });
+
+  
  
  
   }  
   
 async function renderPronvinces (data) {
-const all_location=document.getElementById('location');
-  console.log(all_location);
- let searchLocation= trueTypeOf(getAllUrlParams()["location%5b%5d"])=="string"?[getAllUrlParams()["location%5b%5d"]]: getAllUrlParams()["location%5b%5d"];
- console.log(searchLocation);
- const htmls= data.map((item,index) => {
-    return `<option 
-    ${searchLocation ? searchLocation.map(value => {
-      if(value==item.code){
-       return `selected`
-      }
-    }).join("") : "" }
 
-    value="${item.code}">${item.name}</option>`;
-  }).join("")
-   all_location.innerHTML=htmls;
+// const all_location=document.getElementById('location');
+//   // console.log(all_location);
+//  let searchLocation= trueTypeOf(getAllUrlParams()["location%5b%5d"])=="string"?[getAllUrlParams()["location%5b%5d"]]: getAllUrlParams()["location%5b%5d"];
+//  const htmls= data.map((item,index) => {
+//     return `<option 
+//     ${searchLocation ? searchLocation.map(value => {
+      
+//       if(item.code==value){
+//        return `selected`
+//       }
+//     }).join("") : "" }
+
+//     value="${item.code}">${item.name}</option>`;
+//   }).join("")
+//    all_location.innerHTML=htmls;
   
 }
 const trueTypeOf = (obj) => Object.prototype.toString.call(obj).slice(8, -1).toLowerCase()

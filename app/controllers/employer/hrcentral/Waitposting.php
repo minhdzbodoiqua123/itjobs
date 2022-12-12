@@ -37,4 +37,10 @@ class Waitposting extends Controller
         $sql.="ORDER BY posted_date";
         return $sql;
     }
+    public function deleteJobPost($id=""){
+        $conn=$this->model("Job_postModel");
+        $conn->delete("job_post","id=$id");
+ 
+          
+    }
 }

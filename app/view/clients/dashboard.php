@@ -317,7 +317,7 @@
                   </li> -->
                
                   <li>
-                     <a class="collapse " href="javascript:;"><em class="material-icons">settings</em><span>Cài đặt</span></a>
+                     <a class="" href="<?= _WEB_ROOT.'/jobseekers/myaccount' ?>"><em class="material-icons">settings</em><span>Cài đặt</span></a>
                      <ul class="list-unstyled collapse">
                         <li> <a href="https://careerbuilder.vn/vi/jobseekers/member/myaccount" title="Tài Khoản">Tài Khoản</a></li>
                         <li> <a href="https://careerbuilder.vn/vi/jobseekers/member/emailmanagement" title="Cài Đặt Thông Báo">Cài Đặt Thông Báo</a></li>
@@ -624,7 +624,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <!-- <div class="col-lg-4">
                                 <div class="widget-b searchable-cv-widget">
                                     <h4>Cho phép tìm kiếm Profile CareerBuilder
                                         <div class="tips p1" data-type="1">
@@ -663,7 +663,7 @@
                                     </div>
                                     <p>Nhận thông báo việc làm phù hợp với hồ sơ này mỗi 2 tuần</p>
                                 </div> -->
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="row">
@@ -717,7 +717,7 @@
                             <div class="col-sm-6 col-lg-6">
                                 <div class="widget-1 b3">
                                     <div class="widget-head">
-                                        <p>0</p>
+                                        <p><?= !empty($count_job_saved)?$count_job_saved :"" ?></p>
                                         <p>Việc làm đã lưu</p>
                                     </div>
                                     <div class="widget-body">
@@ -730,7 +730,7 @@
                             <div class="col-sm-6 col-lg-6">
                                 <div class="widget-1 b4">
                                     <div class="widget-head">
-                                        <p>0</p>
+        <p><?= !empty($count_job_posted) ?  $count_job_posted:""?></p>
                                         <p>Việc làm đã nộp</p>
                                     </div>
                                     <div class="widget-body">
@@ -816,10 +816,10 @@
                           <time id="date_17708653"><?= formatDate($item["created_date"])?></time>
                       
                         </div>
-                        <div class="view-number">
+                        <!-- <div class="view-number">
                           <p>Lượt xem:</p>
                           <span>0</span>
-                        </div>
+                        </div> -->
                       </div>
                     </div>
                   </div>

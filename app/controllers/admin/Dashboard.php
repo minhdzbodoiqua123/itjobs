@@ -5,15 +5,14 @@ class Dashboard extends Controller
         if(!Auth_admin::logged_in()){
             $this->redirect("admin/account/login");
           }
+         
 
-          $arrProvines = [1, 2, 4, 6, 8, 10, 11, 12, 14, 15, 17, 19, 20, 22, 24, 25, 26, 27, 30, 31, 33, 34, 35, 36, 37, 38, 40, 42, 44, 45, 46, 48, 49, 51, 52, 54, 56, 58, 60, 62, 64, 66, 67, 68, 70, 72, 74, 75, 77, 79, 80, 82, 83, 84, 86, 87, 89, 91, 92, 93, 94, 95, 96]; 
-            
           $conn= $this->model("CompanyModel");
+        
           $count_company=$conn->get("company")->rowCount();
           $count_seeker=$conn->get("user_account","user_type_id='1'")->rowCount();
           $count_employer=$conn->get("user_account","user_type_id='2'")->rowCount();
           $count_job_post=$conn->get("job_post")->rowCount();
-          $this->data["sub_content"]["arrProvines"] = $arrProvines;
        
           $this->data["sub_content"]["count_job_post"] = $count_job_post;
           $this->data["sub_content"]["count_company"] = $count_company;

@@ -1,6 +1,58 @@
 <link rel="stylesheet" href="<?= _WEB_ROOT."/app/public/assets/employer/css/tim_ung_vien.css" ?>">
 <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script defer src="<?= _WEB_ROOT."/app/public/assets/employer/js/tim_ung_vien.js"?>"></script>
+<script defer type="module" src="<?= _WEB_ROOT."/app/public/assets/employer/js/tim_ung_vien.js"?>"></script>
+<style>
+  .custome-actions {
+    gap: 15px;
+  }
+
+  .swal2-popup {
+    height: 300px;
+    width: 450px;
+  }
+
+  .btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    padding: 0.5rem 0.75rem;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-size: 1rem;
+    line-height: 1.25;
+    border-radius: 0.25rem;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+  }
+  .swal2-title{
+   height: 200px;
+  }
+  .btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    padding: 0.5rem 0.75rem;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-size: 1rem;
+    line-height: 1.25;
+    border-radius: 0.25rem;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+  }
+
+  .swal2-title {
+    font-size: 24px;
+  }
+
+  .btn_recruit {
+    cursor: pointer;
+  }
+</style>
 <body>
    <main>
       <div id="dropdownSelected"style="display:none;"></div>
@@ -39,7 +91,6 @@
                <div class="form-head">
                   <h1 class="title">Từ khóa</h1>
                   <div class="toolip-support">
-                     <p>(Hướng dẫn Tìm kiếm)</p>
                   </div>
                </div>
                <div class="form-body">
@@ -83,69 +134,18 @@
                            <label>Địa điểm</label>
                  
                        <select name="list_location[]" id="location" class="chosen-select-max-three" multiple placeholder="Tất cả địa điểm">
-      <option value="1">Thành phố Hà Nội</option>
-<option value="2">Tỉnh Hà Giang</option>
-<option value="4">Tỉnh Cao Bằng</option>
-<option value="6">Tỉnh Bắc Kạn</option>
-<option value="8">Tỉnh Tuyên Quang</option>
-<option value="10">Tỉnh Lào Cai</option>
-<option value="11">Tỉnh Điện Biên</option>
-<option value="12">Tỉnh Lai Châu</option>
-<option value="14">Tỉnh Sơn La</option>
-<option value="15">Tỉnh Yên Bái</option>
-<option value="17">Tỉnh Hoà Bình</option>
-<option value="19">Tỉnh Thái Nguyên</option>
-<option value="20">Tỉnh Lạng Sơn</option>
-<option value="22">Tỉnh Quảng Ninh</option>
-<option value="24">Tỉnh Bắc Giang</option>
-<option value="25">Tỉnh Phú Thọ</option>
-<option value="26">Tỉnh Vĩnh Phúc</option>
-<option value="27">Tỉnh Bắc Ninh</option>
-<option value="30">Tỉnh Hải Dương</option>
-<option value="31">Thành phố Hải Phòng</option>
-<option value="33">Tỉnh Hưng Yên</option>
-<option value="34">Tỉnh Thái Bình</option>
-<option value="35">Tỉnh Hà Nam</option>
-<option value="36">Tỉnh Nam Định</option>
-<option value="37">Tỉnh Ninh Bình</option>
-<option value="38">Tỉnh Thanh Hóa</option>
-<option value="40">Tỉnh Nghệ An</option>
-<option value="42">Tỉnh Hà Tĩnh</option>
-<option value="44">Tỉnh Quảng Bình</option>
-<option value="45">Tỉnh Quảng Trị</option>
-<option value="46">Tỉnh Thừa Thiên Huế</option>
-<option value="48">Thành phố Đà Nẵng</option>
-<option value="49">Tỉnh Quảng Nam</option>
-<option value="51">Tỉnh Quảng Ngãi</option>
-<option value="52">Tỉnh Bình Định</option>
-<option value="54">Tỉnh Phú Yên</option>
-<option value="56">Tỉnh Khánh Hòa</option>
-<option value="58">Tỉnh Ninh Thuận</option>
-<option value="60">Tỉnh Bình Thuận</option>
-<option value="62">Tỉnh Kon Tum</option>
-<option value="64">Tỉnh Gia Lai</option>
-<option value="66">Tỉnh Đắk Lắk</option>
-<option value="67">Tỉnh Đắk Nông</option>
-<option value="68">Tỉnh Lâm Đồng</option>
-<option value="70">Tỉnh Bình Phước</option>
-<option value="72">Tỉnh Tây Ninh</option>
-<option value="74">Tỉnh Bình Dương</option>
-<option value="75">Tỉnh Đồng Nai</option>
-<option value="77">Tỉnh Bà Rịa - Vũng Tàu</option>
-<option value="79">Thành phố Hồ Chí Minh</option>
-<option value="80">Tỉnh Long An</option>
-<option value="82">Tỉnh Tiền Giang</option>
-<option value="83">Tỉnh Bến Tre</option>
-<option value="84">Tỉnh Trà Vinh</option>
-<option value="86">Tỉnh Vĩnh Long</option>
-<option value="87">Tỉnh Đồng Tháp</option>
-<option value="89">Tỉnh An Giang</option>
-<option value="91">Tỉnh Kiên Giang</option>
-<option value="92">Thành phố Cần Thơ</option>
-<option value="93">Tỉnh Hậu Giang</option>
-<option value="94">Tỉnh Sóc Trăng</option>
-<option value="95">Tỉnh Bạc Liêu</option>
-<option value="96">Tỉnh Cà Mau</option>
+                       <?php foreach ($data_provinces as $item):?>
+            <option 
+            <?php if (!empty($searchLocation)) {
+                              foreach ($searchLocation as $value) {
+                                 if ($value == $item->{'code'}) {
+                                    echo 'selected';
+                                 }
+                              }
+             }  ?> 
+            value="<?= $item->{'code'} ?>"><?= $item->{'name'} ?></option>   
+                          <?php endforeach;?>
+                        
 
                        </select>
                        
@@ -153,8 +153,8 @@
                         <div class="form-group form-select">
                            <label>Trạng thái tìm việc</label>
                            <select name="urgentjob" id="urgentjob">
-                              <option value="0">Tất cả</option>
-                              <option value="1" >Ứng viên tìm việc khẩn cấp</option>
+                              <option <?= $urgentjob==0?"selected":"" ?> value="0">Tất cả</option>
+                              <option <?= $urgentjob==1?"selected":"" ?> value="1" >Ứng viên tìm việc khẩn cấp</option>
                            </select>
                         </div>
                      </div>
@@ -542,13 +542,14 @@
                  </div>
                  <p class="name-display">
                     Hiển thị <strong>1 - 20 </strong> trong <strong>104,874</strong> hồ sơ
-                 </p>
-              </div>
-           </div>
-        </div> -->
-        <div class="boding-jobs-posting">
-           <div class="table table-jobs-posting">
-              <table>
+                  </p>
+               </div>
+            </div>
+         </div> -->
+         <div class="boding-jobs-posting">
+            <div class="table table-jobs-posting">
+               <table>
+                 <?php if(!empty($data_resume)) {?>
                  <thead>
                     <tr>
                        <th width="38%">Ứng Viên</th>
@@ -568,7 +569,7 @@
                     </tr>
                  </thead>
                  <tbody class="data_resume">
-                           <?php foreach ($data_resume as $item):?>
+                     <?php foreach ($data_resume as $item):?>
                               <tr>
                  <td>
                     <div class="title">
@@ -604,29 +605,66 @@
                  </td>
                  <td>
                     <p>
-                     <?= $item["min_salary"].'-'.$item["max_salary"].'VND' ?>
+                     <?= $item["min_salary"].'-'.$item["max_salary"].' VND' ?>
          
                     </p>
                  </td>
-                 <td class="location"data-provinces="<?= $item["provinces"] ?>">
+                 <td class="location">
+                 <?php foreach ($data_provinces as $value):?>
+           
+            <?php 
+                       
+                 if ($item["provinces"] == $value->{'code'}) {
+                                    echo $value->{'name'};
+                 }         
+              ?> 
              
+                          <?php endforeach;?>
+                        
                  </td>
                 
                  <td>
                     <ul class="list-manipulation">
                    
                        
-                       <li><a href="javascript:void(0)" onclick="showFoldersSelected('361DF78D');" class="btn-save-folder" href="javascript:void(0)" title="Lưu vào thư mục"><em class="material-icons">folder_shared </em></a></li>
+                       <li><button style="background-color:transparent;border:transparent;" data-id-resume="<?= $item["id"] ?>" class="btn-save-folder" href="javascript:void(0)" title="Lưu vào thư mục"><em class="material-icons">folder_shared </em></button></li>
                        
                     </ul>
                  </td>
               </tr>
                          <?php  endforeach;?>
+                     <?php } else {?>
+                        <div class="search-result-top">
+				<div class="top">
+					<p class="success">
+													<strong> Không tìm thấy hồ sơ phù hợp với tiêu chí của quý khách.</strong> 
+<br>
+<br>Gợi ý:
+<br>. Vui lòng kiểm tra lại từ khóa đã nhập hoặc thử tìm với từ khóa khác.
+<br>. Thử tìm với các tiêu chí khác như ngành, nơi làm việc
+											</p>
+																	
+															</div>
+								<div class="bottom">
+											<div class="keyword" autocomplete="off">
+							<p>
+								<strong>Từ khóa: </strong>
+								<span><?= $keyword ?></span>
+							</p>
+						</div>
+																																																																	
+										
+				</div>
+			</div>
+                        <?php }?>
+
+                        
+                         
                
                  </tbody>
               </table>
            </div>
-           <div class="main-pagination">
+           <!-- <div class="main-pagination">
               <div class="main-pagination">
                  <ul class="pagination">
                     <li class="PagerOtherPageCells active"><a href="javascript:void(0);">1</a></li>
@@ -637,7 +675,7 @@
                     <li class="PagerOtherPageCells"><a class="LastPage" href='https://careerbuilder.vn/vi/tim-ung-vien/tu-khoa/Nh%C3%A2n+vi%C3%AAn+b%C3%A1n+h%C3%A0ng+thu+ng%C3%A2n/sort/date_desc/page/2'><em class="mdi mdi-chevron-right"></em></a></li>
                  </ul>
               </div>
-           </div>
+           </div> -->
            <div class="main-button-sticky">
               <div class="button-prev disabled"><em class="mdi mdi-chevron-left"></em></div>
               <div class="button-next"><em class="mdi mdi-chevron-right"></em></div>

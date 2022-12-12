@@ -16322,7 +16322,7 @@
                   </li> -->
                
                   <li>
-                     <a class=" " href="javascript:;"><em class="material-icons">settings</em><span>Cài đặt</span></a>
+                     <a class="collapse" href="<?= _WEB_ROOT.'/jobseekers/myaccount' ?>"><em class="material-icons">settings</em><span>Cài đặt</span></a>
                      <ul class="list-unstyled collapse">
                         <li> <a href="https://careerbuilder.vn/vi/jobseekers/member/myaccount" title="Tài Khoản">Tài Khoản</a></li>
                         <li> <a href="https://careerbuilder.vn/vi/jobseekers/member/emailmanagement" title="Cài Đặt Thông Báo">Cài Đặt Thông Báo</a></li>

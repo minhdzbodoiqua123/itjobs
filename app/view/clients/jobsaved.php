@@ -23,7 +23,7 @@
                      </ul>
                   </li>
                
-                  <li>
+                  <!-- <li>
                      <a class="collapse " href="javascript:;"><em class="material-icons">remove_red_eye</em><span>Nhà tuyển dụng của tôi</span></a>
                      <ul class="list-unstyled collapse">
                         <li> <a href="">Nhà tuyển dụng xem hồ sơ của tôi</a></li>
@@ -31,15 +31,15 @@
                         <li> <a href="">Nhà tuyển dụng được cài đặt hạn chế xem hồ sơ của tôi</a></li>
                         <li> <a href="">Phản hồi từ nhà tuyển dụng</a></li>
                      </ul>
-                  </li>
+                  </li> -->
                
                   <li>
-                     <a class="collapse " href="javascript:;"><em class="material-icons">settings</em><span>Cài đặt</span></a>
+                     <a class="" href="<?= _WEB_ROOT.'/jobseekers/myaccount' ?>"><em class="material-icons">settings</em><span>Cài đặt</span></a>
                      <ul class="list-unstyled collapse">
                         <li> <a href="https://careerbuilder.vn/vi/jobseekers/member/myaccount" title="Tài Khoản">Tài Khoản</a></li>
                         <li> <a href="https://careerbuilder.vn/vi/jobseekers/member/emailmanagement" title="Cài Đặt Thông Báo">Cài Đặt Thông Báo</a></li>
                      </ul>
-                  </li>
+                  </li> 
                   <li> <a href="http://localhost//itjobs/account/logout" title="Thoát"> <em class="material-icons">power_settings_new</em><span>Thoát</span></a></li>
                </ul>
             </div>

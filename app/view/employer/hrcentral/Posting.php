@@ -137,9 +137,10 @@
                                                     <td><?= formatDate($item["end_date"]) ?></td>
 
                                                     <td><?= $item["view"] ?></td>
-                                                    <td><?php   
+                                                    <td><?php
+                                                       $temp=0;   
                            if(!empty($count_submitted)){
-                            $temp=0;
+                         
                         foreach ($count_submitted as $value):
                             if($value["job_id"]==$item["id"]){
                                      echo $value["num_submit"];   

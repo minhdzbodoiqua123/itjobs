@@ -10,7 +10,9 @@ class Expireposting extends Controller
         $date_type=$_GET["date_type"]??"";
         $date_from=$_GET["date_from"]??"";
         $date_to=$_GET["date_to"]??"";
+        $count_submitted =$this->model("Job_postModel")->query("SELECT job_id,count(job_id) as num_submit FROM `job_post_activity` join job_post on job_post.id = job_id  where posted_by_id =$employer_id  group by  job_id")->fetchAll(PDO::FETCH_ASSOC);
         $this->data["sub_content"]["job_post"] =$job_post;
+        $this->data["sub_content"]["count_submitted"] = $count_submitted;
 
         $this->data["sub_content"]["keyword"] = $keyword;
         $this->data["sub_content"]["date_type"] = $date_type;

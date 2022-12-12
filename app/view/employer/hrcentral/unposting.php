@@ -212,7 +212,7 @@
                                                    <li><a style="cursor: pointer;" class="btn_recruit" data-id="<?= $item["id"] ?>" title="Đăng tuyển"><em class="material-icons">publish </em></a></li>
                                                    <li><a href="http://localhost//itjobs/employer/hrcentral/viewjob/detail/19" title="Chi tiết"><em class="material-icons">visibility </em></a></li>
                                                  
-                                                   <li><a href="https://careerbuilder.vn/vi/employers/postjobs/35BAFFA3" title="Sửa"><em class="material-icons">created</em></a></li>
+                                                   <li><a href="<?= _WEB_ROOT.'/employer/hrcentral/Posting/edit_job/'.$item["id"] ?>" title="Sửa"><em class="material-icons">created</em></a></li>
                                                    <li class="end"><a href="javascript:void(0);" onclick="deleteItem_job('35BAFFA3');return false;" title="Xóa"><em class="material-icons">cancel </em></a></li>
                                                 </ul>
                                              </td>

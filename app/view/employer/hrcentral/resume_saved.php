@@ -45,31 +45,7 @@
                 <div class="left-heading">
                     <h1 class="title-manage">
                         
-                          <?php 
-
-
-                        $temp=0;
-                        foreach ($data_job_current as $item):
-                        if($item["id"]==$job_id){
-                            $temp++;
-                            echo $item["job_title"];
-                        }
-                        endforeach;
-                        if($temp==0){
-                            switch ($job_status) {
-                                case '3':
-                                    echo "Việc Làm Tạm Dừng Đăng";
-                                    break;
-                                case '2':
-                                    echo "Việc Làm Hết Hạn";
-                            
-                                    break;
-                                default:
-                                  echo "Việc Làm Đang Đăng ";
-                                    break;
-                            }
-                        }
-                        ?>
+                    Hồ Sơ Đã Lưu
                         
                     </h1>
 
@@ -161,13 +137,13 @@
 
             <div class="main-tabslet" data-toggle="tabslet">
                 <ul class="tabslet-tab">
-                    <li class="active">
-                        <a href="">
+                    <li >
+                        <a href="http://localhost//itjobs/employer/hrcentral/manageresume">
                             Hồ Sơ Ứng Tuyển
                            
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="http://localhost//itjobs/employer/hrcentral/manageresume/resume_saved">
                             Hồ Sơ Đã Lưu
                             
@@ -183,62 +159,7 @@
                 <div class="tabslet-content active" id="tab-1">
                                                     <div class="main-resume-applied">
     <div class="heading-resume-applied">
-        <div class="left-heading">
-                            <!-- <div class="form-group form-select form-filter">
-                    <label>User</label>
-                    <select id="foward_username" onchange="onchangeUserResume()">
-                        <option value="alluser" selected="selected">Tất cả</option>
-                                            <option value="lop7cttnq.1667207375" selected="selected">
-                            minh nguyễn 123
-                        </option>
-                                        </select>
-                </div> -->
-                        <div class="form-group form-select form-filter">
-                <select id="select-group">
-                    
-                    <option <?= $job_status==1? "selected":""?> data-group="1" value="<?= _WEB_ROOT.'/employer/hrcentral/manageresume/viewresume/1' ?>" >
-                        Việc Làm Đang Đăng (<?= 
-                                        !empty($count_job_posted["posted_job"]) ? $count_job_posted["posted_job"]:0 
-                                         ?>)
-                    </option>
-                    <option <?= $job_status==3?"selected":""?> data-group="3" value="<?= _WEB_ROOT.'/employer/hrcentral/manageresume/viewresume/3' ?>">
-                        Việc Làm Tạm Dừng Đăng (<?= 
-                                        !empty($tam_dung_dang["tam_dung_dang"]) ? $tam_dung_dang["tam_dung_dang"]:0 
-                                         ?>)
-                    </option>
-                    <option <?= $job_status==2?"selected":""?> data-group="2" value="<?= _WEB_ROOT.'/employer/hrcentral/manageresume/viewresume/2' ?>">
-                        Việc Làm Hết Hạn (<?= 
-                                        !empty($count_expired_job["expired_job"]) ? $count_expired_job["expired_job"]:0 
-                                         ?>)
-                    </option>
-                </select>
-            </div>
-            <!-- <?php switch ($job_status) {
-                case '2':
-                    echo _WEB_ROOT.'/employer/hrcentral/manageresume?job_status='.$job_status;
-                    break;
-                case '3':
-                    echo _WEB_ROOT.'/employer/hrcentral/manageresume?job_status='.$job_status;
-                    break;
-                default:
-                    echo _WEB_ROOT.'/employer/hrcentral/manageresume?job_status=1';
-                    break;
-            }?> -->
-            <div class="form-group form-select form-filter">
-                <select class="go-link" id="select-folder" style="width: 400px;">
-          <option  value="">Chọn thư mục</option>
-         <?php foreach ($data_job_current as $item):?>
-            <option <?= empty($job_id) ? "" :$item["id"]==$job_id ?"selected":"" ?> value="<?= _WEB_ROOT.'/employer/hrcentral/manageresume/viewresume/' ?><?= !isset($job_status) ? "1/".$item["id"]: $job_status.'/'.$item["id"]?> "><?=  $item["job_title"] ?></option>
-                                           
-            <?php endforeach;?>                                                                             </select>
-            </div>
-                        <ul class="list-check">
-                <li class="view-posting-detail "><a href="javascript:void(0);">Chi tiết</a></li>
-
-
-
-                            </ul>
-        </div>
+       
     </div>
 <div class="boding-resume-applied">
     <div class="table table-resume-applied">

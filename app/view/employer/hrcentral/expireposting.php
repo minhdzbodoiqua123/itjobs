@@ -149,9 +149,26 @@
                                              <td><?= formatDate($item["posted_date"]) ?></td>
                                              <td><?= formatDate($item["end_date"]) ?></td>
 
-                                             <td></td>
+                                             <td><?= $item["view"] ?></td>
 
-                                             <td></td>
+
+                                             <td><?php
+                                                       $temp=0;   
+                           if(!empty($count_submitted)){
+                         
+                        foreach ($count_submitted as $value):
+                            if($value["job_id"]==$item["id"]){
+                                     echo $value["num_submit"];   
+                            $temp++;
+
+                           }
+                            endforeach;
+                     }
+                     if($temp==0){
+                        echo '0';
+                     }
+                     
+                     ?></td>
                                              <td>
                                                 <ul class="list-manipulation">
                                                    <!-- <li><a class="btn_recruit" data-id="19" title="Đăng tuyển"><em class="material-icons">publish </em></a></li> -->

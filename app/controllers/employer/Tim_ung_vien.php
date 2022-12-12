@@ -10,9 +10,23 @@ class Tim_ung_vien extends Controller
         // echo $sql_data_resume;
         $data_profession= $conn->get("profession")->fetchAll(PDO::FETCH_ASSOC);
         $list_industries=$_GET["list_industries"] ?? "";
+        $data_provinces=  CallAPI("GET","https://provinces.open-api.vn/api/");
+
 
         $data_resume= $conn->query($sql_data_resume)->fetchAll(PDO::FETCH_ASSOC);
+
+        $searchLocation=$_GET["list_location"] ?? "";
+        $urgentjob=$_GET["urgentjob"] ?? "";
+        $keyword=$_GET["keyword"] ?? "";
+
+        
+        $this->data["sub_content"]["searchLocation"] = $searchLocation;
+        $this->data["sub_content"]["urgentjob"] = $urgentjob;
+        $this->data["sub_content"]["keyword"] = $keyword;
+
         $this->data["sub_content"]["data_profession"] = $data_profession;
+        $this->data["sub_content"]["data_provinces"] =  json_decode($data_provinces);
+
         $this->data["sub_content"]["data_resume"] = $data_resume;
         $this->data["sub_content"]["list_industries"] = $list_industries;
 
@@ -62,5 +76,19 @@ class Tim_ung_vien extends Controller
         $data_resume= $conn->query("select * from resume join seeker_profile on seeker_profile.user_account_id=resume.user_account_id join degree on degree_id=degree.id
         join job_position on job_position.id=position_id  where resume_active in (2,3)")->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($data_resume);
+    }
+    public function saveResume($resume_id=""){
+        $conn=$this->model("Job_postModel");
+        $user_account_id=$_SESSION["employer"]["id"];
+        $checkJob=$conn->get("resume_saved","user_account_id=$user_account_id and resume_id =$resume_id")->rowCount();
+        if($checkJob==0){
+            $data=[ 
+                "user_account_id"=>"'$user_account_id'",
+                "resume_id "=>"'$resume_id'",
+            ];
+            $conn->insert("resume_saved",$data);
+        }else{
+            $conn->delete("resume_saved","user_account_id=$user_account_id and resume_id=$resume_id");
+        }
     }
 }
